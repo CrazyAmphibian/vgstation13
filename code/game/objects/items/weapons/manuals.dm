@@ -1336,7 +1336,46 @@ background-color:dodgerblue;
 background-color:DarkViolet;
 }
 
+.byproduct_display{
+display:inline-block;
+width:20em;
+}
 
+.reagent_lead{
+display:inline-block;
+background-color:grey;
+color:white;
+}
+
+.reagent_plutonium{
+display:inline-block;
+background-color:burlywood;
+color:black;
+}
+
+.reagent_radium{
+display:inline-block;
+background-color:yellowgreen;
+color:black;
+}
+
+.reagent_radon{
+display:inline-block;
+background-color:orange;
+color:black;
+}
+
+.reagent_thalium{
+display:inline-block;
+background-color:MediumAquamarine;
+color:black;
+}
+
+.reagent_uranium{
+display:inline-block;
+background-color:darkolivegreen;
+color:white;
+}
 
 </style>
 </head>
@@ -1344,7 +1383,7 @@ background-color:DarkViolet;
 	
 <h1>Fission Reactors: a quick guide</h1>	
 <p>
-Though often said to be old, outdated technology, fission power should not be underestimated. Even a modest reactor is capible of powering a medium-sized station for several hours with no upkeep. The dismissal of fission technology has delayed the uncovering of more recent discoveries in material sciences which may have been known decades earlier.
+Though often said to be old, outdated technology, fission power should not be underestimated. Even a modest reactor is capable of powering a medium-sized station for several hours with no upkeep, and the dismissal of fission technology has delayed the uncovering of more recent discoveries in material sciences which may have been known decades earlier.
 </p>
 
 <hr>
@@ -1391,7 +1430,7 @@ building a reactor is an expensive endeavor, costing a lot of both time and reso
 	
 	<h3>Control & Fuel rod assembly</h3>
 	<ol>
-		<li>ise 5 plasteel to construct a reinforced machine frame in the desired location</li>
+		<li>use 5 plasteel to construct a reinforced machine frame in the desired location</li>
 		<li>add 5 lengths of wiring to the machine</li>
 		<li>insert the corresponding circuit board</li>
 		<li>insert 2 metal rods inside of the frame</li>
@@ -1442,12 +1481,12 @@ The design of a nuclear reactor is very important. build it wrong, and you may f
 	
 	<div style='border:2px black solid;background-color:LightSteelBlue;'>
 	<h3 style='text-decoration:underline;'>key</h3>
-	<ul style='color:white;list-style-type: none;font-size:1.5em;padding:0;margin:0;'>
-		<li><span class='r_case'>casing</span></li>
-		<li><span class='r_cont'>controller</span></li>
-		<li><span class='r_port'>coolant port</span></li>
-		<li><span class='r_frod'>fuel rod</span></li>
-		<li><span class='r_crod'>control rod</span></li>
+	<ul style='list-style-type: none;font-size:1.5em;padding:0;margin:0;margin-bottom:2px;'>
+		<li><span class='r_case'>&nbsp;&nbsp;&nbsp;</span>casing</li>
+		<li><span class='r_cont'>&nbsp;&nbsp;&nbsp;</span>controller</li>
+		<li><span class='r_port'>&nbsp;&nbsp;&nbsp;</span>coolant port</li>
+		<li><span class='r_frod'>&nbsp;&nbsp;&nbsp;</span>fuel rod</li>
+		<li><span class='r_crod'>&nbsp;&nbsp;&nbsp;</span>control rod</li>
 	</ul>
 	</div>
 	
@@ -1650,32 +1689,32 @@ The design of a nuclear reactor is very important. build it wrong, and you may f
 <tr>
 	<th>Fuel</th>
 	<th>Heat generation (Watts per unit)</th>
-	<th>Lifetime (weighted average seconds)</th>
+	<th>Lifetime (weighted average)</th>
 	<th>Byproducts</th>
 </tr>
 <tr>
-	<td>Uranium</td>
-	<td>16667</td>
-	<td>9000</td>
-	<td>Lead: 30%, Plutonium: 20%, Radium: 25%, Thallium: 10%, Radon: 15%</td>
+	<td class="reagent_uranium">Uranium</td>
+	<td>16,667</td>
+	<td>2h 30m</td>
+	<td class="byproduct_display"><span class="reagent_lead" style="width:30%;">Pb</span><span class="reagent_plutonium" style="width:20%;">Pu</span><span class="reagent_radium" style="width:25%;">Ra</span><span class="reagent_radon" style="width:15%;">Rn</span><span class="reagent_thalium" style="width:10%;">Tl</span></td>
 </tr>
 <tr>
-	<td>Plutonium</td>
-	<td>66667</td>
-	<td>4500</td>
-	<td>Lead: 50%, Uranium: 20%, Radium: 20%, Radon: 10%</td>
+	<td class="reagent_plutonium">Plutonium</td>
+	<td>66,667</td>
+	<td>1h 15m</td>
+	<td class="byproduct_display"><span class="reagent_lead" style="width:50%;">Pb</span><span class="reagent_uranium" style="width:20%;">U</span><span class="reagent_radium" style="width:20%;">Ra</span><span class="reagent_radon" style="width:10%;">Rn</span></td>
 </tr>
 <tr>
-	<td>Radium</td>
-	<td>5000</td>
-	<td>4500</td>
-	<td>Lead: 40%, Thallium: 20%, Radon: 40%</td>
+	<td class="reagent_radium">Radium</td>
+	<td>5,000</td>
+	<td>1h 15m</td>
+	<td class="byproduct_display"> <span class="reagent_lead" style="width:40%;">Pb</span><span class="reagent_radon" style="width:40%;">Rn</span><span class="reagent_thalium" style="width:20%;">Tl</span>  </td>
 </tr>
 <tr>
-	<td>Radon</td>
-	<td>1667</td>
-	<td>1500</td>
-	<td>Lead: 100%</td>
+	<td class="reagent_radon">Radon</td>
+	<td>1,667</td>
+	<td>25m</td>
+	<td class="byproduct_display"><span class="reagent_lead" style="width:100%;">Pb</span></td>
 </tr>
 
 </table>

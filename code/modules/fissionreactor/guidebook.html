@@ -32,7 +32,46 @@ background-color:dodgerblue;
 background-color:DarkViolet;
 }
 
+.byproduct_display{
+display:inline-block;
+width:20em;
+}
 
+.reagent_lead{
+display:inline-block;
+background-color:grey;
+color:white;
+}
+
+.reagent_plutonium{
+display:inline-block;
+background-color:burlywood;
+color:black;
+}
+
+.reagent_radium{
+display:inline-block;
+background-color:yellowgreen;
+color:black;
+}
+
+.reagent_radon{
+display:inline-block;
+background-color:orange;
+color:black;
+}
+
+.reagent_thalium{
+display:inline-block;
+background-color:MediumAquamarine;
+color:black;
+}
+
+.reagent_uranium{
+display:inline-block;
+background-color:darkolivegreen;
+color:white;
+}
 
 </style>
 </head>
@@ -334,10 +373,10 @@ The design of a nuclear reactor is very important. build it wrong, and you may f
 	</ol>
 
 <h2>Other notes</h2>
-	If you unscrew the maintenance hatch of a fuel rod assembly, you can add 4 metal sheets to it. Doing so will make the assembly not give any bonuses for adjacent fuel rods. You can undo this by removing the sheets with a crowbar.
+	Unscrewing the maintenance hatch of a fuel rod assembly, you can add 4 metal sheets which will negate any efficency bonuses for adjacent fuel rods. This can be undone by removing the sheets with a crowbar.
 	<br>
 	<br>
-	standard fuel rods can be made with 2 plasteel sheets. these are bigger than the small one given by the starter kit, but smaller than the one orderable from cargo.
+	standard-sized fuel rods can be made with 2 plasteel sheets. These are larger than the one that appears in the starter kit, but is smaller than the large fuel rod which can be ordered from the station's cargo department.
 
 <br>
 <br>
@@ -346,32 +385,32 @@ The design of a nuclear reactor is very important. build it wrong, and you may f
 <tr>
 	<th>Fuel</th>
 	<th>Heat generation (Watts per unit)</th>
-	<th>Lifetime (weighted average seconds)</th>
+	<th>Lifetime (weighted average)</th>
 	<th>Byproducts</th>
 </tr>
 <tr>
-	<td>Uranium</td>
-	<td>16667</td>
-	<td>9000</td>
-	<td>Lead: 30%, Plutonium: 20%, Radium: 25%, Thallium: 10%, Radon: 15%</td>
+	<td class="reagent_uranium">Uranium</td>
+	<td>16,667</td>
+	<td>2h 30m</td>
+	<td class="byproduct_display"><span class="reagent_lead" style="width:30%;">Pb</span><span class="reagent_plutonium" style="width:20%;">Pu</span><span class="reagent_radium" style="width:25%;">Ra</span><span class="reagent_radon" style="width:15%;">Rn</span><span class="reagent_thalium" style="width:10%;">Tl</span></td>
 </tr>
 <tr>
-	<td>Plutonium</td>
-	<td>66667</td>
-	<td>4500</td>
-	<td>Lead: 50%, Uranium: 20%, Radium: 20%, Radon: 10%</td>
+	<td class="reagent_plutonium">Plutonium</td>
+	<td>66,667</td>
+	<td>1h 15m</td>
+	<td class="byproduct_display"><span class="reagent_lead" style="width:50%;">Pb</span><span class="reagent_uranium" style="width:20%;">U</span><span class="reagent_radium" style="width:20%;">Ra</span><span class="reagent_radon" style="width:10%;">Rn</span></td>
 </tr>
 <tr>
-	<td>Radium</td>
-	<td>5000</td>
-	<td>4500</td>
-	<td>Lead: 40%, Thallium: 20%, Radon: 40%</td>
+	<td class="reagent_radium">Radium</td>
+	<td>5,000</td>
+	<td>1h 15m</td>
+	<td class="byproduct_display"> <span class="reagent_lead" style="width:40%;">Pb</span><span class="reagent_radon" style="width:40%;">Rn</span><span class="reagent_thalium" style="width:20%;">Tl</span>  </td>
 </tr>
 <tr>
-	<td>Radon</td>
-	<td>1667</td>
-	<td>1500</td>
-	<td>Lead: 100%</td>
+	<td class="reagent_radon">Radon</td>
+	<td>1,667</td>
+	<td>25m</td>
+	<td class="byproduct_display"><span class="reagent_lead" style="width:100%;">Pb</span></td>
 </tr>
 
 </table>

@@ -263,12 +263,12 @@ included:
 			qdel(associated_reactor)
 			associated_reactor=null
 			return
+		associated_reactor.init_parts()
+		associated_reactor.controller=src
 		if(!associated_reactor.verify_integrity())
 			say("Failed to setup reactor: construction validation error", class = "binaryradio")
 			associated_reactor=null
 			return
-		associated_reactor.init_parts()
-		associated_reactor.controller=src
 		if(currentfuelrod)
 			associated_reactor.fuel=currentfuelrod.fueldata
 		say("Reactor setup success.", class = "binaryradio")
