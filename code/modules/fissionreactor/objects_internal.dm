@@ -31,15 +31,6 @@ included:
 	icon='icons/obj/fissionreactor/controlrod.dmi'
 	icon_state="controlrod_off"
 	
-	var/image/overlay_N 
-	var/image/overlay_S 
-	var/image/overlay_E   //"see vending.dm and dmi for some examples" said dilt
-	var/image/overlay_W   //oh i did, and this looks like a horrible mess.
-	var/image/overlay_NE  //totally not my fault :clueless:
-	var/image/overlay_SE  //i'm going to keep this code because it's going to make people really mad :)
-	var/image/overlay_NW  //the alternative is to re-compute the images when determining appearance (worse performance)
-	var/image/overlay_SW  //or store them in a list (more memory usage (like 4 bytes))
-	
 /obj/machinery/fissionreactor/fissionreactor_controlrod/examine()
 	..()
 	if(associated_reactor)
@@ -60,14 +51,6 @@ included:
 	to_chat(usr,"The structure is held together firmly, it'll have to be cut in order to part it.")
 
 /obj/machinery/fissionreactor/fissionreactor_controlrod/New()
-	overlay_N = image(icon, src,"cr_overlay_N")
-	overlay_S = image(icon, src,"cr_overlay_S")
-	overlay_E = image(icon, src,"cr_overlay_E")
-	overlay_W = image(icon, src,"cr_overlay_W")
-	overlay_NE = image(icon, src,"cr_overlay_NE")
-	overlay_SE = image(icon, src,"cr_overlay_SE")
-	overlay_NW = image(icon, src,"cr_overlay_NW")
-	overlay_SW = image(icon, src,"cr_overlay_SW")
 	for(var/datum/fission_reactor_holder/r in fissionreactorlist)
 		if(r.turf_in_reactor(src.loc))
 			if(r.adopt_part(src))
@@ -101,22 +84,41 @@ included:
 	overlays=null
 	if(!associated_reactor)
 		return
+		
+	if(  locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, NORTH) )
+		overlays+=image(icon, src,"cr_overlay_N-off")
+	if( locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, SOUTH) )
+		overlays+=image(icon, src,"cr_overlay_S-off")
+	if( locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, EAST) )
+		overlays+=image(icon, src,"cr_overlay_E-off")
+	if( locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, WEST) )
+		overlays+=image(icon, src,"cr_overlay_W-off")
+	if( locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, NORTHEAST) )
+		overlays+=image(icon, src,"cr_overlay_NE-off")
+	if( locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, SOUTHEAST) )
+		overlays+=image(icon, src,"cr_overlay_SE-off")
+	if( locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, NORTHWEST) )
+		overlays+=image(icon, src,"cr_overlay_NW-off")
+	if( locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, SOUTHWEST) )
+		overlays+=image(icon, src,"cr_overlay_SW-off")	
+	
 	if(  locate(/obj/machinery/fissionreactor/fissionreactor_fuelrod) in get_step(src, NORTH) )
-		overlays+=overlay_N
+		overlays+=image(icon, src,"cr_overlay_N")
 	if( locate(/obj/machinery/fissionreactor/fissionreactor_fuelrod) in get_step(src, SOUTH) )
-		overlays+=overlay_S
+		overlays+=image(icon, src,"cr_overlay_S")
 	if( locate(/obj/machinery/fissionreactor/fissionreactor_fuelrod) in get_step(src, EAST) )
-		overlays+=overlay_E
+		overlays+=image(icon, src,"cr_overlay_E")
 	if( locate(/obj/machinery/fissionreactor/fissionreactor_fuelrod) in get_step(src, WEST) )
-		overlays+=overlay_W
+		overlays+=image(icon, src,"cr_overlay_W")
 	if( locate(/obj/machinery/fissionreactor/fissionreactor_fuelrod) in get_step(src, NORTHEAST) )
-		overlays+=overlay_NE
+		overlays+=image(icon, src,"cr_overlay_NE")
 	if( locate(/obj/machinery/fissionreactor/fissionreactor_fuelrod) in get_step(src, SOUTHEAST) )
-		overlays+=overlay_SE
+		overlays+=image(icon, src,"cr_overlay_SE")
 	if( locate(/obj/machinery/fissionreactor/fissionreactor_fuelrod) in get_step(src, NORTHWEST) )
-		overlays+=overlay_NW
+		overlays+=image(icon, src,"cr_overlay_NW")
 	if( locate(/obj/machinery/fissionreactor/fissionreactor_fuelrod) in get_step(src, SOUTHWEST) )
-		overlays+=overlay_SW
+		overlays+=image(icon, src,"cr_overlay_SW")
+		
 		
 	
 /obj/machinery/fissionreactor/fissionreactor_controlrod/ex_act(var/severity, var/child=null, var/mob/whodunnit)
@@ -139,18 +141,9 @@ included:
 	var/adjacencybonus=1.0
 	var/hatchopen=FALSE
 	
-	var/image/overlay_N
-	var/image/overlay_S
-	var/image/overlay_E
-	var/image/overlay_W
-	
 
 
 /obj/machinery/fissionreactor/fissionreactor_fuelrod/New()
-	overlay_N = image(icon, src,"fuelrod_overlay_N")
-	overlay_S = image(icon, src,"fuelrod_overlay_S")
-	overlay_E = image(icon, src,"fuelrod_overlay_E") 
-	overlay_W = image(icon, src,"fuelrod_overlay_W") 
 	for(var/datum/fission_reactor_holder/r in fissionreactorlist)
 		if(r.turf_in_reactor(src.loc))
 			if(r.adopt_part(src))
@@ -174,18 +167,43 @@ included:
 	overlays=null
 	if(!associated_reactor)
 		return
+		
+		
+	if(  locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, NORTH) )
+		overlays+=image(icon, src,"fuelrod_overlay_N-off")
+	if( locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, SOUTH) )
+		overlays+=image(icon, src,"fuelrod_overlay_S-off")
+	if( locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, EAST) )
+		overlays+=image(icon, src,"fuelrod_overlay_E-off")
+	if( locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, WEST) )
+		overlays+=image(icon, src,"fuelrod_overlay_W-off")
+		
+		
+		
 	var/obj/machinery/fissionreactor/fissionreactor_fuelrod/CFR= locate(/obj/machinery/fissionreactor/fissionreactor_fuelrod) in get_step(src, NORTH)
-	if( CFR?.adjacencybonus>0 )
-		overlays+=overlay_N
+	if( CFR )
+		overlays+=image(icon, src,"fuelrod_overlay_N[ (CFR.adjacencybonus<=0 || adjacencybonus<=0) ? "-off" : ""  ]")  
 	CFR= locate(/obj/machinery/fissionreactor/fissionreactor_fuelrod) in get_step(src, SOUTH)
-	if( CFR?.adjacencybonus>0 )
-		overlays+=overlay_S
+	if( CFR )
+		overlays+=image(icon, src,"fuelrod_overlay_S[ (CFR.adjacencybonus<=0 || adjacencybonus<=0) ? "-off" : ""  ]")  
 	CFR= locate(/obj/machinery/fissionreactor/fissionreactor_fuelrod) in get_step(src, EAST)
-	if( CFR?.adjacencybonus>0 )
-		overlays+=overlay_E
+	if( CFR )
+		overlays+=image(icon, src,"fuelrod_overlay_E[ (CFR.adjacencybonus<=0 || adjacencybonus<=0) ? "-off" : ""  ]")  
 	CFR= locate(/obj/machinery/fissionreactor/fissionreactor_fuelrod) in get_step(src, WEST)
-	if( CFR?.adjacencybonus>0 )
-		overlays+=overlay_W
+	if( CFR )
+		overlays+=image(icon, src,"fuelrod_overlay_W[ (CFR.adjacencybonus<=0 || adjacencybonus<=0) ? "-off" : ""  ]")  
+
+		
+	if( locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, NORTHEAST) )
+		overlays+=image(icon, src,"fuelrod_overlay_NE-off")
+	if( locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, SOUTHEAST) )
+		overlays+=image(icon, src,"fuelrod_overlay_SE-off")
+	if( locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, NORTHWEST) )
+		overlays+=image(icon, src,"fuelrod_overlay_NW-off")
+	if( locate(/obj/machinery/fissionreactor/fissionreactor_controlrod) in get_step(src, SOUTHWEST) )
+		overlays+=image(icon, src,"fuelrod_overlay_SW-off")
+		
+		
 
 
 /obj/machinery/fissionreactor/fissionreactor_fuelrod/proc/get_reactivity()
