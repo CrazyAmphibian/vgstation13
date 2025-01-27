@@ -82,6 +82,15 @@ included:
 	if(  locate(/obj/machinery/atmospherics/unary/fissionreactor_coolantport) in get_step(src, WEST) )
 		dirs|=WEST	
 		
+	if(  locate(/obj/machinery/fissioncontroller) in get_step(src, NORTH) )
+		dirs|=NORTH
+	if(  locate(/obj/machinery/fissioncontroller) in get_step(src, SOUTH) )
+		dirs|=SOUTH
+	if(  locate(/obj/machinery/fissioncontroller) in get_step(src, EAST) )
+		dirs|=EAST
+	if(  locate(/obj/machinery/fissioncontroller) in get_step(src, WEST) )
+		dirs|=WEST	
+		
 	overlays+=image(icon, src,"coonantpipeoverlay")	
 	icon_state="case_[dirs]"
 
@@ -137,8 +146,8 @@ included:
 
 /obj/machinery/fissioncontroller
 	name="fission reactor controller"
-	icon='icons/obj/fissionreactor/controller.dmi'
-	icon_state="control_noreactor"
+	icon='icons/obj/fissionreactor/reactorcase.dmi' // 'icons/obj/fissionreactor/controller.dmi'
+	icon_state="case" // "control_noreactor"
 	idle_power_usage = 500
 	active_power_usage = 500
 	density =1
@@ -162,6 +171,11 @@ included:
 		if(r.turf_in_reactor(src.loc))
 			if(r.adopt_part(src))
 				break
+	update_icon()
+	for(var/obj/structure/fission_reactor_case/part in range(src,1) )
+		part.update_icon()
+	for(var/obj/machinery/atmospherics/unary/fissionreactor_coolantport/part in range(src,1) )
+		part.update_icon()	
 				
 				
 /obj/machinery/fissioncontroller/Destroy()
@@ -439,22 +453,56 @@ included:
 	
 
 /obj/machinery/fissioncontroller/update_icon()
-	icon_state="control"
-	if(!powered())
-		icon_state="control0"
-	else if(stat & BROKEN)
-		icon_state="controlb"
-	else if(!associated_reactor)
-		icon_state="control_noreactor"
-	else if(associated_reactor.temperature>=FISSIONREACTOR_DANGERTEMP || associated_reactor.SCRAM)
-		icon_state="control_danger"
-	else if(!associated_reactor.fuel)
-		icon_state="control_nofuel"
-	else if(associated_reactor.fuel.life <=0)
-		icon_state="control_depleted"
-	else if(!associated_reactor.considered_on())
-		icon_state="control_idle"
+	overlays=null
+	var/dirs=0
+	if(  locate(/obj/structure/fission_reactor_case) in get_step(src, NORTH) )
+		dirs|=NORTH
+	if(  locate(/obj/structure/fission_reactor_case) in get_step(src, SOUTH) )
+		dirs|=SOUTH
+	if(  locate(/obj/structure/fission_reactor_case) in get_step(src, EAST) )
+		dirs|=EAST
+	if(  locate(/obj/structure/fission_reactor_case) in get_step(src, WEST) )
+		dirs|=WEST
+		
+	if(  locate(/obj/machinery/atmospherics/unary/fissionreactor_coolantport) in get_step(src, NORTH) )
+		dirs|=NORTH
+	if(  locate(/obj/machinery/atmospherics/unary/fissionreactor_coolantport) in get_step(src, SOUTH) )
+		dirs|=SOUTH
+	if(  locate(/obj/machinery/atmospherics/unary/fissionreactor_coolantport) in get_step(src, EAST) )
+		dirs|=EAST
+	if(  locate(/obj/machinery/atmospherics/unary/fissionreactor_coolantport) in get_step(src, WEST) )
+		dirs|=WEST	
+		
+	if(  locate(/obj/machinery/fissioncontroller) in get_step(src, NORTH) )
+		dirs|=NORTH
+	if(  locate(/obj/machinery/fissioncontroller) in get_step(src, SOUTH) )
+		dirs|=SOUTH
+	if(  locate(/obj/machinery/fissioncontroller) in get_step(src, EAST) )
+		dirs|=EAST
+	if(  locate(/obj/machinery/fissioncontroller) in get_step(src, WEST) )
+		dirs|=WEST	
+		
+	icon_state="case_[dirs]"
 	
+
+
+
+	var/overlay_icon="control"
+	if(!powered())
+		overlay_icon="control0"
+	else if(stat & BROKEN)
+		overlay_icon="controlb"
+	else if(!associated_reactor)
+		overlay_icon="control_noreactor"
+	else if(associated_reactor.temperature>=FISSIONREACTOR_DANGERTEMP || associated_reactor.SCRAM)
+		overlay_icon="control_danger"
+	else if(!associated_reactor.fuel)
+		overlay_icon="control_nofuel"
+	else if(associated_reactor.fuel.life <=0)
+		overlay_icon="control_depleted"
+	else if(!associated_reactor.considered_on())
+		overlay_icon="control_idle"
+	overlays+=image('icons/obj/fissionreactor/controller.dmi', src,overlay_icon)
 
 /obj/machinery/fissioncontroller/examine()
 	..()
@@ -673,6 +721,16 @@ included:
 		dirs|=EAST
 	if(  locate(/obj/machinery/atmospherics/unary/fissionreactor_coolantport) in get_step(src, WEST) )
 		dirs|=WEST	
+		
+	if(  locate(/obj/machinery/fissioncontroller) in get_step(src, NORTH) )
+		dirs|=NORTH
+	if(  locate(/obj/machinery/fissioncontroller) in get_step(src, SOUTH) )
+		dirs|=SOUTH
+	if(  locate(/obj/machinery/fissioncontroller) in get_step(src, EAST) )
+		dirs|=EAST
+	if(  locate(/obj/machinery/fissioncontroller) in get_step(src, WEST) )
+		dirs|=WEST	
+		
 	icon_state="case_[dirs]"
 	
 /obj/structure/fission_reactor_case/examine()

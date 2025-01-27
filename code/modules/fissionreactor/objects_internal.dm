@@ -300,6 +300,7 @@ included:
 	to_chat(usr,"There is a maitinance hatch at the top, it is [hatchopen?"open":"screwed shut"].")
 	
 /obj/machinery/fissionreactor/fissionreactor_fuelrod/inert/update_icon()
+	..()
 	icon_state="fuelrod-inert_off"
 	if(associated_reactor)
 		icon_state="fuelrod-inert[associated_reactor.considered_on() ? "_active" : ""]"
