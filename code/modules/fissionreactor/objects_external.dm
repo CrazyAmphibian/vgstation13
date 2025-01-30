@@ -163,10 +163,17 @@ included:
 	var/lastupdatetick=0
 	var/displaycoolantinmoles=FALSE
 	var/tempdisplaymode=0
+	var/list/temperature_history[]
+	var/max_temp_history=15 // every 2 seconds will plot it. how many points on the graph.
 
 /obj/machinery/fissioncontroller/New()
 	..()
-	interface=new /datum/html_interface(src,"Fission reactor controller",590,340,"<link rel='stylesheet' href='fission.css'>")
+	var/tl[max_temp_history]
+	temperature_history=tl
+	for(var/i=1, i<=max_temp_history,i++)
+		temperature_history[i]=20.0 //default it to 20K at all points
+	
+	interface=new /datum/html_interface(src,"Fission reactor controller",500,290,"<link rel='stylesheet' href='fission.css'>")
 	for(var/datum/fission_reactor_holder/r in fissionreactorlist)
 		if(r.turf_in_reactor(src.loc))
 			if(r.adopt_part(src))
@@ -305,9 +312,9 @@ included:
 	var/estimatedtimeleft =""
 	if(associated_reactor.fuel)
 		if(associated_reactor.fuel.life<=0)
-			estimatedtimeleft="DO:NE"
+			estimatedtimeleft="Expired"
 		else if(associated_reactor.fuel_rods_affected_by_rods==associated_reactor.fuel_rods.len && associated_reactor.control_rod_insertion>=1.0)
-			estimatedtimeleft="HA:LT" //avoids a div by 0
+			estimatedtimeleft="Halted" //avoids a div by 0
 		else
 			var/secs=associated_reactor.fuel.lifetime
 			secs/=associated_reactor.fuel_rods.len - (associated_reactor.fuel_rods_affected_by_rods*associated_reactor.control_rod_insertion)
@@ -318,25 +325,23 @@ included:
 			//if(mins>99)
 			//	mins=99
 			//	secs=99
-			estimatedtimeleft="[mins]:[num2text(secs,2,10)]"
+			estimatedtimeleft="[mins]m [secs]s"
 	else	
-		estimatedtimeleft="NO:NE"
+		estimatedtimeleft="None"
 
-	var/rodinsertpercent= floor(associated_reactor.control_rod_target*100+0.5)
+	var/rodtargettpercent= floor(associated_reactor.control_rod_target*100+0.5)
+	var/rodinsertpercent= floor(associated_reactor.control_rod_insertion*100+0.5)
 
-	var/status="operational"
-	var/statuscolor="lime"
+
+	var/status="<span class='status_ok'>OKAY</span>"
 	if(associated_reactor.temperature>=FISSIONREACTOR_DANGERTEMP)
-		status="danger"
-		statuscolor="red"
+		status="<span class='status_danger'>[associated_reactor.temperature>=FISSIONREACTOR_MELTDOWNTEMP ? "RUN" : "DANGER"]</span>"
 	else if(!associated_reactor.fuel)
-		status="no fuel"
-		statuscolor="blue"
+		status="<span class='status_nofuel'>No Fuel</span>"
 	else if(associated_reactor.fuel.life<=0)
-		status="depleated"
-		statuscolor="blue"
+		status="<span class='status_done'>Depleated</span>"
 	else if (!associated_reactor.considered_on())
-		status="standby"
+		status="<span class='status_halt'>Standby</span>"
 	
 	var/coretemppercent= associated_reactor.temperature / FISSIONREACTOR_MELTDOWNTEMP
 	coretemppercent=max(min(coretemppercent,1),0)
@@ -350,103 +355,103 @@ included:
 	var/speed=associated_reactor.fuel_rods.len - (associated_reactor.fuel_rods_affected_by_rods*associated_reactor.control_rod_insertion)
 	speed=floor(speed*100+0.5)
 	
-	var/fueltxt="EJECT FUEL"
-	if(associated_reactor.considered_on())
-		fueltxt="FUEL LOCKED"
-	else if (!associated_reactor.fuel)
-		fueltxt="NO FUEL"
+
+	var/highesttemp=0.0
+	var/graphstring=""
+	for(var/i=1,i<=temperature_history.len,i++)
+		highesttemp=max(highesttemp,temperature_history[i])
+		var y=(1.0-( (temperature_history[i] || 20.0) /FISSIONREACTOR_MELTDOWNTEMP))*100
+		var x=(1.0-((i-1)/(temperature_history.len-1)))*350
+		graphstring+=i==1 ? "M[x] [y]" : "L[x] [y]"
 	
-	var/coolant_tempdisplay="[associated_reactor.coolant.temperature]K"
-	var/reactor_tempdisplay="[associated_reactor.temperature]K"
+	
+	
+	var/coolant_tempdisplay="[floor(associated_reactor.coolant.temperature)]K"
+	var/reactor_tempdisplay="[floor(associated_reactor.temperature)]K"
+	var/reactor_highesttempdisplay="[floor(highesttemp)]K"
 	if(tempdisplaymode==1) //C
-		coolant_tempdisplay="[associated_reactor.coolant.temperature-273.15]°C"
-		reactor_tempdisplay="[associated_reactor.temperature-273.15]°C"
+		coolant_tempdisplay="[floor(associated_reactor.coolant.temperature-273.15)]°C"
+		reactor_tempdisplay="[floor(associated_reactor.temperature-273.15)]°C"
+		reactor_highesttempdisplay="[floor(highesttemp-273.15)]°C"
 	else if(tempdisplaymode==2) //F (because this is really old, outdated tech (fission is soooo last millenium))
-		coolant_tempdisplay="[1.8*associated_reactor.coolant.temperature-459.67]°F"
-		reactor_tempdisplay="[1.8*associated_reactor.temperature-459.67]°F"
+		coolant_tempdisplay="[floor(1.8*associated_reactor.coolant.temperature-459.67)]°F"
+		reactor_tempdisplay="[floor(1.8*associated_reactor.temperature-459.67)]°F"
+		reactor_highesttempdisplay="[floor(1.8*highesttemp-459.67)]°F"
 	else if(tempdisplaymode==3) //R (because muh absolute scale)
-		coolant_tempdisplay="[1.8*associated_reactor.coolant.temperature]R"
-		reactor_tempdisplay="[1.8*associated_reactor.temperature]R"
-	
-	
-	var/temp_suffix=""
-	if(associated_reactor.temperature>FISSIONREACTOR_MELTDOWNTEMP)
-		temp_suffix="_danger"
-	else if(associated_reactor.temperature>FISSIONREACTOR_DANGERTEMP)
-		temp_suffix="_caution"
-		
-	var/temp_suffix_C=""
-	if(associated_reactor.coolant.temperature>FISSIONREACTOR_MELTDOWNTEMP)
-		temp_suffix_C="_danger"
-	else if(associated_reactor.coolant.temperature>FISSIONREACTOR_DANGERTEMP)
-		temp_suffix_C="_caution"	
+		coolant_tempdisplay="[floor(1.8*associated_reactor.coolant.temperature)]R"
+		reactor_tempdisplay="[floor(1.8*associated_reactor.temperature)]R"
+		reactor_highesttempdisplay="[floor(1.8*highesttemp)]R"
 		
 	
-	aychteeemel_string={"<table style='width:100%;height:100%;'>
-<tr>
-<td style='width:90%;'>
+	aychteeemel_string={"<table style='border-collapse:initial;'>
+<tr><td style='vertical-align:top;'>
 
-	<table style='height:100%;width:97.5%'>
-	<tr><td style='width:100%;text-align:center;'>
-		<span class='bar_back' id='reactor_fuelbar_back'>
-			<span class='bar_overlay' id='reactor_fuelbar_overlay' style='width:[fuelusepercent]%'>
-				
-			</span>
-			<span style='position:relative;top:-1.5em;font-size:2em;font-weight:bold;color:black;text-shadow: 0px 0px 3px white;'>[fuelusepercent]% ([estimatedtimeleft])</span>
-		</span>
-		fuel life remaining
-	</td></tr>
+<div style='width:350px;'>
+<div>
+<svg id='TempGraph' width=350 height=100>
 	
-	<tr><td style='width:100%;text-align:center;'>
-		<span class='bar_back' id='reactor_tempbar_back'>
-			<span class='bar_overlay' id='reactor_tempbar_overlay[temp_suffix]'  style='width:[coretemppercent]%'>
-				
-			</span>
-			<span style='position:relative;top:-1.5em;font-size:2em;font-weight:bold;color:black;text-shadow: 0px 0px 3px white;'>[reactor_tempdisplay]</span>
-		</span>
-		core temp <a href='?src=\ref[interface];action=swap_tempunit'><span class='button'>change unit</span></a>
-	</td></tr>
+
+	<path d='M0 82 L350 82' style='stroke:#077;'/>
+	<path d='M0 18 L350 18' style='stroke:#700;'/>
 	
-	<tr><td style='width:100%;text-align:center;'>
-		<span class='bar_back' id='reactor_coolantbar_back'>
-			<span class='bar_overlay' id='reactor_coolantbar_overlay[temp_suffix_C]' style='width:[coolanttemppercent]%'>
-				
-			</span>
-			<span style='position:relative;top:-1.5em;font-size:1.25em;font-weight:bold;color:black;text-shadow: 0px 0px 3px white;'>[coolant_tempdisplay] [displaycoolantinmoles? "& [associated_reactor.coolant.total_moles] moles" : "@ [associated_reactor.coolant.pressure]kPa"]</span> 
-		</span> 
-		coolant <a href='?src=\ref[interface];action=swap_gasunit'><span class='button'>[displaycoolantinmoles ? "in moles" : "in kPa"]</span></a>
-	</td></tr> 
-
-	<tr><td style='font-size:2em;font-weight:bold;text-align:center;'><span style='text-align:right;'>reactor status:<span> <span style='text-align:left;color:[statuscolor];'>[status]</span></td></tr>
-	<tr><td><a href='?src=\ref[interface];action=eject'><span class='button[(associated_reactor.considered_on() || (!associated_reactor.fuel)) ? "_locked" : ""]' style='font-size:150%;font-weight:bold;'>[fueltxt]</span></a></td></tr>
-
-	<tr><td style='font-size:125%;'><span style='width:50%;display:inline-block;text-align:left;'>fuel reactivity:[reactivity]%</span><span style='width:50%;display:inline-block;text-align:right'>fuel rods:[associated_reactor.fuel_rods.len]</span></td></tr>
-	<tr><td style='font-size:125%;'><span style='width:50%;display:inline-block;text-align:left;'>fissile speed:[speed]%</span><span style='width:50%;display:inline-block;text-align:right;margin-bottom:1em;'>control rods:[associated_reactor.control_rods.len]</span></td></tr>
-	</table>
-
-</td>
-<td>
-
-	<table style='width:100%;height:100%;'>
-	<tr><td style='text-align:center;'>
-		
-		<span class='fuelrod_text_bg' style='font-size:1.5em;border-bottom:none;'>control<br>rods</span>
-		<a href='?src=\ref[interface];action=rods_up'><span class='reactor_controlrod_movebutton'>\[UP\]</span></a>
-		<span id='fuelrod_gradient' style='width:100%;height:10em;display:block;'>
-			<span style='background-color:#222;width:40%;height:[rodinsertpercent]%;display:block;position:relative;left:30%;'></span>
-		</span>
-		<a href='?src=\ref[interface];action=rods_down'><span class='reactor_controlrod_movebutton'>\[DN\]</span></a>
-		<span class='fuelrod_text_bg' style='font-size:2em;border-top:none;'>[rodinsertpercent]%</span>
-		
-		
-		
-	</td></tr>
-	<tr><td> <a href='?src=\ref[interface];action=SCRAM'><span id='reactor_scrambutton[associated_reactor.SCRAM ? "_on" : ""]'>SCRAM</span></a> </td></tr>
-	</table>
+	
+	<path d='M0 [100*(1-highesttemp/FISSIONREACTOR_MELTDOWNTEMP)] L350 [100*(1-highesttemp/FISSIONREACTOR_MELTDOWNTEMP)]' style='stroke:#770;'> </path>
+	
+	<path d='[graphstring]'> </path>
+	
+	<path d='M0 0 L350 0 L350 100 L0 100 Z' style='stroke:#777;stroke-width:4px;'/>
+</svg>
+</div>
 
 
-</td>
-</tr>
+<div style="display:inline-block;width:100%;">
+<span style="width:50%;display:inline-block;">Temperature:&nbsp;[coolant_tempdisplay]</span><span style="width:50%;display:inline-block;text-align:right;">Recent Peak:&nbsp;[reactor_highesttempdisplay]</span>
+<span style="width:50%;display:inline-block;">Coolant:&nbsp;[reactor_tempdisplay]</span><span style="width:50%;display:inline-block;text-align:right;">[displaycoolantinmoles ? "[associated_reactor.coolant.total_moles]mol" : "[associated_reactor.coolant.pressure]kPa" ]</span>
+</div>
+
+<br>
+<br>
+
+<div style="display:inline-block;width:100%;">
+<span style="width:50%;display:inline-block;">Fuel Life:&nbsp;[fuelusepercent]%</span><span style="width:50%;display:inline-block;text-align:right;">Reactivity:&nbsp;[reactivity]%</span>
+<span style="width:50%;display:inline-block;">Est. Time:&nbsp;[estimatedtimeleft]</span><span style="width:50%;display:inline-block;text-align:right;">Fissile Rate:[speed]%</span>
+<span style="width:50%;display:inline-block;">Status:&nbsp;[status]</span><span style="width:50%;display:inline-block;text-align:right;">Fuel: [associated_reactor.fuel_rods.len]&nbsp;&nbsp;Ctrl:[associated_reactor.control_rods.len]</span>
+</div>
+
+<br>
+<br>
+
+<div style='display:inline-block;width:100%;'>
+<a href='?src=\ref[interface];action=eject' [(!associated_reactor.fuel ||  associated_reactor.considered_on()) ? "class='blocked'" : ""]>\[EJECT FUEL\]</a>&nbsp;&nbsp;<a href='?src=\ref[interface];action=swap_tempunit'>\[TEMPERATURE\]</a>&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=rods_up'>\[RODS UP\]</a> <br>
+&nbsp;<a href='?src=\ref[interface];action=SCRAM' id='scram' style='[associated_reactor.SCRAM ? "animation-name:scramon;" : "" ]'>\[&nbsp;SCRAM&nbsp;]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=swap_gasunit'>\[COOLANT\]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=rods_down'>\[RODS DOWN\]</a>
+</div>
+
+</div>
+
+
+</td><td style='vertical-align:top;'>
+
+<div style='width:120px;'>
+<div style='margin-left:10px;'>
+<svg id='ControlRods' width=100 height=200>
+	<rect x='28' y='0' width='43' height='[associated_reactor.control_rod_target*200]' fill='#070'/>
+	<rect x='33' y='0' width='33' height='[associated_reactor.control_rod_insertion*200]' fill='#0f0'/>
+	
+	<path d='M0 0 L100 0 L100 200 L0 200 Z' style='stroke:#777;stroke-width:4px;'/>
+</svg>
+</div>
+
+
+<div>
+&nbsp;Control Rods<br>
+<span>Insertion:</span><span style="text-align:right;float:right;">[rodinsertpercent]%</span>
+<span>Target:</span><span style="text-align:right;float:right;">[rodtargettpercent]%</span>
+</div>
+
+
+</div>
+
+</td></tr>
 </table>"}
 	
 	interface.updateLayout(aychteeemel_string)
@@ -550,9 +555,14 @@ included:
 			interface.hide(interface._getClient(interface.clients[C]))
 	lastupdatetick=world.time
 
+/obj/machinery/fissioncontroller/proc/add_history_temp(var/temp=20.0)
+	temperature_history.Insert(1,temp)
+	temperature_history.len=max_temp_history
+	
 /obj/machinery/fissioncontroller/process()
 	update_icon()
 	if(!associated_reactor) //no reactor? no processing to be done.
+		add_history_temp()
 		return	
 		
 	ask_remakeUI(TRUE)
@@ -568,11 +578,12 @@ included:
 				say("Reactor lost power, engaging SCRAM.", class = "binaryradio")
 				playsound(src,'sound/machines/fission/rc_scram.ogg',50)
 				associated_reactor.SCRAM=TRUE
+		add_history_temp()		
 		return
 	else
 		poweroutagemsg=FALSE
 	
-
+	add_history_temp(associated_reactor.temperature)
 
 
 	if(associated_reactor.fuel?.life<=0)
