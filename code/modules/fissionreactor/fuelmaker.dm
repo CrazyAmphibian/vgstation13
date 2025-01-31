@@ -19,6 +19,7 @@ the machine which makes fuel rods have things in them.
 	var/obj/item/weapon/reagent_containers/container=null
 	var/datum/html_interface/interface
 	var/pipename="isotopic separational combiner"
+	var/reagent_wiki=null //stores a reagent id. if not null, displays some info instead of the regular ui.
 	
 /obj/machinery/atmospherics/unary/fissionfuelmaker/proc/get_pipe_dir() //the atmos gods demand a sacrifice.
 	return dir	
@@ -26,7 +27,7 @@ the machine which makes fuel rods have things in them.
 /obj/machinery/atmospherics/unary/fissionfuelmaker/New()
 	..()
 	src.buildFrom(usr,src)
-	interface=new /datum/html_interface(src,"isotopic separational combiner",550,500,"<link rel='stylesheet' href='fission.css'>")	
+	interface=new /datum/html_interface(src,"isotopic separational combiner",500,300,"<link rel='stylesheet' href='nanotrasen.css'>")	
 	buildui()
 
 /obj/machinery/atmospherics/unary/fissionfuelmaker/attackby(var/obj/item/I,var/mob/user)
@@ -104,8 +105,8 @@ the machine which makes fuel rods have things in them.
 		return
 
 	interface.show(user)
-	register_asset("fission.css", 'code/modules/fissionreactor/fission.css')
-	send_asset(user, "fission.css")
+	register_asset("nanotrasen.css", 'code/modules/html_interface/nanotrasen/nanotrasen.css')
+	send_asset(user, "nanotrasen.css")
 	register_asset("uiBg.png", 'code/modules/html_interface/nanotrasen/uiBg.png')
 	send_asset(user, "uiBg.png")
 	
@@ -156,6 +157,10 @@ the machine which makes fuel rods have things in them.
 			var/error=transfer_from_fuelrod( href_list["reagent"] , text2num(href_list["amount"]) || 0 )
 			if(error)
 				to_chat(hclient.client,"could not transfer reagent: [error]!")
+		else if(href_list["dir"]=="goto_wiki")
+			reagent_wiki=href_list["reagent"]
+	if(href_list["dir"]=="exit_wiki")
+		reagent_wiki=null
 		
 	
 	ask_remakeUI()
@@ -164,7 +169,7 @@ the machine which makes fuel rods have things in them.
 /obj/machinery/atmospherics/unary/fissionfuelmaker/proc/transfer_from_fuelrod(var/reagent_id,var/amount)
 	if(!heldrod)
 		return "no fuel rod"
-	if(reagent_id==RADON)
+	if(reagent_id==RADON || reagent_id=="RADON")
 		if(air_contents)
 			var/actually_taken=heldrod.fueldata.take_shit_from(reagent_id,amount ,heldrod.fueldata.fuel)
 			if(!air_contents.gas[GAS_RADON])
@@ -186,7 +191,7 @@ the machine which makes fuel rods have things in them.
 /obj/machinery/atmospherics/unary/fissionfuelmaker/proc/transfer_to_fuelrod(var/reagent_id,var/amount)
 	if(!heldrod)
 		return "no fuel rod"
-	if(reagent_id==RADON)
+	if(reagent_id==RADON || reagent_id=="RADON")
 		if(air_contents)
 			var/avalible_gas=air_contents.gas[GAS_RADON] || 0 
 			amount=min(amount,avalible_gas,heldrod.units_of_storage-heldrod.fueldata.fuel.total_volume)
@@ -217,130 +222,80 @@ the machine which makes fuel rods have things in them.
 	var/html=""
 
 	var/current_rodamt=0
-	var/rodpercent=0
 	var/estimated_time=0
 	var/estimated_power=0
 	
-	var/list/allreagentlists=list() //stores the reagents of both, at least the id, which is the important one
-	
-	if(container)
-		for(var/datum/reagent/R in container.reagents.reagent_list)
-			allreagentlists+=R
-	
 	if(heldrod)
 		for(var/datum/reagent/R  in heldrod.fueldata.fuel.reagent_list)
-			var/add=TRUE
-			for(var/datum/reagent/R2 in allreagentlists)
-				if(R2.id==R.id)
-					add=FALSE
-					break
-			if(add)
-				allreagentlists+=R
 			current_rodamt+=R.volume
-				
-		rodpercent=current_rodamt/heldrod.units_of_storage
-		rodpercent=floor(rodpercent*100+0.5)
-		
+					
 		estimated_time=heldrod.fueldata.lifetime
 		if(heldrod.fueldata.absorbance>heldrod.fueldata.wattage)
 			if(heldrod.fueldata.wattage>0)
 				estimated_time/= (heldrod.fueldata.absorbance-heldrod.fueldata.wattage)/heldrod.fueldata.wattage
 			else
-				estimated_time="NEVER"
+				estimated_time="never"
 		else
 			estimated_power=heldrod.fueldata.wattage - heldrod.fueldata.absorbance		
 				
 				
+	if (reagent_wiki)
+		var/datum/reagent/sample=chemical_reagents_list[reagent_wiki]
+		var/byproducts="unknown"
+		if(sample)
+			var/list/prod=sample.irradiate()
+			byproducts=""
+			for(var/id in prod)
+				var/datum/reagent/prd=chemical_reagents_list[id]
+				if(prd)
+					byproducts+="[prd.name]:&nbsp;[floor(prod[id]*100)]% "
+				
+		html={"<div style='margin-left:5px;margin-right:5px;'><br>
+			<a href='?src=\ref[interface];dir=exit_wiki'>Return</a><br>
+			
+			<b>[sample ? sample.name : "unknown"]</b><br>
+			
+			<i>[sample? sample.description : "unable to identify reagent"]</i><br>
+			<hr>
+			Power: [sample? sample.fission_power - sample.fission_absorbtion : "?"] Watts<br>
+			Lifespan: [sample? (sample.fission_time || "non-fissile") : "?"] [sample? (sample.fission_time!=null ? "Seconds" : "") : "Seconds"]<br>
+			
+			Products: [byproducts]
+			
+			
+		</div>"}
+	else
+	
+		html={"<div style='margin-left:5px;margin-right:5px;'>
+		<div >
+		Baseline fuel lifespan: [floor(estimated_time/60)] minutes <br>
+		Baseline heat generation: [floor(estimated_power)] Watts
+		</div>"}
 
-	if(air_contents)
 
-		var/add=TRUE
-		for(var/datum/reagent/R  in allreagentlists)
-			if(R.id==RADON)
-				add=FALSE
-				break
+		html+={"<hr> <table style='width:100%;'><tr><td> Fuel Rod: [ heldrod ? "[heldrod.name]  \[[current_rodamt]/[heldrod.units_of_storage]\]" : "none" ] <a href='?src=\ref[interface];action=eject_fuel'>Eject</a></td> <td style='text-align:right;'>Transfer To Container</td> </tr>"}
+	
+		if(heldrod)
+			for(var/datum/reagent/R  in heldrod.fueldata.fuel.reagent_list)
+				html+="<tr><td> [R.name] <a href='?src=\ref[interface];reagent=[R.id];dir=goto_wiki'>(?)</a> [R.volume] unit[R.volume!=1?"s":""] </td>"
+				html+="<td style='text-align:right;'><a  <a href='?src=\ref[interface];reagent=[R.id];dir=from_fuel;amount=1'>1u</a> <a href='?src=\ref[interface];reagent=[R.id];dir=from_fuel;amount=5'>5u</a> <a href='?src=\ref[interface];reagent=[R.id];dir=from_fuel;amount=10'>10u</a> <a href='?src=\ref[interface];reagent=[R.id];dir=from_fuel;amount=25'>25u</a> <a href='?src=\ref[interface];reagent=[R.id];dir=from_fuel;amount=999999'>All</a></td></tr>"
 
-		if(add && air_contents.gas[GAS_RADON])
-			var/datum/reagent/radon_to_add = new /datum/reagent
-			radon_to_add.volume=air_contents.gas[GAS_RADON] || 0
-			radon_to_add.id=RADON  
-			radon_to_add.name="Radon"
-			allreagentlists+=radon_to_add
+
+		html+={"</table><hr><table style='width:100%;'><tr><td>
+Container: [container ? container : "none"][container ? " \[[container.reagents.total_volume]/[container.volume]\]" : ""] <a href='?src=\ref[interface];action=eject_cont'>Eject</a></td><td style='text-align:right;'> Transfer To Fuel Rod</td> </tr>"}
+
+		if(container)
+			for(var/datum/reagent/R in container.reagents.reagent_list)
+				html+="<tr><td> [R.name] <a href='?src=\ref[interface];reagent=[R.id];dir=goto_wiki'>(?)</a> [R.volume] unit[R.volume!=1?"s":""] </td>"
+				html+="<td style='text-align:right;'><a  <a href='?src=\ref[interface];reagent=[R.id];dir=to_fuel;amount=1'>1u</a> <a href='?src=\ref[interface];reagent=[R.id];dir=to_fuel;amount=5'>5u</a> <a href='?src=\ref[interface];reagent=[R.id];dir=to_fuel;amount=10'>10u</a> <a href='?src=\ref[interface];reagent=[R.id];dir=to_fuel;amount=25'>25u</a> <a href='?src=\ref[interface];reagent=[R.id];dir=to_fuel;amount=999999'>All</a></td></tr>"
+		if(air_contents)
+			if(air_contents.gas[GAS_RADON])
+				html+="<tr><td> Radon <a href='?src=\ref[interface];reagent=RADON;dir=goto_wiki'>(?)</a> [air_contents.gas[GAS_RADON]] units </td>"
+				html+="<td style='text-align:right;'><a  <a href='?src=\ref[interface];reagent=RADON;dir=to_fuel;amount=1'>1u</a> <a href='?src=\ref[interface];reagent=RADON;dir=to_fuel;amount=5'>5u</a> <a href='?src=\ref[interface];reagent=RADON;dir=to_fuel;amount=10'>10u</a> <a href='?src=\ref[interface];reagent=RADON;dir=to_fuel;amount=25'>25u</a> <a href='?src=\ref[interface];reagent=RADON;dir=to_fuel;amount=999999'>All</a></td></tr>"
+	
 
 	
-	html={"<table style='width:100%;height:100%;'>
-<tr><td>
-
-<div id='fuelbar'>
-
-<span id='fuelbar_overlay' style='width:[rodpercent]%'></span> <!--apply storage left in the width percentage-->
-
-<span id='fuelbar_text'>[ heldrod ? "[current_rodamt]/[heldrod.units_of_storage]" : "NO FUEL ROD" ]</span>
-
-</div>
-
-</td></tr>
-<tr><td>
-
-<div class='fuelstats'>
-Baseline fuel lifespan: <i>[floor(estimated_time/60)] minutes </i><br>
-Baseline heat generation: <i>[floor(estimated_power)] Watts</i>
-</div>
-
-</td></tr>
-<tr><td>
-<br>
-<a href='?src=\ref[interface];action=eject_fuel'><span class='button[heldrod ? "" : "_locked"]'>Eject fuel rod</span></a>
-<br><br>
-</td></tr>
-
-
-
-<tr><td>
-
-<span style='width:100%;height:5px;background-color:#ccc;display:inline-block;margin-bottom:1em;'> </span>
-
-<span style='font-size:115%;'>current container: [container ? container : "NONE"] <a href='?src=\ref[interface];action=eject_cont'><span class='button[container ? "" : "_locked"]'>EJECT</span></a><br>
-[container? container.reagents.total_volume : 0]/[ container? container.volume : 0] units</span>
-<br><br>
-
-</td></tr>
-<tr><td>
-
-<table id='fuellisting' style='width:100%;text-align:center;line-height:200%;'>
-	<tr style='font-size:125%;'>
-		<th>material</th>
-		<th>to add</th>
-		<th>available</th>
-	</tr>"}
-	
-	var/list/sortedlist=list()
-	
-	for(var/i=1,i<=allreagentlists.len,i++) //bad performance scaling, but it shouldn't matter *too* much given the circumstances.
-		var/datum/reagent/R=allreagentlists[i]
-		var/spot=sortedlist.len+1
-		for(var/i2=1,i2<=sortedlist.len,i2++)
-			var/datum/reagent/R2 =sortedlist[i2]
-			if(sorttext(R.name,R2.name)==1)
-				spot=i2
-				break
-		sortedlist.Insert(spot,R)	
-	
-	for(var/datum/reagent/R in sortedlist)
-		var/avalibstr="[container ? (container.reagents.amount_cache[R.id] || 0) : 0]"
-		if (R.id==RADON)
-			avalibstr=air_contents.gas[GAS_RADON] || 0
-		html+={"	<tr style='font-size:90%;'>
-			<td>[R.name]</td>
-			<td style='white-space:nowrap;'>  <a href='?src=\ref[interface];reagent=[R.id];dir=from_fuel;amount=25'><span class='button'>---</span></a> <a href='?src=\ref[interface];reagent=[R.id];dir=from_fuel;amount=5'><span class='button'>--</span></a> <a href='?src=\ref[interface];reagent=[R.id];dir=from_fuel;amount=1'><span class='button'>-</span></a> [heldrod ? (heldrod.fueldata.fuel.amount_cache[R.id] || 0) : 0] <a href='?src=\ref[interface];reagent=[R.id];dir=to_fuel;amount=1'><span class='button'>+</span></a> <a href='?src=\ref[interface];reagent=[R.id];dir=to_fuel;amount=5'><span class='button'>++</span></a> <a href='?src=\ref[interface];reagent=[R.id];dir=to_fuel;amount=25'><span class='button'>+++</span></a> </td>
-			<td>[avalibstr]</td>
-			<tr>"}
-	
-	
-	html+={"</table>
-
-</td></tr>
-</table>"}
+		html+={"</table></div>"}
 
 
 	interface.updateLayout(html)
