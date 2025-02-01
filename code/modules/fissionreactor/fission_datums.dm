@@ -649,11 +649,21 @@ datums for the fission reactor, which includes the fuel and reactor
 	if(!fuel)
 		return products
 	
+	var/list/normal_reagents=new()
+	for(var/datum/reagent/R in fuel.reagent_list)
+		normal_reagents[R.id]=fuel.amount_cache[R.id]
+	var/highest=0
+	for(var/Rid in normal_reagents)
+		highest=max(highest,normal_reagents[Rid])
+	if(highest>0)
+		for(var/Rid in normal_reagents)
+			normal_reagents[Rid]/=highest
+		
 	for(var/datum/reagent/R in fuel.reagent_list)
 		var/reagamt=fuel.amount_cache[R.id] //reagent amount.
 		if (reagamt<=0) //skip reagents we don't have.
 			continue
-		var/fissionprods=R.irradiate()
+		var/fissionprods=R.irradiate(normal_reagents)
 		for(var/RID in fissionprods) //associative lists hurt my brain. don't think too hard about how they work, ok?
 			var/RCT=fissionprods[RID]
 			add_shit_to(RID, reagamt*RCT*(1.0-life),products) // we multiply the proportion of outputs by the amount of that fuel type, by the amount we actually processed.

@@ -265,11 +265,30 @@ the machine which makes fuel rods have things in them.
 			
 		</div>"}
 	else
-	
+		var/producttext="none"
+		if(heldrod)
+			var/list/temp_list=new()
+			producttext = heldrod.fueldata.fuel.reagent_list.len==0 ? "none" : ""
+			var/high=0
+			for(var/datum/reagent/R  in heldrod.fueldata.fuel.reagent_list)
+				temp_list[R.id]=R.volume
+				high=max(high,R.volume)
+			if (high>0)
+				for(var/i in temp_list)
+					temp_list[i]/=high
+			var/list/prods=new()		
+			for(var/datum/reagent/R  in heldrod.fueldata.fuel.reagent_list)
+				var/list/l=R.irradiate(temp_list)
+				for(var/regid in l)
+					prods[regid] = (prods[regid]==null ? 0 : prods[regid]) + l[regid]*R.volume
+			for(var/i in prods)
+				producttext+="[chemical_reagents_list[i]?.name ]:&nbsp;[prods[i]]&nbsp;units&emsp;"
+				
 		html={"<div style='margin-left:5px;margin-right:5px;'>
 		<div >
 		Baseline fuel lifespan: [floor(estimated_time/60)] minutes <br>
-		Baseline heat generation: [floor(estimated_power)] Watts
+		Baseline heat generation: [floor(estimated_power)] Watts <br>
+		<table><tr><td style='white-space: nowrap;'>Expected byproducts:&nbsp;</td><td>[producttext]</td></tr></table>
 		</div>"}
 
 

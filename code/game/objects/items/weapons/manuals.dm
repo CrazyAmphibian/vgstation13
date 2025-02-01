@@ -1705,12 +1705,6 @@ The design of a nuclear reactor is very important. build it wrong, and you may f
 	<td class="byproduct_display"><span class="reagent_lead" style="width:50%;">Pb</span><span class="reagent_uranium" style="width:20%;">U</span><span class="reagent_radium" style="width:20%;">Ra</span><span class="reagent_radon" style="width:10%;">Rn</span></td>
 </tr>
 <tr>
-	<td class="reagent_radium">Radium</td>
-	<td>5,000</td>
-	<td>1h 15m</td>
-	<td class="byproduct_display"> <span class="reagent_lead" style="width:40%;">Pb</span><span class="reagent_radon" style="width:40%;">Rn</span><span class="reagent_thalium" style="width:20%;">Tl</span>  </td>
-</tr>
-<tr>
 	<td class="reagent_radon">Radon</td>
 	<td>1,667</td>
 	<td>25m</td>
