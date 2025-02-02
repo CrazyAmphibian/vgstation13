@@ -1766,7 +1766,7 @@ var/global/list/charcoal_doesnt_remove=list(
 
 /datum/reagent/regenerate_calcium
 	name = "Regenerate Calcium"
-	description = "Highly irradiated calcium. For some reason it's actually quite helpful to ingest."
+	description = "Highly irradiated degenerate calcium whose structure has been altered, causing it to fuse and set bones with far more efficiency and grace than the original chemical, albeit with the cost of being extremely volatile once introduced into the body, not to mention its production process leaving it with lingering radioactivity."
 	id = REGENERATECALCIUM
 	density = 4.1
 	specheatcap = 0.15
@@ -1779,11 +1779,12 @@ var/global/list/charcoal_doesnt_remove=list(
 		return 1
 
 	if(ishuman(M))
+		M.apply_radiation(0.5, RAD_INTERNAL) //it is made in a reactor, after all.
 		var/mob/living/carbon/human/H = M
 		if(H.species.anatomy_flags & NO_BONES)
 			return
 
-		var/remaininghealing=3
+		var/remaininghealing=2
 		for(var/datum/organ/external/E in H.organs)
 			if(!E.is_organic())
 				continue
@@ -1795,6 +1796,10 @@ var/global/list/charcoal_doesnt_remove=list(
 						break
 
 			if(E.brute_dam<=E.max_damage*0.5)
-				E.status&= ~ORGAN_BROKEN //fixes broken limbs
+				if(E.status&ORGAN_BROKEN)
+					H.custom_pain("You feel a flash of pain as the bones in your [E.display_name] rapidly set into their correct place.",50)
+					playsound(H.loc, "fracture", 100, 1, -2)
+					H.pain_level +=100
+					E.status&= ~ORGAN_BROKEN //fixes broken limbs
 			if(!remaininghealing)
 				return 1
