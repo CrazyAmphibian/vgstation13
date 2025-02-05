@@ -6,10 +6,30 @@
 	/datum/rcd_schematic/con_airlock,
 	/datum/rcd_schematic/con_window,
 	)
+	var/current_menu="deconstruct"
+	var/list/schem_groups=null
+	var/list/settings //for stuff like window directions and construction options.
+	var/datum/rcd_grouped_schematic/selected_schem=null
+
 
 /obj/item/device/rcd/matter/engineering/New()
 	. = ..()
 	rcd_list += src
+	schem_groups=new()
+	settings=new()
+	
+	var/datum/rcd_scematic_grouping/destroy/dest_g = new(src)
+	dest_g.schematics+= new /datum/rcd_grouped_schematic/destroy_all(src)
+	
+	var/datum/rcd_scematic_grouping/build_wall/wall_g = new(src)
+	wall_g.schematics+= new /datum/rcd_grouped_schematic/normalwall(src)
+	
+	schem_groups+=dest_g
+	schem_groups+=wall_g
+	
+	current_menu=schem_groups[1].name
+	schem_groups[1].switch_to()
+	
 
 /obj/item/device/rcd/matter/engineering/Destroy()
 	. = ..()
@@ -20,6 +40,98 @@
 		return
 
 	return ..()
+	
+/obj/item/device/rcd/matter/engineering/attack_self(var/mob/user)
+	rebuild_ui()
+	interface.show(user)
+
+/obj/item/device/rcd/matter/engineering/Topic(var/href, var/list/href_list)
+	for(var/i in href_list)
+	if(href_list["set_group"])
+		for(var/datum/rcd_scematic_grouping/schem_group in schem_groups)
+			if(schem_group.name==href_list["set_group"])
+				current_menu=href_list["set_group"]
+				schem_group.switch_to()
+				do_spark()
+				rebuild_ui()
+				return
+	if(href_list["set_schematic"])
+		var/datum/rcd_scematic_grouping/group
+		for(var/datum/rcd_scematic_grouping/schem_group in schem_groups)
+			if(schem_group.name==current_menu)
+				group=schem_group
+				break
+		if(group)
+			for(var/datum/rcd_grouped_schematic/schm in group.schematics)
+				if(schm.name==href_list["set_schematic"])
+					selected_schem=schm
+					do_spark()
+					rebuild_ui()
+					break
+		return			
+	if(href_list["set_arg"])
+		settings[href_list["set_arg"]] = href_list["value_isnum"]=="yes" ? text2num(href_list["value"]) : href_list["value"]
+		rebuild_ui()
+		return
+		
+	return
+
+
+/obj/item/device/rcd/matter/engineering/rebuild_ui()
+	var/dat=""
+	
+	dat+="Compressed Matter: [matter]/[max_matter]<hr>"
+	
+	//that's right, you can embed a stylesheet in the html body, and you better believe i'm going to do this instead of setting up a whole new file for like 2 rules.
+	dat+={"<style> 
+	.grouplisting{
+	text-align:center;
+	font-size:100%;
+	}
+	.grouplisting img {
+	width:64px;
+	height:64px;
+	}
+	
+	.grouplisting a{
+	width:100%;
+	height:100%;
+	display:block;
+	background:revert;
+	}
+	</style>"}
+	
+	dat+="<table class='grouplisting'><tr>"
+	for(var/datum/rcd_scematic_grouping/schem_group in schem_groups)
+		dat+="<td class='[schem_group.name==current_menu ? "schem_selected" : "schem" ]'><a href='?src=\ref[interface];set_group=[schem_group.name]'><img src=''><br>[schem_group.name]</a></td>"
+	dat+="</tr></table><hr>"
+	
+	
+	for(var/datum/rcd_scematic_grouping/schem_group in schem_groups)
+		if(schem_group.name==current_menu)
+			var/t=schem_group.generate_html()
+			dat+=t
+			break
+			
+	
+	interface.updateLayout(dat)
+
+/obj/item/device/rcd/matter/engineering/afterattack(var/atom/A, var/mob/user)
+	if(!selected_schem)
+		return 1
+	if( !(user.Adjacent(A) && A.Adjacent(user)) )
+		return 1
+	if(get_dist(A, user) > 1)
+		return 1
+
+	var/c=selected_schem.build(A,user)
+	if(!c)
+		to_chat(user, "<span class='warning'>\The [src]'s error light flickers.</span>")
+	else
+		use_energy(c, user)
+		rebuild_ui()
+	return 1
+	
 
 /obj/item/device/rcd/matter/engineering/suicide_act(var/mob/living/user)
 	visible_message("<span class='danger'>[user] is using the deconstruct function on \the [src] on \himself! It looks like \he's trying to commit suicide!</span>")
@@ -58,6 +170,12 @@
 	slimeadd_message = "You put the slime extract on the SRCTAG's compressed matter slot"
 	slimes_accepted = SLIME_DARKPURPLE
 	slimeadd_success_message = "It gains a distinct plasma pink hue"
+
+/obj/item/device/rcd/matter/engineering/pre_loaded/adv/New()
+	..()
+	for(var/datum/rcd_scematic_grouping/schem_group in schem_groups)
+		if(istype(schem_group,/datum/rcd_scematic_grouping/build_wall) )
+			schem_group.schematics+=new /datum/rcd_grouped_schematic/rwall(src)
 	
 /obj/item/device/rcd/matter/engineering/pre_loaded/adv/slime_act(primarytype, mob/user)
 	. = ..()

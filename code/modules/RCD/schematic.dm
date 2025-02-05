@@ -135,3 +135,42 @@ params:
 	return "<table class=[class]><tr>[fav_html]<td><a href='?src=\ref[interface];schematic=\ref[src];act=select' >[image_html][name]</a><td><tr></table>"
 
 /datum/rcd_schematic/proc/MouseWheeled(var/mob/user, var/delta_x, var/delta_y, var/params)
+
+
+
+
+
+/datum/rcd_scematic_grouping
+	var/name = "group" //what's displayed
+	var/list/schematics
+	var/obj/item/device/rcd/linked_rcd=null
+
+/datum/rcd_scematic_grouping/New(var/obj/item/device/rcd/rcdtouse=null)
+	linked_rcd=rcdtouse
+	schematics=new()
+	return src
+	
+/datum/rcd_scematic_grouping/proc/switch_to()
+	return
+
+/datum/rcd_scematic_grouping/proc/generate_html()
+	var/dat=""
+	for(var/datum/rcd_grouped_schematic/schem in schematics)
+		dat+=schem.generate_html()
+	return dat
+
+/datum/rcd_grouped_schematic
+	var/name = "schematic" //what's displayed
+	var/cost = 0 //cost is determined by the build proc, to support upgrading having less cost than building whole.
+	var/obj/item/device/rcd/linked_rcd=null
+
+/datum/rcd_grouped_schematic/New(var/obj/item/device/rcd/rcdtouse=null)
+	linked_rcd=rcdtouse
+	return src
+		
+/datum/rcd_grouped_schematic/proc/generate_html()
+	return ""
+	
+/datum/rcd_grouped_schematic/proc/build(var/atom/A, var/mob/user)
+	return cost
+
