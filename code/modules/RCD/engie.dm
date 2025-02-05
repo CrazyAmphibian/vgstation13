@@ -24,8 +24,14 @@
 	var/datum/rcd_scematic_grouping/build_wall/wall_g = new(src)
 	wall_g.schematics+= new /datum/rcd_grouped_schematic/normalwall(src)
 	
+	var/datum/rcd_scematic_grouping/build_floors/floor_g = new(src)
+	floor_g.schematics+= new /datum/rcd_grouped_schematic/floor(src)
+	floor_g.schematics+= new /datum/rcd_grouped_schematic/plating(src)
+	floor_g.schematics+= new /datum/rcd_grouped_schematic/glassfloor(src)
+	
 	schem_groups+=dest_g
 	schem_groups+=wall_g
+	schem_groups+=floor_g
 	
 	current_menu=schem_groups[1].name
 	schem_groups[1].switch_to()
@@ -98,6 +104,12 @@
 	height:100%;
 	display:block;
 	background:revert;
+	}
+	
+	.clickabletable a{
+		width:100%;
+		height:100%;
+		display:block;
 	}
 	</style>"}
 	
@@ -176,6 +188,8 @@
 	for(var/datum/rcd_scematic_grouping/schem_group in schem_groups)
 		if(istype(schem_group,/datum/rcd_scematic_grouping/build_wall) )
 			schem_group.schematics+=new /datum/rcd_grouped_schematic/rwall(src)
+		if(istype(schem_group,/datum/rcd_scematic_grouping/build_floors) )
+			schem_group.schematics+= new/datum/rcd_grouped_schematic/rfloor(src)
 	
 /obj/item/device/rcd/matter/engineering/pre_loaded/adv/slime_act(primarytype, mob/user)
 	. = ..()

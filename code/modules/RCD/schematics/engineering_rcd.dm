@@ -138,7 +138,7 @@
 	
 /datum/rcd_scematic_grouping/build_wall/generate_html()
 	var/dat=""
-	dat+="<table><tr><th>wall</th><th>matter cost</th><th>construction time</th><th>upgradable from</th></tr>"
+	dat+="<table class='clickabletable'><tr><th>wall</th><th>matter cost</th><th>construction time</th><th>upgradable from</th></tr>"
 	for(var/datum/rcd_grouped_schematic/schem in schematics)
 		dat+=schem.generate_html()
 	dat+="</table>"
@@ -174,7 +174,7 @@
 		playsound(linked_rcd, 'sound/machines/click.ogg', 50, 1)
 		if(linked_rcd.delay(user, A, 2 SECONDS))
 			if(linked_rcd.get_energy(user) < costtouse)
-				to_chat(user, "The [linked_rcd] doesn't have enough charge to build a wall!")
+				to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
 				return 0
 			playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
 			T.ChangeTurf(/turf/simulated/wall)
@@ -222,7 +222,7 @@
 		playsound(linked_rcd, 'sound/machines/click.ogg', 50, 1)
 		if(linked_rcd.delay(user, A, timetaken))
 			if(linked_rcd.get_energy(user) < costtouse)
-				to_chat(user, "The [linked_rcd] doesn't have enough charge to build a wall!")
+				to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
 				return 0
 			playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
 			T.ChangeTurf(/turf/simulated/wall/r_wall)
@@ -237,4 +237,130 @@
 		return ""
 	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
-	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]reinforced wall</a></td><td>[a][cost+1+3]</a></td><td>[a]4</a></td><td>[a]wall floor</a></td></tr><"
+	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]reinforced wall</a></td><td>[a][cost+1+3]</a></td><td>[a]4</a></td><td>[a]wall floor</a></td></tr>"
+
+
+/datum/rcd_scematic_grouping/build_floors
+	name="floors"
+	
+	
+/datum/rcd_scematic_grouping/build_floors/generate_html()
+	var/dat=""
+	dat+="<table class='clickabletable'><tr><th>floor</th><th>matter cost</th><th>construction time</th><th>upgradable from</th></tr>"
+	for(var/datum/rcd_grouped_schematic/schem in schematics)
+		dat+=schem.generate_html()
+	dat+="</table>"
+	return dat
+	
+/datum/rcd_scematic_grouping/build_floors/switch_to()
+	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		return
+	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+	RCD.selected_schem = schematics[1]	
+	
+	
+/datum/rcd_grouped_schematic/floor
+	name="floor"
+	cost=1
+	
+/datum/rcd_grouped_schematic/floor/build(var/atom/A, var/mob/user)
+	var/turf/T=get_turf(A)
+	if(!istype(T,/turf/space))
+		to_chat(user, "You can only build this floor in space!")
+		return 0
+	if(linked_rcd.get_energy(user) < cost)
+		to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
+		return 0
+	playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
+	T.ChangeTurf(/turf/simulated/floor)
+	return cost
+
+/datum/rcd_grouped_schematic/floor/generate_html()
+	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		return ""
+	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
+	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]floor</a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]&emsp;</a></td></tr>"		
+	
+	
+/datum/rcd_grouped_schematic/plating
+	name="plating"
+	cost=1
+	
+/datum/rcd_grouped_schematic/plating/build(var/atom/A, var/mob/user)
+	var/turf/T=get_turf(A)
+	if(!istype(T,/turf/space))
+		to_chat(user, "You can only build this floor in space!")
+		return 0
+	if(linked_rcd.get_energy(user) < cost)
+		to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
+		return 0
+	playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
+	T.ChangeTurf(/turf/simulated/floor/plating)
+	return cost
+
+/datum/rcd_grouped_schematic/plating/generate_html()
+	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		return ""
+	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
+	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]plating</a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]&emsp;</a></td></tr>"		
+
+
+/datum/rcd_grouped_schematic/rfloor
+	name="reinforced floor"
+	cost=1
+	
+/datum/rcd_grouped_schematic/rfloor/build(var/atom/A, var/mob/user)
+	var/turf/T=get_turf(A)
+	var/cc=cost
+	if(istype(T,/turf/space))
+		cc=cost+1
+	else
+		if(T.type==/turf/simulated/floor || T.type==/turf/simulated/floor/plating )
+			cc=cost
+		
+	if(!cc)
+		to_chat(user, "You connot build this floor here!")
+		return
+		
+	if(linked_rcd.delay(user, A, 2 SECONDS))
+		if(linked_rcd.get_energy(user) < cost)
+			to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
+			return 0
+		playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
+		T.ChangeTurf(/turf/simulated/floor/engine)
+		return cc
+	return 0
+
+/datum/rcd_grouped_schematic/rfloor/generate_html()
+	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		return ""
+	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
+	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]reinforced floor</a></td><td>[a][cost+1]</a></td><td>[a]0</a></td><td>[a]floor plating</a></td></tr>"		
+	
+
+/datum/rcd_grouped_schematic/glassfloor
+	name="glass floor"
+	cost=1
+	
+/datum/rcd_grouped_schematic/glassfloor/build(var/atom/A, var/mob/user)
+	var/turf/T=get_turf(A)
+	if(!istype(T,/turf/space))
+		to_chat(user, "You can only build this floor in space!")
+		return 0
+	if(linked_rcd.get_energy(user) < cost)
+		to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
+		return 0
+	playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
+	T.ChangeTurf(/turf/simulated/floor/glass/airless)
+	return cost
+
+/datum/rcd_grouped_schematic/glassfloor/generate_html()
+	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		return ""
+	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
+	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]glass floor</a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]&emsp;</a></td></tr>"		
+	
