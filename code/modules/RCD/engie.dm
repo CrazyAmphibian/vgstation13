@@ -29,9 +29,14 @@
 	floor_g.schematics+= new /datum/rcd_grouped_schematic/plating(src)
 	floor_g.schematics+= new /datum/rcd_grouped_schematic/glassfloor(src)
 	
+	var/datum/rcd_scematic_grouping/build_windows/window_g = new(src)
+	window_g.schematics+= new /datum/rcd_grouped_schematic/glass/weak(src)
+	window_g.schematics+= new /datum/rcd_grouped_schematic/glass/reinforced(src)
+	
 	schem_groups+=dest_g
 	schem_groups+=wall_g
 	schem_groups+=floor_g
+	schem_groups+=window_g
 	
 	current_menu=schem_groups[1].name
 	schem_groups[1].switch_to()
@@ -50,6 +55,14 @@
 /obj/item/device/rcd/matter/engineering/attack_self(var/mob/user)
 	rebuild_ui()
 	interface.show(user)
+	
+	for(var/client/client in interface.clients)
+		for(var/datum/rcd_scematic_grouping/schemgroup in schem_groups)
+			schemgroup.send_assets(client)
+			for(var/datum/rcd_grouped_schematic/sch)
+				sch.send_assets(client)
+	rebuild_ui()			
+
 
 /obj/item/device/rcd/matter/engineering/Topic(var/href, var/list/href_list)
 	for(var/i in href_list)
@@ -76,7 +89,10 @@
 					break
 		return			
 	if(href_list["set_arg"])
-		settings[href_list["set_arg"]] = href_list["value_isnum"]=="yes" ? text2num(href_list["value"]) : href_list["value"]
+		if(href_list["value_toggle"] )
+			settings[href_list["set_arg"]] = ! settings[href_list["set_arg"]]
+		else
+			settings[href_list["set_arg"]] = href_list["value_isnum"]=="yes" ? text2num(href_list["value"]) : href_list["value"]
 		rebuild_ui()
 		return
 		
@@ -106,16 +122,27 @@
 	background:revert;
 	}
 	
+	.clickabletable td{
+		text-align:center;
+	}
+	
 	.clickabletable a{
 		width:100%;
 		height:100%;
 		display:block;
 	}
+	
+	img, .clickabletable img, .grouplisting img {
+		border:none;
+		background:none;
+		image-rendering:pixelated;
+	}
+	
 	</style>"}
 	
 	dat+="<table class='grouplisting'><tr>"
 	for(var/datum/rcd_scematic_grouping/schem_group in schem_groups)
-		dat+="<td class='[schem_group.name==current_menu ? "schem_selected" : "schem" ]'><a href='?src=\ref[interface];set_group=[schem_group.name]'><img src=''><br>[schem_group.name]</a></td>"
+		dat+="<td class='[schem_group.name==current_menu ? "schem_selected" : "schem" ]'><a href='?src=\ref[interface];set_group=[schem_group.name]'><img src='[schem_group.headerimage]'><br>[schem_group.name]</a></td>"
 	dat+="</tr></table><hr>"
 	
 	
@@ -198,6 +225,13 @@
 		if(!schematics[P.category])
 			schematics[P.category] = list()
 		schematics[P.category] += P
+		
+		for(var/datum/rcd_scematic_grouping/schem_group in schem_groups)
+			if(istype(schem_group,/datum/rcd_scematic_grouping/build_windows) )
+				schem_group.schematics+=new /datum/rcd_grouped_schematic/glass/plasma(src)
+				schem_group.schematics+=new /datum/rcd_grouped_schematic/glass/rplas(src)
+		rebuild_ui()
+			
 
 /obj/item/device/rcd/matter/engineering/pre_loaded/adv/delay(var/mob/user, var/atom/target, var/amount)
 	return do_after(user, target, amount/2)
