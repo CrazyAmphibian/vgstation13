@@ -165,8 +165,12 @@
 	register_asset("rwall_RCD.png", new/icon('icons/turf/walls.dmi', "rwall0" ))
 	send_asset(client, "rwall_RCD.png")	
 	
+	register_asset("woodwall_RCD.png", new/icon('icons/turf/walls.dmi', "wood0" ))
+	send_asset(client, "woodwall_RCD.png")	
+	
 	register_asset("RCD_HEADER_WALLS.png", new/icon('icons/turf/walls.dmi', "metal0" ))
 	send_asset(client, "RCD_HEADER_WALLS.png")	
+	
 	
 /datum/rcd_grouped_schematic/normalwall
 	name="wall"
@@ -257,6 +261,48 @@
 	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='rwall_RCD.png'></a></td><td>[a][cost+1+3]</a></td><td>[a]4</a></td><td>[a]<img src='floor_RCD.png'><img src='wall_RCD.png'></a></td></tr>"
 
 
+/datum/rcd_grouped_schematic/woodwall
+	name="wooden wall"
+	cost=2
+
+
+/datum/rcd_grouped_schematic/woodwall/build(var/atom/A, var/mob/user)
+	var/turf/T=get_turf(A)
+	var/costtouse=0
+	
+	if(!linked_rcd)
+		return 0
+	
+	if(istype(T,/turf/simulated/floor))
+		costtouse=cost
+	else
+		if(istype(T,/turf/space))
+			costtouse=cost+1 //add cost to make the floor
+		else
+			costtouse=0
+			
+	if(costtouse)
+		playsound(linked_rcd, 'sound/machines/click.ogg', 50, 1)
+		if(linked_rcd.delay(user, A, 2 SECONDS))
+			if(linked_rcd.get_energy(user) < costtouse)
+				to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
+				return 0
+			playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
+			T.ChangeTurf(/turf/simulated/wall/mineral/wood)
+			return costtouse
+	else
+		to_chat(user, "You cannot build a wall here!")
+	
+	return 0
+
+/datum/rcd_grouped_schematic/woodwall/generate_html()
+	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		return ""
+	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+	var/a="<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
+	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='woodwall_RCD.png'></a></td><td>[a][cost+1]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'></a></td></tr>"
+
+
 /datum/rcd_scematic_grouping/build_floors
 	name="floors"
 	headerimage="RCD_HEADER_FLOORS.png"
@@ -276,7 +322,7 @@
 	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	RCD.selected_schem = schematics[1]	
 
-/datum/rcd_scematic_grouping/build_wall/send_assets(var/client/client)
+/datum/rcd_scematic_grouping/build_floors/send_assets(var/client/client)
 	register_asset("floor_RCD.png", new/icon('icons/turf/floors.dmi', "floor" ))
 	send_asset(client, "floor_RCD.png")	
 	

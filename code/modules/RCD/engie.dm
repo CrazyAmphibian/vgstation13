@@ -23,6 +23,7 @@
 	
 	var/datum/rcd_scematic_grouping/build_wall/wall_g = new(src)
 	wall_g.schematics+= new /datum/rcd_grouped_schematic/normalwall(src)
+	wall_g.schematics+= new /datum/rcd_grouped_schematic/woodwall(src)
 	
 	var/datum/rcd_scematic_grouping/build_floors/floor_g = new(src)
 	floor_g.schematics+= new /datum/rcd_grouped_schematic/floor(src)
