@@ -67,6 +67,7 @@
 			schemgroup.send_assets(client)
 			for(var/datum/rcd_grouped_schematic/sch)
 				sch.send_assets(client)
+	interface.hide(user)
 	interface.show(user)
 
 
