@@ -145,6 +145,7 @@ params:
 	var/list/schematics
 	var/obj/item/device/rcd/linked_rcd=null
 	var/headerimage="" //make sure you send_assets the image first, dummy
+	var/selectiondialogue="enter text"
 
 /datum/rcd_scematic_grouping/New(var/obj/item/device/rcd/rcdtouse=null)
 	linked_rcd=rcdtouse
@@ -176,7 +177,7 @@ datum/rcd_scematic_grouping/proc/send_assets(var/client/client)
 	return ""
 	
 /datum/rcd_grouped_schematic/proc/build(var/atom/A, var/mob/user)
-	return cost
+	return 0
 
 datum/rcd_grouped_schematic/proc/send_assets(var/client/client)
 	//register_asset("test.png", new/icon('thing.dmi', "state" ))

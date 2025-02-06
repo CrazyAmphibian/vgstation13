@@ -537,7 +537,7 @@
 	var/build_c=RCD.settings["window_center"] //store window directions.
 	var/skipgrile=RCD.settings["window_nogrille"]
 	
-	var/nowindows=!(build_n || build_s || build_e || build_w)
+	var/nowindows=!(build_n || build_s || build_e || build_w || build_c)
 	if(nowindows && skipgrile)
 		return 0
 	
@@ -627,9 +627,20 @@
 			nwin.change_dir(WEST)
 			nwin.update_nearby_tiles()
 	if(build_c)
-		if(!locate(fullwindowtype) in T.contents)
+		var/shouldbuild=TRUE
+		for(var/obj/structure/window/full/R in T.contents)
+			if(R.type==fullwindowtype)
+				shouldbuild=FALSE
+				break
+		if(shouldbuild)
+			for(var/obj/structure/window/R in T.contents)
+				if( R.type in canupgrade_fullwindows)
+					qdel(R)
+					refund=upgrade_refund
+					break
 			var/obj/structure/window/nwin=new fullwindowtype(T)
 			nwin.update_nearby_tiles()	
+			
 	return cc-refund
 
 
@@ -721,7 +732,143 @@
 
 
 
+/datum/rcd_scematic_grouping/build_airlock
+	name="airlocks"
+	headerimage="RCD_HEADER_AIRLOCKS.png"
+	selectiondialogue="Enter the name of the airlock"
+
+/datum/rcd_scematic_grouping/build_airlock/New()	
+	..()
+	if(istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+		RCD.settings["airlock_access"]= new /list()
+
+/datum/rcd_scematic_grouping/build_airlock/switch_to()
+	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		return
+	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+	RCD.selected_schem = schematics[1]
+
+/datum/rcd_scematic_grouping/build_airlock/send_assets(var/client/client)
+	register_asset("RCD_HEADER_AIRLOCKS.png", new/icon('icons/obj/doors/door.dmi', "door_closed" ))
+	send_asset(client, "RCD_HEADER_AIRLOCKS.png")	
+
+
+/datum/rcd_scematic_grouping/build_airlock/generate_html()
+	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		return
+	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+	
+	var/dat=""
+	//set name
+	dat+="Set Name: <span class='schem'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_name;value_input=yes'> [RCD.settings["airlock_name"] || RCD.selected_schem.name ]</a></span> <span class='schem'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_name;value=[RCD.selected_schem.name]'> Reset </a></span>"
+	dat+="<hr>"
+	
+	//access settings
+	dat+="<b>Set access</b>"
+	
+	dat+=" <span class='schem'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_access;value_resetlist=yes'>Reset</a></span> "
+	
+	dat+=" <span class='schem[ (!RCD.settings["airlock_hideacc"]) ? "":"_selected"]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_hideacc;value_toggle=yes'>Hide</a></span> "
+	
+	
+	if(!RCD.settings["airlock_hideacc"])
+		dat+="<br><br><b>Mode:</b> "
+		dat+="<span class='schem[RCD.settings["airlock_acany"] ? "":"_selected"]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_acany;value=0;value_isnum=yes'> All</a></span> "
+		dat+="<span class='schem[RCD.settings["airlock_acany"] ? "_selected" :""]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_acany;value=1;value_isnum=yes'> Any</a></span>"
+	
+		dat+="<table class='clickabletable'><tr>"
+		for(var/i = 1; i <= 7; i++)
+			dat+="<th>[get_region_accesses_name(i)]</th>"
+		dat+="</tr>"
+	
+		var/drew=TRUE;
+		var/row=1;
+		while(drew)
+			drew=FALSE
+			dat += "<tr>"
+			for(var/i = 1; i <= 7; i++)
+				var/list/fuckyou=get_region_accesses(i)
+				var/A = row>fuckyou.len ? -1 : fuckyou[row]
+				var/access_name = get_access_desc(A)
+				if(access_name)
+					var/isin=FALSE
+					for(var/n in RCD.settings["airlock_access"])
+						if(n==A)
+							isin=TRUE
+							break
+					dat+="<td class='schem[isin?"_selected":""]'><a style='display:block;width:100%;height:100%;' href='?src=\ref[linked_rcd.interface];set_arg=airlock_access;value=[A];value_togglelist=yes;value_isnum=yes;'>[access_name]</a></td>"
+					drew=TRUE
+				else
+					dat+="<td/>"
+			dat += "</tr>"
+			row++
+		dat+="</table>"
+	
+	dat+="<hr>"
+	//select door
+
+	for(var/datum/rcd_grouped_schematic/schem in schematics)
+		dat+=schem.generate_html()
+	return dat
 
 
 
+/datum/rcd_grouped_schematic/airlock
+	name="airlock"
+	cost=3
+	var/icon='icons/obj/doors/door.dmi'
+	var/path = /obj/machinery/door/airlock
+		
+/datum/rcd_grouped_schematic/airlock/send_assets(var/client/client)
+	register_asset("airlock_[name]_RCD.png", new/icon(icon, "door_closed" ))
+	send_asset(client, "airlock_[name]_RCD.png")	
 
+/datum/rcd_grouped_schematic/airlock/generate_html()
+	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		return
+	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+	return "<span style='display:inline-block;padding:0px;' class='schem[RCD.selected_schem==src ? "_selected" : "" ]'><a style='display:block;background:none;border:none;' href='?src=\ref[linked_rcd.interface];set_schematic=[name]'><img src='airlock_[name]_RCD.png' style='padding:4px;border:none;background:none;'></a></span>"
+
+/datum/rcd_grouped_schematic/airlock/build(var/atom/A, var/mob/user)
+	var/turf/T=get_turf(A)
+	var/cc=0
+	if(!T)
+		return 0
+	if(istype(T, /turf/space))
+		cc=cost+1
+	else if (istype(T, /turf/simulated/floor))
+		cc=cost
+	else
+		to_chat(user, "You can't place a [name] here!")
+		return 0
+	for(var/atom/at in T.contents)
+		if (istype(at, /obj/machinery/door/airlock))
+			to_chat(user, "There's already an airlock here!")
+			return 0
+	
+	if(linked_rcd.get_energy(user) < cc)
+		to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
+		return 0			
+	if(!linked_rcd.delay(user, A, 5 SECONDS))
+		return 0
+	if(linked_rcd.get_energy(user) < cc)
+		to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
+		return 0
+	playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
+	
+	if(istype(T, /turf/space))
+		T.ChangeTurf(/turf/simulated/floor)
+	
+	var/obj/machinery/door/airlock/newairlock = new path(T)
+	
+	
+	if(istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+		
+		newairlock.name=RCD.settings["airlock_name"] || name
+		
+		
+	return cost
+	
+	

@@ -34,9 +34,14 @@
 	window_g.schematics+= new /datum/rcd_grouped_schematic/glass/weak(src)
 	window_g.schematics+= new /datum/rcd_grouped_schematic/glass/reinforced(src)
 	
+	var/datum/rcd_scematic_grouping/build_airlock/airlock_g=new(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock(src)
+	
+	
 	schem_groups+=dest_g
 	schem_groups+=wall_g
 	schem_groups+=floor_g
+	schem_groups+=airlock_g
 	schem_groups+=window_g
 	
 	current_menu=schem_groups[1].name
@@ -55,18 +60,20 @@
 	
 /obj/item/device/rcd/matter/engineering/attack_self(var/mob/user)
 	rebuild_ui()
-	interface.show(user)
+	interface.show(user)	
 	
 	for(var/client/client in interface.clients)
 		for(var/datum/rcd_scematic_grouping/schemgroup in schem_groups)
 			schemgroup.send_assets(client)
 			for(var/datum/rcd_grouped_schematic/sch)
 				sch.send_assets(client)
-	rebuild_ui()			
+	interface.show(user)
 
 
 /obj/item/device/rcd/matter/engineering/Topic(var/href, var/list/href_list)
 	for(var/i in href_list)
+		world.log << "[i] = [href_list[i]]"
+		
 	if(href_list["set_group"])
 		for(var/datum/rcd_scematic_grouping/schem_group in schem_groups)
 			if(schem_group.name==href_list["set_group"])
@@ -90,15 +97,34 @@
 					break
 		return			
 	if(href_list["set_arg"])
-		if(href_list["value_toggle"] )
+		if(href_list["value_togglelist"])
+			var/val =  href_list["value_isnum"]=="yes" ? text2num(href_list["value"]) : href_list["value"]
+			var/found=FALSE
+			for(var/n in settings[href_list["set_arg"]])
+				if(n==val)
+					found=TRUE
+					break
+			if( found )
+				settings[href_list["set_arg"]] -= val
+			else
+				settings[href_list["set_arg"]] += val
+		else if(href_list["value_resetlist"])
+			settings[href_list["set_arg"]]=new /list()
+		else if(href_list["value_toggle"] )
 			settings[href_list["set_arg"]] = ! settings[href_list["set_arg"]]
+		else if (href_list["value_input"])
+			var/tx=""
+			for(var/datum/rcd_scematic_grouping/schem_group in schem_groups)
+				if(schem_group.name==current_menu)
+					tx=schem_group.selectiondialogue
+					break
+			settings[href_list["set_arg"]] = input(usr, tx, src, "[selected_schem?.name]")
 		else
 			settings[href_list["set_arg"]] = href_list["value_isnum"]=="yes" ? text2num(href_list["value"]) : href_list["value"]
 		rebuild_ui()
 		return
 		
 	return
-
 
 /obj/item/device/rcd/matter/engineering/rebuild_ui()
 	var/dat=""
