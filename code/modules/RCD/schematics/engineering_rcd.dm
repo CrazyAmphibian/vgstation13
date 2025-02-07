@@ -607,7 +607,7 @@
 				break
 		if(shouldbuild)
 			for(var/obj/structure/window/R in T.contents) // "upgrade" windows by destroying the old one. not elegant, but it works.
-				if(R.dir == NORTH && R.type in canupgrade_windows)
+				if(R.dir == NORTH && (R.type in canupgrade_windows))
 					qdel(R)
 					refund=upgrade_refund
 					break
@@ -622,7 +622,7 @@
 				break
 		if(shouldbuild)
 			for(var/obj/structure/window/R in T.contents)
-				if(R.dir == SOUTH && R.type in canupgrade_windows)
+				if(R.dir == SOUTH && (R.type in canupgrade_windows))
 					qdel(R)
 					refund=upgrade_refund
 					break
@@ -637,7 +637,7 @@
 				break
 		if(shouldbuild)
 			for(var/obj/structure/window/R in T.contents)
-				if(R.dir == EAST && R.type in canupgrade_windows)
+				if(R.dir == EAST && (R.type in canupgrade_windows))
 					qdel(R)
 					refund=upgrade_refund
 					break
@@ -652,7 +652,7 @@
 				break
 		if(shouldbuild)
 			for(var/obj/structure/window/R in T.contents)
-				if(R.dir == WEST && R.type in canupgrade_windows)
+				if(R.dir == WEST && (R.type in canupgrade_windows))
 					qdel(R)
 					refund=upgrade_refund
 					break
