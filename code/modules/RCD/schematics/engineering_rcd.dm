@@ -338,6 +338,11 @@
 	register_asset("plasglassfloor_RCD.png", new/icon('icons/turf/overlays.dmi', "plasma_glass_floor" ))
 	send_asset(client, "plasglassfloor_RCD.png")	
 	
+	register_asset("lattice_RCD.png", new/icon('icons/obj/smoothlattice.dmi', "lattice15" ))
+	send_asset(client, "lattice_RCD.png")	
+	
+	register_asset("catwalk_RCD.png", new/icon('icons/turf/catwalks.dmi', "catwalk0" ))
+	send_asset(client, "catwalk_RCD.png")	
 	
 	register_asset("RCD_HEADER_FLOORS.png", new/icon('icons/turf/floors.dmi', "floor" ))
 	send_asset(client, "RCD_HEADER_FLOORS.png")	
@@ -480,6 +485,62 @@
 	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
 	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='plasglassfloor_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]<img src='glassfloor_RCD.png'></a></td></tr>"		
 
+	
+/datum/rcd_grouped_schematic/lattice
+	name="lattice"
+	cost=1
+	
+/datum/rcd_grouped_schematic/lattice/build(var/atom/A, var/mob/user)
+	var/turf/T=get_turf(A)
+	if(!istype(T,/turf/space))
+		to_chat(user, "You can only build this in space!")
+		return 0
+	if(linked_rcd.get_energy(user) < cost)
+		to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
+		return 0
+	if(locate(/obj/structure/lattice in T.contents))
+		to_chat(user, "There's already a [name] here!")
+		return 0
+	new /obj/structure/lattice(T)	
+	playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
+	return cost
+	
+/datum/rcd_grouped_schematic/lattice/generate_html()
+	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		return ""
+	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
+	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='lattice_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]&emsp;</a></td></tr>"		
+
+/datum/rcd_grouped_schematic/catwalk
+	name="catwalk"
+	cost=2
+	
+/datum/rcd_grouped_schematic/catwalk/build(var/atom/A, var/mob/user)
+	var/turf/T=get_turf(A)
+	if(!istype(T,/turf/space))
+		to_chat(user, "You can only build this in space!")
+		return 0
+	if(linked_rcd.get_energy(user) < cost)
+		to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
+		return 0
+	if(locate(/obj/structure/catwalk in T.contents))
+		to_chat(user, "There's already a [name] here!")
+		return 0
+	var/refund=0
+	for(var/obj/structure/lattice/L in T.contents)
+		qdel(L)
+		refund=1
+	new /obj/structure/catwalk(T)	
+	playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
+	return cost-refund
+	
+/datum/rcd_grouped_schematic/catwalk/generate_html()
+	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		return ""
+	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
+	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='catwalk_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]<img src='lattice_RCD.png'></a></td></tr>"	
 	
 
 /datum/rcd_scematic_grouping/build_windows
@@ -808,7 +869,7 @@
 	
 		dat+="<table class='clickabletable'><tr>"
 		for(var/i = 1; i <= 7; i++)
-			dat+="<th>[get_region_accesses_name(i)]</th>"
+			dat+="<th style='width:14%'>[get_region_accesses_name(i)]</th>"
 		dat+="</tr>"
 	
 		var/drew=TRUE;
@@ -826,7 +887,7 @@
 						if(n==A)
 							isin=TRUE
 							break
-					dat+="<td style='height:100%;' class='schem[isin?"_selected":""]'><a style='display:block;width:100%;height:100%;' href='?src=\ref[linked_rcd.interface];set_arg=airlock_access;value=[A];value_togglelist=yes;value_isnum=yes;'>[access_name]</a></td>"
+					dat+="<td style='height:100%;width:14%' class='schem[isin?"_selected":""]'>\<a style='display:block;width:100%;height:100%;' href='?src=\ref[linked_rcd.interface];set_arg=airlock_access;value=[A];value_togglelist=yes;value_isnum=yes;'>[access_name]</a></td>"
 					drew=TRUE
 				else
 					dat+="<td/>"

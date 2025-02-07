@@ -29,6 +29,8 @@
 	floor_g.schematics+= new /datum/rcd_grouped_schematic/floor(src)
 	floor_g.schematics+= new /datum/rcd_grouped_schematic/plating(src)
 	floor_g.schematics+= new /datum/rcd_grouped_schematic/glassfloor(src)
+	floor_g.schematics+= new /datum/rcd_grouped_schematic/lattice(src)
+	floor_g.schematics+= new /datum/rcd_grouped_schematic/catwalk(src)
 	
 	var/datum/rcd_scematic_grouping/build_windows/window_g = new(src)
 	window_g.schematics+= new /datum/rcd_grouped_schematic/glass/weak(src)
@@ -84,10 +86,12 @@
 	
 /obj/item/device/rcd/matter/engineering/attack_self(var/mob/user)
 	rebuild_ui()	
+	interface.show(user)
 	for(var/datum/rcd_scematic_grouping/schemgroup in schem_groups)
 		schemgroup.send_assets(user.client)
 		for(var/datum/rcd_grouped_schematic/sch)
 			sch.send_assets(user.client)
+	interface.hide(user) //have to do this since loading so many images takes a lot of time. and no images is better than no UI
 	interface.show(user)
 
 
@@ -172,6 +176,7 @@
 	
 	.clickabletable td{
 		text-align:center;
+		height:100%; /*to make it so that links inhabit the whole size of the td. kinda annoying to have to do all this.*/
 	}
 	
 	.clickabletable a{
