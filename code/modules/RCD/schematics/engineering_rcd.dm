@@ -335,6 +335,10 @@
 	register_asset("glassfloor_RCD.png", new/icon('icons/turf/overlays.dmi', "glass_floor" ))
 	send_asset(client, "glassfloor_RCD.png")	
 	
+	register_asset("plasglassfloor_RCD.png", new/icon('icons/turf/overlays.dmi', "plasma_glass_floor" ))
+	send_asset(client, "plasglassfloor_RCD.png")	
+	
+	
 	register_asset("RCD_HEADER_FLOORS.png", new/icon('icons/turf/floors.dmi', "floor" ))
 	send_asset(client, "RCD_HEADER_FLOORS.png")	
 	
@@ -448,6 +452,35 @@
 	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='glassfloor_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]&emsp;</a></td></tr>"		
 
 
+/datum/rcd_grouped_schematic/plasmaglassfloor
+	name="plasma glass floor"
+	cost=6
+
+/datum/rcd_grouped_schematic/plasmaglassfloor/build(var/atom/A, var/mob/user)
+	var/turf/T=get_turf(A)
+	var/cc=0
+	if(istype(T,/turf/space))
+		cc=cost
+	else if(istype(T,/turf/simulated/floor/glass) && !istype(T,/turf/simulated/floor/glass/plasma))
+		cc=cost-1
+	else
+		to_chat(user, "You cannot build this here!")
+		return 0
+	if(linked_rcd.get_energy(user) < cost)
+		to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
+		return 0
+	playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
+	T.ChangeTurf(/turf/simulated/floor/glass/plasma/airless)
+	return cc
+
+/datum/rcd_grouped_schematic/plasmaglassfloor/generate_html()
+	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		return ""
+	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
+	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='plasglassfloor_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]<img src='glassfloor_RCD.png'></a></td></tr>"		
+
+	
 
 /datum/rcd_scematic_grouping/build_windows
 	name="windows"
@@ -728,10 +761,6 @@
 	return "<tr class='[RCD.selected_schem==src? "schem_selected" : "schem"]'><td>[a]<img src='rpglass_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'><img src='rglass_RCD.png'></a></td></tr>"
 
 
-
-
-
-
 /datum/rcd_scematic_grouping/build_airlock
 	name="airlocks"
 	headerimage="RCD_HEADER_AIRLOCKS.png"
@@ -797,7 +826,7 @@
 						if(n==A)
 							isin=TRUE
 							break
-					dat+="<td class='schem[isin?"_selected":""]'><a style='display:block;width:100%;height:100%;' href='?src=\ref[linked_rcd.interface];set_arg=airlock_access;value=[A];value_togglelist=yes;value_isnum=yes;'>[access_name]</a></td>"
+					dat+="<td style='height:100%;' class='schem[isin?"_selected":""]'><a style='display:block;width:100%;height:100%;' href='?src=\ref[linked_rcd.interface];set_arg=airlock_access;value=[A];value_togglelist=yes;value_isnum=yes;'>[access_name]</a></td>"
 					drew=TRUE
 				else
 					dat+="<td/>"
@@ -818,7 +847,7 @@
 	name="airlock"
 	cost=3
 	var/icon='icons/obj/doors/door.dmi'
-	var/path = /obj/machinery/door/airlock
+	var/path = /obj/machinery/door/airlock 
 		
 /datum/rcd_grouped_schematic/airlock/send_assets(var/client/client)
 	register_asset("airlock_[name]_RCD.png", new/icon(icon, "door_closed" ))
@@ -868,7 +897,139 @@
 		
 		newairlock.name=RCD.settings["airlock_name"] || name
 		
-		
+		if(RCD.settings["airlock_acany"])
+			newairlock.req_one_access = RCD.settings["airlock_access"]?.Copy()
+		else
+			newairlock.req_access = RCD.settings["airlock_access"]?.Copy()
+		newairlock.autoclose=1
 	return cost
 	
 	
+/datum/rcd_grouped_schematic/airlock/standard
+
+/datum/rcd_grouped_schematic/airlock/glass
+	name="Glass Airlock"
+	icon='icons/obj/doors/Doorglass.dmi'
+	path=/obj/machinery/door/airlock/glass
+
+/datum/rcd_grouped_schematic/airlock/centcom
+	name="Centcomm Airlock"
+	icon='icons/obj/doors/Doorele.dmi'
+	path=/obj/machinery/door/airlock/centcom
+
+/datum/rcd_grouped_schematic/airlock/freezer
+	name="Freezer Airlock"
+	icon='icons/obj/doors/Doorfreezer.dmi'
+	path=/obj/machinery/door/airlock/freezer	
+	
+/datum/rcd_grouped_schematic/airlock/hatch
+	name="Airtight Hatch"
+	icon='icons/obj/doors/Doorhatchele.dmi'
+	path=/obj/machinery/door/airlock/hatch	
+
+/datum/rcd_grouped_schematic/airlock/maintenance_hatch
+	name="Maintenance Hatch"
+	icon='icons/obj/doors/Doorhatchmaint2.dmi'
+	path=/obj/machinery/door/airlock/maintenance_hatch	
+
+/datum/rcd_grouped_schematic/airlock/glass_command
+	name="Glass Command Airlock"
+	icon='icons/obj/doors/Doorcomglass.dmi'
+	path=/obj/machinery/door/airlock/glass_command	
+	
+/datum/rcd_grouped_schematic/airlock/glass_engineering
+	name="Glass Engineering Airlock"
+	icon='icons/obj/doors/Doorengglass.dmi'
+	path=/obj/machinery/door/airlock/glass_engineering		
+	
+/datum/rcd_grouped_schematic/airlock/glass_security
+	name="Glass Security Airlock"
+	icon='icons/obj/doors/Doorsecglass.dmi'
+	path=/obj/machinery/door/airlock/glass_security	
+	
+/datum/rcd_grouped_schematic/airlock/glass_medical
+	name="Glass Medical Airlock"
+	icon='icons/obj/doors/doormedglass.dmi'
+	path=/obj/machinery/door/airlock/glass_medical	
+	
+/datum/rcd_grouped_schematic/airlock/mining
+	name="Mining Airlock"
+	icon='icons/obj/doors/Doormining.dmi'
+	path=/obj/machinery/door/airlock/mining		
+	
+/datum/rcd_grouped_schematic/airlock/atmos
+	name="Atmospherics Airlock"
+	icon='icons/obj/doors/Dooratmo.dmi'
+	path=/obj/machinery/door/airlock/atmos		
+	
+/datum/rcd_grouped_schematic/airlock/research
+	name="Research Airlock"
+	icon='icons/obj/doors/doorresearch.dmi'
+	path=/obj/machinery/door/airlock/research	
+
+/datum/rcd_grouped_schematic/airlock/glass_research
+	name="Glass Research Airlock"
+	icon='icons/obj/doors/doorresearchglass.dmi'
+	path=/obj/machinery/door/airlock/glass_research	
+
+/datum/rcd_grouped_schematic/airlock/glass_mining
+	name="Glass Mining Airlock"
+	icon='icons/obj/doors/Doorminingglass.dmi'
+	path=/obj/machinery/door/airlock/glass_mining	
+
+/datum/rcd_grouped_schematic/airlock/glass_atmos
+	name="Glass Atmospherics Airlock"
+	icon='icons/obj/doors/Dooratmoglass.dmi'
+	path=/obj/machinery/door/airlock/glass_atmos	
+	
+/datum/rcd_grouped_schematic/airlock/science
+	name="Science Airlock"
+	icon='icons/obj/doors/Doorsci.dmi'
+	path=/obj/machinery/door/airlock/science	
+	
+/datum/rcd_grouped_schematic/airlock/glass_science
+	name="Glass Science Airlock"
+	icon='icons/obj/doors/Doorsciglass.dmi'
+	path=/obj/machinery/door/airlock/glass_science	
+	
+/datum/rcd_grouped_schematic/airlock/highsecurity
+	name="High Tech Security Airlock"
+	icon='icons/obj/doors/hightechsecurity.dmi'
+	path=/obj/machinery/door/airlock/highsecurity
+	cost=5	
+	
+/datum/rcd_grouped_schematic/airlock/vault
+	name="Vault"
+	icon='icons/obj/doors/hightechsecurity.dmi'
+	path=/obj/machinery/door/airlock/vault
+	cost=5		
+
+/datum/rcd_grouped_schematic/airlock/command
+	name="Command Airlock"
+	icon='icons/obj/doors/Doorcom.dmi'
+	path=/obj/machinery/door/airlock/command	
+
+/datum/rcd_grouped_schematic/airlock/security
+	name="Security Airlock"
+	icon='icons/obj/doors/Doorsec.dmi'
+	path=/obj/machinery/door/airlock/security	
+
+/datum/rcd_grouped_schematic/airlock/engineering
+	name="Engineering Airlock"
+	icon='icons/obj/doors/Dooreng.dmi'
+	path=/obj/machinery/door/airlock/engineering	
+
+/datum/rcd_grouped_schematic/airlock/medical
+	name="Medical Airlock"
+	icon='icons/obj/doors/doormed.dmi'
+	path=/obj/machinery/door/airlock/medical	
+
+/datum/rcd_grouped_schematic/airlock/maintenance
+	name="Maintenance Airlock"
+	icon='icons/obj/doors/Doormaint.dmi'
+	path=/obj/machinery/door/airlock/maintenance	
+
+/datum/rcd_grouped_schematic/airlock/external
+	name="External Airlock"
+	icon='icons/obj/doors/Doorext.dmi'
+	path=/obj/machinery/door/airlock/external	

@@ -35,9 +35,33 @@
 	window_g.schematics+= new /datum/rcd_grouped_schematic/glass/reinforced(src)
 	
 	var/datum/rcd_scematic_grouping/build_airlock/airlock_g=new(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock(src)
-	
-	
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/standard(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/freezer(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/centcom(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/command(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_command(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/hatch(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/maintenance_hatch(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/maintenance(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/engineering(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_engineering(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/security(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_security(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/medical(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_medical(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/research(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_research(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/mining(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_mining(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/atmos(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_atmos(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/science(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_science(src)
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/external(src)
+
+
+
 	schem_groups+=dest_g
 	schem_groups+=wall_g
 	schem_groups+=floor_g
@@ -59,21 +83,17 @@
 	return ..()
 	
 /obj/item/device/rcd/matter/engineering/attack_self(var/mob/user)
-	rebuild_ui()
-	interface.show(user)	
-	
-	for(var/client/client in interface.clients)
-		for(var/datum/rcd_scematic_grouping/schemgroup in schem_groups)
-			schemgroup.send_assets(client)
-			for(var/datum/rcd_grouped_schematic/sch)
-				sch.send_assets(client)
-	interface.hide(user)
+	rebuild_ui()	
+	for(var/datum/rcd_scematic_grouping/schemgroup in schem_groups)
+		schemgroup.send_assets(user.client)
+		for(var/datum/rcd_grouped_schematic/sch)
+			sch.send_assets(user.client)
 	interface.show(user)
 
 
 /obj/item/device/rcd/matter/engineering/Topic(var/href, var/list/href_list)
-	for(var/i in href_list)
-		world.log << "[i] = [href_list[i]]"
+	//for(var/i in href_list)
+	//	world.log << "[i] = [href_list[i]]"
 		
 	if(href_list["set_group"])
 		for(var/datum/rcd_scematic_grouping/schem_group in schem_groups)
@@ -245,6 +265,10 @@
 			schem_group.schematics+=new /datum/rcd_grouped_schematic/rwall(src)
 		if(istype(schem_group,/datum/rcd_scematic_grouping/build_floors) )
 			schem_group.schematics+= new/datum/rcd_grouped_schematic/rfloor(src)
+		if(istype(schem_group,/datum/rcd_scematic_grouping/build_airlock) )
+			schem_group.schematics+= new/datum/rcd_grouped_schematic/airlock/vault(src)
+			schem_group.schematics+= new/datum/rcd_grouped_schematic/airlock/highsecurity(src)
+
 	
 /obj/item/device/rcd/matter/engineering/pre_loaded/adv/slime_act(primarytype, mob/user)
 	. = ..()
@@ -258,6 +282,8 @@
 			if(istype(schem_group,/datum/rcd_scematic_grouping/build_windows) )
 				schem_group.schematics+=new /datum/rcd_grouped_schematic/glass/plasma(src)
 				schem_group.schematics+=new /datum/rcd_grouped_schematic/glass/rplas(src)
+			if(istype(schem_group,/datum/rcd_scematic_grouping/build_floors) )
+				schem_group.schematics+= new/datum/rcd_grouped_schematic/plasmaglassfloor(src)
 		rebuild_ui()
 			
 
