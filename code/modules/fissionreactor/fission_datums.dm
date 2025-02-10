@@ -342,16 +342,20 @@ datums for the fission reactor, which includes the fuel and reactor
 	var/reactorarea=(max(origin_x,corner_x)-min(origin_x,corner_x)) *  (max(origin_y,corner_y)-min(origin_y,corner_y))
 	var/reactorarea2=ceil(reactorarea/5) // 1 fith of the tiles will be eligable to explode
 	var/explodeprob = 1
+	
 	if(fuel)
 		explodeprob=max(0,(1-(1/( log(1+max(0,fuel.wattage-fuel.absorbance)/15000)  ))))
 		
 	for(var/i=1,i<=reactorarea2,i++)
 		if(rand()<=0.2*explodeprob*dt)
 			var/list/eplodies=determineexplosionsize()
-			explosion( randomtileinreactor() ,eplodies[1],eplodies[2],eplodies[3])
+			if(eplodies[3]>0)
+				explosion( randomtileinreactor() ,eplodies[1],eplodies[2],eplodies[3])
 			
-	reactorarea2=ceil(reactorarea/2)
-	var/crads=((fuel.wattage-fuel.absorbance)*fuel.life)/100000 //100kw nets 1 rad.
+	reactorarea2=ceil(reactorarea/2) //half can melt into radioactive slag
+	var/crads=0
+	if(fuel)
+		crads=((fuel.wattage-fuel.absorbance)*fuel.life)/100000 //100kw nets 1 rad.
 	for(var/i=1,i<=reactorarea2,i++)
 		if(rand()<=0.5*dt)
 			for (var/obj/o in randomtileinreactor().contents)
