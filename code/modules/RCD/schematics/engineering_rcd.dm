@@ -11,28 +11,23 @@
 
 /datum/rcd_scematic_grouping/destroy/New()
 	..()
-	if(istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
-		RCD.settings["decon_walls"]=1
-		RCD.settings["decon_floors"]=1
-		RCD.settings["decon_airlocks"]=1
-		RCD.settings["decon_windows"]=1
+	linked_rcd.settings["decon_walls"]=1
+	linked_rcd.settings["decon_floors"]=1
+	linked_rcd.settings["decon_airlocks"]=1
+	linked_rcd.settings["decon_windows"]=1
 		
 
 
 /datum/rcd_scematic_grouping/destroy/switch_to()
 	var/found=FALSE
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	
 	for(var/datum/rcd_grouped_schematic/S in src.schematics)
 		if(istype(S,/datum/rcd_grouped_schematic/destroy_all))
-			RCD.selected_schem=S
+			linked_rcd.selected_schem=S
 			found=TRUE
 			break;
 	if(!found)
-		RCD.selected_schem=new /datum/rcd_grouped_schematic/destroy_all(linked_rcd)
+		linked_rcd.selected_schem=new /datum/rcd_grouped_schematic/destroy_all(linked_rcd)
 
 /datum/rcd_grouped_schematic/destroy_all
 	name="all"
@@ -40,10 +35,7 @@
 	
 /datum/rcd_grouped_schematic/destroy_all/generate_html()
 	var/dat=""
-	var/list/options=new()
-	if(istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
-		options=RCD.settings
+	var/list/options=linked_rcd.settings
 	
 	
 	dat+="Deconstruction settings:<br><ul style='line-height:150%;'>"
@@ -59,14 +51,7 @@
 	return dat
 
 /datum/rcd_grouped_schematic/destroy_all/build(var/atom/A, var/mob/user)
-	var/list/options=new()
-	options["decon_walls"]=1
-	options["decon_floors"]=1
-	options["decon_airlocks"]=1
-	options["decon_windows"]=1 //fall back to everything enabled.
-	if(istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
-		options=RCD.settings
+	var/list/options=linked_rcd.settings
 	
 	if(istype(A, /turf/simulated/wall) && options["decon_walls"])
 		var/turf/simulated/wall/T = A
@@ -150,10 +135,7 @@
 	return dat
 	
 /datum/rcd_scematic_grouping/build_wall/switch_to()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
-	RCD.selected_schem = schematics[1]
+	linked_rcd.selected_schem = schematics[1]
 
 /datum/rcd_scematic_grouping/build_wall/send_assets(var/client/client)
 	register_asset("floor_RCD.png", new/icon('icons/turf/floors.dmi', "floor" ))
@@ -220,11 +202,8 @@
 	return 0
 
 /datum/rcd_grouped_schematic/normalwall/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return ""
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a="<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
-	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='wall_RCD.png'></a></td><td>[a][cost+1]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'><img src='girder_RCD.png'></a></td></tr>"
+	return "<tr class='[linked_rcd.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='wall_RCD.png'></a></td><td>[a][cost+1]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'><img src='girder_RCD.png'></a></td></tr>"
 
 
 
@@ -268,11 +247,8 @@
 	return 0
 
 /datum/rcd_grouped_schematic/rwall/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return ""
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
-	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='rwall_RCD.png'></a></td><td>[a][cost+1+3]</a></td><td>[a]4</a></td><td>[a]<img src='floor_RCD.png'><img src='wall_RCD.png'></a></td></tr>"
+	return "<tr class='[linked_rcd.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='rwall_RCD.png'></a></td><td>[a][cost+1+3]</a></td><td>[a]4</a></td><td>[a]<img src='floor_RCD.png'><img src='wall_RCD.png'></a></td></tr>"
 
 
 /datum/rcd_grouped_schematic/woodwall
@@ -320,11 +296,8 @@
 	return 0
 
 /datum/rcd_grouped_schematic/woodwall/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return ""
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a="<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
-	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='woodwall_RCD.png'></a></td><td>[a][cost+1]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'><img src='girder_RCD.png'></a></td></tr>"
+	return "<tr class='[linked_rcd.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='woodwall_RCD.png'></a></td><td>[a][cost+1]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'><img src='girder_RCD.png'></a></td></tr>"
 
 
 /datum/rcd_grouped_schematic/girder
@@ -378,10 +351,7 @@
 	return dat
 	
 /datum/rcd_scematic_grouping/build_floors/switch_to()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
-	RCD.selected_schem = schematics[1]	
+	linked_rcd.selected_schem = schematics[1]	
 
 /datum/rcd_scematic_grouping/build_floors/send_assets(var/client/client)
 	register_asset("floor_RCD.png", new/icon('icons/turf/floors.dmi', "floor" ))
@@ -426,11 +396,8 @@
 	return cost
 
 /datum/rcd_grouped_schematic/floor/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return ""
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
-	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='floor_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]&emsp;</a></td></tr>"		
+	return "<tr class='[linked_rcd.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='floor_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]&emsp;</a></td></tr>"		
 	
 	
 /datum/rcd_grouped_schematic/plating
@@ -450,11 +417,8 @@
 	return cost
 
 /datum/rcd_grouped_schematic/plating/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return ""
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
-	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='plating_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]&emsp;</a></td></tr>"		
+	return "<tr class='[linked_rcd.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='plating_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]&emsp;</a></td></tr>"		
 
 
 /datum/rcd_grouped_schematic/rfloor
@@ -487,11 +451,8 @@
 	return 0
 
 /datum/rcd_grouped_schematic/rfloor/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return ""
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
-	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='rfloor_RCD.png'></a></td><td>[a][cost+1]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'><img src='plating_RCD.png'></a></td></tr>"		
+	return "<tr class='[linked_rcd.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='rfloor_RCD.png'></a></td><td>[a][cost+1]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'><img src='plating_RCD.png'></a></td></tr>"		
 	
 
 /datum/rcd_grouped_schematic/glassfloor
@@ -511,11 +472,8 @@
 	return cost
 
 /datum/rcd_grouped_schematic/glassfloor/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return ""
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
-	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='glassfloor_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]&emsp;</a></td></tr>"		
+	return "<tr class='[linked_rcd.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='glassfloor_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]&emsp;</a></td></tr>"		
 
 
 /datum/rcd_grouped_schematic/plasmaglassfloor
@@ -540,11 +498,8 @@
 	return cc
 
 /datum/rcd_grouped_schematic/plasmaglassfloor/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return ""
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
-	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='plasglassfloor_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]<img src='glassfloor_RCD.png'></a></td></tr>"		
+	return "<tr class='[linked_rcd.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='plasglassfloor_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]<img src='glassfloor_RCD.png'></a></td></tr>"		
 
 	
 /datum/rcd_grouped_schematic/lattice
@@ -567,11 +522,8 @@
 	return cost
 	
 /datum/rcd_grouped_schematic/lattice/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return ""
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
-	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='lattice_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]&emsp;</a></td></tr>"		
+	return "<tr class='[linked_rcd.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='lattice_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]&emsp;</a></td></tr>"		
 
 /datum/rcd_grouped_schematic/catwalk
 	name="catwalk"
@@ -597,11 +549,8 @@
 	return cost-refund
 	
 /datum/rcd_grouped_schematic/catwalk/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return ""
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a = "<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
-	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='catwalk_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]<img src='lattice_RCD.png'></a></td></tr>"	
+	return "<tr class='[linked_rcd.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='catwalk_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]0</a></td><td>[a]<img src='lattice_RCD.png'></a></td></tr>"	
 	
 
 /datum/rcd_scematic_grouping/build_windows
@@ -611,16 +560,12 @@
 /datum/rcd_scematic_grouping/build_windows/generate_html()
 	var/dat=""
 	
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return ""
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
-	
-	var/build_n=RCD.settings["window_north"]
-	var/build_s=RCD.settings["window_south"]
-	var/build_e=RCD.settings["window_east"]
-	var/build_w=RCD.settings["window_west"]
-	var/build_c=RCD.settings["window_center"]
-	var/skipgrile=RCD.settings["window_nogrille"]
+	var/build_n=linked_rcd.settings["window_north"]
+	var/build_s=linked_rcd.settings["window_south"]
+	var/build_e=linked_rcd.settings["window_east"]
+	var/build_w=linked_rcd.settings["window_west"]
+	var/build_c=linked_rcd.settings["window_center"]
+	var/skipgrile=linked_rcd.settings["window_nogrille"]
 	
 	dat+="<table><tr><td> <span class='[skipgrile ? "schem" : "schem_selected"]'><a href='?src=\ref[linked_rcd.interface];set_arg=window_nogrille;value_toggle=yes;'>place grille</a></span></td>"
 	
@@ -639,10 +584,7 @@
 	return dat
 	
 /datum/rcd_scematic_grouping/build_windows/switch_to()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
-	RCD.selected_schem = schematics[1]		
+	linked_rcd.selected_schem = schematics[1]		
 
 
 /datum/rcd_scematic_grouping/build_windows/send_assets(var/client/client)
@@ -681,16 +623,13 @@
 	
 
 /datum/rcd_grouped_schematic/glass/build(var/atom/A, var/mob/user)
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	
-	var/build_n=RCD.settings["window_north"]
-	var/build_s=RCD.settings["window_south"]
-	var/build_e=RCD.settings["window_east"]
-	var/build_w=RCD.settings["window_west"]
-	var/build_c=RCD.settings["window_center"] //store window directions.
-	var/skipgrile=RCD.settings["window_nogrille"]
+	var/build_n=linked_rcd.settings["window_north"]
+	var/build_s=linked_rcd.settings["window_south"]
+	var/build_e=linked_rcd.settings["window_east"]
+	var/build_w=linked_rcd.settings["window_west"]
+	var/build_c=linked_rcd.settings["window_center"] //store window directions.
+	var/skipgrile=linked_rcd.settings["window_nogrille"]
 	
 	var/nowindows=!(build_n || build_s || build_e || build_w || build_c)
 	if(nowindows && skipgrile)
@@ -800,18 +739,8 @@
 
 
 /datum/rcd_grouped_schematic/glass/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a="<a href='?src=\ref[linked_rcd.interface];set_schematic=[name]'>"
-	return "<tr class='[RCD.selected_schem==src? "schem_selected" : "schem"]'><td>[a][name]</a></td><td>[a][cost]</a></td><td>[a]2</a></td><td>[a]floor</a></td></tr>"
-	
-/datum/rcd_grouped_schematic/glass/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
-	var/a="<a href='?src=\ref[linked_rcd.interface];set_schematic=[name]'>"
-	return "<tr class='[RCD.selected_schem==src? "schem_selected" : "schem"]'><td>[a]<img src='glass_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'></a></td></tr>"
+	return "<tr class='[linked_rcd.selected_schem==src? "schem_selected" : "schem"]'><td>[a]<img src='glass_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'></a></td></tr>"
 
 
 /datum/rcd_grouped_schematic/glass/weak
@@ -834,11 +763,8 @@
 	canupgrade_fullwindows+=/obj/structure/window/full
 
 /datum/rcd_grouped_schematic/glass/reinforced/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a="<a href='?src=\ref[linked_rcd.interface];set_schematic=[name]'>"
-	return "<tr class='[RCD.selected_schem==src? "schem_selected" : "schem"]'><td>[a]<img src='rglass_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'><img src='glass_RCD.png'></a></td></tr>"
+	return "<tr class='[linked_rcd.selected_schem==src? "schem_selected" : "schem"]'><td>[a]<img src='rglass_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'><img src='glass_RCD.png'></a></td></tr>"
 	
 /datum/rcd_grouped_schematic/glass/plasma
 	name="plasma glass window"
@@ -855,11 +781,8 @@
 
 
 /datum/rcd_grouped_schematic/glass/plasma/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a="<a href='?src=\ref[linked_rcd.interface];set_schematic=[name]'>"
-	return "<tr class='[RCD.selected_schem==src? "schem_selected" : "schem"]'><td>[a]<img src='pglass_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'><img src='glass_RCD.png'></a></td></tr>"
+	return "<tr class='[linked_rcd.selected_schem==src? "schem_selected" : "schem"]'><td>[a]<img src='pglass_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'><img src='glass_RCD.png'></a></td></tr>"
 	
 
 /datum/rcd_grouped_schematic/glass/rplas
@@ -876,11 +799,8 @@
 	canupgrade_fullwindows+=/obj/structure/window/full/reinforced
 
 /datum/rcd_grouped_schematic/glass/rplas/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a="<a href='?src=\ref[linked_rcd.interface];set_schematic=[name]'>"
-	return "<tr class='[RCD.selected_schem==src? "schem_selected" : "schem"]'><td>[a]<img src='rpglass_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'><img src='rglass_RCD.png'></a></td></tr>"
+	return "<tr class='[linked_rcd.selected_schem==src? "schem_selected" : "schem"]'><td>[a]<img src='rpglass_RCD.png'></a></td><td>[a][cost]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'><img src='rglass_RCD.png'></a></td></tr>"
 
 
 /datum/rcd_scematic_grouping/build_airlock
@@ -890,16 +810,11 @@
 
 /datum/rcd_scematic_grouping/build_airlock/New()	
 	..()
-	if(istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
-		RCD.settings["airlock_access"]= new /list()
-		RCD.settings["airlock_dir"]=NORTH
+	linked_rcd.settings["airlock_access"]= new /list()
+	linked_rcd.settings["airlock_dir"]=NORTH
 
 /datum/rcd_scematic_grouping/build_airlock/switch_to()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
-	RCD.selected_schem = schematics[1]
+	linked_rcd.selected_schem = schematics[1]
 
 /datum/rcd_scematic_grouping/build_airlock/send_assets(var/client/client)
 	register_asset("RCD_HEADER_AIRLOCKS.png", new/icon('icons/obj/doors/door.dmi', "door_closed" ))
@@ -907,21 +822,17 @@
 
 
 /datum/rcd_scematic_grouping/build_airlock/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
-	
 	var/dat=""
 	//set name
-	dat+="Set Name: <span class='schem'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_name;value_input=yes'> [RCD.settings["airlock_name"] || RCD.selected_schem.name ]</a></span> <span class='schem'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_name;value=[RCD.selected_schem.name]'> Reset </a></span>"
+	dat+="Set Name: <span class='schem'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_name;value_input=yes'> [linked_rcd.settings["airlock_name"] || linked_rcd.selected_schem.name ]</a></span> <span class='schem'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_name;value=[linked_rcd.selected_schem.name]'> Reset </a></span>"
 	
 	
-	if(istype(RCD.selected_schem,/datum/rcd_grouped_schematic/airlock/windoor))
+	if(istype(linked_rcd.selected_schem,/datum/rcd_grouped_schematic/airlock/windoor))
 		dat+={"
 	<table style='text-align:center;line-height:110%;'>
-	<tr><td colspan=2> <span class='schem[RCD.settings["airlock_dir"]==NORTH ? "_selected" :"" ]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_dir;value_isnum=yes;value=[NORTH]'>NORTH</a></span> </td></tr>
-	<tr><td> <span class='schem[RCD.settings["airlock_dir"]==WEST ? "_selected" :"" ]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_dir;value_isnum=yes;value=[WEST]'>WEST</a></span> </td><td> <span class='schem[RCD.settings["airlock_dir"]==EAST ? "_selected" :"" ]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_dir;value_isnum=yes;value=[EAST]'>EAST</a></span> </td></tr>
-	<tr><td colspan=2> <span class='schem[RCD.settings["airlock_dir"]==SOUTH ? "_selected" :"" ]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_dir;value_isnum=yes;value=[SOUTH]'>SOUTH</a></span> </td></tr>
+	<tr><td colspan=2> <span class='schem[linked_rcd.settings["airlock_dir"]==NORTH ? "_selected" :"" ]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_dir;value_isnum=yes;value=[NORTH]'>NORTH</a></span> </td></tr>
+	<tr><td> <span class='schem[linked_rcd.settings["airlock_dir"]==WEST ? "_selected" :"" ]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_dir;value_isnum=yes;value=[WEST]'>WEST</a></span> </td><td> <span class='schem[linked_rcd.settings["airlock_dir"]==EAST ? "_selected" :"" ]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_dir;value_isnum=yes;value=[EAST]'>EAST</a></span> </td></tr>
+	<tr><td colspan=2> <span class='schem[linked_rcd.settings["airlock_dir"]==SOUTH ? "_selected" :"" ]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_dir;value_isnum=yes;value=[SOUTH]'>SOUTH</a></span> </td></tr>
 	</table>
 	"}
 	
@@ -932,13 +843,13 @@
 	
 	dat+=" <span class='schem'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_access;value_resetlist=yes'>Reset</a></span> "
 	
-	dat+=" <span class='schem[ (!RCD.settings["airlock_hideacc"]) ? "":"_selected"]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_hideacc;value_toggle=yes'>Hide</a></span> "
+	dat+=" <span class='schem[ (!linked_rcd.settings["airlock_hideacc"]) ? "":"_selected"]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_hideacc;value_toggle=yes'>Hide</a></span> "
 	
 	
-	if(!RCD.settings["airlock_hideacc"])
+	if(!linked_rcd.settings["airlock_hideacc"])
 		dat+="<br><br><b>Mode:</b> "
-		dat+="<span class='schem[RCD.settings["airlock_acany"] ? "":"_selected"]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_acany;value=0;value_isnum=yes'> All</a></span> "
-		dat+="<span class='schem[RCD.settings["airlock_acany"] ? "_selected" :""]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_acany;value=1;value_isnum=yes'> Any</a></span>"
+		dat+="<span class='schem[linked_rcd.settings["airlock_acany"] ? "":"_selected"]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_acany;value=0;value_isnum=yes'> All</a></span> "
+		dat+="<span class='schem[linked_rcd.settings["airlock_acany"] ? "_selected" :""]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_acany;value=1;value_isnum=yes'> Any</a></span>"
 	
 		dat+="<table class='clickabletable'><tr>"
 		for(var/i = 1; i <= 7; i++)
@@ -956,7 +867,7 @@
 				var/access_name = get_access_desc(A)
 				if(access_name)
 					var/isin=FALSE
-					for(var/n in RCD.settings["airlock_access"])
+					for(var/n in linked_rcd.settings["airlock_access"])
 						if(n==A)
 							isin=TRUE
 							break
@@ -989,10 +900,7 @@
 	send_asset(client, "airlock_[name]_RCD.png")	
 
 /datum/rcd_grouped_schematic/airlock/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
-	return "<span style='display:inline-block;padding:0px;' class='schem[RCD.selected_schem==src ? "_selected" : "" ]'><a style='display:block;background:none;border:none;' href='?src=\ref[linked_rcd.interface];set_schematic=[name]'><img src='airlock_[name]_RCD.png' style='padding:4px;border:none;background:none;'></a></span>"
+	return "<span style='display:inline-block;padding:0px;' class='schem[linked_rcd.selected_schem==src ? "_selected" : "" ]'><a style='display:block;background:none;border:none;' href='?src=\ref[linked_rcd.interface];set_schematic=[name]'><img src='airlock_[name]_RCD.png' style='padding:4px;border:none;background:none;'></a></span>"
 
 /datum/rcd_grouped_schematic/airlock/build(var/atom/A, var/mob/user)
 	var/turf/T=get_turf(A)
@@ -1025,18 +933,14 @@
 		T.ChangeTurf(/turf/simulated/floor)
 	
 	var/obj/machinery/door/airlock/newairlock = new path(T)
-	
-	
-	if(istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 		
-		newairlock.name=RCD.settings["airlock_name"] || name
+	newairlock.name=linked_rcd.settings["airlock_name"] || name
 		
-		if(RCD.settings["airlock_acany"])
-			newairlock.req_one_access = RCD.settings["airlock_access"]?.Copy()
-		else
-			newairlock.req_access = RCD.settings["airlock_access"]?.Copy()
-		newairlock.autoclose=1
+	if(linked_rcd.settings["airlock_acany"])
+		newairlock.req_one_access = linked_rcd.settings["airlock_access"]?.Copy()
+	else
+		newairlock.req_access = linked_rcd.settings["airlock_access"]?.Copy()
+	newairlock.autoclose=1
 	return cost
 	
 	
@@ -1182,11 +1086,7 @@
 /datum/rcd_grouped_schematic/airlock/windoor/build(var/atom/A, var/mob/user)
 	var/turf/T=get_turf(A)
 	var/cc=0
-	var/dirtouse=NORTH
-	
-	if(istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
-		dirtouse=RCD.settings["airlock_dir"] || NORTH
+	var/dirtouse=linked_rcd.settings["airlock_dir"] || NORTH
 	
 	if(!T)
 		return 0
@@ -1216,17 +1116,13 @@
 		T.ChangeTurf(/turf/simulated/floor)
 	
 	var/obj/machinery/door/airlock/newwindoor = new path(T)
-	
-	if(istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 		
-		newwindoor.name=RCD.settings["airlock_name"] || name
+	newwindoor.name=linked_rcd.settings["airlock_name"] || name
+	newwindoor.change_dir(dirtouse)
 		
-		newwindoor.change_dir(dirtouse)
-		
-		if(RCD.settings["airlock_acany"])
-			newwindoor.req_one_access = RCD.settings["airlock_access"]?.Copy()
-		else
-			newwindoor.req_access = RCD.settings["airlock_access"]?.Copy()
-		newwindoor.autoclose=1
+	if(linked_rcd.settings["airlock_acany"])
+		newwindoor.req_one_access = linked_rcd.settings["airlock_access"]?.Copy()
+	else
+		newwindoor.req_access = linked_rcd.settings["airlock_access"]?.Copy()
+	newwindoor.autoclose=1
 	return cost	

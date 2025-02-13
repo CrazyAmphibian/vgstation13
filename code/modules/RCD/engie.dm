@@ -6,17 +6,13 @@
 	/datum/rcd_schematic/con_airlock,
 	/datum/rcd_schematic/con_window,
 	)
-	var/current_menu="deconstruct"
-	var/list/schem_groups=null
-	var/list/settings //for stuff like window directions and construction options.
-	var/datum/rcd_grouped_schematic/selected_schem=null
+	current_menu="deconstruct"
 
 
 /obj/item/device/rcd/matter/engineering/New()
 	. = ..()
 	rcd_list += src
-	schem_groups=new()
-	settings=new()
+
 	
 	var/datum/rcd_scematic_grouping/destroy/dest_g = new(src)
 	dest_g.schematics+= new /datum/rcd_grouped_schematic/destroy_all(src)

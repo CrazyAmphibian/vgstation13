@@ -38,9 +38,20 @@
 	var/datum/html_interface/rcd/interface
 
 	var/obj/abstract/screen/close/closer
+	
+	
+	var/list/settings //for stuff like window directions and construction options.
+	var/current_menu=null //we are keeping both systems of schematics for the sake of backwards compatability
+	var/list/schem_groups=null
+	var/datum/rcd_grouped_schematic/selected_schem=null
+	
+	
 
 /obj/item/device/rcd/New()
 	. = ..()
+
+	schem_groups=new()
+	settings=new()
 
 	//interface gets created BEFORE the schematics get created, so they can modify the HEAD content (RPD pipe colour picker).
 	interface = new(src, sanitize(name))
