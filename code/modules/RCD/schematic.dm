@@ -161,7 +161,7 @@ params:
 		dat+=schem.generate_html()
 	return dat
 
-datum/rcd_scematic_grouping/proc/send_assets(var/client/client)
+/datum/rcd_scematic_grouping/proc/send_assets(var/client/client)
 	return
 
 /datum/rcd_grouped_schematic
@@ -179,7 +179,7 @@ datum/rcd_scematic_grouping/proc/send_assets(var/client/client)
 /datum/rcd_grouped_schematic/proc/build(var/atom/A, var/mob/user)
 	return 0
 
-datum/rcd_grouped_schematic/proc/send_assets(var/client/client)
+/datum/rcd_grouped_schematic/proc/send_assets(var/client/client)
 	//register_asset("test.png", new/icon('thing.dmi', "state" ))
 	//send_asset(client, "test.png")	
 	return
