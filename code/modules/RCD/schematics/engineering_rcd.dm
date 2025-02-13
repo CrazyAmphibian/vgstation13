@@ -9,8 +9,8 @@
 	register_asset("RCD_HEADER_DESTROY.png", new/icon('icons/effects/condecon.dmi', "decon" ))
 	send_asset(client, "RCD_HEADER_DESTROY.png")	
 
-/datum/rcd_scematic_grouping/destroy/New()
-	..()
+/datum/rcd_scematic_grouping/destroy/New(var/obj/item/device/rcd/rcdtouse=null)
+	..(rcdtouse)
 	linked_rcd.settings["decon_walls"]=1
 	linked_rcd.settings["decon_floors"]=1
 	linked_rcd.settings["decon_airlocks"]=1
@@ -613,8 +613,8 @@
 	var/upgrade_refund=0
 	var/construct_delay = 2 SECONDS
 
-/datum/rcd_grouped_schematic/glass/New()
-	..()
+/datum/rcd_grouped_schematic/glass/New(var/obj/item/device/rcd/rcdtouse=null)
+	..(rcdtouse)
 	canupgrade_windows=new()
 	canupgrade_fullwindows=new()
 	
@@ -754,8 +754,8 @@
 	fullwindowtype=/obj/structure/window/full/reinforced
 	upgrade_refund=1
 	
-/datum/rcd_grouped_schematic/glass/reinforced/New()
-	..()
+/datum/rcd_grouped_schematic/glass/reinforced/New(var/obj/item/device/rcd/rcdtouse=null)
+	..(rcdtouse)
 	canupgrade_windows+=/obj/structure/window
 	canupgrade_fullwindows+=/obj/structure/window/full
 
@@ -771,8 +771,8 @@
 	upgrade_refund=1
 	construct_delay= 3 SECONDS
 
-/datum/rcd_grouped_schematic/glass/plasma/New()
-	..()
+/datum/rcd_grouped_schematic/glass/plasma/New(var/obj/item/device/rcd/rcdtouse=null)
+	..(rcdtouse)
 	canupgrade_windows+=/obj/structure/window
 	canupgrade_fullwindows+=/obj/structure/window/full
 
@@ -790,8 +790,8 @@
 	upgrade_refund=2 //probably explotable with regular windows in some way, but i don't think it's going to matter
 	construct_delay= 4 SECONDS
 
-/datum/rcd_grouped_schematic/glass/rplas/New()
-	..()
+/datum/rcd_grouped_schematic/glass/rplas/New(var/obj/item/device/rcd/rcdtouse=null)
+	..(rcdtouse)
 	canupgrade_windows+=/obj/structure/window/reinforced
 	canupgrade_fullwindows+=/obj/structure/window/full/reinforced
 
@@ -805,13 +805,14 @@
 	headerimage="RCD_HEADER_AIRLOCKS.png"
 	selectiondialogue="Enter the name of the airlock"
 
-/datum/rcd_scematic_grouping/build_airlock/New()	
-	..()
+/datum/rcd_scematic_grouping/build_airlock/New(var/obj/item/device/rcd/rcdtouse=null)	
+	..(rcdtouse)
 	linked_rcd.settings["airlock_access"]= new /list()
 	linked_rcd.settings["airlock_dir"]=NORTH
 
 /datum/rcd_scematic_grouping/build_airlock/switch_to()
-	linked_rcd.selected_schem = schematics[1]
+	if(schematics.len)
+		linked_rcd.selected_schem = schematics[1]
 
 /datum/rcd_scematic_grouping/build_airlock/send_assets(var/client/client)
 	register_asset("RCD_HEADER_AIRLOCKS.png", new/icon('icons/obj/doors/door.dmi', "door_closed" ))
@@ -1123,3 +1124,91 @@
 		newwindoor.req_access = linked_rcd.settings["airlock_access"]?.Copy()
 	newwindoor.autoclose=1
 	return cost	
+
+
+
+
+
+
+//prefab groups, so you don't have to change all 3 RCDs to add a shematic
+
+/datum/rcd_scematic_grouping/build_wall/engi_std
+
+/datum/rcd_scematic_grouping/build_wall/engi_std/New(var/obj/item/device/rcd/rcdtouse=null)
+	..(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/normalwall(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/woodwall(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/girder(rcdtouse)
+
+
+/datum/rcd_scematic_grouping/build_wall/engi_std/CE //for the ARCD
+
+/datum/rcd_scematic_grouping/build_wall/engi_std/CE/New(var/obj/item/device/rcd/rcdtouse=null)
+	..(rcdtouse)
+	schematics+=new /datum/rcd_grouped_schematic/rwall(rcdtouse)
+
+
+
+/datum/rcd_scematic_grouping/build_floors/engi_std
+
+/datum/rcd_scematic_grouping/build_floors/engi_std/New(var/obj/item/device/rcd/rcdtouse=null)
+	..(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/floor(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/plating(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/glassfloor(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/lattice(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/catwalk(rcdtouse)
+
+/datum/rcd_scematic_grouping/build_floors/engi_std/CE
+
+/datum/rcd_scematic_grouping/build_floors/engi_std/CE/New(var/obj/item/device/rcd/rcdtouse=null)
+	..(rcdtouse)
+	schematics += new/datum/rcd_grouped_schematic/rfloor(rcdtouse)
+	
+
+
+/datum/rcd_scematic_grouping/build_windows/engi_std
+
+/datum/rcd_scematic_grouping/build_windows/engi_std/New(var/obj/item/device/rcd/rcdtouse=null)
+	..(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/glass/weak(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/glass/reinforced(rcdtouse)
+
+
+/datum/rcd_scematic_grouping/build_airlock/engi_std
+
+/datum/rcd_scematic_grouping/build_airlock/engi_std/New(var/obj/item/device/rcd/rcdtouse=null)
+	..(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/standard(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/glass(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/freezer(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/centcom(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/command(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/glass_command(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/hatch(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/maintenance_hatch(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/maintenance(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/engineering(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/glass_engineering(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/security(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/glass_security(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/medical(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/glass_medical(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/research(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/glass_research(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/mining(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/glass_mining(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/atmos(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/glass_atmos(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/science(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/glass_science(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/external(rcdtouse)
+	schematics+= new /datum/rcd_grouped_schematic/airlock/windoor(rcdtouse)
+
+/datum/rcd_scematic_grouping/build_airlock/engi_std/CE
+
+/datum/rcd_scematic_grouping/build_airlock/engi_std/CE/New(var/obj/item/device/rcd/rcdtouse=null)	
+	..(rcdtouse)
+	schematics+= new/datum/rcd_grouped_schematic/airlock/vault(rcdtouse)
+	schematics+= new/datum/rcd_grouped_schematic/airlock/highsecurity(rcdtouse)
+

@@ -9,66 +9,27 @@
 	current_menu="deconstruct"
 
 
-/obj/item/device/rcd/matter/engineering/New()
+/obj/item/device/rcd/matter/engineering/New(var/loc=null,var/no_schematics=FALSE)
 	. = ..()
 	rcd_list += src
 
+	if(!no_schematics)
+		var/datum/rcd_scematic_grouping/destroy/dest_g = new(src)
+		dest_g.schematics+= new /datum/rcd_grouped_schematic/destroy_all(src)
 	
-	var/datum/rcd_scematic_grouping/destroy/dest_g = new(src)
-	dest_g.schematics+= new /datum/rcd_grouped_schematic/destroy_all(src)
+		var/datum/rcd_scematic_grouping/build_wall/engi_std/wall_g = new(src)
+		var/datum/rcd_scematic_grouping/build_floors/engi_std/floor_g = new(src)
+		var/datum/rcd_scematic_grouping/build_windows/engi_std/window_g = new(src)
+		var/datum/rcd_scematic_grouping/build_airlock/engi_std/airlock_g=new(src)
 	
-	var/datum/rcd_scematic_grouping/build_wall/wall_g = new(src)
-	wall_g.schematics+= new /datum/rcd_grouped_schematic/normalwall(src)
-	wall_g.schematics+= new /datum/rcd_grouped_schematic/woodwall(src)
-	wall_g.schematics+= new /datum/rcd_grouped_schematic/girder(src)
+		schem_groups+=dest_g
+		schem_groups+=wall_g
+		schem_groups+=floor_g
+		schem_groups+=airlock_g
+		schem_groups+=window_g
 	
-	var/datum/rcd_scematic_grouping/build_floors/floor_g = new(src)
-	floor_g.schematics+= new /datum/rcd_grouped_schematic/floor(src)
-	floor_g.schematics+= new /datum/rcd_grouped_schematic/plating(src)
-	floor_g.schematics+= new /datum/rcd_grouped_schematic/glassfloor(src)
-	floor_g.schematics+= new /datum/rcd_grouped_schematic/lattice(src)
-	floor_g.schematics+= new /datum/rcd_grouped_schematic/catwalk(src)
-	
-	var/datum/rcd_scematic_grouping/build_windows/window_g = new(src)
-	window_g.schematics+= new /datum/rcd_grouped_schematic/glass/weak(src)
-	window_g.schematics+= new /datum/rcd_grouped_schematic/glass/reinforced(src)
-	
-	var/datum/rcd_scematic_grouping/build_airlock/airlock_g=new(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/standard(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/freezer(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/centcom(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/command(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_command(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/hatch(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/maintenance_hatch(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/maintenance(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/engineering(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_engineering(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/security(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_security(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/medical(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_medical(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/research(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_research(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/mining(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_mining(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/atmos(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_atmos(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/science(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_science(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/external(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/windoor(src)
-
-
-	schem_groups+=dest_g
-	schem_groups+=wall_g
-	schem_groups+=floor_g
-	schem_groups+=airlock_g
-	schem_groups+=window_g
-	
-	current_menu=schem_groups[1].name
-	schem_groups[1].switch_to()
+		current_menu=schem_groups[1].name
+		schem_groups[1].switch_to()
 	
 
 /obj/item/device/rcd/matter/engineering/Destroy()
@@ -227,8 +188,8 @@
 	user.death(1)
 	return SUICIDE_ACT_CUSTOM
 
-/obj/item/device/rcd/matter/engineering/pre_loaded/New() //Comes with max energy
-	..()
+/obj/item/device/rcd/matter/engineering/pre_loaded/New(var/loc=null,var/no_schematics=FALSE) //Comes with max energy
+	..(loc,no_schematics)
 	matter = max_matter
 
 
@@ -245,7 +206,6 @@
 	/datum/rcd_schematic/con_window/borg,
 	)
 	var/matter=0
-	var/max_matter=0
 	
 	current_menu="deconstruct"
 
@@ -255,56 +215,12 @@
 
 	var/datum/rcd_scematic_grouping/destroy/dest_g = new(src)
 	dest_g.schematics+= new /datum/rcd_grouped_schematic/destroy_all(src)
-	
-	var/datum/rcd_scematic_grouping/build_wall/wall_g = new(src)
-	wall_g.schematics+= new /datum/rcd_grouped_schematic/normalwall(src)
-	wall_g.schematics+= new /datum/rcd_grouped_schematic/woodwall(src)
-	wall_g.schematics+= new /datum/rcd_grouped_schematic/girder(src)
-	
-	var/datum/rcd_scematic_grouping/build_floors/floor_g = new(src)
-	floor_g.schematics+= new /datum/rcd_grouped_schematic/floor(src)
-	floor_g.schematics+= new /datum/rcd_grouped_schematic/plating(src)
-	floor_g.schematics+= new /datum/rcd_grouped_schematic/glassfloor(src)
-	floor_g.schematics+= new /datum/rcd_grouped_schematic/lattice(src)
-	floor_g.schematics+= new /datum/rcd_grouped_schematic/catwalk(src)
-	
-	var/datum/rcd_scematic_grouping/build_windows/window_g = new(src)
-	window_g.schematics+= new /datum/rcd_grouped_schematic/glass/weak(src)
-	window_g.schematics+= new /datum/rcd_grouped_schematic/glass/reinforced(src)
-	
-	var/datum/rcd_scematic_grouping/build_airlock/airlock_g=new(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/standard(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/freezer(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/centcom(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/command(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_command(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/hatch(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/maintenance_hatch(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/maintenance(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/engineering(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_engineering(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/security(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_security(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/medical(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_medical(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/research(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_research(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/mining(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_mining(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/atmos(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_atmos(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/science(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_science(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/external(src)
-	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/windoor(src)
-
 
 	schem_groups+=dest_g
-	schem_groups+=wall_g
-	schem_groups+=floor_g
-	schem_groups+=airlock_g
-	schem_groups+=window_g
+	schem_groups+=new /datum/rcd_scematic_grouping/build_wall/engi_std(src)
+	schem_groups+=new /datum/rcd_scematic_grouping/build_floors/engi_std(src)
+	schem_groups+=new /datum/rcd_scematic_grouping/build_airlock/engi_std(src)
+	schem_groups+=new /datum/rcd_scematic_grouping/build_windows/engi_std(src)
 	
 	current_menu=schem_groups[1].name
 	schem_groups[1].switch_to()
@@ -315,11 +231,9 @@
 		return
 	var/mob/living/silicon/robot/R = user
 	if(!R.cell)
-		max_matter=0
 		matter=0
 	else
 		matter=R.cell.charge / cell_power_per_energy
-		max_matter=matter
 
 	rebuild_ui()	
 	interface.show(user)
@@ -390,7 +304,7 @@
 /obj/item/device/rcd/borg/engineering/rebuild_ui()
 	var/dat=""
 	
-	dat+="Charge: [matter]/[max_matter]<hr>"
+	dat+="Charge: [floor(matter)]<hr>"
 	
 	//that's right, you can embed a stylesheet in the html body, and you better believe i'm going to do this instead of setting up a whole new file for like 2 rules.
 	dat+={"<style> 
@@ -456,11 +370,9 @@
 		return 1
 	var/mob/living/silicon/robot/R = user
 	if(!R.cell)
-		max_matter=0
 		matter=0
 	else
 		matter=R.cell.charge / cell_power_per_energy
-		max_matter=matter
 
 	var/c=selected_schem.build(A,user)
 	if(!c)
@@ -469,11 +381,9 @@
 		use_energy(c, user)
 		
 		if(!R.cell)
-			max_matter=0
 			matter=0
 		else
 			matter=R.cell.charge / cell_power_per_energy
-			max_matter=matter
 		
 		rebuild_ui()
 	return 1	
@@ -498,16 +408,21 @@
 	slimes_accepted = SLIME_DARKPURPLE
 	slimeadd_success_message = "It gains a distinct plasma pink hue"
 
-/obj/item/device/rcd/matter/engineering/pre_loaded/adv/New()
-	..()
-	for(var/datum/rcd_scematic_grouping/schem_group in schem_groups)
-		if(istype(schem_group,/datum/rcd_scematic_grouping/build_wall) )
-			schem_group.schematics+=new /datum/rcd_grouped_schematic/rwall(src)
-		if(istype(schem_group,/datum/rcd_scematic_grouping/build_floors) )
-			schem_group.schematics+= new/datum/rcd_grouped_schematic/rfloor(src)
-		if(istype(schem_group,/datum/rcd_scematic_grouping/build_airlock) )
-			schem_group.schematics+= new/datum/rcd_grouped_schematic/airlock/vault(src)
-			schem_group.schematics+= new/datum/rcd_grouped_schematic/airlock/highsecurity(src)
+/obj/item/device/rcd/matter/engineering/pre_loaded/adv/New(var/loc=null,var/no_schematics=FALSE)
+	..(loc,TRUE)
+	
+	if(!no_schematics)
+		var/datum/rcd_scematic_grouping/destroy/dest_g = new(src)
+		dest_g.schematics+= new /datum/rcd_grouped_schematic/destroy_all(src)
+
+		schem_groups+=dest_g
+		schem_groups+=new /datum/rcd_scematic_grouping/build_wall/engi_std/CE(src)
+		schem_groups+=new /datum/rcd_scematic_grouping/build_floors/engi_std/CE(src)
+		schem_groups+=new /datum/rcd_scematic_grouping/build_airlock/engi_std/CE(src)
+		schem_groups+=new /datum/rcd_scematic_grouping/build_windows/engi_std(src)
+	
+		current_menu=schem_groups[1].name
+		schem_groups[1].switch_to()
 
 	
 /obj/item/device/rcd/matter/engineering/pre_loaded/adv/slime_act(primarytype, mob/user)
