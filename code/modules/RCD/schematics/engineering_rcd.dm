@@ -20,13 +20,13 @@
 		
 
 
-/datum/rcd_scematic_grouping/switch_to()
+/datum/rcd_scematic_grouping/destroy/switch_to()
 	var/found=FALSE
 	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
 		return
 	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	
-	for(var/datum/rcd_grouped_schematic/S in src)
+	for(var/datum/rcd_grouped_schematic/S in src.schematics)
 		if(istype(S,/datum/rcd_grouped_schematic/destroy_all))
 			RCD.selected_schem=S
 			found=TRUE
@@ -559,7 +559,7 @@
 	if(linked_rcd.get_energy(user) < cost)
 		to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
 		return 0
-	if(locate(/obj/structure/lattice in T.contents))
+	if(locate(/obj/structure/lattice) in T.contents)
 		to_chat(user, "There's already a [name] here!")
 		return 0
 	new /obj/structure/lattice(T)	
@@ -585,7 +585,7 @@
 	if(linked_rcd.get_energy(user) < cost)
 		to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
 		return 0
-	if(locate(/obj/structure/catwalk in T.contents))
+	if(locate(/obj/structure/catwalk) in T.contents)
 		to_chat(user, "There's already a [name] here!")
 		return 0
 	var/refund=0
