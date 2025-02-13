@@ -384,3 +384,7 @@
 /obj/item/device/rcd/mech/attack_self(var/mob/living/user)
 	if(!selected || user.shown_schematics_background || !selected.show(user))
 		user.hud_used.toggle_show_schematics_display(schematics["Construction"], 0, src)
+
+
+
+

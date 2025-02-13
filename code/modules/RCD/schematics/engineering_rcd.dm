@@ -330,11 +330,8 @@
 	return 0
 
 /datum/rcd_grouped_schematic/girder/generate_html()
-	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
-		return ""
-	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a="<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
-	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='girder_RCD.png'></a></td><td>[a][cost+1]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'></a></td></tr>"
+	return "<tr class='[linked_rcd.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='girder_RCD.png'></a></td><td>[a][cost+1]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'></a></td></tr>"
 	
 
 /datum/rcd_scematic_grouping/build_floors
