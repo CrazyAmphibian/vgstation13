@@ -18,8 +18,6 @@
 	melt_temperature    = MELTPOINT_STEEL // Lots of metal
 	origin_tech         = Tc_ENGINEERING + "=4;" + Tc_MATERIALS + "=2"
 
-	var/constructionspeed=1 //how many times faster is this than normal?
-
 	var/frequency = 0
 	var/id = null
 
@@ -36,7 +34,6 @@
 	var/datum/rcd_schematic/selected
 	var/list/favorites  = list()
 	var/tmp/next_spark  = 0
-	
 
 	var/datum/html_interface/rcd/interface
 

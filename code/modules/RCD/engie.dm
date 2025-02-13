@@ -24,6 +24,7 @@
 	var/datum/rcd_scematic_grouping/build_wall/wall_g = new(src)
 	wall_g.schematics+= new /datum/rcd_grouped_schematic/normalwall(src)
 	wall_g.schematics+= new /datum/rcd_grouped_schematic/woodwall(src)
+	wall_g.schematics+= new /datum/rcd_grouped_schematic/girder(src)
 	
 	var/datum/rcd_scematic_grouping/build_floors/floor_g = new(src)
 	floor_g.schematics+= new /datum/rcd_grouped_schematic/floor(src)
@@ -61,7 +62,7 @@
 	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/science(src)
 	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/glass_science(src)
 	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/external(src)
-
+	airlock_g.schematics+= new /datum/rcd_grouped_schematic/airlock/windoor(src)
 
 
 	schem_groups+=dest_g

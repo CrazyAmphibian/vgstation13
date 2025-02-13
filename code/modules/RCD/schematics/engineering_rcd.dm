@@ -168,6 +168,10 @@
 	register_asset("woodwall_RCD.png", new/icon('icons/turf/walls.dmi', "wood0" ))
 	send_asset(client, "woodwall_RCD.png")	
 	
+	register_asset("girder_RCD.png", new/icon('icons/obj/structures.dmi', "girder" ))
+	send_asset(client, "girder_RCD.png")		
+	
+	
 	register_asset("RCD_HEADER_WALLS.png", new/icon('icons/turf/walls.dmi', "metal0" ))
 	send_asset(client, "RCD_HEADER_WALLS.png")	
 	
@@ -190,18 +194,28 @@
 			costtouse=cost+1 //add cost to make the floor
 		else
 			costtouse=0
-			
-	if(costtouse)
-		playsound(linked_rcd, 'sound/machines/click.ogg', 50, 1)
-		if(linked_rcd.delay(user, A, 2 SECONDS))
-			if(linked_rcd.get_energy(user) < costtouse)
-				to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
-				return 0
-			playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
-			T.ChangeTurf(/turf/simulated/wall)
-			return costtouse
-	else
+	
+	if(!costtouse)
 		to_chat(user, "You cannot build a wall here!")
+		return 0
+		
+	for(var/atom/A2 in T.contents)
+		if(A2.type==/obj/structure/girder )
+			costtouse-=1
+			break
+	
+	
+	playsound(linked_rcd, 'sound/machines/click.ogg', 50, 1)
+	if(linked_rcd.delay(user, A, 2 SECONDS))
+		if(linked_rcd.get_energy(user) < costtouse)
+			to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
+			return 0
+		for(var/atom/A2 in T.contents)
+			if(A2.type==/obj/structure/girder )
+				qdel(A2)
+		playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
+		T.ChangeTurf(/turf/simulated/wall)
+		return costtouse
 	
 	return 0
 
@@ -210,7 +224,7 @@
 		return ""
 	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a="<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
-	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='wall_RCD.png'></a></td><td>[a][cost+1]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'></a></td></tr>"
+	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='wall_RCD.png'></a></td><td>[a][cost+1]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'><img src='girder_RCD.png'></a></td></tr>"
 
 
 
@@ -280,16 +294,26 @@
 			costtouse=cost+1 //add cost to make the floor
 		else
 			costtouse=0
+	if(!costtouse)
+		to_chat(user, "You cannot build a wall here!")
+		return 0
+		
+	for(var/atom/A2 in T.contents)
+		if(A2.type==/obj/structure/girder )
+			costtouse-=1
+			break
 			
-	if(costtouse)
-		playsound(linked_rcd, 'sound/machines/click.ogg', 50, 1)
-		if(linked_rcd.delay(user, A, 2 SECONDS))
-			if(linked_rcd.get_energy(user) < costtouse)
-				to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
-				return 0
-			playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
-			T.ChangeTurf(/turf/simulated/wall/mineral/wood)
-			return costtouse
+	playsound(linked_rcd, 'sound/machines/click.ogg', 50, 1)
+	if(linked_rcd.delay(user, A, 2 SECONDS))
+		if(linked_rcd.get_energy(user) < costtouse)
+			to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
+			return 0
+		for(var/atom/A2 in T.contents)
+			if(A2.type==/obj/structure/girder )	
+				qdel(A2)
+		playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
+		T.ChangeTurf(/turf/simulated/wall/mineral/wood)
+		return costtouse
 	else
 		to_chat(user, "You cannot build a wall here!")
 	
@@ -300,8 +324,45 @@
 		return ""
 	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 	var/a="<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
-	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='woodwall_RCD.png'></a></td><td>[a][cost+1]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'></a></td></tr>"
+	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='woodwall_RCD.png'></a></td><td>[a][cost+1]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'><img src='girder_RCD.png'></a></td></tr>"
 
+
+/datum/rcd_grouped_schematic/girder
+	name="girder"
+	cost=1
+	
+/datum/rcd_grouped_schematic/girder/build(var/atom/A, var/mob/user)
+	var/turf/T=get_turf(A)
+	var/truecost=0
+	if(istype(T,/turf/space))
+		truecost=cost+1
+	else if(istype(T,/turf/simulated/floor) )
+		truecost=cost
+	else
+		to_chat(user, "You cannot build a [name] here!")
+		return 0
+	
+	for(var/atom/A2 in T.contents)
+		if(A2.type==/obj/structure/girder )
+			to_chat(user, "There's already a [name] here!")
+			return 0
+	playsound(linked_rcd, 'sound/machines/click.ogg', 50, 1)
+	if(linked_rcd.delay(user, A, 1 SECONDS))
+		if(linked_rcd.get_energy(user) < truecost)
+			to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
+			return 0
+		playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
+		new /obj/structure/girder(T)
+		return truecost
+	return 0
+
+/datum/rcd_grouped_schematic/girder/generate_html()
+	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		return ""
+	var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+	var/a="<a href='?src=\ref[linked_rcd.interface];set_schematic=[name];'>"
+	return "<tr class='[RCD.selected_schem==src ? "schem_selected" : "schem"]'><td>[a]<img src='girder_RCD.png'></a></td><td>[a][cost+1]</a></td><td>[a]2</a></td><td>[a]<img src='floor_RCD.png'></a></td></tr>"
+	
 
 /datum/rcd_scematic_grouping/build_floors
 	name="floors"
@@ -832,6 +893,7 @@
 	if(istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
 		var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
 		RCD.settings["airlock_access"]= new /list()
+		RCD.settings["airlock_dir"]=NORTH
 
 /datum/rcd_scematic_grouping/build_airlock/switch_to()
 	if(!istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
@@ -852,6 +914,17 @@
 	var/dat=""
 	//set name
 	dat+="Set Name: <span class='schem'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_name;value_input=yes'> [RCD.settings["airlock_name"] || RCD.selected_schem.name ]</a></span> <span class='schem'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_name;value=[RCD.selected_schem.name]'> Reset </a></span>"
+	
+	
+	if(istype(RCD.selected_schem,/datum/rcd_grouped_schematic/airlock/windoor))
+		dat+={"
+	<table style='text-align:center;line-height:110%;'>
+	<tr><td colspan=2> <span class='schem[RCD.settings["airlock_dir"]==NORTH ? "_selected" :"" ]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_dir;value_isnum=yes;value=[NORTH]'>NORTH</a></span> </td></tr>
+	<tr><td> <span class='schem[RCD.settings["airlock_dir"]==WEST ? "_selected" :"" ]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_dir;value_isnum=yes;value=[WEST]'>WEST</a></span> </td><td> <span class='schem[RCD.settings["airlock_dir"]==EAST ? "_selected" :"" ]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_dir;value_isnum=yes;value=[EAST]'>EAST</a></span> </td></tr>
+	<tr><td colspan=2> <span class='schem[RCD.settings["airlock_dir"]==SOUTH ? "_selected" :"" ]'><a href='?src=\ref[linked_rcd.interface];set_arg=airlock_dir;value_isnum=yes;value=[SOUTH]'>SOUTH</a></span> </td></tr>
+	</table>
+	"}
+	
 	dat+="<hr>"
 	
 	//access settings
@@ -887,7 +960,7 @@
 						if(n==A)
 							isin=TRUE
 							break
-					dat+="<td style='height:100%;width:14%' class='schem[isin?"_selected":""]'>\<a style='display:block;width:100%;height:100%;' href='?src=\ref[linked_rcd.interface];set_arg=airlock_access;value=[A];value_togglelist=yes;value_isnum=yes;'>[access_name]</a></td>"
+					dat+="<td style='height:100%;width:14%' class='schem[isin?"_selected":""]'><a style='display:block;width:100%;height:100%;' href='?src=\ref[linked_rcd.interface];set_arg=airlock_access;value=[A];value_togglelist=yes;value_isnum=yes;'>[access_name]</a></td>"
 					drew=TRUE
 				else
 					dat+="<td/>"
@@ -909,6 +982,7 @@
 	cost=3
 	var/icon='icons/obj/doors/door.dmi'
 	var/path = /obj/machinery/door/airlock 
+	var/has_direction=FALSE
 		
 /datum/rcd_grouped_schematic/airlock/send_assets(var/client/client)
 	register_asset("airlock_[name]_RCD.png", new/icon(icon, "door_closed" ))
@@ -1094,3 +1168,65 @@
 	name="External Airlock"
 	icon='icons/obj/doors/Doorext.dmi'
 	path=/obj/machinery/door/airlock/external	
+		
+/datum/rcd_grouped_schematic/airlock/windoor
+	name="Windoor"
+	icon='icons/obj/doors/windoor.dmi'
+	path=/obj/machinery/door/window
+	
+/datum/rcd_grouped_schematic/airlock/windoor/send_assets(var/client/client)
+	has_direction=TRUE
+	register_asset("airlock_[name]_RCD.png", new/icon(icon, "left" ))
+	send_asset(client, "airlock_[name]_RCD.png")	
+
+/datum/rcd_grouped_schematic/airlock/windoor/build(var/atom/A, var/mob/user)
+	var/turf/T=get_turf(A)
+	var/cc=0
+	var/dirtouse=NORTH
+	
+	if(istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+		dirtouse=RCD.settings["airlock_dir"] || NORTH
+	
+	if(!T)
+		return 0
+	if(istype(T, /turf/space))
+		cc=cost+1
+	else if (istype(T, /turf/simulated/floor))
+		cc=cost
+	else
+		to_chat(user, "You can't place a [name] here!")
+		return 0
+	for(var/atom/at in T.contents)
+		if (istype(at, /obj/machinery/door/window) && at.dir==dirtouse)
+			to_chat(user, "There's already a windoor here!")
+			return 0
+	
+	if(linked_rcd.get_energy(user) < cc)
+		to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
+		return 0			
+	if(!linked_rcd.delay(user, A, 5 SECONDS))
+		return 0
+	if(linked_rcd.get_energy(user) < cc)
+		to_chat(user, "The [linked_rcd] doesn't have enough charge to build a [name]!")
+		return 0
+	playsound(linked_rcd, 'sound/items/Deconstruct.ogg', 50, 1)
+	
+	if(istype(T, /turf/space))
+		T.ChangeTurf(/turf/simulated/floor)
+	
+	var/obj/machinery/door/airlock/newwindoor = new path(T)
+	
+	if(istype(linked_rcd,/obj/item/device/rcd/matter/engineering))
+		var/obj/item/device/rcd/matter/engineering/RCD=linked_rcd
+		
+		newwindoor.name=RCD.settings["airlock_name"] || name
+		
+		newwindoor.change_dir(dirtouse)
+		
+		if(RCD.settings["airlock_acany"])
+			newwindoor.req_one_access = RCD.settings["airlock_access"]?.Copy()
+		else
+			newwindoor.req_access = RCD.settings["airlock_access"]?.Copy()
+		newwindoor.autoclose=1
+	return cost	
