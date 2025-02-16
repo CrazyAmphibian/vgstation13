@@ -229,10 +229,11 @@ the machine which makes fuel rods have things in them.
 		for(var/datum/reagent/R  in heldrod.fueldata.fuel.reagent_list)
 			current_rodamt+=R.volume
 					
-		estimated_time=heldrod.fueldata.lifetime
+		estimated_time=floor(heldrod.fueldata.lifetime/60)
 		if(heldrod.fueldata.absorbance>heldrod.fueldata.wattage)
 			if(heldrod.fueldata.wattage>0)
 				estimated_time/= (heldrod.fueldata.absorbance-heldrod.fueldata.wattage)/heldrod.fueldata.wattage
+				estimated_time=floor(estimated_time)
 			else
 				estimated_time="never"
 		else
@@ -286,7 +287,7 @@ the machine which makes fuel rods have things in them.
 				
 		html={"<div style='margin-left:5px;margin-right:5px;'>
 		<div >
-		Baseline fuel lifespan: [floor(estimated_time/60)] minutes <br>
+		Baseline fuel lifespan: [estimated_time] minutes <br>
 		Baseline heat generation: [floor(estimated_power)] Watts <br>
 		<table><tr><td style='white-space: nowrap;'>Expected byproducts:&nbsp;</td><td>[producttext]</td></tr></table>
 		</div>"}

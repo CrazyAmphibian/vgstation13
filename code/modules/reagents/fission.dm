@@ -21,5 +21,12 @@
 /datum/reagent/plasma/irradiate(var/list/current_reagents=null) //primary purpose: a very lossy way to get phazon via plasma. powergaymers rejoice.
 	return list(PHAZON=0.05) //fun fact. 1 sheet of plas = 20 units. 1 sheet of phaz = 1 unit. funny, huh?
 	
-/datum/reagent/degeneratecalcium/irradiate()
+/datum/reagent/degeneratecalcium/irradiate(var/list/current_reagents=null)
 	return list(REGENERATECALCIUM=1.0)
+
+//these give the same reagent, but in different ratios. DD is far more efficent, but to support our ghetto chem brothers, we let them get some of this, too. not as much, though.
+/datum/reagent/tricordrazine/irradiate(var/list/current_reagents=null)
+	return list(EQUALIZONE=0.1)
+
+/datum/reagent/drink/doctor_delight/irradiate(var/list/current_reagents=null)
+	return list(EQUALIZONE=0.25)

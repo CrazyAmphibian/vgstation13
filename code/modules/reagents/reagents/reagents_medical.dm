@@ -632,7 +632,7 @@ var/global/list/charcoal_doesnt_remove=list(
 	density = 3.9
 	specheatcap = 0.12812
 	custom_metabolism = 0.1
-	fission_time=3000 // 100 minutes (1hr 40)
+	fission_time=6000 // 100 minutes (1hr 40)
 	fission_absorbtion=5000
 
 /datum/reagent/degeneratecalcium/on_mob_life(var/mob/living/M)
@@ -1684,6 +1684,8 @@ var/global/list/charcoal_doesnt_remove=list(
 	color = "#C8A5DC" //rgb: 200, 165, 220
 	density = 1.58
 	specheatcap = 0.44
+	fission_time=4800 // 80 minutes (1hr 20)
+	fission_absorbtion=3500
 
 /datum/reagent/tricordrazine/on_mob_life(var/mob/living/M)
 	if(..())
@@ -1803,3 +1805,46 @@ var/global/list/charcoal_doesnt_remove=list(
 					E.status&= ~ORGAN_BROKEN //fixes broken limbs
 			if(!remaininghealing)
 				return 1
+
+
+
+/datum/reagent/equalizone
+	name = "Equalizone"
+	description = "An experimental drug synthesized through subjecting particular chemicals to high levels of neutron radiation. Effects while inside the system are still being studied, and are highly unpredictable. Subjects report wounds of different types appearing and disappearing at incredible rates, or falling ill after trials."
+	id = EQUALIZONE
+	density = 2.78
+	specheatcap = 0.103
+	reagent_state = REAGENT_STATE_LIQUID
+	color = "#4ee7e6"
+
+/datum/reagent/equalizone/on_mob_life(var/mob/living/M)
+	var/efficacy=0.5 //how much this thing does what it does per tick.
+
+	if(..())
+		return 1
+
+	var/toxmod=M.tox_damage_modifier
+	var/brutemod=M.brute_damage_modifier
+	var/firemod=M.burn_damage_modifier
+	
+	if(toxmod==0 || brutemod==0 || firemod==0) //no div 0 here, so sireeeeee, nope.
+		return 1
+
+	var/brut=M.getBruteLoss()
+	var/brn=M.getFireLoss()
+	var/tox=M.getToxLoss()
+	
+	var/totaldamage = brut+tox+brn
+	if(totaldamage>0.0) //no need to do anything if no damage.
+		totaldamage/=3.0 //average it
+
+		var/tox_target = tox*(1-efficacy) + efficacy*totaldamage //linear interpolation to get the damage.
+		var/brute_target = brut*(1-efficacy) + efficacy*totaldamage
+		var/burn_target = brn*(1-efficacy) + efficacy*totaldamage
+		
+		
+		M.adjustToxLoss(  0.2*ceil(  5.0*((tox_target-tox)/toxmod) )   )
+		M.adjustBruteLoss( 0.2*ceil(  5.0*( (brute_target-brut)/brutemod) ) ) //we divide by the damage modifier, because adjust_loss will multiply by it. we don't want that.
+		M.adjustFireLoss( 0.2*ceil(  5.0*( (burn_target-brn)/firemod) ) ) //why are we rounding to .2? because the damage system acts funky with low fractional numbers, so we avoid that. why ceil instead of floor? fuck you, that's why.
+		
+		M.updatehealth()

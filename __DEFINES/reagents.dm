@@ -547,6 +547,7 @@
 #define LEAD			"lead"
 #define THALLIUM		"thallium"
 #define REGENERATECALCIUM	"regeneratecalcium"
+#define EQUALIZONE		"equalizone"
 
 #define DYE_DANDELIONS	"dandelion_dye"
 
