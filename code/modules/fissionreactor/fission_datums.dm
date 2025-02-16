@@ -347,7 +347,7 @@ datums for the fission reactor, which includes the fuel and reactor
 		explodeprob=max(0,(1-(1/( log(1+max(0,fuel.wattage-fuel.absorbance)/15000)  ))))
 		
 	for(var/i=1,i<=reactorarea2,i++)
-		if(rand()<=0.2*explodeprob*dt)
+		if(rand()<=0.1*explodeprob*dt)
 			var/list/eplodies=determineexplosionsize()
 			if(eplodies[3]>0)
 				explosion( randomtileinreactor() ,eplodies[1],eplodies[2],eplodies[3])
