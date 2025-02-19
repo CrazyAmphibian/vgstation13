@@ -25,7 +25,7 @@
 		if(istype(S,/datum/rcd_grouped_schematic/destroy_all))
 			linked_rcd.selected_schem=S
 			found=TRUE
-			break;
+			break
 	if(!found)
 		linked_rcd.selected_schem=new /datum/rcd_grouped_schematic/destroy_all(linked_rcd)
 
@@ -854,8 +854,8 @@
 			dat+="<th style='width:14%'>[get_region_accesses_name(i)]</th>"
 		dat+="</tr>"
 	
-		var/drew=TRUE;
-		var/row=1;
+		var/drew=TRUE
+		var/row=1
 		while(drew)
 			drew=FALSE
 			dat += "<tr>"

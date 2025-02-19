@@ -53,10 +53,7 @@
 	interface.show(user)
 
 
-/obj/item/device/rcd/matter/engineering/Topic(var/href, var/list/href_list)
-	//for(var/i in href_list)
-	//	world.log << "[i] = [href_list[i]]"
-		
+/obj/item/device/rcd/matter/engineering/Topic(var/href, var/list/href_list)	
 	if(href_list["set_group"])
 		for(var/datum/rcd_scematic_grouping/schem_group in schem_groups)
 			if(schem_group.name==href_list["set_group"])
