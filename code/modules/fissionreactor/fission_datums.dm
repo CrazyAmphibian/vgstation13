@@ -212,45 +212,53 @@ datums for the fission reactor, which includes the fuel and reactor
 		while(TRUE) //it'll be fiiiiiiiine.	
 			var/turf/turftosearch=locate(origin.x+xs-1,origin.y,origin.z)
 			var/list/contents = turftosearch.contents
+			var/casewasfound=FALSE
 			for (var/i=1,i<=contents.len,i++)
 				if(istype(contents[i],/obj/structure/fission_reactor_case) || istype(contents[i],/obj/machinery/atmospherics/unary/fissionreactor_coolantport) )
 					xs--
-					goto searchforanotherW
-			break
-			searchforanotherW: //i'm using goto because it's cool. and it helps avoid the use of a pointless flag var.
+					casewasfound=TRUE
+					break
+			if(!casewasfound) //protip: do not use goto, because the linters are not robust enough for the POWER.
+				break
 	if(directions&EAST) //x+
 		xs=1
 		while(TRUE)
 			var/turf/turftosearch=locate(origin.x+xs+1,origin.y,origin.z)
 			var/list/contents = turftosearch.contents
+			var/casewasfound=FALSE
 			for (var/i=1,i<=contents.len,i++)
 				if(istype(contents[i],/obj/structure/fission_reactor_case) || istype(contents[i],/obj/machinery/atmospherics/unary/fissionreactor_coolantport) )
 					xs++
-					goto searchforanotherE
-			break
-			searchforanotherE: 
+					casewasfound=TRUE
+					break
+			if(!casewasfound)
+				break
 	if(directions&NORTH)//y+
 		ys=1
 		while(TRUE)
 			var/turf/turftosearch=locate(origin.x,origin.y+ys+1,origin.z)
 			var/list/contents = turftosearch.contents
+			var/casewasfound=FALSE
 			for (var/i=1,i<=contents.len,i++)
 				if(istype(contents[i],/obj/structure/fission_reactor_case) || istype(contents[i],/obj/machinery/atmospherics/unary/fissionreactor_coolantport) )
 					ys++
-					goto searchforanotherN
-			break
-			searchforanotherN: 
+					casewasfound=TRUE
+					break
+			if(!casewasfound)
+				break
 	if(directions&SOUTH)//y-
 		ys=-1
 		while(TRUE)
 			var/turf/turftosearch=locate(origin.x,origin.y+ys-1,origin.z)
 			var/list/contents = turftosearch.contents
+			var/casewasfound=FALSE
 			for (var/i=1,i<=contents.len,i++)
 				if(istype(contents[i],/obj/structure/fission_reactor_case) || istype(contents[i],/obj/machinery/atmospherics/unary/fissionreactor_coolantport) )
 					ys--
-					goto searchforanotherS
-			break
-			searchforanotherS: 
+					casewasfound=TRUE
+					break
+			if(!casewasfound)
+				break
 	
 	//now we have to close the corners into a box.
 	//we have this:
@@ -270,38 +278,46 @@ datums for the fission reactor, which includes the fuel and reactor
 		for (var/searchx=0,searchx>=xs,searchx--) //hey at least this one isn't an infinite loop :)
 			var/turf/turftosearch=locate(origin.x+searchx,origin.y+ys,origin.z)
 			var/list/contents = turftosearch.contents
+			var/casewasfound=FALSE
 			for (var/i=1,i<=contents.len,i++)
 				if(istype(contents[i],/obj/structure/fission_reactor_case) || istype(contents[i],/obj/machinery/atmospherics/unary/fissionreactor_coolantport) )
-					goto correctobjW
-			return  "failed to find casing at offset [searchx],[ys]" //return because the setup is invalid.
-			correctobjW: //unless it's fine, in which case skip the return.
+					casewasfound=TRUE
+					break
+			if(!casewasfound)
+				return  "failed to find casing at offset [searchx],[ys]" //return because the setup is invalid.
 	if(directions&EAST)
 		for (var/searchx=0,searchx<=xs,searchx++)
 			var/turf/turftosearch=locate(origin.x+searchx,origin.y+ys,origin.z)
 			var/list/contents = turftosearch.contents
+			var/casewasfound=FALSE
 			for (var/i=1,i<=contents.len,i++)
 				if(istype(contents[i],/obj/structure/fission_reactor_case) || istype(contents[i],/obj/machinery/atmospherics/unary/fissionreactor_coolantport) )
-					goto correctobjE
-			return "failed to find casing at offset [searchx],[ys]"
-			correctobjE:
+					casewasfound=TRUE
+					break
+			if(!casewasfound)
+				return "failed to find casing at offset [searchx],[ys]"
 	if(directions&SOUTH)
 		for (var/searchy=0,searchy>=ys,searchy--)
 			var/turf/turftosearch=locate(origin.x+xs,origin.y+searchy,origin.z)
 			var/list/contents = turftosearch.contents
+			var/casewasfound=FALSE
 			for (var/i=1,i<=contents.len,i++)
 				if(istype(contents[i],/obj/structure/fission_reactor_case) || istype(contents[i],/obj/machinery/atmospherics/unary/fissionreactor_coolantport) )
-					goto correctobjS
-			return "failed to find casing at offset [xs],[searchy]"
-			correctobjS:
+					casewasfound=TRUE
+					break
+			if(!casewasfound)		
+				return "failed to find casing at offset [xs],[searchy]"
 	if(directions&NORTH)
 		for (var/searchy=0,searchy<=ys,searchy++)
 			var/turf/turftosearch=locate(origin.x+xs,origin.y+searchy,origin.z)
 			var/list/contents = turftosearch.contents
+			var/casewasfound=FALSE
 			for (var/i=1,i<=contents.len,i++)
 				if(istype(contents[i],/obj/structure/fission_reactor_case) || istype(contents[i],/obj/machinery/atmospherics/unary/fissionreactor_coolantport) )
-					goto correctobjN
-			return "failed to find casing at offset [xs],[searchy]"
-			correctobjN:
+					casewasfound=TRUE
+					break
+			if(!casewasfound)		
+				return "failed to find casing at offset [xs],[searchy]"
 	
 	//horray, we have verified the case makes a box!
 	
