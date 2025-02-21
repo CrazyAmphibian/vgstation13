@@ -78,6 +78,10 @@ the machine which makes fuel reservoirs have things in them.
 			new /obj/item/weapon/stock_parts/matter_bin(loc)
 			new /obj/item/weapon/stock_parts/scanning_module(loc)
 			new /obj/item/weapon/stock_parts/scanning_module(loc)
+			if(container)
+				container.forceMove(loc)
+			if(heldrod)
+				heldrod.forceMove(loc)
 			qdel(src)
 		return TRUE	
 	if( istype(I,/obj/item/weapon/reagent_containers) )
