@@ -7,10 +7,10 @@ datums for the fission reactor, which includes the fuel and reactor
 #define FISSIONREACTOR_SAFEENUFFTEMP 1000 //temp where SCRAM resets
 
 /datum/fission_reactor_holder
-	var/list/fuel_rods=list() //phase 0 vars, set upon construction
-	var/list/control_rods=list()
-	var/list/coolant_ports=list()
-	var/list/casing_parts=list()
+	var/obj/machinery/fissionreactor/fissionreactor_fuelrod/list/fuel_rods=list() //phase 0 vars, set upon construction
+	var/obj/machinery/fissionreactor/fissionreactor_controlrod/list/control_rods=list()
+	var/obj/machinery/atmospherics/unary/fissionreactor_coolantport/list/coolant_ports=list()
+	var/obj/structure/fission_reactor_case/list/casing_parts=list()
 	var/list/breaches=list()
 	var/obj/machinery/fissioncontroller/controller=null
 	var/heat_capacity=0
