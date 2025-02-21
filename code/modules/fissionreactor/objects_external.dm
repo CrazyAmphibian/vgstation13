@@ -816,7 +816,7 @@ included:
 				if (dir&NORTH)
 					dirstr="north"
 				if (dir&SOUTH)
-					dirstr="soth"
+					dirstr="south"
 				if (dir&EAST)
 					dirstr="east"
 				if (dir&WEST)
@@ -847,7 +847,7 @@ included:
 				user.visible_message("<span class='notice'>[user] starts disassembling \the [src].</span>", "<span class='notice'>You start disassembling \the [src].</span>")
 				if(do_after(user, src, construction_length))
 					user.visible_message("<span class='warning'>[user] dissasembles \the [src].</span>", "<span class='notice'>You dissasemble \the [src].</span>")
-					new material(get_turf(src), 2)
+					new material(get_turf(src), 4)
 					qdel(src)
 				return
 			to_chat(user, "<span class='notice'>You can't find a use for \the [W]</span>")
