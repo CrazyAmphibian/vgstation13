@@ -374,7 +374,8 @@ datums for the fission reactor, which includes the fuel and reactor
 		crads=((fuel.wattage-fuel.absorbance)*fuel.life)/100000 //100kw nets 1 rad.
 	for(var/i=1,i<=reactorarea2,i++)
 		if(rand()<=0.5*dt)
-			for (var/obj/o in randomtileinreactor()?.contents)
+			var/turf/t=randomtileinreactor()
+			for (var/obj/o in t?.contents)
 			
 				if(istype(o, /obj/machinery/fissioncontroller))
 					new /obj/machinery/corium(o.loc,crads+crads*0.5*(rand()-0.5)) //25% variance on the radiation levels.
