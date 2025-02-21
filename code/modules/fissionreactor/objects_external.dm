@@ -783,7 +783,7 @@ included:
 /obj/structure/girder/reactor
 	name="reactor casing girder"
 	material=/obj/item/stack/sheet/plasteel
-	construction_length=60
+	construction_length=40
 	var/pipeadded=FALSE
 	
 	
@@ -917,7 +917,7 @@ included:
 				W.playtoolsound(src, 100)	
 				to_chat(user, "<span class='notice'>You remove the piping from \the [src]</span>")	
 				var/obj/item/pipe/np= new /obj/item/pipe(loc)
-				np.pipe_type=1
+				np.pipe_type=0
 				np.forceMove(loc)
 				pipeadded=FALSE
 				return
