@@ -391,7 +391,7 @@ datums for the fission reactor, which includes the fuel and reactor
 				else if(istype(o,/obj/machinery/atmospherics/unary/fissionreactor_coolantport))
 					new /obj/machinery/corium(o.loc,crads+crads*0.5*(rand()-0.5))
 					qdel(o)
-				for(var/mob/living/l in range(locate(origin_x,origin_y,zlevel), 5))
+				for(var/mob/living/l in range(locate(origin_x,origin_y,zlevel), 10))
 					l.apply_radiation(crads*5, RAD_EXTERNAL)
 				
 	
@@ -566,7 +566,7 @@ datums for the fission reactor, which includes the fuel and reactor
 		if(rand()>0.5) //50% chance every tick to leak
 			var/datum/gas_mixture/removed= coolant.remove(coolant.total_moles*0.5*dt*rand(),TRUE,TRUE) //when we leak, leak 0-50% of the coolant
 			breachlocation.return_air().merge(removed,TRUE)
-		for(var/mob/living/l in range(breachlocation, 5))
+		for(var/mob/living/l in range(breachlocation, 10))
 			var/rads = (  fuelpower*powerfactor/100000   ) * sqrt(1/(max(get_dist(l, breachlocation), 1)))
 			l.apply_radiation(rads, RAD_EXTERNAL)
 	
