@@ -54,11 +54,13 @@ included:
 				return
 		var/obj/item/tool/weldingtool/WT = I
 		user.visible_message("<span class='notice'>[user] starts welding \the [src]'s external plating off its frame.</span>", "<span class='notice'>You start welding \the [src]'s external plating off its frame.</span>")
-		if(WT.do_weld(user,src,60,0))
+		if(WT.do_weld(user,src,40,0))
 			var/obj/structure/girder/reactor/newcase= new /obj/structure/girder/reactor(loc)
 			newcase.forceMove(loc)
+			newcase.dir=dir
 			newcase.pipeadded=TRUE
 			newcase.state=3
+			newcase.update_icon()
 			qdel(src)
 			
 /obj/machinery/atmospherics/unary/fissionreactor_coolantport/update_icon()
@@ -760,10 +762,11 @@ included:
 				return
 		var/obj/item/tool/weldingtool/WT = I
 		user.visible_message("<span class='notice'>[user] starts welding \the [src]'s external plating off its frame.</span>", "<span class='notice'>You start welding \the [src]'s external plating off its frame.</span>")
-		if(WT.do_weld(user,src,60,0))
+		if(WT.do_weld(user,src,40,0))
 			var/obj/structure/girder/reactor/newcase= new /obj/structure/girder/reactor(loc)
 			newcase.forceMove(loc)
 			newcase.state=3
+			newcase.update_icon()
 			qdel(src)
 
 
@@ -785,7 +788,13 @@ included:
 	material=/obj/item/stack/sheet/plasteel
 	construction_length=40
 	var/pipeadded=FALSE
-	
+
+
+/obj/structure/girder/reactor/update_icon()	
+	..()
+	overlays=null
+	if(pipeadded)
+		overlays+=image('icons/obj/fissionreactor/reactorcase.dmi', src,"coonantpipeoverlay")	
 	
 /obj/structure/girder/reactor/examine()
 	..()
@@ -911,6 +920,7 @@ included:
 					return
 				qdel(W)
 				pipeadded=TRUE
+				overlays+=image('icons/obj/fissionreactor/reactorcase.dmi', src,"coonantpipeoverlay")	
 				user.visible_message("<span class='notice'>[user] adds piping into \the [src].</span>", "<span class='notice'>You add piping into \the [src].</span>")	
 				return
 			if(pipeadded && W.is_wrench(user))
@@ -920,6 +930,7 @@ included:
 				np.pipe_type=0
 				np.forceMove(loc)
 				pipeadded=FALSE
+				overlays=null
 				return
 			if(pipeadded && iscrowbar(W))
 				W.playtoolsound(src, 100)
