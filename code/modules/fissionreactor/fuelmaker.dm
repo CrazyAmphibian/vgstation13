@@ -175,7 +175,7 @@ the machine which makes fuel reservoirs have things in them.
 		return "no fuel reservoir"
 	if(reagent_id==RADON || reagent_id=="RADON")
 		if(air_contents)
-			var/actually_taken=heldrod.fueldata.take_shit_from(reagent_id,amount ,heldrod.fueldata.fuel)
+			var/actually_taken=heldrod.fueldata.take_shit_from(RADON,amount ,heldrod.fueldata.fuel)
 			if(!air_contents.gas[GAS_RADON])
 				air_contents.gas[GAS_RADON]=0
 			air_contents.gas[GAS_RADON]+=actually_taken
@@ -200,7 +200,7 @@ the machine which makes fuel reservoirs have things in them.
 			var/avalible_gas=air_contents.gas[GAS_RADON] || 0 
 			amount=min(amount,avalible_gas,heldrod.units_of_storage-heldrod.fueldata.fuel.total_volume)
 			air_contents.gas[GAS_RADON]= max(0,avalible_gas-amount)
-			heldrod.fueldata.add_shit_to(reagent_id,amount ,heldrod.fueldata.fuel)
+			heldrod.fueldata.add_shit_to(RADON,amount ,heldrod.fueldata.fuel)
 			air_contents.update_values()	
 			if(network)
 				network.update=1
