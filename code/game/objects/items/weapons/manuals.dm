@@ -1465,7 +1465,7 @@ The design of a nuclear reactor is very important. Build it wrong, and you may f
 	<h3>Casing</h3>
 	The casing of a reactor should include the whole perimeter of it, with no gaps. A reactor will leak radiation and coolant into the environment if a casing is removed during operation.
 	<h3>Coolant Ports</h3>
-	A reactor should have at least 2 ports, one for a coolant input, and another for output. coolant ports can be placed at any point in the casing. Coolant ports simply equalize the pressure between the gas inside of the reactor, and the pipe connected to it, meaning that pumps or vents will need to be used to properly pass coolant through the reactor.
+	A reactor should have at least 2 ports: one for a coolant input, and another for output. Coolant ports can be placed at any point in the casing. Coolant ports simply equalize the pressure between the gas inside of the reactor and the pipe connected to it, meaning that pumps or vents are required to properly pass coolant through the reactor.
 	<h3>controller</h3>
 	A reactor can only have 1 controller to it, and must be placed at a corner of a reactor. The corner which it is placed at does not matter.
 	<h3>Fuel Rods</h3>
