@@ -820,6 +820,10 @@ included:
 				to_chat(usr,"It looks like you could fit in some piping right now.")
 		if(3)
 			to_chat(usr, "The outer plating sits loose on the frame and needs to be bonded. It looks like you could pry it off.")
+			if(anchored)
+				to_chat(usr, "The bolts securing it to the floor are exposed. It seems that a wrench could loosen them.")
+			else
+				to_chat(usr, "The bolts which would secure it to the floor are exposed. It seems that a wrench could tighten them.")
 			if(pipeadded)
 				var/dirstr=""
 				if (dir&NORTH)
