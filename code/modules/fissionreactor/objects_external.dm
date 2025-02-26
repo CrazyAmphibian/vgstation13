@@ -791,7 +791,7 @@ included:
 
 
 /obj/structure/girder/reactor/update_icon()	
-	..()
+	icon_state = state>=2 ? "reinforced" : "girder"
 	overlays=null
 	if(pipeadded)
 		overlays+=image('icons/obj/fissionreactor/reactorcase.dmi', src,"coonantpipeoverlay")	
@@ -871,6 +871,7 @@ included:
 					add_hiddenprint(user)
 					add_fingerprint(user)
 					state++
+					update_icon()
 				return
 			if(W.is_wirecutter(user)) //remove the rods
 				W.playtoolsound(src, 100)
@@ -893,6 +894,7 @@ included:
 					add_hiddenprint(user)
 					add_fingerprint(user)
 					state--
+					update_icon()
 				return
 			if(istype(W, /obj/item/stack/sheet/plasteel))
 				var/obj/item/stack/sheet/plasteel/R = W
