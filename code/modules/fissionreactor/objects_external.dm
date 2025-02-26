@@ -407,8 +407,8 @@ included:
 
 
 <div style="display:inline-block;width:100%;">
-<span style="width:50%;display:inline-block;">Temperature:&nbsp;[coolant_tempdisplay]</span><span style="width:50%;display:inline-block;text-align:right;">Recent Peak:&nbsp;[reactor_highesttempdisplay]</span>
-<span style="width:50%;display:inline-block;">Coolant:&nbsp;[reactor_tempdisplay]</span><span style="width:50%;display:inline-block;text-align:right;">[displaycoolantinmoles ? "[associated_reactor.coolant.total_moles]mol" : "[associated_reactor.coolant.pressure]kPa" ]</span>
+<span style="width:50%;display:inline-block;">Temperature:&nbsp;[reactor_tempdisplay]</span><span style="width:50%;display:inline-block;text-align:right;">Recent Peak:&nbsp;[reactor_highesttempdisplay]</span>
+<span style="width:50%;display:inline-block;">Coolant:&nbsp;[coolant_tempdisplay]</span><span style="width:50%;display:inline-block;text-align:right;">[displaycoolantinmoles ? "[associated_reactor.coolant.total_moles]mol" : "[associated_reactor.coolant.pressure]kPa" ]</span>
 </div>
 
 <br>
