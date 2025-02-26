@@ -955,6 +955,9 @@ included:
 			return
 		if(3) // plating added
 			if(iswelder(W))
+				if(!anchored)
+					to_chat(user, "<span class='warning'>\the [src] must be securely bolted to do this!</span>")
+					return
 				var/obj/item/tool/weldingtool/WT = W
 				user.visible_message("<span class='notice'>[user] starts welding the external plating to \the [src]'s frame.</span>", "<span class='notice'>You start welding the external plating to \the [src]'s frame.</span>")
 				if(WT.do_weld(user,src,construction_length,0))
@@ -973,6 +976,9 @@ included:
 
 				return
 			if(iscrowbar(W))
+				if(!anchored)
+					to_chat(user, "<span class='warning'>\the [src] must be securely bolted to do this!</span>")
+					return
 				W.playtoolsound(src, 100)
 				user.visible_message("<span class='warning'>[user] starts prying external plating off \the [src].</span>", "<span class='notice'>You start prying the external plating off \the [src].</span>")
 				if(do_after(user, src, construction_length*0.5 ))
@@ -981,6 +987,18 @@ included:
 					add_fingerprint(user)
 					new material(get_turf(src), 2)
 					state--
+				return	
+			if(W.is_wrench(user))	
+				W.playtoolsound(src, 100)
+				user.visible_message("<span class='warning'>[user] starts [anchored?"un":""]bolting \the [src] [anchored?"from":"to"] the floor.</span>", "<span class='notice'>You start [anchored?"un":""]bolting \the [src] [anchored?"from":"to"] the floor.</span>")
+				if(do_after(user, src, construction_length))
+					if(anchored)
+						anchored=FALSE
+						user.visible_message("<span class='warning'>[user] unbolts \the [src] from the floor.</span>", "<span class='notice'>You unbolt \the [src] from the floor.</span>")
+					else
+						anchored=TRUE
+						user.visible_message("<span class='warning'>[user] bolts \the [src] to the floor.</span>", "<span class='notice'>You bolt \the [src] to the floor.</span>")
+				return
 			to_chat(user, "<span class='notice'>You can't find a use for \the [W]</span>")
 			return
 	..()
