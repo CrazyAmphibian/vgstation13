@@ -2030,6 +2030,28 @@ var/global/list/adminbusteleportlocs = list()
 	name = "\improper Southeast Reaches"
 	icon_state = "tundra4"
 
+//JUNGLE STATION
+/area/surface/jungle
+	name = "\improper Untamed Wilderness"
+	icon_state="jungle_wild"
+
+/area/surface/jungle/fenced
+	name = "\improper Outdoors"
+	icon_state="jungle_fenced"
+
+/area/surface/jungle/zoned
+	forbid_apc=FALSE
+	construction_zone=FALSE
+	icon_state="jungle_zone"
+
+/area/surface/jungle/zoned/prison_yard
+	name = "\improper Prison Yard"
+
+/area/surface/jungle/zoned/outdoor_bar
+	name = "\improper Outdoor Dining Area"
+
+	
+
 //DJSTATION
 
 /area/djstation
