@@ -1,4 +1,6 @@
 var/datum/subsystem/daynightcycle/SSDayNight
+var/datum/subsystem/daynightcycle/SSDayNightJungle
+
 var/list/daynight_turfs = list()
 /* Original Plan
 Morning	  - 2 Mins
@@ -118,3 +120,109 @@ Basically, you are going to overwrite the flags.
 					M << 'sound/misc/6amRooster.wav'
 				if(TOD_NIGHTTIME)
 					M << 'sound/misc/6pmWolf.wav'
+
+
+
+//junglestation uses a different system, to simulate being nearby multiple stars.
+/datum/subsystem/daynightcycle/jungle
+	name          = "Jungle Day Night Cycle"
+	var/solartime=0
+	
+/datum/subsystem/daynightcycle/jungle/New()
+	NEW_SS_GLOBAL(SSDayNightJungle)	
+	//solartime=rand(0,30) //add some variance
+
+/datum/subsystem/daynightcycle/jungle/fire(resumed = FALSE)
+	if(world.time >= next_firetime)
+	
+		// YCbCr is a superior colorspace. fight me.
+		var/luma=0.0
+		var/chroma_b=0.0
+		var/chroma_r=0.0
+		
+		//orbit 1: fast, red dwarf:: roughly 20 minutes, red-orange colors.
+		//this is the primary star we are orbiting, so it's fairly simple
+		var/power=max(0.0,sin(solartime*18.0))
+		
+		luma+=.8*power //red dwarves are weak stars.
+		chroma_r+=0.60*power //they also would give off fuckhuge solar flares.
+		chroma_b-=0.25*power // but that's a problem for silicons to deal with.
+	
+	
+		//orbit 2: slow, blue giant. more distant, but more power. i hope you brought sunscreen.
+		power=max(0.0,sin(solartime*6.124+12.423)) // a bit under 1 hour. a bit of offset, too.
+		luma+=1.25*power
+		chroma_r-=0.20*power
+		chroma_b+=0.75*power
+	
+	
+	
+		luma=luma**(1/2.2) //apply gamma correction
+		
+		//constants defined by ITU-R BT.2020
+		var/r = luma + 1.659 * chroma_r
+		var/g = luma - (0.396 * chroma_b) - (0.775 * chroma_r)
+		var/b = luma + 2.034 * chroma_b
+		
+		/*
+		why do this? because it makes brighter colors look better.
+		Also, because it simulates bright light desaturating colors
+		muh immulsions.
+		*/
+		for(var/n=0,n<3,n++) //3 smoothing passes seems good. This isn't particularly heavy math, anyways.
+			if (r>1)
+				var/redist=(r-1)
+				redist*=0.2
+				r-=2*redist/3
+				g+=redist/3
+				b+=redist/3
+			if (g>1)
+				var/redist=(g-1)
+				redist*=0.2
+				g-=2*redist/3
+				r+=redist/3
+				b+=redist/3
+			if (b>1)
+				var/redist=(b-1)
+				redist*=0.2
+				b-=2*redist/3
+				g+=redist/3
+				r+=redist/3	
+		
+		r=min(r,1)
+		g=min(g,1)
+		b=min(b,1)
+		
+		//convert from 0-1 to 0-255
+		r=floor(r*255)
+		g=floor(g*255)
+		b=floor(b*255)
+
+		
+		world.log << "[luma] [chroma_b] [chroma_r] -> [r] [g] [b]"
+		
+		next_light_power=luma*7.5
+		current_timeOfDay=rgb(r,g,b)
+	
+	
+		next_firetime=world.time + 3 MINUTES //station is too big to tick at 2 minutes. not without severe sever raep, at least.
+		solartime++
+			
+		if(!resumed)
+			currentrun = daynight_turfs.Copy()
+
+	while(currentrun.len)
+		var/turf/T = currentrun[currentrun.len]
+		currentrun.len--
+
+		if(!T || T.gcDestroyed)
+			continue
+
+		T.set_light(next_light_range,next_light_power,current_timeOfDay)
+
+		if(MC_TICK_CHECK)
+			return	
+
+/datum/subsystem/daynightcycle/jungle/play_globalsound()
+	return
+

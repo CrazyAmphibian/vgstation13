@@ -1,0 +1,49 @@
+#ifndef MAP_OVERRIDE
+//**************************************************************
+// Map Datum -- Junglestation
+//**************************************************************
+
+/datum/map/active
+	nameShort = "Jungle"
+	nameLong = "Jungle Station"
+	map_dir = "junglestation"
+	file_dir = "tgstation"
+	zLevels = list(
+		/datum/zLevel/junglesurface,
+		/datum/zLevel/centcomm,
+		/datum/zLevel/space{
+			name = "spaceOldSat" ;
+			},
+		/datum/zLevel/space{
+			name = "derelict" ;
+			},
+		/datum/zLevel/mining,
+		/datum/zLevel/space{
+			name = "spacePirateShip" ;
+			},
+		)
+	enabled_jobs = list(/datum/job/trader)
+
+	load_map_elements = list(
+	/datum/map_element/dungeon/holodeck
+	)
+
+	holomap_offset_x = list(0,0,0,86,4,0,0,)
+	holomap_offset_y = list(0,0,0,94,10,0,0,)
+
+	center_x = 226
+	center_y = 254
+
+
+
+/****************************
+**	Day and Night Lighting **
+**	See: daynightcycle.dm  **
+****************************/
+/datum/subsystem/daynightcycle/jungle
+	flags = SS_FIRE_IN_LOBBY
+
+
+////////////////////////////////////////////////////////////////
+#include "junglestation.dmm"
+#endif

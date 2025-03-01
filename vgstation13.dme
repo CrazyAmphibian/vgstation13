@@ -2966,7 +2966,7 @@
 #include "maprendering\maprendering.dm"
 #include "maps\_map.dm"
 #include "maps\_map_override.dm"
-#include "maps\tgstation.dm"
+#include "maps\junglestation.dm"
 #include "maps\defficiency\areas.dm"
 #include "maps\fixedvaults\fixedvaults.dm"
 #include "maps\lampreystation\lamprey.dm"
