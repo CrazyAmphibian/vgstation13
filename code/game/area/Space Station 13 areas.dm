@@ -2050,7 +2050,17 @@ var/global/list/adminbusteleportlocs = list()
 /area/surface/jungle/zoned/outdoor_bar
 	name = "\improper Outdoor Dining Area"
 
-	
+/area/surface/jungle/zoned/atmos_outside
+	name = "\improper Exterior Atmospherics"
+
+/area/surface/jungle/zoned/sme_outside
+	name = "\improper Supermatter Cooling Zone"
+
+/area/surface/jungle/zoned/reactor_outside
+	name = "\improper Reactor Cooling Zone"
+
+/area/surface/jungle/zoned/botanty_outside
+	name = "\improper Outdoor Botany Area"
 
 //DJSTATION
 

@@ -144,7 +144,7 @@ Basically, you are going to overwrite the flags.
 		//this is the primary star we are orbiting, so it's fairly simple
 		var/power=max(0.0,sin(solartime*18.0))
 		
-		luma+=.8*power //red dwarves are weak stars.
+		luma+=0.8*power //red dwarves are weak stars.
 		chroma_r+=0.60*power //they also would give off fuckhuge solar flares.
 		chroma_b-=0.25*power // but that's a problem for silicons to deal with.
 	
@@ -172,19 +172,19 @@ Basically, you are going to overwrite the flags.
 		for(var/n=0,n<3,n++) //3 smoothing passes seems good. This isn't particularly heavy math, anyways.
 			if (r>1)
 				var/redist=(r-1)
-				redist*=0.2
+				redist*=0.1
 				r-=2*redist/3
 				g+=redist/3
 				b+=redist/3
 			if (g>1)
 				var/redist=(g-1)
-				redist*=0.2
+				redist*=0.1
 				g-=2*redist/3
 				r+=redist/3
 				b+=redist/3
 			if (b>1)
 				var/redist=(b-1)
-				redist*=0.2
+				redist*=0.1
 				b-=2*redist/3
 				g+=redist/3
 				r+=redist/3	
