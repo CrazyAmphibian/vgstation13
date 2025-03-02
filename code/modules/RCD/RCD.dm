@@ -42,7 +42,7 @@
 	
 	var/list/settings //for stuff like window directions and construction options.
 	var/current_menu=null //we are keeping both systems of schematics for the sake of backwards compatability
-	var/datum/rcd_scematic_grouping/list/schem_groups=null
+	var/list/datum/rcd_scematic_grouping/schem_groups=null
 	var/datum/rcd_grouped_schematic/selected_schem=null
 	
 	
