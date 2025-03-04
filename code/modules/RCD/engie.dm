@@ -28,8 +28,8 @@
 		schem_groups+=airlock_g
 		schem_groups+=window_g
 	
-		current_menu=schem_groups[1].name
-		schem_groups[1].switch_to()
+		current_menu=schem_groups[1]?.name
+		schem_groups[1]?.switch_to()
 	
 
 /obj/item/device/rcd/matter/engineering/Destroy()
@@ -219,8 +219,8 @@
 	schem_groups+=new /datum/rcd_scematic_grouping/build_airlock/engi_std(src)
 	schem_groups+=new /datum/rcd_scematic_grouping/build_windows/engi_std(src)
 	
-	current_menu=schem_groups[1].name
-	schem_groups[1].switch_to()
+	current_menu=schem_groups[1]?.name
+	schem_groups[1]?.switch_to()
 
 	
 /obj/item/device/rcd/borg/engineering/attack_self(var/mob/user)

@@ -407,8 +407,8 @@ included:
 
 
 <div style="display:inline-block;width:100%;">
-<span style="width:50%;display:inline-block;">Temperature:&nbsp;[coolant_tempdisplay]</span><span style="width:50%;display:inline-block;text-align:right;">Recent Peak:&nbsp;[reactor_highesttempdisplay]</span>
-<span style="width:50%;display:inline-block;">Coolant:&nbsp;[reactor_tempdisplay]</span><span style="width:50%;display:inline-block;text-align:right;">[displaycoolantinmoles ? "[associated_reactor.coolant.total_moles]mol" : "[associated_reactor.coolant.pressure]kPa" ]</span>
+<span style="width:50%;display:inline-block;">Temperature:&nbsp;[reactor_tempdisplay]</span><span style="width:50%;display:inline-block;text-align:right;">Recent Peak:&nbsp;[reactor_highesttempdisplay]</span>
+<span style="width:50%;display:inline-block;">Coolant:&nbsp;[coolant_tempdisplay]</span><span style="width:50%;display:inline-block;text-align:right;">[displaycoolantinmoles ? "[associated_reactor.coolant.total_moles]mol" : "[associated_reactor.coolant.pressure]kPa" ]</span>
 </div>
 
 <br>
@@ -791,7 +791,7 @@ included:
 
 
 /obj/structure/girder/reactor/update_icon()	
-	..()
+	icon_state = state>=2 ? "reinforced" : "girder"
 	overlays=null
 	if(pipeadded)
 		overlays+=image('icons/obj/fissionreactor/reactorcase.dmi', src,"coonantpipeoverlay")	
@@ -820,6 +820,10 @@ included:
 				to_chat(usr,"It looks like you could fit in some piping right now.")
 		if(3)
 			to_chat(usr, "The outer plating sits loose on the frame and needs to be bonded. It looks like you could pry it off.")
+			if(anchored)
+				to_chat(usr, "The bolts securing it to the floor are exposed. It seems that a wrench could loosen them.")
+			else
+				to_chat(usr, "The bolts which would secure it to the floor are exposed. It seems that a wrench could tighten them.")
 			if(pipeadded)
 				var/dirstr=""
 				if (dir&NORTH)
@@ -842,6 +846,8 @@ included:
 					return
 				user.visible_message("<span class='notice'>[user] starts inserting internal support struts into \the [src].</span>", "<span class='notice'>You start inserting internal support struts into \the [src].</span>")
 				if(do_after(user, src,construction_length))
+					if(state!=0)
+						return
 					var/obj/item/stack/rods/O = W
 					if(O.amount < 4)
 						to_chat(user, "<span class='warning'>You need more rods to finish the support struts.</span>")
@@ -855,6 +861,8 @@ included:
 				W.playtoolsound(src, 100)
 				user.visible_message("<span class='notice'>[user] starts disassembling \the [src].</span>", "<span class='notice'>You start disassembling \the [src].</span>")
 				if(do_after(user, src, construction_length))
+					if(state!=0)
+						return
 					user.visible_message("<span class='warning'>[user] dissasembles \the [src].</span>", "<span class='notice'>You dissasemble \the [src].</span>")
 					new material(get_turf(src), 4)
 					qdel(src)
@@ -867,15 +875,20 @@ included:
 				W.playtoolsound(src, 100)
 				user.visible_message("<span class='notice'>[user] starts securing \the [src]'s internal support struts.</span>", "<span class='notice'>You start securing \the [src]'s internal support struts.</span>")
 				if(do_after(user, src, construction_length))
+					if(state!=1)
+						return
 					user.visible_message("<span class='notice'>[user] secures \the [src]'s internal support struts.</span>", "<span class='notice'>You secure \the [src]'s internal support struts.</span>")
 					add_hiddenprint(user)
 					add_fingerprint(user)
 					state++
+					update_icon()
 				return
 			if(W.is_wirecutter(user)) //remove the rods
 				W.playtoolsound(src, 100)
 				user.visible_message("<span class='warning'>[user] starts removing \the [src]'s internal support struts.</span>", "<span class='notice'>You start removing \the [src]'s internal support struts.</span>")
 				if(do_after(user, src, construction_length))
+					if(state!=1)
+						return
 					user.visible_message("<span class='warning'>[user] removes \the [src]'s internal support struts.</span>", "<span class='notice'>You remove \the [src]'s internal support struts.</span>")
 					add_hiddenprint(user)
 					add_fingerprint(user)
@@ -889,10 +902,13 @@ included:
 				W.playtoolsound(src, 100)
 				user.visible_message("<span class='warning'>[user] starts unsecuring \the [src]'s internal support struts.</span>", "<span class='notice'>You start unsecuring \the [src]'s internal support struts.</span>")
 				if(do_after(user, src, construction_length))
+					if(state!=2)
+						return
 					user.visible_message("<span class='warning'>[user] unsecures \the [src]'s internal support struts.</span>", "<span class='notice'>You unsecure \the [src]'s internal support struts.</span>")
 					add_hiddenprint(user)
 					add_fingerprint(user)
 					state--
+					update_icon()
 				return
 			if(istype(W, /obj/item/stack/sheet/plasteel))
 				var/obj/item/stack/sheet/plasteel/R = W
@@ -901,6 +917,8 @@ included:
 					return
 				user.visible_message("<span class='notice'>[user] starts placing external plating into \the [src].</span>", "<span class='notice'>You start placing external plating into \the [src].</span>")
 				if(do_after(user, src,construction_length))
+					if(state!=2)
+						return
 					var/obj/item/stack/sheet/plasteel/O = W
 					if(O.amount < 2)
 						to_chat(user, "<span class='warning'>You need more sheets to finish the outer plating.</span>")
@@ -953,9 +971,14 @@ included:
 			return
 		if(3) // plating added
 			if(iswelder(W))
+				if(!anchored)
+					to_chat(user, "<span class='warning'>\the [src] must be securely bolted to do this!</span>")
+					return
 				var/obj/item/tool/weldingtool/WT = W
 				user.visible_message("<span class='notice'>[user] starts welding the external plating to \the [src]'s frame.</span>", "<span class='notice'>You start welding the external plating to \the [src]'s frame.</span>")
 				if(WT.do_weld(user,src,construction_length,0))
+					if(state!=3)
+						return
 					user.visible_message("<span class='notice'>[user] welds the external plating to \the [src]'s frame.</span>", "<span class='notice'>You weld the external plating to \the [src]'s frame.</span>")
 					
 					if(!pipeadded)
@@ -971,14 +994,33 @@ included:
 
 				return
 			if(iscrowbar(W))
+				if(!anchored)
+					to_chat(user, "<span class='warning'>\the [src] must be securely bolted to do this!</span>")
+					return
 				W.playtoolsound(src, 100)
 				user.visible_message("<span class='warning'>[user] starts prying external plating off \the [src].</span>", "<span class='notice'>You start prying the external plating off \the [src].</span>")
 				if(do_after(user, src, construction_length*0.5 ))
+					if(state!=3)
+						return
 					user.visible_message("<span class='warning'>[user] pries the external plating off \the [src].</span>", "<span class='notice'>You pry the external plating off the \the [src].</span>")
 					add_hiddenprint(user)
 					add_fingerprint(user)
 					new material(get_turf(src), 2)
 					state--
+				return	
+			if(W.is_wrench(user))	
+				W.playtoolsound(src, 100)
+				user.visible_message("<span class='warning'>[user] starts [anchored?"un":""]bolting \the [src] [anchored?"from":"to"] the floor.</span>", "<span class='notice'>You start [anchored?"un":""]bolting \the [src] [anchored?"from":"to"] the floor.</span>")
+				if(do_after(user, src, construction_length))
+					if(state!=3)
+						return
+					if(anchored)
+						anchored=FALSE
+						user.visible_message("<span class='warning'>[user] unbolts \the [src] from the floor.</span>", "<span class='notice'>You unbolt \the [src] from the floor.</span>")
+					else
+						anchored=TRUE
+						user.visible_message("<span class='warning'>[user] bolts \the [src] to the floor.</span>", "<span class='notice'>You bolt \the [src] to the floor.</span>")
+				return
 			to_chat(user, "<span class='notice'>You can't find a use for \the [W]</span>")
 			return
 	..()

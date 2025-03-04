@@ -42,7 +42,7 @@
 	
 	var/list/settings //for stuff like window directions and construction options.
 	var/current_menu=null //we are keeping both systems of schematics for the sake of backwards compatability
-	var/list/schem_groups=null
+	var/list/datum/rcd_scematic_grouping/schem_groups=null
 	var/datum/rcd_grouped_schematic/selected_schem=null
 	
 	
@@ -396,8 +396,8 @@
 	schem_groups+= new /datum/rcd_scematic_grouping/build_airlock/engi_std(src)
 	schem_groups+=new /datum/rcd_scematic_grouping/build_windows/engi_std(src)
 	
-	current_menu=schem_groups[1].name
-	schem_groups[1].switch_to()
+	current_menu=schem_groups[1]?.name
+	schem_groups[1]?.switch_to()
 
 	
 /obj/item/device/rcd/mech/attack_self(var/mob/user)
