@@ -126,7 +126,7 @@ Basically, you are going to overwrite the flags.
 //junglestation uses a different system, to simulate being nearby multiple stars.
 /datum/subsystem/daynightcycle/jungle
 	name          = "Jungle Day Night Cycle"
-	var/solartime=0
+	var/solartime=30 //start at 0. set not like that for debugging.
 	
 /datum/subsystem/daynightcycle/jungle/New()
 	NEW_SS_GLOBAL(SSDayNightJungle)	
@@ -156,9 +156,9 @@ Basically, you are going to overwrite the flags.
 		chroma_b+=0.75*power
 	
 	
-		luma=max(.01,luma) // minimum light level so it's not pitch black everywhere. atmospheric scattering would cause this.
-		chroma_b-=.05
-		chroma_r+=.04 // chroma shift so light appears a bit green to account for shortwave atmospheric absorption.
+		luma+=0.02 // minimum light level so it's not pitch black everywhere. atmospheric scattering would cause this.
+		chroma_b-=0.05
+		chroma_r+=0.04 // chroma shift so light appears a bit green to account for shortwave atmospheric absorption.
 		
 	
 		luma=luma**(1/2.2) //apply gamma correction
