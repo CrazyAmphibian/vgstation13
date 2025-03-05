@@ -6407,6 +6407,12 @@
 	..()
 	reagents.add_reagent(NUTRIMENT, 6)
 
+/obj/item/weapon/reagent_containers/food/snacks/frog_leg/poison
+	bitesize=5 //bigger so you still eat it in 3 bites.
+
+/obj/item/weapon/reagent_containers/food/snacks/frog_leg/poison/New()
+	..()
+	reagents.add_reagent(TOXIN, 9)
 
 /obj/item/weapon/reagent_containers/food/snacks/pie/welcomepie
 	name = "friendship pie"
