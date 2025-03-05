@@ -864,7 +864,7 @@ included:
 					if(state!=0)
 						return
 					user.visible_message("<span class='warning'>[user] dissasembles \the [src].</span>", "<span class='notice'>You dissasemble \the [src].</span>")
-					new material(get_turf(src), 4)
+					new material(get_turf(src), 3)
 					qdel(src)
 				return
 			to_chat(user, "<span class='notice'>You can't find a use for \the [W]</span>")
