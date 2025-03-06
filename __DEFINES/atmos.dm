@@ -105,5 +105,5 @@
 #define JUNGLE_PRESSURE 3.25*ONE_ATMOSPHERE
 #define MOLES_JUNGLE_STD (JUNGLE_PRESSURE*CELL_VOLUME/(T_JUNGLE*R_IDEAL_GAS_EQUATION)) // pressure is 3.25 atm. enough to be noticable, but not enough to be dangerous.
 #define MOLES_JUNGLE_O2_STD (MOLES_JUNGLE_STD*0.5/JUNGLE_PRESSURE/ONE_ATMOSPHERE) // 0.5 atm PP. this is to remove the possability of oxygen toxicity. not that it matters, since spessmen has magic lungs.
-#define MOLES_JUNGLE_CO2_STD (0.02*MOLES_JUNGLE_STD) //2% co2. this would be survivable, but you'd notice a bit of dizziness and shortness of breath. again, magic spaceman lungs. this doesn't do any gameplay effects, but is for flavor.
+#define MOLES_JUNGLE_CO2_STD 5.0 // nevermind. we are capped at 5 moles, because simplemobs base deadly co2 levels on the raw co2 mole number rather than percentage or pressure. fun.. (0.02*MOLES_JUNGLE_STD) //2% co2. this would be survivable, but you'd notice a bit of dizziness and shortness of breath. again, magic spaceman lungs. this doesn't do any gameplay effects, but is for flavor.
 #define MOLES_JUNGLE_N2_STD (MOLES_JUNGLE_STD-MOLES_JUNGLE_O2_STD-MOLES_JUNGLE_CO2_STD) // backfill the rest with N2, because there's no other inert gas.

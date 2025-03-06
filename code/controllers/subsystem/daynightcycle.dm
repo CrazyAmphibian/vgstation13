@@ -126,7 +126,7 @@ Basically, you are going to overwrite the flags.
 //junglestation uses a different system, to simulate being nearby multiple stars.
 /datum/subsystem/daynightcycle/jungle
 	name          = "Jungle Day Night Cycle"
-	var/solartime=30 //start at 0. set not like that for debugging.
+	var/solartime=0 //start at 0. set not like that for debugging.
 	
 /datum/subsystem/daynightcycle/jungle/New()
 	NEW_SS_GLOBAL(SSDayNightJungle)	

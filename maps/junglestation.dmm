@@ -15872,6 +15872,10 @@
 	icon_state = "grimy"
 	},
 /area/chapel/office)
+"oVU" = (
+/obj/abstract/map/spawner/jungle_fren/multi,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "oWK" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -108322,7 +108326,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -109299,6 +109303,7 @@ lIK
 lIK
 lIK
 lIK
+oVU
 lIK
 lIK
 lIK
@@ -109313,8 +109318,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -109367,7 +109371,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -109844,7 +109848,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -110860,7 +110864,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -111290,7 +111294,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -112891,7 +112895,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -120323,7 +120327,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -120425,7 +120429,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -125944,7 +125948,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -127856,7 +127860,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -128848,7 +128852,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -133978,7 +133982,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -135872,7 +135876,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -141507,7 +141511,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -147417,7 +147421,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -149040,7 +149044,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -155563,7 +155567,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -156454,7 +156458,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -163097,7 +163101,7 @@ pXV
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -164484,7 +164488,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -173023,7 +173027,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 iRw
@@ -174139,7 +174143,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -178542,7 +178546,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -182077,6 +182081,7 @@ lIK
 lIK
 lIK
 lIK
+oVU
 lIK
 lIK
 lIK
@@ -182169,8 +182174,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -182629,6 +182633,7 @@ lIK
 lIK
 lIK
 lIK
+oVU
 lIK
 lIK
 lIK
@@ -182646,8 +182651,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -183106,7 +183110,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -183569,7 +183573,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -184095,7 +184099,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+oVU
 lIK
 lIK
 lIK
@@ -185125,6 +185129,7 @@ lIK
 lIK
 lIK
 lIK
+oVU
 lIK
 lIK
 lIK
@@ -185147,6 +185152,7 @@ lIK
 lIK
 lIK
 lIK
+oVU
 lIK
 lIK
 lIK
@@ -185167,9 +185173,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
+oVU
 lIK
 lIK
 lIK
