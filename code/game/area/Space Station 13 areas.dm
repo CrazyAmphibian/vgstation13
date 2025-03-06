@@ -2062,6 +2062,18 @@ var/global/list/adminbusteleportlocs = list()
 /area/surface/jungle/zoned/botanty_outside
 	name = "\improper Outdoor Botany Area"
 
+/area/surface/jungle/zoned/storage_shed
+	name = "\improper Tool Shed"
+
+/area/surface/jungle/zoned/tradearea
+	name = "\improper Bazaar"
+
+/area/surface/jungle/zoned/chapel_outside
+	name = "\improper Sermon Area"
+
+/area/surface/jungle/zoned/art_zone
+	name = "\improper Portrait Zone"		
+
 //DJSTATION
 
 /area/djstation
