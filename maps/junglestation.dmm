@@ -4098,6 +4098,12 @@
 	},
 /turf/simulated/floor,
 /area/engineering/engine)
+"dhZ" = (
+/mob/living/simple_animal/hostile/bear{
+	faction = s
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "die" = (
 /obj/effect/decal/warning_stripes{
 	dir = 1;
@@ -12689,7 +12695,9 @@
 	},
 /area/medical/medbay)
 "jSA" = (
-/mob/living/simple_animal/hostile/bear/polarbear,
+/mob/living/simple_animal/hostile/bear/polarbear{
+	faction = "russian"
+	},
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle)
 "jSP" = (
@@ -26117,7 +26125,9 @@
 /obj/structure/bed/chair/comfy/teal{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/bear,
+/mob/living/simple_animal/hostile/bear/brownbear{
+	faction = "russian"
+	},
 /turf/simulated/floor/plating,
 /area/surface/jungle)
 "uhA" = (
@@ -110948,7 +110958,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+dhZ
 lIK
 lIK
 lIK
