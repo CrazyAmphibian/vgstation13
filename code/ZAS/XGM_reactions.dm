@@ -88,8 +88,7 @@
 	var/to_return=list()
 	var/cratio=(mixture.temperature-300-T0C)/900
 	cratio*=  1- (1/((mixture.pressure/ONE_ATMOSPHERE)+1)) //higher pressures make more reactions happen
-	cratio=max(0,cratio)**0.5
-	cratio=min(0.95,cratio)
+	cratio=min(0.95,max(0,cratio)**0.5)
 	to_return[GAS_SLEEPING]=mixture[GAS_SLEEPING]*cratio
 	return to_return	
 	
