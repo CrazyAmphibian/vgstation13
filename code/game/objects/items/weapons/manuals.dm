@@ -1452,6 +1452,7 @@ building a reactor is an expensive endeavor, costing a lot of both time and reso
 	<h3>Isotopic Separational Combiner</h3>
 	<ol>
 		<li>Use 5 metal to construct a machine frame in the desired location</li>
+		<li><ul><li>Do note that the gas port will face SOUTH relative to your station's orientation</li></ul></li>
 		<li>Add 5 lengths of wiring to the machine</li>
 		<li>Insert the circuitboard</li>
 		<li>Add a 2 matter bins, micro-manipulator, 2 scanning modules, and a console screen to the frame</li>

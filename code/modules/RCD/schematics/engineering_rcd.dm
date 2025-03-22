@@ -581,7 +581,7 @@
 	return dat
 	
 /datum/rcd_scematic_grouping/build_windows/switch_to()
-	linked_rcd.selected_schem = schematics[1]		
+	linked_rcd.selected_schem = schematics[2] //use rglass by default.		
 
 
 /datum/rcd_scematic_grouping/build_windows/send_assets(var/client/client)

@@ -156,6 +156,7 @@ included:
 	anchored =1
 	//circuit=/obj/item/weapon/circuitboard/fission_reactor
 	var/can_autoscram=TRUE //automatic safeties if it gets too hot or power is cut.
+	var/roddelta = 5 //% to move rods per click
 	var/datum/fission_reactor_holder/associated_reactor=null
 	var/obj/item/weapon/fuelrod/currentfuelrod=null
 	var/poweroutagemsg=FALSE
@@ -425,7 +426,12 @@ included:
 
 <div style='display:inline-block;width:100%;'>
 <a href='?src=\ref[interface];action=eject' [(!associated_reactor.fuel ||  associated_reactor.considered_on()) ? "class='blocked'" : ""]>\[EJECT FUEL\]</a>&nbsp;&nbsp;<a href='?src=\ref[interface];action=swap_tempunit'>\[TEMPERATURE\]</a>&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=rods_up'>\[RODS UP\]</a> <br>
-&nbsp;<a href='?src=\ref[interface];action=SCRAM' id='scram' style='[associated_reactor.SCRAM ? "animation-name:scramon;" : "" ]'>\[&nbsp;SCRAM&nbsp;]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=swap_gasunit'>\[COOLANT\]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=rods_down'>\[RODS DOWN\]</a>
+&nbsp;<a href='?src=\ref[interface];action=SCRAM' id='scram' style='[associated_reactor.SCRAM ? "animation-name:scramon;" : "" ]'>\[&nbsp;SCRAM&nbsp;]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=swap_gasunit'>\[COOLANT\]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=rods_down'>\[RODS DOWN\]</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=setdelta_5' [roddelta==5 ? "class='blocked'" : ""]>\[RODS +- 5\]</a>&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=setdelta_1' [roddelta==1 ? "class='blocked'" : ""]>\[RODS +- 1\]</a>
+
+
+
+
 </div>
 
 </div>
@@ -636,18 +642,16 @@ included:
 			to_chat(usr, "<span class='warning'>WARNING: Connection failure. Reduce range.</span>")
 			return 1
 	
-	
-	
 	switch(href_list["action"])
 		if("SCRAM")
 			if(!associated_reactor.SCRAM)
 				playsound(src,'sound/machines/fission/rc_scram.ogg',50)
 			associated_reactor.SCRAM=TRUE
 		if("rods_up")
-			associated_reactor.control_rod_target-=0.05
+			associated_reactor.control_rod_target-=roddelta/100
 			associated_reactor.control_rod_target=max(0,associated_reactor.control_rod_target)
 		if("rods_down")
-			associated_reactor.control_rod_target+=0.05
+			associated_reactor.control_rod_target+=roddelta/100
 			associated_reactor.control_rod_target=min(1,associated_reactor.control_rod_target)
 		if("eject")
 			if(!associated_reactor.fuel)
@@ -664,6 +668,10 @@ included:
 			tempdisplaymode%=4
 		if("swap_gasunit")		
 			displaycoolantinmoles=!displaycoolantinmoles
+		if("setdelta_5")
+			roddelta=5
+		if("setdelta_1")
+			roddelta=1
 			
 	ask_remakeUI() //update it so that changes appear NOW.
 //SS_WAIT_MACHINERY
@@ -864,7 +872,7 @@ included:
 					if(state!=0)
 						return
 					user.visible_message("<span class='warning'>[user] dissasembles \the [src].</span>", "<span class='notice'>You dissasemble \the [src].</span>")
-					new material(get_turf(src), 4)
+					new material(get_turf(src), 3)
 					qdel(src)
 				return
 			to_chat(user, "<span class='notice'>You can't find a use for \the [W]</span>")
