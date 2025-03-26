@@ -433,15 +433,6 @@
 	},
 /turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
-"arv" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor,
-/area/security/perma)
 "arB" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -3188,6 +3179,10 @@
 	},
 /turf/simulated/floor,
 /area/security/perma)
+"cty" = (
+/mob/living/simple_animal/hostile/giant_spider,
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "ctH" = (
 /turf/simulated/wall,
 /area/supply/office)
@@ -3354,19 +3349,10 @@
 	},
 /area/bridge)
 "czU" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/turf/simulated/floor,
-/area/security/perma)
+/obj/structure/flora/tree/shitty,
+/obj/structure/fence,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "cAe" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -5239,9 +5225,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
 	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /turf/simulated/floor,
 /area/security/perma)
 "eaj" = (
@@ -6059,11 +6042,6 @@
 	},
 /area/turret_protected/ai)
 "eFB" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor,
 /area/security/perma)
@@ -6109,9 +6087,6 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
 	},
 /turf/simulated/floor,
 /area/security/perma)
@@ -7864,11 +7839,8 @@
 /turf/simulated/floor/wood,
 /area/surface/jungle/zoned/outdoor_bar)
 "fYs" = (
-/obj/structure/grille/window_spawner/reinforced/full,
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
+/obj/structure/grille/window_spawner/reinforced/tinted,
+/obj/structure/window/full/reinforced/tinted,
 /turf/simulated/floor,
 /area/security/perma)
 "fYw" = (
@@ -10283,19 +10255,6 @@
 	icon_state = "dark"
 	},
 /area/security/armory)
-"hGM" = (
-/obj/structure/bed,
-/obj/item/weapon/bedsheet/orange,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor,
-/area/security/perma)
 "hGT" = (
 /obj/structure/window/reinforced{
 	dir = 8;
@@ -12180,15 +12139,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/wood,
 /area/surface/jungle)
-"jaV" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor,
-/area/security/perma)
 "jbo" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor,
@@ -13305,9 +13255,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
 /turf/simulated/floor,
 /area/security/perma)
 "jSb" = (
@@ -13804,13 +13751,6 @@
 /obj/structure/bed,
 /turf/simulated/floor,
 /area/security/brig)
-"kjX" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor,
-/area/security/perma)
 "kkg" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -14308,15 +14248,6 @@
 	},
 /turf/simulated/floor,
 /area/security/lobby)
-"kEU" = (
-/obj/item/weapon/stool{
-	pixel_y = 8
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor,
-/area/security/perma)
 "kFf" = (
 /turf/simulated/wall/r_wall,
 /area/teleporter)
@@ -15301,11 +15232,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /turf/simulated/floor,
 /area/security/prison)
 "lsn" = (
@@ -15762,11 +15688,6 @@
 	},
 /turf/simulated/floor,
 /area/supply/sorting)
-"lJU" = (
-/obj/structure/grille/window_spawner/reinforced/full,
-/obj/structure/cable/yellow,
-/turf/simulated/floor,
-/area/security/prison)
 "lKg" = (
 /turf/simulated/wall,
 /area/science/chargebay)
@@ -16293,9 +16214,6 @@
 "mag" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
 	},
 /turf/simulated/wall,
 /area/security/perma)
@@ -21036,9 +20954,6 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /turf/simulated/floor,
 /area/security/perma)
 "pvC" = (
@@ -21432,27 +21347,6 @@
 	},
 /turf/simulated/floor,
 /area/surface/jungle/fenced)
-"pLd" = (
-/obj/structure/table/woodentable,
-/obj/item/weapon/paper,
-/obj/item/weapon/paper{
-	pixel_x = 3;
-	pixel_y = 2
-	},
-/obj/item/weapon/pen{
-	pixel_x = -7;
-	pixel_y = 9
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor,
-/area/security/perma)
 "pLq" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -21510,9 +21404,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
 	},
 /turf/simulated/floor,
 /area/security/perma)
@@ -22240,12 +22131,6 @@
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
-"qkB" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor,
-/area/security/perma)
 "qkQ" = (
 /obj/machinery/door/airlock/medical{
 	autoclose = 0;
@@ -23282,9 +23167,6 @@
 /obj/item/weapon/pen{
 	pixel_x = -7;
 	pixel_y = 9
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
 	},
 /turf/simulated/floor,
 /area/security/perma)
@@ -24534,9 +24416,6 @@
 "rWJ" = (
 /obj/structure/bed,
 /obj/item/weapon/bedsheet/orange,
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
 /turf/simulated/floor,
 /area/security/perma)
 "rXq" = (
@@ -26913,9 +26792,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
 /turf/simulated/floor,
 /area/security/perma)
 "tJE" = (
@@ -28763,20 +28639,6 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/prison_yard)
-"vfx" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor,
-/area/security/prison)
 "vfF" = (
 /mob/living/simple_animal/hostile/bear,
 /turf/unsimulated/floor/jungle/concrete,
@@ -30998,15 +30860,6 @@
 	icon_state = "white"
 	},
 /area/medical/virology)
-"wHs" = (
-/obj/structure/bed/chair/wood/normal{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor,
-/area/security/perma)
 "wHv" = (
 /obj/structure/closet/wardrobe/pjs,
 /obj/machinery/requests_console{
@@ -41988,7 +41841,7 @@ lIK
 lIK
 lIK
 oHr
-wAq
+cty
 cvn
 goB
 oHr
@@ -43047,7 +42900,7 @@ obx
 wAq
 bTz
 wAq
-wAq
+cty
 wAq
 oHr
 oHr
@@ -46214,7 +46067,7 @@ lIK
 lIK
 lIK
 lIK
-avL
+lIK
 lIK
 lIK
 lIK
@@ -47622,7 +47475,7 @@ lIK
 lIK
 lIK
 lIK
-avL
+lIK
 lIK
 lIK
 lIK
@@ -72913,13 +72766,13 @@ lWz
 lWz
 gaI
 gaI
-vFL
-vFL
-vFL
+fYs
+fYs
+fYs
 gaI
-vFL
-vFL
-vFL
+fYs
+fYs
+fYs
 gaI
 lIK
 lIK
@@ -74683,7 +74536,7 @@ iPs
 qho
 bcD
 wVH
-vFL
+fYs
 lIK
 lIK
 lIK
@@ -75035,7 +74888,7 @@ oKI
 gKI
 jiQ
 wVH
-vFL
+fYs
 lIK
 lIK
 lIK
@@ -75387,7 +75240,7 @@ kgj
 gaA
 vIz
 dzN
-vFL
+fYs
 lIK
 lIK
 lIK
@@ -75734,7 +75587,7 @@ vKU
 eIe
 mwM
 dXi
-czU
+vKU
 vYm
 gaI
 gaI
@@ -76083,10 +75936,10 @@ oUD
 bVg
 pJQ
 bTG
-kEU
 nkf
 nkf
-jaV
+nkf
+bTG
 pTq
 veF
 pdQ
@@ -76435,10 +76288,10 @@ oUD
 hcA
 jAt
 xNP
-kjX
+fHm
 fHm
 jst
-arv
+xNP
 oKI
 fkV
 lGR
@@ -77843,10 +77696,10 @@ oCi
 bTG
 pJQ
 gaI
-qkB
+bVg
 jAq
 hFS
-wHs
+jAq
 bVg
 gaI
 bvE
@@ -78195,10 +78048,10 @@ oCi
 sUi
 fgF
 gaI
-hGM
+rWJ
 qXw
 hFS
-pLd
+qXw
 rWJ
 gaI
 jLK
@@ -78899,15 +78752,15 @@ oCi
 eZp
 vOj
 tvS
-wld
-wld
-wld
-wld
-wld
-wld
-mUo
-snf
-iRw
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -79249,17 +79102,17 @@ gGZ
 sVv
 oCi
 eZp
-vfx
-lJU
-wld
-wld
-wld
-wld
-wld
-wld
-mUo
-snf
-iRw
+vOj
+tvS
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+pKV
+lIK
 lIK
 lIK
 lIK
@@ -79601,17 +79454,17 @@ ahf
 scU
 oCi
 eZp
-vfx
-lJU
-wld
-wld
-rUS
-wld
-wld
-wld
-mUo
-snf
-iRw
+vOj
+tvS
+lIK
+lIK
+pKV
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -79954,18 +79807,18 @@ cjU
 yey
 xaA
 lse
-lJU
-wld
-wld
-wld
-wld
-wld
-wld
-mUo
-snf
-iRw
+tvS
 lIK
 lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+pKV
 lIK
 lIK
 lIK
@@ -80305,17 +80158,17 @@ blR
 pep
 lKt
 blR
-vfx
-lJU
-wld
-wld
-wld
-wld
-wld
-wld
-mUo
-snf
-iRw
+vOj
+tvS
+eOA
+eOA
+eOA
+eOA
+eOA
+eOA
+eOA
+eOA
+aPa
 lIK
 lIK
 lIK
@@ -80659,13 +80512,13 @@ nsN
 nsN
 hLE
 tvS
-wld
-wld
-wld
-wld
-wld
-wld
-mUo
+snf
+snf
+snf
+snf
+snf
+snf
+snf
 snf
 iRw
 lIK
@@ -81012,12 +80865,12 @@ guc
 guc
 guc
 guc
-wld
-wld
-wld
-rUS
-wld
-mUo
+eOA
+eOA
+eOA
+czU
+eOA
+vcQ
 snf
 iRw
 lIK
