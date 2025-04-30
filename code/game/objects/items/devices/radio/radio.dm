@@ -21,6 +21,7 @@
 	var/syndie = 0//Holder to see if it's a syndicate encrpyed radio
 	var/raider = 0//same as above but for raiders
 	var/maxf = 1499
+	var/allow_change_freq = TRUE
 //			"Example" = FREQ_LISTENING|FREQ_BROADCASTING
 	flags = FPRINT | HEAR
 	siemens_coefficient = 1
@@ -95,14 +96,15 @@
 	dat += "Microphone: [broadcasting ? "<A href='byond://?src=\ref[src];talk=0'>Engaged</A>" : "<A href='byond://?src=\ref[src];talk=1'>Disengaged</A>"]<BR>"
 
 	dat += {"
-				Speaker: [listening ? "<A href='byond://?src=\ref[src];listen=0'>Engaged</A>" : "<A href='byond://?src=\ref[src];listen=1'>Disengaged</A>"]<BR>
-				Frequency:
+				Speaker: [listening ? "<A href='byond://?src=\ref[src];listen=0'>Engaged</A>" : "<A href='byond://?src=\ref[src];listen=1'>Disengaged</A>"]<BR>"}
+				
+	dat+= allow_change_freq ? {"Frequency:
 				<A href='byond://?src=\ref[src];freq=-10'>-</A>
 				<A href='byond://?src=\ref[src];freq=-2'>-</A>
 				<A href='byond://?src=\ref[src];set_freq=-1'>[format_frequency(frequency)]</a>
 				<A href='byond://?src=\ref[src];freq=2'>+</A>
 				<A href='byond://?src=\ref[src];freq=10'>+</A><BR>
-				"}
+				"} : ""
 
 	for (var/ch_name in channels)
 		dat+=text_sec_channel(ch_name, channels[ch_name])
@@ -169,14 +171,14 @@
 			A.open_nearest_door(target)
 		return 1
 
-	else if("set_freq" in href_list)
+	else if(allow_change_freq && ("set_freq" in href_list))
 		var/new_frequency
 		new_frequency = input(usr, "Set a new frequency (1200-1600 kHz).", src, frequency) as null|num
 		new_frequency = sanitize_frequency(new_frequency, maxf)
 		if(!INVOKE_EVENT(src, /event/radio_new_frequency, "user" = usr, "new_frequency" = new_frequency))
 			set_frequency(new_frequency)
 
-	else if (href_list["freq"])
+	else if (allow_change_freq && href_list["freq"])
 		var/new_frequency
 		new_frequency = (frequency + text2num(href_list["freq"]))
 		new_frequency = sanitize_frequency(new_frequency, maxf)
@@ -720,3 +722,51 @@
 	listening = 0
 	always_talk = 1
 	var/radio_tag
+
+
+/obj/item/device/radio/pretuned
+	var/channel = COMMON
+	listening=0 //speaker off by default. prevents accidental intel leaks.
+	name = "pre-tuned station bounced radio"
+	desc = "This radio has its frequency locked to a specific channel."
+	allow_change_freq=FALSE //to prevent frequencies from leaking, and as a downside so it's not *just* an SBR.
+
+/obj/item/device/radio/pretuned/initialize()
+	frequency = freqs[channel] || freqs[COMMON]
+	..()
+
+/obj/item/device/radio/pretuned/engineering
+	channel = ENGINEERING
+	name = "pre-tuned station bounced radio (engineering)"
+	icon_state="walkietalkie_eng"
+	desc = "This radio has its frequency locked to the engineering channel."
+
+/obj/item/device/radio/pretuned/cargo
+	channel = CARGO
+	name = "pre-tuned station bounced radio (supply)"
+	icon_state="walkietalkie_crg"
+	desc = "This radio has its frequency locked to the supply channel."
+
+/obj/item/device/radio/pretuned/security
+	channel = SECURITY_COMM
+	name = "pre-tuned station bounced radio (security)"
+	icon_state="walkietalkie_sec"
+	desc = "This radio has its frequency locked to the security channel."
+
+/obj/item/device/radio/pretuned/command
+	channel = COMMAND
+	name = "pre-tuned station bounced radio (command)"
+	icon_state="walkietalkie_com"
+	desc = "This radio has its frequency locked to the command channel."
+	
+/obj/item/device/radio/pretuned/science
+	channel = SCIENCE
+	name = "pre-tuned station bounced radio (science)"
+	icon_state="walkietalkie_sci"
+	desc = "This radio has its frequency locked to the science channel."
+	
+/obj/item/device/radio/pretuned/medical
+	channel = MEDICAL
+	name = "pre-tuned station bounced radio (medical)"
+	icon_state="walkietalkie_med"
+	desc = "This radio has its frequency locked to the medical channel."
