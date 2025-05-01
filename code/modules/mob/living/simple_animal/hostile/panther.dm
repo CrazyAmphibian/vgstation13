@@ -1,0 +1,22 @@
+/mob/living/simple_animal/hostile/bear/panther
+	name="Panther"
+	desc="That's a big kitty!"
+	icon_gib=null
+	icon_living="panther"
+	speak = list("HISS!","Hiss!","GRR!","Growl!")
+	speak_emote = list("growls", "roars","hisses")
+	emote_hear = list("rawrs","grumbles","grawls","hisses")
+	icon_dead="panther_dead"
+	icon_state="panther"
+	faction = "meow"
+	default_icon_floor="panther"
+	default_icon_space="panther"
+	failed_geometry_class=TRUE
+	hates_fast_food=TRUE // likes fish.
+
+mob/living/simple_animal/hostile/bear/panther/ListTargets()
+	var/list/l=..()
+	for (var/i in l) //won't attack fellow cats.
+		if(istype(i,/mob/living/simple_animal/cat) && !istype(i,/mob/living/simple_animal/cat/snek))
+			l-=i
+	return l

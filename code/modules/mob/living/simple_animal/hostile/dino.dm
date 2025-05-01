@@ -1,13 +1,21 @@
-/mob/living/simple_animal/hostile/dinosaur
+/mob/living/simple_animal/hostile/bear/dinosaur
 	name="Dinosaur"
 	desc="boom boom acka lacka boom boom"
 	icon_gib=null
 	icon_living="dino"
 	icon_dead="dino_dead"
 	icon_state="dino"
+	faction = "dinosaur"
+	default_icon_floor="dino"
+	default_icon_space="dino"
+	failed_geometry_class=TRUE
+	hates_fast_food=TRUE //return to monke
 	var/walking=FALSE
 
-/mob/living/simple_animal/hostile/dinosaur/Life()
+mob/living/simple_animal/hostile/bear/dinosaur/Life()
+	. =..()
+	if(!.)
+		return
 	walking=FALSE
 	var/wc=0
 	var/wt=0
@@ -18,24 +26,22 @@
 		wt++
 	if(wc && wc==wt)
 		walking=TRUE
-	..()
 	if(walking) //more active, since mob ticks are 2 seconds.
 		openthedoor()
 		spawn(5) openthedoor()
 		spawn(10) openthedoor()
 		spawn(15) openthedoor()
+		spawn(20) openthedoor()
 	
-	
 
-
-
-/mob/living/simple_animal/hostile/dinosaur/ListTargets()
+mob/living/simple_animal/hostile/bear/dinosaur/ListTargets()
 	if(walking)
 		return list()
 	else
-		..()
+		return ..()
 
-/mob/living/simple_animal/hostile/dinosaur/proc/openthedoor()
+
+/mob/living/simple_animal/hostile/bear/dinosaur/proc/openthedoor()
 	if(!walking)
 		return
 		
@@ -57,3 +63,4 @@
 			Move(nloc)
 	for( var/mob/living/carbon/human/h in l)
 		h.dir=pick(list(NORTH,SOUTH,EAST,WEST))
+

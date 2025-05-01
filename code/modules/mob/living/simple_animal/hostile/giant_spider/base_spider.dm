@@ -131,6 +131,15 @@
 /mob/living/simple_animal/hostile/giant_spider/get_butchering_products()
 	return list(/datum/butchering_product/spider_legs)
 
+
+/mob/living/simple_animal/hostile/giant_spider/ListTargets()
+	var/list/l=..()
+	for (var/i in l) //avoid the poison frogs.
+		if(istype(i,/mob/living/simple_animal/hostile/lizard/frog/poison))
+			l-=i
+	return l
+
+
 //Can we actually attack a possible target?
 /mob/living/simple_animal/hostile/giant_spider/CanAttack(var/atom/the_target)
 	if(istype(the_target,/obj/machinery/light))

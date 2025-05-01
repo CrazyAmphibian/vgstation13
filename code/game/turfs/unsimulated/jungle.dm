@@ -7,7 +7,27 @@
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
 	plane = PLATING_PLANE
+	intact=0
 
+//returns 0.0 if it cannot. otherwise, returns a number as the object's tool speed.
+/turf/unsimulated/floor/jungle/proc/item_terraforming_ispickaxe(obj/item/C)
+	if(istype(C,/obj/item/weapon/pickaxe) && !istype(C,/obj/item/weapon/pickaxe/shovel))
+		return 1.0
+	if(istype(C,/obj/item/tool/crowbar)) 
+		if(istype(C,/obj/item/tool/crowbar/halligan)) //halligans have a pick end.
+			return 0.75
+		return 0.5
+	if(istype(C,/obj/item/weapon/kitchen/utensil/knife))  //for those daring prison escapes, also because it's funny.
+		return 0.1
+	return 0.0
+	
+/turf/unsimulated/floor/jungle/proc/item_terraforming_isshovel(obj/item/C)
+	if(istype(C,/obj/item/weapon/pickaxe/shovel))
+		return 1.0
+	if(istype(C,/obj/item/weapon/kitchen/utensil/spoon) || istype(C,/obj/item/weapon/kitchen/utensil/spork))  //see above
+		return 0.1
+	return 0.0	
+	
 
 /turf/unsimulated/floor/jungle/grass
 	name="Jungle Grass"
@@ -15,6 +35,18 @@
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "grass_alt1"
 	turf_speed_multiplier=1.1 // tall grass.
+	
+/turf/unsimulated/floor/jungle/grass/attackby(obj/item/C as obj, mob/user as mob)
+	if(!C || !user)
+		return 0
+	var/s=0.0
+	s=item_terraforming_ispickaxe(C)
+	if(s>0.0)
+		to_chat(user, "<span class='notice'>You start breaking up the soil</span>")
+		if(do_after(user, src, 20/s ))
+			ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
+			new /obj/item/stack/tile/grass(src,1)
+	
 	
 /turf/unsimulated/floor/jungle/grass/ex_act(severity)	
 	switch(severity)
@@ -69,6 +101,21 @@
 	icon_state = "rock(high)"
 
 
+/turf/unsimulated/floor/jungle/dirt/attackby(obj/item/C as obj, mob/user as mob)
+	if(!C || !user)
+		return 0
+	if(C.type== /obj/item/stack/tile/grass)
+		var/obj/item/stack/tile/T = C
+		if(T.use(1))
+			ChangeTurf(/turf/unsimulated/floor/jungle/grass)
+	var/s=0.0
+	s=item_terraforming_isshovel(C)
+	if(s>0.0)
+		to_chat(user, "<span class='notice'>You start packing down the soil</span>")
+		if(do_after(user, src, 20/s ))
+			ChangeTurf(/turf/unsimulated/floor/jungle/path)
+			
+
 /turf/unsimulated/floor/jungle/path
 	name="Compressed Dirt"
 	desc="Soil which has been pressed down into a hard, smooth surface."
@@ -82,6 +129,19 @@
 		var/obj/item/stack/tile/T = C
 		if(T.use(1))
 			ChangeTurf(/turf/unsimulated/floor/jungle/path_plated)
+			plane=TURF_PLANE
+			remove_paint_overlay()
+			update_icon()
+			update_paint_overlay()
+			levelupdate()
+			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
+			return
+	var/s=0.0
+	s=item_terraforming_ispickaxe(C)
+	if(s>0.0)
+		to_chat(user, "<span class='notice'>You start breaking up the soil</span>")
+		if(do_after(user, src, 20/s ))
+			ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
 
 /turf/unsimulated/floor/jungle/path/ex_act(severity)	
 	switch(severity)
@@ -100,7 +160,7 @@
 	desc="Compressed soil which has plated atop it to protect items underneath it."
 	icon='icons/turf/floors.dmi'
 	icon_state = "asteroidfloor"
-	plane = PLATING_PLANE
+	plane = TURF_PLANE
 
 
 /turf/unsimulated/floor/jungle/path_plated/attackby(obj/item/C as obj, mob/user as mob)
@@ -109,6 +169,12 @@
 	if(iscrowbar(C))
 		ChangeTurf(/turf/unsimulated/floor/jungle/path)
 		new /obj/item/stack/tile/metal(src,1)
+		plane=PLATING_PLANE
+		remove_paint_overlay()
+		update_icon()
+		update_paint_overlay()
+		levelupdate()
+		playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
 
 /turf/unsimulated/floor/jungle/path_plated/ex_act(severity)
 	switch(severity)

@@ -674,8 +674,7 @@
 "aAy" = (
 /obj/structure/easel,
 /turf/simulated/floor/wood{
-	icon = 'icons/turf/floors_wood.dmi';
-	icon_state = "26"
+	icon_state = "wood_26"
 	},
 /area/surface/jungle/zoned/art_zone)
 "aAD" = (
@@ -3136,9 +3135,7 @@
 /area/medical/virology)
 "cpQ" = (
 /obj/structure/filingcabinet/chestdrawer,
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
+/turf/unsimulated/floor/jungle/grass,
 /area/science/robotics)
 "cqj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -9350,8 +9347,7 @@
 /obj/item/mounted/frame/painting/custom/portrait,
 /obj/item/mounted/frame/painting/custom/portrait,
 /turf/simulated/floor/wood{
-	icon = 'icons/turf/floors_wood.dmi';
-	icon_state = "26"
+	icon_state = "wood_26"
 	},
 /area/surface/jungle/zoned/art_zone)
 "gWN" = (
@@ -11497,8 +11493,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood{
-	icon = 'icons/turf/floors_wood.dmi';
-	icon_state = "26"
+	icon_state = "wood_26"
 	},
 /area/surface/jungle/zoned/art_zone)
 "iKk" = (
@@ -12635,8 +12630,7 @@
 /obj/item/mounted/frame/painting/custom,
 /obj/item/mounted/frame/painting/custom,
 /turf/simulated/floor/wood{
-	icon = 'icons/turf/floors_wood.dmi';
-	icon_state = "26"
+	icon_state = "wood_26"
 	},
 /area/surface/jungle/zoned/art_zone)
 "jEA" = (
@@ -13289,8 +13283,7 @@
 /area/supply/storage)
 "jYs" = (
 /turf/simulated/floor/wood{
-	icon = 'icons/turf/floors_wood.dmi';
-	icon_state = "26"
+	icon_state = "wood_26"
 	},
 /area/surface/jungle/zoned/art_zone)
 "jYw" = (
@@ -17437,6 +17430,10 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle)
+"ngi" = (
+/obj/abstract/map/spawner/jungle_hostile/multi,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "ngq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 1
@@ -17640,8 +17637,7 @@
 	},
 /obj/item/painting_brush,
 /turf/simulated/floor/wood{
-	icon = 'icons/turf/floors_wood.dmi';
-	icon_state = "26"
+	icon_state = "wood_26"
 	},
 /area/surface/jungle/zoned/art_zone)
 "npQ" = (
@@ -17893,11 +17889,11 @@
 	},
 /area/medical/cmo)
 "nBj" = (
-/obj/structure/grille/window_spawner/reinforced/full,
 /obj/structure/cable/yellow{
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/structure/grille/window_spawner/reinforced_plasma/full,
 /turf/simulated,
 /area/security/perma)
 "nBr" = (
@@ -19929,8 +19925,7 @@
 /obj/item/mounted/frame/painting/custom/landscape,
 /obj/item/mounted/frame/painting/custom/landscape,
 /turf/simulated/floor/wood{
-	icon = 'icons/turf/floors_wood.dmi';
-	icon_state = "26"
+	icon_state = "wood_26"
 	},
 /area/surface/jungle/zoned/art_zone)
 "pax" = (
@@ -20156,8 +20151,7 @@
 /obj/item/mounted/frame/painting/custom,
 /obj/item/mounted/frame/painting/custom,
 /turf/simulated/floor/wood{
-	icon = 'icons/turf/floors_wood.dmi';
-	icon_state = "26"
+	icon_state = "wood_26"
 	},
 /area/surface/jungle/zoned/art_zone)
 "pmo" = (
@@ -20239,8 +20233,7 @@
 /obj/item/device/rcd/tile_painter,
 /obj/item/palette,
 /turf/simulated/floor/wood{
-	icon = 'icons/turf/floors_wood.dmi';
-	icon_state = "26"
+	icon_state = "wood_26"
 	},
 /area/surface/jungle/zoned/art_zone)
 "ppR" = (
@@ -22246,8 +22239,7 @@
 /obj/item/mounted/frame/painting/custom/large,
 /obj/item/mounted/frame/painting/custom/large,
 /turf/simulated/floor/wood{
-	icon = 'icons/turf/floors_wood.dmi';
-	icon_state = "26"
+	icon_state = "wood_26"
 	},
 /area/surface/jungle/zoned/art_zone)
 "qQK" = (
@@ -25273,7 +25265,8 @@
 "tlM" = (
 /obj/machinery/door/airlock/glass_command{
 	name = "Bridge";
-	req_access_txt = "19"
+	req_access_txt = "19";
+	normalspeed = 0
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -25514,8 +25507,7 @@
 /obj/item/paint_roller,
 /obj/item/device/rcd/tile_painter,
 /turf/simulated/floor/wood{
-	icon = 'icons/turf/floors_wood.dmi';
-	icon_state = "26"
+	icon_state = "wood_26"
 	},
 /area/surface/jungle/zoned/art_zone)
 "ttK" = (
@@ -25966,6 +25958,7 @@
 	dir = 8
 	},
 /obj/structure/table,
+/obj/item/weapon/kitchen/utensil/knife/large,
 /turf/simulated/floor,
 /area/crew_quarters/kitchen)
 "tLD" = (
@@ -27000,7 +26993,8 @@
 "uFk" = (
 /obj/machinery/door/airlock/glass_command{
 	name = "Bridge";
-	req_access_txt = "19"
+	req_access_txt = "19";
+	normalspeed = 0
 	},
 /turf/simulated/floor{
 	dir = 5;
@@ -28462,8 +28456,7 @@
 /obj/item/mounted/frame/painting/custom/landscape,
 /obj/item/mounted/frame/painting/custom/landscape,
 /turf/simulated/floor/wood{
-	icon = 'icons/turf/floors_wood.dmi';
-	icon_state = "26"
+	icon_state = "wood_26"
 	},
 /area/surface/jungle/zoned/art_zone)
 "vEC" = (
@@ -29415,8 +29408,7 @@
 	},
 /obj/item/painting_brush,
 /turf/simulated/floor/wood{
-	icon = 'icons/turf/floors_wood.dmi';
-	icon_state = "26"
+	icon_state = "wood_26"
 	},
 /area/surface/jungle/zoned/art_zone)
 "wnZ" = (
@@ -31636,6 +31628,15 @@
 	icon_state = "showroomfloor"
 	},
 /area/crew_quarters/kitchen)
+"xVS" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "xWd" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -63936,7 +63937,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+pjM
 lIK
 lIK
 lIK
@@ -66428,7 +66429,7 @@ lIK
 lIK
 lIK
 lIK
-pjM
+lIK
 lIK
 lIK
 lIK
@@ -67856,7 +67857,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+ngi
 lIK
 lIK
 lIK
@@ -68494,7 +68495,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -68846,7 +68847,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+pjM
 lIK
 lIK
 lIK
@@ -68889,7 +68890,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -69235,34 +69236,34 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
 pjM
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+ngi
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -69885,7 +69886,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -70235,7 +70236,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+pjM
 lIK
 lIK
 lIK
@@ -72409,7 +72410,7 @@ xYb
 xYb
 xYb
 lIK
-lIK
+pjM
 lIK
 lIK
 lIK
@@ -73478,7 +73479,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -75250,7 +75251,7 @@ lIK
 lIK
 lIK
 lIK
-pjM
+lIK
 lIK
 lIK
 lIK
@@ -76218,7 +76219,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -77720,7 +77721,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+ngi
 lIK
 lIK
 lIK
@@ -78771,7 +78772,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -79839,7 +79840,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+pjM
 lIK
 lIK
 lIK
@@ -80189,7 +80190,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -80794,7 +80795,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+pjM
 lIK
 lIK
 lIK
@@ -81501,7 +81502,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -82193,7 +82194,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -85823,7 +85824,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -87117,7 +87118,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -87579,7 +87580,7 @@ snf
 iRw
 lIK
 lIK
-lIK
+pjM
 lIK
 lIK
 lIK
@@ -87820,7 +87821,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+pjM
 lIK
 lIK
 lIK
@@ -91102,7 +91103,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -94267,7 +94268,7 @@ xSZ
 iRw
 lIK
 lIK
-lIK
+pjM
 lIK
 lIK
 lIK
@@ -95212,7 +95213,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -96385,7 +96386,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -100494,7 +100495,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+pjM
 lIK
 lIK
 lIK
@@ -100958,7 +100959,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -101234,7 +101235,7 @@ jUa
 jUa
 jUa
 tDw
-jUa
+xVS
 jUa
 rcM
 maR
@@ -101549,7 +101550,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -102715,7 +102716,7 @@ snf
 iRw
 lIK
 lIK
-lIK
+pjM
 lIK
 lIK
 lIK
@@ -106242,7 +106243,7 @@ pXV
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -106831,7 +106832,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+pjM
 lIK
 lIK
 lIK
@@ -107179,7 +107180,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -108353,7 +108354,7 @@ mdi
 mdi
 lIK
 lIK
-lIK
+pjM
 lIK
 lIK
 lIK
@@ -109287,7 +109288,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -110345,7 +110346,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+pjM
 lIK
 lIK
 lrQ
@@ -113984,7 +113985,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -114682,7 +114683,7 @@ lQF
 hkB
 hkB
 lIK
-lIK
+pjM
 lIK
 lIK
 lIK
@@ -115625,7 +115626,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+pjM
 lIK
 lIK
 afN
@@ -115975,7 +115976,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -119165,6 +119166,7 @@ lIK
 lIK
 lIK
 lIK
+pjM
 lIK
 lIK
 lIK
@@ -119212,8 +119214,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
+pjM
 lIK
 lIK
 lIK
@@ -119504,6 +119505,7 @@ lIK
 lIK
 lIK
 lIK
+pjM
 lIK
 lIK
 lIK
@@ -119522,7 +119524,6 @@ lIK
 lIK
 lIK
 lIK
-fdH
 lIK
 lIK
 lIK
@@ -119530,6 +119531,7 @@ lIK
 lIK
 lIK
 lIK
+pjM
 lIK
 lIK
 lIK
@@ -119548,6 +119550,7 @@ lIK
 lIK
 lIK
 lIK
+pjM
 lIK
 lIK
 lIK
@@ -119597,6 +119600,7 @@ lIK
 lIK
 lIK
 lIK
+pjM
 lIK
 lIK
 lIK
@@ -119613,9 +119617,6 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-fdH
 lIK
 lIK
 lIK
@@ -119924,7 +119925,6 @@ lIK
 lIK
 lIK
 lIK
-fdH
 lIK
 lIK
 lIK
@@ -119937,12 +119937,13 @@ lIK
 lIK
 lIK
 lIK
+pjM
 lIK
 lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -120251,7 +120252,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -120564,7 +120565,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -120940,7 +120941,7 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
 lIK
 lIK
 lIK
@@ -121670,7 +121671,6 @@ lIK
 lIK
 lIK
 lIK
-fdH
 lIK
 lIK
 lIK
@@ -121693,7 +121693,6 @@ lIK
 lIK
 lIK
 lIK
-fdH
 lIK
 lIK
 lIK
@@ -121714,7 +121713,9 @@ lIK
 lIK
 lIK
 lIK
-fdH
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
