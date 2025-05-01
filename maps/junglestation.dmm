@@ -23349,8 +23349,8 @@
 	},
 /area/medical/storage)
 "rDI" = (
-/turf/space,
-/area)
+/turf/unsimulated/floor/jungle/underground,
+/area/surface/jungle/underground)
 "rDO" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	on = 1

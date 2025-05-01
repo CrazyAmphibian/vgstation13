@@ -2038,6 +2038,10 @@ var/global/list/adminbusteleportlocs = list()
 /area/surface/jungle/fenced
 	name = "\improper Outdoors"
 	icon_state="jungle_fenced"
+	
+/area/surface/jungle/underground
+	name = "\improper Underground"
+	icon_state="jungle_wild"	
 
 /area/surface/jungle/zoned
 	forbid_apc=FALSE

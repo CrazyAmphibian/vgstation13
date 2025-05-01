@@ -211,3 +211,70 @@
 	desc="Rocks which have been eroded over countless centuries into a fine powder. A wonderful material for castles!"
 	icon = 'icons/misc/beach.dmi'
 	icon_state = "sand"
+	
+	
+/turf/unsimulated/floor/jungle/underground
+	name="Packed Soil"
+	density=1
+	opacity=1
+	desc="Solid dirt as far as the eye can see."
+	icon='icons/turf/walls.dmi'
+	icon_state = "gingerbread15"	
+	var/loosened=FALSE // you dig with a pickaxe, too, dumbass.
+	
+
+/turf/unsimulated/floor/jungle/underground/ex_act(severity)
+	switch(severity)
+		if(1.0)
+			ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
+		if(2.0)
+			if(prob(50))
+				ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
+			else
+				loosened=TRUE
+		if(3.0)
+			if(prob(75))
+				loosened=TRUE
+
+
+/turf/unsimulated/floor/jungle/underground/attackby(obj/item/C as obj, mob/user as mob)
+	if(!C || !user)
+		return 0
+	var/s=0.0
+	s=item_terraforming_ispickaxe(C)
+	if(s>0.0)
+		if (loosened)
+			to_chat(user, "<span class='notice'>The soil is already loose.</span>")
+		else
+			to_chat(user, "<span class='notice'>You start to loosen the soil...</span>")
+			if(do_after(user, src, 20/s ))
+				loosened=TRUE
+	s=item_terraforming_isshovel(C)			
+	if(s>0.0)
+		to_chat(user, loosened ? "<span class='notice'>You begin to break apart the soil...</span>" : "<span class='notice'>You struggle to break up the soil...</span>")
+		if(do_after(user, src, (loosened ? 20 : 60)/s ))
+			ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
+			new/obj/item/stack/ore/glass(src,50) //theres no dirt, so we use sand instead.
+	
+	
+/turf/unsimulated/floor/jungle/bedrock
+	name="Bedrock"
+	desc="A very dense rock. Nothing seems to be able to dig through it."
+	icon='icons/turf/walls.dmi'
+	icon_state = "mariahive_noanimation"	
+
+/turf/unsimulated/floor/jungle/bedrock/New(var/loc) //todo: when we make a new bedrock tile, update adjacent tiles to visualize the foundation.	
+	
+/turf/unsimulated/floor/jungle/bedrock/ex_act(severity)	
+	return
+	
+/turf/unsimulated/floor/jungle/foundation	
+	name="Foundation"
+	density=1
+	opacity=1
+	desc="a very hard metal structure. you don't think you'll be able to get through it, no matter what."
+	icon='icons/turf/walls.dmi'
+	icon_state = "cave_wall"
+	
+/turf/unsimulated/floor/jungle/foundation/ex_act(severity)	
+	return	

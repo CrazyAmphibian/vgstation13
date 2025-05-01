@@ -222,8 +222,12 @@ Basically, you are going to overwrite the flags.
 		if(!T || T.gcDestroyed)
 			continue
 
-		T.set_light(next_light_range,next_light_power,current_timeOfDay)
+		T.set_light(next_light_range,next_light_power,current_timeOfDay,TRUE)
 
+// MC_TICK_CHECK uses this (defined in __DEFINES/MC.dm):
+// ( ( world.tick_usage > CURRENT_TICKLIMIT || src.state != SS_RUNNING ) ? pause() : 0 )
+// now, the main issue is that if we use the tick limit, the server will stop executing things
+// so, the solution is to create our own check, which gives leeway.
 		if(MC_TICK_CHECK)
 			return	
 
