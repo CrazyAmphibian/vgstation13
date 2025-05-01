@@ -477,6 +477,12 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/fenced)
+"atf" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
+/turf/simulated/floor,
+/area/security/checkpoint2)
 "att" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -1491,13 +1497,7 @@
 /turf/simulated/floor,
 /area/engineering/break_room)
 "bhu" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor,
+/turf/simulated/wall/r_wall,
 /area/security/checkpoint2)
 "bhN" = (
 /obj/structure/cable/yellow{
@@ -2389,13 +2389,14 @@
 /turf/simulated/floor,
 /area/security/main)
 "bNY" = (
-/obj/structure/grille/window_spawner/reinforced/full,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
+	icon_state = "1-2"
 	},
-/turf/simulated,
-/area/security/checkpoint2)
+/turf/simulated/floor{
+	icon_state = "grimy"
+	},
+/area/security/detectives_office)
 "bOc" = (
 /obj/machinery/newscaster,
 /turf/simulated/wall/shuttle,
@@ -3665,16 +3666,19 @@
 /turf/simulated/floor,
 /area/engineering/atmos_control)
 "cKx" = (
-/obj/machinery/door/airlock/glass_security{
-	name = "Detective";
-	req_access_txt = "4"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/glass_security{
+	name = "Security Checkpoint";
+	req_access_txt = "1"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor,
-/area/security/detectives_office)
+/area/security/checkpoint2)
 "cKC" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -5385,11 +5389,12 @@
 	},
 /area/medical/virology)
 "ecN" = (
-/obj/structure/fence/door{
-	dir = 4
+/obj/structure/fence/corner,
+/obj/structure/fence/corner{
+	dir = 8
 	},
-/turf/unsimulated/floor/jungle/path,
-/area/surface/jungle)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "ecP" = (
 /mob/living/simple_animal/hostile/giant_spider/hunter/dead,
 /obj/effect/decal/cleanable/blood/drip,
@@ -6098,13 +6103,11 @@
 	},
 /area/surface/jungle/fenced)
 "eCD" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 10
 	},
-/turf/simulated/floor,
-/area/security/checkpoint2)
+/turf/simulated/wall/r_wall,
+/area/security/detectives_office)
 "eCT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor{
@@ -6479,6 +6482,17 @@
 	tag = "icon-vault (NORTHEAST)"
 	},
 /area/engineering/reactor_room)
+"eXn" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor{
+	icon_state = "grimy"
+	},
+/area/security/detectives_office)
 "eXo" = (
 /turf/simulated/wall,
 /area/medical/sleeper)
@@ -8419,20 +8433,7 @@
 	},
 /area/science/xenobiology)
 "grt" = (
-/obj/structure/closet{
-	name = "Evidence Closet"
-	},
-/obj/item/weapon/storage/box/labels,
-/obj/item/weapon/hand_labeler,
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/machinery/power/apc{
-	dir = 4;
-	pixel_x = 24
-	},
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor{
 	icon_state = "grimy"
 	},
@@ -8546,8 +8547,23 @@
 	},
 /area/security/armory)
 "gvk" = (
-/turf/simulated/wall/r_wall,
-/area/security/checkpoint2)
+/obj/structure/closet{
+	name = "Evidence Closet"
+	},
+/obj/item/weapon/storage/box/labels,
+/obj/item/weapon/hand_labeler,
+/obj/machinery/power/apc{
+	dir = 4;
+	pixel_x = 24
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor{
+	icon_state = "grimy"
+	},
+/area/security/detectives_office)
 "gvn" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -12250,6 +12266,11 @@
 /obj/structure/bed/chair/comfy/brown{
 	dir = 1
 	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/carpet,
 /area/security/detectives_office)
 "jmF" = (
@@ -13646,13 +13667,16 @@
 /turf/simulated/floor,
 /area/security/prison)
 "knp" = (
-/obj/structure/grille/window_spawner/reinforced/full,
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
+/obj/structure/fence,
+/obj/structure/sign/securearea{
+	name = "DANGER: PREDATORY ANIMALS"
 	},
-/turf/simulated,
-/area/security/checkpoint2)
+/obj/machinery/door/poddoor/shutters/preopen{
+	name = "Entrance Lockdown";
+	id_tag = "entergatelockext"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "knv" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -13883,14 +13907,22 @@
 /turf/simulated/floor,
 /area/crew_quarters/bar_backroom)
 "kyg" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
+/obj/machinery/door_control{
+	id_tag = "entergatelockext";
+	name = "gate lockdown";
+	pixel_y = 8;
+	req_access_txt = "3";
+	pixel_x = -38
 	},
-/turf/simulated/floor{
-	icon_state = "grimy"
+/obj/machinery/door_control{
+	id_tag = "entergatelock";
+	name = "gate lockdown";
+	pixel_y = 8;
+	req_access_txt = "3";
+	pixel_x = -27
 	},
-/area/security/detectives_office)
+/turf/simulated/floor,
+/area/security/checkpoint2)
 "kyt" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -15356,6 +15388,16 @@
 	},
 /turf/simulated/floor/engine/n20,
 /area/surface/jungle/zoned/atmos_outside)
+"lHP" = (
+/obj/structure/fence/door{
+	dir = 4
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	name = "Entrance Lockdown";
+	id_tag = "entergatelockext"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "lIp" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 8
@@ -15554,17 +15596,13 @@
 /turf/simulated/floor/engine,
 /area/science/xenobiology/specimen_5)
 "lPh" = (
+/obj/structure/bed/chair/comfy/brown{
+	dir = 1
+	},
 /obj/machinery/atmospherics/unary/vent_pump{
 	on = 1
 	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor{
-	icon_state = "grimy"
-	},
+/turf/simulated/floor/carpet,
 /area/security/detectives_office)
 "lPH" = (
 /obj/structure/table/woodentable,
@@ -16893,10 +16931,15 @@
 /turf/simulated/floor/shuttle,
 /area/shuttle/mining/station)
 "mNu" = (
-/obj/structure/fence/door{
-	dir = 4
+/obj/structure/fence,
+/obj/structure/sign/securearea{
+	name = "DANGER: PREDATORY ANIMALS"
 	},
-/turf/unsimulated/floor/jungle/path,
+/obj/machinery/door/poddoor/shutters/preopen{
+	name = "Entrance Lockdown";
+	id_tag = "entergatelock"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "mNL" = (
 /obj/machinery/vending/sale,
@@ -18598,10 +18641,8 @@
 /turf/simulated/floor,
 /area/teleporter)
 "oal" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/security/checkpoint2)
@@ -19522,12 +19563,15 @@
 	},
 /area/medical/genetics)
 "oJc" = (
-/obj/structure/fence,
-/obj/structure/sign/securearea{
-	name = "DANGER: PREDATORY ANIMALS"
+/obj/structure/fence/door{
+	dir = 4
 	},
-/turf/unsimulated/floor/jungle/path,
-/area/surface/jungle)
+/obj/machinery/door/poddoor/shutters/preopen{
+	name = "Entrance Lockdown";
+	id_tag = "entergatelock"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "oJC" = (
 /obj/effect/decal/warning_stripes{
 	dir = 10;
@@ -19765,19 +19809,17 @@
 	},
 /area/medical/sleeper)
 "oXj" = (
-/obj/structure/grille/window_spawner/reinforced/full,
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2";
-	pixel_y = 1
+	icon_state = "4-8"
 	},
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated,
-/area/security/checkpoint2)
+/turf/simulated/floor{
+	icon_state = "grimy"
+	},
+/area/security/detectives_office)
 "oXo" = (
 /turf/simulated/floor{
 	dir = 1;
@@ -21051,13 +21093,14 @@
 	pixel_x = 24
 	},
 /obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
+	icon_state = "1-2"
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/security/checkpoint2)
@@ -21797,7 +21840,7 @@
 "qBb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/wall/r_wall,
-/area/security/checkpoint2)
+/area/security/detectives_office)
 "qBo" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
@@ -22049,12 +22092,13 @@
 	},
 /area/science/xenobiology)
 "qLc" = (
-/obj/structure/fence,
-/obj/structure/sign/securearea{
-	name = "DANGER: PREDATORY ANIMALS"
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
-/turf/unsimulated/floor/jungle/path,
-/area/surface/jungle/fenced)
+/turf/simulated/floor{
+	icon_state = "grimy"
+	},
+/area/security/detectives_office)
 "qLk" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 6
@@ -22633,19 +22677,11 @@
 /turf/simulated/floor,
 /area/engineering/atmos)
 "rhl" = (
-/obj/structure/table,
-/obj/item/weapon/stamp/denied{
-	pixel_y = 2;
-	pixel_x = 7
-	},
-/obj/item/device/taperecorder{
-	pixel_x = -6;
-	pixel_y = 3
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	icon_state = "1-2"
 	},
 /turf/simulated/floor,
 /area/security/checkpoint2)
@@ -23693,7 +23729,7 @@
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/structure/cable/yellow,
 /turf/simulated,
-/area/security/checkpoint2)
+/area/security/detectives_office)
 "rXq" = (
 /obj/structure/bookcase{
 	name = "bookcase (Religious)"
@@ -25673,11 +25709,8 @@
 /turf/simulated/floor,
 /area/science/chargebay)
 "tBg" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/security/checkpoint2)
@@ -26184,6 +26217,12 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
 	},
 /turf/simulated/floor,
 /area/security/checkpoint2)
@@ -26800,15 +26839,6 @@
 /area/security/range)
 "uwH" = (
 /obj/structure/table,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
 /turf/simulated/floor,
 /area/security/checkpoint2)
 "uwL" = (
@@ -28123,13 +28153,25 @@
 	},
 /area/surface/jungle/zoned/chapel_outside)
 "vtq" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
+/obj/structure/table,
+/obj/item/weapon/stamp/denied{
+	pixel_y = 8;
+	pixel_x = 7
+	},
+/obj/item/device/taperecorder{
+	pixel_x = -6;
+	pixel_y = 3
 	},
 /obj/structure/cable/yellow{
-	d1 = 2;
+	d1 = 1;
 	d2 = 4;
-	icon_state = "2-4"
+	icon_state = "1-4"
+	},
+/obj/item/weapon/stamp/denied{
+	pixel_y = -4;
+	pixel_x = 7;
+	icon_state = "stamp-accept";
+	name = "\improper ACCEPTED rubber stamp"
 	},
 /turf/simulated/floor,
 /area/security/checkpoint2)
@@ -28138,16 +28180,14 @@
 /area/supply/miningdock)
 "vur" = (
 /obj/machinery/door/airlock/glass_security{
-	name = "Security Checkpoint";
-	req_access_txt = "1"
+	name = "Detective";
+	req_access_txt = "4"
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
-/area/security/checkpoint2)
+/area/security/detectives_office)
 "vuB" = (
 /obj/machinery/mech_bay_recharge_port,
 /turf/simulated/floor{
@@ -29057,12 +29097,8 @@
 /turf/simulated,
 /area/security/warden)
 "vWR" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 5
 	},
 /turf/simulated/floor,
 /area/security/checkpoint2)
@@ -29839,11 +29875,13 @@
 /turf/simulated/floor/plating,
 /area/library)
 "wDJ" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/window/brigdoor{
-	base_state = "right";
-	dir = 8;
-	req_access_txt = "63"
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor,
 /area/security/checkpoint2)
@@ -30603,7 +30641,6 @@
 /obj/structure/noticeboard{
 	pixel_x = 30
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
 	icon_state = "grimy"
 	},
@@ -31749,8 +31786,9 @@
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated,
-/area/security/checkpoint2)
+/area/security/detectives_office)
 "xZA" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2";
@@ -71329,16 +71367,16 @@ lIK
 lIK
 lIK
 lIK
-lIK
-uXL
-uXL
-uXL
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+aPa
+knp
+lHP
+knp
+bhu
+bhu
+bhu
+bhu
+bhu
+bhu
 mOy
 mOy
 mOy
@@ -71681,16 +71719,16 @@ lWz
 lWz
 lWz
 lWz
-aPa
-oJc
-ecN
-oJc
-mmv
-mmv
-mmv
-mmv
-mmv
-mmv
+uXj
+eIt
+eIt
+eIt
+cCa
+vtq
+uwH
+ldw
+pJT
+pJT
 mOy
 pAx
 lYm
@@ -72034,15 +72072,15 @@ snf
 snf
 snf
 mUo
-xor
-xor
-xor
-mmv
-cwk
-kqL
-lhu
-jLs
-joU
+snf
+snf
+snf
+rqh
+nOq
+kyg
+pJT
+pJT
+pJT
 mOy
 cGH
 nQS
@@ -72385,16 +72423,16 @@ eOA
 eOA
 eOA
 eOA
-wfz
-qLc
-mNu
-qLc
-mmv
-wdv
-pea
-vPY
-jmf
-wdv
+ecN
+snf
+snf
+snf
+cCa
+rHl
+pJT
+vAv
+tPQ
+atf
 mOy
 vNM
 hRD
@@ -72737,16 +72775,16 @@ wld
 wld
 wld
 wld
-wld
-xor
-xor
-xor
-mmv
-wdv
-mdw
-txX
-jmf
-wdv
+wfz
+mNu
+oJc
+mNu
+cCa
+rlO
+pJT
+lwF
+vWR
+oal
 mOy
 eXu
 tas
@@ -73093,12 +73131,12 @@ wld
 xor
 xor
 xor
-mmv
-wdv
-wdv
-wdv
-wdv
-wdv
+cCa
+wDJ
+pJT
+gXP
+tBg
+oal
 mOy
 mOy
 kUO
@@ -73445,12 +73483,12 @@ tnZ
 xor
 xor
 xor
-mmv
-wdv
-wdv
-wdv
-lPh
-kyg
+cCa
+rhl
+ltR
+ltR
+pVW
+tUe
 cKx
 mDN
 qSO
@@ -73798,11 +73836,11 @@ xor
 xor
 xor
 mmv
-gzD
-gie
-csA
-grt
-xig
+mmv
+mmv
+mmv
+eCD
+qLE
 qLE
 koC
 gdV
@@ -74149,13 +74187,13 @@ tnZ
 xor
 xor
 xor
-knp
-gvk
-gvk
-gvk
-gvk
-gvk
-gvk
+mmv
+cwk
+kqL
+lhu
+jLs
+joU
+mmv
 exR
 wyx
 tng
@@ -74501,12 +74539,12 @@ tnZ
 xor
 xor
 xor
-oXj
-rhl
-pJT
-ldw
-pJT
-tPQ
+mmv
+wdv
+pea
+vPY
+lPh
+grt
 qBb
 giS
 cbP
@@ -74853,12 +74891,12 @@ tnZ
 xor
 xor
 xor
-rqh
-nOq
-pJT
-vAv
-eCD
-oal
+mmv
+wdv
+mdw
+txX
+jmf
+qLc
 vur
 tLs
 aXR
@@ -75205,12 +75243,12 @@ tnZ
 xor
 xor
 xor
-cCa
-rHl
-pJT
-lwF
-vWR
-bhu
+mmv
+wdv
+wdv
+wdv
+oXj
+bNY
 xZl
 dCH
 iPs
@@ -75557,12 +75595,12 @@ tnZ
 xor
 xor
 xor
-cCa
-rlO
-pJT
-gXP
-tBg
-oal
+mmv
+wdv
+wdv
+wdv
+eXn
+qLc
 rXe
 pXw
 voV
@@ -75909,13 +75947,13 @@ tnZ
 xor
 xor
 xor
-cCa
-uwH
-ltR
-vtq
-pVW
-tUe
+mmv
+gzD
+gie
+csA
 gvk
+xig
+mmv
 pXw
 del
 pDk
@@ -76261,13 +76299,13 @@ tnZ
 snf
 snf
 ltk
-gvk
-bNY
-wDJ
-bNY
-gvk
-gvk
-gvk
+mmv
+mmv
+mmv
+mmv
+mmv
+mmv
+mmv
 lmL
 iPs
 wlL
