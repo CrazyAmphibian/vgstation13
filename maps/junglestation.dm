@@ -19,6 +19,7 @@
 		/datum/zLevel/space{
 			name = "derelict" ;
 			},
+		)
 	enabled_jobs = list(/datum/job/trader)
 
 	load_map_elements = list(
