@@ -173,5 +173,5 @@
 
 // returns a random number between min and max, skewing it according to luck. returns an int.
 /mob/proc/lucky_prob_rand_range(var/min,var/max,var/luck,var/luckfactor = 0.01,var/skewing=10,var/lower_is_preferable=FALSE)
-	return floor( (lucky_prob_rand(luck,luckfactor,skewing,lower_is_preferable)*(max-min+1))-.001)+min
+	return floor( (lucky_prob_rand(luck,luckfactor,skewing,lower_is_preferable)*(max-min+1))-0.001)+min
 

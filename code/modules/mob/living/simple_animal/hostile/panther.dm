@@ -14,7 +14,7 @@
 	failed_geometry_class=TRUE
 	hates_fast_food=TRUE // likes fish.
 
-mob/living/simple_animal/hostile/bear/panther/ListTargets()
+/mob/living/simple_animal/hostile/bear/panther/ListTargets()
 	var/list/l=..()
 	for (var/i in l) //won't attack fellow cats.
 		if(istype(i,/mob/living/simple_animal/cat) && !istype(i,/mob/living/simple_animal/cat/snek))

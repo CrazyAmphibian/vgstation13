@@ -12,7 +12,7 @@
 	hates_fast_food=TRUE //return to monke
 	var/walking=FALSE
 
-mob/living/simple_animal/hostile/bear/dinosaur/Life()
+/mob/living/simple_animal/hostile/bear/dinosaur/Life()
 	. =..()
 	if(!.)
 		return
@@ -34,7 +34,7 @@ mob/living/simple_animal/hostile/bear/dinosaur/Life()
 		spawn(20) openthedoor()
 	
 
-mob/living/simple_animal/hostile/bear/dinosaur/ListTargets()
+/mob/living/simple_animal/hostile/bear/dinosaur/ListTargets()
 	if(walking)
 		return list()
 	else

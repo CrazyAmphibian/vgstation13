@@ -12,13 +12,13 @@
 		/datum/zLevel/junglesurface,
 		/datum/zLevel/jungleunderground,
 		/datum/zLevel/centcomm,
+		/datum/zLevel/mining,
 		/datum/zLevel/space{
 			name = "spaceOldSat" ;
 			},
 		/datum/zLevel/space{
 			name = "derelict" ;
 			},
-		/datum/zLevel/mining,
 		/datum/zLevel/space{
 			name = "spacePirateShip" ;
 			},
