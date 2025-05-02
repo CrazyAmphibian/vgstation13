@@ -9,10 +9,14 @@
 	plane = PLATING_PLANE
 	intact=0
 
+//gets drops when mined.
+/turf/unsimulated/floor/jungle/proc/generate_loot(obj/item/C as obj, mob/user as mob)
+	return
+
 //returns 0.0 if it cannot. otherwise, returns a number as the object's tool speed.
 /turf/unsimulated/floor/jungle/proc/item_terraforming_ispickaxe(obj/item/C)
 	if(istype(C,/obj/item/weapon/pickaxe) && !istype(C,/obj/item/weapon/pickaxe/shovel))
-		return 1.0
+		return (1/C.toolspeed)/2.5 //default toolspeed is 0.4. do this math because lower=faster, but we want higher=faster.
 	if(istype(C,/obj/item/tool/crowbar)) 
 		if(istype(C,/obj/item/tool/crowbar/halligan)) //halligans have a pick end.
 			return 0.75
@@ -23,7 +27,7 @@
 	
 /turf/unsimulated/floor/jungle/proc/item_terraforming_isshovel(obj/item/C)
 	if(istype(C,/obj/item/weapon/pickaxe/shovel))
-		return 1.0
+		return (1/C.toolspeed)/2.5
 	if(istype(C,/obj/item/weapon/kitchen/utensil/spoon) || istype(C,/obj/item/weapon/kitchen/utensil/spork))  //see above
 		return 0.1
 	return 0.0	
@@ -68,7 +72,8 @@
 	name="Mud"
 	desc="A viscous mixture of water and soil."
 	turf_speed_multiplier=2 //mud is difficult to travel over
-	icon_state = "ironsand1"
+	icon='icons/turf/walls.dmi'
+	icon_state = "rock(high)"
 
 /turf/unsimulated/floor/jungle/mud/New()
 	..()
@@ -97,24 +102,57 @@
 /turf/unsimulated/floor/jungle/dirt
 	name="Soil"
 	desc="A mixture of sediments, clays, and decomposed matter."
-	icon='icons/turf/walls.dmi'
-	icon_state = "rock(high)"
+	icon_state = "ironsand1"
+	var/obj/structure/ladder/hashole=null
 
+/turf/unsimulated/floor/jungle/dirt/examine()
+	..()
+	if(hashole)
+		to_chat(usr,"there's a hole leading underground.")
 
 /turf/unsimulated/floor/jungle/dirt/attackby(obj/item/C as obj, mob/user as mob)
 	if(!C || !user)
 		return 0
-	if(C.type== /obj/item/stack/tile/grass)
+	if(C.type== /obj/item/stack/tile/grass && !hashole)
 		var/obj/item/stack/tile/T = C
 		if(T.use(1))
 			ChangeTurf(/turf/unsimulated/floor/jungle/grass)
 	var/s=0.0
 	s=item_terraforming_isshovel(C)
-	if(s>0.0)
+	if(s>0.0 && !hashole)
 		to_chat(user, "<span class='notice'>You start packing down the soil</span>")
 		if(do_after(user, src, 20/s ))
 			ChangeTurf(/turf/unsimulated/floor/jungle/path)
-			
+	s=item_terraforming_ispickaxe(C)
+	if(s>0.0 && !hashole)
+		to_chat(usr,"you start digging downwards...")
+		if(do_after(user, src, 80/s ))
+			if(!hashole)
+				to_chat(usr,"you finish making a hole.")
+				var/obj/structure/ladder/l_surf=new(src)
+				var/obj/structure/ladder/l_tunnel=new(locate(x,y,2))	
+				l_tunnel.up=l_surf
+				l_surf.down=l_tunnel
+				hashole=l_surf
+				locate(x,y,2)?.ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
+				locate(x,y,2)?.hashole=l_tunnel
+			return	
+	if(C.type== /obj/item/stack/ore/glass && hashole)
+		var/obj/item/stack/ore/glass/T = C
+		if(T.amount<50)
+			to_chat(usr,"you need 50 sand to do this!")
+			return
+		to_chat(usr,"you start filling the hole back with soil...")	
+		if(do_after(user, src, 80 ))
+			if(T.use(50))
+				to_chat(usr,"you fill the hole back with soil.")
+				var/turf/T2=hashole.down.loc
+				T2?.ChangeTurf(/turf/unsimulated/floor/jungle/underground)
+				qdel(hashole.down)
+				qdel(hashole)
+				hashole=null
+				return
+				
 
 /turf/unsimulated/floor/jungle/path
 	name="Compressed Dirt"
@@ -253,28 +291,126 @@
 	if(s>0.0)
 		to_chat(user, loosened ? "<span class='notice'>You begin to break apart the soil...</span>" : "<span class='notice'>You struggle to break up the soil...</span>")
 		if(do_after(user, src, (loosened ? 20 : 60)/s ))
+			generate_loot(C,user)
 			ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
-			new/obj/item/stack/ore/glass(src,50) //theres no dirt, so we use sand instead.
-	
-	
+			return
+
+
+/turf/unsimulated/floor/jungle/underground/generate_loot(var/obj/item/C, var/mob/user)
+	new/obj/item/stack/ore/glass(src,50) //theres no dirt, so we use sand instead.
+	if(!user)
+		return
+	if (user.lucky_prob_rand()>0.5) //50% base chance
+		switch(rand(1,100))
+			if(1 to 40)
+				new/obj/item/stack/ore/iron(src,user.lucky_prob_rand_range(1,9))
+			if(40 to 55)
+				new/obj/item/stack/ore/diamond(src,user.lucky_prob_rand_range(1,3))
+			if(55 to 70)
+				new/obj/item/stack/ore/gold(src,user.lucky_prob_rand_range(1,5))
+			if(70 to 85)
+				new/obj/item/stack/ore/silver(src,user.lucky_prob_rand_range(1,7))
+			if(85 to 100)
+				new/obj/item/stack/ore/uranium(src,user.lucky_prob_rand_range(1,3))
+	return
+
 /turf/unsimulated/floor/jungle/bedrock
 	name="Bedrock"
 	desc="A very dense rock. Nothing seems to be able to dig through it."
 	icon='icons/turf/walls.dmi'
 	icon_state = "mariahive_noanimation"	
+	var/obj/structure/ladder/hashole=null
 
-/turf/unsimulated/floor/jungle/bedrock/New(var/loc) //todo: when we make a new bedrock tile, update adjacent tiles to visualize the foundation.	
+
+/turf/unsimulated/floor/jungle/bedrock/New(var/loc)
+	if(locate(/obj/structure/ladder) in contents)
+		icon_state="mariahive_noanimation_l"
+		
+	var/turf/T=locate(x,y,1)	
+	if(T && (!istype(T,/turf/unsimulated/floor/jungle) || T.type==/turf/unsimulated/floor/jungle/path_plated || T.type==/turf/unsimulated/floor/jungle/water || T.type==/turf/unsimulated/floor/jungle/water_deep))
+		icon_state="mariahive_noanimation_d"
+
+/turf/unsimulated/floor/jungle/bedrock/attackby(obj/item/C as obj, mob/user as mob)
+	if(!C || !user)
+		return 0
+	var/s=0.0
+	s=item_terraforming_ispickaxe(C)
+	if(s>0.0 && !hashole)
+		var/turf/T=locate(x,y,1) //if there's no blockers above us
+		if(T && istype(T,/turf/unsimulated/floor/jungle) && T.type!=/turf/unsimulated/floor/jungle/path_plated && T.type!=/turf/unsimulated/floor/jungle/water && T.type!=/turf/unsimulated/floor/jungle/water_deep && T.type!=/turf/unsimulated/floor/jungle/concrete )
+			to_chat(usr,"you start digging upwards...")
+			if(do_after(user, src, 80/s ))
+				T=locate(x,y,1)
+				if(!hashole && T && istype(T,/turf/unsimulated/floor/jungle) && T.type!=/turf/unsimulated/floor/jungle/path_plated && T.type!=/turf/unsimulated/floor/jungle/water && T.type!=/turf/unsimulated/floor/jungle/water_deep && T.type!=/turf/unsimulated/floor/jungle/concrete )
+					to_chat(usr,"you finish making a hole.")
+					icon_state="mariahive_noanimation_l"
+					
+					var/obj/structure/ladder/l_tunnel=new(src)
+					var/obj/structure/ladder/l_surf=new(locate(x,y,1))
+					
+					l_tunnel.up=l_surf
+					l_surf.down=l_tunnel
+					
+					locate(x,y,1)?.ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
+					locate(x,y,1)?.hashole=l_surf
+					hashole=l_tunnel
+				else
+					to_chat(usr,"something gets in your way.")
+				return
+		else
+			to_chat(usr,"something solid prevents you from tunneling upwards.")
+			
+	
+/turf/unsimulated/floor/jungle/bedrock/examine()
+	..()
+	if(icon_state=="mariahive_noanimation_d")
+		to_chat(usr,"it seems that there's something solid above you that you won't be able to dig through.")
+		return
+	if(icon_state=="mariahive_noanimation_l")
+		to_chat(usr,"there's a hole leading to the surface.")
+		return
+
+
+//we also use enter to reveal tiles, since the tile above could change.
+/turf/unsimulated/floor/jungle/bedrock/Entered(var/atom/movable/Obj,var/recursive=TRUE)
+	if(recursive)
+		..()
+	icon_state="mariahive_noanimation"
+	
+	if(locate(/obj/structure/ladder) in contents)
+		icon_state="mariahive_noanimation_l"
+	
+	var/turf/T=locate(x,y,1)	
+	if(T && (!istype(T,/turf/unsimulated/floor/jungle) || T.type==/turf/unsimulated/floor/jungle/path_plated || T.type==/turf/unsimulated/floor/jungle/water || T.type==/turf/unsimulated/floor/jungle/water_deep || T.type==/turf/unsimulated/floor/jungle/concrete))
+		icon_state="mariahive_noanimation_d"
+	
+	if(recursive) //we reveal the state of surrounding bedrock. there's probably a better way to do this.
+		var/turf/T2=get_step(src,NORTH)
+		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+			T2.Entered(Obj,FALSE)
+		T2=get_step(src,SOUTH)
+		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+			T2.Entered(Obj,FALSE)
+		T2=get_step(src,EAST)
+		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+			T2.Entered(Obj,FALSE)
+		T2=get_step(src,WEST)
+		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+			T2.Entered(Obj,FALSE)
+		T2=get_step(src,NORTHEAST)
+		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+			T2.Entered(Obj,FALSE)
+		T2=get_step(src,SOUTHEAST)
+		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+			T2.Entered(Obj,FALSE)
+		T2=get_step(src,NORTHWEST)
+		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+			T2.Entered(Obj,FALSE)
+		T2=get_step(src,SOUTHWEST)
+		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+			T2.Entered(Obj,FALSE)				
+	
 	
 /turf/unsimulated/floor/jungle/bedrock/ex_act(severity)	
 	return
 	
-/turf/unsimulated/floor/jungle/foundation	
-	name="Foundation"
-	density=1
-	opacity=1
-	desc="a very hard metal structure. you don't think you'll be able to get through it, no matter what."
-	icon='icons/turf/walls.dmi'
-	icon_state = "cave_wall"
-	
-/turf/unsimulated/floor/jungle/foundation/ex_act(severity)	
-	return	

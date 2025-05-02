@@ -252,6 +252,13 @@ var/global/list/accessable_z_levels = list()
 	movementJammed = TRUE
 	transitionLoops = TRUE
 
+/datum/zLevel/jungleunderground
+	name = "jungle underground"
+	base_turf = /turf/unsimulated/floor/jungle/bedrock
+	base_area = /area/surface/jungle/underground
+	movementJammed = TRUE
+	transitionLoops = TRUE	
+
 //for Horizon
 /datum/zLevel/hyperspace
 	name = "hyperspace"

@@ -10,6 +10,7 @@
 	file_dir = "tgstation"
 	zLevels = list(
 		/datum/zLevel/junglesurface,
+		/datum/zLevel/jungleunderground,
 		/datum/zLevel/centcomm,
 		/datum/zLevel/space{
 			name = "spaceOldSat" ;
