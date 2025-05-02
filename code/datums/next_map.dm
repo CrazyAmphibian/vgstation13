@@ -180,6 +180,12 @@
 	path = "wheelstation"
 	min_players = 30
 
+/datum/next_map/junglestation
+	name = "NT Colony Gamma-8"
+	path = "junglestation"
+	min_players=0 //placeholders - adjust later.
+	max_players=999
+
 /proc/get_votable_maps()
 	var/list/votable_maps = list()
 	for(var/map_path in subtypesof(/datum/next_map))
