@@ -134,8 +134,10 @@
 				l_tunnel.up=l_surf
 				l_surf.down=l_tunnel
 				hashole=l_surf
-				locate(x,y,2)?.ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
-				locate(x,y,2)?.hashole=l_tunnel
+				var/turf/T2=locate(x,y,2)
+				T2?.ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
+				var/turf/unsimulated/floor/jungle/bedrock/TT=T2
+				TT?.hashole=l_tunnel
 			return	
 	if(C.type== /obj/item/stack/ore/glass && hashole)
 		var/obj/item/stack/ore/glass/T = C
@@ -351,8 +353,10 @@
 					l_tunnel.up=l_surf
 					l_surf.down=l_tunnel
 					
-					locate(x,y,1)?.ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
-					locate(x,y,1)?.hashole=l_surf
+					var/turf/T2=locate(x,y,1)
+					T2?.ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
+					var/turf/unsimulated/floor/jungle/dirt/TT=T2
+					TT?.hashole=l_surf
 					hashole=l_tunnel
 				else
 					to_chat(usr,"something gets in your way.")

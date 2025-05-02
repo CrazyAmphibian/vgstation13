@@ -8,21 +8,17 @@
 	nameLong = "Jungle Station"
 	map_dir = "junglestation"
 	file_dir = "tgstation"
+	zAsteroid = 4
+	zMainStation = 1
+	zCentcomm = 3
 	zLevels = list(
 		/datum/zLevel/junglesurface,
 		/datum/zLevel/jungleunderground,
 		/datum/zLevel/centcomm,
 		/datum/zLevel/mining,
 		/datum/zLevel/space{
-			name = "spaceOldSat" ;
-			},
-		/datum/zLevel/space{
 			name = "derelict" ;
 			},
-		/datum/zLevel/space{
-			name = "spacePirateShip" ;
-			},
-		)
 	enabled_jobs = list(/datum/job/trader)
 
 	load_map_elements = list(
