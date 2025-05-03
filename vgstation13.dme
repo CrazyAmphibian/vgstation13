@@ -1268,6 +1268,7 @@
 #include "code\game\objects\structures\ice_block.dm"
 #include "code\game\objects\structures\inflatable.dm"
 #include "code\game\objects\structures\kitchen_spike.dm"
+#include "code\game\objects\structures\ladder_jungle.dm"
 #include "code\game\objects\structures\ladders.dm"
 #include "code\game\objects\structures\lamarr_cage.dm"
 #include "code\game\objects\structures\lattice.dm"

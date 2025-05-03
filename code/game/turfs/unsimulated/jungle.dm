@@ -33,6 +33,25 @@
 	return 0.0	
 	
 
+
+var/list/foliage_choices=list(
+/obj/structure/flora/ausbushes,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/genericbush,
+/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/ausbushes/pointybush,
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/reedbush,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/stalkybush,
+/obj/structure/flora/ausbushes/sunnybush,
+)
+
 /turf/unsimulated/floor/jungle/grass
 	name="Jungle Grass"
 	desc="A thick and lush carpet of various plant species, sustained by a regular supply to water."
@@ -40,12 +59,36 @@
 	icon_state = "grass_alt1"
 	turf_speed_multiplier=1.1 // tall grass.
 	
+/turf/unsimulated/floor/jungle/grass/New(var/loc,var/NO_GROW=FALSE)
+	..()
+	if(NO_GROW)
+		return
+	
+	if (prob(50))
+		var/plantseed = abs(( sin((x+rand(-2,2))*5.01+213.998) + sin((y+rand(-2,2))*4.56+71.294) )%%1.0)
+		plantseed = 1+floor(plantseed*(foliage_choices.len-0.01))//mmm, dumb float math
+		
+		var/create=foliage_choices[plantseed]
+		if(create)
+			new create(src)
+			turf_speed_multiplier+=0.6
+	else if(prob(20)) //10% overall
+		if( !(locate(/obj/structure/flora/tree) in view(1,src)) )
+			new/obj/structure/flora/tree/shitty(src)
+			
+		
+/turf/unsimulated/floor/jungle/grass/Destroy()
+	..()
+	for(var/obj/structure/flora/F in contents)
+		qdel(F)
+	
 /turf/unsimulated/floor/jungle/grass/attackby(obj/item/C as obj, mob/user as mob)
+	..()
 	if(!C || !user)
 		return 0
 	var/s=0.0
 	s=item_terraforming_ispickaxe(C)
-	if(s>0.0)
+	if(s>0.0 && !(locate(/obj/structure/flora) in contents))
 		to_chat(user, "<span class='notice'>You start breaking up the soil</span>")
 		if(do_after(user, src, 20/s ))
 			ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
@@ -66,6 +109,10 @@
 /turf/unsimulated/floor/jungle/grass/New()
 	..()
 	icon_state="grass_alt[rand(1,4)]"
+
+/turf/unsimulated/floor/jungle/grass/no_flora //BYOND...
+/turf/unsimulated/floor/jungle/grass/no_flora/New(var/loc)
+	..(loc,TRUE)
 
 
 /turf/unsimulated/floor/jungle/mud
@@ -103,7 +150,7 @@
 	name="Soil"
 	desc="A mixture of sediments, clays, and decomposed matter."
 	icon_state = "ironsand1"
-	var/obj/structure/ladder/hashole=null
+	var/obj/structure/ladder/jungle_tunnel/hashole=null
 
 /turf/unsimulated/floor/jungle/dirt/examine()
 	..()
@@ -116,7 +163,7 @@
 	if(C.type== /obj/item/stack/tile/grass && !hashole)
 		var/obj/item/stack/tile/T = C
 		if(T.use(1))
-			ChangeTurf(/turf/unsimulated/floor/jungle/grass)
+			ChangeTurf(/turf/unsimulated/floor/jungle/grass/no_flora)
 	var/s=0.0
 	s=item_terraforming_isshovel(C)
 	if(s>0.0 && !hashole)
@@ -129,8 +176,8 @@
 		if(do_after(user, src, 80/s ))
 			if(!hashole)
 				to_chat(usr,"you finish making a hole.")
-				var/obj/structure/ladder/l_surf=new(src)
-				var/obj/structure/ladder/l_tunnel=new(locate(x,y,2))	
+				var/obj/structure/ladder/jungle_tunnel/l_surf=new(src)
+				var/obj/structure/ladder/jungle_tunnel/l_tunnel=new(locate(x,y,2))	
 				l_tunnel.up=l_surf
 				l_surf.down=l_tunnel
 				hashole=l_surf
@@ -321,15 +368,14 @@
 	desc="A very dense rock. Nothing seems to be able to dig through it."
 	icon='icons/turf/walls.dmi'
 	icon_state = "mariahive_noanimation"	
-	var/obj/structure/ladder/hashole=null
+	var/obj/structure/ladder/jungle_tunnel/hashole=null
 
 
 /turf/unsimulated/floor/jungle/bedrock/New(var/loc)
-	if(locate(/obj/structure/ladder) in contents)
+	if(locate(/obj/structure/ladder/jungle_tunnel) in contents)
 		icon_state="mariahive_noanimation_l"
 		
-	var/turf/T=locate(x,y,1)	
-	if(T && (!istype(T,/turf/unsimulated/floor/jungle) || T.type==/turf/unsimulated/floor/jungle/path_plated || T.type==/turf/unsimulated/floor/jungle/water || T.type==/turf/unsimulated/floor/jungle/water_deep))
+	if(!cannot_dig_up())
 		icon_state="mariahive_noanimation_d"
 
 /turf/unsimulated/floor/jungle/bedrock/attackby(obj/item/C as obj, mob/user as mob)
@@ -338,17 +384,15 @@
 	var/s=0.0
 	s=item_terraforming_ispickaxe(C)
 	if(s>0.0 && !hashole)
-		var/turf/T=locate(x,y,1) //if there's no blockers above us
-		if(T && istype(T,/turf/unsimulated/floor/jungle) && T.type!=/turf/unsimulated/floor/jungle/path_plated && T.type!=/turf/unsimulated/floor/jungle/water && T.type!=/turf/unsimulated/floor/jungle/water_deep && T.type!=/turf/unsimulated/floor/jungle/concrete )
+		if(!cannot_dig_up() )
 			to_chat(usr,"you start digging upwards...")
 			if(do_after(user, src, 80/s ))
-				T=locate(x,y,1)
-				if(!hashole && T && istype(T,/turf/unsimulated/floor/jungle) && T.type!=/turf/unsimulated/floor/jungle/path_plated && T.type!=/turf/unsimulated/floor/jungle/water && T.type!=/turf/unsimulated/floor/jungle/water_deep && T.type!=/turf/unsimulated/floor/jungle/concrete )
+				if(!hashole && !cannot_dig_up() )
 					to_chat(usr,"you finish making a hole.")
 					icon_state="mariahive_noanimation_l"
 					
-					var/obj/structure/ladder/l_tunnel=new(src)
-					var/obj/structure/ladder/l_surf=new(locate(x,y,1))
+					var/obj/structure/ladder/jungle_tunnel/l_tunnel=new(src)
+					var/obj/structure/ladder/jungle_tunnel/l_surf=new(locate(x,y,1))
 					
 					l_tunnel.up=l_surf
 					l_surf.down=l_tunnel
@@ -362,13 +406,13 @@
 					to_chat(usr,"something gets in your way.")
 				return
 		else
-			to_chat(usr,"something solid prevents you from tunneling upwards.")
+			to_chat(usr,cannot_dig_up() || "something solid prevents you from tunneling upwards.")
 			
 	
 /turf/unsimulated/floor/jungle/bedrock/examine()
 	..()
 	if(icon_state=="mariahive_noanimation_d")
-		to_chat(usr,"it seems that there's something solid above you that you won't be able to dig through.")
+		to_chat(usr,cannot_dig_up() || "it seems that there's something solid above you that you won't be able to dig through.")
 		return
 	if(icon_state=="mariahive_noanimation_l")
 		to_chat(usr,"there's a hole leading to the surface.")
@@ -381,11 +425,10 @@
 		..()
 	icon_state="mariahive_noanimation"
 	
-	if(locate(/obj/structure/ladder) in contents)
+	if(locate(/obj/structure/ladder/jungle_tunnel) in contents)
 		icon_state="mariahive_noanimation_l"
 	
-	var/turf/T=locate(x,y,1)	
-	if(T && (!istype(T,/turf/unsimulated/floor/jungle) || T.type==/turf/unsimulated/floor/jungle/path_plated || T.type==/turf/unsimulated/floor/jungle/water || T.type==/turf/unsimulated/floor/jungle/water_deep || T.type==/turf/unsimulated/floor/jungle/concrete))
+	if(cannot_dig_up())
 		icon_state="mariahive_noanimation_d"
 	
 	if(recursive) //we reveal the state of surrounding bedrock. there's probably a better way to do this.
@@ -414,6 +457,22 @@
 		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
 			T2.Entered(Obj,FALSE)				
 	
+/turf/unsimulated/floor/jungle/bedrock/proc/cannot_dig_up()
+	var/turf/T=locate(x,y,1)
+	var/T_T=T.type
+	if(!istype(T,/turf/unsimulated/floor/jungle))
+		return "something hard blocks the way."
+	if(T_T==/turf/unsimulated/floor/jungle/path_plated)
+		return "something hard blocks the way."
+	if(T_T==/turf/unsimulated/floor/jungle/water)
+		return "something tells you that this is a really bad idea."
+	if(T_T==/turf/unsimulated/floor/jungle/water_deep)
+		return "something tells you that this is a really bad idea."
+	if(T_T==/turf/unsimulated/floor/jungle/concrete)
+		return "something hard blocks the way."
+	if(locate(/obj/structure/flora/tree) in T.contents)
+		return "there's too many roots in the way."
+	return null
 	
 /turf/unsimulated/floor/jungle/bedrock/ex_act(severity)	
 	return
