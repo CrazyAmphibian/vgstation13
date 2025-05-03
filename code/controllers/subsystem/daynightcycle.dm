@@ -205,7 +205,12 @@ Basically, you are going to overwrite the flags.
 		
 		world.log << "[luma] [chroma_b] [chroma_r] -> [r] [g] [b]"
 		
+		
+		
 		next_light_power=luma*7.5
+		
+		message_admins("Jungle day/night system beginning new phase at [world.time], cycle #[solartime], with light stats of [next_light_power]-[r],[g],[b]")
+		
 		current_timeOfDay=rgb(r,g,b)
 	
 	

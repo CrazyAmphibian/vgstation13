@@ -52,6 +52,11 @@ var/list/foliage_choices=list(
 /obj/structure/flora/ausbushes/sunnybush,
 )
 
+var/list/foliage_replacments=list(
+/obj/structure/flora/rock,
+/obj/structure/flora/rock/pile,
+)
+
 /turf/unsimulated/floor/jungle/grass
 	name="Jungle Grass"
 	desc="A thick and lush carpet of various plant species, sustained by a regular supply to water."
@@ -64,16 +69,23 @@ var/list/foliage_choices=list(
 	if(NO_GROW)
 		return
 	
+	//var/area/A = loc
+	//if(prob( (A.type!=/area/surface/jungle) ? 50 : 100 )) //populated areas have less plants. DOESN'T WORK. IS NULL. WHYYYYYYYYYYYYY
 	if (prob(50))
-		var/plantseed = abs(( sin((x+rand(-2,2))*5.01+213.998) + sin((y+rand(-2,2))*4.56+71.294) )%%1.0)
-		plantseed = 1+floor(plantseed*(foliage_choices.len-0.01))//mmm, dumb float math
-		
-		var/create=foliage_choices[plantseed]
-		if(create)
-			new create(src)
+		if(prob(10)) //10% chance to replace with rocks or some shit. 5% over all
+			var/rep=pick(foliage_replacments)
+			new rep(src)
 			turf_speed_multiplier+=0.6
+		else //45% over all
+			var/plantseed = abs(( sin((x+rand(-2,2))*5.01+213.998) + sin((y+rand(-2,2))*4.56+71.294) )%%1.0)
+			plantseed = 1+floor(plantseed*(foliage_choices.len-0.01))//mmm, dumb float math
+	
+			var/create=foliage_choices[plantseed]
+			if(create)
+				new create(src)
+				turf_speed_multiplier+=0.6
 	else if(prob(20)) //10% overall
-		if( !(locate(/obj/structure/flora/tree) in view(1,src)) )
+		if( !(locate(/obj/structure/flora/tree) in range(2,src)) )
 			new/obj/structure/flora/tree/shitty(src)
 			
 		
