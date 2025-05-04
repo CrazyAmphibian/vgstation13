@@ -87,7 +87,7 @@ var/list/foliage_replacments=list(
 	else if(prob(20)) //10% overall
 		if( !(locate(/obj/structure/flora/tree) in range(2,src)) )
 			new/obj/structure/flora/tree/shitty(src)
-			
+
 		
 /turf/unsimulated/floor/jungle/grass/Destroy()
 	..()
