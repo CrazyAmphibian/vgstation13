@@ -153,6 +153,7 @@ included:
 	icon_state="case" // "control_noreactor"
 	idle_power_usage = 500
 	active_power_usage = 500
+	machine_flags = EMAGGABLE
 	density =1
 	anchored =1
 	//circuit=/obj/item/weapon/circuitboard/fission_reactor
@@ -179,9 +180,13 @@ included:
 
 /obj/machinery/fissioncontroller/emag_act(var/mob/user)
 	message_admins("[user] has emagged a reactor controller at [x],[y],[z]")
+	playsound(src,'sound/machines/fission/rc_scram.ogg',50)
+	say("#pd=_e$%@er~is(i-n re\"ui\[ements?", class = "binaryradio")
 	req_config_access=list()
 	return
 
+/obj/machinery/fissioncontroller/can_emag()
+	return req_config_access.len>=1
 
 /obj/machinery/fissioncontroller/New()
 	..()
@@ -292,9 +297,9 @@ included:
 		if(W.is_multitool(user))
 			buildui_configuration()
 			interface_configuration.show(user)	
-				
-	if(associated_reactor && associated_reactor.considered_on())
-		return
+			return		
+	..()
+		
 
 /obj/machinery/fissioncontroller/attack_hand(mob/user)
 	if(..())
