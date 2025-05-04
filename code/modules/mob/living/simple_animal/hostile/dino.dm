@@ -8,6 +8,7 @@
 	faction = "dinosaur"
 	default_icon_floor="dino"
 	default_icon_space="dino"
+	speak = list("boom boom.","acka lacka","lacka boom")
 	failed_geometry_class=TRUE
 	hates_fast_food=TRUE //return to monke
 	var/walking=FALSE
@@ -57,7 +58,7 @@
 			dir=SOUTH
 		if(3)
 			dir=WEST
-	if(prob(10))
+	if(prob(25))
 		var/nloc=get_step_rand(src.loc)
 		if(nloc)
 			Move(nloc)
