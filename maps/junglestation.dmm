@@ -4298,6 +4298,7 @@
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
 	name = "KEEP CLEAR: DOCKING AREA";
+	icon_state = "shuttle3";
 	pixel_x = -32
 	},
 /turf/simulated/wall,
@@ -9535,7 +9536,8 @@
 /obj/structure/fence,
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
-	name = "KEEP CLEAR: DOCKING AREA"
+	name = "KEEP CLEAR: DOCKING AREA";
+	icon_state = "shuttle2"
 	},
 /obj/structure/fence/corner,
 /turf/unsimulated/floor/jungle/path_plated,
@@ -16973,7 +16975,8 @@
 	dir = 8
 	},
 /obj/structure/sign/securearea{
-	name = "DANGER: PREDATORY ANIMALS"
+	name = "DANGER: PREDATORY ANIMALS";
+	icon_state = "fauna2"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle)
@@ -20060,7 +20063,8 @@
 /obj/structure/sign/securearea{
 	pixel_y = 32;
 	name = "DANGER: SPIDERS";
-	desc = "A warning sign which reads 'DANGER:SPIDERS'."
+	desc = "A warning sign which reads 'DANGER:SPIDERS'.";
+	icon_state = "fauna1"
 	},
 /obj/structure/closet/l3closet/scientist,
 /turf/simulated/floor,
@@ -26436,7 +26440,8 @@
 	},
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
-	name = "KEEP CLEAR: DOCKING AREA"
+	name = "KEEP CLEAR: DOCKING AREA";
+	icon_state = "shuttle2"
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/fenced)
@@ -30850,7 +30855,8 @@
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
-	name = "KEEP CLEAR: DOCKING AREA"
+	name = "KEEP CLEAR: DOCKING AREA";
+	icon_state = "shuttle3"
 	},
 /turf/simulated/floor/plating,
 /area/supply/miningdock)
@@ -35779,7 +35785,8 @@
 /obj/structure/fence/corner,
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
-	name = "KEEP CLEAR: DOCKING AREA"
+	name = "KEEP CLEAR: DOCKING AREA";
+	icon_state = "shuttle2"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
@@ -36249,6 +36256,7 @@
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
 	name = "KEEP CLEAR: DOCKING AREA";
+	icon_state = "shuttle3";
 	pixel_x = -32
 	},
 /obj/machinery/camera{
@@ -42235,7 +42243,8 @@
 /obj/structure/fence,
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
-	name = "KEEP CLEAR: DOCKING AREA"
+	name = "KEEP CLEAR: DOCKING AREA";
+	icon_state = "shuttle2"
 	},
 /obj/structure/fence/corner{
 	dir = 8
@@ -48530,7 +48539,8 @@
 "rIU" = (
 /obj/structure/fence/corner,
 /obj/structure/sign/securearea{
-	name = "DANGER: PREDATORY ANIMALS"
+	name = "DANGER: PREDATORY ANIMALS";
+	icon_state = "fauna2"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
@@ -50435,7 +50445,8 @@
 /obj/structure/grille/window_spawner/reinforced,
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
-	name = "KEEP CLEAR: DOCKING AREA"
+	name = "KEEP CLEAR: DOCKING AREA";
+	icon_state = "shuttle3"
 	},
 /turf/simulated,
 /area/science/shuttlebay)
@@ -54175,7 +54186,8 @@
 	},
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
-	name = "KEEP CLEAR: DOCKING AREA"
+	name = "KEEP CLEAR: DOCKING AREA";
+	icon_state = "shuttle2"
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/fenced)
@@ -57651,11 +57663,6 @@
 	},
 /area/tdome)
 "vij" = (
-/obj/structure/sign/securearea{
-	name = "DANGER: SPIDERS";
-	desc = "A warning sign which reads 'DANGER:SPIDERS'.";
-	pixel_x = 32
-	},
 /obj/item/weapon/reagent_containers/food/condiment/chillwax,
 /obj/item/weapon/reagent_containers/food/condiment/chillwax{
 	pixel_x = 7
@@ -57664,6 +57671,12 @@
 	pixel_x = -7
 	},
 /obj/structure/rack,
+/obj/structure/sign/securearea{
+	name = "DANGER: SPIDERS";
+	desc = "A warning sign which reads 'DANGER:SPIDERS'.";
+	icon_state = "fauna1";
+	pixel_x = 32
+	},
 /turf/simulated/floor/engine,
 /area/surface/jungle)
 "vik" = (
@@ -58125,7 +58138,8 @@
 	},
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
-	name = "KEEP CLEAR: DOCKING AREA"
+	name = "KEEP CLEAR: DOCKING AREA";
+	icon_state = "shuttle2"
 	},
 /obj/structure/fence/corner,
 /turf/unsimulated/floor/jungle/concrete,
@@ -58284,7 +58298,8 @@
 	},
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
-	name = "KEEP CLEAR: DOCKING AREA"
+	name = "KEEP CLEAR: DOCKING AREA";
+	icon_state = "shuttle2"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
@@ -60352,6 +60367,15 @@
 /obj/machinery/newscaster,
 /turf/unsimulated/wall,
 /area/centcom/holding)
+"wed" = (
+/obj/structure/fence,
+/obj/structure/sign/securearea{
+	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
+	name = "KEEP CLEAR: DOCKING AREA";
+	icon_state = "shuttle2"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "wee" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -61675,7 +61699,8 @@
 	},
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
-	name = "KEEP CLEAR: DOCKING AREA"
+	name = "KEEP CLEAR: DOCKING AREA";
+	icon_state = "shuttle2"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
@@ -113686,7 +113711,7 @@ bar
 eOA
 bar
 eOA
-eOA
+wed
 eOA
 eOA
 eOA
@@ -118614,7 +118639,7 @@ eOA
 eOA
 bar
 eOA
-eOA
+wed
 eOA
 eOA
 eOA
@@ -150633,7 +150658,7 @@ acg
 vXj
 vQx
 die
-suW
+eas
 kLq
 oJH
 kLq
