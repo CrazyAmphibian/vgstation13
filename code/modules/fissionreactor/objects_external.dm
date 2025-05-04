@@ -117,6 +117,7 @@ included:
 	var/pdiff=pressure_reactor-pressure_coolant
 	if (pdiff<0) //flowing external->reactor
 		pdiff*=-1 
+		pdiff*=associated_reactor.coolant_input_amt
 		var/molestotransfer=  pdiff*air_contents.volume/(R_IDEAL_GAS_EQUATION*air_contents.temperature)
 		var/datum/gas_mixture/nu_mix=air_contents.remove(molestotransfer *0.5) //we multiply by 1/2 because if we transfer the whole difference, then it'll just swap between the 2 bodies forever.
 		associated_reactor.coolant.merge(nu_mix) 
@@ -163,11 +164,24 @@ included:
 	var/fueldepletedmsg=TRUE
 	var/lasttempnag=0 //ensures temp warning only occur if it is increasing. less chat spam.
 	var/datum/html_interface/interface
+	var/datum/html_interface/interface_configuration
 	var/lastupdatetick=0
 	var/displaycoolantinmoles=FALSE
 	var/tempdisplaymode=0
 	var/list/temperature_history[]
 	var/max_temp_history=15 // every 2 seconds will plot it. how many points on the graph.
+	var/coolant_throttle=FALSE // if true, will stop coolant input above a temperature
+	var/talkmode_information=1
+	var/talkmode_warnings=2
+	var/talkmode_critical=3
+	var/list/req_config_access =list(access_engine_major)
+
+
+/obj/machinery/fissioncontroller/emag_act(var/mob/user)
+	message_admins("[user] has emagged a reactor controller at [x],[y],[z]")
+	req_config_access=list()
+	return
+
 
 /obj/machinery/fissioncontroller/New()
 	..()
@@ -177,6 +191,8 @@ included:
 		temperature_history[i]=20.0 //default it to 20K at all points
 	
 	interface=new /datum/html_interface(src,"Fission reactor controller",500,290,"<link rel='stylesheet' href='fission.css'>")
+	interface_configuration=new /datum/html_interface(src,"Fission reactor controller",500,290,"<link rel='stylesheet' href='fission.css'>")
+	
 	for(var/datum/fission_reactor_holder/r in fissionreactorlist)
 		if(r.turf_in_reactor(src.loc))
 			if(r.adopt_part(src))
@@ -195,6 +211,7 @@ included:
 	if(associated_reactor)
 		associated_reactor.handledestruction(src)
 	qdel(interface)
+	qdel(interface_configuration)
 	if(associated_reactor && associated_reactor.fuel && associated_reactor.considered_on())
 		var/rads= associated_reactor.fuel_rods.len*((associated_reactor.fuel_reactivity) - ( (associated_reactor.fuel_reactivity-associated_reactor.fuel_reactivity_with_rods)*associated_reactor.control_rod_insertion))*associated_reactor.fuel.wattage/25000
 		for(var/mob/living/l in range(src.loc, 5))
@@ -270,8 +287,11 @@ included:
 			newframe.components+=new /obj/item/weapon/stock_parts/scanning_module
 			qdel(src)
 		return
-				
-				
+	if(istype(I,/obj/item))
+		var/obj/item/W=I
+		if(W.is_multitool(user))
+			buildui_configuration()
+			interface_configuration.show(user)	
 				
 	if(associated_reactor && associated_reactor.considered_on())
 		return
@@ -304,6 +324,48 @@ included:
 	send_asset(user, "uiBg.png")
 	
 	
+/obj/machinery/fissioncontroller/proc/buildui_configuration()	
+	var/html_string=""
+	if(!associated_reactor)
+		interface_configuration.updateLayout("<h1>NO REACTOR</h1>")
+		return
+
+	html_string={"
+AUTOSCRAM<br>
+
+<a [can_autoscram ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_autoscram=0'>\[Disabled\]</a>&nbsp;
+<a [can_autoscram ?"class='blocked'" :""] href='?src=\ref[interface_configuration];set_autoscram=1'>\[Enabled\]</a>
+<br><br>
+COOLANT THROTTLE<br>
+
+<a [coolant_throttle ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_coolantthrottle=0' >\[Disabled\]</a>&nbsp;
+<a [coolant_throttle ?"class='blocked'" :""] href='?src=\ref[interface_configuration];set_coolantthrottle=1'>\[Enabled\]</a>
+<br><br>
+INFORMATION<br>
+
+<a [talkmode_information!=0 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_info=0'>\[Silent\]</a>&nbsp;
+<a [talkmode_information!=1 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_info=1'>\[Normal\]</a>&nbsp;
+<a [talkmode_information!=2 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_info=2'>\[Engineering\]</a>&nbsp;
+<a [talkmode_information!=3 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_info=3'>\[Public Radio\]</a>&nbsp;
+
+<br><br>
+WARNINGS<br>
+
+<a [talkmode_warnings!=0 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_warning=0'>\[Silent\]</a>&nbsp;
+<a [talkmode_warnings!=1 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_warning=1'>\[Normal\]</a>&nbsp;
+<a [talkmode_warnings!=2 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_warning=2'>\[Engineering\]</a>&nbsp;
+<a [talkmode_warnings!=3 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_warning=3'>\[Public Radio\]</a>&nbsp;
+
+<br><br>
+CRITICAL<br>
+
+<a [talkmode_critical!=0 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_critical=0'>\[Silent\]</a>&nbsp;
+<a [talkmode_critical!=1 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_critical=1'>\[Normal\]</a>&nbsp;
+<a [talkmode_critical!=2 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_critical=2'>\[Engineering\]</a>&nbsp;
+<a [talkmode_critical!=3 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_critical=3'>\[Public Radio\]</a>&nbsp;
+
+	"}
+	interface_configuration.updateLayout(html_string)	
 	
 /obj/machinery/fissioncontroller/proc/buildui()
 	var/aychteeemel_string=""
@@ -556,16 +618,51 @@ included:
 	if(lastupdatetick==world.time && !forced)
 		return
 	buildui()
+	buildui_configuration()
 	for (var/client/C in interface.clients)
 		if(C.mob && get_dist(C.mob.loc,src.loc)<=1)
 			interface.show( interface._getClient(interface.clients[C]) ) //"There's probably shenanigans" - dilt. yes there are.
 		else
 			interface.hide(interface._getClient(interface.clients[C]))
+			
+	for (var/client/C in interface_configuration.clients)
+		if(C.mob && get_dist(C.mob.loc,src.loc)<=1)
+			interface_configuration.show( interface_configuration._getClient(interface_configuration.clients[C]) )
+		else
+			interface_configuration.hide(interface_configuration._getClient(interface_configuration.clients[C]))		
 	lastupdatetick=world.time
 
 /obj/machinery/fissioncontroller/proc/add_history_temp(var/temp=20.0)
 	temperature_history.Insert(1,temp)
 	temperature_history.len=max_temp_history
+	
+	
+/obj/machinery/fissioncontroller/proc/speakandsay(var/msg,var/level=1)
+	if(level==0) //i have no mouth
+		return
+	if(level>=1) //speak it out loud
+		say(msg, class = "binaryradio")
+	if(level>=2) //say it over engineer comms
+		var/datum/speech/S=new()
+		S.name=name
+		S.frequency=ENG_FREQ
+		S.job="machine"
+		S.message=msg
+		S.radio=src
+		S.speaker=src
+		Broadcast_Message(S,0,0,0,list(src.z))
+		qdel(S)
+	if(level>=3) //oh SHIT, everyone needs to know about this! RUN! AAAAAAAAA!
+		var/datum/speech/S=new()
+		S.name=name
+		S.frequency=COMMON_FREQ
+		S.job="machine"
+		S.message=msg
+		S.radio=src
+		S.speaker=src
+		Broadcast_Message(S,0,0,0,list(src.z))
+		qdel(S)
+	
 	
 /obj/machinery/fissioncontroller/process()
 	update_icon()
@@ -578,12 +675,11 @@ included:
 
 	
 	associated_reactor.update_all_icos()
-	//associated_reactor.coolantcycle()
 	if(!powered()) //with my last breath, i curse zoidberg!
 		if(!poweroutagemsg)
 			poweroutagemsg=TRUE
 			if(can_autoscram)
-				say("Reactor lost power, engaging SCRAM.", class = "binaryradio")
+				speakandsay("Reactor lost power, engaging SCRAM.",talkmode_critical)
 				playsound(src,'sound/machines/fission/rc_scram.ogg',50)
 				associated_reactor.SCRAM=TRUE
 		add_history_temp()		
@@ -596,7 +692,7 @@ included:
 
 	if(associated_reactor.fuel?.life<=0)
 		if(!fueldepletedmsg)
-			say("Reactor fuel depleted.", class = "binaryradio")
+			speakandsay("Reactor fuel depleted.",talkmode_information)
 			playsound(src,'sound/machines/fission/rc_fuelnone.ogg',50)
 		fueldepletedmsg=TRUE
 	else
@@ -604,16 +700,16 @@ included:
 	
 	
 	if(associated_reactor.temperature>=FISSIONREACTOR_DANGERTEMP && can_autoscram && !associated_reactor.SCRAM )
-		say("critical temperature reached, engaging SCRAM.", class = "binaryradio")
+		speakandsay("critical temperature reached, engaging SCRAM.",talkmode_critical)
 		playsound(src,'sound/machines/fission/rc_scram.ogg',50)
 		associated_reactor.SCRAM=TRUE
 	
 	if(associated_reactor.temperature>=FISSIONREACTOR_DANGERTEMP && associated_reactor.temperature>lasttempnag )
 		if(associated_reactor.temperature>=FISSIONREACTOR_MELTDOWNTEMP)
-			say("Reactor at critical temperature: [associated_reactor.temperature]K. Evacuate immediately.", class = "binaryradio")
+			speakandsay("Reactor at critical temperature: [associated_reactor.temperature]K. Evacuate immediately.",talkmode_critical)
 			playsound(src,'sound/machines/fission/rc_scram.ogg',50,0,10) //lots of extra range because shit is about to go down to hit the fan town.
 		else
-			say("Reactor at dangerous temperature: [associated_reactor.temperature]K", class = "binaryradio")
+			speakandsay("Reactor at dangerous temperature: [associated_reactor.temperature]K",talkmode_warnings)
 			playsound(src,'sound/machines/fission/rc_alert.ogg',50)
 
 	lasttempnag=associated_reactor.temperature
@@ -672,7 +768,58 @@ included:
 			roddelta=5
 		if("setdelta_1")
 			roddelta=1
-			
+	var/mob/user = hclient.client.mob
+	var/cando=can_access(user?.GetAccess(),req_config_access)
+	if(href_list["set_autoscram"])
+		if(!cando)
+			to_chat(user,"access denied.")
+			return
+		can_autoscram = href_list["set_autoscram"]=="0" ? FALSE : TRUE
+	if(href_list["set_coolantthrottle"])
+		if(!cando)
+			to_chat(user,"access denied.")
+			return
+		coolant_throttle = href_list["set_coolantthrottle"]=="0" ? FALSE : TRUE
+	if(href_list["set_announce_info"])
+		if(!cando)
+			to_chat(user,"access denied.")
+			return
+		switch(href_list["set_announce_info"])
+			if("0")
+				talkmode_information=0
+			if("1")
+				talkmode_information=1
+			if("2")
+				talkmode_information=2
+			if("3")
+				talkmode_information=3
+	if(href_list["set_announce_warning"])
+		if(!cando)
+			to_chat(user,"access denied.")
+			return
+		switch(href_list["set_announce_warning"])
+			if("0")
+				talkmode_warnings=0
+			if("1")
+				talkmode_warnings=1
+			if("2")
+				talkmode_warnings=2
+			if("3")
+				talkmode_warnings=3		
+	if(href_list["set_announce_critical"])
+		if(!cando)
+			to_chat(user,"access denied.")
+			return
+		switch(href_list["set_announce_critical"])
+			if("0")
+				talkmode_critical=0
+			if("1")
+				talkmode_critical=1
+			if("2")
+				talkmode_critical=2
+			if("3")
+				talkmode_critical=3		
+	
 	ask_remakeUI() //update it so that changes appear NOW.
 //SS_WAIT_MACHINERY
 
@@ -686,9 +833,6 @@ included:
 				qdel(src)
 		if(3) //light
 			return
-
-
-
 
 
 /obj/structure/fission_reactor_case
@@ -1056,19 +1200,3 @@ included:
 		/obj/item/weapon/stock_parts/console_screen=1,
 		/obj/item/stack/rods = 2,
 	)
-
-/obj/item/weapon/circuitboard/fission_reactor/solder_improve(mob/user)
-	to_chat(user, "<span class='[safety_disabled ? "notice" : "warning"]'>You [safety_disabled ? "re" : "dis"]connect the auto-SCRAM fuse.</span>")
-	safety_disabled = !safety_disabled
-	
-	
-/obj/item/weapon/circuitboard/fission_reactor/finish_building(var/obj/machinery/new_machine,var/mob/user)
-	var/obj/machinery/fissioncontroller/fc=new_machine
-	fc.can_autoscram =!safety_disabled
-/*
-
-				else if(istype(circuit,/obj/item/weapon/circuitboard/fission_reactor))
-					var/obj/machinery/computer/fissioncontroller/RC = B
-					var/obj/item/weapon/circuitboard/fission_reactor/C = circuit
-					RC.can_autoscram = !C.safety_disabled
-*/
