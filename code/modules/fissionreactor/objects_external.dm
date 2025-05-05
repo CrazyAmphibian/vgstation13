@@ -165,7 +165,6 @@ included:
 	var/fueldepletedmsg=TRUE
 	var/lasttempnag=0 //ensures temp warning only occur if it is increasing. less chat spam.
 	var/datum/html_interface/interface
-	var/datum/html_interface/interface_configuration
 	var/lastupdatetick=0
 	var/displaycoolantinmoles=FALSE
 	var/tempdisplaymode=0
@@ -176,6 +175,7 @@ included:
 	var/talkmode_warnings=2
 	var/talkmode_critical=3
 	var/list/req_config_access =list(access_engine_major)
+	var/isinoptionsmenu=FALSE
 
 
 /obj/machinery/fissioncontroller/emag_act(var/mob/user)
@@ -196,7 +196,6 @@ included:
 		temperature_history[i]=20.0 //default it to 20K at all points
 	
 	interface=new /datum/html_interface(src,"Fission reactor controller",500,290,"<link rel='stylesheet' href='fission.css'>")
-	interface_configuration=new /datum/html_interface(src,"Fission reactor controller",500,290,"<link rel='stylesheet' href='fission.css'>")
 	
 	for(var/datum/fission_reactor_holder/r in fissionreactorlist)
 		if(r.turf_in_reactor(src.loc))
@@ -216,7 +215,6 @@ included:
 	if(associated_reactor)
 		associated_reactor.handledestruction(src)
 	qdel(interface)
-	qdel(interface_configuration)
 	if(associated_reactor && associated_reactor.fuel && associated_reactor.considered_on())
 		var/rads= associated_reactor.fuel_rods.len*((associated_reactor.fuel_reactivity) - ( (associated_reactor.fuel_reactivity-associated_reactor.fuel_reactivity_with_rods)*associated_reactor.control_rod_insertion))*associated_reactor.fuel.wattage/25000
 		for(var/mob/living/l in range(src.loc, 5))
@@ -291,13 +289,7 @@ included:
 			newframe.components+=new /obj/item/weapon/stock_parts/matter_bin
 			newframe.components+=new /obj/item/weapon/stock_parts/scanning_module
 			qdel(src)
-		return
-	if(istype(I,/obj/item))
-		var/obj/item/W=I
-		if(W.is_multitool(user))
-			buildui_configuration()
-			interface_configuration.show(user)	
-			return		
+		return	
 	..()
 		
 
@@ -327,133 +319,129 @@ included:
 	send_asset(user, "fission.css")
 	register_asset("uiBg.png", 'code/modules/html_interface/nanotrasen/uiBg.png')
 	send_asset(user, "uiBg.png")
-	
-	
-/obj/machinery/fissioncontroller/proc/buildui_configuration()	
-	var/html_string=""
-	if(!associated_reactor)
-		interface_configuration.updateLayout("<h1>NO REACTOR</h1>")
-		return
 
-	html_string={"
-AUTOSCRAM<br>
 
-<a [can_autoscram ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_autoscram=0'>\[Disabled\]</a>&nbsp;
-<a [can_autoscram ?"class='blocked'" :""] href='?src=\ref[interface_configuration];set_autoscram=1'>\[Enabled\]</a>
-<br><br>
-COOLANT THROTTLE<br>
-
-<a [coolant_throttle ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_coolantthrottle=0' >\[Disabled\]</a>&nbsp;
-<a [coolant_throttle ?"class='blocked'" :""] href='?src=\ref[interface_configuration];set_coolantthrottle=1'>\[Enabled\]</a>
-<br><br>
-INFORMATION<br>
-
-<a [talkmode_information!=0 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_info=0'>\[Silent\]</a>&nbsp;
-<a [talkmode_information!=1 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_info=1'>\[Normal\]</a>&nbsp;
-<a [talkmode_information!=2 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_info=2'>\[Engineering\]</a>&nbsp;
-<a [talkmode_information!=3 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_info=3'>\[Public Radio\]</a>&nbsp;
-
-<br><br>
-WARNINGS<br>
-
-<a [talkmode_warnings!=0 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_warning=0'>\[Silent\]</a>&nbsp;
-<a [talkmode_warnings!=1 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_warning=1'>\[Normal\]</a>&nbsp;
-<a [talkmode_warnings!=2 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_warning=2'>\[Engineering\]</a>&nbsp;
-<a [talkmode_warnings!=3 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_warning=3'>\[Public Radio\]</a>&nbsp;
-
-<br><br>
-CRITICAL<br>
-
-<a [talkmode_critical!=0 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_critical=0'>\[Silent\]</a>&nbsp;
-<a [talkmode_critical!=1 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_critical=1'>\[Normal\]</a>&nbsp;
-<a [talkmode_critical!=2 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_critical=2'>\[Engineering\]</a>&nbsp;
-<a [talkmode_critical!=3 ?"" :"class='blocked'"] href='?src=\ref[interface_configuration];set_announce_critical=3'>\[Public Radio\]</a>&nbsp;
-
-	"}
-	interface_configuration.updateLayout(html_string)	
-	
 /obj/machinery/fissioncontroller/proc/buildui()
+
+
+
 	var/aychteeemel_string=""
 	if(!associated_reactor)
 		interface.updateLayout("<h1>NO REACTOR</h1>")
 		return 
+	
+	if(isinoptionsmenu)
+		aychteeemel_string={"
+<a href='?src=\ref[interface];set_set_men=0'>\[BACK\]</a><br><br>
 		
-	var/fuelusepercent=associated_reactor.fuel? floor(associated_reactor.fuel.life*100+0.5) : 0
-	var/estimatedtimeleft =""
-	if(associated_reactor.fuel)
-		if(associated_reactor.fuel.life<=0)
-			estimatedtimeleft="Expired"
-		else if(associated_reactor.fuel_rods_affected_by_rods==associated_reactor.fuel_rods.len && associated_reactor.control_rod_insertion>=1.0)
-			estimatedtimeleft="Halted" //avoids a div by 0
-		else
-			var/secs=associated_reactor.fuel.lifetime
-			secs/=associated_reactor.fuel_rods.len - (associated_reactor.fuel_rods_affected_by_rods*associated_reactor.control_rod_insertion)
-			secs *= associated_reactor.fuel.life
-			secs=floor(secs)
-			var/mins=floor(secs/60)
-			secs%=60
-			//if(mins>99)
-			//	mins=99
-			//	secs=99
-			estimatedtimeleft="[mins]m [secs]s"
-	else	
-		estimatedtimeleft="None"
+AUTOSCRAM<br>
 
-	var/rodtargettpercent= floor(associated_reactor.control_rod_target*100+0.5)
-	var/rodinsertpercent= floor(associated_reactor.control_rod_insertion*100+0.5)
+<a [can_autoscram ?"" :"class='blocked'"] href='?src=\ref[interface];set_autoscram=0'>\[DISABLED\]</a>&nbsp;
+<a [can_autoscram ?"class='blocked'" :""] href='?src=\ref[interface];set_autoscram=1'>\[ENABLED\]</a>
+<br><br>
+COOLANT THROTTLE<br>
+
+<a [coolant_throttle ?"" :"class='blocked'"] href='?src=\ref[interface];set_coolantthrottle=0' >\[DISABLED\]</a>&nbsp;
+<a [coolant_throttle ?"class='blocked'" :""] href='?src=\ref[interface];set_coolantthrottle=1'>\[ENABLED\]</a>
+<br><br>
+INFORMATION<br>
+
+<a [talkmode_information!=0 ?"" :"class='blocked'"] href='?src=\ref[interface];set_announce_info=0'>\[SILENT\]</a>&nbsp;
+<a [talkmode_information!=1 ?"" :"class='blocked'"] href='?src=\ref[interface];set_announce_info=1'>\[NORMAL\]</a>&nbsp;
+<a [talkmode_information!=2 ?"" :"class='blocked'"] href='?src=\ref[interface];set_announce_info=2'>\[ENGINEERING\]</a>&nbsp;
+<a [talkmode_information!=3 ?"" :"class='blocked'"] href='?src=\ref[interface];set_announce_info=3'>\[PUBLIC\]</a>&nbsp;
+
+<br><br>
+WARNINGS<br>
+
+<a [talkmode_warnings!=0 ?"" :"class='blocked'"] href='?src=\ref[interface];set_announce_warning=0'>\[SILENT\]</a>&nbsp;
+<a [talkmode_warnings!=1 ?"" :"class='blocked'"] href='?src=\ref[interface];set_announce_warning=1'>\[NORMAL\]</a>&nbsp;
+<a [talkmode_warnings!=2 ?"" :"class='blocked'"] href='?src=\ref[interface];set_announce_warning=2'>\[ENGINEERING\]</a>&nbsp;
+<a [talkmode_warnings!=3 ?"" :"class='blocked'"] href='?src=\ref[interface];set_announce_warning=3'>\[PUBLIC\]</a>&nbsp;
+
+<br><br>
+CRITICAL<br>
+
+<a [talkmode_critical!=0 ?"" :"class='blocked'"] href='?src=\ref[interface];set_announce_critical=0'>\[SILENT\]</a>&nbsp;
+<a [talkmode_critical!=1 ?"" :"class='blocked'"] href='?src=\ref[interface];set_announce_critical=1'>\[NORMAL\]</a>&nbsp;
+<a [talkmode_critical!=2 ?"" :"class='blocked'"] href='?src=\ref[interface];set_announce_critical=2'>\[ENGINEERING\]</a>&nbsp;
+<a [talkmode_critical!=3 ?"" :"class='blocked'"] href='?src=\ref[interface];set_announce_critical=3'>\[PUBLIC\]</a>&nbsp;
+		"}
+	else
+	
+		var/fuelusepercent=associated_reactor.fuel? floor(associated_reactor.fuel.life*100+0.5) : 0
+		var/estimatedtimeleft =""
+		if(associated_reactor.fuel)
+			if(associated_reactor.fuel.life<=0)
+				estimatedtimeleft="Expired"
+			else if(associated_reactor.fuel_rods_affected_by_rods==associated_reactor.fuel_rods.len && associated_reactor.control_rod_insertion>=1.0)
+				estimatedtimeleft="Halted" //avoids a div by 0
+			else
+				var/secs=associated_reactor.fuel.lifetime
+				secs/=associated_reactor.fuel_rods.len - (associated_reactor.fuel_rods_affected_by_rods*associated_reactor.control_rod_insertion)
+				secs *= associated_reactor.fuel.life
+				secs=floor(secs)
+				var/mins=floor(secs/60)
+				secs%=60
+				estimatedtimeleft="[mins]m [secs]s"
+		else	
+			estimatedtimeleft="None"
+
+		var/rodtargettpercent= floor(associated_reactor.control_rod_target*100+0.5)
+		var/rodinsertpercent= floor(associated_reactor.control_rod_insertion*100+0.5)
 
 
-	var/status="<span class='status_ok'>OKAY</span>"
-	if(associated_reactor.temperature>=FISSIONREACTOR_DANGERTEMP)
-		status="<span class='status_danger'>[associated_reactor.temperature>=FISSIONREACTOR_MELTDOWNTEMP ? "RUN" : "DANGER"]</span>"
-	else if(!associated_reactor.fuel)
-		status="<span class='status_nofuel'>No Fuel</span>"
-	else if(associated_reactor.fuel.life<=0)
-		status="<span class='status_done'>Depleated</span>"
-	else if (!associated_reactor.considered_on())
-		status="<span class='status_halt'>Standby</span>"
+		var/status="<span class='status_ok'>OKAY</span>"
+		if(associated_reactor.temperature>=FISSIONREACTOR_DANGERTEMP)
+			status="<span class='status_danger'>[associated_reactor.temperature>=FISSIONREACTOR_MELTDOWNTEMP ? "RUN" : "DANGER"]</span>"
+		else if(!associated_reactor.fuel)
+			status="<span class='status_nofuel'>No Fuel</span>"
+		else if(associated_reactor.fuel.life<=0)
+			status="<span class='status_done'>Depleated</span>"
+		else if (!associated_reactor.considered_on())
+			status="<span class='status_halt'>Standby</span>"
 	
-	var/coretemppercent= associated_reactor.temperature / FISSIONREACTOR_MELTDOWNTEMP
-	coretemppercent=max(min(coretemppercent,1),0)
-	coretemppercent=floor(coretemppercent*100+0.5)
-	var/coolanttemppercent=associated_reactor.coolant.temperature / FISSIONREACTOR_MELTDOWNTEMP
-	coolanttemppercent=max(min(coolanttemppercent,1),0)
-	coolanttemppercent=floor(coolanttemppercent*100+0.5)
+		var/coretemppercent= associated_reactor.temperature / FISSIONREACTOR_MELTDOWNTEMP
+		coretemppercent=max(min(coretemppercent,1),0)
+		coretemppercent=floor(coretemppercent*100+0.5)
+		var/coolanttemppercent=associated_reactor.coolant.temperature / FISSIONREACTOR_MELTDOWNTEMP
+		coolanttemppercent=max(min(coolanttemppercent,1),0)
+		coolanttemppercent=floor(coolanttemppercent*100+0.5)
 	
-	var/reactivity=associated_reactor.fuel_rods.len*((associated_reactor.fuel_reactivity) - ( (associated_reactor.fuel_reactivity-associated_reactor.fuel_reactivity_with_rods)*associated_reactor.control_rod_insertion))
-	reactivity=floor(reactivity*100+0.5)
-	var/speed=associated_reactor.fuel_rods.len - (associated_reactor.fuel_rods_affected_by_rods*associated_reactor.control_rod_insertion)
-	speed=floor(speed*100+0.5)
+		var/reactivity=associated_reactor.fuel_rods.len*((associated_reactor.fuel_reactivity) - ( (associated_reactor.fuel_reactivity-associated_reactor.fuel_reactivity_with_rods)*associated_reactor.control_rod_insertion))
+		reactivity=floor(reactivity*100+0.5)
+		var/speed=associated_reactor.fuel_rods.len - (associated_reactor.fuel_rods_affected_by_rods*associated_reactor.control_rod_insertion)
+		speed=floor(speed*100+0.5)
 	
 
-	var/highesttemp=0.0
-	var/graphstring=""
-	for(var/i=1,i<=temperature_history.len,i++)
-		highesttemp=max(highesttemp,temperature_history[i])
-		var y=(1.0-( (temperature_history[i] || 20.0) /FISSIONREACTOR_MELTDOWNTEMP))*100
-		var x=(1.0-((i-1)/(temperature_history.len-1)))*350
-		graphstring+=i==1 ? "M[x] [y]" : "L[x] [y]"
+		var/highesttemp=0.0
+		var/graphstring=""
+		for(var/i=1,i<=temperature_history.len,i++)
+			highesttemp=max(highesttemp,temperature_history[i])
+			var y=(1.0-( (temperature_history[i] || 20.0) /FISSIONREACTOR_MELTDOWNTEMP))*100
+			var x=(1.0-((i-1)/(temperature_history.len-1)))*350
+			graphstring+=i==1 ? "M[x] [y]" : "L[x] [y]"
 	
 	
 	
-	var/coolant_tempdisplay="[floor(associated_reactor.coolant.temperature)]K"
-	var/reactor_tempdisplay="[floor(associated_reactor.temperature)]K"
-	var/reactor_highesttempdisplay="[floor(highesttemp)]K"
-	if(tempdisplaymode==1) //C
-		coolant_tempdisplay="[floor(associated_reactor.coolant.temperature-273.15)]°C"
-		reactor_tempdisplay="[floor(associated_reactor.temperature-273.15)]°C"
-		reactor_highesttempdisplay="[floor(highesttemp-273.15)]°C"
-	else if(tempdisplaymode==2) //F (because this is really old, outdated tech (fission is soooo last millenium))
-		coolant_tempdisplay="[floor(1.8*associated_reactor.coolant.temperature-459.67)]°F"
-		reactor_tempdisplay="[floor(1.8*associated_reactor.temperature-459.67)]°F"
-		reactor_highesttempdisplay="[floor(1.8*highesttemp-459.67)]°F"
-	else if(tempdisplaymode==3) //R (because muh absolute scale)
-		coolant_tempdisplay="[floor(1.8*associated_reactor.coolant.temperature)]R"
-		reactor_tempdisplay="[floor(1.8*associated_reactor.temperature)]R"
-		reactor_highesttempdisplay="[floor(1.8*highesttemp)]R"
+		var/coolant_tempdisplay="[floor(associated_reactor.coolant.temperature)]K"
+		var/reactor_tempdisplay="[floor(associated_reactor.temperature)]K"
+		var/reactor_highesttempdisplay="[floor(highesttemp)]K"
+		if(tempdisplaymode==1) //C
+			coolant_tempdisplay="[floor(associated_reactor.coolant.temperature-273.15)]°C"
+			reactor_tempdisplay="[floor(associated_reactor.temperature-273.15)]°C"
+			reactor_highesttempdisplay="[floor(highesttemp-273.15)]°C"
+		else if(tempdisplaymode==2) //F (because this is really old, outdated tech (fission is soooo last millenium))
+			coolant_tempdisplay="[floor(1.8*associated_reactor.coolant.temperature-459.67)]°F"
+			reactor_tempdisplay="[floor(1.8*associated_reactor.temperature-459.67)]°F"
+			reactor_highesttempdisplay="[floor(1.8*highesttemp-459.67)]°F"
+		else if(tempdisplaymode==3) //R (because muh absolute scale)
+			coolant_tempdisplay="[floor(1.8*associated_reactor.coolant.temperature)]R"
+			reactor_tempdisplay="[floor(1.8*associated_reactor.temperature)]R"
+			reactor_highesttempdisplay="[floor(1.8*highesttemp)]R"
 		
 	
-	aychteeemel_string={"<table style='border-collapse:initial;'>
+		aychteeemel_string={"<table style='border-collapse:initial;'>
 <tr><td style='vertical-align:top;'>
 
 <div style='width:350px;'>
@@ -494,7 +482,7 @@ CRITICAL<br>
 <div style='display:inline-block;width:100%;'>
 <a href='?src=\ref[interface];action=eject' [(!associated_reactor.fuel ||  associated_reactor.considered_on()) ? "class='blocked'" : ""]>\[EJECT FUEL\]</a>&nbsp;&nbsp;<a href='?src=\ref[interface];action=swap_tempunit'>\[TEMPERATURE\]</a>&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=rods_up'>\[RODS UP\]</a> <br>
 &nbsp;<a href='?src=\ref[interface];action=SCRAM' id='scram' style='[associated_reactor.SCRAM ? "animation-name:scramon;" : "" ]'>\[&nbsp;SCRAM&nbsp;]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=swap_gasunit'>\[COOLANT\]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=rods_down'>\[RODS DOWN\]</a> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=setdelta_5' [roddelta==5 ? "class='blocked'" : ""]>\[RODS +- 5\]</a>&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=setdelta_1' [roddelta==1 ? "class='blocked'" : ""]>\[RODS +- 1\]</a>
+&nbsp;<a href='?src=\ref[interface];set_set_men=1'>\[OPTIONS\]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=setdelta_5' [roddelta==5 ? "class='blocked'" : ""]>\[RODS +- 5\]</a>&nbsp;&nbsp;&nbsp;<a href='?src=\ref[interface];action=setdelta_1' [roddelta==1 ? "class='blocked'" : ""]>\[RODS +- 1\]</a>
 
 
 
@@ -623,18 +611,11 @@ CRITICAL<br>
 	if(lastupdatetick==world.time && !forced)
 		return
 	buildui()
-	buildui_configuration()
 	for (var/client/C in interface.clients)
 		if(C.mob && get_dist(C.mob.loc,src.loc)<=1)
 			interface.show( interface._getClient(interface.clients[C]) ) //"There's probably shenanigans" - dilt. yes there are.
 		else
-			interface.hide(interface._getClient(interface.clients[C]))
-			
-	for (var/client/C in interface_configuration.clients)
-		if(C.mob && get_dist(C.mob.loc,src.loc)<=1)
-			interface_configuration.show( interface_configuration._getClient(interface_configuration.clients[C]) )
-		else
-			interface_configuration.hide(interface_configuration._getClient(interface_configuration.clients[C]))		
+			interface.hide(interface._getClient(interface.clients[C]))	
 	lastupdatetick=world.time
 
 /obj/machinery/fissioncontroller/proc/add_history_temp(var/temp=20.0)
@@ -785,6 +766,8 @@ CRITICAL<br>
 			to_chat(user,"access denied.")
 			return
 		coolant_throttle = href_list["set_coolantthrottle"]=="0" ? FALSE : TRUE
+	if(href_list["set_set_men"])
+		isinoptionsmenu=href_list["set_set_men"]=="1"?1:0
 	if(href_list["set_announce_info"])
 		if(!cando)
 			to_chat(user,"access denied.")
