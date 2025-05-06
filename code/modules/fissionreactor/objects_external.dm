@@ -183,7 +183,6 @@ included:
 	playsound(src,'sound/machines/fission/rc_scram.ogg',50)
 	say("#pd=_e$%@er~is(i-n re\"ui\[ements?", class = "binaryradio")
 	req_config_access=list()
-	return
 
 /obj/machinery/fissioncontroller/can_emag()
 	return req_config_access.len>=1
@@ -772,44 +771,20 @@ CRITICAL<br>
 		if(!cando)
 			to_chat(user,"access denied.")
 			return
-		switch(href_list["set_announce_info"])
-			if("0")
-				talkmode_information=0
-			if("1")
-				talkmode_information=1
-			if("2")
-				talkmode_information=2
-			if("3")
-				talkmode_information=3
+		talkmode_information = text2num(href_list["set_announce_info"]) || 0
 	if(href_list["set_announce_warning"])
 		if(!cando)
 			to_chat(user,"access denied.")
 			return
-		switch(href_list["set_announce_warning"])
-			if("0")
-				talkmode_warnings=0
-			if("1")
-				talkmode_warnings=1
-			if("2")
-				talkmode_warnings=2
-			if("3")
-				talkmode_warnings=3		
+		talkmode_warnings = text2num(href_list["set_announce_warning"]) || 0
 	if(href_list["set_announce_critical"])
 		if(!cando)
 			to_chat(user,"access denied.")
 			return
-		switch(href_list["set_announce_critical"])
-			if("0")
-				talkmode_critical=0
-			if("1")
-				talkmode_critical=1
-			if("2")
-				talkmode_critical=2
-			if("3")
-				talkmode_critical=3		
+		talkmode_critical = text2num(href_list["set_announce_critical"]) || 0
 	
 	ask_remakeUI() //update it so that changes appear NOW.
-//SS_WAIT_MACHINERY
+
 
 /obj/machinery/fissioncontroller/ex_act(var/severity, var/child=null, var/mob/whodunnit)
 	switch(severity)
