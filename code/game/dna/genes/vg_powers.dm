@@ -59,14 +59,14 @@ Obviously, requires DNA2.
 	user_type = USER_TYPE_GENETIC
 	range = SELFCAST
 
-	charge_type = Sp_RECHARGE
-	charge_max = HULK_COOLDOWN
+	charge_type = SP_RECHARGE
+	charge_cooldown_max = HULK_COOLDOWN
 
 	duration = HULK_DURATION
 
 	spell_flags = INCLUDEUSER
 
-	invocation_type = SpI_NONE
+	invocation_type = SP_INV_NONE
 
 	override_base = "genetic"
 	hud_state = "gen_hulk"
@@ -127,9 +127,9 @@ Obviously, requires DNA2.
 	user_type = USER_TYPE_GENETIC
 	panel = "Mutant Powers"
 	range = SELFCAST
-	charge_type = Sp_RECHARGE
-	charge_max = 50
-	invocation_type = SpI_NONE
+	charge_type = SP_RECHARGE
+	charge_cooldown_max = 5 SECONDS
+	invocation_type = SP_INV_NONE
 	spell_flags = INCLUDEUSER
 	override_base = "genetic"
 	hud_state = "wiz_sleepold"

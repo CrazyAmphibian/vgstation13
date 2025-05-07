@@ -13,6 +13,7 @@ var/list/ladders = list()
 	var/custom_upanddown = ""
 	var/custom_upanddown_up = ""
 	var/custom_upanddown_down = ""
+	var/custom_sound = null
 	var/id = null
 	var/height = 0							//the 'height' of the ladder. higher numbers are considered physically higher
 	var/obj/structure/ladder/down = null	//the ladder below this one
@@ -127,6 +128,9 @@ var/list/ladders = list()
 	return attack_hand(user)
 
 /obj/structure/ladder/proc/climb(mob/user, turf/destination)
+	if (custom_sound)
+		playsound(src, custom_sound, 100, 0)
+
 	user.forceMove(destination)
 
 	for(var/obj/item/weapon/grab/G in user.held_items)

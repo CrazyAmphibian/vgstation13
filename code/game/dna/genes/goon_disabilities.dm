@@ -256,11 +256,11 @@
 	panel = "Mutant Powers"
 	user_type = USER_TYPE_GENETIC
 
-	charge_type = Sp_RECHARGE
-	charge_max = 600
+	charge_type = SP_RECHARGE
+	charge_cooldown_max = 60 SECONDS
 
 	spell_flags = INCLUDEUSER
-	invocation_type = SpI_NONE
+	invocation_type = SP_INV_NONE
 	range = SELFCAST
 	max_targets = 1
 	selection_type = "range"
@@ -300,11 +300,11 @@
 	panel = "Mutant Powers"
 	user_type = USER_TYPE_GENETIC
 
-	charge_type = Sp_RECHARGE
-	charge_max = 200
+	charge_type = SP_RECHARGE
+	charge_cooldown_max = 20 SECONDS
 
 	spell_flags = INCLUDEUSER | STATALLOWED
-	invocation_type = SpI_NONE
+	invocation_type = SP_INV_NONE
 	range = SELFCAST
 	max_targets = 1
 	selection_type = "range"

@@ -2073,11 +2073,11 @@
 	user_type = USER_TYPE_MECH
 	range = 0
 	invocation = "none"
-	invocation_type = SpI_NONE
+	invocation_type = SP_INV_NONE
 	panel = "Mech Modules"
 	spell_flags = null
-	charge_type = Sp_RECHARGE
-	charge_max = 0
+	charge_type = SP_RECHARGE
+	charge_cooldown_max = 0
 	charge_counter = 0
 	hud_state = "mecha_equip"
 	override_base = "mech"
@@ -2091,7 +2091,7 @@
 		name = ME.name
 		hud_state = ME.icon_state
 		override_icon = ME.icon
-	charge_counter = charge_max
+	charge_counter = charge_cooldown_max
 	desc = "[name]"
 
 /spell/mech/Destroy()
