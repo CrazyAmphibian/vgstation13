@@ -64,6 +64,8 @@
 	minbodytemp = 0
 	held_items = list()
 
+	avoids_poisonous=TRUE
+	
 	//keeping this here for later color matrix testing
 	var/a_matrix_testing_override = FALSE
 	var/a_11 = 1
@@ -130,14 +132,6 @@
 
 /mob/living/simple_animal/hostile/giant_spider/get_butchering_products()
 	return list(/datum/butchering_product/spider_legs)
-
-
-/mob/living/simple_animal/hostile/giant_spider/ListTargets()
-	var/list/l=..()
-	for (var/i in l) //avoid the poison frogs.
-		if(istype(i,/mob/living/simple_animal/hostile/lizard/frog/poison))
-			l-=i
-	return l
 
 
 //Can we actually attack a possible target?

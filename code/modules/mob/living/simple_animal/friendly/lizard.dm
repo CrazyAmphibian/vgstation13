@@ -126,6 +126,7 @@
 	icon_state = "poison_dart_frog"
 	icon_living = "poison_dart_frog"
 	icon_dead = "poison_dart_frog_dead"
+	is_poisonous=TRUE
 	
 /mob/living/simple_animal/hostile/lizard/frog/poison/react_to_touch(mob/M)	
 	..()

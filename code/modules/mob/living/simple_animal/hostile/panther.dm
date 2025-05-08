@@ -14,9 +14,7 @@
 	failed_geometry_class=TRUE
 	hates_fast_food=TRUE // likes fish.
 
-/mob/living/simple_animal/hostile/bear/panther/ListTargets()
-	var/list/l=..()
-	for (var/i in l) //won't attack fellow cats.
-		if(istype(i,/mob/living/simple_animal/cat) && !istype(i,/mob/living/simple_animal/cat/snek))
-			l-=i
-	return l
+
+/mob/living/simple_animal/hostile/bear/panther/isValidTarget(var/atom/A)
+	if(istype(A,/mob/living/simple_animal/cat) && !istype(A,/mob/living/simple_animal/cat/snek)) //won't attack fellow cats (like salem or runtime).
+		return FALSE

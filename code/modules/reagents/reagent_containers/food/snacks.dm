@@ -6407,13 +6407,29 @@
 	..()
 	reagents.add_reagent(NUTRIMENT, 6)
 
-/obj/item/weapon/reagent_containers/food/snacks/frog_leg/poison
+/obj/item/weapon/reagent_containers/food/snacks/meat/frog_leg_poison
+	name = "frog leg"
+	desc = "A thick, delicious legionnaire frog leg, its taste and texture resemble chicken."
+	icon_state = "frog_leg"
+	poisonsacs=/obj/item/weapon/reagent_containers/food/snacks/frog_poison_gland
 	bitesize=6 //bigger so you still eat it in 3 bites.
 
-/obj/item/weapon/reagent_containers/food/snacks/frog_leg/poison/New()
+/obj/item/weapon/reagent_containers/food/snacks/meat/frog_leg_poison/New()
 	..()
 	reagents.add_reagent(CARPOTOXIN, 6)
 	reagents.add_reagent(TOXIN, 6)
+
+
+/obj/item/weapon/reagent_containers/food/snacks/frog_poison_gland
+	name = "poison glands"
+	desc = "The toxin-producing glands of a poison dart frog"
+	icon_state = "toxicspine"
+/obj/item/weapon/reagent_containers/food/snacks/carppoisongland/New()
+	..()
+	reagents.add_reagent(CARPOTOXIN, 6)
+	reagents.add_reagent(TOXIN, 6)
+	bitesize = 12
+
 
 /obj/item/weapon/reagent_containers/food/snacks/pie/welcomepie
 	name = "friendship pie"

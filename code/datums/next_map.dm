@@ -181,7 +181,7 @@
 	min_players = 30
 
 /datum/next_map/junglestation
-	name = "NT Colony Gamma-8"
+	name = "Jungle Station" //NT Colony Gamma-8 - the trve name.
 	path = "junglestation"
 	min_players=0 //placeholders - adjust later.
 	max_players=999

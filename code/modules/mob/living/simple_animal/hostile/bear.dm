@@ -45,13 +45,8 @@
 	var/stance_step = 0
 
 	faction = "russian"
+	avoids_poisonous=TRUE
 
-/mob/living/simple_animal/hostile/bear/ListTargets()
-	var/list/l=..()
-	for (var/i in l) //avoid the poison frogs.
-		if(istype(i,/mob/living/simple_animal/hostile/lizard/frog/poison))
-			l-=i
-	return l
 
 /mob/living/simple_animal/hostile/bear/Destroy()
 	if(burger)

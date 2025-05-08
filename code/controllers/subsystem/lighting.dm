@@ -33,7 +33,6 @@ var/list/lighting_update_lights_lowpriority = list() // List of lighting sources
 	CURRENT_TICKLIMIT = (real_tick_limit - world.tick_usage)/3
 	var/i = 0
 	
-	//world.log << "lul: [lighting_update_lights.len] luc: [lighting_update_corners.len] luo: [lighting_update_overlays.len]  lplul: [lighting_update_lights_lowpriority.len]"
 	
 	for (i in 1 to lighting_update_lights.len)
 		var/datum/light_source/L = lighting_update_lights[i]
