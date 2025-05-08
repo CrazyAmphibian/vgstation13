@@ -6411,11 +6411,11 @@
 	name = "frog leg"
 	desc = "A thick, delicious legionnaire frog leg, its taste and texture resemble chicken."
 	icon_state = "frog_leg"
-	poisonsacs=/obj/item/weapon/reagent_containers/food/snacks/frog_poison_gland
 	bitesize=6 //bigger so you still eat it in 3 bites.
 
 /obj/item/weapon/reagent_containers/food/snacks/meat/frog_leg_poison/New()
 	..()
+	poisonsacs = new /obj/item/weapon/reagent_containers/food/snacks/frog_poison_gland
 	reagents.add_reagent(CARPOTOXIN, 6)
 	reagents.add_reagent(TOXIN, 6)
 
