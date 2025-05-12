@@ -21,6 +21,8 @@
 	specheatcap = 0.68
 	glass_icon_state = "dr_gibb_glass"
 	glass_desc = "Unless you are an industrial tool, this is probably not safe for consumption."
+	fission_time=3600 //1 hour
+	fission_power=500
 
 /datum/reagent/fuel/reaction_obj(var/obj/O, var/volume)
 	var/datum/reagent/self = src

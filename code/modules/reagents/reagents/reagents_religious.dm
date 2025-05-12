@@ -11,7 +11,7 @@
 	alpha = 128
 	plant_watering = 2
 	fission_absorbtion=5000
-	fission_time = 1800 //30 minutes
+	fission_time = 1200 //20 minutes
 
 /datum/reagent/holywater/on_mob_life(mob/living/M)
 	if(..())
@@ -173,7 +173,7 @@
 	plant_toxins = 8
 	plant_health = -2
 	fission_absorbtion=5000
-	fission_time = 1800 //30 minutes
+	fission_time = 1200 //20 minutes
 
 /datum/reagent/holysalts/reaction_obj(var/obj/O, var/volume)
 	if(..())
@@ -410,8 +410,9 @@
 //damn you BYOND
 /datum/reagent/holiestwater/proc/hallelujah(var/turf/simulated/T)
 	var/obj/lords_vengeance/V = new(T,volume)
-	V.adjacent_spread=1 //the origin should spread out for a consistent AoE in a 3x3 grid.
+	V.adjacent_spread=1.0 //the origin should spread out for a consistent AoE in a 3x3 grid.
 	V.spread_prob=100
+	V.transferance_penalty=0.25
 
 /datum/reagent/holiestwater/reaction_obj(var/obj/O, var/volume)
 	if(..())
@@ -422,7 +423,8 @@
 /datum/reagent/holiestwater/on_mob_life(mob/living/M)
 	if(..())
 		return 1
-	M.immune_system.ApplyAntipathogenics(100, list(ANTIGEN_CULT), 5)
+	if(M.mind && (M.mind.GetRole(CULTIST) || M.mind.GetRole(VAMPIRE)) )
+		M.adjustFireLoss(2)
 
 	
 /obj/lords_vengeance
@@ -454,7 +456,6 @@
 		O.bless()
 	loc.bless()
 	for(var/mob/living/M in loc.contents)
-		M.immune_system.ApplyAntipathogenics(100, list(ANTIGEN_CULT), say_what_again)
 		if(M.mind && (M.mind.GetRole(CULTIST) || M.mind.GetRole(VAMPIRE)) )
 			M.adjustFireLoss(2.5*sqrt(max(0,say_what_again)))
 
@@ -485,5 +486,5 @@
 			new/obj/lords_vengeance(T,say_what_again*adjacent_spread)
 			say_what_again-=say_what_again*adjacent_spread*transferance_penalty
 
-			
+	transferance_penalty=initial(transferance_penalty) //reset it so that it doesn't behave really bustedly by making infinite stuff.
 	

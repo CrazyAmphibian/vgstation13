@@ -254,7 +254,7 @@
 	density = 9.73
 	specheatcap = 0.936
 	custom_metabolism = 1 //decays really fast, so it shouldn't linger long.
-	fission_time=600 //10 minutes.
+	fission_time=300 //5 minutes.
 	
 /datum/reagent/radon/on_mob_life(var/mob/living/M)
 	if(..())
@@ -299,7 +299,7 @@
 	id = THORIUM
 	description = "A dark metallic chemical element in the actinide series, weakly radioactive."
 	reagent_state = REAGENT_STATE_SOLID
-	color = "#AAAAB2"
+	color = "#BABAA2"
 	density = 11.725
 	specheatcap = 0.124
 	fission_time=7200 //2 hours
