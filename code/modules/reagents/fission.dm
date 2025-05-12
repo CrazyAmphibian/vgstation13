@@ -15,8 +15,11 @@
 /datum/reagent/radium/irradiate(var/list/current_reagents=null) //primary purpose:  getting you the new materials, radon, thallium, and lead.
 	return list(LEAD=0.4, RADON=0.4, THALLIUM=0.2)
 
-/datum/reagent/radon/irradiate(var/list/current_reagents=null) //primary purpose: wasting radon. 
+/datum/reagent/radon/irradiate(var/list/current_reagents=null) //primary purpose: wasting radon (and speeding up fission reactions). 
 	return list(LEAD=1.0)
+
+/datum/reagent/thorium/irradiate(var/list/current_reagents=null) //purpose: generates uranium, as well as some byproducts
+	return list(URANIUM=0.55, RADON=0.25, LEAD=0.1, THALLIUM=0.1)
 	
 /datum/reagent/plasma/irradiate(var/list/current_reagents=null) //primary purpose: a very lossy way to get phazon via plasma. powergaymers rejoice.
 	return list(PHAZON=0.05) //fun fact. 1 sheet of plas = 20 units. 1 sheet of phaz = 1 unit. funny, huh?
@@ -30,3 +33,15 @@
 
 /datum/reagent/drink/doctor_delight/irradiate(var/list/current_reagents=null)
 	return list(EQUALIZONE=0.25)
+
+//suggested by eneocho. seems reasonable. flavor.
+/datum/reagent/paint/irradiate(var/list/current_reagents=null)
+	return list(NANOPAINT=1.0)
+
+//AND I WILL STRIKE DOWN UPON THEE WITH GREAT VENGENCE AND FURIOUS ANGER THOSE WHO ATTEMPT TO POISON AND DESTROY MY BROTHERS
+/datum/reagent/holywater/irradiate(var/list/current_reagents=null)
+	return list(HOLIESTWATER=1.0)
+//AND YOU WILL KNOW MY NAME IS THE LORD WHEN I LAY MY VENGEANCE UPON THEE	
+/datum/reagent/holysalts/irradiate(var/list/current_reagents=null)
+	return list(HOLIESTWATER=1.0)	
+	

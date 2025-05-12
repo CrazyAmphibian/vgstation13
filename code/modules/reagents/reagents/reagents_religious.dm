@@ -10,6 +10,8 @@
 	specheatcap = 4.183
 	alpha = 128
 	plant_watering = 2
+	fission_absorbtion=5000
+	fission_time = 1800 //30 minutes
 
 /datum/reagent/holywater/on_mob_life(mob/living/M)
 	if(..())
@@ -170,6 +172,8 @@
 	plant_weeds = -20
 	plant_toxins = 8
 	plant_health = -2
+	fission_absorbtion=5000
+	fission_time = 1800 //30 minutes
 
 /datum/reagent/holysalts/reaction_obj(var/obj/O, var/volume)
 	if(..())
@@ -382,3 +386,104 @@
 	if(prob(5))
 		to_chat(M,"<span class='warning'>[pick("You feel fuller.", "You no longer feel snackish.")]</span>")
 		M.reagents.add_reagent(NUTRIMENT, 2)
+
+
+/datum/reagent/holiestwater
+	name = "Divine Elixir"
+	id = HOLIESTWATER
+	description = "A substance which brings light to those devoted to the dark."
+	reagent_state = REAGENT_STATE_LIQUID
+	color = "#abd447" //rgb: 171,212,713
+	specheatcap = 4.183
+	alpha = 128
+	fission_absorbtion=0
+	fission_time=null
+
+//what?
+/datum/reagent/holiestwater/reaction_turf(var/turf/simulated/T, var/volume)
+	if(..())
+		return 1
+	T.bless()
+	playsound(holder.my_atom, 'sound/misc/holyhandgrenade.ogg', 100, 0)
+	spawn(18) hallelujah(T)
+	
+//damn you BYOND
+/datum/reagent/holiestwater/proc/hallelujah(var/turf/simulated/T)
+	var/obj/lords_vengeance/V = new(T,volume)
+	V.adjacent_spread=1 //the origin should spread out for a consistent AoE in a 3x3 grid.
+	V.spread_prob=100
+
+/datum/reagent/holiestwater/reaction_obj(var/obj/O, var/volume)
+	if(..())
+		return 1
+		
+	O.bless()
+
+/datum/reagent/holiestwater/on_mob_life(mob/living/M)
+	if(..())
+		return 1
+	M.immune_system.ApplyAntipathogenics(100, list(ANTIGEN_CULT), 5)
+
+	
+/obj/lords_vengeance
+	name="Lord's Vengeance"
+	desc="The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men."
+	icon='icons/obj/holiestwater.dmi'
+	icon_state="normal"
+	var/say_what_again=0
+	density=0
+	var/adjacent_spread=0.8 //how much of our power to spread to other tiles
+	var/spread_prob = 50 // the probability each adjacent tile will be picked
+	var/transferance_penalty=0.8 // how much of the spread power will be taken from us when we spread. (lower numbers = longer lasting)
+
+/obj/lords_vengeance/New(var/loc,var/amt_splashed=0)
+	if(!amt_splashed) //it needs reagents to do stuff with.
+		qdel(src)
+		return
+	fast_objects+=src
+	say_what_again=amt_splashed
+	set_light(3,5,rgb(255,255,200))
+
+/obj/lords_vengeance/Destroy()
+	fast_objects-=src
+	..()
+
+/obj/lords_vengeance/process()
+	
+	for(var/obj/O in loc.contents)
+		O.bless()
+	loc.bless()
+	for(var/mob/living/M in loc.contents)
+		M.immune_system.ApplyAntipathogenics(100, list(ANTIGEN_CULT), say_what_again)
+		if(M.mind && (M.mind.GetRole(CULTIST) || M.mind.GetRole(VAMPIRE)) )
+			M.adjustFireLoss(2.5*sqrt(max(0,say_what_again)))
+
+	say_what_again-=0.5
+	if(say_what_again<=0)
+		qdel(src)
+		return
+	
+	var/list/DirPicks=list(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST)
+	for(var/i=1,i<DirPicks.len,i++) //shuffle the list to randomize the order
+		DirPicks.Swap(i,rand(1,DirPicks.len))
+
+	for(var/D in DirPicks)
+		var/turf/T=get_step(loc,D)
+		if(!T) //no turf? that's bad.
+			continue
+		if(!prob(spread_prob))
+			continue
+		if(T.density) //no wallbangs, buddy
+			continue
+		var/obj/lords_vengeance/Match=(locate(/obj/lords_vengeance) in T.contents)
+		if(Match) //if we find another instance in the turf
+			if(Match.say_what_again < say_what_again) //give it extra power by taking from our own to match ours.
+				var/diff=say_what_again - Match.say_what_again
+				Match.say_what_again+=diff*adjacent_spread
+				say_what_again-=diff*adjacent_spread*transferance_penalty
+		else //otherwise, spawn a new one
+			new/obj/lords_vengeance(T,say_what_again*adjacent_spread)
+			say_what_again-=say_what_again*adjacent_spread*transferance_penalty
+
+			
+	

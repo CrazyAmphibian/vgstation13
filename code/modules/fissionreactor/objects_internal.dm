@@ -308,6 +308,7 @@ included:
 /obj/machinery/fissionreactor/fissionreactor_fuelrod/inert
 	adjacencybonus=0.0
 	desc="Monitors and stores a fuel rod for nuclear reactions. This unit has been modified with metal plating to remove the influence of nearby fuel rods."
+	name = "shielded fission reactor fuel rod assembly"
 	icon_state="fuelrod-inert_off"
 	
 /obj/machinery/fissionreactor/fissionreactor_fuelrod/inert/examine()

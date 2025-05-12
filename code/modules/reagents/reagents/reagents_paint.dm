@@ -19,6 +19,7 @@
 		"color" = "#FFFFFF",
 		)
 	plant_toxins = 5
+	fission_absorbtion=1000
 
 //Mixing Acrylic paints together blends them together using the RYB color space
 /datum/reagent/paint/handle_data_mix(var/list/added_data=null, var/added_volume, var/mob/admin)

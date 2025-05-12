@@ -40,6 +40,7 @@
 #define INAPROVALINE 			"inaprovaline"
 #define HOLYWATER 			"holywater"
 #define SACREDWATER 		"sacredwater"
+#define HOLIESTWATER		"holiestwater"
 #define SEROTROTIUM 			"serotrotium"
 #define SILICATE 			"silicate"
 #define OXYGEN 			"oxygen"
@@ -547,6 +548,7 @@
 #define RADON			"radon"
 #define LEAD			"lead"
 #define THALLIUM		"thallium"
+#define THORIUM			"thorium"
 #define REGENERATECALCIUM	"regeneratecalcium"
 #define EQUALIZONE		"equalizone"
 
