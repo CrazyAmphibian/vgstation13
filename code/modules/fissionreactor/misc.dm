@@ -104,13 +104,10 @@ boxes used for cargo orders to make my life easier.
 	var/list/mats_std	=	list(URANIUM,THORIUM) //conventional nuclear fuel
 	var/list/mats_uncommon=	list(PLUTONIUM,RADIUM) // exotic fuels or nuclear things
 	var/list/mats_rare	=	list(RADON,PLASMA) // reactor adjacent things or stuff notable to engineering
-	var/list/mats_exotic=	list(ACRYLIC,HOLYWATER,DOCTORSDELIGHT,DEGENERATECALCIUM) // for experimentation and learning
+	var/list/mats_exotic=	list(ACRYLIC,HOLYWATER,DOCTORSDELIGHT,DEGENERATECALCIUM,CLEANER) // for experimentation and learning
 	
 	var/current_units=fueldata.fuel.total_volume
-	var/panic=0
 	while (current_units<units_of_storage)
-		if(panic>100)
-			break
 		var/r=rand()
 		var/material=null
 		switch(r)

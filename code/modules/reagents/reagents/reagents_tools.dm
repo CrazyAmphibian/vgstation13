@@ -379,6 +379,8 @@
 	density = 0.76
 	specheatcap = 60.17
 	var/clean_level = CLEANLINESS_SPACECLEANER
+	fission_absorbtion=2500
+	fission_time=1800 // 30 minutes
 
 /datum/reagent/space_cleaner/reaction_obj(var/obj/O, var/volume)
 	if(..())

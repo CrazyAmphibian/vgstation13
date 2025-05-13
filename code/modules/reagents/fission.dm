@@ -41,6 +41,10 @@
 /datum/reagent/fuel/irradiate(var/list/current_reagents=null)
 	return list(CHARCOAL=1.0)
 
+
+/datum/reagent/space_cleaner/irradiate(var/list/current_reagents=null)
+	return list(VAPORSALT=1.0)
+
 //AND I WILL STRIKE DOWN UPON THEE WITH GREAT VENGENCE AND FURIOUS ANGER THOSE WHO ATTEMPT TO POISON AND DESTROY MY BROTHERS
 /datum/reagent/holywater/irradiate(var/list/current_reagents=null)
 	return list(HOLIESTWATER=1.0)
