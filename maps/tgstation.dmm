@@ -81065,9 +81065,14 @@
 /turf/space,
 /area/engineering/engine)
 "cUA" = (
-/obj/structure/lattice,
-/turf/space,
-/area/engineering/engine)
+/obj/structure/table,
+/obj/item/tool/crowbar,
+/obj/item/tool/screwdriver{
+	pixel_y = 13
+	},
+/obj/item/tool/wirecutters,
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "cUB" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -81076,8 +81081,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/decal/warning_stripes{
-	icon_state = "warning_corner";
-	tag = "icon-warning_corner"
+	icon_state = "warning";
+	tag = "icon-warning"
+	},
+/obj/effect/decal/warning_stripes{
+	dir = 8;
+	icon_state = "radiation-w"
 	},
 /turf/simulated/floor/plating,
 /area/engineering/engineering_auxiliary)
@@ -81104,32 +81113,27 @@
 /turf/simulated/wall/r_wall,
 /area/engineering/supermatter_room)
 "cUG" = (
-/obj/structure/girder/reinforced,
-/turf/simulated/floor/plating/airless,
-/area/engineering/engine)
+/turf/simulated/wall/r_wall,
+/area/engineering/reactor_room)
 "cUH" = (
-/obj/structure/lattice,
-/obj/structure/grille/broken,
-/turf/space,
-/area/engineering/engine)
-"cUI" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 5
+/obj/structure/table,
+/obj/machinery/reagentgrinder{
+	pixel_y = 16;
+	pixel_x = -6
 	},
+/obj/item/weapon/book/manual/engineering_fissionreactor_guide{
+	pixel_y = 6;
+	pixel_x = 2
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
+"cUI" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/decal/warning_stripes{
-	dir = 4;
-	icon_state = "warning";
-	tag = "icon-warning (EAST)"
-	},
-/obj/effect/decal/warning_stripes{
-	dir = 8;
-	icon_state = "radiation-w"
-	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/simulated/floor/plating,
 /area/engineering/engineering_auxiliary)
 "cUJ" = (
@@ -81261,9 +81265,12 @@
 /turf/simulated/floor,
 /area/engineering/supermatter_room)
 "cUY" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 5
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /turf/simulated/floor/plating,
 /area/engineering/engineering_auxiliary)
 "cUZ" = (
@@ -81275,14 +81282,10 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/effect/decal/warning_stripes{
-	dir = 4;
-	icon_state = "warning";
-	tag = "icon-warning (EAST)"
-	},
-/obj/effect/decal/warning_stripes{
-	dir = 8;
-	icon_state = "radiation-w"
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating,
 /area/engineering/engineering_auxiliary)
@@ -95405,6 +95408,14 @@
 /turf/simulated/floor/shuttle/plating,
 /turf/space,
 /area/centcom/evac)
+"dFp" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "dFJ" = (
 /obj/effect/landmark/map_element/djsat,
 /turf/space,
@@ -95421,6 +95432,23 @@
 /obj/docking_port/destination/syndicate/commssat,
 /turf/space,
 /area)
+"dHi" = (
+/obj/machinery/door/airlock/glass_engineering{
+	name = "Reactor Room";
+	req_one_access_txt = "10;24"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/engineering/reactor_room)
+"dIU" = (
+/obj/structure/grille/window_spawner/reinforced,
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/engineering/reactor_room)
 "dJs" = (
 /obj/effect/landmark/map_element/deepspaceruin,
 /turf/space,
@@ -95448,6 +95476,25 @@
 /obj/effect/landmark/map_element/randomderelict,
 /turf/space,
 /area)
+"dRJ" = (
+/obj/machinery/atmospherics/binary/valve/digital{
+	dir = 4;
+	name = "Emergency Coolant Bypass Valve"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 4;
+	tag = "icon-pathmarker (EAST)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 8;
+	tag = "icon-pathmarker (WEST)"
+	},
+/obj/effect/decal/warning_stripes{
+	dir = 1;
+	icon_state = "warning"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "dUB" = (
 /obj/docking_port/destination/vox/mining_north,
 /turf/space,
@@ -114633,6 +114680,22 @@
 	icon_state = "whitepurple"
 	},
 /area/research_outpost/anomaly)
+"eVU" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "faw" = (
 /obj/structure/table,
 /obj/item/weapon/book/manual/engineering_supermatter_guide,
@@ -114696,6 +114759,39 @@
 	icon_state = "white"
 	},
 /area/medical/patient_room2)
+"fwd" = (
+/obj/machinery/atmospherics/unary/portables_connector{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
+"fwj" = (
+/obj/machinery/atmospherics/pipe/simple/insulated/hidden/blue{
+	dir = 9
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 8;
+	tag = "icon-pathmarker (WEST)"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
+"fDI" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "warning_corner";
+	tag = "icon-warning_corner"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "fIE" = (
 /obj/structure/sign/biohazard,
 /turf/simulated/wall,
@@ -114705,6 +114801,16 @@
 /obj/structure/catwalk,
 /turf/space,
 /area/medical/virology)
+"fQL" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 4;
+	on = 1
+	},
+/obj/machinery/alarm{
+	pixel_y = 24
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "fTL" = (
 /obj/machinery/airlock_sensor{
 	frequency = 1551;
@@ -114760,6 +114866,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/fsmaint2)
+"gpP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/engineering/engineering_auxiliary)
 "gws" = (
 /obj/effect/decal/warning_stripes{
 	icon_state = "radiation"
@@ -114768,6 +114881,17 @@
 	icon_state = "dark vault full"
 	},
 /area/research_outpost/harvesting)
+"gAg" = (
+/obj/machinery/atmospherics/binary/pump{
+	name = "Reactor Coolant Fill Pump"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 1;
+	tag = "icon-pathmarker (NORTH)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red,
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "gAn" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor{
@@ -114786,6 +114910,11 @@
 	},
 /turf/simulated/floor/carpet,
 /area/library)
+"gHC" = (
+/obj/structure/table,
+/obj/item/device/radio,
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "gHP" = (
 /obj/machinery/door/airlock/glass_medical{
 	name = "Isolation A";
@@ -114823,6 +114952,37 @@
 	icon_state = "white"
 	},
 /area/medical/virology)
+"hhZ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/decal/warning_stripes{
+	icon_state = "warning";
+	tag = "icon-warning"
+	},
+/obj/effect/decal/warning_stripes{
+	dir = 8;
+	icon_state = "radiation-w"
+	},
+/turf/simulated/floor/plating,
+/area/engineering/engineering_auxiliary)
+"hiL" = (
+/obj/machinery/atmospherics/pipe/manifold/insulated/hidden{
+	dir = 8
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 1;
+	tag = "icon-pathmarker (NORTH)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 4;
+	tag = "icon-pathmarker (EAST)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red,
+/obj/effect/decal/warning_stripes{
+	icon_state = "warning";
+	tag = "icon-warning"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "hjF" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -114846,6 +115006,14 @@
 	},
 /turf/simulated/floor/wood,
 /area/library)
+"hrp" = (
+/obj/effect/decal/warning_stripes{
+	dir = 1;
+	icon_state = "warning";
+	tag = "icon-warning (NORTH)"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "hty" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8
@@ -115059,6 +115227,12 @@
 	icon_state = "white"
 	},
 /area/research_outpost/hallway)
+"iMl" = (
+/obj/machinery/door/airlock/external{
+	req_one_access_txt = "11;13"
+	},
+/turf/simulated/floor/plating,
+/area/engineering/reactor_room)
 "jfn" = (
 /obj/structure/disposalpipe/junction{
 	dir = 4;
@@ -115071,6 +115245,44 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/fsmaint)
+"jhF" = (
+/obj/effect/decal/warning_stripes{
+	dir = 4;
+	icon_state = "warning"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
+"jjG" = (
+/obj/machinery/atmospherics/binary/pump{
+	name = "Secondary Coolant Fill Pump";
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 8;
+	tag = "icon-pathmarker (WEST)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 4;
+	tag = "icon-pathmarker (EAST)"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
+"jqN" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "jwl" = (
 /obj/machinery/door/airlock/external{
 	frequency = 1551;
@@ -115082,12 +115294,27 @@
 	icon_state = "asteroidfloor"
 	},
 /area/vox_trading_post/trade_processing)
+"jxx" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "warning";
+	tag = "icon-warning"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "jyd" = (
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
 /area/engineering/engine_storage)
+"jGv" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "jII" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -115127,6 +115354,25 @@
 	icon_state = "whitegreen"
 	},
 /area/medical/virology)
+"jOM" = (
+/obj/machinery/atmospherics/pipe/simple/insulated/hidden/blue,
+/obj/machinery/meter{
+	name = "Coolant Loop"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue,
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 1;
+	tag = "icon-pathmarker (NORTH)"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
+"jWM" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "warning_corner";
+	tag = "icon-warning_corner"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "kmh" = (
 /obj/structure/table,
 /obj/item/weapon/folder/white,
@@ -115175,6 +115421,12 @@
 	},
 /turf/simulated/floor/server,
 /area/science/server)
+"kEX" = (
+/obj/structure/fission_reactor_case,
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/engineering/reactor_room)
 "kFI" = (
 /obj/effect/landmark{
 	name = "blobstart"
@@ -115200,6 +115452,16 @@
 	},
 /turf/simulated/floor/shuttle/plating,
 /area/shuttle/escape/centcom)
+"kSA" = (
+/obj/structure/closet/walllocker/emerglocker/north,
+/turf/simulated/floor/plating,
+/area/engineering/reactor_room)
+"kVu" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "loT" = (
 /obj/effect/decal/warning_stripes{
 	dir = 1;
@@ -115246,6 +115508,16 @@
 	},
 /turf/simulated/floor,
 /area/hallway/primary/starboard)
+"lGi" = (
+/obj/structure/sign/securearea{
+	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
+	icon_state = "space";
+	name = "EXTERNAL AIRLOCK";
+	pixel_y = 32
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor/plating,
+/area/engineering/reactor_room)
 "lJf" = (
 /obj/machinery/optable,
 /turf/simulated/floor{
@@ -115271,6 +115543,25 @@
 	},
 /turf/simulated/floor,
 /area/hallway/primary/starboard)
+"lYJ" = (
+/obj/effect/decal/warning_stripes{
+	dir = 8;
+	icon_state = "warning_corner";
+	tag = "icon-warning_corner (WEST)"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
+"mdZ" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	pixel_x = 24
+	},
+/obj/structure/cable/yellow,
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "mgq" = (
 /obj/machinery/light{
 	dir = 1
@@ -115285,6 +115576,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/virology_maint)
+"mmN" = (
+/obj/machinery/atmospherics/unary/portables_connector,
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "mmS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
@@ -115296,6 +115591,17 @@
 	icon_state = "white"
 	},
 /area/medical/medbay)
+"mvO" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "mGN" = (
 /obj/structure/disposalpipe/junction{
 	dir = 8;
@@ -115364,6 +115670,17 @@
 	icon_state = "white"
 	},
 /area/medical/virology)
+"nFt" = (
+/obj/structure/table,
+/obj/item/weapon/fuelrod/randomized,
+/obj/item/weapon/fuelrod/randomized{
+	pixel_x = 6
+	},
+/obj/item/weapon/fuelrod/randomized{
+	pixel_x = -6
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "nKb" = (
 /obj/machinery/camera{
 	name = "Fore Primary Hallway West 2"
@@ -115381,6 +115698,14 @@
 /obj/machinery/atmospherics/pipe/manifold/supply,
 /turf/space,
 /area/mine/living_quarters)
+"nNU" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "nSu" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /turf/simulated/floor/plating,
@@ -115396,6 +115721,20 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/asmaint)
+"nZb" = (
+/obj/machinery/atmospherics/pipe/simple/insulated/hidden/blue{
+	dir = 4
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 4;
+	tag = "icon-pathmarker (EAST)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 8;
+	tag = "icon-pathmarker (WEST)"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "nZv" = (
 /obj/machinery/door/airlock/external{
 	name = "Plasma Miner Access";
@@ -115432,6 +115771,25 @@
 	tag = "icon-showroomfloor (NORTH)"
 	},
 /area/storage/art)
+"okm" = (
+/obj/structure/bed/chair/office/light{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
+"oln" = (
+/obj/effect/decal/warning_stripes{
+	dir = 1;
+	icon_state = "warning_corner";
+	tag = "icon-warning_corner (NORTH)"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "orE" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/sign/biohazard,
@@ -115463,6 +115821,18 @@
 	icon_state = "carpetnoconnect"
 	},
 /area/security/main)
+"oCf" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "warning";
+	tag = "icon-warning"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "oMG" = (
 /obj/structure/table,
 /obj/item/weapon/reagent_containers/spray/cleaner{
@@ -115488,11 +115858,48 @@
 	icon_state = "whitegreen"
 	},
 /area/medical/virology)
+"oNn" = (
+/obj/machinery/atmospherics/pipe/simple/insulated/hidden{
+	dir = 4
+	},
+/obj/machinery/meter{
+	name = "Coolant Loop"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 4;
+	tag = "icon-pathmarker (EAST)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 8;
+	tag = "icon-pathmarker (WEST)"
+	},
+/obj/effect/decal/warning_stripes{
+	dir = 8;
+	icon_state = "warning_corner";
+	tag = "icon-warning_corner (WEST)"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "oOp" = (
 /obj/structure/lattice,
 /obj/structure/grille,
 /turf/space,
 /area/engineering/engine)
+"oXK" = (
+/obj/machinery/atmospherics/binary/volume_pump{
+	dir = 4;
+	name = "Reactor Coolant"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 4;
+	tag = "icon-pathmarker (EAST)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 8;
+	tag = "icon-pathmarker (WEST)"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "oZU" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -115523,6 +115930,21 @@
 	icon_state = "white"
 	},
 /area/research_outpost/anomaly)
+"pil" = (
+/obj/machinery/atmospherics/pipe/manifold/insulated/hidden/blue{
+	dir = 1
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 4;
+	tag = "icon-pathmarker (EAST)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 8;
+	tag = "icon-pathmarker (WEST)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue,
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "pmU" = (
 /obj/machinery/light{
 	dir = 8
@@ -115576,6 +115998,22 @@
 	icon_state = "floorgrime"
 	},
 /area/medical/surgery_ghetto)
+"pCl" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "bot"
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/engineering/reactor_room)
+"pLW" = (
+/obj/effect/decal/warning_stripes{
+	dir = 8;
+	icon_state = "warning";
+	tag = "icon-warning (WEST)"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "pOs" = (
 /obj/machinery/atmospherics/unary/portables_connector,
 /turf/unsimulated/floor/airless{
@@ -115586,6 +116024,15 @@
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/library)
+"pTf" = (
+/obj/machinery/atmospherics/unary/fissionreactor_coolantport{
+	dir = 8;
+	initialize_directions = 8
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/engineering/reactor_room)
 "pWL" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -115633,6 +116080,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/science/podbay)
+"qmG" = (
+/obj/effect/decal/warning_stripes{
+	dir = 4;
+	icon_state = "warning_corner";
+	tag = "icon-warning_corner (EAST)"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "qrF" = (
 /obj/structure/bed/chair/shuttle,
 /obj/effect/landmark/start{
@@ -115640,6 +116095,12 @@
 	},
 /turf/simulated/floor/shuttle,
 /area/shuttle/transport1/centcom)
+"qsF" = (
+/obj/structure/bed/chair/office/light{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "qtZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -115651,6 +116112,12 @@
 	},
 /turf/simulated/floor,
 /area/engineering/break_room)
+"qut" = (
+/obj/machinery/fissionreactor/fissionreactor_fuelrod,
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/engineering/reactor_room)
 "qvb" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -115658,6 +116125,30 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
+"qvU" = (
+/obj/structure/lattice,
+/obj/structure/sign/securearea{
+	desc = "A warning sign which reads 'RADIOACTIVE AREA'";
+	icon_state = "radiation";
+	name = "RADIOACTIVE AREA"
+	},
+/turf/simulated/wall/r_wall,
+/area/engineering/reactor_room)
+"qxA" = (
+/obj/machinery/door/airlock/glass_engineering{
+	name = "Reactor Room";
+	req_one_access_txt = "10;24"
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/engineering/reactor_room)
 "qAg" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -115738,6 +116229,21 @@
 	icon_state = "whitegreen"
 	},
 /area/medical/virology)
+"rpZ" = (
+/obj/machinery/atmospherics/pipe/simple/insulated/hidden{
+	dir = 4
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 4;
+	tag = "icon-pathmarker (EAST)"
+	},
+/obj/effect/decal/warning_stripes{
+	dir = 1;
+	icon_state = "warning_corner";
+	tag = "icon-warning_corner (NORTH)"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "rvk" = (
 /obj/structure/sign/poster,
 /turf/simulated/wall,
@@ -115812,6 +116318,12 @@
 	icon_state = "whitepurple"
 	},
 /area/research_outpost/hallway)
+"rZl" = (
+/obj/machinery/fissionreactor/fissionreactor_controlrod,
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/engineering/reactor_room)
 "saY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
@@ -115873,6 +116385,25 @@
 	icon_state = "white"
 	},
 /area/medical/virology_break)
+"syF" = (
+/obj/machinery/atmospherics/pipe/manifold/insulated/hidden/blue{
+	dir = 8
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 4;
+	tag = "icon-pathmarker (EAST)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue,
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 1;
+	tag = "icon-pathmarker (NORTH)"
+	},
+/obj/effect/decal/warning_stripes{
+	dir = 1;
+	icon_state = "warning"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "sEf" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -115901,6 +116432,10 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/research_outpost/gearstore)
+"sZn" = (
+/obj/machinery/atmospherics/unary/fissionfuelmaker,
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "tbd" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -115917,6 +116452,26 @@
 	icon_state = "whitegreen"
 	},
 /area/medical/virology)
+"tiU" = (
+/obj/machinery/atmospherics/pipe/manifold/insulated/hidden,
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 4;
+	tag = "icon-pathmarker (EAST)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 1;
+	tag = "icon-pathmarker (NORTH)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 8;
+	tag = "icon-pathmarker (WEST)"
+	},
+/obj/effect/decal/warning_stripes{
+	dir = 1;
+	icon_state = "warning"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "tkH" = (
 /turf/simulated/wall,
 /area/research_outpost/maint)
@@ -115935,6 +116490,17 @@
 	},
 /turf/simulated/floor,
 /area/research_outpost/gearstore)
+"tuY" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/decal/warning_stripes{
+	dir = 8;
+	icon_state = "warning";
+	tag = "icon-warning (WEST)"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "tyZ" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
@@ -115958,6 +116524,19 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
+"tGz" = (
+/obj/machinery/atmospherics/unary/portables_connector{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister{
+	icon_state = "green";
+	name = "canister \[Rn\]"
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "tGZ" = (
 /obj/machinery/atmospherics/trinary/filter/mirrored{
 	dir = 8;
@@ -115968,6 +116547,33 @@
 	},
 /turf/simulated/floor/plating,
 /area/research_outpost/atmos)
+"tIM" = (
+/obj/structure/table,
+/obj/item/tool/wrench,
+/obj/item/tool/weldingtool,
+/turf/simulated/floor,
+/area/engineering/reactor_room)
+"tLt" = (
+/obj/machinery/atmospherics/pipe/simple/insulated/hidden{
+	dir = 4
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 4;
+	tag = "icon-pathmarker (EAST)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 8;
+	tag = "icon-pathmarker (WEST)"
+	},
+/obj/machinery/meter{
+	name = "Coolant Loop"
+	},
+/obj/effect/decal/warning_stripes{
+	dir = 4;
+	icon_state = "warning"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "tNv" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor{
@@ -116038,6 +116644,18 @@
 	},
 /turf/simulated/floor,
 /area/hallway/primary/central)
+"uqn" = (
+/obj/machinery/atmospherics/binary/volume_pump{
+	dir = 1;
+	name = "Secondary Coolant"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue,
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 1;
+	tag = "icon-pathmarker (NORTH)"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "usi" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -116047,6 +116665,19 @@
 /obj/docking_port/destination/pod4/shuttle,
 /turf/simulated/floor/shuttle/plating,
 /area/shuttle/escape/centcom)
+"usY" = (
+/obj/machinery/atmospherics/pipe/simple/insulated/hidden/blue,
+/obj/effect/decal/warning_stripes/pathmarkers/blue,
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 1;
+	tag = "icon-pathmarker (NORTH)"
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "warning";
+	tag = "icon-warning"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "utV" = (
 /obj/effect/decal/warning_stripes{
 	icon_state = "warning";
@@ -116156,6 +116787,13 @@
 	icon_state = "white"
 	},
 /area/medical/patient_room2)
+"uQe" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
+	dir = 8
+	},
+/obj/structure/grille/window_spawner/reinforced,
+/turf/simulated/floor/plating,
+/area/engineering/reactor_room)
 "uRA" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	canSpawnMice = 0;
@@ -116309,6 +116947,37 @@
 	icon_state = "white"
 	},
 /area/research_outpost/hallway)
+"vzm" = (
+/obj/machinery/fissioncontroller,
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/engineering/reactor_room)
+"vCs" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 4
+	},
+/obj/structure/lattice,
+/turf/space,
+/area)
+"vCD" = (
+/turf/simulated/floor,
+/area/engineering/reactor_room)
+"vFo" = (
+/obj/machinery/atmospherics/binary/volume_pump{
+	dir = 8;
+	name = "Reactor Coolant"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 4;
+	tag = "icon-pathmarker (EAST)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 8;
+	tag = "icon-pathmarker (WEST)"
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "vHy" = (
 /obj/structure/table,
 /obj/item/weapon/paper_bin/white,
@@ -116358,6 +117027,17 @@
 	icon_state = "white"
 	},
 /area/medical/virology)
+"vKL" = (
+/obj/machinery/atmospherics/binary/pump,
+/obj/effect/decal/warning_stripes/pathmarkers{
+	color = "#22cc22"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers{
+	color = "#22cc22";
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "vVQ" = (
 /obj/structure/table,
 /obj/item/stack/cable_coil/random,
@@ -116390,9 +117070,31 @@
 	oxygen = 0.01
 	},
 /area/research_outpost/atmos)
+"wdY" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
+/turf/simulated/floor,
+/area/engineering/reactor_room)
+"wid" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "bot"
+	},
+/obj/structure/cable/yellow,
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/engineering/reactor_room)
 "wjQ" = (
 /turf/simulated/wall,
 /area/medical/patient_room1)
+"wmN" = (
+/obj/structure/grille/window_spawner/reinforced,
+/turf/simulated/floor/plating,
+/area/engineering/reactor_room)
 "wor" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -116455,12 +117157,20 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/plating,
 /area/medical/virology)
+"wYs" = (
+/obj/machinery/light,
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "xbs" = (
 /obj/machinery/media/jukebox/holyjuke,
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
 /area/chapel/main)
+"xbw" = (
+/obj/machinery/portable_atmospherics/canister/plasma,
+/turf/simulated/floor,
+/area/engineering/reactor_room)
 "xcf" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/computer/diseasesplicer,
@@ -116496,6 +117206,14 @@
 	icon_state = "white"
 	},
 /area/medical/virology)
+"xty" = (
+/obj/structure/sign/securearea{
+	desc = "A warning sign which reads 'RADIOACTIVE AREA'";
+	icon_state = "radiation";
+	name = "RADIOACTIVE AREA"
+	},
+/turf/simulated/wall/r_wall,
+/area/engineering/reactor_room)
 "xxO" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -221901,7 +222619,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aag
 aaa
 aaa
 aaa
@@ -226916,13 +227634,13 @@ cRW
 cUz
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+cSc
+cSd
+cSd
+cSd
+cSd
+cSd
+cTE
 aaa
 aaa
 aaa
@@ -227416,16 +228134,16 @@ aaj
 aaa
 cRW
 cUz
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+aaj
+aaj
+vCs
+aaj
+aaj
+aaj
+aaj
+aaj
+vCs
+aaj
 aaa
 aaa
 aaa
@@ -227918,16 +228636,16 @@ aaj
 aaj
 cRW
 cUx
-aag
+aaa
+aaa
+cUV
 aaa
 aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
+cUV
+aaj
 aaa
 aaa
 aaa
@@ -228420,17 +229138,17 @@ aaj
 aaa
 cRW
 oOp
+aal
+aal
+cUV
 aaa
 aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+cUV
+aaj
+aaj
 aaa
 aaa
 aaa
@@ -228921,7 +229639,18 @@ aaa
 aaj
 aaa
 cRW
-cUA
+cUG
+iMl
+xty
+dIU
+wmN
+wmN
+wmN
+wmN
+wmN
+uQe
+xty
+aaj
 aaa
 aaa
 aaa
@@ -228932,18 +229661,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+aag
 aaa
 aaa
 aaa
@@ -229422,18 +230140,18 @@ aal
 cSJ
 aaj
 aaa
-cRW
+cUy
 cUG
-aaj
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lGi
+cUG
+nZb
+vCD
+vCD
+jWM
+jhF
+qmG
+nZb
+wmN
 aaa
 aaa
 aaa
@@ -229924,20 +230642,20 @@ aaa
 aaa
 aaj
 aaa
-cUy
-cNr
+cRW
+cUG
+kSA
+iMl
+pil
+jOM
+uqn
+usY
+pCl
+syF
+fwj
+wmN
 aaj
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+aaj
 aaa
 aaa
 aaa
@@ -230425,21 +231143,21 @@ aaj
 aaa
 aaa
 aaj
-aaa
-cRW
+abf
 cEi
+cUG
+cUG
+cUG
+jjG
+jGv
+jGv
+oCf
+wid
+dRJ
+wYs
+cUG
+cUG
 aaj
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
 aaa
 aaa
 aaa
@@ -230927,21 +231645,21 @@ aaj
 aaa
 aaa
 aaj
-aaa
-cRW
-cUz
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+abf
+cEi
+sZn
+vKL
+tGz
+fwd
+mmN
+gAg
+hiL
+pCl
+tiU
+vCD
+xbw
+wmN
+aaj
 aaa
 aaa
 aaa
@@ -231429,20 +232147,20 @@ aaa
 aaa
 aaa
 aaj
-aaa
-cRW
-cUz
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+abf
+cEi
+nFt
+qsF
+vCD
+dFp
+vCD
+vCD
+oNn
+pLW
+rpZ
+vCD
+xbw
+wmN
 aaa
 aaa
 aaa
@@ -231931,20 +232649,20 @@ aaa
 aaa
 cSJ
 aaj
-aaj
-cRW
+abf
+cEi
 cUH
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+vCD
+vCD
+dFp
+vCD
+vCD
+vFo
+vCD
+oXK
+vCD
+vCD
+wmN
 aaa
 aaa
 aaa
@@ -232433,20 +233151,20 @@ aaj
 aaj
 aaj
 aaj
-aaa
-cRW
+abf
+cEi
 cUA
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+nNU
+jGv
+fDI
+jhF
+jhF
+tLt
+jhF
+tLt
+jhF
+qmG
+wmN
 aaa
 aaa
 aaa
@@ -232935,20 +233653,20 @@ aaa
 aaa
 cUg
 aaa
-aaa
-cRW
-cUz
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+abf
+cEi
+gHC
+okm
+vCD
+jxx
+vzm
+kEX
+pTf
+kEX
+pTf
+kEX
+hrp
+wmN
 aaa
 aaa
 aaa
@@ -233437,20 +234155,20 @@ aaa
 aaa
 aaj
 aaa
-cRW
 cUy
 cEi
-aaj
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+tIM
+dFp
+vCD
+jxx
+kEX
+qut
+qut
+rZl
+qut
+kEX
+hrp
+wmN
 aaa
 aaa
 aaa
@@ -233940,19 +234658,19 @@ cRW
 cSK
 cRW
 cUp
-cUA
-cUA
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+cEi
+fQL
+jqN
+vCD
+jxx
+kEX
+qut
+rZl
+qut
+qut
+kEX
+hrp
+wmN
 aaa
 aaa
 aaa
@@ -234442,19 +235160,19 @@ cRW
 cSL
 cUk
 cUo
-cUz
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+cEi
+wdY
+mvO
+vCD
+jxx
+kEX
+kEX
+kEX
+kEX
+kEX
+kEX
+hrp
+wmN
 aaa
 aaa
 aah
@@ -234944,19 +235662,19 @@ cST
 cUh
 cUk
 cEi
-cUA
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+cEi
+kVu
+eVU
+mdZ
+lYJ
+pLW
+pLW
+pLW
+pLW
+tuY
+pLW
+oln
+wmN
 aaa
 aaa
 aaj
@@ -235446,19 +236164,19 @@ cPi
 cPi
 cPi
 cPi
-cPi
-cPi
-cPi
-cPi
-cPi
-cPi
-cPi
-cPi
-cPi
-cPi
-cPi
-cPi
-aaj
+cSV
+dHi
+qxA
+cUG
+cUG
+cUG
+cUG
+cUG
+cUG
+cUG
+cUG
+cUG
+qvU
 aaj
 aaj
 aaj
@@ -235948,8 +236666,8 @@ cRm
 cRm
 cUl
 cUq
-cRm
-cRm
+hhZ
+gpP
 cUY
 cVo
 cVy
@@ -235958,7 +236676,7 @@ cVQ
 cWa
 cWa
 cPi
-aaj
+aaa
 aaa
 aaa
 aaa
@@ -236460,7 +237178,7 @@ cVR
 cWa
 cWa
 cPi
-aaj
+aaa
 aag
 aaa
 aaa
