@@ -103,13 +103,16 @@ boxes used for cargo orders to make my life easier.
 	..()	
 	var/list/mats_std	=	list(URANIUM,THORIUM) //conventional nuclear fuel
 	var/list/mats_uncommon=	list(PLUTONIUM,RADIUM) // exotic fuels or nuclear things
-	var/list/mats_rare	=	list(RADON,PLASMA) // reactor adjacent things or stuff notable to engineering
-	var/list/mats_exotic=	list(ACRYLIC,HOLYWATER,DOCTORSDELIGHT,DEGENERATECALCIUM,CLEANER) // for experimentation and learning
+	var/list/mats_rare	=	list(RADON) // reactor adjacent things or stuff notable to engineering
+	var/list/mats_exotic=	list(HOLYWATER,TRICORDRAZINE,DEGENERATECALCIUM) // for experimentation and learning
 	
 	var/current_units=fueldata.fuel.total_volume
 	while (current_units<units_of_storage)
 		var/r=rand()
 		var/material=null
+		var/amount_to_add=rand(1, ceil((units_of_storage-current_units)*0.8) )
+		if(amount_to_add>units_of_storage/2) //if we are adding a large amount, skew the randomness so that we don't give a huge amount of rare stuff.
+			r=(r/1.25)+0.2
 		switch(r)
 			if(0.0 to 0.05) //  5%
 				material=pick(mats_exotic)
@@ -121,7 +124,7 @@ boxes used for cargo orders to make my life easier.
 				material=pick(mats_std)		
 		//add a random amount of the chosen material, between 1 and 80% the remaining volume (rounded up)
 		//if we roll the highest number always, this gives us 3 calls (with 90 units)
-		fueldata.add_shit_to(material,rand(1, ceil((units_of_storage-current_units)*0.8) ),fueldata.fuel)
+		fueldata.add_shit_to(material,amount_to_add,fueldata.fuel)
 		current_units=fueldata.fuel.total_volume
 	fueldata.rederive_stats()
 	fueldata.life=1
