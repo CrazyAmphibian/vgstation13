@@ -1377,6 +1377,11 @@ background-color:darkolivegreen;
 color:white;
 }
 
+.reagent_thorium{
+display:inline-block;
+background-color:DarkSlateGray;
+color:white;
+}
 </style>
 </head>
 <body>
@@ -1727,6 +1732,12 @@ Different sizes of fuel reservoirs exist, with the starter kit coming with a fai
 	<td>1,667</td>
 	<td>25m</td>
 	<td class="byproduct_display"><span class="reagent_lead" style="width:100%;">Pb</span></td>
+</tr>
+<tr>
+	<td class="reagent_thorium">Thorium</td>
+	<td>0</td>
+	<td>2h</td>
+	<td class="byproduct_display"><span class="reagent_uranium" style="width:55%;">U</span><span class="reagent_radon" style="width:25%;">Rn</span><span class="reagent_lead" style="width:10%;">Pb</span><span class="reagent_thalium" style="width:10%;">Tl</span></td>
 </tr>
 
 </table>
