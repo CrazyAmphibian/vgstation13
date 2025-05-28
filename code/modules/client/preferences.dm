@@ -241,7 +241,16 @@ var/const/MAX_SAVE_SLOTS = 16
 	var/obj_chat_on_map = FALSE
 	var/no_goonchat_for_obj = FALSE
 
+	// TGUI things
 	var/tgui_fancy = TRUE
+	//// -- Unimplemented for tgui alerts --
+	var/tgui_input = FALSE
+	var/tgui_input_large = FALSE
+	var/tgui_input_swapped = FALSE
+	var/tgui_lock = FALSE
+	var/tgui_scale = TRUE
+	var/layout_prefs_used = FALSE
+
 	var/fps = -1
 
 	var/client/client
@@ -829,7 +838,7 @@ var/const/MAX_SAVE_SLOTS = 16
 				var/datum/job/job = locate(href_list["job"])
 				if (job)
 					var/choices = list(job.title) + job.alt_titles
-					var/choice = input("Pick a title for [job.title].", "Character Generation", GetPlayerAltTitle(job)) as anything in choices | null
+					var/choice = input("Pick a title for [job.title].", "Character Generation", GetPlayerAltTitle(job)) as null|anything in choices
 					if(choice)
 						SetPlayerAltTitle(job, choice)
 						SetChoices(user)
