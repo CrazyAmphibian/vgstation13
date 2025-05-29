@@ -74,12 +74,12 @@ var/list/foliage_replacments=list(
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "grass_alt1"
 	turf_speed_multiplier=1.1 // tall grass.
-	footstep_sound = sounds_grass
-	footstep_sound_barefoot = sounds_grass
-	footstep_sound_claw = sounds_grass
 	
 /turf/unsimulated/floor/jungle/grass/New(var/loc,var/NO_GROW=FALSE)
 	..()
+	footstep_sound = sounds_grass
+	footstep_sound_barefoot = sounds_grass
+	footstep_sound_claw = sounds_grass
 	if(NO_GROW)
 		return
 	
