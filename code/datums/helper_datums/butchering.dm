@@ -286,9 +286,7 @@
 	radial_icon = "radial_fleg"
 	amount = 2 //not a magic number, frogs have 2 legs
 	butcher_time = 10
-	
-/datum/butchering_product/frog_leg/poison
-	result = /obj/item/weapon/reagent_containers/food/snacks/meat/frog_leg_poison
+
 
 /datum/butchering_product/frog_leg/desc_modifier()
 	if(amount < 2)

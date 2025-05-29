@@ -138,7 +138,7 @@
 	M.reagents.add_reagent(TOXIN, 5)
 	
 /mob/living/simple_animal/hostile/lizard/frog/get_butchering_products()
-	return list(/datum/butchering_product/frog_leg/poison)
+	return list(/datum/butchering_product/frog_leg)
 
 /mob/living/simple_animal/hostile/lizard/frog/poison/Cross(atom/movable/mover, turf/target, height=1.5, air_group = 0)	
 	..()
