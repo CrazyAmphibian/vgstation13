@@ -4611,6 +4611,20 @@
 	},
 /turf/simulated/floor/engine,
 /area/science/xenobiology/specimen_5)
+"cba" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/camera{
+	name = "Toxins Mass Driver";
+	pixel_y = -1;
+	dir = 8
+	},
+/turf/simulated/floor/plating/airless,
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "cbi" = (
 /obj/structure/shuttle/diag_wall/black{
 	dir = 4
@@ -5698,6 +5712,18 @@
 	icon_state = "white"
 	},
 /area/medical/medbay)
+"cuW" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "warning";
+	tag = "icon-warning"
+	},
+/obj/machinery/camera{
+	dir = 1;
+	name = "Toxins Test Chamber South";
+	network = list("Toxins")
+	},
+/turf/simulated/floor/engine/vacuum,
+/area/science/test_area)
 "cvb" = (
 /obj/structure/window/reinforced,
 /obj/structure/shuttle/engine/heater{
@@ -6500,6 +6526,10 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /obj/machinery/light_switch{
 	pixel_y = -25
+	},
+/obj/machinery/camera{
+	dir = 1;
+	name = "Toxins Lab"
 	},
 /turf/simulated/floor{
 	icon_state = "whitepurple"
@@ -8858,6 +8888,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/machinery/camera{
+	name = "Production Room";
+	network = list("MINE");
+	pixel_x = 19
+	},
 /turf/simulated/floor,
 /area/mine/production)
 "dPl" = (
@@ -9684,6 +9719,11 @@
 	pixel_y = 2
 	},
 /obj/item/weapon/storage/firstaid/regular,
+/obj/machinery/camera{
+	dir = 1;
+	name = "Sleeper Room";
+	network = list("MINE")
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -10544,6 +10584,17 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle)
+"eyR" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/camera{
+	dir = 4;
+	name = "Outpost Exterior";
+	network = list("RD","SS13")
+	},
+/turf/simulated/floor/asteroid,
+/area/mine/explored)
 "ezS" = (
 /mob/living/silicon/decoy{
 	name = "A.L.I.C.E."
@@ -14623,6 +14674,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/camera{
+	dir = 10;
+	name = "Research Outpost Expedition Prep";
+	network = list("RD","SS13")
+	},
 /turf/simulated/floor,
 /area/research_outpost/gearstore)
 "grz" = (
@@ -15354,6 +15410,19 @@
 	icon_state = "floor3"
 	},
 /area/shuttle/ert/centcom)
+"gJE" = (
+/obj/effect/decal/warning_stripes{
+	dir = 5;
+	icon_state = "warning";
+	tag = "icon-warning (NORTHEAST)"
+	},
+/obj/machinery/camera{
+	dir = 8;
+	name = "Toxins Test Chamber East";
+	network = list("Toxins")
+	},
+/turf/simulated/floor/engine/vacuum,
+/area/science/test_area)
 "gJF" = (
 /obj/effect/decal/warning_stripes{
 	dir = 6;
@@ -16097,6 +16166,11 @@
 /area/mine/unexplored)
 "gYM" = (
 /obj/machinery/telecomms/relay/preset/mining,
+/obj/machinery/camera{
+	dir = 8;
+	name = "Communications Relay";
+	network = list("MINE")
+	},
 /turf/simulated/floor,
 /area/mine/maintenance)
 "gYR" = (
@@ -16304,6 +16378,11 @@
 /area/centcom/test)
 "hds" = (
 /obj/machinery/computer/shuttle_control/research,
+/obj/machinery/camera{
+	dir = 8;
+	name = "Research Outpost Shuttle Dock";
+	network = list("RD","SS13")
+	},
 /turf/simulated/floor,
 /area/research_outpost/entry)
 "hdB" = (
@@ -20644,6 +20723,7 @@
 /obj/machinery/light_switch{
 	pixel_y = -25
 	},
+/obj/machinery/recharge_station,
 /turf/simulated/floor,
 /area/research_outpost/entry)
 "jcH" = (
@@ -20817,6 +20897,11 @@
 "jfq" = (
 /obj/machinery/conveyor{
 	id_tag = "mining_mint"
+	},
+/obj/machinery/camera{
+	dir = 8;
+	name = "Mint";
+	network = list("MINE")
 	},
 /turf/simulated/floor,
 /area/mine/production)
@@ -27476,6 +27561,14 @@
 	},
 /turf/simulated/wall,
 /area/security/perma)
+"mal" = (
+/obj/machinery/camera{
+	name = "Research Outpost Cafetaria";
+	network = list("RD","SS13");
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/research_outpost/hallway)
 "maq" = (
 /obj/machinery/conveyor/centcom_auto{
 	dir = 1;
@@ -28095,6 +28188,10 @@
 	icon_state = "white"
 	},
 /area/science/lab)
+"mmP" = (
+/obj/machinery/recharge_station,
+/turf/simulated/floor/plating,
+/area/research_outpost/atmos)
 "mmR" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
@@ -32071,6 +32168,14 @@
 	},
 /turf/simulated,
 /area/mine/unexplored)
+"oeW" = (
+/obj/machinery/camera{
+	dir = 1;
+	name = "Production Room";
+	network = list("MINE")
+	},
+/turf/simulated/floor,
+/area/mine/production)
 "oeY" = (
 /obj/structure/table,
 /obj/item/tool/hemostat{
@@ -33678,6 +33783,13 @@
 	icon_state = "toxstorage";
 	name = "Toxins Storage"
 	})
+"oSV" = (
+/obj/machinery/camera{
+	name = "Toxins Test Chamber North";
+	network = list("Toxins")
+	},
+/turf/space,
+/area)
 "oTj" = (
 /turf/simulated/wall/shuttle/black,
 /area/shuttle/ert/centcom)
@@ -37007,6 +37119,11 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/machinery/camera{
+	name = "Research Outpost Hallway Starboard";
+	network = list("RD","SS13");
+	pixel_x = 24
+	},
 /turf/simulated/floor,
 /area/research_outpost/entry)
 "qqG" = (
@@ -37630,6 +37747,11 @@
 	},
 /area/science/xenobiology)
 "qEy" = (
+/obj/machinery/camera{
+	dir = 4;
+	name = "EVA";
+	network = list("MINE")
+	},
 /turf/simulated/floor,
 /area/mine/eva)
 "qEF" = (
@@ -40921,6 +41043,17 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor,
 /area/research_outpost/hallway)
+"sbd" = (
+/obj/machinery/artifact_scanpad,
+/obj/machinery/camera{
+	dir = 4;
+	name = "Research Outpost Exotic Particles Lab";
+	network = list("RD","SS13")
+	},
+/turf/simulated/floor{
+	icon_state = "dark vault full"
+	},
+/area/research_outpost/harvesting)
 "sbf" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /turf/simulated/floor,
@@ -45751,6 +45884,14 @@
 	},
 /turf/simulated/wall,
 /area/crew_quarters/kitchen)
+"umR" = (
+/obj/machinery/camera{
+	dir = 8;
+	name = "Research Outpost Dorms";
+	network = list("RD","SS13")
+	},
+/turf/simulated/floor,
+/area/research_outpost/hallway)
 "ung" = (
 /obj/machinery/atmospherics/trinary/filter{
 	filtered_gas = "nitrogen";
@@ -46838,6 +46979,15 @@
 	icon_state = "carpet"
 	},
 /area/mine/unexplored)
+"uOp" = (
+/obj/machinery/camera{
+	dir = 4;
+	name = "Toxins Test Chamber";
+	network = list("RD");
+	pixel_y = -2
+	},
+/turf/simulated/floor/grass,
+/area/science/test_area)
 "uOq" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -47079,6 +47229,18 @@
 /obj/structure/closet/crate/medical,
 /turf/simulated/floor,
 /area/supply/sorting)
+"uUq" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/camera{
+	dir = 1;
+	name = "Research Outpost Hallway Toxins";
+	network = list("RD","SS13");
+	pixel_x = 24
+	},
+/turf/simulated/floor,
+/area/research_outpost/entry)
 "uUD" = (
 /turf/unsimulated/wall/fakeglass{
 	dir = 8
@@ -48229,6 +48391,15 @@
 	},
 /turf/simulated/floor,
 /area/engineering/supermatter_room)
+"vsx" = (
+/obj/machinery/vending/mining,
+/obj/machinery/camera{
+	dir = 4;
+	name = "Storage Room";
+	network = list("MINE")
+	},
+/turf/simulated/floor,
+/area/mine/production)
 "vsz" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1;
@@ -48924,6 +49095,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/light_switch{
 	pixel_x = -27
+	},
+/obj/machinery/camera{
+	name = "Research Outpost Cafetaria";
+	network = list("RD","SS13");
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/research_outpost/hallway)
@@ -50047,6 +50223,11 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/camera{
+	dir = 8;
+	name = "Research Outpost Anomalous Materials Lab";
+	network = list("RD","SS13")
+	},
 /turf/simulated/floor{
 	dir = 4;
 	icon_state = "whitepurple"
@@ -50384,6 +50565,18 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/wall,
 /area/science/robotics)
+"woj" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 4;
+	on = 1
+	},
+/obj/machinery/camera{
+	dir = 8;
+	name = "Shuttle Airlock";
+	network = list("MINE")
+	},
+/turf/simulated/floor,
+/area/mine/production)
 "wos" = (
 /obj/structure/bed/chair/shuttle{
 	dir = 1
@@ -51482,6 +51675,10 @@
 	},
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/docking)
+"wNv" = (
+/obj/machinery/recharge_station,
+/turf/simulated/floor,
+/area/mine/production)
 "wNH" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -53051,6 +53248,17 @@
 	icon_state = "dark neutral stripe"
 	},
 /area/centcom/suppy)
+"xvZ" = (
+/obj/effect/decal/warning_stripes{
+	dir = 1;
+	icon_state = "warning"
+	},
+/obj/machinery/camera{
+	name = "Toxins Test Chamber North";
+	network = list("Toxins")
+	},
+/turf/simulated/floor/engine/vacuum,
+/area/science/test_area)
 "xwx" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/reagent_containers/glass/beaker/cryoxadone,
@@ -54140,6 +54348,11 @@
 /area/crew_quarters/kitchen)
 "xUT" = (
 /obj/machinery/vending/hydronutrients,
+/obj/machinery/camera{
+	dir = 4;
+	name = "Research Outpost Xenobotany Port";
+	network = list("RD","SS13")
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "whitegreen"
@@ -435263,7 +435476,7 @@ dJa
 dJa
 dJa
 dJa
-dJa
+uOp
 nOY
 nOY
 ocC
@@ -435953,7 +436166,7 @@ ocC
 ocC
 ocC
 ocC
-ocC
+oSV
 nOY
 nOY
 dJa
@@ -437364,7 +437577,7 @@ ocC
 ocC
 nOY
 nOY
-smi
+xvZ
 mic
 mic
 mic
@@ -437376,7 +437589,7 @@ mic
 mic
 mic
 mic
-ncL
+cuW
 nOY
 nOY
 ocC
@@ -438775,7 +438988,7 @@ ocC
 ocC
 nOY
 nOY
-gLs
+gJE
 tkc
 wBF
 wmd
@@ -449689,7 +449902,7 @@ tnt
 cTx
 akL
 gNo
-eAG
+cba
 xgT
 lQj
 eAG
@@ -455312,7 +455525,7 @@ jPL
 rIh
 rIh
 dqd
-sVC
+sbd
 hMK
 pdh
 dqd
@@ -456728,7 +456941,7 @@ dqd
 dqd
 dqd
 jop
-cUg
+uUq
 csg
 csg
 csg
@@ -463407,7 +463620,7 @@ ocC
 ocC
 jhJ
 pxK
-lYc
+umR
 bWi
 cBc
 mkP
@@ -464109,7 +464322,7 @@ luI
 vfK
 gGr
 xuR
-vXx
+vsx
 vXx
 mqZ
 fUe
@@ -464457,7 +464670,7 @@ gGr
 kop
 kfS
 luI
-pxz
+woj
 vfK
 gGr
 pxz
@@ -465155,9 +465368,9 @@ ocC
 ocC
 ocC
 gGr
+wNv
 xuR
-luI
-luI
+xuR
 luI
 pGv
 luI
@@ -465507,7 +465720,7 @@ ocC
 ocC
 ocC
 gGr
-xuR
+luI
 luI
 luI
 luI
@@ -465878,7 +466091,7 @@ aGo
 jhJ
 lYc
 lYc
-lYc
+mal
 bLP
 oee
 xvy
@@ -466241,7 +466454,7 @@ dKu
 iSc
 jDz
 itv
-itv
+mmP
 itv
 mdB
 dKu
@@ -466574,7 +466787,7 @@ luI
 luI
 luI
 luI
-luI
+oeW
 mqZ
 ocC
 ocC
@@ -467645,7 +467858,7 @@ sJd
 tFd
 tFd
 tFd
-sJd
+eyR
 tFd
 esa
 esa
