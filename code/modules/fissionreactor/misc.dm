@@ -113,15 +113,15 @@ boxes used for cargo orders to make my life easier.
 		var/amount_to_add=rand(1, ceil((units_of_storage-current_units)*0.8) )
 		if(amount_to_add>units_of_storage/6) //if we are adding a large amount, skew the randomness so that we don't give a huge amount of rare stuff. with current vars, max 15 units of rare things per roll.
 			r+=0.2
-		switch(r)
-			if(0.0 to 0.05) //  5%  skewed 0%
-				material=pick(mats_exotic)
-			if(0.05 to 0.2) // 15%  skewed 0%
-				material=pick(mats_rare)
-			if(0.2 to 0.5)  // 30%  skewed 30%
-				material=pick(mats_uncommon)
-			else			// 50%  skewed 70%
-				material=pick(mats_std)		
+		if(r<0.05)		//  5%  skewed 0%
+			material=pick(mats_exotic)
+		else if(r<0.20)	// 15%  skewed 0%
+			material=pick(mats_rare)
+		else if(r<0.50)	// 30%  skewed 30%
+			material=pick(mats_uncommon)
+		else			// 50%  skewed 70%
+			material=pick(mats_std)				
+
 		//add a random amount of the chosen material, between 1 and 80% the remaining volume (rounded up)
 		//if we roll the highest number always, this gives us 3 calls (with 90 units)
 		fueldata.add_shit_to(material,amount_to_add,fueldata.fuel)
