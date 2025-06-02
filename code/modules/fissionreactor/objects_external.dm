@@ -366,6 +366,9 @@ CRITICAL<br>
 <a [talkmode_critical!=1 ?"" :"class='blocked'"] href='?src=\ref[interface];set_announce_critical=1'>\[NORMAL\]</a>&nbsp;
 <a [talkmode_critical!=2 ?"" :"class='blocked'"] href='?src=\ref[interface];set_announce_critical=2'>\[ENGINEERING\]</a>&nbsp;
 <a [talkmode_critical!=3 ?"" :"class='blocked'"] href='?src=\ref[interface];set_announce_critical=3'>\[PUBLIC\]</a>&nbsp;
+<br><br>
+<a [associated_reactor?.SCRAM ?"" :"class='blocked'"] href='?src=\ref[interface];scram_clear=yes'>\[CLEAR SCRAM\]</a>
+
 		"}
 	else
 	
@@ -783,6 +786,13 @@ CRITICAL<br>
 			to_chat(user,"access denied.")
 			return
 		talkmode_critical = text2num(href_list["set_announce_critical"]) || 0
+	if(href_list["scram_clear"])
+		if(!cando)
+			to_chat(user,"access denied.")
+			return
+		if(associated_reactor?.SCRAM)
+			playsound(src,'sound/machines/fission/rc_scram.ogg',50)
+		associated_reactor?.SCRAM=FALSE
 	
 	ask_remakeUI() //update it so that changes appear NOW.
 
