@@ -488,7 +488,6 @@ var/list/foliage_replacments=list(
 	
 /turf/unsimulated/floor/jungle/bedrock/proc/cannot_dig_up()
 	var/turf/T=locate(x,y,1)
-	var/T_T=T.type
 	if(!istype(T,/turf/unsimulated/floor/jungle))
 		return "something hard blocks the way."
 	var/turf/unsimulated/floor/jungle/JT = T

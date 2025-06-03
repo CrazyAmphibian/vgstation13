@@ -442,6 +442,12 @@
 	registered_events = old_registered_events
 	if(density != old_density)
 		densityChanged()
+	if(istype(loc,/area/surface/jungle)) //outdoor areas need to be illuminated.
+		if(SSDayNightJungle && .)
+			var/turf/NewTurf=.
+			NewTurf.set_light(SSDayNightJungle.next_light_range,SSDayNightJungle.next_light_power,SSDayNightJungle.current_timeOfDay)
+			
+			
 
 /turf/proc/AddDecal(var/image/decal)
 	if(!turfdecals)
