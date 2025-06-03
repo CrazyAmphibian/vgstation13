@@ -19,6 +19,7 @@
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
 	plane = PLATING_PLANE
 	intact=0
+	var/BLOCKED = null // null = you can dig upwards when underground. otherwise, it's a string which is displayed to the user when they try to.
 
 //gets drops when mined.
 /turf/unsimulated/floor/jungle/proc/generate_loot(obj/item/C as obj, mob/user as mob)
@@ -158,16 +159,17 @@ var/list/foliage_replacments=list(
 	desc="Or is it asphalt?"
 	icon='icons/turf/new_snow.dmi'
 	icon_state = "concrete"
+	BLOCKED = "Something hard blocks the way."
 
 /turf/unsimulated/floor/jungle/concrete/ex_act(severity)	
 	switch(severity)
-		if(1.0)
+		if(1)
 			if(prob(50))
 				ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
-		if(2.0)
+		if(2)
 			if(prob(25))
 				ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
-		if(3.0)
+		if(3)
 			if(prob(5))
 				ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
 
@@ -226,7 +228,6 @@ var/list/foliage_replacments=list(
 				qdel(hashole.down)
 				qdel(hashole)
 				hashole=null
-				return
 				
 
 /turf/unsimulated/floor/jungle/path
@@ -258,12 +259,12 @@ var/list/foliage_replacments=list(
 
 /turf/unsimulated/floor/jungle/path/ex_act(severity)	
 	switch(severity)
-		if(1.0)
+		if(1)
 			ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
-		if(2.0)
+		if(2)
 			if(prob(66))
 				ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
-		if(3.0)
+		if(3)
 			if(prob(33))
 				ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
 
@@ -274,6 +275,7 @@ var/list/foliage_replacments=list(
 	icon='icons/turf/floors.dmi'
 	icon_state = "asteroidfloor"
 	plane = TURF_PLANE
+	BLOCKED = "Something hard blocks the way."
 
 
 /turf/unsimulated/floor/jungle/path_plated/attackby(obj/item/C as obj, mob/user as mob)
@@ -291,12 +293,12 @@ var/list/foliage_replacments=list(
 
 /turf/unsimulated/floor/jungle/path_plated/ex_act(severity)
 	switch(severity)
-		if(1.0)
+		if(1)
 			ChangeTurf(/turf/unsimulated/floor/jungle/path)
-		if(2.0)
+		if(2)
 			if(prob(50))
 				ChangeTurf(/turf/unsimulated/floor/jungle/path)
-		if(3.0)
+		if(3)
 			if(prob(20))
 				ChangeTurf(/turf/unsimulated/floor/jungle/path)
 
@@ -309,6 +311,7 @@ var/list/foliage_replacments=list(
 	icon_state = "water5"
 	turf_speed_multiplier=1.75
 	plane = ABOVE_OBJ_PLANE
+	BLOCKED = "Something tells you that this is a really bad idea."
 
 /turf/unsimulated/floor/jungle/water_deep
 	name="Deep Water"
@@ -317,6 +320,7 @@ var/list/foliage_replacments=list(
 	icon_state = "water2"
 	turf_speed_multiplier=2.5
 	plane = MOB_PLANE
+	BLOCKED = "Something tells you that this is a really bad idea."
 
 
 /turf/unsimulated/floor/jungle/sand
@@ -338,14 +342,14 @@ var/list/foliage_replacments=list(
 
 /turf/unsimulated/floor/jungle/underground/ex_act(severity)
 	switch(severity)
-		if(1.0)
+		if(1)
 			ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
-		if(2.0)
+		if(2)
 			if(prob(50))
 				ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
 			else
 				loosened=TRUE
-		if(3.0)
+		if(3)
 			if(prob(75))
 				loosened=TRUE
 
@@ -376,17 +380,17 @@ var/list/foliage_replacments=list(
 	if(!user)
 		return
 	if (user.lucky_prob_rand()>0.5) //50% base chance
-		switch(rand(1,100))
-			if(1 to 40)
-				new/obj/item/stack/ore/iron(src,user.lucky_prob_rand_range(1,9))
-			if(40 to 55)
-				new/obj/item/stack/ore/diamond(src,user.lucky_prob_rand_range(1,3))
-			if(55 to 70)
-				new/obj/item/stack/ore/gold(src,user.lucky_prob_rand_range(1,5))
-			if(70 to 85)
-				new/obj/item/stack/ore/silver(src,user.lucky_prob_rand_range(1,7))
-			if(85 to 100)
-				new/obj/item/stack/ore/uranium(src,user.lucky_prob_rand_range(1,3))
+		var/r=rand()
+		if(r<0.40)
+			new/obj/item/stack/ore/iron(src,user.lucky_prob_rand_range(1,9))
+		else if(r<0.55)
+			new/obj/item/stack/ore/diamond(src,user.lucky_prob_rand_range(1,3))
+		else if(r<0.70)
+			new/obj/item/stack/ore/gold(src,user.lucky_prob_rand_range(1,5))
+		else if(r<0.85)
+			new/obj/item/stack/ore/silver(src,user.lucky_prob_rand_range(1,7))
+		else
+			new/obj/item/stack/ore/uranium(src,user.lucky_prob_rand_range(1,3))
 	return
 
 /turf/unsimulated/floor/jungle/bedrock
@@ -442,7 +446,6 @@ var/list/foliage_replacments=list(
 		return
 	if(icon_state=="mariahive_noanimation_l")
 		to_chat(usr,"there's a hole leading to the surface.")
-		return
 
 
 //we also use enter to reveal tiles, since the tile above could change.
@@ -488,14 +491,9 @@ var/list/foliage_replacments=list(
 	var/T_T=T.type
 	if(!istype(T,/turf/unsimulated/floor/jungle))
 		return "something hard blocks the way."
-	if(T_T==/turf/unsimulated/floor/jungle/path_plated)
-		return "something hard blocks the way."
-	if(T_T==/turf/unsimulated/floor/jungle/water)
-		return "something tells you that this is a really bad idea."
-	if(T_T==/turf/unsimulated/floor/jungle/water_deep)
-		return "something tells you that this is a really bad idea."
-	if(T_T==/turf/unsimulated/floor/jungle/concrete)
-		return "something hard blocks the way."
+	var/turf/unsimulated/floor/jungle/JT = T
+	if(JT.BLOCKED)
+		return JT.BLOCKED
 	if(locate(/obj/structure/flora/tree) in T.contents)
 		return "there's too many roots in the way."
 	return null

@@ -201,10 +201,6 @@ Basically, you are going to overwrite the flags.
 		r=floor(r*255)
 		g=floor(g*255)
 		b=floor(b*255)
-
-		
-		world.log << "[luma] [chroma_b] [chroma_r] -> [r] [g] [b]"
-		
 		
 		
 		next_light_power=luma*7.5
@@ -214,7 +210,7 @@ Basically, you are going to overwrite the flags.
 		current_timeOfDay=rgb(r,g,b)
 	
 	
-		next_firetime=world.time + 3 MINUTES //station is too big to tick at 2 minutes. not without severe sever raep, at least.
+		next_firetime=world.time + 5 MINUTES //station is too big to tick at 2 minutes. not without severe sever raep, at least.
 		solartime++
 			
 		if(!resumed)
