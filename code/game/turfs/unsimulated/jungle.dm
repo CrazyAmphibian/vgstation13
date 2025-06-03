@@ -19,7 +19,7 @@
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
 	plane = PLATING_PLANE
 	intact=0
-	var/BLOCKED = null // null = you can dig upwards when underground. otherwise, it's a string which is displayed to the user when they try to.
+	var/DIGGING_BLOCKED = null // null = you can dig upwards when underground. otherwise, it's a string which is displayed to the user when they try to.
 
 //gets drops when mined.
 /turf/unsimulated/floor/jungle/proc/generate_loot(obj/item/C as obj, mob/user as mob)
@@ -159,7 +159,7 @@ var/list/foliage_replacments=list(
 	desc="Or is it asphalt?"
 	icon='icons/turf/new_snow.dmi'
 	icon_state = "concrete"
-	BLOCKED = "Something hard blocks the way."
+	DIGGING_BLOCKED = "Something hard blocks the way."
 
 /turf/unsimulated/floor/jungle/concrete/ex_act(severity)	
 	switch(severity)
@@ -275,7 +275,7 @@ var/list/foliage_replacments=list(
 	icon='icons/turf/floors.dmi'
 	icon_state = "asteroidfloor"
 	plane = TURF_PLANE
-	BLOCKED = "Something hard blocks the way."
+	DIGGING_BLOCKED = "Something hard blocks the way."
 
 
 /turf/unsimulated/floor/jungle/path_plated/attackby(obj/item/C as obj, mob/user as mob)
@@ -311,7 +311,7 @@ var/list/foliage_replacments=list(
 	icon_state = "water5"
 	turf_speed_multiplier=1.75
 	plane = ABOVE_OBJ_PLANE
-	BLOCKED = "Something tells you that this is a really bad idea."
+	DIGGING_BLOCKED = "Something tells you that this is a really bad idea."
 
 /turf/unsimulated/floor/jungle/water_deep
 	name="Deep Water"
@@ -320,7 +320,7 @@ var/list/foliage_replacments=list(
 	icon_state = "water2"
 	turf_speed_multiplier=2.5
 	plane = MOB_PLANE
-	BLOCKED = "Something tells you that this is a really bad idea."
+	DIGGING_BLOCKED = "Something tells you that this is a really bad idea."
 
 
 /turf/unsimulated/floor/jungle/sand
@@ -492,8 +492,8 @@ var/list/foliage_replacments=list(
 	if(!istype(T,/turf/unsimulated/floor/jungle))
 		return "something hard blocks the way."
 	var/turf/unsimulated/floor/jungle/JT = T
-	if(JT.BLOCKED)
-		return JT.BLOCKED
+	if(JT.DIGGING_BLOCKED)
+		return JT.DIGGING_BLOCKED
 	if(locate(/obj/structure/flora/tree) in T.contents)
 		return "there's too many roots in the way."
 	return null
