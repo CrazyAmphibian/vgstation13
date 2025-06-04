@@ -20,6 +20,20 @@
 	plane = PLATING_PLANE
 	intact=0
 	var/DIGGING_BLOCKED = null // null = you can dig upwards when underground. otherwise, it's a string which is displayed to the user when they try to.
+	var/plated_icon_override=null //used for the name plaque. NT COLONY Γ 8. in case you were wondering what font it uses: Liberation Sans Regular, 24pt. use two layers. one is #343434 and is above another that is #767676, offset by 1 pixel x and y.
+
+
+/turf/unsimulated/floor/jungle/ChangeTurf(var/turf/N, var/tell_universe=1, var/force_lighting_update = 0, var/allow = 1)
+	var/former_icoover=plated_icon_override
+	.=..()
+	if(.)
+		var/turf/T=.
+		if(istype(T,/turf/unsimulated/floor/jungle))
+			var/turf/unsimulated/floor/jungle/JT=T
+			world.log << "[former_icoover]"
+			JT.plated_icon_override=former_icoover
+			if(former_icoover && istype(T,/turf/unsimulated/floor/jungle/path_plated))
+				JT.icon_state=former_icoover
 
 //gets drops when mined.
 /turf/unsimulated/floor/jungle/proc/generate_loot(obj/item/C as obj, mob/user as mob)
@@ -277,6 +291,10 @@ var/list/foliage_replacments=list(
 	plane = TURF_PLANE
 	DIGGING_BLOCKED = "Something hard blocks the way."
 
+/turf/unsimulated/floor/jungle/path_plated/New()
+	..()
+	if(plated_icon_override)
+		icon_state=plated_icon_override
 
 /turf/unsimulated/floor/jungle/path_plated/attackby(obj/item/C as obj, mob/user as mob)
 	if(!C || !user)

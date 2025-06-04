@@ -29,10 +29,12 @@
 	holomap_offset_x = list(0,0,0,86,4,0,0,)
 	holomap_offset_y = list(0,0,0,94,10,0,0,)
 
-	center_x = 226
-	center_y = 254
+	center_x = 182
+	center_y = 163
 
-
+/datum/map/active/New()
+	world.name = "NT Colony Gamma-8"
+	station_name="NT Colony Gamma-8"
 
 /****************************
 **	Day and Night Lighting **

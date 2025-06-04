@@ -844,6 +844,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/library)
+"asr" = (
+/obj/docking_port/destination/deathsquad/near_station{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "asu" = (
 /obj/effect/decal/warning_stripes{
 	dir = 4;
@@ -1540,6 +1546,10 @@
 	icon_state = "floor4"
 	},
 /area/syndicate_mothership/elite_squad)
+"aHq" = (
+/obj/docking_port/destination/ert/station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle/fenced)
 "aHD" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /turf/unsimulated/floor{
@@ -1979,6 +1989,12 @@
 	icon_state = "white"
 	},
 /area/science/lab)
+"aSx" = (
+/obj/docking_port/destination/syndicate/south{
+	dir = 2
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "aSF" = (
 /obj/structure/grille/window_spawner/reinforced,
 /turf/simulated,
@@ -10732,6 +10748,12 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/science/xenobiology)
+"eDt" = (
+/turf/unsimulated/floor/jungle/path_plated{
+	icon_state = "junglestation7";
+	plated_icon_override = "junglestation7"
+	},
+/area/surface/jungle/fenced)
 "eEN" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -14865,6 +14887,12 @@
 	icon_state = "floor4"
 	},
 /area/shuttle/administration/centcom)
+"gwq" = (
+/turf/unsimulated/floor/jungle/path_plated{
+	icon_state = "junglestation6";
+	plated_icon_override = "junglestation6"
+	},
+/area/surface/jungle/fenced)
 "gwy" = (
 /obj/structure/shuttle/engine/propulsion{
 	dir = 4
@@ -23956,6 +23984,12 @@
 /obj/machinery/station_map/strategic,
 /turf/simulated/floor/plating,
 /area/surface/jungle)
+"kzE" = (
+/obj/docking_port/destination/syndicate/east{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "kzG" = (
 /obj/machinery/door/airlock/external{
 	name = "Toxins Test Chamber"
@@ -25490,6 +25524,10 @@
 	dir = 1
 	},
 /turf/simulated/floor,
+/area/surface/jungle)
+"lmu" = (
+/obj/docking_port/destination/syndicate/north,
+/turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "lmw" = (
 /obj/effect/step_trigger/thrower/east{
@@ -28742,6 +28780,12 @@
 	icon_state = "freezerfloor"
 	},
 /area/centcom/living)
+"mzB" = (
+/turf/unsimulated/floor/jungle/path_plated{
+	icon_state = "junglestation5";
+	plated_icon_override = "junglestation5"
+	},
+/area/surface/jungle/fenced)
 "mzZ" = (
 /obj/structure/table,
 /obj/item/tool/bonegel{
@@ -29250,6 +29294,12 @@
 	icon_state = "floor4"
 	},
 /area/shuttle/administration/centcom)
+"mLP" = (
+/turf/unsimulated/floor/jungle/path_plated{
+	icon_state = "junglestation2";
+	plated_icon_override = "junglestation2"
+	},
+/area/surface/jungle/fenced)
 "mML" = (
 /obj/machinery/door/window,
 /turf/unsimulated/floor{
@@ -29341,6 +29391,12 @@
 "mOy" = (
 /turf/simulated/wall/r_wall,
 /area/crew_quarters/heads/hos)
+"mOG" = (
+/turf/unsimulated/floor/jungle/path_plated{
+	icon_state = "junglestation1";
+	plated_icon_override = "junglestation1"
+	},
+/area/surface/jungle/fenced)
 "mOW" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	on = 1
@@ -31561,6 +31617,12 @@
 /obj/structure/closet/secure_closet/engineering_mechanic,
 /turf/simulated/floor,
 /area/engineering/mechanics)
+"nRB" = (
+/turf/unsimulated/floor/jungle/path_plated{
+	icon_state = "junglestation4";
+	plated_icon_override = "junglestation4"
+	},
+/area/surface/jungle/fenced)
 "nRC" = (
 /obj/structure/punching_bag/wizard,
 /turf/unsimulated/floor{
@@ -37434,6 +37496,12 @@
 	},
 /turf/unsimulated/wall,
 /area/centcom/evac)
+"qwy" = (
+/obj/docking_port/destination/syndicate/researchoutpost{
+	dir = 2
+	},
+/turf/space,
+/area)
 "qwF" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -39093,6 +39161,12 @@
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
+"rnh" = (
+/obj/docking_port/destination/striketeam/destination1{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "rno" = (
 /turf/unsimulated/floor{
 	dir = 1;
@@ -43166,6 +43240,10 @@
 	},
 /turf/simulated/floor/engine,
 /area/surface/jungle)
+"tct" = (
+/obj/docking_port/destination/syndicate/miningoutpost,
+/turf/space,
+/area)
 "tcB" = (
 /turf/unsimulated/floor{
 	dir = 4;
@@ -45029,6 +45107,12 @@
 	},
 /turf/simulated/floor,
 /area/medical/genetics)
+"tPe" = (
+/obj/docking_port/destination/syndicate/northwest{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "tPg" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -50740,6 +50824,12 @@
 	icon_state = "dark"
 	},
 /area/engineering/antimatter_room)
+"wtp" = (
+/turf/unsimulated/floor/jungle/path_plated{
+	icon_state = "junglestation8";
+	plated_icon_override = "junglestation8"
+	},
+/area/surface/jungle/fenced)
 "wtD" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -51653,6 +51743,10 @@
 /obj/structure/cable/yellow,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
+"wMf" = (
+/obj/docking_port/destination/transport/centcom,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "wMj" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -52379,6 +52473,13 @@
 "xbb" = (
 /turf/simulated/floor,
 /area/supply/lobby)
+"xbe" = (
+/obj/machinery/camera,
+/turf/unsimulated/floor/jungle/path_plated{
+	icon_state = "junglestation3";
+	plated_icon_override = "junglestation3"
+	},
+/area/surface/jungle/fenced)
 "xby" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -91923,7 +92024,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+wMf
 lIK
 lIK
 lIK
@@ -93695,6 +93796,7 @@ uXL
 lIK
 lIK
 lIK
+asr
 lIK
 lIK
 lIK
@@ -93715,8 +93817,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
+kzE
 lIK
 lIK
 lIK
@@ -101060,7 +101161,7 @@ wld
 wld
 wld
 wld
-wld
+aHq
 wld
 tnZ
 tnZ
@@ -104916,7 +105017,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+rnh
 lIK
 lIK
 lIK
@@ -114406,7 +114507,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+lmu
 lIK
 lIK
 lIK
@@ -116216,7 +116317,7 @@ jZC
 riY
 dQp
 wDw
-wld
+mOG
 eJs
 upa
 edD
@@ -116568,7 +116669,7 @@ esr
 uFM
 dQp
 wDw
-wld
+mLP
 eJs
 upa
 edD
@@ -116920,7 +117021,7 @@ spZ
 rnM
 dQp
 qhG
-gHV
+xbe
 eJs
 upa
 edD
@@ -117272,7 +117373,7 @@ aSf
 bKM
 dzr
 wDw
-wld
+nRB
 eJs
 upa
 edD
@@ -117624,7 +117725,7 @@ rhq
 jIh
 lHg
 wDw
-wld
+mzB
 eJs
 upa
 edD
@@ -117976,7 +118077,7 @@ hqz
 tHS
 fsn
 wDw
-wld
+gwq
 eJs
 upa
 edD
@@ -118328,7 +118429,7 @@ qhG
 qhG
 qhG
 qhG
-wld
+eDt
 eJs
 upa
 edD
@@ -118680,7 +118781,7 @@ wld
 wld
 wld
 wld
-wld
+wtp
 eJs
 upa
 edD
@@ -122617,7 +122718,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+aSx
 lIK
 lIK
 lIK
@@ -142220,7 +142321,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+tPe
 lIK
 lIK
 lIK
@@ -443951,7 +444052,7 @@ ocC
 ocC
 ocC
 ocC
-ocC
+qwy
 ocC
 ocC
 ocC
@@ -461496,7 +461597,7 @@ ocC
 ocC
 ocC
 ocC
-ocC
+tct
 ocC
 ocC
 ocC
