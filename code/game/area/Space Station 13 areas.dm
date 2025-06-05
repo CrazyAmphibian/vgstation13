@@ -2075,6 +2075,9 @@ var/global/list/adminbusteleportlocs = list()
 /area/surface/jungle/zoned/art_zone
 	name = "\improper Portrait Zone"	
 
+/area/surface/jungle/zoned/dump
+	name = "\improper Dump"
+
 /area/surface/jungle/landing
 	name = "\improper Landing Area"
 	icon_state="jungle_landing"
