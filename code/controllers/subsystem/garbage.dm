@@ -160,7 +160,11 @@ List of hard deletions:"}
 		found += LookForRefs(R, D)
 	found += LookForRefs(world, D)
 	found += LookForListRefs(global.vars, D, null, "global.vars") //You can't pretend global is a datum like you can with clients and world. It'll compile, but throw completely nonsensical runtimes.
-	FINDREF_OUTPUT("we found [found]")
+	// 3 references which are a result of reference search:
+	// - FindRef(D) itself
+	// - garbage/fire(), where it has been located()
+	// - var/atom/movable/A = D, which is a local copy of the thing
+	FINDREF_OUTPUT("we found [found]. Discarding this proc and callers, DM tells us we have [refcount(D) - 3] reference hanging.")
 
 /datum/subsystem/garbage/proc/LookForRefs(var/datum/D, var/datum/targ)
 	. = 0

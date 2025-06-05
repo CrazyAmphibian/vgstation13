@@ -160,6 +160,7 @@
 	footprint_type = /obj/effect/decal/cleanable/blood/tracks/footprints/clown
 
 	step_sound = "clownstep"
+	footsteps_range = 0
 
 /obj/item/clothing/shoes/clown_shoes/New()
 	..()
