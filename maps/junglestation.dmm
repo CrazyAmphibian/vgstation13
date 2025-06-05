@@ -12228,6 +12228,12 @@
 	icon_state = "barber"
 	},
 /area/medical/cmo)
+"fnn" = (
+/obj/structure/fence/door{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/dump)
 "fns" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -15072,6 +15078,10 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
 /turf/simulated/wall/r_wall,
 /area/turret_protected/tcomms_control_room)
+"gzf" = (
+/obj/structure/fence/corner,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/dump)
 "gzw" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced,
@@ -15744,6 +15754,10 @@
 	icon_state = "showroomfloor"
 	},
 /area/shuttle/trade/start)
+"gOE" = (
+/obj/structure/closet/vox_raiders/trader,
+/turf/simulated/floor/vox/wood,
+/area/vox_trading_post/dorms)
 "gOF" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -16595,10 +16609,6 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
-"hgb" = (
-/obj/structure/closet/vox_raiders/trader,
-/turf/simulated/floor/vox/wood,
-/area/vox_trading_post/dorms)
 "hgr" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/structure/window/reinforced,
@@ -23806,12 +23816,6 @@
 /obj/item/weapon/card/id/captains_spare,
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
-"kta" = (
-/obj/structure/fence/door{
-	dir = 4
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/dump)
 "ktj" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/cable/yellow{
@@ -25347,10 +25351,11 @@
 	},
 /area/engineering/engine_storage)
 "lgK" = (
-/obj/structure/table,
-/obj/item/weapon/storage/firstaid/regular,
-/turf/simulated/floor/vox,
-/area/vox_trading_post/medbay)
+/obj/structure/fence/corner{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/dump)
 "lgL" = (
 /obj/machinery/atmospherics/miner/toxins,
 /obj/effect/decal/warning_stripes{
@@ -25755,6 +25760,10 @@
 	tag = "icon-vault (NORTHEAST)"
 	},
 /area/crew_quarters/captain)
+"loL" = (
+/obj/structure/fence,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/dump)
 "lpf" = (
 /obj/machinery/flasher{
 	id_tag = "AI";
@@ -26637,10 +26646,6 @@
 /obj/structure/fence/door,
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
-"lFC" = (
-/obj/structure/fence,
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/dump)
 "lFE" = (
 /obj/item/weapon/storage/box/fissionsupply_controller,
 /turf/simulated/floor{
@@ -27515,7 +27520,9 @@
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
 "lVj" = (
-/obj/structure/fence/corner,
+/obj/structure/fence{
+	dir = 4
+	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/dump)
 "lVw" = (
@@ -31206,12 +31213,6 @@
 	icon_state = "white"
 	},
 /area/science/xenobiology)
-"nHw" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/dump)
 "nHQ" = (
 /turf/unsimulated/floor{
 	icon_state = "engine"
@@ -31794,6 +31795,11 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/botanty_outside)
+"nTn" = (
+/obj/structure/table,
+/obj/item/weapon/storage/firstaid/regular,
+/turf/simulated/floor/vox,
+/area/vox_trading_post/medbay)
 "nTx" = (
 /obj/structure/shuttle/diag_wall/black{
 	dir = 4
@@ -37110,6 +37116,10 @@
 	icon_state = "darkpurple"
 	},
 /area/centcom/control)
+"qjp" = (
+/obj/machinery/washing_machine,
+/turf/simulated/floor/vox/wood,
+/area/vox_trading_post/dorms)
 "qjs" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -37767,10 +37777,6 @@
 	},
 /turf/simulated/floor,
 /area/security/prison)
-"qxb" = (
-/obj/machinery/washing_machine,
-/turf/simulated/floor/vox/wood,
-/area/vox_trading_post/dorms)
 "qxK" = (
 /obj/item/device/assembly/infra{
 	pixel_x = -5;
@@ -40246,6 +40252,12 @@
 	name = "plating"
 	},
 /area/centcom/ert)
+"rBi" = (
+/obj/machinery/computer/tetris,
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/science/lab)
 "rBN" = (
 /obj/structure/table,
 /obj/item/clothing/gloves/latex{
@@ -41939,12 +41951,6 @@
 	icon_state = "dark"
 	},
 /area/security/armory)
-"soR" = (
-/obj/structure/fence/corner{
-	dir = 8
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/dump)
 "spq" = (
 /obj/machinery/sleeper,
 /turf/simulated/floor{
@@ -119875,9 +119881,9 @@ mUo
 wld
 wld
 wld
-soR
-lFC
-lFC
+lgK
+loL
+loL
 cOH
 lKF
 ucr
@@ -120227,7 +120233,7 @@ jAP
 qhE
 wld
 wld
-nHw
+lVj
 fbB
 pUD
 cGt
@@ -120579,7 +120585,7 @@ jAP
 cXH
 wld
 wld
-nHw
+lVj
 fbB
 jHC
 cOH
@@ -120931,7 +120937,7 @@ jAP
 wld
 wld
 wld
-nHw
+lVj
 fbB
 fbB
 lKF
@@ -121283,7 +121289,7 @@ jAP
 wld
 wld
 wld
-nHw
+lVj
 fbB
 fbB
 lKF
@@ -121635,7 +121641,7 @@ jAP
 wld
 wld
 wld
-nHw
+lVj
 fbB
 fbB
 lKF
@@ -121987,7 +121993,7 @@ jAP
 wld
 wld
 wld
-nHw
+lVj
 fbB
 fbB
 cOH
@@ -122339,7 +122345,7 @@ jAP
 wld
 wld
 wld
-nHw
+lVj
 fbB
 fbB
 lKF
@@ -122691,9 +122697,9 @@ jAP
 cXH
 wld
 wld
-lVj
-kta
-lFC
+gzf
+fnn
+loL
 cOH
 lKF
 lKF
@@ -135024,7 +135030,7 @@ xfu
 hAv
 rPv
 oiZ
-rPv
+rBi
 dGI
 oMl
 qMo
@@ -498338,8 +498344,8 @@ ocC
 ocC
 ocC
 gje
-qxb
-hgb
+qjp
+gOE
 cmb
 bbx
 scm
@@ -501862,7 +501868,7 @@ jPL
 jPL
 wyb
 seK
-lgK
+nTn
 hcT
 kIX
 rAB
