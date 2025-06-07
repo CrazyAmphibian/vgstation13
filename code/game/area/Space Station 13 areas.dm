@@ -2043,6 +2043,18 @@ var/global/list/adminbusteleportlocs = list()
 	name = "\improper Underground"
 	icon_state="jungle_wild"	
 
+/area/surface/jungle/underground/zoned
+	forbid_apc=FALSE
+	construction_zone=FALSE
+	icon_state="jungle_zone"
+
+/area/surface/jungle/underground/zoned/speakeasy
+	name = "\improper Speakeasy"
+
+/area/surface/jungle/underground/zoned/ghettosurgery
+	name = "\improper Ghetto Surgery"
+	
+
 /area/surface/jungle/zoned
 	forbid_apc=FALSE
 	construction_zone=FALSE
