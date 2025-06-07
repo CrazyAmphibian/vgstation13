@@ -17895,6 +17895,14 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/structure/closet/secure_closet/brig{
+	id_tag = "Cell 4";
+	name = "Cell 4 Locker"
+	},
+/obj/machinery/flasher{
+	id_tag = "Cell 3";
+	pixel_y = -28
+	},
 /turf/simulated/floor,
 /area/security/prison)
 "hIP" = (
@@ -20205,6 +20213,25 @@
 	icon_state = "white"
 	},
 /area/centcom/test)
+"iLA" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/closet/secure_closet/brig{
+	id_tag = "Cell 3";
+	name = "Cell 3 Locker"
+	},
+/obj/machinery/flasher{
+	id_tag = "Cell 3";
+	pixel_y = -28
+	},
+/turf/simulated/floor,
+/area/security/prison)
 "iMc" = (
 /obj/structure/closet,
 /turf/simulated/floor/vox,
@@ -21791,6 +21818,7 @@
 /obj/machinery/camera{
 	name = "cell 3"
 	},
+/obj/structure/bed,
 /turf/simulated/floor,
 /area/security/prison)
 "juC" = (
@@ -23728,6 +23756,14 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
+/obj/structure/closet/secure_closet/brig{
+	id_tag = "Cell 1";
+	name = "Cell 1 Locker"
+	},
+/obj/machinery/flasher{
+	id_tag = "Cell 1";
+	pixel_x = 28
+	},
 /turf/simulated/floor,
 /area/security/prison)
 "kmN" = (
@@ -23985,6 +24021,14 @@
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/structure/closet/secure_closet/brig{
+	id_tag = "Cell 2";
+	name = "Cell 2 Locker"
+	},
+/obj/machinery/flasher{
+	id_tag = "Cell 1";
+	pixel_x = 28
 	},
 /turf/simulated/floor,
 /area/security/prison)
@@ -34485,6 +34529,7 @@
 	dir = 4;
 	name = "cell 1"
 	},
+/obj/structure/bed,
 /turf/simulated/floor,
 /area/security/prison)
 "oXS" = (
@@ -40692,6 +40737,7 @@
 	dir = 4;
 	name = "cell 2"
 	},
+/obj/structure/bed,
 /turf/simulated/floor,
 /area/security/prison)
 "rEA" = (
@@ -54646,6 +54692,7 @@
 /obj/machinery/camera{
 	name = "cell 4"
 	},
+/obj/structure/bed,
 /turf/simulated/floor,
 /area/security/prison)
 "xHR" = (
@@ -106578,7 +106625,7 @@ iuN
 tvS
 jue
 bWV
-hIO
+iLA
 tvS
 xHQ
 bWV
