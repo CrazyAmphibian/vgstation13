@@ -474,7 +474,7 @@
 	dir = 8
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/courtroom)
+/area/surface/jungle/fenced)
 "ake" = (
 /obj/machinery/door/airlock/external,
 /turf/simulated/floor{
@@ -12182,8 +12182,7 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced{
-	dir = 8;
-	one_way = 1
+	dir = 8
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
@@ -20869,8 +20868,7 @@
 "iXf" = (
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
 /obj/structure/window/reinforced{
-	dir = 8;
-	one_way = 1
+	dir = 8
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
@@ -24192,8 +24190,9 @@
 /turf/simulated/floor,
 /area/engineering/supermatter_room)
 "ktX" = (
-/turf/unsimulated/floor/jungle/path,
-/area/crew_quarters/courtroom)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/simulated/wall/r_wall,
+/area/lawoffice)
 "kuE" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 5
@@ -32457,10 +32456,6 @@
 	icon_state = "dark"
 	},
 /area/turret_protected/ai_upload_foyer)
-"nYf" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/courtroom)
 "nYj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
@@ -32612,8 +32607,7 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced{
-	dir = 8;
-	one_way = 1
+	dir = 8
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
@@ -32984,8 +32978,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/window/reinforced{
-	dir = 8;
-	one_way = 1
+	dir = 8
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
@@ -43718,12 +43711,11 @@
 	name = "courtroom observation";
 	dir = 8
 	},
-/obj/structure/window/reinforced{
-	dir = 8;
-	one_way = 1
-	},
 /obj/machinery/status_display{
 	pixel_y = 32
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
@@ -46316,8 +46308,7 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced{
-	dir = 8;
-	one_way = 1
+	dir = 8
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
@@ -46561,7 +46552,7 @@
 	dir = 4
 	},
 /turf/unsimulated/floor/jungle/path,
-/area/crew_quarters/courtroom)
+/area/surface/jungle/fenced)
 "ucP" = (
 /obj/structure/sign/securearea{
 	name = "VEHICLES PASSING"
@@ -52037,12 +52028,11 @@
 /area/science/hallway)
 "wxT" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/window/reinforced{
-	dir = 8;
-	one_way = 1
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
@@ -110011,7 +110001,7 @@ ehm
 dhe
 urT
 nKN
-guc
+cIm
 vjz
 vjz
 vjz
@@ -110363,16 +110353,16 @@ nMK
 jxI
 kbS
 pgI
-guc
-ktX
-ktX
-ktX
-ktX
-ktX
-ktX
-ktX
-ktX
-ktX
+cIm
+xor
+xor
+xor
+xor
+xor
+xor
+xor
+xor
+xor
 ucI
 maR
 dKf
@@ -110715,17 +110705,17 @@ uDE
 sJF
 oRM
 pzN
-txA
-nYf
-nYf
-nYf
+ktX
+rOD
+rOD
+rOD
 ajT
-nYf
-nYf
-nYf
-nYf
-nYf
-nYf
+rOD
+rOD
+rOD
+rOD
+rOD
+rOD
 xXD
 twK
 wld
