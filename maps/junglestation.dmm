@@ -6140,7 +6140,7 @@
 /area/engineering/supermatter_room)
 "cEw" = (
 /obj/machinery/atmospherics/unary/tank/nitrogen/coldroom{
-	dir = 8
+	dir = 4
 	},
 /obj/machinery/firealarm{
 	dir = 8;
@@ -17763,7 +17763,8 @@
 /area/research_outpost/atmos)
 "hED" = (
 /obj/machinery/power/battery/smes{
-	charge = 5e+006
+	charge = 5e+006;
+	chargemode = 2
 	},
 /obj/structure/cable/yellow{
 	d2 = 8;
@@ -37998,11 +37999,17 @@
 /turf/simulated/floor,
 /area/security/prison)
 "qtz" = (
-/obj/structure/girder/reactor,
-/turf/simulated/floor{
-	icon_state = "dark"
+/obj/structure/fence/corner{
+	dir = 8
 	},
-/area/engineering/reactor_room)
+/obj/structure/fence/corner,
+/obj/structure/sign/securearea{
+	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
+	name = "KEEP CLEAR: DOCKING AREA";
+	icon_state = "shuttle2"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/science/shuttlebay)
 "qtA" = (
 /obj/machinery/light{
 	dir = 1
@@ -129391,7 +129398,7 @@ gSN
 gSN
 gSN
 gSN
-qtz
+gSN
 gmp
 liN
 yeX
@@ -141625,7 +141632,7 @@ eOA
 eOA
 eOA
 eOA
-elI
+qtz
 jlj
 cHX
 cHX
