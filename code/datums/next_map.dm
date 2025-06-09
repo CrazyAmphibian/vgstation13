@@ -183,8 +183,8 @@
 /datum/next_map/junglestation
 	name = "Jungle Station" //NT Colony Gamma-8 - the trve name.
 	path = "junglestation"
-	min_players=998 //placeholders - adjust later. this is just to ensure that the map will not be voteable until it's determined that the map should be added to standard rotation. unless we somehow get 998 players.
-	max_players=999
+	min_players=1 //placeholders - adjust later. Or don't. maybe it'll be fun in deadpop and highpop.
+	max_players=99
 
 /proc/get_votable_maps()
 	var/list/votable_maps = list()
