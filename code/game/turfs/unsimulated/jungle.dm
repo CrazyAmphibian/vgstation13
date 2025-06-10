@@ -256,14 +256,31 @@ var/list/foliage_replacments=list(
 	if(C.type== /obj/item/stack/tile/metal)
 		var/obj/item/stack/tile/T = C
 		if(T.use(1))
+			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
+			for(var/obj/structure/lattice/L in contents)
+				qdel(L)
+				ChangeTurf(/turf/simulated/floor/plating)
+				remove_paint_overlay()
+				update_icon()
+				update_paint_overlay()
+				levelupdate()
+				return
 			ChangeTurf(/turf/unsimulated/floor/jungle/path_plated)
 			plane=TURF_PLANE
 			remove_paint_overlay()
 			update_icon()
 			update_paint_overlay()
 			levelupdate()
-			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
 			return
+
+	if(C.type==/obj/item/stack/rods)
+		for(var/obj/structure/lattice/L in contents)
+			to_chat(user, "<span class='notice'>There's already a lattice here</span>")
+			return
+		var/obj/item/stack/rods/R=C
+		if(R.use(1))
+			new/obj/structure/lattice(src)
+
 	var/s=0.0
 	s=item_terraforming_ispickaxe(C)
 	if(s>0.0)

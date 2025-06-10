@@ -23706,6 +23706,16 @@
 	icon_state = "floor4"
 	},
 /area/shuttle/nuclearops)
+"kiH" = (
+/obj/structure/grille/window_spawner/reinforced/full,
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/simulated,
+/area/security/lobby)
 "kiK" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /obj/machinery/light{
@@ -44773,9 +44783,7 @@
 	},
 /area/centcom/specops)
 "tnJ" = (
-/obj/structure/window/reinforced{
-	one_way = 1
-	},
+/obj/structure/window/reinforced,
 /turf/simulated/floor,
 /area/security/lobby)
 "tnZ" = (
@@ -46396,14 +46404,12 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/window/reinforced{
-	one_way = 1
-	},
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/window/reinforced,
 /turf/simulated/floor,
 /area/security/lobby)
 "tXP" = (
@@ -101893,7 +101899,7 @@ tnZ
 maR
 iMQ
 dCE
-tgB
+kiH
 wpj
 oWN
 bAk
