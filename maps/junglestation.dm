@@ -7,7 +7,6 @@
 	nameShort = "Jungle"
 	nameLong = "Jungle Station"
 	map_dir = "junglestation"
-	file_dir = "tgstation"
 	zAsteroid = 4
 	zMainStation = 1
 	zCentcomm = 3
