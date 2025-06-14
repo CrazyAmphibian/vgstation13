@@ -5,7 +5,7 @@
 	icon_living="dino"
 	icon_dead="dino_dead"
 	icon_state="dino"
-	faction = "dinosaur"
+	faction = "jungle"
 	default_icon_floor="dino"
 	default_icon_space="dino"
 	speak = list("boom boom.","acka lacka","lacka boom")

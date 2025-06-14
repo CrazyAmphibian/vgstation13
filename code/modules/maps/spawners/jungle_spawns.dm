@@ -1,11 +1,9 @@
 //things that try to kill you.
 var/list/junglemobs_hostile=list(
-	/mob/living/simple_animal/hostile/giant_spider,
-	/mob/living/simple_animal/hostile/giant_spider/hunter,
-	// /mob/living/simple_animal/hostile/giant_spider/nurse, turns out this makes fuckloads of queen spiders everywhere. oops.
+	/mob/living/simple_animal/hostile/giant_spider/jungle,
 	/mob/living/simple_animal/hostile/bear/dinosaur,
 	/mob/living/simple_animal/hostile/bear/panther,
-	/mob/living/simple_animal/hostile/bear/brownbear,
+	/mob/living/simple_animal/hostile/bear/brownbear/jungle,
 )
 
 //things that could kill you

@@ -8,7 +8,7 @@
 	emote_hear = list("rawrs","grumbles","grawls","hisses")
 	icon_dead="panther_dead"
 	icon_state="panther"
-	faction = "meow"
+	faction = "jungle"
 	default_icon_floor="panther"
 	default_icon_space="panther"
 	failed_geometry_class=TRUE

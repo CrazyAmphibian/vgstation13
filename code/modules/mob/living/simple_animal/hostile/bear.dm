@@ -96,6 +96,9 @@
 /mob/living/simple_animal/hostile/bear/brownbear/get_butchering_products()
 	return list(/datum/butchering_product/skin/bear/brownbear, /datum/butchering_product/teeth/lots)
 
+/mob/living/simple_animal/hostile/bear/brownbear/jungle
+	faction="jungle"
+
 /mob/living/simple_animal/hostile/bear/polarbear
 	name = "space polar bear"
 	desc = "You'd think that space would be considered cold enough for regular space bears, well these are adapted for even colder climates!"
