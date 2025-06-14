@@ -8,10 +8,10 @@
 
 
 /obj/structure/closet/jungle_first_aid/atoms_to_spawn()
-	return list(
-		/obj/item/weapon/storage/firstaid/regular = 3,
-		/obj/item/weapon/storage/firstaid/fire = 1,
-		/obj/item/weapon/storage/firstaid/toxin = 2,
-		/obj/item/weapon/storage/firstaid/vox = 1,
-		
+	var/list/tospawn = list(
+		/obj/item/weapon/storage/firstaid/regular = 1,
+		/obj/item/weapon/storage/firstaid/toxin = 1,
 	)
+	if(prob(50))
+		tospawn[/obj/item/weapon/storage/firstaid/regular]=2
+	return tospawn
