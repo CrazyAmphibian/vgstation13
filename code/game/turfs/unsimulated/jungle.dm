@@ -536,6 +536,19 @@ var/list/foliage_replacments=list(
 	return
 
 
+/turf/unsimulated/floor/jungle/worldborder
+	density=TRUE
+	opacity=TRUE
+	name="Strangely hard and tall rock"
+	desc="you cannot go this way..."
+	icon='icons/turf/walls.dmi'
+	icon_state="rock"
+	
+/turf/unsimulated/floor/jungle/worldborder/ex_act(severity)	
+	return
+/turf/unsimulated/floor/jungle/worldborder/attackby(obj/item/C as obj, mob/user as mob)
+	return
+
 #undef T_JUNGLE
 #undef JUNGLE_PRESSURE
 #undef MOLES_JUNGLE_STD
