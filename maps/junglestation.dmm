@@ -1528,6 +1528,9 @@
 	pixel_y = 3
 	},
 /obj/structure/table,
+/obj/machinery/light_switch{
+	pixel_x = 28
+	},
 /turf/simulated/floor{
 	icon_state = "carpet"
 	},
@@ -4236,6 +4239,10 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
+"bPW" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/engine,
+/area/science/xenobiology/specimen_4)
 "bQi" = (
 /obj/machinery/door/unpowered/shuttle,
 /turf/simulated/floor/shuttle{
@@ -5425,6 +5432,9 @@
 "coc" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/melee/chainofcommand,
+/obj/machinery/light_switch{
+	pixel_y = -28
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "coo" = (
@@ -5498,6 +5508,9 @@
 /area/chapel/main)
 "cpQ" = (
 /obj/structure/filingcabinet/chestdrawer,
+/obj/machinery/light_switch{
+	pixel_y = -28
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -18528,6 +18541,9 @@
 "hTL" = (
 /obj/structure/table,
 /obj/item/weapon/paper/monitorkey,
+/obj/machinery/light_switch{
+	pixel_x = 28
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "checker";
@@ -19939,6 +19955,12 @@
 	icon_state = "white"
 	},
 /area/science/hallway)
+"iBc" = (
+/obj/machinery/light_switch{
+	pixel_x = 28
+	},
+/turf/simulated/floor,
+/area/teleporter)
 "iBy" = (
 /turf/simulated/floor{
 	icon_state = "white"
@@ -21429,6 +21451,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	pixel_x = 28
+	},
 /turf/simulated/floor,
 /area/crew_quarters/hop)
 "jgf" = (
@@ -22714,6 +22739,14 @@
 	icon_state = "white"
 	},
 /area/centcom/test)
+"jJX" = (
+/obj/machinery/light_switch{
+	pixel_y = 28
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/science/xenobiology)
 "jJY" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 25
@@ -22765,6 +22798,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor,
 /area/research_outpost/entry)
+"jLO" = (
+/obj/machinery/light_switch{
+	pixel_y = 27
+	},
+/turf/simulated/floor,
+/area/science/chargebay)
 "jLX" = (
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
@@ -23517,14 +23556,9 @@
 	},
 /area/engineering/reactor_room)
 "kcD" = (
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -23
-	},
-/turf/simulated/floor{
-	icon_state = "white"
-	},
-/area/science/telescience)
+/obj/machinery/light/small,
+/turf/simulated/floor/engine,
+/area/science/xenobiology/specimen_1)
 "kcJ" = (
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
@@ -25876,6 +25910,10 @@
 	},
 /turf/simulated,
 /area/security/warden)
+"lhX" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/engine,
+/area/science/xenobiology/specimen_3)
 "lif" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
@@ -31958,6 +31996,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	pixel_x = 28
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -32274,6 +32315,9 @@
 /obj/machinery/camera{
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	pixel_y = -28
+	},
 /turf/simulated/floor{
 	icon_state = "whitepurple"
 	},
@@ -32490,6 +32534,13 @@
 	icon_state = "rockvault"
 	},
 /area/vox_trading_post/trade_processing)
+"nWq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/light_switch{
+	pixel_y = 28
+	},
+/turf/simulated/floor,
+/area/science/hallway)
 "nWJ" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -42507,6 +42558,16 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
+"sls" = (
+/obj/machinery/light_switch{
+	pixel_y = -28
+	},
+/turf/simulated/floor{
+	dir = 1;
+	icon_state = "dark brown stripe";
+	tag = "icon-dark brown stripe (NORTH)"
+	},
+/area/construction/mommi_nest)
 "slM" = (
 /turf/simulated/wall/r_wall,
 /area/tcomms/storage)
@@ -45749,6 +45810,10 @@
 	icon_state = "carpet3-0"
 	},
 /area/chapel/main)
+"tGz" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/engine,
+/area/science/xenobiology/specimen_2)
 "tGE" = (
 /obj/machinery/light{
 	dir = 8
@@ -46081,6 +46146,9 @@
 	dir = 4
 	},
 /obj/machinery/light,
+/obj/machinery/light_switch{
+	pixel_y = -28
+	},
 /turf/simulated/floor,
 /area/science/shuttlebay)
 "tNs" = (
@@ -48844,6 +48912,9 @@
 	pixel_y = 7
 	},
 /obj/machinery/light,
+/obj/machinery/light_switch{
+	pixel_y = -28
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -50623,6 +50694,7 @@
 /area/engineering/engine)
 "vKL" = (
 /mob/living/carbon/slime,
+/obj/machinery/light/small,
 /turf/simulated/floor/engine,
 /area/science/xenobiology/specimen_5)
 "vKT" = (
@@ -52141,6 +52213,10 @@
 	temperature = 323
 	},
 /area/surface/jungle/zoned/outdoor_bar)
+"wwj" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/engine,
+/area/science/xenobiology/specimen_6)
 "wwo" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
@@ -54483,6 +54559,10 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -23
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -55245,6 +55325,9 @@
 /area/shuttle/specops/centcom)
 "xLR" = (
 /obj/structure/flora/pottedplant/random,
+/obj/machinery/light_switch{
+	pixel_x = 28
+	},
 /turf/simulated/floor/wood,
 /area/bridge/meeting_room)
 "xLV" = (
@@ -129827,7 +129910,7 @@ dsG
 uyE
 gAa
 ccs
-gBg
+sls
 iVX
 lbJ
 gaB
@@ -130217,7 +130300,7 @@ lXe
 rYt
 tvl
 mSW
-hWk
+iBc
 hWk
 unZ
 nZS
@@ -130893,7 +130976,7 @@ gDI
 jjb
 cpQ
 lKg
-gSB
+jLO
 vTG
 fvy
 bka
@@ -133002,7 +133085,7 @@ sDg
 qWQ
 vNg
 soF
-uTJ
+nWq
 uTJ
 uTJ
 uTJ
@@ -135098,15 +135181,15 @@ lIK
 lrQ
 aFo
 gzK
-rHY
+lhX
 lrQ
 eBZ
 old
-old
+tGz
 mBi
 iIK
 iLp
-iLp
+kcD
 sUd
 lPY
 mLW
@@ -136148,7 +136231,7 @@ lIK
 lIK
 lIK
 vQw
-vza
+jJX
 vza
 vza
 dSF
@@ -136531,7 +136614,7 @@ fJG
 kOU
 vaT
 xtL
-kcD
+lSb
 lml
 lSb
 dYE
@@ -139322,7 +139405,7 @@ lIK
 afN
 gmH
 jNT
-jNT
+wwj
 uQw
 tXe
 cPx
@@ -139330,7 +139413,7 @@ vKL
 uQw
 wjP
 bcB
-bcB
+bPW
 jhf
 wld
 wld
