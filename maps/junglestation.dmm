@@ -30437,7 +30437,8 @@
 /obj/machinery/air_sensor{
 	frequency = 1441;
 	id_tag = "sme_sensor";
-	metrics_monitored = list("pressure", "temperature", "oxygen", "plasma", "nitrogen", "carbon_dioxide")
+	metrics_monitored = list("pressure", "temperature", "oxygen", "plasma", "nitrogen", "carbon_dioxide");
+	layer = 1
 	},
 /obj/effect/decal/warning_stripes{
 	icon_state = "unloading"
@@ -47874,6 +47875,17 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle/zoned/outdoor_bar)
+"tzp" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/medical/sleeper)
 "tzS" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor{
@@ -50793,17 +50805,6 @@
 	},
 /turf/simulated/floor,
 /area/research_outpost/entry)
-"uPk" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor{
-	icon_state = "white"
-	},
-/area/medical/sleeper)
 "uPq" = (
 /obj/structure/bed/chair/wood/normal,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
@@ -119977,7 +119978,7 @@ pcA
 twF
 cBN
 xrO
-uPk
+tzp
 sRv
 xOd
 wpm
