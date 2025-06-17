@@ -140,9 +140,9 @@ Basically, you are going to overwrite the flags.
 		var/chroma_b=0.0
 		var/chroma_r=0.0
 		
-		//orbit 1: fast, red dwarf:: roughly 20 minutes, red-orange colors.
+		//orbit 1: fast, red dwarf:: roughly 33 minutes, red-orange colors.
 		//this is the primary star we are orbiting, so it's fairly simple
-		var/power=max(0.0,sin(solartime*18.0))
+		var/power=max(0.0,sin(solartime*27.0))
 		
 		luma+=0.8*power //red dwarves are weak stars.
 		chroma_r+=0.60*power //they also would give off fuckhuge solar flares.
@@ -150,7 +150,7 @@ Basically, you are going to overwrite the flags.
 	
 	
 		//orbit 2: slow, blue giant. more distant, but more power. i hope you brought sunscreen.
-		power=max(0.0,sin(solartime*6.124+12.423)) // a bit under 1 hour. a bit of offset, too.
+		power=max(0.0,sin(solartime*9.186+12.423)) // about 90 minutes. a bit of offset, too.
 		luma+=1.25*power
 		chroma_r-=0.20*power
 		chroma_b+=0.75*power
