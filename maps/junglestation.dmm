@@ -757,12 +757,10 @@
 	},
 /area/hydroponics)
 "aoI" = (
-/obj/structure/window/reinforced{
-	dir = 8;
-	name = "reinforced one-way window";
-	one_way = 1
-	},
 /obj/machinery/vending/engivend,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/simulated/floor,
 /area/engineering/engine)
 "apc" = (
@@ -1569,10 +1567,14 @@
 /turf/space/transit/east,
 /area)
 "aEz" = (
-/obj/structure/cable/yellow,
 /obj/machinery/air_sensor{
 	id_tag = "tcomms_sensor";
 	metrics_monitored = list("pressure", "temperature", "oxygen", "plasma", "nitrogen", "carbon_dioxide")
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/server,
 /area/tcomms/chamber)
@@ -15694,6 +15696,10 @@
 	pixel_x = -24
 	},
 /obj/machinery/telecomms/server/presets/engineering,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/server,
 /area/tcomms/chamber)
 "glI" = (
@@ -17165,6 +17171,15 @@
 	icon_state = "whitegreen"
 	},
 /area/medical/medbay)
+"gRF" = (
+/obj/machinery/recharge_station,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/construction/mommi_nest)
 "gSc" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	canSpawnMice = 0;
@@ -19072,14 +19087,12 @@
 	},
 /area/centcom/test)
 "hGT" = (
-/obj/structure/window/reinforced{
-	dir = 8;
-	name = "reinforced one-way window";
-	one_way = 1
-	},
 /obj/structure/closet/secure_closet/engineering_welding,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/simulated/floor,
 /area/engineering/engine)
@@ -21542,17 +21555,11 @@
 /turf/simulated/floor,
 /area/teleporter)
 "iKK" = (
-/obj/structure/window/reinforced{
-	name = "reinforced one-way window";
-	one_way = 1;
-	dir = 4
-	},
-/obj/structure/window/reinforced{
+/obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/grille,
-/turf/simulated,
-/area/construction/mommi_nest)
+/turf/simulated/floor/wood,
+/area/library)
 "iLb" = (
 /obj/structure/shuttle/engine/propulsion/right,
 /turf/space,
@@ -24389,6 +24396,9 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 25
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/wood,
 /area/library)
 "jRR" = (
@@ -25012,12 +25022,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/window/reinforced{
-	dir = 8;
-	name = "reinforced one-way window";
-	one_way = 1
-	},
 /obj/machinery/vending/tool,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/simulated/floor,
 /area/engineering/engine)
 "kfF" = (
@@ -35220,15 +35228,9 @@
 	},
 /area/science/hallway)
 "oqo" = (
-/obj/structure/window/reinforced{
-	name = "reinforced one-way window";
-	one_way = 1;
-	dir = 1
-	},
-/obj/structure/window/reinforced,
-/obj/structure/grille,
-/turf/simulated,
-/area/construction/mommi_nest)
+/obj/structure/closet/jungle_first_aid,
+/turf/unsimulated/floor/jungle/grass/no_flora,
+/area/surface/jungle/fenced)
 "oqz" = (
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
 /turf/simulated/floor/vox{
@@ -39426,17 +39428,15 @@
 	d1 = 4;
 	d2 = 8
 	},
-/obj/structure/window/reinforced{
-	dir = 8;
-	name = "reinforced one-way window";
-	one_way = 1
-	},
 /obj/structure/closet/secure_closet/engineering_welding,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/simulated/floor,
 /area/engineering/engine)
@@ -47807,7 +47807,7 @@
 	dir = 1
 	},
 /obj/structure/closet/jungle_first_aid,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/jungle/grass/no_flora,
 /area/surface/jungle/fenced)
 "txP" = (
 /obj/structure/sign/securearea{
@@ -100240,7 +100240,7 @@ wld
 wld
 wld
 wld
-ndk
+oqo
 rIU
 mNu
 oJc
@@ -118540,7 +118540,7 @@ qhG
 qhG
 wDw
 wDw
-wDw
+qhG
 wDw
 wDw
 qhG
@@ -118892,7 +118892,7 @@ qhG
 rXq
 mpz
 jfO
-mpz
+iKK
 trS
 mpz
 lis
@@ -132578,7 +132578,7 @@ lIK
 lIK
 lIK
 lIK
-oqo
+gLf
 viu
 uus
 adO
@@ -132930,7 +132930,7 @@ lIK
 lIK
 lIK
 lIK
-oqo
+gLf
 viu
 uus
 dsG
@@ -133282,8 +133282,8 @@ lIK
 lIK
 lIK
 lIK
-oqo
-viu
+gLf
+gRF
 uus
 dsG
 ixG
@@ -133634,7 +133634,7 @@ lIK
 lIK
 lIK
 lIK
-oqo
+gLf
 viu
 uus
 dsG
@@ -133986,7 +133986,7 @@ lIK
 lIK
 lIK
 lIK
-oqo
+gLf
 mVO
 xWe
 mwn
@@ -134339,9 +134339,9 @@ lIK
 pjM
 lIK
 gLf
-iKK
-iKK
-iKK
+gLf
+gLf
+gLf
 dMN
 dMN
 dMN
@@ -138968,7 +138968,7 @@ kep
 mYY
 wPe
 wPe
-ndk
+oqo
 wld
 wld
 xor
