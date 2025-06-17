@@ -2498,6 +2498,7 @@
 /area/security/brig)
 "aXT" = (
 /obj/machinery/computer/diseasesplicer,
+/obj/machinery/light,
 /turf/simulated/floor{
 	icon_state = "whitegreen"
 	},
@@ -14975,6 +14976,17 @@
 	icon_state = "dark"
 	},
 /area/science/server)
+"fXg" = (
+/mob/living/carbon/monkey,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "vault";
+	tag = "icon-vault (NORTHEAST)"
+	},
+/area/medical/virology)
 "fXH" = (
 /turf/simulated/floor{
 	dir = 1;
@@ -16925,6 +16937,10 @@
 /area/science/robotics)
 "gMd" = (
 /obj/structure/table,
+/obj/machinery/light/small{
+	dir = 8;
+	flickering = 1
+	},
 /turf/simulated/floor,
 /area/medical/virology)
 "gMk" = (
@@ -27186,6 +27202,17 @@
 /obj/machinery/igniter,
 /turf/simulated/floor,
 /area/tdome)
+"lfq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/medical/sleeper)
 "lfB" = (
 /obj/structure/cable/orange{
 	icon_state = "4-8";
@@ -39169,6 +39196,9 @@
 /area/storage/tech)
 "pYz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -46956,6 +46986,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor{
 	dir = 1;
 	icon_state = "whitegreen"
@@ -47875,17 +47908,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle/zoned/outdoor_bar)
-"tzp" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor{
-	icon_state = "white"
-	},
-/area/medical/sleeper)
 "tzS" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor{
@@ -50805,6 +50827,16 @@
 	},
 /turf/simulated/floor,
 /area/research_outpost/entry)
+"uPk" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor{
+	dir = 4;
+	icon_state = "whitegreen"
+	},
+/area/medical/sleeper)
 "uPq" = (
 /obj/structure/bed/chair/wood/normal,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
@@ -119978,7 +120010,7 @@ pcA
 twF
 cBN
 xrO
-tzp
+lfq
 sRv
 xOd
 wpm
@@ -120331,7 +120363,7 @@ rev
 qZg
 qZg
 jmF
-qZg
+uPk
 rSe
 cWF
 jFN
@@ -122795,7 +122827,7 @@ viU
 dKH
 nqp
 nqp
-nqp
+fXg
 nqp
 nIP
 gMd
@@ -131857,7 +131889,7 @@ jAP
 wmy
 yaH
 jAP
-ndk
+oqo
 psY
 wld
 iVX
