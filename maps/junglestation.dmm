@@ -14975,9 +14975,6 @@
 	icon_state = "dark"
 	},
 /area/science/server)
-"fXg" = (
-/turf/unsimulated/floor/jungle/grass,
-/area/medical/virology)
 "fXH" = (
 /turf/simulated/floor{
 	dir = 1;
@@ -23043,6 +23040,11 @@
 	dir = 8;
 	initialize_directions = 11
 	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor{
 	dir = 4;
 	icon_state = "whitegreen"
@@ -27184,10 +27186,6 @@
 /obj/machinery/igniter,
 /turf/simulated/floor,
 /area/tdome)
-"lfq" = (
-/obj/structure/ladder/jungle_tunnel/mapped,
-/turf/unsimulated/floor/jungle/dirt,
-/area/medical/virology)
 "lfB" = (
 /obj/structure/cable/orange{
 	icon_state = "4-8";
@@ -43735,11 +43733,6 @@
 	},
 /area/shuttle/escape/centcom)
 "rSe" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
 	},
@@ -47881,20 +47874,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle/zoned/outdoor_bar)
-"tzp" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor{
-	icon_state = "white"
-	},
-/area/medical/sleeper)
 "tzS" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor{
@@ -50815,7 +50794,15 @@
 /turf/simulated/floor,
 /area/research_outpost/entry)
 "uPk" = (
-/turf/unsimulated/floor/jungle/grass,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
 /area/medical/sleeper)
 "uPq" = (
 /obj/structure/bed/chair/wood/normal,
@@ -119990,9 +119977,9 @@ pcA
 twF
 cBN
 xrO
-xrO
-xrO
-tzp
+uPk
+sRv
+xOd
 wpm
 sRv
 qar
@@ -128076,15 +128063,15 @@ pIX
 pIX
 pIX
 pIX
-uPk
-uPk
-uPk
-uPk
-uPk
-uPk
-fXg
-fXg
-lfq
+wld
+wld
+wld
+wld
+wld
+wld
+wld
+wld
+quU
 dKH
 nIP
 nIP
