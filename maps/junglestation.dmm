@@ -2129,6 +2129,7 @@
 /obj/item/weapon/folder/red,
 /obj/item/weapon/pen,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/recharger,
 /turf/simulated/floor,
 /area/security/main)
 "aRn" = (
@@ -20576,6 +20577,9 @@
 	pixel_x = -2;
 	pixel_y = -1
 	},
+/obj/machinery/recharger{
+	pixel_y = 11
+	},
 /turf/simulated/floor,
 /area/mine/eva)
 "inX" = (
@@ -34907,6 +34911,9 @@
 	dir = 1;
 	on = 1
 	},
+/obj/machinery/vending/medical{
+	pixel_x = -2
+	},
 /turf/simulated/floor{
 	icon_state = "whitegreen"
 	},
@@ -36566,6 +36573,7 @@
 /obj/structure/table,
 /obj/item/weapon/folder/red,
 /obj/item/weapon/pen,
+/obj/machinery/recharger,
 /turf/simulated/floor{
 	dir = 4;
 	icon_state = "red"
@@ -44889,9 +44897,6 @@
 /turf/simulated/floor,
 /area/engineering/atmos)
 "sox" = (
-/obj/machinery/vending/medical{
-	pixel_x = -2
-	},
 /obj/machinery/light{
 	dir = 8
 	},
@@ -51893,6 +51898,7 @@
 	},
 /area/tcomms/storage)
 "viU" = (
+/obj/machinery/smartfridge/bloodbank/filled,
 /turf/simulated/floor{
 	icon_state = "whitegreen"
 	},
