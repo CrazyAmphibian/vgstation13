@@ -48457,16 +48457,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/atmos)
-"tLZ" = (
-/obj/structure/window/reinforced{
-	name = "reinforced one-way window";
-	one_way = 1;
-	dir = 1
-	},
-/obj/structure/window/reinforced,
-/obj/structure/grille,
-/turf/simulated,
-/area/crew_quarters/sleep)
 "tMe" = (
 /obj/structure/table,
 /obj/item/device/robotanalyzer,
@@ -129747,7 +129737,7 @@ lIK
 lIK
 lIK
 lIK
-tLZ
+jAP
 bWb
 csj
 jAP
@@ -130099,7 +130089,7 @@ lIK
 lIK
 lIK
 lIK
-tLZ
+jAP
 xvk
 xvk
 krS
@@ -130451,7 +130441,7 @@ lIK
 lIK
 lIK
 lIK
-tLZ
+jAP
 aKk
 aKk
 jAP
