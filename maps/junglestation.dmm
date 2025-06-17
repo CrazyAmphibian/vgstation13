@@ -55088,6 +55088,14 @@
 	},
 /turf/simulated/floor,
 /area/science/hallway)
+"wxJ" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 4
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/medical/sleeper)
 "wxT" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
@@ -123165,7 +123173,7 @@ vbp
 iuS
 xOd
 wpm
-qar
+wxJ
 oiR
 dKH
 aeN
@@ -125272,7 +125280,7 @@ cGl
 jrq
 fup
 fFG
-sRS
+xfJ
 vzk
 oIh
 nqQ
@@ -125624,7 +125632,7 @@ pIX
 pIX
 pIX
 geE
-xfJ
+sRS
 dgu
 nqQ
 nqQ
