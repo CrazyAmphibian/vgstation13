@@ -21,6 +21,7 @@
 	intact=0
 	var/DIGGING_BLOCKED = null // null = you can dig upwards when underground. otherwise, it's a string which is displayed to the user when they try to.
 	var/plated_icon_override=null //used for the name plaque. NT COLONY Γ 8. in case you were wondering what font it uses: Liberation Sans Regular, 24pt. use two layers. one is #343434 and is above another that is #767676, offset by 1 pixel x and y.
+	var/construction_allowed=FALSE //if we can add lattices and turn this into plating
 
 
 /turf/unsimulated/floor/jungle/ChangeTurf(var/turf/N, var/tell_universe=1, var/force_lighting_update = 0, var/allow = 1)
@@ -30,7 +31,6 @@
 		var/turf/T=.
 		if(istype(T,/turf/unsimulated/floor/jungle))
 			var/turf/unsimulated/floor/jungle/JT=T
-			world.log << "[former_icoover]"
 			JT.plated_icon_override=former_icoover
 			if(former_icoover && istype(T,/turf/unsimulated/floor/jungle/path_plated))
 				JT.icon_state=former_icoover
@@ -57,8 +57,60 @@
 	if(istype(C,/obj/item/weapon/kitchen/utensil/spoon) || istype(C,/obj/item/weapon/kitchen/utensil/spork))  //see above
 		return 0.1
 	return 0.0	
-	
 
+//shared construction code.
+/turf/unsimulated/floor/jungle/attackby(obj/item/C as obj, mob/user as mob)
+	if(!C || !user)
+		return FALSE
+	for(var/obj/structure/flora/F in contents)
+		return ..()
+		return FALSE
+	if(!construction_allowed)
+		return FALSE
+	
+	if(C.type== /obj/item/stack/tile/metal) // lattice -> plating
+		var/obj/item/stack/tile/T = C
+		if(T.use(1))
+			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
+			for(var/obj/structure/lattice/L in contents)
+				if(L.type!=/obj/structure/lattice) //catches wood latices
+					return TRUE //return true to prevent us adding plating to pathes since they both use metal tiles
+				qdel(L)
+				ChangeTurf(/turf/simulated/floor/plating)
+				remove_paint_overlay()
+				update_icon()
+				update_paint_overlay()
+				levelupdate()
+				return TRUE
+	if(C.type==/obj/item/stack/rods) //add latice
+		for(var/obj/structure/lattice/L in contents)
+			to_chat(user, "<span class='notice'>There's already a lattice here</span>")
+			return FALSE
+		var/obj/item/stack/rods/R=C
+		if(R.use(1))
+			new/obj/structure/lattice(src)
+			return TRUE
+	if(C.type== /obj/item/stack/tile/wood) // wood lattice -> wood plating
+		var/obj/item/stack/tile/T = C
+		if(T.use(1))
+			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
+			for(var/obj/structure/lattice/wood/L in contents)
+				qdel(L)
+				ChangeTurf(/turf/simulated/floor/plating/deck/airless)
+				remove_paint_overlay()
+				update_icon()
+				update_paint_overlay()
+				levelupdate()
+				return TRUE
+	if(C.type==/obj/item/stack/sheet/wood) //add wood latice
+		for(var/obj/structure/lattice/L in contents)
+			to_chat(user, "<span class='notice'>There's already a lattice here</span>")
+			return FALSE
+		var/obj/item/stack/sheet/wood/W=C
+		if(W.use(1))
+			new/obj/structure/lattice/wood(src)
+			return TRUE				
+	return ..()
 
 var/list/foliage_choices=list(
 /obj/structure/flora/ausbushes,
@@ -89,6 +141,7 @@ var/list/foliage_replacments=list(
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "grass_alt1"
 	turf_speed_multiplier=1.1 // tall grass.
+	construction_allowed=TRUE
 	
 /turf/unsimulated/floor/jungle/grass/New(var/loc,var/NO_GROW=FALSE)
 	..()
@@ -133,7 +186,7 @@ var/list/foliage_replacments=list(
 		to_chat(user, "<span class='notice'>You start breaking up the soil</span>")
 		if(do_after(user, src, 20/s ))
 			ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
-			new /obj/item/stack/tile/grass(src,1)
+			new /obj/item/stack/tile/grass(src,1)	
 	
 	
 /turf/unsimulated/floor/jungle/grass/ex_act(severity)	
@@ -193,6 +246,7 @@ var/list/foliage_replacments=list(
 	desc="A mixture of sediments, clays, and decomposed matter."
 	icon_state = "ironsand1"
 	var/obj/structure/ladder/jungle_tunnel/hashole=null
+	construction_allowed=TRUE
 
 /turf/unsimulated/floor/jungle/dirt/examine()
 	..()
@@ -200,6 +254,7 @@ var/list/foliage_replacments=list(
 		to_chat(usr,"there's a hole leading underground.")
 
 /turf/unsimulated/floor/jungle/dirt/attackby(obj/item/C as obj, mob/user as mob)
+	..()
 	if(!C || !user)
 		return 0
 	if(C.type== /obj/item/stack/tile/grass && !hashole)
@@ -248,23 +303,17 @@ var/list/foliage_replacments=list(
 	name="Compressed Dirt"
 	desc="Soil which has been pressed down into a hard, smooth surface."
 	icon='icons/turf/floors.dmi'
-	icon_state = "asteroid0"	
+	icon_state = "asteroid0"
+	construction_allowed=TRUE
 
 /turf/unsimulated/floor/jungle/path/attackby(obj/item/C as obj, mob/user as mob)
+	.=..()
 	if(!C || !user)
 		return 0
-	if(C.type== /obj/item/stack/tile/metal)
+	if(C.type== /obj/item/stack/tile/metal && !.)
 		var/obj/item/stack/tile/T = C
 		if(T.use(1))
 			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
-			for(var/obj/structure/lattice/L in contents)
-				qdel(L)
-				ChangeTurf(/turf/simulated/floor/plating)
-				remove_paint_overlay()
-				update_icon()
-				update_paint_overlay()
-				levelupdate()
-				return
 			ChangeTurf(/turf/unsimulated/floor/jungle/path_plated)
 			plane=TURF_PLANE
 			remove_paint_overlay()
@@ -272,15 +321,6 @@ var/list/foliage_replacments=list(
 			update_paint_overlay()
 			levelupdate()
 			return
-
-	if(C.type==/obj/item/stack/rods)
-		for(var/obj/structure/lattice/L in contents)
-			to_chat(user, "<span class='notice'>There's already a lattice here</span>")
-			return
-		var/obj/item/stack/rods/R=C
-		if(R.use(1))
-			new/obj/structure/lattice(src)
-
 	var/s=0.0
 	s=item_terraforming_ispickaxe(C)
 	if(s>0.0)
@@ -314,6 +354,7 @@ var/list/foliage_replacments=list(
 		icon_state=plated_icon_override
 
 /turf/unsimulated/floor/jungle/path_plated/attackby(obj/item/C as obj, mob/user as mob)
+	..()
 	if(!C || !user)
 		return 0
 	if(iscrowbar(C))
@@ -363,6 +404,7 @@ var/list/foliage_replacments=list(
 	desc="Rocks which have been eroded over countless centuries into a fine powder. A wonderful material for castles!"
 	icon = 'icons/misc/beach.dmi'
 	icon_state = "sand"
+	construction_allowed=TRUE
 	
 	
 /turf/unsimulated/floor/jungle/underground
@@ -434,16 +476,18 @@ var/list/foliage_replacments=list(
 	icon='icons/turf/walls.dmi'
 	icon_state = "mariahive_noanimation"	
 	var/obj/structure/ladder/jungle_tunnel/hashole=null
+	construction_allowed=TRUE
 
 
 /turf/unsimulated/floor/jungle/bedrock/New(var/loc)
 	if(locate(/obj/structure/ladder/jungle_tunnel) in contents)
 		icon_state="mariahive_noanimation_l"
 		
-	if(!cannot_dig_up())
+	if(cannot_dig_up())
 		icon_state="mariahive_noanimation_d"
 
 /turf/unsimulated/floor/jungle/bedrock/attackby(obj/item/C as obj, mob/user as mob)
+	..()
 	if(!C || !user)
 		return 0
 	var/s=0.0

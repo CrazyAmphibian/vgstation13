@@ -2280,9 +2280,7 @@
 /obj/item/device/radio/headset/headset_medsci,
 /obj/item/device/flashlight/pen,
 /obj/structure/window/reinforced{
-	dir = 8;
-	name = "reinforced one-way window";
-	one_way = 1
+	dir = 8
 	},
 /turf/simulated/floor{
 	icon_state = "white"
@@ -9023,6 +9021,9 @@
 	},
 /obj/structure/bed/roller,
 /obj/machinery/iv_drip,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -10868,6 +10869,9 @@
 "elU" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
 	},
 /turf/simulated/floor,
 /area/medical/genetics)
@@ -14976,17 +14980,6 @@
 	icon_state = "dark"
 	},
 /area/science/server)
-"fXg" = (
-/mob/living/carbon/monkey,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
-	},
-/area/medical/virology)
 "fXH" = (
 /turf/simulated/floor{
 	dir = 1;
@@ -21774,9 +21767,6 @@
 /turf/simulated/floor/shuttle/brig,
 /area/shuttle/escape/centcom)
 "iPE" = (
-/obj/structure/window/reinforced{
-	one_way = 1
-	},
 /obj/structure/table,
 /obj/item/weapon/storage/lockbox/diskettebox/open/cloning{
 	pixel_x = 2;
@@ -22255,15 +22245,10 @@
 	},
 /area/centcom/control)
 "iYc" = (
-/obj/structure/window/reinforced{
-	dir = 8;
-	name = "reinforced one-way window";
-	one_way = 1
-	},
-/obj/structure/window/reinforced{
-	one_way = 1
-	},
 /obj/structure/closet/secure_closet/medical1,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -25032,6 +25017,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
 	},
+/obj/machinery/door/window{
+	dir = 1;
+	name = "Monkey Pen";
+	req_access_txt = "9"
+	},
 /turf/simulated/floor,
 /area/medical/genetics)
 "kfy" = (
@@ -27203,14 +27193,13 @@
 /turf/simulated/floor,
 /area/tdome)
 "lfq" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor{
-	icon_state = "white"
+	dir = 4;
+	icon_state = "whitegreen"
 	},
 /area/medical/sleeper)
 "lfB" = (
@@ -31995,9 +31984,16 @@
 /turf/simulated/floor/server,
 /area/science/server)
 "mWt" = (
-/obj/structure/grille/window_spawner/reinforced/full,
-/turf/space,
-/area/bridge)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/medical/sleeper)
 "mWv" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor{
@@ -42308,11 +42304,6 @@
 	},
 /area/centcom/living)
 "rok" = (
-/obj/machinery/door/window{
-	dir = 2;
-	name = "Monkey Pen";
-	req_access_txt = "9"
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
 	},
@@ -43471,9 +43462,6 @@
 /turf/simulated/floor,
 /area/supply/lobby)
 "rJR" = (
-/obj/structure/window/reinforced{
-	one_way = 1
-	},
 /obj/structure/table,
 /turf/simulated/floor{
 	icon_state = "white"
@@ -45112,6 +45100,9 @@
 /obj/structure/closet/secure_closet/personal/patient,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
 	},
 /turf/simulated/floor{
 	icon_state = "white"
@@ -48657,6 +48648,9 @@
 	dir = 8;
 	on = 1
 	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/simulated/floor,
 /area/medical/genetics)
 "tPe" = (
@@ -50828,15 +50822,16 @@
 /turf/simulated/floor,
 /area/research_outpost/entry)
 "uPk" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/mob/living/carbon/monkey,
 /obj/machinery/light{
-	dir = 4
+	dir = 8
 	},
 /turf/simulated/floor{
-	dir = 4;
-	icon_state = "whitegreen"
+	dir = 5;
+	icon_state = "vault";
+	tag = "icon-vault (NORTHEAST)"
 	},
-/area/medical/sleeper)
+/area/medical/virology)
 "uPq" = (
 /obj/structure/bed/chair/wood/normal,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
@@ -54851,9 +54846,6 @@
 /area/medical/medbay)
 "wqd" = (
 /obj/machinery/dna_scannernew,
-/obj/structure/window/reinforced{
-	one_way = 1
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
@@ -120010,7 +120002,7 @@ pcA
 twF
 cBN
 xrO
-lfq
+mWt
 sRv
 xOd
 wpm
@@ -120363,7 +120355,7 @@ rev
 qZg
 qZg
 jmF
-uPk
+lfq
 rSe
 cWF
 jFN
@@ -122827,7 +122819,7 @@ viU
 dKH
 nqp
 nqp
-fXg
+uPk
 nqp
 nIP
 gMd
@@ -135439,9 +135431,9 @@ hhQ
 xIq
 ldM
 gts
-mWt
+lBd
 uFk
-mWt
+lBd
 mSW
 bLU
 efR
