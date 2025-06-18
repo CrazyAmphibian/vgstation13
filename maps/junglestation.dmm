@@ -6373,6 +6373,9 @@
 /area/vox_trading_post/gardens)
 "cwk" = (
 /obj/machinery/computer/secure_data/detective_computer,
+/obj/machinery/camera{
+	dir = 8
+	},
 /turf/simulated/floor{
 	icon_state = "grimy"
 	},
@@ -21504,6 +21507,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	pixel_y = 28
+	},
 /turf/simulated/floor/wood,
 /area/prison/solitary)
 "iCP" = (
@@ -23366,6 +23372,9 @@
 /area/security/warden)
 "joU" = (
 /obj/structure/closet/secure_closet/detective,
+/obj/machinery/light_switch{
+	pixel_x = -24
+	},
 /turf/simulated/floor{
 	icon_state = "grimy"
 	},
@@ -34551,6 +34560,24 @@
 	icon_state = "floor"
 	},
 /area/centcom/ert)
+"nRR" = (
+/obj/effect/decal/warning_stripes{
+	dir = 8;
+	icon_state = "warning";
+	tag = "icon-warning (WEST)"
+	},
+/obj/machinery/deployable/barrier,
+/obj/effect/decal/warning_stripes{
+	icon_state = "bot"
+	},
+/obj/machinery/camera{
+	dir = 4
+	},
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "red"
+	},
+/area/security/armory)
 "nRZ" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -45835,6 +45862,9 @@
 /area/engineering/engine)
 "stc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/camera{
+	dir = 1
+	},
 /turf/simulated/floor{
 	icon_state = "red"
 	},
@@ -46150,6 +46180,19 @@
 	icon_state = "cult"
 	},
 /area/lawoffice)
+"sBf" = (
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	name = "Secure Evidence Closet";
+	req_one_access_txt = "3,4"
+	},
+/obj/machinery/camera{
+	dir = 5
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/security/evidence)
 "sBr" = (
 /obj/structure/table,
 /obj/item/weapon/storage/toolbox/mechanical{
@@ -103480,7 +103523,7 @@ mfl
 kDn
 qYq
 sdQ
-upA
+nRR
 upA
 eVC
 mfl
@@ -105595,7 +105638,7 @@ nXF
 wUP
 vyE
 nTA
-fNh
+sBf
 fNh
 jWF
 lsL
