@@ -486,6 +486,7 @@
 #define BLOBANINE		"blobanine"
 #define BLOB_ESSENCE	"blob_essence"
 #define METHAMPHETAMINE "methamphetamine"
+#define GRUGZONE		"grugzone"
 
 #define TUNGSTEN 			"tungsten"
 #define LITHIUMSODIUMTUNGSTATE 			"lithiumsodiumtungstate"

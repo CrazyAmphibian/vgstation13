@@ -4,5 +4,5 @@
 	name = "wild capybara"
 	desc = "The capybara is the largest of the rodents. This one is unaccustomed to human contact."
 	stop_automated_movement_when_pulled=0 //no dragging this capy.
-	turns_per_move=4 //he's a fast boy (so it's harder to cheese vaults with it.)
+	turns_per_move=2 //he's a fast boy (so it's harder to cheese vaults with it.)
 	rest_time = 10 SECONDS //no rest for the wicked

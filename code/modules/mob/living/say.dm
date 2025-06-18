@@ -533,6 +533,20 @@ var/list/headset_modes = list(
 		speech.message = stutter(speech.message)
 
 	if (reagents)
+		var/datum/reagent/grugzone/G = reagents.get_reagent_by_type(/datum/reagent/grugzone)
+		if(G)
+			speech.message = replacetext(speech.message,"the ","") // me no use good gramar!
+			speech.message = replacetext(speech.message,"i ","me ")
+			speech.message = replacetext(speech.message," i"," me")
+			speech.message = replacetext(speech.message," i "," me ")
+			speech.message = replacetext(speech.message,"i'm","me")
+			speech.message = replacetext(speech.message,"im","me")
+			speech.message = replacetext(speech.message,"don't","no")
+			speech.message = replacetext(speech.message,"dont","no")
+			speech.message = replacetext(speech.message,"went","go")
+			speech.message = replacetext(speech.message,"is ","")
+			speech.message = replacetext(speech.message,"are ","")
+			
 		var/datum/reagent/hyperzine/H = reagents.get_reagent_by_type(/datum/reagent/hyperzine)//also checks for hyperzine subtypes like cocaine etc
 		if (H && (H.data != "no motor mouth"))
 			speech.message = replacetext(speech.message," ","") // motor mouth

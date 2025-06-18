@@ -2981,6 +2981,14 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
+"bhR" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/science/telescience)
 "bic" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/table,
@@ -4836,8 +4844,8 @@
 	},
 /area/alien)
 "bWu" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 1
 	},
 /turf/simulated/floor{
 	icon_state = "white"
@@ -9578,7 +9586,6 @@
 /obj/machinery/door/airlock/glass_medical{
 	id_tag = "MedbayFoyerL";
 	name = "Break Area";
-	req_access_dir = 2;
 	req_access_txt = "5";
 	normalspeed = 0
 	},
@@ -12447,6 +12454,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/machinery/portable_atmospherics/canister,
 /turf/simulated/floor{
 	dir = 4;
 	icon_state = "whitepurple"
@@ -22919,6 +22927,12 @@
 	icon_state = "dark"
 	},
 /area/security/armory)
+"jiA" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/turf/simulated/floor/engine,
+/area/science/telescience)
 "jiQ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -29068,8 +29082,6 @@
 "lLx" = (
 /obj/structure/closet/secure_closet/vault/armory,
 /obj/item/toy/gasha/wizard,
-/obj/item/clothing/suit/armor/xcomarmor,
-/obj/item/weapon/gun/energy/laser/rifle,
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1;
 	on = 1
@@ -29077,6 +29089,17 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/item/ammo_storage/box/c38,
+/obj/item/ammo_storage/box/c38,
+/obj/item/ammo_storage/box/c38,
+/obj/item/weapon/gun/projectile/hecate/hunting{
+	pixel_y = 7
+	},
+/obj/item/weapon/gun/projectile/hecate/hunting,
+/obj/item/weapon/gun/projectile/hecate/hunting{
+	pixel_y = -9
+	},
+/obj/item/clothing/head/bearpelt/brown/real,
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "dark-markings"
@@ -29422,6 +29445,12 @@
 	},
 /area/surface/jungle)
 "lSb" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 1
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -30257,6 +30286,15 @@
 /obj/machinery/telecomms/processor/preset_four,
 /turf/simulated/floor/server,
 /area/tcomms/chamber)
+"mhU" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "whitepurple"
+	},
+/area/science/telescience)
 "mhX" = (
 /obj/machinery/door/airlock/silver{
 	name = "Dormitories";
@@ -33897,6 +33935,10 @@
 /obj/machinery/light_switch{
 	pixel_x = 28
 	},
+/obj/machinery/atmospherics/unary/portables_connector{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister,
 /turf/simulated/floor{
 	dir = 4;
 	icon_state = "whitepurple"
@@ -34161,6 +34203,17 @@
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
+"nQu" = (
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Research Director's Desk";
+	departmentType = 5;
+	name = "Research Director RC";
+	pixel_x = -2;
+	pixel_y = 30
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/sleep)
 "nQA" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1;
@@ -35257,6 +35310,15 @@
 "omk" = (
 /turf/simulated/wall/r_wall,
 /area/engineering/atmos_control)
+"oms" = (
+/obj/structure/railing/wood{
+	dir = 1
+	},
+/obj/item/weapon/stool/piano{
+	dir = 8
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle/zoned/outdoor_bar)
 "omC" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -35543,9 +35605,6 @@
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/vault)
 "otW" = (
-/obj/machinery/atmospherics/unary/portables_connector{
-	dir = 4
-	},
 /turf/simulated/floor{
 	dir = 4;
 	icon_state = "whitepurple"
@@ -35878,6 +35937,11 @@
 /obj/item/device/gps/science,
 /obj/item/device/gps/science,
 /obj/item/device/gps/science,
+/obj/machinery/ignition_switch{
+	id_tag = "Xenobio";
+	pixel_x = -22;
+	pixel_y = 11
+	},
 /turf/simulated/floor{
 	dir = 10;
 	icon_state = "whitepurple"
@@ -39066,6 +39130,13 @@
 	icon_state = "floor"
 	},
 /area/centcom/striketeam)
+"pRi" = (
+/obj/structure/grille/window_spawner/reinforced_plasma,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/engine,
+/area/science/telescience)
 "pRw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor{
@@ -46517,6 +46588,21 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/outdoor_bar)
+"sVd" = (
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Research Director's Desk";
+	departmentType = 5;
+	name = "Research Director RC";
+	pixel_x = -2;
+	pixel_y = 30
+	},
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "checker";
+	tag = "icon-checker (NORTHEAST)"
+	},
+/area/science/rd)
 "sVi" = (
 /obj/effect/decal/warning_stripes{
 	icon_state = "bot"
@@ -47527,8 +47613,9 @@
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
 "tmT" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 1;
+	initialize_directions = 11
 	},
 /turf/simulated/floor{
 	icon_state = "white"
@@ -52055,6 +52142,15 @@
 	},
 /turf/simulated/floor/shuttle,
 /area/shuttle/transport1/centcom)
+"vhf" = (
+/obj/machinery/door_control{
+	id_tag = "entergatelockext";
+	name = "gate lockdown";
+	pixel_y = 10;
+	pixel_x = 23
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "vhg" = (
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 1
@@ -53255,13 +53351,11 @@
 	},
 /area/engineering/antimatter_room)
 "vEg" = (
-/obj/machinery/door/window{
-	base_state = "right";
+/obj/machinery/door/window/plasma/secure{
 	name = "Test Chamber";
 	req_access_txt = "47"
 	},
-/obj/machinery/door/window{
-	base_state = "right";
+/obj/machinery/door/window/plasma/secure{
 	name = "Test Chamber";
 	req_access_txt = "47";
 	dir = 8
@@ -54253,6 +54347,9 @@
 "vWO" = (
 /obj/structure/railing/wood{
 	dir = 1
+	},
+/obj/structure/synthesized_instrument/synthesizer{
+	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle/zoned/outdoor_bar)
@@ -98848,7 +98945,7 @@ lIK
 uXL
 uXL
 uXL
-lIK
+vhf
 lIK
 lIK
 lIK
@@ -116800,7 +116897,7 @@ wld
 edD
 edD
 edD
-vWO
+oms
 iXH
 fer
 hAU
@@ -131530,7 +131627,7 @@ lgW
 lgW
 jAP
 lgW
-lgW
+nQu
 jAP
 lgW
 lgW
@@ -136114,7 +136211,7 @@ lIK
 lIK
 lIK
 dMN
-fHS
+sVd
 fHS
 fHS
 rLz
@@ -139302,7 +139399,7 @@ rBi
 dGI
 oMl
 qMo
-qMo
+jiA
 qMo
 oof
 wld
@@ -139654,7 +139751,7 @@ kOU
 dGI
 tHu
 vEg
-uGw
+pRi
 uGw
 oof
 oof
@@ -140004,9 +140101,9 @@ fJG
 kOU
 vaT
 xtL
-kcD
 lml
 kcD
+mhU
 dYE
 ozu
 oof
@@ -140358,7 +140455,7 @@ dMi
 tmT
 lSb
 bWu
-lSb
+bhR
 hcu
 cBE
 oof

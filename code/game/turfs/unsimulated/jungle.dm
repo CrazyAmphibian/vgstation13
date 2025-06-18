@@ -166,7 +166,7 @@ var/list/foliage_replacments=list(
 			if(create)
 				new create(src)
 				turf_speed_multiplier+=0.6
-	else if(prob(20)) //10% overall
+	else if(prob(30)) //15% overall
 		if( !(locate(/obj/structure/flora/tree) in range(2,src)) )
 			new/obj/structure/flora/tree/shitty(src)
 

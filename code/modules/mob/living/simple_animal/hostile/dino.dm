@@ -8,10 +8,17 @@
 	faction = "jungle"
 	default_icon_floor="dino"
 	default_icon_space="dino"
+	maxHealth = 80
+	health = 80
 	speak = list("boom boom.","acka lacka","lacka boom")
+	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/oogabooga 
 	failed_geometry_class=TRUE
 	hates_fast_food=TRUE //return to monke
 	var/walking=FALSE
+
+/mob/living/simple_animal/hostile/bear/dinosaur/get_butchering_products()
+	return list(/datum/butchering_product/teeth/lots)
+
 
 /mob/living/simple_animal/hostile/bear/dinosaur/Life()
 	. =..()
