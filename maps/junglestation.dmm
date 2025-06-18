@@ -1997,6 +1997,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/research_outpost/atmos)
+"aOh" = (
+/obj/structure/fence,
+/obj/structure/fence/corner,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "aOk" = (
 /obj/structure/closet/crate,
 /obj/item/ammo_storage/magazine/c45,
@@ -33307,6 +33312,9 @@
 	icon_state = "white"
 	},
 /area/turret_protected/tcomms_control_room)
+"nre" = (
+/turf/unsimulated/floor/jungle/grass/no_flora,
+/area/surface/jungle/fenced)
 "nrn" = (
 /obj/machinery/atmospherics/unary/cold_sink/freezer{
 	current_temperature = 273
@@ -51881,10 +51889,10 @@
 /turf/unsimulated/wall,
 /area/centcom/ert)
 "uXj" = (
+/obj/structure/fence,
 /obj/structure/fence/corner{
 	dir = 8
 	},
-/obj/structure/fence/corner,
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle)
 "uXt" = (
@@ -99954,8 +99962,8 @@ lWz
 lWz
 lWz
 lWz
-lWz
 uXj
+opc
 uXL
 uXL
 uXL
@@ -100306,8 +100314,8 @@ snf
 snf
 snf
 snf
-snf
 mUo
+jnw
 xor
 xor
 xor
@@ -100658,8 +100666,8 @@ eOA
 eOA
 eOA
 eOA
-eOA
-ecN
+aOh
+vcQ
 xor
 xor
 xor
@@ -101010,7 +101018,7 @@ wld
 wld
 wld
 wld
-oqo
+nre
 rIU
 mNu
 oJc
@@ -116492,7 +116500,7 @@ xor
 wld
 wld
 wld
-wld
+ndk
 rWK
 rWK
 rWK
