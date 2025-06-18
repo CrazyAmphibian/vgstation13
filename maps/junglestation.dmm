@@ -3648,6 +3648,13 @@
 /obj/machinery/camera{
 	dir = 8
 	},
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Chief Medical Officer's Desk";
+	departmentType = 5;
+	name = "Chief Medical Officer RC";
+	pixel_x = 32
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "barber"
@@ -18856,6 +18863,13 @@
 	dir = 1;
 	initialize_directions = 11
 	},
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Chief Medical Officer's Desk";
+	departmentType = 5;
+	name = "Chief Medical Officer RC";
+	pixel_y = 32
+	},
 /turf/simulated/floor{
 	dir = 4;
 	icon_state = "whiteblue"
@@ -29148,6 +29162,11 @@
 /obj/machinery/door/airlock/medical{
 	name = "Operating Theatre";
 	req_access_txt = "45"
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor{
 	icon_state = "freezerfloor"
@@ -56944,7 +56963,9 @@
 	req_access_txt = "26";
 	normalspeed = 0
 	},
-/turf/simulated/wall,
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
 /area/janitor)
 "xiB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
