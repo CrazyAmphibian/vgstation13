@@ -14,7 +14,7 @@ var/list/junglemobs_dangerous=list(
 //things that won't kill you
 var/list/junglemobs_safe=list(
 /mob/living/simple_animal/hostile/lizard/frog,
-/mob/living/simple_animal/parrot,
+/mob/living/simple_animal/parrot/jungle,
 /mob/living/simple_animal/capybara/jungle,
 )
 
