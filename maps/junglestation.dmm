@@ -168,15 +168,6 @@
 	icon_state = "dark"
 	},
 /area/security/warden)
-"acU" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/simulated/floor{
-	dir = 8;
-	icon_state = "whitepurple"
-	},
-/area/science/telescience)
 "acX" = (
 /obj/structure/crematorium{
 	dir = 4
@@ -652,6 +643,9 @@
 /area/crew_quarters/kitchen)
 "amz" = (
 /obj/machinery/camera,
+/obj/structure/closet/secure_closet/brig{
+	name = "Permenant Confinment Locker"
+	},
 /turf/simulated/floor,
 /area/security/perma)
 "amB" = (
@@ -1544,6 +1538,21 @@
 	},
 /turf/simulated/floor,
 /area/mine/eva)
+"aDo" = (
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Research Director's Desk";
+	departmentType = 5;
+	name = "Research Director RC";
+	pixel_x = -2;
+	pixel_y = 30
+	},
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "checker";
+	tag = "icon-checker (NORTHEAST)"
+	},
+/area/science/rd)
 "aDp" = (
 /obj/machinery/processor{
 	desc = "A machine used to seperate a slime's extract from its body";
@@ -5301,6 +5310,15 @@
 	icon_state = "red"
 	},
 /area/security/brig)
+"ceA" = (
+/obj/structure/railing/wood{
+	dir = 1
+	},
+/obj/structure/synthesized_instrument/synthesizer{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle/zoned/outdoor_bar)
 "ceB" = (
 /obj/structure/table,
 /obj/item/stack/cable_coil/random,
@@ -5988,21 +6006,6 @@
 	icon_state = "dark"
 	},
 /area/security/warden)
-"cqJ" = (
-/obj/machinery/requests_console{
-	announcementConsole = 1;
-	department = "Research Director's Desk";
-	departmentType = 5;
-	name = "Research Director RC";
-	pixel_x = -2;
-	pixel_y = 30
-	},
-/turf/simulated/floor{
-	dir = 5;
-	icon_state = "checker";
-	tag = "icon-checker (NORTHEAST)"
-	},
-/area/science/rd)
 "cqN" = (
 /turf/simulated/floor{
 	dir = 8;
@@ -6594,17 +6597,6 @@
 	},
 /turf/simulated/floor,
 /area/research_outpost/hallway)
-"cBu" = (
-/obj/machinery/requests_console{
-	announcementConsole = 1;
-	department = "Research Director's Desk";
-	departmentType = 5;
-	name = "Research Director RC";
-	pixel_x = -2;
-	pixel_y = 30
-	},
-/turf/simulated/floor/wood,
-/area/crew_quarters/sleep)
 "cBE" = (
 /turf/simulated/floor{
 	icon_state = "whitepurple"
@@ -8603,15 +8595,6 @@
 	icon_state = "2-8"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/outdoor_bar)
-"dpL" = (
-/obj/structure/railing/wood{
-	dir = 1
-	},
-/obj/item/weapon/stool/piano{
-	dir = 8
-	},
-/turf/simulated/floor/wood,
 /area/surface/jungle/zoned/outdoor_bar)
 "dqa" = (
 /turf/simulated/floor/wood,
@@ -12637,6 +12620,10 @@
 "eXo" = (
 /turf/simulated/wall,
 /area/medical/sleeper)
+"eXt" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/turf/simulated/floor,
+/area/security/perma)
 "eXu" = (
 /obj/machinery/photocopier,
 /obj/machinery/alarm{
@@ -13885,6 +13872,9 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/structure/closet/secure_closet/brig{
+	name = "Permenant Confinment Locker"
+	},
 /turf/simulated/floor,
 /area/security/perma)
 "fyi" = (
@@ -14453,6 +14443,15 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/zoned/atmos_outside)
+"fJE" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "whitepurple"
+	},
+/area/science/telescience)
 "fJG" = (
 /turf/simulated/floor{
 	icon_state = "whitepurple"
@@ -17190,6 +17189,12 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/wood,
 /area/library)
+"gOY" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/turf/simulated/floor/engine,
+/area/science/telescience)
 "gPg" = (
 /obj/structure/closet/l3closet/virology,
 /obj/machinery/light/small{
@@ -18152,12 +18157,6 @@
 	icon_state = "red"
 	},
 /area/security/prison)
-"hiq" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
-	},
-/turf/simulated/floor/engine,
-/area/science/telescience)
 "hiK" = (
 /obj/machinery/computer/bhangmeter,
 /turf/simulated/floor,
@@ -19631,7 +19630,6 @@
 /turf/simulated/floor,
 /area/medical/virology)
 "hPN" = (
-/obj/structure/table,
 /turf/simulated/floor{
 	icon_state = "whiteyellow"
 	},
@@ -20067,6 +20065,12 @@
 	},
 /turf/simulated/floor,
 /area/engineering/atmos_control)
+"hZp" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	on = 1
+	},
+/turf/simulated/floor,
+/area/security/perma)
 "hZs" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -20266,14 +20270,6 @@
 	icon_state = "dark"
 	},
 /area/maintenance/disposal)
-"idX" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 9
-	},
-/turf/simulated/floor{
-	icon_state = "white"
-	},
-/area/science/telescience)
 "idY" = (
 /obj/mecha/combat/marauder/mauler,
 /turf/unsimulated/floor{
@@ -26877,10 +26873,6 @@
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/trade_processing)
-"kRM" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor,
-/area/security/perma)
 "kSn" = (
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'RADIOACTIVE AREA'";
@@ -32575,6 +32567,10 @@
 	icon_state = "barber"
 	},
 /area/medical/cmo)
+"ndH" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
+/turf/simulated/floor,
+/area/security/perma)
 "nec" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/door/poddoor{
@@ -34412,15 +34408,6 @@
 /obj/item/tool/screwdriver,
 /turf/unsimulated/floor/jungle/bedrock,
 /area/surface/jungle/underground/zoned/ghettosurgery)
-"nUq" = (
-/obj/machinery/door_control{
-	id_tag = "entergatelockext";
-	name = "gate lockdown";
-	pixel_y = 10;
-	pixel_x = 23
-	},
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
 "nUt" = (
 /obj/machinery/computer/arcade,
 /turf/simulated/floor/shuttle,
@@ -43855,10 +43842,6 @@
 	},
 /turf/simulated/floor/engine,
 /area/science/telescience)
-"rLX" = (
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
-/turf/simulated/floor,
-/area/security/perma)
 "rMl" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 9
@@ -44346,6 +44329,14 @@
 	icon_state = "red"
 	},
 /area/security/warden)
+"rVV" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/science/telescience)
 "rWa" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -45404,12 +45395,6 @@
 	icon_state = "dark"
 	},
 /area/security/warden)
-"stf" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	on = 1
-	},
-/turf/simulated/floor,
-/area/security/perma)
 "stl" = (
 /obj/machinery/disease2/diseaseanalyser,
 /turf/simulated/floor{
@@ -50591,6 +50576,17 @@
 	icon_state = "whitepurplecorner"
 	},
 /area/research_outpost/anomaly)
+"uyV" = (
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Research Director's Desk";
+	departmentType = 5;
+	name = "Research Director RC";
+	pixel_x = -2;
+	pixel_y = 30
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/sleep)
 "uzE" = (
 /obj/structure/table,
 /obj/machinery/microwave,
@@ -52001,6 +51997,13 @@
 	icon_state = "dark"
 	},
 /area/maintenance/disposal)
+"veh" = (
+/obj/structure/grille/window_spawner/reinforced_plasma,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/engine,
+/area/science/telescience)
 "vei" = (
 /obj/machinery/alarm/server{
 	dir = 8;
@@ -54352,8 +54355,8 @@
 /obj/structure/railing/wood{
 	dir = 1
 	},
-/obj/structure/synthesized_instrument/synthesizer{
-	dir = 4
+/obj/item/weapon/stool/piano{
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle/zoned/outdoor_bar)
@@ -55259,13 +55262,6 @@
 	},
 /turf/simulated,
 /area/security/warden)
-"wpE" = (
-/obj/structure/grille/window_spawner/reinforced_plasma,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/simulated/floor/engine,
-/area/science/telescience)
 "wqc" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
@@ -56928,6 +56924,15 @@
 	icon_state = "grimy"
 	},
 /area/chapel/office)
+"wXD" = (
+/obj/machinery/door_control{
+	id_tag = "entergatelockext";
+	name = "gate lockdown";
+	pixel_y = 10;
+	pixel_x = 23
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "wXF" = (
 /obj/structure/table,
 /obj/item/device/radio/off,
@@ -98956,7 +98961,7 @@ lIK
 uXL
 uXL
 uXL
-nUq
+wXD
 lIK
 lIK
 lIK
@@ -107085,8 +107090,8 @@ mfl
 amz
 sAk
 bVg
-stf
-rLX
+hZp
+ndH
 qho
 bcD
 wVH
@@ -107434,7 +107439,7 @@ mfl
 mfl
 mfl
 mfl
-kRM
+eXt
 htR
 gNw
 gNw
@@ -116908,7 +116913,7 @@ wld
 edD
 edD
 edD
-dpL
+vWO
 iXH
 fer
 hAU
@@ -117260,7 +117265,7 @@ wld
 edD
 edD
 edD
-vWO
+ceA
 iXH
 fUK
 fUK
@@ -131638,7 +131643,7 @@ lgW
 lgW
 jAP
 lgW
-cBu
+uyV
 jAP
 lgW
 lgW
@@ -136222,7 +136227,7 @@ lIK
 lIK
 lIK
 dMN
-cqJ
+aDo
 fHS
 fHS
 rLz
@@ -139410,7 +139415,7 @@ rBi
 dGI
 oMl
 qMo
-hiq
+gOY
 qMo
 oof
 wld
@@ -139762,7 +139767,7 @@ kOU
 dGI
 tHu
 vEg
-wpE
+veh
 uGw
 oof
 oof
@@ -140114,7 +140119,7 @@ vaT
 xtL
 lml
 kcD
-acU
+fJE
 dYE
 ozu
 oof
@@ -140466,7 +140471,7 @@ dMi
 tmT
 lSb
 bWu
-idX
+rVV
 hcu
 cBE
 oof
