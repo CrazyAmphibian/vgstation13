@@ -17638,10 +17638,6 @@
 	icon_state = "whitegreen"
 	},
 /area/medical/medbay)
-"gVL" = (
-/obj/structure/grille/window_spawner/reinforced/full,
-/turf/unsimulated/floor/jungle/grass,
-/area/crew_quarters/hop)
 "gVS" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -130238,8 +130234,8 @@ tCm
 tCm
 jRo
 iYe
-gVL
-gVL
+iYe
+iYe
 tCm
 tCm
 wEJ
