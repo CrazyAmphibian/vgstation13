@@ -39,7 +39,7 @@ var/list/junglemobs_safe=list(
 	icon_state="jungle_mob_randomany"
 
 /obj/abstract/map/spawner/jungle_any/multi/New()	
-	amount=rand(2,7)
+	amount=rand(4,7)
 	..()
 
 
@@ -55,7 +55,7 @@ var/list/junglemobs_safe=list(
 	icon_state="jungle_mob_frenmany"
 
 /obj/abstract/map/spawner/jungle_fren/multi/New()	
-	amount=rand(2,7)
+	amount=rand(4,7)
 	..()
 
 
@@ -71,7 +71,7 @@ var/list/junglemobs_safe=list(
 	icon_state="jungle_mob_hostilemany"
 
 /obj/abstract/map/spawner/jungle_hostile/multi/New()	
-	amount=rand(2,7)
+	amount=rand(4,7)
 	..()	
 
 
@@ -87,5 +87,5 @@ var/list/junglemobs_safe=list(
 	icon_state="jungle_mob_dangermany"
 
 /obj/abstract/map/spawner/jungle_danger/multi/New()	
-	amount=rand(2,7)
+	amount=rand(4,7)
 	..()		
