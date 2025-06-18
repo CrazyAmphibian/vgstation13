@@ -5463,14 +5463,6 @@
 	dir = 8
 	},
 /area/engineering/engine)
-"cgI" = (
-/obj/structure/grille/window_spawner/reinforced/full,
-/obj/structure/cable/yellow,
-/obj/effect/landmark/start{
-	name = "Warden"
-	},
-/turf/simulated,
-/area/security/main)
 "chi" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 10
@@ -103526,7 +103518,7 @@ lif
 fpO
 jmf
 hWN
-cgI
+cKx
 tLs
 oXj
 cRi
