@@ -70,11 +70,11 @@
 	
 	if(C.type== /obj/item/stack/tile/metal) // lattice -> plating
 		var/obj/item/stack/tile/T = C
-		if(T.use(1))
-			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
-			for(var/obj/structure/lattice/L in contents)
-				if(L.type!=/obj/structure/lattice) //catches wood latices
-					return TRUE //return true to prevent us adding plating to pathes since they both use metal tiles
+		for(var/obj/structure/lattice/L in contents)
+			if(L.type!=/obj/structure/lattice) //catches wood latices
+				return TRUE //return true to prevent us adding plating to pathes since they both use metal tiles
+			if(T.use(1))
+				playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
 				qdel(L)
 				ChangeTurf(/turf/simulated/floor/plating)
 				remove_paint_overlay()
@@ -92,9 +92,9 @@
 			return TRUE
 	if(C.type== /obj/item/stack/tile/wood) // wood lattice -> wood plating
 		var/obj/item/stack/tile/T = C
-		if(T.use(1))
-			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
-			for(var/obj/structure/lattice/wood/L in contents)
+		for(var/obj/structure/lattice/wood/L in contents)
+			if(T.use(1))
+				playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
 				qdel(L)
 				ChangeTurf(/turf/simulated/floor/plating/deck/airless)
 				remove_paint_overlay()
@@ -166,7 +166,7 @@ var/list/foliage_replacments=list(
 			if(create)
 				new create(src)
 				turf_speed_multiplier+=0.6
-	else if(prob(30)) //15% overall
+	else if(prob(50)) //25% overall
 		if( !(locate(/obj/structure/flora/tree) in range(2,src)) )
 			new/obj/structure/flora/tree/shitty(src)
 
