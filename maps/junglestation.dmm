@@ -1600,12 +1600,7 @@
 /turf/simulated/floor/server,
 /area/tcomms/chamber)
 "aEA" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 1
-	},
-/obj/effect/landmark/start{
-	name = "Janitor"
-	},
+/obj/structure/closet/l3closet/janitor,
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -3699,7 +3694,6 @@
 	},
 /area/centcom/test)
 "bwN" = (
-/obj/structure/bed/chair/vehicle/janicart,
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
@@ -4674,6 +4668,12 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/table,
+/obj/item/weapon/storage/box/mousetraps{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/weapon/storage/box/mousetraps,
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -5907,12 +5907,6 @@
 	},
 /area/centcom/test)
 "coU" = (
-/obj/structure/table,
-/obj/item/weapon/storage/box/mousetraps{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/weapon/storage/box/mousetraps,
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -5925,6 +5919,8 @@
 /obj/machinery/light_switch{
 	pixel_x = -24
 	},
+/obj/structure/mopbucket,
+/obj/item/weapon/mop,
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -8230,7 +8226,6 @@
 	pixel_y = -1;
 	pixel_x = 27
 	},
-/obj/structure/closet/secure_closet/medical1,
 /turf/simulated/floor,
 /area/medical/sleeper)
 "dgV" = (
@@ -11878,14 +11873,6 @@
 	icon_state = "dark"
 	},
 /area/turret_protected/ai_upload)
-"eDh" = (
-/obj/machinery/shower{
-	dir = 1
-	},
-/turf/simulated/floor{
-	icon_state = "freezerfloor"
-	},
-/area/security/perma)
 "eDq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
@@ -13440,17 +13427,6 @@
 	dir = 4
 	},
 /area/engineering/supermatter_room)
-"foA" = (
-/obj/machinery/requests_console{
-	announcementConsole = 1;
-	department = "Research Director's Desk";
-	departmentType = 5;
-	name = "Research Director RC";
-	pixel_x = -2;
-	pixel_y = 30
-	},
-/turf/simulated/floor/wood,
-/area/crew_quarters/sleep)
 "foS" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1;
@@ -14516,9 +14492,6 @@
 "fJo" = (
 /obj/structure/window/reinforced{
 	dir = 1
-	},
-/obj/structure/toilet{
-	dir = 8
 	},
 /turf/simulated/floor{
 	icon_state = "freezerfloor"
@@ -19801,7 +19774,6 @@
 	pixel_x = -24;
 	pixel_y = -4
 	},
-/obj/structure/closet/secure_closet/medical1,
 /turf/simulated/floor,
 /area/medical/sleeper)
 "hRA" = (
@@ -19903,18 +19875,13 @@
 	},
 /area/centcom/specops)
 "hTA" = (
-/obj/structure/table,
-/obj/item/weapon/storage/box/lights/mixed{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/weapon/storage/box/lights/mixed,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -22050,7 +22017,8 @@
 	dir = 4
 	},
 /obj/effect/decal/arrow{
-	dir = 8
+	dir = 8;
+	anchored = 1
 	},
 /turf/simulated/floor{
 	dir = 6;
@@ -27424,14 +27392,14 @@
 	},
 /area/centcom/suppy)
 "lbH" = (
-/obj/structure/closet/l3closet/janitor,
-/obj/machinery/light/small{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
+/obj/structure/closet/secure_closet/medical1,
 /turf/simulated/floor{
-	icon_state = "dark"
+	icon_state = "whitegreen"
 	},
-/area/janitor)
+/area/medical/sleeper)
 "lbJ" = (
 /obj/effect/landmark/start{
 	name = "Roboticist"
@@ -29382,8 +29350,9 @@
 	},
 /area/engineering/engine)
 "lMO" = (
-/obj/structure/toilet{
-	dir = 8
+/obj/machinery/shower{
+	dir = 8;
+	pixel_y = -6
 	},
 /turf/simulated/floor{
 	icon_state = "freezerfloor"
@@ -32903,6 +32872,11 @@
 /area/science/test_area)
 "ngJ" = (
 /obj/structure/table,
+/obj/item/weapon/reagent_containers/glass/bucket{
+	pixel_y = 4
+	},
+/obj/item/weapon/soap,
+/obj/item/weapon/reagent_containers/glass/bottle/bleach,
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -33947,8 +33921,9 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "nIM" = (
-/obj/structure/mopbucket,
-/obj/item/weapon/mop,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -35059,7 +35034,6 @@
 /obj/structure/table/reinforced,
 /obj/item/weapon/folder/blue,
 /obj/item/weapon/folder/white,
-/obj/item/weapon/stamp/cmo,
 /obj/item/clothing/glasses/hud/health,
 /turf/simulated/floor{
 	dir = 8;
@@ -37545,6 +37519,9 @@
 	on = 1
 	},
 /obj/machinery/camera{
+	dir = 4
+	},
+/obj/structure/toilet{
 	dir = 4
 	},
 /turf/simulated/floor{
@@ -41331,10 +41308,16 @@
 	},
 /area/research_outpost/med)
 "qFZ" = (
-/obj/machinery/vending/medical{
-	pixel_x = -2
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/rack,
+/obj/item/weapon/storage/box/gloves{
+	pixel_x = 10;
+	pixel_y = 3
+	},
+/obj/item/weapon/storage/box/masks{
+	pixel_x = -2;
+	pixel_y = -1
+	},
 /turf/simulated/floor{
 	dir = 6;
 	icon_state = "whitegreen"
@@ -42517,6 +42500,15 @@
 	dir = 8
 	},
 /area/security/prison)
+"rgs" = (
+/obj/structure/bed/chair/office/dark,
+/obj/effect/landmark/start{
+	name = "Janitor"
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/janitor)
 "rhk" = (
 /obj/machinery/atmospherics/unary/heat_reservoir/heater{
 	dir = 8
@@ -44424,8 +44416,8 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/shower{
-	dir = 1
+/obj/structure/toilet{
+	dir = 4
 	},
 /turf/simulated/floor{
 	icon_state = "freezerfloor"
@@ -50298,15 +50290,10 @@
 	},
 /area/tcomms/storage)
 "unE" = (
-/obj/structure/table,
-/obj/item/weapon/reagent_containers/glass/bucket{
-	pixel_y = 4
-	},
-/obj/item/weapon/soap,
-/obj/item/weapon/reagent_containers/glass/bottle/bleach,
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/structure/bed/chair/vehicle/janicart,
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -52314,7 +52301,14 @@
 /area/surface/jungle)
 "veq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/simulated/wall,
+/obj/machinery/door/airlock{
+	name = "Custodial Closet";
+	req_access_txt = "26";
+	normalspeed = 0
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
 /area/janitor)
 "ves" = (
 /obj/machinery/computer/crew,
@@ -55238,6 +55232,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/structure/bed/roller,
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "whiteblue"
@@ -57102,7 +57097,6 @@
 /turf/simulated/floor,
 /area/surface/jungle)
 "wWe" = (
-/obj/structure/reagent_dispensers/watertank,
 /obj/machinery/power/apc{
 	dir = 1;
 	pixel_y = 24
@@ -57111,6 +57105,12 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/structure/table,
+/obj/item/weapon/storage/box/lights/mixed{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/weapon/storage/box/lights/mixed,
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -57658,14 +57658,8 @@
 	},
 /area/security/detectives_office)
 "xiw" = (
-/obj/machinery/door/airlock{
-	name = "Custodial Closet";
-	req_access_txt = "26";
-	normalspeed = 0
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
+/obj/structure/grille/window_spawner/reinforced/full,
+/turf/simulated,
 /area/janitor)
 "xiB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -109154,7 +109148,7 @@ prr
 dcL
 fkV
 lGR
-eDh
+khO
 gaI
 hwe
 hwA
@@ -109506,7 +109500,7 @@ pbp
 mWA
 fJo
 lMO
-khO
+lMO
 gaI
 cbp
 hwA
@@ -114386,9 +114380,9 @@ xor
 wld
 wld
 rWK
-rWK
 xiw
-rWK
+xiw
+xiw
 rWK
 rWK
 rWK
@@ -115091,9 +115085,9 @@ wld
 wld
 rWK
 nIM
-eNl
+rgs
 cEF
-aEA
+eNl
 aoo
 veq
 mEG
@@ -115794,12 +115788,12 @@ xor
 wld
 wld
 rWK
-lbH
+rTF
+aEA
 eNl
 eNl
-eNl
-uKL
-rWK
+ngJ
+xiw
 wld
 wld
 xor
@@ -116146,12 +116140,12 @@ xor
 wld
 wld
 rWK
-rTF
-eNl
-ngJ
+rWK
+rWK
+uKL
 unE
 viq
-rWK
+xiw
 wld
 wld
 xor
@@ -116497,8 +116491,8 @@ xor
 xor
 wld
 wld
-rWK
-rWK
+wld
+wld
 rWK
 rWK
 rWK
@@ -122181,7 +122175,7 @@ rYi
 ckh
 qZA
 kOh
-sRS
+lbH
 bzp
 fnf
 tio
@@ -122533,7 +122527,7 @@ kTk
 urr
 pmy
 kOh
-kVD
+lbH
 bzp
 obY
 nUQ
@@ -127461,8 +127455,8 @@ jBM
 jBM
 jBM
 jBM
-gNU
-gNU
+jBM
+jBM
 jBM
 vSp
 pOB
@@ -131943,7 +131937,7 @@ lgW
 lgW
 jAP
 lgW
-foA
+lgW
 jAP
 lgW
 lgW
