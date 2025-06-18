@@ -168,6 +168,15 @@
 	icon_state = "dark"
 	},
 /area/security/warden)
+"acU" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "whitepurple"
+	},
+/area/science/telescience)
 "acX" = (
 /obj/structure/crematorium{
 	dir = 4
@@ -2981,14 +2990,6 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
-"bhR" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 9
-	},
-/turf/simulated/floor{
-	icon_state = "white"
-	},
-/area/science/telescience)
 "bic" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/table,
@@ -5987,6 +5988,21 @@
 	icon_state = "dark"
 	},
 /area/security/warden)
+"cqJ" = (
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Research Director's Desk";
+	departmentType = 5;
+	name = "Research Director RC";
+	pixel_x = -2;
+	pixel_y = 30
+	},
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "checker";
+	tag = "icon-checker (NORTHEAST)"
+	},
+/area/science/rd)
 "cqN" = (
 /turf/simulated/floor{
 	dir = 8;
@@ -6578,6 +6594,17 @@
 	},
 /turf/simulated/floor,
 /area/research_outpost/hallway)
+"cBu" = (
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Research Director's Desk";
+	departmentType = 5;
+	name = "Research Director RC";
+	pixel_x = -2;
+	pixel_y = 30
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/sleep)
 "cBE" = (
 /turf/simulated/floor{
 	icon_state = "whitepurple"
@@ -8576,6 +8603,15 @@
 	icon_state = "2-8"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/outdoor_bar)
+"dpL" = (
+/obj/structure/railing/wood{
+	dir = 1
+	},
+/obj/item/weapon/stool/piano{
+	dir = 8
+	},
+/turf/simulated/floor/wood,
 /area/surface/jungle/zoned/outdoor_bar)
 "dqa" = (
 /turf/simulated/floor/wood,
@@ -18116,6 +18152,12 @@
 	icon_state = "red"
 	},
 /area/security/prison)
+"hiq" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/turf/simulated/floor/engine,
+/area/science/telescience)
 "hiK" = (
 /obj/machinery/computer/bhangmeter,
 /turf/simulated/floor,
@@ -18624,10 +18666,7 @@
 /turf/simulated/floor,
 /area/maintenance/disposal)
 "htR" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 1;
-	initialize_directions = 11
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
 /turf/simulated/floor,
 /area/security/perma)
 "htW" = (
@@ -20227,6 +20266,14 @@
 	icon_state = "dark"
 	},
 /area/maintenance/disposal)
+"idX" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/science/telescience)
 "idY" = (
 /obj/mecha/combat/marauder/mauler,
 /turf/unsimulated/floor{
@@ -22927,12 +22974,6 @@
 	icon_state = "dark"
 	},
 /area/security/armory)
-"jiA" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
-	},
-/turf/simulated/floor/engine,
-/area/science/telescience)
 "jiQ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -26836,6 +26877,10 @@
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/trade_processing)
+"kRM" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/turf/simulated/floor,
+/area/security/perma)
 "kSn" = (
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'RADIOACTIVE AREA'";
@@ -30286,15 +30331,6 @@
 /obj/machinery/telecomms/processor/preset_four,
 /turf/simulated/floor/server,
 /area/tcomms/chamber)
-"mhU" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/simulated/floor{
-	dir = 8;
-	icon_state = "whitepurple"
-	},
-/area/science/telescience)
 "mhX" = (
 /obj/machinery/door/airlock/silver{
 	name = "Dormitories";
@@ -34203,17 +34239,6 @@
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
-"nQu" = (
-/obj/machinery/requests_console{
-	announcementConsole = 1;
-	department = "Research Director's Desk";
-	departmentType = 5;
-	name = "Research Director RC";
-	pixel_x = -2;
-	pixel_y = 30
-	},
-/turf/simulated/floor/wood,
-/area/crew_quarters/sleep)
 "nQA" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1;
@@ -34387,6 +34412,15 @@
 /obj/item/tool/screwdriver,
 /turf/unsimulated/floor/jungle/bedrock,
 /area/surface/jungle/underground/zoned/ghettosurgery)
+"nUq" = (
+/obj/machinery/door_control{
+	id_tag = "entergatelockext";
+	name = "gate lockdown";
+	pixel_y = 10;
+	pixel_x = 23
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "nUt" = (
 /obj/machinery/computer/arcade,
 /turf/simulated/floor/shuttle,
@@ -35310,15 +35344,6 @@
 "omk" = (
 /turf/simulated/wall/r_wall,
 /area/engineering/atmos_control)
-"oms" = (
-/obj/structure/railing/wood{
-	dir = 1
-	},
-/obj/item/weapon/stool/piano{
-	dir = 8
-	},
-/turf/simulated/floor/wood,
-/area/surface/jungle/zoned/outdoor_bar)
 "omC" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -39130,13 +39155,6 @@
 	icon_state = "floor"
 	},
 /area/centcom/striketeam)
-"pRi" = (
-/obj/structure/grille/window_spawner/reinforced_plasma,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/simulated/floor/engine,
-/area/science/telescience)
 "pRw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor{
@@ -43837,6 +43855,10 @@
 	},
 /turf/simulated/floor/engine,
 /area/science/telescience)
+"rLX" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
+/turf/simulated/floor,
+/area/security/perma)
 "rMl" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 9
@@ -45382,6 +45404,12 @@
 	icon_state = "dark"
 	},
 /area/security/warden)
+"stf" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	on = 1
+	},
+/turf/simulated/floor,
+/area/security/perma)
 "stl" = (
 /obj/machinery/disease2/diseaseanalyser,
 /turf/simulated/floor{
@@ -46588,21 +46616,6 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/outdoor_bar)
-"sVd" = (
-/obj/machinery/requests_console{
-	announcementConsole = 1;
-	department = "Research Director's Desk";
-	departmentType = 5;
-	name = "Research Director RC";
-	pixel_x = -2;
-	pixel_y = 30
-	},
-/turf/simulated/floor{
-	dir = 5;
-	icon_state = "checker";
-	tag = "icon-checker (NORTHEAST)"
-	},
-/area/science/rd)
 "sVi" = (
 /obj/effect/decal/warning_stripes{
 	icon_state = "bot"
@@ -52142,15 +52155,6 @@
 	},
 /turf/simulated/floor/shuttle,
 /area/shuttle/transport1/centcom)
-"vhf" = (
-/obj/machinery/door_control{
-	id_tag = "entergatelockext";
-	name = "gate lockdown";
-	pixel_y = 10;
-	pixel_x = 23
-	},
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
 "vhg" = (
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 1
@@ -55255,6 +55259,13 @@
 	},
 /turf/simulated,
 /area/security/warden)
+"wpE" = (
+/obj/structure/grille/window_spawner/reinforced_plasma,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/engine,
+/area/science/telescience)
 "wqc" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
@@ -98945,7 +98956,7 @@ lIK
 uXL
 uXL
 uXL
-vhf
+nUq
 lIK
 lIK
 lIK
@@ -107074,8 +107085,8 @@ mfl
 amz
 sAk
 bVg
-bVg
-mWA
+stf
+rLX
 qho
 bcD
 wVH
@@ -107423,7 +107434,7 @@ mfl
 mfl
 mfl
 mfl
-bVg
+kRM
 htR
 gNw
 gNw
@@ -116897,7 +116908,7 @@ wld
 edD
 edD
 edD
-oms
+dpL
 iXH
 fer
 hAU
@@ -131627,7 +131638,7 @@ lgW
 lgW
 jAP
 lgW
-nQu
+cBu
 jAP
 lgW
 lgW
@@ -136211,7 +136222,7 @@ lIK
 lIK
 lIK
 dMN
-sVd
+cqJ
 fHS
 fHS
 rLz
@@ -139399,7 +139410,7 @@ rBi
 dGI
 oMl
 qMo
-jiA
+hiq
 qMo
 oof
 wld
@@ -139751,7 +139762,7 @@ kOU
 dGI
 tHu
 vEg
-pRi
+wpE
 uGw
 oof
 oof
@@ -140103,7 +140114,7 @@ vaT
 xtL
 lml
 kcD
-mhU
+acU
 dYE
 ozu
 oof
@@ -140455,7 +140466,7 @@ dMi
 tmT
 lSb
 bWu
-bhR
+idX
 hcu
 cBE
 oof
