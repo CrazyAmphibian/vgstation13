@@ -32,6 +32,8 @@
 	var/zAsteroid = 5
 	var/zDeepSpace = 6
 	
+	var/zJungleUnderground = -1 // -1 because surely nothing will ever go to Z -1, right? why not null? because nullspace
+	
 	var/skip_hobo_shack = FALSE // if true, skips hobo shack generation. set to TRUE if you want to map your own custom one for the map.
 
 	//Holomap offsets

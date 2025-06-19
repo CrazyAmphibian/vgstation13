@@ -10,6 +10,7 @@
 	zAsteroid = 4
 	zMainStation = 1
 	zCentcomm = 3
+	zJungleUnderground = 2
 	zLevels = list(
 		/datum/zLevel/junglesurface,
 		/datum/zLevel/jungleunderground,
