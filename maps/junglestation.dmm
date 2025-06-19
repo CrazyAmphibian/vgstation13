@@ -14989,6 +14989,7 @@
 "fSA" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/kitchen/utensil/knife/large/butch,
+/obj/item/weapon/kitchen/utensil/knife/large,
 /turf/simulated/floor/wood,
 /area/surface/jungle)
 "fSB" = (
@@ -18401,6 +18402,18 @@
 	faction = "jungle"
 	},
 /turf/unsimulated/floor/jungle/concrete,
+/area/surface/jungle)
+"hlP" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/turf/simulated/floor/wood,
 /area/surface/jungle)
 "hlX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -23274,8 +23287,7 @@
 /turf/simulated/floor/engine,
 /area/mine/explored)
 "jjN" = (
-/obj/structure/table/woodentable,
-/obj/item/weapon/kitchen/utensil/knife/large/butch/meatcleaver,
+/obj/machinery/space_heater/campfire/stove/fireplace,
 /turf/simulated/floor/wood,
 /area/surface/jungle)
 "jjP" = (
@@ -26658,6 +26670,10 @@
 	},
 /turf/space/transit/south,
 /area)
+"kDN" = (
+/obj/effect/landmark/hobostart,
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "kEa" = (
 /obj/structure/bed/chair/wood/normal{
 	dir = 1
@@ -35002,8 +35018,10 @@
 	},
 /area/vox_trading_post/trade_processing)
 "nWH" = (
-/obj/effect/landmark/hobostart,
-/turf/unsimulated/floor/jungle/path,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/wood,
 /area/surface/jungle)
 "nWJ" = (
 /obj/structure/cable/yellow{
@@ -44293,8 +44311,13 @@
 /turf/space,
 /area/shuttle/specops/centcom)
 "rFh" = (
-/obj/structure/grille/window_spawner/reinforced,
-/turf/simulated/floor/plating,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/kitchenspike{
+	pixel_x = 3
+	},
+/turf/simulated/floor/wood,
 /area/surface/jungle)
 "rFi" = (
 /obj/item/weapon/paper_bin{
@@ -58295,7 +58318,7 @@
 	},
 /area/security/detectives_office)
 "xiw" = (
-/obj/structure/grille/window_spawner/reinforced/full,
+/obj/structure/grille/window_spawner/reinforced,
 /turf/simulated,
 /area/janitor)
 "xiB" = (
@@ -60655,6 +60678,9 @@
 	},
 /area/centcom/control)
 "yeU" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /obj/structure/closet,
 /turf/simulated/floor/wood,
 /area/surface/jungle)
@@ -76929,7 +76955,7 @@ mOd
 mkt
 vmh
 mkt
-nWH
+uXL
 uXL
 uXL
 uXL
@@ -77629,12 +77655,12 @@ lIK
 lIK
 lIK
 oHr
-rFh
-rFh
+yeU
+nWH
 rFh
 oHr
 rQr
-rFh
+hlP
 oHr
 oHr
 oHr
@@ -77981,10 +78007,10 @@ lIK
 lIK
 lIK
 oHr
-yeU
+gvs
 wAq
-qFq
-rFh
+wAq
+gvs
 wAq
 jhI
 oHr
@@ -78335,8 +78361,8 @@ lIK
 oHr
 fSA
 wAq
-jjN
-rFh
+wAq
+gvs
 wAq
 epA
 oHr
@@ -78685,10 +78711,10 @@ lIK
 lIK
 lIK
 oHr
-sXl
+jjN
+wAq
 wAq
 gvs
-rFh
 wAq
 wAq
 rQr
@@ -79037,10 +79063,10 @@ lIK
 lIK
 lIK
 oHr
-gvs
+sXl
 wAq
 qFq
-rFh
+oHr
 wAq
 wAq
 oHr
@@ -79745,7 +79771,7 @@ wAq
 wAq
 wAq
 wAq
-wAq
+kDN
 wAq
 oHr
 oHr
@@ -116341,7 +116367,7 @@ uXL
 wlz
 lpV
 jtG
-ctP
+gab
 gab
 gab
 gab
@@ -117047,7 +117073,7 @@ bRe
 jtG
 xbQ
 xjN
-xjN
+gab
 gab
 bDn
 jtG
