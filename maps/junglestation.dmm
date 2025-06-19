@@ -339,6 +339,15 @@
 	},
 /turf/simulated/floor,
 /area/medical/virology)
+"ahs" = (
+/mob/living/simple_animal/hostile/bear/panda{
+	faction = "jungle"
+	},
+/mob/living/simple_animal/hostile/bear{
+	faction = "jungle"
+	},
+/turf/simulated/floor/plating,
+/area/surface/jungle)
 "ahy" = (
 /obj/item/weapon/reagent_containers/glass/bucket,
 /turf/unsimulated/floor{
@@ -3801,12 +3810,11 @@
 /turf/simulated/floor/shuttle,
 /area/shuttle/transport1/centcom)
 "byO" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -30;
-	pixel_x = 1
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
 	},
-/turf/simulated/floor,
-/area/research_outpost/hallway)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "byU" = (
 /turf/unsimulated/floor{
 	dir = 1;
@@ -5994,24 +6002,6 @@
 	icon_state = "carpet11-12"
 	},
 /area/chapel/main)
-"cpH" = (
-/obj/effect/landmark/start{
-	name = "Assistant"
-	},
-/obj/machinery/power/apc{
-	dir = 8;
-	pixel_x = -24
-	},
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/light_switch{
-	pixel_y = 13;
-	pixel_x = -21
-	},
-/turf/simulated/floor/wood,
-/area/surface/jungle/zoned/storage_shed)
 "cpQ" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/light_switch{
@@ -6931,13 +6921,6 @@
 	tag = "icon-brown (NORTH)"
 	},
 /area/supply/miningdock)
-"cHw" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -1;
-	pixel_x = 30
-	},
-/turf/simulated/floor,
-/area/mine/production)
 "cHO" = (
 /obj/machinery/smartfridge/chemistry,
 /turf/simulated/floor{
@@ -8887,15 +8870,6 @@
 	},
 /turf/simulated/floor/engine/vacuum,
 /area/science/test_area)
-"duq" = (
-/mob/living/simple_animal/hostile/bear/panda{
-	faction = "jungle"
-	},
-/mob/living/simple_animal/hostile/bear{
-	faction = "jungle"
-	},
-/turf/simulated/floor/plating,
-/area/surface/jungle)
 "duE" = (
 /obj/machinery/door/unpowered/shuttle,
 /obj/docking_port/shuttle{
@@ -12268,12 +12242,6 @@
 	icon_state = "freezerfloor"
 	},
 /area/medical/surgery)
-"eMJ" = (
-/mob/living/simple_animal/hostile/bear/panda{
-	faction = "jungle"
-	},
-/turf/simulated/floor/wood,
-/area/surface/jungle)
 "eMQ" = (
 /obj/machinery/light{
 	dir = 4
@@ -13249,17 +13217,6 @@
 	},
 /turf/simulated/floor/engine,
 /area/science/xenobiology/specimen_2)
-"fiH" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
 "fiQ" = (
 /obj/structure/window/reinforced/tinted,
 /turf/simulated/floor{
@@ -16081,8 +16038,15 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/reagentgrinder,
+/obj/machinery/reagentgrinder{
+	pixel_x = 4;
+	pixel_y = 7
+	},
 /obj/structure/table,
+/obj/item/weapon/storage/lockbox/diskettebox/open/botanydisk{
+	pixel_x = -9;
+	pixel_y = 2
+	},
 /turf/simulated/floor{
 	icon_state = "hydrofloor"
 	},
@@ -23707,17 +23671,6 @@
 /obj/item/device/instrument/violin,
 /turf/simulated/floor,
 /area/crew_quarters/theatre)
-"jwm" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 1;
-	pixel_x = -29
-	},
-/turf/simulated/floor{
-	dir = 8;
-	icon_state = "whitegreen"
-	},
-/area/medical/sleeper)
 "jwM" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	on = 1
@@ -30224,6 +30177,12 @@
 	icon_state = "grimy"
 	},
 /area/crew_quarters/bar_backroom)
+"lZj" = (
+/mob/living/simple_animal/hostile/bear/brownbear{
+	faction = "jungle"
+	},
+/turf/simulated/floor/plating,
+/area/surface/jungle)
 "lZw" = (
 /obj/machinery/power/apc{
 	pixel_y = -24
@@ -31416,11 +31375,16 @@
 	},
 /area/lawoffice)
 "myk" = (
-/mob/living/simple_animal/hostile/bear/brownbear{
-	faction = "jungle"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
 	},
-/turf/simulated/floor/plating,
-/area/surface/jungle)
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "mym" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -34761,6 +34725,19 @@
 	},
 /turf/simulated/floor,
 /area/supply/lobby)
+"nUN" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "nUQ" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
@@ -34872,15 +34849,6 @@
 	icon_state = "rockvault"
 	},
 /area/vox_trading_post/trade_processing)
-"nWw" = (
-/obj/effect/landmark/start{
-	name = "Assistant"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/wood,
-/area/surface/jungle/zoned/storage_shed)
 "nWJ" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -38700,6 +38668,17 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor,
 /area/engineering/engine)
+"pBe" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 1;
+	pixel_x = -29
+	},
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "whitegreen"
+	},
+/area/medical/sleeper)
 "pBk" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -39700,16 +39679,6 @@
 	icon_state = "whitepurple"
 	},
 /area/science/xenobiology)
-"pVe" = (
-/mob/living/simple_animal/hostile/bear/brownbear{
-	faction = "jungle"
-	},
-/turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
-	},
-/area/surface/jungle)
 "pVg" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 4
@@ -40846,15 +40815,6 @@
 	icon_state = "dark"
 	},
 /area/security/prison)
-"qtm" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated/floor{
-	icon_state = "brown"
-	},
-/area/supply/storage)
 "qtz" = (
 /obj/structure/fence/corner{
 	dir = 8
@@ -41118,6 +41078,15 @@
 	icon_state = "red"
 	},
 /area/security/prison)
+"qxG" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/simulated/floor{
+	icon_state = "brown"
+	},
+/area/supply/storage)
 "qxK" = (
 /obj/item/device/assembly/infra{
 	pixel_x = -5;
@@ -41600,6 +41569,15 @@
 	icon_state = "carpetside"
 	},
 /area/centcom/test)
+"qGB" = (
+/obj/effect/landmark/start{
+	name = "Assistant"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle/zoned/storage_shed)
 "qGI" = (
 /obj/machinery/door/window{
 	dir = 1
@@ -41620,10 +41598,6 @@
 	icon_state = "white"
 	},
 /area/centcom/test)
-"qGY" = (
-/obj/effect/landmark/dungeon_area,
-/turf/space,
-/area)
 "qHw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/visible{
 	dir = 4
@@ -44158,7 +44132,9 @@
 /area/shuttle/specops/centcom)
 "rFh" = (
 /obj/structure/cable/yellow{
-	icon_state = "1-8"
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
@@ -44309,13 +44285,6 @@
 	icon_state = "white"
 	},
 /area/medical/genetics)
-"rKo" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -1;
-	pixel_x = -27
-	},
-/turf/simulated/floor,
-/area/research_outpost/entry)
 "rKt" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -46341,6 +46310,16 @@
 /obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated,
 /area/shuttle/trade/start)
+"sCT" = (
+/mob/living/simple_animal/hostile/bear/brownbear{
+	faction = "jungle"
+	},
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "vault";
+	tag = "icon-vault (NORTHEAST)"
+	},
+/area/surface/jungle)
 "sCY" = (
 /obj/structure/shuttle/engine/propulsion,
 /turf/space,
@@ -53361,6 +53340,12 @@
 	icon_state = "dark"
 	},
 /area/security/prison)
+"vpL" = (
+/mob/living/simple_animal/hostile/bear/panda{
+	faction = "jungle"
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "vpS" = (
 /obj/structure/fence/corner{
 	dir = 8
@@ -53621,6 +53606,10 @@
 	icon_state = "red"
 	},
 /area/security/armory)
+"vuU" = (
+/obj/effect/landmark/dungeon_area,
+/turf/space,
+/area)
 "vvb" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -53733,6 +53722,13 @@
 	icon_state = "dark-markings"
 	},
 /area/security/armory)
+"vwU" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -1;
+	pixel_x = -27
+	},
+/turf/simulated/floor,
+/area/research_outpost/entry)
 "vwZ" = (
 /turf/simulated/floor{
 	icon_state = "whiteblue"
@@ -55256,6 +55252,13 @@
 "wav" = (
 /turf/simulated/wall/shuttle,
 /area/shuttle/mining/station)
+"waA" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30;
+	pixel_x = 1
+	},
+/turf/simulated/floor,
+/area/research_outpost/hallway)
 "waI" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -55801,6 +55804,24 @@
 	},
 /turf/simulated/floor/engine/vacuum,
 /area/science/test_area)
+"wmp" = (
+/obj/effect/landmark/start{
+	name = "Assistant"
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	pixel_x = -24
+	},
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 13;
+	pixel_x = -21
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle/zoned/storage_shed)
 "wmr" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 5
@@ -56461,7 +56482,7 @@
 /area/surface/jungle)
 "wAy" = (
 /obj/machinery/power/treadmill{
-	dir = 8
+	dir = 1
 	},
 /obj/structure/cable/yellow{
 	d2 = 4;
@@ -57119,14 +57140,6 @@
 "wOM" = (
 /turf/simulated/wall,
 /area/supply/sorting)
-"wPd" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
 "wPe" = (
 /turf/simulated/wall/r_wall,
 /area/turret_protected/ai_upload)
@@ -60306,19 +60319,6 @@
 /obj/item/weapon/bedsheet/purple,
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep)
-"yaQ" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
 "yba" = (
 /obj/structure/computerframe,
 /turf/unsimulated/floor{
@@ -60759,6 +60759,13 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep)
+"ykm" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -1;
+	pixel_x = 30
+	},
+/turf/simulated/floor,
+/area/mine/production)
 "yks" = (
 /obj/structure/closet/crate,
 /obj/abstract/map/spawner/space/vox/trader/spacesuit,
@@ -118952,9 +118959,9 @@ tkW
 xgw
 olm
 hkY
-pVe
-myk
-myk
+sCT
+lZj
+lZj
 tdB
 hkY
 wAq
@@ -119304,9 +119311,9 @@ tkW
 kLi
 hkY
 xgw
-myk
+lZj
 hkY
-pVe
+sCT
 tdB
 hQo
 xBU
@@ -119314,8 +119321,8 @@ peO
 ylV
 nSO
 wAq
-myk
-myk
+lZj
+lZj
 aaw
 tdB
 tdB
@@ -119661,7 +119668,7 @@ hkY
 xgw
 tdB
 hkY
-eMJ
+vpL
 wAq
 hkY
 fQX
@@ -120723,7 +120730,7 @@ oDr
 hkY
 wAq
 heX
-duq
+ahs
 hkY
 tdB
 tdB
@@ -120904,7 +120911,7 @@ rsn
 blH
 prK
 bKd
-jwm
+pBe
 bKd
 uJo
 bBG
@@ -123305,7 +123312,7 @@ dEu
 sgL
 qqK
 nqR
-qtm
+qxG
 ekb
 tHr
 eWz
@@ -137076,7 +137083,7 @@ wld
 wld
 wld
 maR
-yaQ
+nUN
 bhN
 eCz
 vZt
@@ -137428,7 +137435,7 @@ wld
 wld
 wld
 vhv
-fiH
+myk
 qcB
 qcB
 jkg
@@ -138835,8 +138842,8 @@ wld
 xor
 xor
 wld
-wPd
 rFh
+byO
 wld
 lvt
 jgU
@@ -140594,8 +140601,8 @@ wld
 wld
 wld
 wld
-wPd
 rFh
+byO
 wld
 wld
 uUI
@@ -141297,8 +141304,8 @@ wld
 wld
 wld
 wld
-wPd
 rFh
+byO
 wld
 wld
 wld
@@ -142000,8 +142007,8 @@ wld
 wld
 wld
 wld
-wPd
 rFh
+byO
 wld
 wld
 wld
@@ -143055,8 +143062,8 @@ wld
 wld
 kzq
 sfj
-cpH
-nWw
+wmp
+qGB
 fHl
 kzq
 wld
@@ -345752,7 +345759,7 @@ ocC
 ocC
 ocC
 ocC
-qGY
+vuU
 ocC
 ocC
 ocC
@@ -465131,7 +465138,7 @@ plG
 kIA
 cUg
 lNb
-rKo
+vwU
 lNb
 jcf
 xzU
@@ -469357,7 +469364,7 @@ hiV
 vvb
 lYc
 lYc
-byO
+waA
 dKu
 dKu
 dKu
@@ -471799,7 +471806,7 @@ gGr
 luI
 luI
 luI
-cHw
+ykm
 pGv
 luI
 jzk
