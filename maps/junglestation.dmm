@@ -339,15 +339,6 @@
 	},
 /turf/simulated/floor,
 /area/medical/virology)
-"ahs" = (
-/mob/living/simple_animal/hostile/bear/panda{
-	faction = "jungle"
-	},
-/mob/living/simple_animal/hostile/bear{
-	faction = "jungle"
-	},
-/turf/simulated/floor/plating,
-/area/surface/jungle)
 "ahy" = (
 /obj/item/weapon/reagent_containers/glass/bucket,
 /turf/unsimulated/floor{
@@ -2042,6 +2033,12 @@
 	icon_state = "floor4"
 	},
 /area/shuttle/nuclearops)
+"aOm" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "aOp" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden,
 /turf/simulated/floor/plating/vox,
@@ -3810,11 +3807,11 @@
 /turf/simulated/floor/shuttle,
 /area/shuttle/transport1/centcom)
 "byO" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
+/obj/structure/fence/end{
+	dir = 1
 	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "byU" = (
 /turf/unsimulated/floor{
 	dir = 1;
@@ -4147,6 +4144,15 @@
 	icon_state = "dark"
 	},
 /area/tdome)
+"bEw" = (
+/mob/living/simple_animal/hostile/bear/panda{
+	faction = "jungle"
+	},
+/mob/living/simple_animal/hostile/bear{
+	faction = "jungle"
+	},
+/turf/simulated/floor/plating,
+/area/surface/jungle)
 "bEC" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/machinery/status_display/supply{
@@ -6705,6 +6711,15 @@
 	icon_state = "brown"
 	},
 /area/supply/office)
+"cEc" = (
+/obj/effect/landmark/start{
+	name = "Assistant"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle/zoned/storage_shed)
 "cEg" = (
 /obj/machinery/light{
 	dir = 1
@@ -11307,6 +11322,15 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
+"epA" = (
+/obj/item/weapon/spear/wooden,
+/obj/item/weapon/spear/wooden,
+/obj/item/weapon/spear/wooden,
+/obj/structure/rack,
+/obj/item/weapon/beartrap,
+/obj/item/weapon/beartrap,
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "epC" = (
 /obj/machinery/sleeper,
 /turf/simulated/floor{
@@ -12951,6 +12975,12 @@
 	tag = "icon-vault (NORTHEAST)"
 	},
 /area/security/interrogation)
+"fcF" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/pickaxe,
+/obj/item/device/flashlight,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "fcT" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2";
@@ -14956,6 +14986,11 @@
 /obj/machinery/atmospherics/unary/cold_sink/freezer,
 /turf/simulated/floor,
 /area/medical/sleeper)
+"fSA" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/kitchen/utensil/knife/large/butch,
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "fSB" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/closet/secure_closet/chemical,
@@ -15843,6 +15878,12 @@
 	icon_state = "dark-markings"
 	},
 /area/security/armory)
+"gku" = (
+/obj/structure/fence/corner{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "gkx" = (
 /obj/machinery/atmospherics/pipe/manifold/general/visible{
 	dir = 1
@@ -16191,6 +16232,14 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/zoned/atmos_outside)
+"grk" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "grm" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
@@ -16796,6 +16845,13 @@
 	icon_state = "dark"
 	},
 /area/science/robotics)
+"gDM" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -1;
+	pixel_x = 30
+	},
+/turf/simulated/floor,
+/area/mine/production)
 "gDT" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/wall/r_wall,
@@ -17179,6 +17235,12 @@
 	icon_state = "yellow"
 	},
 /area/engineering/atmos)
+"gNi" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "gNm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
@@ -17400,6 +17462,13 @@
 	icon_state = "dark"
 	},
 /area/construction/mommi_nest)
+"gRV" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30;
+	pixel_x = 1
+	},
+/turf/simulated/floor,
+/area/research_outpost/hallway)
 "gSc" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	canSpawnMice = 0;
@@ -17578,6 +17647,16 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep)
+"gUP" = (
+/mob/living/simple_animal/hostile/bear/brownbear{
+	faction = "jungle"
+	},
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "vault";
+	tag = "icon-vault (NORTHEAST)"
+	},
+/area/surface/jungle)
 "gUQ" = (
 /turf/unsimulated/floor{
 	dir = 9;
@@ -23056,6 +23135,14 @@
 	icon_state = "whitegreen"
 	},
 /area/medical/sleeper)
+"jhI" = (
+/obj/structure/rack,
+/obj/item/ammo_storage/box/c38,
+/obj/item/ammo_storage/box/c38,
+/obj/item/weapon/gun/projectile/hecate/hunting,
+/obj/item/weapon/gun/projectile/hecate/hunting,
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "jhJ" = (
 /obj/structure/grille/window_spawner/reinforced,
 /turf/simulated,
@@ -23186,6 +23273,11 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/vodka,
 /turf/simulated/floor/engine,
 /area/mine/explored)
+"jjN" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/kitchen/utensil/knife/large/butch/meatcleaver,
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "jjP" = (
 /obj/machinery/artifact_scanpad,
 /obj/machinery/camera{
@@ -24563,6 +24655,13 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep)
+"jPf" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -1;
+	pixel_x = -27
+	},
+/turf/simulated/floor,
+/area/research_outpost/entry)
 "jPg" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -27152,6 +27251,17 @@
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/trade_processing)
+"kSb" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 1;
+	pixel_x = -29
+	},
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "whitegreen"
+	},
+/area/medical/sleeper)
 "kSn" = (
 /obj/structure/sign/securearea{
 	desc = "A warning sign which reads 'RADIOACTIVE AREA'";
@@ -27817,6 +27927,10 @@
 	icon_state = "whiteblue"
 	},
 /area/medical/paramedics)
+"lhE" = (
+/obj/structure/ladder/jungle_tunnel/mapped,
+/turf/unsimulated/floor/jungle/dirt,
+/area/surface/jungle)
 "lhJ" = (
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 1
@@ -28658,6 +28772,11 @@
 	},
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/atmos)
+"lxO" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/pickaxe/shovel,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "lxQ" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/decal/warning_stripes{
@@ -30129,6 +30248,12 @@
 	icon_state = "white"
 	},
 /area/medical/sleeper)
+"lXW" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/pickaxe/shovel,
+/obj/item/device/flashlight,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "lYc" = (
 /turf/simulated/floor,
 /area/research_outpost/hallway)
@@ -30177,12 +30302,6 @@
 	icon_state = "grimy"
 	},
 /area/crew_quarters/bar_backroom)
-"lZj" = (
-/mob/living/simple_animal/hostile/bear/brownbear{
-	faction = "jungle"
-	},
-/turf/simulated/floor/plating,
-/area/surface/jungle)
 "lZw" = (
 /obj/machinery/power/apc{
 	pixel_y = -24
@@ -30777,6 +30896,10 @@
 	},
 /turf/space,
 /area/shuttle/transport1/centcom)
+"mkt" = (
+/obj/item/tool/wirecutters/clippers,
+/turf/unsimulated/floor/jungle/dirt,
+/area/surface/jungle)
 "mky" = (
 /turf/unsimulated/wall{
 	icon_state = "plasma12"
@@ -30863,6 +30986,12 @@
 	dir = 9
 	},
 /area/syndicate_mothership)
+"mlR" = (
+/mob/living/simple_animal/hostile/bear/panda{
+	faction = "jungle"
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "mma" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -31089,6 +31218,15 @@
 "mqZ" = (
 /turf/simulated/wall,
 /area/mine/production)
+"mrr" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/simulated/floor{
+	icon_state = "brown"
+	},
+/area/supply/storage)
 "mrt" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/card/id/centcom,
@@ -31375,16 +31513,10 @@
 	},
 /area/lawoffice)
 "myk" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/obj/structure/table/woodentable,
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass,
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "mym" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -32073,6 +32205,11 @@
 	},
 /turf/simulated/floor,
 /area/crew_quarters/hop)
+"mOd" = (
+/obj/item/weapon/pickaxe/shovel/spade,
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/turf/unsimulated/floor/jungle/dirt,
+/area/surface/jungle)
 "mOg" = (
 /obj/machinery/vending/security,
 /turf/simulated/floor{
@@ -32897,6 +33034,15 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle)
+"nfJ" = (
+/obj/structure/rack,
+/obj/item/weapon/grown/log/tree,
+/obj/item/weapon/grown/log/tree,
+/obj/item/weapon/grown/log/tree,
+/obj/item/weapon/grown/log/tree,
+/obj/item/weapon/grown/log/tree,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "ngi" = (
 /obj/abstract/map/spawner/jungle_hostile/multi,
 /turf/unsimulated/floor/jungle/grass,
@@ -33126,6 +33272,19 @@
 	icon_state = "toxstorage";
 	name = "Toxins Storage"
 	})
+"nkZ" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "nln" = (
 /obj/machinery/door/window{
 	name = "Equipment Room";
@@ -33604,6 +33763,12 @@
 /obj/machinery/light/small,
 /turf/unsimulated/floor/jungle/bedrock,
 /area/surface/jungle/underground/zoned/speakeasy)
+"nwA" = (
+/mob/living/simple_animal/hostile/bear/brownbear{
+	faction = "jungle"
+	},
+/turf/simulated/floor/plating,
+/area/surface/jungle)
 "nwK" = (
 /obj/structure/table/plastic,
 /turf/unsimulated/floor/jungle/path,
@@ -34725,19 +34890,6 @@
 	},
 /turf/simulated/floor,
 /area/supply/lobby)
-"nUN" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
 "nUQ" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
@@ -34849,6 +35001,10 @@
 	icon_state = "rockvault"
 	},
 /area/vox_trading_post/trade_processing)
+"nWH" = (
+/obj/effect/landmark/hobostart,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "nWJ" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -36078,6 +36234,11 @@
 "owa" = (
 /obj/structure/fence/cut/large,
 /turf/unsimulated/floor/jungle/concrete,
+/area/surface/jungle)
+"owy" = (
+/obj/machinery/space_heater/campfire,
+/obj/machinery/cooking/grill/spit,
+/turf/unsimulated/floor/jungle/path,
 /area/surface/jungle)
 "owz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -38668,17 +38829,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor,
 /area/engineering/engine)
-"pBe" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 1;
-	pixel_x = -29
-	},
-/turf/simulated/floor{
-	dir = 8;
-	icon_state = "whitegreen"
-	},
-/area/medical/sleeper)
 "pBk" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -39290,6 +39440,10 @@
 	icon_state = "whitepurple"
 	},
 /area/research_outpost/anomaly)
+"pMO" = (
+/obj/structure/fence/corner,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "pMV" = (
 /obj/machinery/camera{
 	dir = 4
@@ -41078,15 +41232,6 @@
 	icon_state = "red"
 	},
 /area/security/prison)
-"qxG" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated/floor{
-	icon_state = "brown"
-	},
-/area/supply/storage)
 "qxK" = (
 /obj/item/device/assembly/infra{
 	pixel_x = -5;
@@ -41489,6 +41634,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/research_outpost/atmos)
+"qFq" = (
+/obj/structure/kitchenspike,
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "qFO" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -41569,15 +41718,6 @@
 	icon_state = "carpetside"
 	},
 /area/centcom/test)
-"qGB" = (
-/obj/effect/landmark/start{
-	name = "Assistant"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/wood,
-/area/surface/jungle/zoned/storage_shed)
 "qGI" = (
 /obj/machinery/door/window{
 	dir = 1
@@ -42629,6 +42769,10 @@
 	icon_state = "whitegreen"
 	},
 /area/medical/medbay)
+"rel" = (
+/obj/structure/table/woodentable,
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground)
 "reo" = (
 /obj/effect/step_trigger/thrower/north{
 	affect_ghosts = 1;
@@ -43296,6 +43440,24 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
+"rrm" = (
+/obj/effect/landmark/start{
+	name = "Assistant"
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	pixel_x = -24
+	},
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 13;
+	pixel_x = -21
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle/zoned/storage_shed)
 "rrp" = (
 /obj/docking_port/shuttle{
 	dir = 4
@@ -44131,13 +44293,9 @@
 /turf/space,
 /area/shuttle/specops/centcom)
 "rFh" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/obj/structure/grille/window_spawner/reinforced,
+/turf/simulated/floor/plating,
+/area/surface/jungle)
 "rFi" = (
 /obj/item/weapon/paper_bin{
 	pixel_x = -3;
@@ -44477,6 +44635,10 @@
 	tag = "icon-vault (NORTHEAST)"
 	},
 /area/engineering/reactor_room)
+"rQr" = (
+/obj/machinery/door/mineral/wood,
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "rQu" = (
 /obj/machinery/conveyor{
 	id_tag = "mining_internal"
@@ -46310,16 +46472,6 @@
 /obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated,
 /area/shuttle/trade/start)
-"sCT" = (
-/mob/living/simple_animal/hostile/bear/brownbear{
-	faction = "jungle"
-	},
-/turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
-	},
-/area/surface/jungle)
 "sCY" = (
 /obj/structure/shuttle/engine/propulsion,
 /turf/space,
@@ -46503,6 +46655,12 @@
 	icon_state = "carpetside"
 	},
 /area/centcom/test)
+"sGm" = (
+/obj/structure/fence/door{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "sGC" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
@@ -46795,6 +46953,12 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
+"sMa" = (
+/obj/structure/fence/corner{
+	dir = 1
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "sMv" = (
 /obj/machinery/camera{
 	dir = 1
@@ -47300,6 +47464,11 @@
 	},
 /turf/space,
 /area)
+"sXl" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/reagent_containers/pan,
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "sXo" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
@@ -50267,6 +50436,12 @@
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/hallway)
+"ugc" = (
+/obj/structure/bed/chair/wood/normal{
+	dir = 1
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "ugo" = (
 /obj/structure/shuttle/diag_wall/black,
 /turf/unsimulated/floor{
@@ -50339,6 +50514,10 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle/zoned/storage_shed)
+"uhL" = (
+/obj/structure/fence,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "uir" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -51141,6 +51320,10 @@
 	icon_state = "dark-markings"
 	},
 /area/security/armory)
+"uxO" = (
+/obj/structure/closet/jungle_first_aid,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "uxP" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -53108,6 +53291,10 @@
 	icon_state = "carpetside"
 	},
 /area/centcom/control)
+"vmh" = (
+/obj/item/weapon/pickaxe/shovel/spade,
+/turf/unsimulated/floor/jungle/dirt,
+/area/surface/jungle)
 "vmj" = (
 /obj/item/weapon/storage/box/fissionsupply_genericassembly,
 /obj/item/weapon/circuitboard/fission_control_rod{
@@ -53340,12 +53527,6 @@
 	icon_state = "dark"
 	},
 /area/security/prison)
-"vpL" = (
-/mob/living/simple_animal/hostile/bear/panda{
-	faction = "jungle"
-	},
-/turf/simulated/floor/wood,
-/area/surface/jungle)
 "vpS" = (
 /obj/structure/fence/corner{
 	dir = 8
@@ -53606,10 +53787,6 @@
 	icon_state = "red"
 	},
 /area/security/armory)
-"vuU" = (
-/obj/effect/landmark/dungeon_area,
-/turf/space,
-/area)
 "vvb" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -53722,13 +53899,6 @@
 	icon_state = "dark-markings"
 	},
 /area/security/armory)
-"vwU" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -1;
-	pixel_x = -27
-	},
-/turf/simulated/floor,
-/area/research_outpost/entry)
 "vwZ" = (
 /turf/simulated/floor{
 	icon_state = "whiteblue"
@@ -54087,6 +54257,10 @@
 	icon_state = "dark"
 	},
 /area/engineering/antimatter_room)
+"vDX" = (
+/obj/structure/bed/chair/wood/normal,
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "vEg" = (
 /obj/machinery/door/window/plasma/secure{
 	name = "Test Chamber";
@@ -54799,6 +54973,10 @@
 	icon_state = "white"
 	},
 /area/turret_protected/tcomms_control_room)
+"vQO" = (
+/obj/effect/landmark/dungeon_area,
+/turf/space,
+/area)
 "vQV" = (
 /obj/structure/bed/chair/wood/pew/left{
 	dir = 4
@@ -54900,6 +55078,10 @@
 	icon_state = "freezerfloor"
 	},
 /area/medical/virology)
+"vSB" = (
+/obj/structure/sink/puddle,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "vSK" = (
 /obj/structure/bed/chair/wood/normal{
 	name = "Jurry seat"
@@ -55252,13 +55434,6 @@
 "wav" = (
 /turf/simulated/wall/shuttle,
 /area/shuttle/mining/station)
-"waA" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -30;
-	pixel_x = 1
-	},
-/turf/simulated/floor,
-/area/research_outpost/hallway)
 "waI" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -55804,24 +55979,6 @@
 	},
 /turf/simulated/floor/engine/vacuum,
 /area/science/test_area)
-"wmp" = (
-/obj/effect/landmark/start{
-	name = "Assistant"
-	},
-/obj/machinery/power/apc{
-	dir = 8;
-	pixel_x = -24
-	},
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/light_switch{
-	pixel_y = 13;
-	pixel_x = -21
-	},
-/turf/simulated/floor/wood,
-/area/surface/jungle/zoned/storage_shed)
 "wmr" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 5
@@ -58577,6 +58734,12 @@
 	icon_state = "yellow"
 	},
 /area/engineering/engine)
+"xpU" = (
+/obj/structure/table/woodentable,
+/obj/item/stack/sheet/wood/bigstack,
+/obj/item/weapon/lighter/random,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "xqg" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -58768,6 +58931,10 @@
 	tag = "icon-vault (NORTHEAST)"
 	},
 /area/engineering/reactor_room)
+"xtQ" = (
+/mob/living/simple_animal/capybara/jungle,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "xuR" = (
 /obj/structure/closet/crate,
 /turf/simulated/floor,
@@ -59709,6 +59876,17 @@
 	icon_state = "grimy"
 	},
 /area/crew_quarters/bar_backroom)
+"xOV" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "xPb" = (
 /obj/machinery/computer/card,
 /turf/unsimulated/floor{
@@ -60476,6 +60654,10 @@
 	name = "plating"
 	},
 /area/centcom/control)
+"yeU" = (
+/obj/structure/closet,
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "yeX" = (
 /obj/structure/table,
 /obj/machinery/alarm{
@@ -60759,13 +60941,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep)
-"ykm" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_y = -1;
-	pixel_x = 30
-	},
-/turf/simulated/floor,
-/area/mine/production)
 "yks" = (
 /obj/structure/closet/crate,
 /obj/abstract/map/spawner/space/vox/trader/spacesuit,
@@ -75693,24 +75868,24 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+gku
+uhL
+uhL
+uhL
+uhL
+sGm
+uhL
+uhL
+uhL
+uhL
+uhL
+sMa
+uhL
+uhL
+uhL
+uhL
+uhL
+sMa
 lIK
 lIK
 lIK
@@ -76045,24 +76220,24 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+aOm
+wra
+wra
+wra
+wra
+uXL
+uXL
+uXL
+uXL
+uXL
+vSB
+aOm
+nfJ
+uXL
+uXL
+uXL
+xpU
+aOm
 lIK
 lIK
 lIK
@@ -76397,24 +76572,24 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+aOm
+wra
+oQA
+oQA
+oQA
+uXL
+uXL
+uXL
+uXL
+uXL
+byO
+pMO
+uXL
+uXL
+uXL
+uXL
+uXL
+aOm
 lIK
 lIK
 lIK
@@ -76749,24 +76924,24 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+aOm
+mOd
+mkt
+vmh
+mkt
+nWH
+uXL
+uXL
+uXL
+uXL
+uXL
+uXL
+uXL
+uXL
+owy
+uXL
+uXL
+aOm
 lIK
 lIK
 lIK
@@ -77101,24 +77276,24 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+aOm
+wra
+wra
+wra
+wra
+uXL
+uXL
+uXL
+uXL
+uXL
+uxO
+sMa
+uXL
+uXL
+uXL
+uXL
+uXL
+aOm
 lIK
 lIK
 lIK
@@ -77453,24 +77628,24 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+oHr
+rFh
+rFh
+rFh
+oHr
+rQr
+rFh
+oHr
+oHr
+oHr
+oHr
+oHr
+uXL
+uXL
+uXL
+uXL
+uXL
+aOm
 lIK
 lIK
 lIK
@@ -77805,24 +77980,24 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+oHr
+yeU
+wAq
+qFq
+rFh
+wAq
+jhI
+oHr
+heH
+gvs
+heH
+oHr
+uXL
+uXL
+uXL
+sMa
+uhL
+pMO
 lIK
 lIK
 lIK
@@ -78157,22 +78332,22 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+oHr
+fSA
+wAq
+jjN
+rFh
+wAq
+epA
+oHr
+wAq
+wAq
+wAq
+oHr
+uXL
+uXL
+uXL
+aOm
 lIK
 lIK
 lIK
@@ -78509,22 +78684,22 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+oHr
+sXl
+wAq
+gvs
+rFh
+wAq
+wAq
+rQr
+wAq
+wAq
+wAq
+oHr
+uXL
+uXL
+uXL
+aOm
 lIK
 lIK
 lIK
@@ -78861,22 +79036,22 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+oHr
+gvs
+wAq
+qFq
+rFh
+wAq
+wAq
+oHr
+wAq
+wAq
+wAq
+oHr
+uXL
+lhE
+uXL
+aOm
 lIK
 lIK
 lIK
@@ -79213,22 +79388,22 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+oHr
+oHr
+rQr
+oHr
+oHr
+wAq
+wAq
+oHr
+heH
+gvs
+heH
+oHr
+fcF
+lXW
+lxO
+aOm
 lIK
 lIK
 lIK
@@ -79565,22 +79740,22 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+oHr
+wAq
+wAq
+wAq
+wAq
+wAq
+wAq
+oHr
+oHr
+oHr
+oHr
+oHr
+uhL
+uhL
+uhL
+pMO
 lIK
 lIK
 lIK
@@ -79917,15 +80092,15 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+oHr
+wAq
+vDX
+myk
+ugc
+wAq
+wAq
+oHr
+xtQ
 lIK
 lIK
 lIK
@@ -80269,14 +80444,14 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+oHr
+wAq
+vDX
+myk
+ugc
+wAq
+wAq
+oHr
 lIK
 lIK
 lIK
@@ -80621,14 +80796,14 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+oHr
+wAq
+wAq
+wAq
+wAq
+wAq
+wAq
+oHr
 lIK
 lIK
 lIK
@@ -80973,14 +81148,14 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+oHr
+oHr
+oHr
+oHr
+oHr
+oHr
+oHr
+oHr
 lIK
 lIK
 lIK
@@ -86967,7 +87142,7 @@ lIK
 lIK
 lIK
 lIK
-pjM
+lIK
 lIK
 lIK
 lIK
@@ -118959,9 +119134,9 @@ tkW
 xgw
 olm
 hkY
-sCT
-lZj
-lZj
+gUP
+nwA
+nwA
 tdB
 hkY
 wAq
@@ -119311,9 +119486,9 @@ tkW
 kLi
 hkY
 xgw
-lZj
+nwA
 hkY
-sCT
+gUP
 tdB
 hQo
 xBU
@@ -119321,8 +119496,8 @@ peO
 ylV
 nSO
 wAq
-lZj
-lZj
+nwA
+nwA
 aaw
 tdB
 tdB
@@ -119668,7 +119843,7 @@ hkY
 xgw
 tdB
 hkY
-vpL
+mlR
 wAq
 hkY
 fQX
@@ -120730,7 +120905,7 @@ oDr
 hkY
 wAq
 heX
-ahs
+bEw
 hkY
 tdB
 tdB
@@ -120911,7 +121086,7 @@ rsn
 blH
 prK
 bKd
-pBe
+kSb
 bKd
 uJo
 bBG
@@ -123312,7 +123487,7 @@ dEu
 sgL
 qqK
 nqR
-qxG
+mrr
 ekb
 tHr
 eWz
@@ -137083,7 +137258,7 @@ wld
 wld
 wld
 maR
-nUN
+nkZ
 bhN
 eCz
 vZt
@@ -137435,7 +137610,7 @@ wld
 wld
 wld
 vhv
-myk
+xOV
 qcB
 qcB
 jkg
@@ -138842,8 +139017,8 @@ wld
 xor
 xor
 wld
-rFh
-byO
+grk
+gNi
 wld
 lvt
 jgU
@@ -140601,8 +140776,8 @@ wld
 wld
 wld
 wld
-rFh
-byO
+grk
+gNi
 wld
 wld
 uUI
@@ -141304,8 +141479,8 @@ wld
 wld
 wld
 wld
-rFh
-byO
+grk
+gNi
 wld
 wld
 wld
@@ -142007,8 +142182,8 @@ wld
 wld
 wld
 wld
-rFh
-byO
+grk
+gNi
 wld
 wld
 wld
@@ -143062,8 +143237,8 @@ wld
 wld
 kzq
 sfj
-wmp
-qGB
+rrm
+cEc
 fHl
 kzq
 wld
@@ -200672,9 +200847,9 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -201012,6 +201187,7 @@ rDI
 rDI
 rDI
 rDI
+bRI
 rDI
 rDI
 rDI
@@ -201022,9 +201198,8 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -201362,20 +201537,20 @@ rDI
 rDI
 rDI
 rDI
+bRI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
 rDI
+rel
+rel
+rel
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+bRI
 rDI
 rDI
 rDI
@@ -201713,21 +201888,21 @@ rDI
 rDI
 rDI
 rDI
+bRI
+bRI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -202064,20 +202239,20 @@ rDI
 rDI
 rDI
 rDI
+bRI
+bRI
 rDI
 rDI
 rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
+hMT
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -202425,11 +202600,11 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -202778,9 +202953,9 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -203130,9 +203305,9 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -203482,9 +203657,9 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -203834,9 +204009,9 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -204183,12 +204358,12 @@ rDI
 rDI
 rDI
 rDI
+bRI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -204535,14 +204710,14 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -204890,11 +205065,11 @@ rDI
 rDI
 rDI
 rDI
+bRI
+bRI
+bRI
 rDI
-rDI
-rDI
-rDI
-rDI
+bRI
 rDI
 rDI
 rDI
@@ -205242,9 +205417,9 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -205594,9 +205769,9 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -205947,8 +206122,8 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -206299,8 +206474,8 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -206648,13 +206823,13 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -207000,14 +207175,14 @@ rDI
 rDI
 rDI
 rDI
+bRI
 rDI
 rDI
+bRI
+bRI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -207351,16 +207526,16 @@ rDI
 rDI
 rDI
 rDI
+bRI
+bRI
 rDI
 rDI
 rDI
+bRI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -207708,7 +207883,7 @@ rDI
 rDI
 rDI
 rDI
-rDI
+bRI
 rDI
 rDI
 rDI
@@ -208059,8 +208234,8 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -208411,7 +208586,7 @@ rDI
 rDI
 rDI
 rDI
-rDI
+bRI
 rDI
 rDI
 rDI
@@ -208763,7 +208938,7 @@ rDI
 rDI
 rDI
 rDI
-rDI
+bRI
 rDI
 rDI
 rDI
@@ -345759,7 +345934,7 @@ ocC
 ocC
 ocC
 ocC
-vuU
+vQO
 ocC
 ocC
 ocC
@@ -465138,7 +465313,7 @@ plG
 kIA
 cUg
 lNb
-vwU
+jPf
 lNb
 jcf
 xzU
@@ -469364,7 +469539,7 @@ hiV
 vvb
 lYc
 lYc
-waA
+gRV
 dKu
 dKu
 dKu
@@ -471806,7 +471981,7 @@ gGr
 luI
 luI
 luI
-ykm
+gDM
 pGv
 luI
 jzk
