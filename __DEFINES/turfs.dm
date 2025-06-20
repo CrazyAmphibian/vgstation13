@@ -15,3 +15,7 @@
 #define MINE_DIFFICULTY_GLHF 9
 
 #define MINE_DURATION 100
+
+#define TURF_REAGENT_ENTER		(1 << 0)
+#define TURF_REAGENT_EXIT		(1 << 1)
+#define TURF_REAGENT_PROCESS	(1 << 2)
