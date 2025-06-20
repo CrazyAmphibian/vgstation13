@@ -22746,6 +22746,17 @@
 	icon_state = "whitepurple"
 	},
 /area/science/hallway)
+"iZq" = (
+/obj/item/weapon/storage/toolbox/mechanical{
+	pixel_y = 5
+	},
+/obj/structure/table/woodentable,
+/obj/item/weapon/storage/toolbox/mechanical{
+	pixel_y = -1;
+	pixel_x = 2
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "iZA" = (
 /obj/structure/table/reinforced,
 /obj/item/device/radio/intercom/medbay/broadcast_nospeaker{
@@ -80828,7 +80839,7 @@ wAq
 wAq
 wAq
 wAq
-wAq
+iZq
 oHr
 lIK
 lIK
@@ -106293,8 +106304,8 @@ tnZ
 tnZ
 tnZ
 maR
-kyt
-tsV
+snf
+snf
 hey
 jRn
 bWd
@@ -106645,7 +106656,7 @@ jgK
 tnZ
 tnZ
 maR
-iMQ
+snf
 dCE
 kiH
 wpj
@@ -106997,7 +107008,7 @@ nwK
 tnZ
 tnZ
 maR
-iMQ
+snf
 xMH
 tgB
 rTQ
@@ -107349,8 +107360,8 @@ tnZ
 tnZ
 tnZ
 maR
-iMQ
-xMH
+kyt
+hLG
 eNu
 pEt
 ebT
