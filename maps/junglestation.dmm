@@ -1940,6 +1940,11 @@
 /obj/machinery/light_switch{
 	pixel_y = 28
 	},
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=2";
+	freq = 1400;
+	location = "Science Lobby"
+	},
 /turf/simulated/floor,
 /area/science/hallway)
 "aMf" = (
@@ -2222,6 +2227,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/item/beacon,
 /turf/simulated/floor,
 /area/teleporter)
 "aSq" = (
@@ -3908,6 +3914,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=2";
+	freq = 1400;
+	location = "Security Lobby"
+	},
 /turf/simulated/floor,
 /area/security/lobby)
 "bAm" = (
@@ -4559,6 +4570,11 @@
 	},
 /obj/machinery/light/small{
 	dir = 4
+	},
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=2";
+	freq = 1400;
+	location = "Medical Lobby"
 	},
 /turf/simulated/floor{
 	dir = 1;
@@ -6699,13 +6715,13 @@
 /turf/space,
 /area/shuttle/transport1/centcom)
 "cCM" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/simulated/floor{
-	dir = 1;
-	icon_state = "brown";
-	tag = "icon-brown (NORTH)"
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=2";
+	freq = 1400;
+	location = "Theatre"
 	},
-/area/supply/lobby)
+/turf/simulated/floor/wood,
+/area/surface/jungle/zoned/outdoor_bar)
 "cDH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -8390,11 +8406,9 @@
 /turf/unsimulated/floor/jungle/bedrock,
 /area/surface/jungle/underground/zoned/speakeasy)
 "did" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
-	dir = 1;
-	icon_state = "brown";
-	tag = "icon-brown (NORTH)"
+	dir = 4;
+	icon_state = "brown"
 	},
 /area/supply/lobby)
 "die" = (
@@ -9028,6 +9042,12 @@
 	icon_state = "floor4"
 	},
 /area/shuttle/syndicate_elite/mothership)
+"dwn" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "unloading"
+	},
+/turf/simulated/floor,
+/area/supply/storage)
 "dwx" = (
 /turf/simulated/floor{
 	icon_state = "carpet"
@@ -11549,6 +11569,17 @@
 	icon_state = "floor5"
 	},
 /area/alien)
+"etJ" = (
+/obj/effect/landmark/start{
+	name = "Assistant"
+	},
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=8";
+	freq = 1400;
+	location = "Tool Storage"
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle/zoned/storage_shed)
 "etT" = (
 /obj/machinery/recharge_station,
 /turf/simulated/floor,
@@ -16515,6 +16546,21 @@
 	icon_state = "floor4"
 	},
 /area/shuttle/administration/centcom)
+"gwa" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=8";
+	freq = 1400;
+	location = "QM #3"
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "bot"
+	},
+/turf/simulated/floor,
+/area/supply/storage)
 "gwq" = (
 /turf/unsimulated/floor/jungle/path_plated{
 	icon_state = "junglestation6";
@@ -25191,8 +25237,19 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
+	},
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=8";
+	freq = 1400;
+	location = "QM #1"
+	},
+/obj/machinery/bot/mulebot{
+	home_destination = "QM #1";
+	suffix = "#1"
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "bot"
 	},
 /turf/simulated/floor{
 	icon_state = "brown"
@@ -27421,7 +27478,7 @@
 	one_way = 1
 	},
 /turf/simulated/floor{
-	dir = 1;
+	dir = 9;
 	icon_state = "neutral"
 	},
 /area/maintenance/disposal)
@@ -27522,6 +27579,13 @@
 	icon_state = "whitegreen"
 	},
 /area/medical/sleeper)
+"kVF" = (
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "brown";
+	tag = "icon-brown (NORTH)"
+	},
+/area/supply/lobby)
 "kWj" = (
 /obj/structure/bed/chair/wood/normal{
 	dir = 4
@@ -29567,7 +29631,10 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/turf/simulated/floor,
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "brown"
+	},
 /area/supply/lobby)
 "lKW" = (
 /obj/machinery/bodyscanner{
@@ -30932,7 +30999,10 @@
 	dir = 4;
 	on = 1
 	},
-/turf/simulated/floor,
+/turf/simulated/floor{
+	dir = 4;
+	icon_state = "brown"
+	},
 /area/supply/lobby)
 "mkg" = (
 /obj/structure/window/reinforced{
@@ -32632,12 +32702,13 @@
 	},
 /area/engineering/reactor_room)
 "mVo" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 8;
-	initialize_directions = 11
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=2";
+	freq = 1400;
+	location = "Bazaar"
 	},
-/turf/simulated/floor,
-/area/supply/storage)
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/zoned/tradearea)
 "mVO" = (
 /obj/structure/table,
 /obj/item/weapon/storage/bag/plasticbag{
@@ -33317,7 +33388,7 @@
 "nkI" = (
 /obj/machinery/computer/pda_terminal,
 /turf/simulated/floor{
-	dir = 1;
+	dir = 9;
 	icon_state = "brown";
 	tag = "icon-brown (NORTH)"
 	},
@@ -33766,7 +33837,10 @@
 /obj/machinery/atm{
 	pixel_x = 32
 	},
-/turf/simulated/floor,
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "brown"
+	},
 /area/supply/lobby)
 "nuy" = (
 /obj/effect/decal/warning_stripes{
@@ -34108,11 +34182,13 @@
 	},
 /area/science/hallway)
 "nED" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=2";
+	freq = 1400;
+	location = "Library"
 	},
-/turf/simulated/floor,
-/area/supply/storage)
+/turf/simulated/floor/wood,
+/area/library)
 "nEZ" = (
 /obj/machinery/power/treadmill{
 	dir = 8
@@ -37496,11 +37572,13 @@
 /turf/simulated/floor,
 /area/security/brig)
 "oXo" = (
-/turf/simulated/floor{
-	dir = 1;
-	icon_state = "neutral"
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=2";
+	freq = 1400;
+	location = "Dorms"
 	},
-/area/maintenance/disposal)
+/turf/simulated/floor/wood,
+/area/crew_quarters/sleep)
 "oXv" = (
 /obj/structure/grille/window_spawner/reinforced,
 /turf/simulated,
@@ -39272,6 +39350,11 @@
 	},
 /area/science/robotics)
 "pIx" = (
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=2";
+	freq = 1400;
+	location = "Chapel"
+	},
 /turf/simulated/floor/carpet{
 	icon_state = "carpet9-4"
 	},
@@ -43125,6 +43208,12 @@
 /obj/machinery/alarm{
 	pixel_y = 23
 	},
+/obj/machinery/door_control{
+	id_tag = "recycleshutter";
+	name = "Recycling Shutters";
+	req_access_txt = "31";
+	pixel_x = -24
+	},
 /turf/simulated/floor{
 	dir = 9;
 	icon_state = "brown";
@@ -44484,6 +44573,16 @@
 	tag = "icon-checker (NORTHEAST)"
 	},
 /area/science/rd)
+"rHF" = (
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=2";
+	freq = 1400;
+	location = "Art Area"
+	},
+/turf/simulated/floor/wood{
+	icon_state = "wood_26"
+	},
+/area/surface/jungle/zoned/art_zone)
 "rHY" = (
 /turf/simulated/floor/engine,
 /area/science/xenobiology/specimen_3)
@@ -44613,7 +44712,10 @@
 /obj/machinery/camera{
 	dir = 8
 	},
-/turf/simulated/floor,
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "brown"
+	},
 /area/supply/lobby)
 "rMB" = (
 /obj/structure/grille/window_spawner/reinforced/full,
@@ -48621,6 +48723,9 @@
 	},
 /area/security/interrogation)
 "toQ" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "unloading"
+	},
 /turf/simulated/floor{
 	icon_state = "brown"
 	},
@@ -48743,7 +48848,10 @@
 /obj/machinery/light_switch{
 	pixel_x = 28
 	},
-/turf/simulated/floor,
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "brown"
+	},
 /area/supply/lobby)
 "tsw" = (
 /obj/effect/glowshroom/single,
@@ -48753,7 +48861,7 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor{
 	dir = 1;
-	icon_state = "neutral"
+	icon_state = "neutralcorner"
 	},
 /area/maintenance/disposal)
 "tsU" = (
@@ -51736,6 +51844,14 @@
 	tag = "icon-vault (NORTHEAST)"
 	},
 /area/bridge)
+"uFw" = (
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=2";
+	freq = 1400;
+	location = "Bar"
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/bar)
 "uFM" = (
 /obj/item/weapon/stool/cushion{
 	pixel_y = 12
@@ -52459,8 +52575,19 @@
 "uWi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
+	},
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=8";
+	freq = 1400;
+	location = "QM #2"
+	},
+/obj/machinery/bot/mulebot{
+	home_destination = "QM #2";
+	suffix = "#2"
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "bot"
 	},
 /turf/simulated/floor,
 /area/supply/storage)
@@ -55807,17 +55934,13 @@
 /turf/simulated/floor,
 /area/supply/miningdock)
 "wgH" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/navbeacon{
+	codes_txt = "delivery;dir=2";
+	freq = 1400;
+	location = "Engineering Lobby"
 	},
-/turf/simulated/floor{
-	dir = 1;
-	icon_state = "brown";
-	tag = "icon-brown (NORTH)"
-	},
-/area/supply/lobby)
+/turf/simulated/floor,
+/area/engineering/break_room)
 "wgM" = (
 /obj/machinery/light{
 	dir = 1
@@ -106344,7 +106467,7 @@ tnZ
 tnZ
 tnZ
 tnZ
-tnZ
+mVo
 fWT
 tnZ
 fWT
@@ -117975,7 +118098,7 @@ lJn
 iXH
 fer
 hAU
-fUK
+cCM
 uAs
 cGB
 ean
@@ -119350,8 +119473,8 @@ ijh
 oWM
 pSp
 aPO
-oWM
-oWM
+dwn
+dwn
 toQ
 llh
 cHd
@@ -119702,7 +119825,7 @@ oWM
 oWM
 pSp
 lHk
-uWi
+gwa
 uWi
 jXm
 tPy
@@ -120047,10 +120170,10 @@ qqK
 fGX
 oWM
 oWM
+oWM
+oWM
+oWM
 fYP
-mVo
-mVo
-mVo
 kcc
 lRl
 mbl
@@ -120400,9 +120523,9 @@ ouc
 oWM
 oWM
 oWM
-nED
-nED
-nED
+oWM
+oWM
+oWM
 oWM
 aIC
 pfB
@@ -121832,7 +121955,7 @@ xor
 wld
 qhG
 ijG
-mpz
+nED
 mpz
 mpz
 gOX
@@ -124272,7 +124395,7 @@ tVE
 mAq
 stB
 xwU
-oXo
+sHR
 dEu
 sgL
 qqK
@@ -124635,11 +124758,11 @@ hUZ
 hnw
 cDH
 mNL
-nxe
-xbb
-xbb
+kVF
+did
+did
 mkc
-xbb
+did
 dIw
 wld
 xor
@@ -124987,7 +125110,7 @@ brY
 btG
 sTq
 oQc
-cCM
+bAt
 bAt
 bAt
 qgR
@@ -125339,7 +125462,7 @@ mDT
 pIB
 lqU
 nUH
-wgH
+joj
 oBB
 mDL
 mDL
@@ -125691,7 +125814,7 @@ eXG
 oxC
 jfW
 iBP
-did
+gQV
 fgb
 esb
 esb
@@ -125721,7 +125844,7 @@ sXU
 edD
 edD
 esU
-dqa
+uFw
 sIe
 sIe
 nkN
@@ -130944,7 +131067,7 @@ gnK
 xgj
 fgx
 lgW
-lgW
+oXo
 nVJ
 aPt
 lgW
@@ -135575,7 +135698,7 @@ mSW
 gHV
 wld
 wld
-jYs
+rHF
 jYs
 jYs
 jYs
@@ -138756,7 +138879,7 @@ iMQ
 wld
 wld
 vay
-moC
+wgH
 moC
 upN
 ksH
@@ -145084,7 +145207,7 @@ wld
 kzq
 nvA
 ptI
-ptI
+etJ
 vFj
 kzq
 wld
