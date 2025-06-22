@@ -719,6 +719,7 @@
 
 /obj/structure/flora/jungle_berries/attack_hand(var/mob/user)
 	if(hasberries)
+		to_chat(user,"<span class='notice'>You pick some berries from \the [src]</span>")
 		hasberries=FALSE
 		tickssincelastgrowth=0
 		var/i=3
@@ -729,6 +730,7 @@
 				i=0
 		icon_state="stage-6"
 	else
+		to_chat(user,"<span class='notice'>There's nothing grown yet./span>")
 		..()
 
 /obj/structure/flora/jungle_berries/process()
@@ -739,17 +741,3 @@
 		tickssincelastgrowth++
 	..()
 	processing_objects+=src // flora is not normally an object which calls this proc, so we have to manually re-add it every cycle.
-
-/obj/item/weapon/reagent_containers/food/snacks/grown/berries/jungle
-	icon = 'icons/obj/hydroponics/berry.dmi'
-	icon_state = "produce2"
-	desc = "They taste like... burning."
-
-/obj/item/weapon/reagent_containers/food/snacks/grown/berries/jungle/New()
-	..()
-	icon_state = "produce2" //the icon state is set in ..()
-	reagents.add_reagent(NUTRIMENT,1) //we want 3 total. there's already 2 from ..()
-	bitesize=3 //consume it in 1 bite.
-	if(prob(33))
-		reagents.add_reagent(TOXIN,1)
-		bitesize=4
