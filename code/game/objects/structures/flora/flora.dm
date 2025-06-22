@@ -11,10 +11,10 @@
 	update_icon()
 
 /obj/structure/flora/Destroy()
-	..()
 	if(istype(loc,/turf/unsimulated/floor/jungle/grass))
 		var/turf/unsimulated/floor/jungle/grass/G=loc
 		G.turf_speed_multiplier=1.1
+	..()
 
 /obj/structure/flora/update_icon()
 	clicked = new/icon(src.icon, src.icon_state, src.dir)
@@ -695,3 +695,61 @@
 /obj/structure/flora/rock/pile/snow/New()
 	..()
 	icon_state = "srockpile[rand(1,5)]"
+
+
+/obj/structure/flora/jungle_berries
+	name = "Berry Bush"
+	desc = "I eated the purple berries."
+	icon = 'icons/obj/hydroponics/berry.dmi'
+	icon_state="stage-6"
+	var/hasberries=FALSE
+	var/tickssincelastgrowth=0
+
+/obj/structure/flora/jungle_berries/New()
+	..()
+	processing_objects+=src
+	if(prob(25))
+		hasberries=TRUE
+	if(hasberries)
+		icon_state = "harvest"
+
+/obj/structure/flora/jungle_berries/Destroy()
+	..()
+	processing_objects-=src
+
+/obj/structure/flora/jungle_berries/attack_hand(var/mob/user)
+	if(hasberries)
+		hasberries=FALSE
+		tickssincelastgrowth=0
+		var/i=3
+		while(i)
+			new/obj/item/weapon/reagent_containers/food/snacks/grown/berries/jungle(loc)
+			i--
+			if(prob(50))
+				i=0
+		icon_state="stage-6"
+	else
+		..()
+
+/obj/structure/flora/jungle_berries/process()
+	if(!hasberries)
+		if(rand()<0.0284 && tickssincelastgrowth>5) //this gives us a regrow time of around 60 seconds for half of them to get there.
+			hasberries=TRUE
+			icon_state = "harvest"
+		tickssincelastgrowth++
+	..()
+	processing_objects+=src // flora is not normally an object which calls this proc, so we have to manually re-add it every cycle.
+
+/obj/item/weapon/reagent_containers/food/snacks/grown/berries/jungle
+	icon = 'icons/obj/hydroponics/berry.dmi'
+	icon_state = "produce2"
+	desc = "They taste like... burning."
+
+/obj/item/weapon/reagent_containers/food/snacks/grown/berries/jungle/New()
+	..()
+	icon_state = "produce2" //the icon state is set in ..()
+	reagents.add_reagent(NUTRIMENT,1) //we want 3 total. there's already 2 from ..()
+	bitesize=3 //consume it in 1 bite.
+	if(prob(33))
+		reagents.add_reagent(TOXIN,1)
+		bitesize=4

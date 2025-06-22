@@ -18087,6 +18087,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/science/server)
+"gYT" = (
+/mob/living/simple_animal/penguin/sombrero,
+/turf/unsimulated/floor/snow/dirt,
+/area/centcom/holding)
 "gYZ" = (
 /obj/machinery/bot/farmbot{
 	desc = "Serving 25 to life for drowning a botanist.";
@@ -326292,7 +326296,7 @@ ocC
 ocC
 fnW
 ipB
-rWw
+uLq
 mKl
 wvr
 nrq
@@ -326644,7 +326648,7 @@ ocC
 ocC
 fnW
 qDn
-uLq
+rWw
 qNU
 wvr
 nrq
@@ -331229,7 +331233,7 @@ aSV
 lQs
 lQs
 kTH
-lQs
+gYT
 lQs
 ptC
 ptC
