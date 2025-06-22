@@ -329,6 +329,10 @@ var/list/foliage_replacments=list(
 		if(do_after(user, src, 20/s ))
 			ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
 
+
+/turf/unsimulated/floor/jungle/path/can_place_cables()
+	return TRUE
+
 /turf/unsimulated/floor/jungle/path/ex_act(severity)	
 	switch(severity)
 		if(1)
@@ -580,6 +584,8 @@ var/list/foliage_replacments=list(
 /turf/unsimulated/floor/jungle/bedrock/ex_act(severity)	
 	return
 
+/turf/unsimulated/floor/jungle/bedrock/can_place_cables()
+	return TRUE
 
 /turf/unsimulated/floor/jungle/worldborder
 	density=TRUE
