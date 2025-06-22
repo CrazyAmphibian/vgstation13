@@ -4379,6 +4379,12 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/engineering/atmos_control)
+"bKt" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "bKM" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/pen/blue{
@@ -5840,6 +5846,24 @@
 /obj/item/weapon/bedsheet/green,
 /turf/simulated/floor/vox/wood,
 /area/vox_trading_post/dorms)
+"cmp" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/pickaxe,
+/obj/item/weapon/pickaxe/shovel,
+/obj/item/weapon/pickaxe/shovel{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/weapon/pickaxe{
+	pixel_x = 7;
+	pixel_y = 2
+	},
+/obj/item/clothing/head/hardhat/orange,
+/obj/item/clothing/head/hardhat/orange{
+	pixel_y = 11
+	},
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "cmC" = (
 /obj/item/weapon/gun/portalgun,
 /obj/structure/displaycase/specops{
@@ -7264,7 +7288,7 @@
 "cMl" = (
 /obj/machinery/door/airlock/glass_mining{
 	name = "Cargo Bay";
-	req_access_txt = "31"
+	req_one_access_txt = "31;48"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -11007,6 +11031,12 @@
 	icon_state = "whitegreen"
 	},
 /area/medical/sleeper)
+"ejh" = (
+/obj/machinery/conveyor{
+	id_tag = "ghetto_ore_proc_conv"
+	},
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "ejx" = (
 /obj/effect/landmark/corpse/russian/ranged,
 /turf/simulated/floor/engine,
@@ -13253,6 +13283,20 @@
 	icon_state = "dark"
 	},
 /area/turret_protected/tcomms_control_room)
+"fhN" = (
+/obj/machinery/light/small,
+/obj/structure/table/woodentable,
+/obj/item/weapon/reagent_containers/food/drinks/plastic/water{
+	pixel_y = 7
+	},
+/obj/item/weapon/reagent_containers/food/drinks/plastic/water{
+	pixel_x = 8
+	},
+/obj/item/weapon/reagent_containers/food/drinks/plastic/water{
+	pixel_x = -8
+	},
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "fhT" = (
 /obj/machinery/hologram/holopad,
 /turf/unsimulated/floor/jungle/concrete,
@@ -19672,6 +19716,16 @@
 	icon_state = "showroomfloor"
 	},
 /area/crew_quarters/kitchen)
+"hKU" = (
+/obj/machinery/conveyor{
+	id_tag = "ghetto_ore_proc_conv"
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	flickering = 1
+	},
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "hKV" = (
 /obj/structure/table/woodentable,
 /obj/structure/window/reinforced{
@@ -20080,6 +20134,12 @@
 	},
 /turf/simulated/floor,
 /area/security/perma)
+"hTi" = (
+/obj/machinery/mineral/processing_unit{
+	id_tag = "ghetto_ore_oreprocessor"
+	},
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "hTr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -20191,6 +20251,15 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep)
+"hVD" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/storage/toolbox/electrical,
+/obj/machinery/light/small{
+	dir = 1;
+	invisibility = 1
+	},
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "hVN" = (
 /obj/machinery/atmospherics/unary/heat_exchanger{
 	dir = 4
@@ -22130,6 +22199,16 @@
 	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
+"iOq" = (
+/obj/machinery/conveyor_switch/oneway{
+	id_tag = "ghetto_ore_proc_conv"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "iOJ" = (
 /obj/machinery/camera{
 	name = "Spec. Ops. Center";
@@ -22426,6 +22505,18 @@
 	},
 /turf/simulated/floor,
 /area/engineering/supermatter_room)
+"iSK" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	pixel_y = 24
+	},
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
+	},
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "iSZ" = (
 /turf/simulated/floor/shuttle,
 /area/shuttle/ert/centcom)
@@ -23632,6 +23723,17 @@
 /obj/effect/glowshroom/single,
 /turf/simulated/floor/vox,
 /area/vox_trading_post/trade_processing)
+"jqI" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "jqL" = (
 /obj/structure/bed,
 /obj/item/weapon/bedsheet/blue,
@@ -25325,6 +25427,19 @@
 	icon_state = "floor3"
 	},
 /area/shuttle/ert/centcom)
+"jYZ" = (
+/obj/machinery/door/mineral/wood{
+	name = "Refinery"
+	},
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
+"jZa" = (
+/obj/machinery/conveyor{
+	id_tag = "ghetto_ore_proc_conv";
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "jZl" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
 /turf/simulated/floor{
@@ -32595,6 +32710,9 @@
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
+"mSe" = (
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "mSh" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 1
@@ -36013,6 +36131,14 @@
 	icon_state = "floor4"
 	},
 /area/shuttle/specops/centcom)
+"omH" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "omL" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -37430,6 +37556,9 @@
 	icon_state = "floor"
 	},
 /area/centcom/control)
+"oSu" = (
+/turf/simulated/wall/mineral/wood,
+/area/surface/jungle/underground/zoned/ghettomining)
 "oSw" = (
 /obj/structure/fence/corner{
 	dir = 8
@@ -42062,6 +42191,11 @@
 	tag = "icon-checker"
 	},
 /area/vox_trading_post/gardens)
+"qKn" = (
+/obj/structure/cable/yellow,
+/obj/machinery/power/treadmill,
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "qKS" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/storage/fancy/beer_box,
@@ -47390,6 +47524,13 @@
 	icon_state = "red"
 	},
 /area/security/lobby)
+"sQR" = (
+/obj/machinery/conveyor{
+	id_tag = "ghetto_ore_proc_conv";
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "sRj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -56978,6 +57119,20 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle)
+"wCc" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/computer/smelting{
+	smelter_tag = "ghetto_ore_oreprocessor";
+	id_tag = "ghetto_ore_oreprocessor";
+	req_access = null
+	},
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground/zoned/ghettomining)
 "wCd" = (
 /obj/machinery/light{
 	dir = 8
@@ -242409,12 +242564,12 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+oSu
+oSu
+oSu
+oSu
+oSu
+oSu
 rDI
 rDI
 rDI
@@ -242761,12 +242916,12 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+oSu
+ejh
+hTi
+hKU
+jZa
+oSu
 rDI
 rDI
 rDI
@@ -243113,12 +243268,12 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+oSu
+sQR
+wCc
+iOq
+jZa
+oSu
 rDI
 rDI
 rDI
@@ -243464,14 +243619,14 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+oSu
+oSu
+mSe
+mSe
+mSe
+mSe
+oSu
+oSu
 rDI
 rDI
 rDI
@@ -243816,14 +243971,14 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+oSu
+cmp
+mSe
+mSe
+mSe
+mSe
+fhN
+oSu
 rDI
 rDI
 rDI
@@ -244168,14 +244323,14 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+oSu
+hVD
+mSe
+mSe
+mSe
+omH
+qKn
+oSu
 rDI
 rDI
 rDI
@@ -244520,14 +244675,14 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+oSu
+iSK
+bKt
+bKt
+bKt
+jqI
+qKn
+oSu
 rDI
 rDI
 rDI
@@ -244872,14 +245027,14 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+oSu
+oSu
+oSu
+jYZ
+jYZ
+oSu
+oSu
+oSu
 rDI
 rDI
 rDI
@@ -245227,8 +245382,8 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -245579,8 +245734,8 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -245931,8 +246086,8 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -246283,8 +246438,8 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -246635,8 +246790,8 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -246987,8 +247142,8 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -247339,8 +247494,8 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -247691,8 +247846,8 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -248043,8 +248198,8 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -248395,33 +248550,33 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -248747,33 +248902,33 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -249124,8 +249279,8 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -249465,19 +249620,19 @@ rDI
 rDI
 rDI
 rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
 bRI
 bRI
-bRI
-bRI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
 rDI
 rDI
 rDI
@@ -249817,17 +249972,17 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
 bRI
 bRI
 rDI
@@ -250169,17 +250324,17 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
 bRI
 bRI
 rDI
@@ -250521,10 +250676,10 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
-bRI
-bRI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -251929,10 +252084,10 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
@@ -252281,17 +252436,17 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
 bRI
 bRI
 rDI
@@ -252633,17 +252788,17 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
 bRI
 bRI
 rDI
@@ -252985,10 +253140,10 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
+bRI
 rDI
 rDI
 rDI
