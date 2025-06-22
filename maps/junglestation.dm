@@ -7,10 +7,16 @@
 	nameShort = "Jungle"
 	nameLong = "Jungle Station"
 	map_dir = "junglestation"
-	zAsteroid = 4
+	
 	zMainStation = 1
-	zCentcomm = 3
 	zAdditionalStationZlevel = 2
+	zCentcomm = 3
+	zAsteroid = 4
+	zDerelict = 5
+	
+	zDeepSpace = -1
+	zTCommSat = -1
+	
 	zLevels = list(
 		/datum/zLevel/junglesurface,
 		/datum/zLevel/jungleunderground,
