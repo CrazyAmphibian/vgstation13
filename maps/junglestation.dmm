@@ -54,9 +54,7 @@
 	d2 = 4
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "abN" = (
@@ -381,9 +379,7 @@
 	tag = "icon-pathmarker (NORTH)"
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "ail" = (
@@ -2470,8 +2466,7 @@
 	dir = 1
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
+	icon_state = "dark yellow corner";
 	tag = "icon-vault (NORTHEAST)"
 	},
 /area/engineering/reactor_room)
@@ -2966,9 +2961,7 @@
 	},
 /obj/machinery/atmospherics/binary/volume_pump,
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "bgZ" = (
@@ -3688,6 +3681,24 @@
 	},
 /turf/simulated/wall,
 /area/crew_quarters/kitchen)
+"bvV" = (
+/obj/machinery/atmospherics/pipe/simple/insulated/hidden/blue{
+	dir = 4
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 4;
+	tag = "icon-pathmarker (EAST)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 8;
+	tag = "icon-pathmarker (WEST)"
+	},
+/turf/simulated/floor{
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 8
+	},
+/area/engineering/reactor_room)
 "bwa" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -4028,9 +4039,7 @@
 "bCl" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "bCz" = (
@@ -4201,8 +4210,7 @@
 "bFH" = (
 /obj/machinery/camera,
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
+	icon_state = "dark yellow stripe";
 	tag = "icon-vault (NORTHEAST)"
 	},
 /area/engineering/reactor_room)
@@ -4338,7 +4346,9 @@
 	pixel_y = 23
 	},
 /turf/simulated/floor{
-	icon_state = "dark"
+	icon_state = "dark yellow corner";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 8
 	},
 /area/engineering/antimatter_room)
 "bJs" = (
@@ -7318,9 +7328,9 @@
 	},
 /obj/effect/decal/warning_stripes/pathmarkers/blue,
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 4
 	},
 /area/engineering/reactor_room)
 "cNP" = (
@@ -7418,8 +7428,7 @@
 	tag = "icon-pathmarker (NORTH)"
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
+	icon_state = "dark yellow corner";
 	tag = "icon-vault (NORTHEAST)"
 	},
 /area/engineering/reactor_room)
@@ -7452,9 +7461,7 @@
 	d2 = 8
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "cQD" = (
@@ -7933,7 +7940,9 @@
 /obj/item/device/am_shielding_container,
 /obj/item/device/am_shielding_container,
 /turf/simulated/floor{
-	icon_state = "dark"
+	icon_state = "dark yellow corner";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 1
 	},
 /area/engineering/antimatter_room)
 "daA" = (
@@ -8101,9 +8110,7 @@
 	},
 /obj/machinery/atmospherics/unary/portables_connector,
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "ddI" = (
@@ -8994,6 +9001,13 @@
 	icon_state = "red"
 	},
 /area/security/prison)
+"dvx" = (
+/turf/simulated/floor{
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 9
+	},
+/area/engineering/antimatter_room)
 "dvA" = (
 /obj/machinery/door/window{
 	base_state = "right";
@@ -9059,9 +9073,7 @@
 	dir = 8
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "dwH" = (
@@ -9328,6 +9340,13 @@
 	icon_state = "gravsnow_corner"
 	},
 /area/syndicate_mothership)
+"dBh" = (
+/turf/simulated/floor{
+	icon_state = "dark yellow corner";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 8
+	},
+/area/engineering/reactor_room)
 "dBm" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -9628,6 +9647,13 @@
 "dJa" = (
 /turf/simulated/floor/grass,
 /area/science/test_area)
+"dJb" = (
+/turf/simulated/floor{
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 8
+	},
+/area/engineering/reactor_room)
 "dJz" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced,
@@ -10133,6 +10159,21 @@
 	icon_state = "red"
 	},
 /area/security/main)
+"dUs" = (
+/obj/machinery/atmospherics/pipe/simple/insulated/hidden{
+	dir = 1
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red,
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 1;
+	tag = "icon-pathmarker (NORTH)"
+	},
+/turf/simulated/floor{
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 1
+	},
+/area/engineering/reactor_room)
 "dUt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -11419,7 +11460,9 @@
 	dir = 4
 	},
 /turf/simulated/floor{
-	icon_state = "dark"
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 4
 	},
 /area/engineering/antimatter_room)
 "era" = (
@@ -11444,9 +11487,7 @@
 "ern" = (
 /obj/machinery/atmospherics/binary/volume_pump,
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "erp" = (
@@ -12347,15 +12388,13 @@
 	},
 /area/medical/chemistry)
 "eNu" = (
-/obj/machinery/door/airlock/glass_security{
-	name = "Security Lobby";
-	normalspeed = 0
-	},
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/cable/yellow,
+/obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated/floor,
 /area/security/lobby)
 "eNw" = (
@@ -12611,9 +12650,7 @@
 "eRq" = (
 /obj/machinery/atmospherics/unary/fissionfuelmaker,
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "eRG" = (
@@ -12803,9 +12840,7 @@
 	d2 = 4
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "eXn" = (
@@ -12907,7 +12942,8 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor{
-	icon_state = "dark"
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)"
 	},
 /area/engineering/antimatter_room)
 "eZo" = (
@@ -13550,6 +13586,13 @@
 	dir = 4
 	},
 /area/engineering/supermatter_room)
+"foy" = (
+/turf/simulated/floor{
+	icon_state = "dark yellow corner";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 1
+	},
+/area/engineering/reactor_room)
 "foS" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1;
@@ -14370,10 +14413,6 @@
 /obj/machinery/door/airlock/glass_atmos{
 	name = "Atmospherics"
 	},
-/obj/machinery/door/airlock/glass_atmos{
-	name = "Atmospherics";
-	normalspeed = 0
-	},
 /turf/simulated/floor,
 /area/engineering/atmos)
 "fFz" = (
@@ -14494,6 +14533,13 @@
 	icon_state = "floor3"
 	},
 /area/shuttle/escape/centcom)
+"fHB" = (
+/turf/simulated/floor{
+	icon_state = "dark yellow corner";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 4
+	},
+/area/engineering/antimatter_room)
 "fHC" = (
 /obj/docking_port/destination/escape/shuttle/station{
 	dir = 4
@@ -14731,9 +14777,7 @@
 	d2 = 2
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "fMW" = (
@@ -15458,9 +15502,7 @@
 	dir = 8
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "gbx" = (
@@ -15662,9 +15704,9 @@
 	},
 /obj/machinery/light,
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 1
 	},
 /area/engineering/reactor_room)
 "gfO" = (
@@ -15999,9 +16041,7 @@
 	d2 = 8
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "glV" = (
@@ -16049,9 +16089,9 @@
 	d2 = 8
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 1
 	},
 /area/engineering/reactor_room)
 "gmH" = (
@@ -16104,9 +16144,7 @@
 	dir = 4
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "gnA" = (
@@ -16323,9 +16361,7 @@
 	d2 = 2
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "grv" = (
@@ -16873,9 +16909,7 @@
 	tag = "icon-pathmarker (NORTH)"
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "gDF" = (
@@ -18594,12 +18628,6 @@
 /turf/simulated/floor,
 /area/supply/office)
 "hnA" = (
-/obj/structure/bed/chair,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/machinery/camera{
 	dir = 8
 	},
@@ -19273,6 +19301,19 @@
 	icon_state = "dark-markings"
 	},
 /area/security/armory)
+"hDi" = (
+/obj/machinery/atmospherics/pipe/simple/insulated/hidden/blue{
+	dir = 6
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue{
+	dir = 4;
+	tag = "icon-pathmarker (EAST)"
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/blue,
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/engineering/reactor_room)
 "hDm" = (
 /obj/structure/rack,
 /obj/item/device/pda/security{
@@ -19573,9 +19614,7 @@
 	pixel_x = 28
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "hIO" = (
@@ -19925,9 +19964,7 @@
 	initialize_directions = 11
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "hQf" = (
@@ -21461,9 +21498,9 @@
 	tag = "icon-pathmarker (WEST)"
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 8
 	},
 /area/engineering/reactor_room)
 "ixG" = (
@@ -22108,9 +22145,7 @@
 	amount = 60
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "iOJ" = (
@@ -22759,9 +22794,7 @@
 	d2 = 8
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "iYX" = (
@@ -23560,7 +23593,6 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/closet/secure_closet/warden,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -24973,9 +25005,9 @@
 	tag = "icon-pathmarker (EAST)"
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark yellow corner";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 1
 	},
 /area/engineering/reactor_room)
 "jSw" = (
@@ -25019,9 +25051,7 @@
 	},
 /obj/machinery/portable_atmospherics/canister/plasma,
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "jSV" = (
@@ -25109,9 +25139,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "jUq" = (
@@ -25227,9 +25255,7 @@
 	pixel_x = -10
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "jXm" = (
@@ -25418,9 +25444,7 @@
 "kcB" = (
 /obj/machinery/portable_atmospherics/canister/plasma,
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "kcD" = (
@@ -27660,9 +27684,7 @@
 "kYu" = (
 /obj/machinery/light,
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "kYF" = (
@@ -28107,9 +28129,7 @@
 	d2 = 4
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "liP" = (
@@ -28955,6 +28975,12 @@
 "lyS" = (
 /turf/simulated/wall,
 /area/surface/jungle/fenced)
+"lzd" = (
+/turf/simulated/floor{
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)"
+	},
+/area/engineering/antimatter_room)
 "lzr" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -30057,8 +30083,16 @@
 "lSA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
-	icon_state = "4-8"
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/bed/chair,
 /turf/simulated/floor{
 	dir = 1;
 	icon_state = "red"
@@ -30638,9 +30672,7 @@
 	amount = 50
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "mcu" = (
@@ -32696,9 +32728,7 @@
 	pixel_x = -6
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "mVo" = (
@@ -32915,9 +32945,7 @@
 	dir = 4
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "mYN" = (
@@ -33834,9 +33862,6 @@
 /area/surface/jungle)
 "nuc" = (
 /obj/machinery/disposal/compactor,
-/obj/machinery/atm{
-	pixel_x = 32
-	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "brown"
@@ -33966,6 +33991,21 @@
 	tag = "icon-brown (NORTH)"
 	},
 /area/supply/office)
+"nyW" = (
+/obj/machinery/atmospherics/pipe/simple/insulated/hidden{
+	dir = 1
+	},
+/obj/effect/decal/warning_stripes/pathmarkers/red,
+/obj/effect/decal/warning_stripes/pathmarkers/red{
+	dir = 1;
+	tag = "icon-pathmarker (NORTH)"
+	},
+/turf/simulated/floor{
+	icon_state = "dark yellow corner";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 8
+	},
+/area/engineering/reactor_room)
 "nzF" = (
 /obj/effect/glowshroom/single,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -34781,7 +34821,9 @@
 /area/science/test_area)
 "nPf" = (
 /turf/simulated/floor{
-	icon_state = "dark"
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 1
 	},
 /area/engineering/antimatter_room)
 "nPm" = (
@@ -34984,12 +35026,6 @@
 	},
 /area/bridge)
 "nTD" = (
-/obj/structure/bed/chair,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /turf/simulated/floor{
 	dir = 9;
 	icon_state = "red"
@@ -36468,9 +36504,7 @@
 	d2 = 8
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "oyf" = (
@@ -37775,6 +37809,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/atm{
+	pixel_x = -30
+	},
 /turf/simulated/floor,
 /area/supply/lobby)
 "pam" = (
@@ -37998,9 +38035,7 @@
 	dir = 1
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "pes" = (
@@ -38454,9 +38489,7 @@
 	pixel_x = -32
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "pqH" = (
@@ -39146,9 +39179,7 @@
 	},
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "pDU" = (
@@ -39157,11 +39188,6 @@
 /area/centcom/ert)
 "pEt" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
 /obj/structure/cable/yellow{
@@ -39169,6 +39195,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/bed/chair,
 /turf/simulated/floor{
 	dir = 1;
 	icon_state = "red"
@@ -40223,9 +40250,7 @@
 	d2 = 8
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "pZK" = (
@@ -40510,7 +40535,9 @@
 	pixel_y = -30
 	},
 /turf/simulated/floor{
-	icon_state = "dark"
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 1
 	},
 /area/engineering/antimatter_room)
 "qgJ" = (
@@ -40792,6 +40819,13 @@
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/hallway)
+"qly" = (
+/turf/simulated/floor{
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 4
+	},
+/area/engineering/reactor_room)
 "qlD" = (
 /obj/structure/table/glass,
 /obj/item/weapon/aiModule/standard/oxygen,
@@ -41000,6 +41034,18 @@
 	icon_state = "cult"
 	},
 /area/crew_quarters/heads/hos)
+"qoO" = (
+/obj/structure/cable/orange{
+	icon_state = "4-8";
+	d1 = 4;
+	d2 = 8
+	},
+/turf/simulated/floor{
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 8
+	},
+/area/engineering/reactor_room)
 "qoP" = (
 /obj/machinery/bodyscanner/upgraded,
 /turf/simulated/floor{
@@ -44243,6 +44289,15 @@
 	icon_state = "red"
 	},
 /area/security/prison)
+"rAX" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor{
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)"
+	},
+/area/engineering/reactor_room)
 "rAY" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1;
@@ -44822,9 +44877,7 @@
 /area/science/lab)
 "rPJ" = (
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "rQr" = (
@@ -44904,9 +44957,7 @@
 	amount = 50
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "rRT" = (
@@ -45576,6 +45627,12 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
+"sbJ" = (
+/turf/simulated/floor{
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)"
+	},
+/area/engineering/reactor_room)
 "sbS" = (
 /obj/effect/decal/warning_stripes{
 	dir = 8;
@@ -46348,9 +46405,7 @@
 	on = 1
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "svd" = (
@@ -47785,9 +47840,9 @@
 	tag = "icon-pathmarker (WEST)"
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 4
 	},
 /area/engineering/reactor_room)
 "sZq" = (
@@ -48141,9 +48196,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "tgV" = (
@@ -48331,6 +48384,13 @@
 	icon_state = "barber"
 	},
 /area/medical/cmo)
+"tiu" = (
+/turf/simulated/floor{
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 4
+	},
+/area/engineering/antimatter_room)
 "tiw" = (
 /obj/structure/table,
 /obj/item/weapon/kitchen/rollingpin,
@@ -50477,6 +50537,9 @@
 /area/maintenance/disposal)
 "ucv" = (
 /obj/structure/cable/orange,
+/obj/effect/decal/warning_stripes{
+	icon_state = "bot"
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "dark-markings"
@@ -51168,7 +51231,8 @@
 	dir = 1
 	},
 /turf/simulated/floor{
-	icon_state = "dark"
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)"
 	},
 /area/engineering/antimatter_room)
 "uqp" = (
@@ -51698,9 +51762,9 @@
 	dir = 4
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 8
 	},
 /area/engineering/reactor_room)
 "uDm" = (
@@ -52772,9 +52836,9 @@
 	dir = 1
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark yellow corner";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 4
 	},
 /area/engineering/reactor_room)
 "vav" = (
@@ -53112,9 +53176,7 @@
 	tag = "icon-pathmarker (WEST)"
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "vgi" = (
@@ -53905,6 +53967,12 @@
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
+"vtm" = (
+/turf/simulated/floor{
+	icon_state = "dark yellow corner";
+	tag = "icon-vault (NORTHEAST)"
+	},
+/area/engineering/antimatter_room)
 "vtq" = (
 /obj/machinery/camera{
 	dir = 4
@@ -54361,6 +54429,13 @@
 	},
 /turf/simulated/floor/engine/vacuum,
 /area/science/test_area)
+"vBL" = (
+/obj/machinery/door/airlock/glass_security{
+	name = "Security Lobby";
+	normalspeed = 0
+	},
+/turf/simulated,
+/area/security/lobby)
 "vBW" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	on = 1
@@ -54464,7 +54539,9 @@
 	on = 1
 	},
 /turf/simulated/floor{
-	icon_state = "dark"
+	icon_state = "dark yellow corner";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 8
 	},
 /area/engineering/antimatter_room)
 "vDX" = (
@@ -54781,9 +54858,7 @@
 	d2 = 2
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "vIV" = (
@@ -56215,9 +56290,7 @@
 	dir = 1
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "wnm" = (
@@ -56449,7 +56522,9 @@
 	dir = 4
 	},
 /turf/simulated/floor{
-	icon_state = "dark"
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 8
 	},
 /area/engineering/antimatter_room)
 "wtp" = (
@@ -56612,9 +56687,7 @@
 	dir = 4
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "wxE" = (
@@ -57410,9 +57483,7 @@
 	pixel_y = -24
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "wMK" = (
@@ -58246,7 +58317,9 @@
 "xcc" = (
 /obj/machinery/power/am_control_unit,
 /turf/simulated/floor{
-	icon_state = "dark"
+	icon_state = "dark yellow corner";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 1
 	},
 /area/engineering/antimatter_room)
 "xcj" = (
@@ -58284,9 +58357,7 @@
 	tag = "icon-pathmarker (NORTH)"
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "xcO" = (
@@ -58640,6 +58711,12 @@
 	},
 /turf/simulated/floor,
 /area/engineering/engine)
+"xkL" = (
+/obj/machinery/atm{
+	pixel_y = -30
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/sleep)
 "xkP" = (
 /turf/unsimulated/floor{
 	dir = 9;
@@ -58805,10 +58882,12 @@
 /area/chapel/office)
 "xnX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/door/airlock/glass_security{
-	name = "Security Lobby";
-	normalspeed = 0
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
 	},
+/obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated,
 /area/security/lobby)
 "xnZ" = (
@@ -59609,6 +59688,13 @@
 	icon_state = "white"
 	},
 /area/medical/genetics)
+"xFY" = (
+/turf/simulated/floor{
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 1
+	},
+/area/engineering/reactor_room)
 "xFZ" = (
 /obj/machinery/door/window{
 	base_state = "right";
@@ -59684,7 +59770,9 @@
 	d2 = 8
 	},
 /turf/simulated/floor{
-	icon_state = "dark"
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 10
 	},
 /area/engineering/antimatter_room)
 "xGM" = (
@@ -59912,6 +60000,18 @@
 	icon_state = "whitegreen"
 	},
 /area/medical/sleeper)
+"xLw" = (
+/obj/structure/cable/orange{
+	icon_state = "4-8";
+	d1 = 4;
+	d2 = 8
+	},
+/turf/simulated/floor{
+	icon_state = "dark yellow corner";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 4
+	},
+/area/engineering/reactor_room)
 "xLK" = (
 /obj/machinery/light{
 	dir = 1
@@ -60884,9 +60984,7 @@
 	pixel_y = 18
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 "yeZ" = (
@@ -61231,9 +61329,7 @@
 	d2 = 2
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
 
@@ -105774,7 +105870,7 @@ tnZ
 xor
 xor
 xor
-tgB
+vBL
 nTD
 txd
 liY
@@ -107886,7 +107982,7 @@ tnZ
 maR
 iMQ
 xMH
-tgB
+vBL
 hnA
 vCr
 mRt
@@ -109660,8 +109756,8 @@ ePq
 cqH
 sMS
 asz
-bci
 eEB
+bci
 cfn
 mHK
 uIZ
@@ -110738,8 +110834,8 @@ hFS
 pMx
 vVo
 gaI
-gaI
 rUS
+gaI
 gaI
 vzX
 pCm
@@ -128254,7 +128350,7 @@ riz
 lqv
 jAP
 aPt
-lgW
+xkL
 jAP
 cXH
 wld
@@ -133979,12 +134075,12 @@ gdR
 gdR
 pXV
 aVI
-rPJ
-rPJ
-rPJ
-rPJ
-rPJ
-cQt
+qly
+qly
+qly
+qly
+qly
+xLw
 kYu
 pXV
 pXV
@@ -134324,13 +134420,13 @@ qVF
 xZA
 bpo
 gdR
-nPf
-nPf
+vtm
+tiu
 eqT
-nPf
-nPf
+tiu
+fHB
 pXV
-rPJ
+sbJ
 gSN
 gSN
 gSN
@@ -134682,13 +134778,13 @@ uxZ
 uxZ
 nPf
 pXV
-rPJ
+sbJ
 gSN
 qVO
 eRU
 eRU
 cOi
-rPJ
+xFY
 aby
 vIM
 vIM
@@ -135028,7 +135124,7 @@ ejD
 fYw
 gTA
 gdR
-nPf
+lzd
 uxZ
 uxZ
 uxZ
@@ -135040,12 +135136,12 @@ qVO
 vmj
 eRU
 cOi
-cPK
+dUs
 iYU
 ern
 cPK
 sYP
-rPJ
+qly
 cNH
 vah
 pXV
@@ -135380,22 +135476,22 @@ aAD
 icJ
 mtn
 gdR
-nPf
+lzd
 uxZ
 uxZ
 uxZ
 qgI
 pXV
-aVI
+rAX
 gSN
 qVO
 vmj
 eRU
 cOi
-rPJ
+xFY
 cQt
 rPJ
-rPJ
+sbJ
 wxC
 jUg
 gbc
@@ -135738,19 +135834,19 @@ uxZ
 uxZ
 nPf
 pXV
-rPJ
+sbJ
 gSN
 qVO
 eRU
 eRU
 cOi
-cPK
+dUs
 iYU
 pei
-cPK
+nyW
 ixz
-cQt
-vgd
+qoO
+bvV
 jSe
 pXV
 lIK
@@ -136087,16 +136183,16 @@ gdR
 bJg
 xGI
 ucv
-nPf
+dvx
 dam
 pXV
-rPJ
+sbJ
 gSN
 gSN
 gSN
 gSN
 lFE
-rPJ
+xFY
 cQt
 rPJ
 rPJ
@@ -136442,18 +136538,18 @@ wtj
 xcc
 gwJ
 pXV
-rPJ
-rPJ
-rPJ
-rPJ
+dBh
+dJb
+dJb
+dJb
 uDe
-rPJ
-rPJ
+dJb
+foy
 cQt
 rPJ
 rPJ
 cQt
-cNH
+hDi
 xcN
 jSP
 pXV
@@ -136806,7 +136902,7 @@ vIM
 ddu
 bgx
 gDj
-cNH
+hDi
 ahR
 pXV
 lIK
