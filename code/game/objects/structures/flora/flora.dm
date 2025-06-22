@@ -730,7 +730,7 @@
 				i=0
 		icon_state="stage-6"
 	else
-		to_chat(user,"<span class='notice'>There's nothing grown yet./span>")
+		to_chat(user,"<span class='notice'>There's nothing grown yet.</span>")
 		..()
 
 /obj/structure/flora/jungle_berries/process()
