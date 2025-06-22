@@ -5862,6 +5862,13 @@
 /obj/item/clothing/head/hardhat/orange{
 	pixel_y = 11
 	},
+/obj/item/weapon/storage/bag/ore{
+	pixel_x = -9
+	},
+/obj/item/weapon/storage/bag/ore{
+	pixel_x = 13;
+	pixel_y = 6
+	},
 /turf/unsimulated/floor/jungle/bedrock,
 /area/surface/jungle/underground/zoned/ghettomining)
 "cmC" = (
