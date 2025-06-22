@@ -1699,8 +1699,8 @@
 /obj/machinery/light_switch{
 	pixel_x = 28
 	},
-/turf/simulated/floor{
-	icon_state = "carpet"
+/turf/simulated/floor/carpet{
+	icon_state = "carpet11-12"
 	},
 /area/science/hallway)
 "aFO" = (
@@ -1790,9 +1790,6 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "aHH" = (
-/obj/machinery/light_switch{
-	pixel_x = -28
-	},
 /obj/machinery/disposal/compactor,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
@@ -2277,6 +2274,9 @@
 "aSI" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 25
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/engineering/break_room)
@@ -9133,9 +9133,7 @@
 /turf/simulated/floor,
 /area/supply/storage)
 "dwx" = (
-/turf/simulated/floor{
-	icon_state = "carpet"
-	},
+/turf/simulated/floor/carpet,
 /area/science/hallway)
 "dwG" = (
 /obj/machinery/atmospherics/binary/pump,
@@ -9643,7 +9641,7 @@
 /obj/item/device/mmi,
 /obj/item/device/mmi,
 /obj/item/device/mmi,
-/obj/structure/window/reinforced/tinted,
+/obj/structure/window/reinforced,
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -11531,8 +11529,8 @@
 /obj/machinery/optable{
 	name = "Robotics Operating Table"
 	},
-/obj/structure/window/reinforced/tinted,
-/obj/structure/window/reinforced/tinted{
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/simulated/floor{
@@ -13422,7 +13420,7 @@
 /turf/simulated/floor/engine,
 /area/science/xenobiology/specimen_2)
 "fiQ" = (
-/obj/structure/window/reinforced/tinted,
+/obj/structure/window/reinforced,
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -15563,8 +15561,8 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/turf/simulated/floor{
-	icon_state = "carpet"
+/turf/simulated/floor/carpet{
+	icon_state = "carpet7-3"
 	},
 /area/science/hallway)
 "gaI" = (
@@ -18191,6 +18189,11 @@
 	icon_state = "yellowcorner"
 	},
 /area/engineering/engine)
+"haV" = (
+/turf/simulated/floor/carpet{
+	icon_state = "carpet5-1"
+	},
+/area/science/hallway)
 "hbh" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -18536,8 +18539,8 @@
 	pixel_y = 6
 	},
 /obj/structure/table,
-/turf/simulated/floor{
-	icon_state = "carpet"
+/turf/simulated/floor/carpet{
+	icon_state = "carpet10-8"
 	},
 /area/science/hallway)
 "hij" = (
@@ -30203,8 +30206,8 @@
 /area/medical/surgery)
 "lPY" = (
 /obj/structure/bed/chair,
-/turf/simulated/floor{
-	icon_state = "carpet"
+/turf/simulated/floor/carpet{
+	icon_state = "carpet14-10"
 	},
 /area/science/hallway)
 "lQa" = (
@@ -32653,9 +32656,7 @@
 /area/surface/jungle/fenced)
 "mLW" = (
 /obj/structure/table,
-/turf/simulated/floor{
-	icon_state = "carpet"
-	},
+/turf/simulated/floor/carpet,
 /area/science/hallway)
 "mMm" = (
 /turf/simulated/floor{
@@ -33776,7 +33777,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/space,
+/turf/simulated/floor,
 /area/research_outpost/maintstore1{
 	icon_state = "toxstorage";
 	name = "Toxins Storage"
@@ -36809,6 +36810,15 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor,
 /area/supply/office)
+"oxF" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/engineering/break_room)
 "oxJ" = (
 /turf/simulated/floor{
 	icon_state = "showroomfloor"
@@ -43426,6 +43436,9 @@
 /area/medical/paramedics)
 "rfJ" = (
 /obj/structure/closet/lawcloset,
+/obj/machinery/light_switch{
+	pixel_y = -24
+	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
 "rga" = (
@@ -48631,6 +48644,11 @@
 	icon_state = "dark"
 	},
 /area/turret_protected/ai)
+"thg" = (
+/turf/simulated/floor/carpet{
+	icon_state = "carpet6-2"
+	},
+/area/science/hallway)
 "thl" = (
 /obj/structure/window/reinforced{
 	one_way = 1
@@ -49197,8 +49215,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor{
-	icon_state = "carpet"
+/turf/simulated/floor/carpet{
+	icon_state = "carpet14-10"
 	},
 /area/science/hallway)
 "tpD" = (
@@ -49307,9 +49325,6 @@
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
-	},
-/obj/machinery/light_switch{
-	pixel_x = 28
 	},
 /turf/simulated/floor{
 	dir = 8;
@@ -49662,7 +49677,7 @@
 /obj/structure/table,
 /obj/item/clothing/gloves/latex,
 /turf/simulated/floor/carpet{
-	icon_state = "carpet13-5"
+	icon_state = "carpet9-4"
 	},
 /area/science/hallway)
 "tyO" = (
@@ -53105,7 +53120,7 @@
 /obj/machinery/computer/operating{
 	name = "Robotics Operating Computer"
 	},
-/obj/structure/window/reinforced/tinted{
+/obj/structure/window/reinforced{
 	dir = 4
 	},
 /turf/simulated/floor{
@@ -55550,6 +55565,9 @@
 /obj/machinery/camera{
 	dir = 4
 	},
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor{
 	icon_state = "yellow";
 	dir = 1
@@ -57294,9 +57312,7 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/turf/simulated/floor{
-	icon_state = "carpet"
-	},
+/turf/simulated/floor/carpet,
 /area/science/hallway)
 "wza" = (
 /obj/machinery/computer/atmos_alert,
@@ -57395,6 +57411,11 @@
 	},
 /turf/simulated/wall/shuttle/unsmoothed/black,
 /area/syndicate_mothership/elite_squad)
+"wAM" = (
+/turf/simulated/floor/carpet{
+	icon_state = "carpet14-10"
+	},
+/area/science/hallway)
 "wBh" = (
 /turf/simulated/wall/r_wall,
 /area/engineering/engine)
@@ -138054,7 +138075,7 @@ oEI
 hhB
 sKT
 qBo
-sKT
+oxF
 tew
 dvq
 rdz
@@ -140102,9 +140123,9 @@ cLz
 iLp
 iLp
 sUd
-dwx
+thg
 gaG
-voO
+haV
 iRG
 qCI
 rNK
@@ -141158,7 +141179,7 @@ jcS
 xIb
 mfN
 sUd
-dwx
+wAM
 dwx
 tfl
 gRa
