@@ -1256,6 +1256,11 @@
 /obj/item/clothing/gloves/latex,
 /turf/simulated/floor,
 /area/research_outpost/entry)
+"axA" = (
+/turf/simulated/floor/carpet{
+	icon_state = "carpet5-1"
+	},
+/area/science/hallway)
 "axD" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
@@ -6742,6 +6747,9 @@
 /obj/machinery/light_switch{
 	pixel_x = 28
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor,
 /area/research_outpost/hallway)
 "cBk" = (
@@ -11820,6 +11828,15 @@
 	icon_state = "white"
 	},
 /area/medical/medbay)
+"ewA" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/engineering/break_room)
 "ewI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/disposal/compactor,
@@ -17072,6 +17089,9 @@
 	pixel_y = -1;
 	pixel_x = 30
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor,
 /area/mine/production)
 "gDT" = (
@@ -18189,11 +18209,6 @@
 	icon_state = "yellowcorner"
 	},
 /area/engineering/engine)
-"haV" = (
-/turf/simulated/floor/carpet{
-	icon_state = "carpet5-1"
-	},
-/area/science/hallway)
 "hbh" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -29008,6 +29023,11 @@
 	icon_state = "white"
 	},
 /area/science/xenobiology)
+"ltL" = (
+/turf/simulated/floor/carpet{
+	icon_state = "carpet6-2"
+	},
+/area/science/hallway)
 "ltQ" = (
 /obj/structure/displaycase/lamarr,
 /turf/simulated/floor{
@@ -33312,6 +33332,7 @@
 	name = "Production Room";
 	network = list("MINE")
 	},
+/obj/machinery/light/small,
 /turf/simulated/floor,
 /area/mine/production)
 "mZt" = (
@@ -36810,15 +36831,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor,
 /area/supply/office)
-"oxF" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 1
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/simulated/floor,
-/area/engineering/break_room)
 "oxJ" = (
 /turf/simulated/floor{
 	icon_state = "showroomfloor"
@@ -40663,6 +40675,10 @@
 	dir = 4;
 	id_tag = "mining_mint"
 	},
+/obj/machinery/light/small{
+	dir = 1;
+	invisibility = 1
+	},
 /turf/simulated/floor,
 /area/mine/production)
 "qar" = (
@@ -42188,6 +42204,10 @@
 	name = "EVA";
 	network = list("MINE")
 	},
+/obj/machinery/light/small{
+	dir = 8;
+	flickering = 1
+	},
 /turf/simulated/floor,
 /area/mine/eva)
 "qEF" = (
@@ -42309,6 +42329,9 @@
 "qGO" = (
 /obj/machinery/mineral/processing_unit{
 	id_tag = "mining_smelter"
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/mine/production)
@@ -44734,6 +44757,9 @@
 "rCl" = (
 /obj/machinery/light_switch{
 	pixel_x = 28
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/mine/eva)
@@ -48644,11 +48670,6 @@
 	icon_state = "dark"
 	},
 /area/turret_protected/ai)
-"thg" = (
-/turf/simulated/floor/carpet{
-	icon_state = "carpet6-2"
-	},
-/area/science/hallway)
 "thl" = (
 /obj/structure/window/reinforced{
 	one_way = 1
@@ -49482,6 +49503,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/light_switch{
 	pixel_x = -27
+	},
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/simulated/floor,
 /area/mine/production)
@@ -50558,6 +50582,9 @@
 /obj/machinery/mineral/stacking_machine{
 	id_tag = "mining_stacker"
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor,
 /area/mine/production)
 "tQW" = (
@@ -50907,9 +50934,8 @@
 	pixel_y = 24
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
 	d2 = 4;
-	icon_state = "1-4"
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating,
 /area/research_outpost/atmos)
@@ -51060,7 +51086,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/space,
+/turf/simulated/floor,
 /area/mine/maintenance)
 "uei" = (
 /obj/structure/grille,
@@ -58090,6 +58116,9 @@
 	dir = 4;
 	name = "Storage Room";
 	network = list("MINE")
+	},
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/simulated/floor,
 /area/mine/production)
@@ -138075,7 +138104,7 @@ oEI
 hhB
 sKT
 qBo
-oxF
+ewA
 tew
 dvq
 rdz
@@ -140123,9 +140152,9 @@ cLz
 iLp
 iLp
 sUd
-thg
+ltL
 gaG
-haV
+axA
 iRG
 qCI
 rNK
