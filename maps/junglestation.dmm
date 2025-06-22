@@ -1256,11 +1256,6 @@
 /obj/item/clothing/gloves/latex,
 /turf/simulated/floor,
 /area/research_outpost/entry)
-"axA" = (
-/turf/simulated/floor/carpet{
-	icon_state = "carpet5-1"
-	},
-/area/science/hallway)
 "axD" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
@@ -9141,7 +9136,9 @@
 /turf/simulated/floor,
 /area/supply/storage)
 "dwx" = (
-/turf/simulated/floor/carpet,
+/turf/simulated/floor/carpet{
+	icon_state = "carpet14-10"
+	},
 /area/science/hallway)
 "dwG" = (
 /obj/machinery/atmospherics/binary/pump,
@@ -9533,6 +9530,15 @@
 	},
 /turf/simulated/floor,
 /area/maintenance/disposal)
+"dEP" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/engineering/break_room)
 "dFe" = (
 /turf/simulated/floor/shuttle{
 	icon_state = "floor4"
@@ -11828,15 +11834,6 @@
 	icon_state = "white"
 	},
 /area/medical/medbay)
-"ewA" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 1
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/simulated/floor,
-/area/engineering/break_room)
 "ewI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/disposal/compactor,
@@ -15311,6 +15308,11 @@
 	},
 /turf/simulated,
 /area/medical/cmo)
+"fUB" = (
+/turf/simulated/floor/carpet{
+	icon_state = "carpet6-2"
+	},
+/area/science/hallway)
 "fUK" = (
 /turf/simulated/floor/wood,
 /area/surface/jungle/zoned/outdoor_bar)
@@ -29023,11 +29025,6 @@
 	icon_state = "white"
 	},
 /area/science/xenobiology)
-"ltL" = (
-/turf/simulated/floor/carpet{
-	icon_state = "carpet6-2"
-	},
-/area/science/hallway)
 "ltQ" = (
 /obj/structure/displaycase/lamarr,
 /turf/simulated/floor{
@@ -43054,9 +43051,6 @@
 	pixel_y = -3
 	},
 /obj/item/weapon/storage/box/buckshotshells,
-/obj/machinery/light_switch{
-	pixel_y = 27
-	},
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -22
@@ -49301,6 +49295,9 @@
 	icon_state = "carpet7-3"
 	},
 /area/chapel/main)
+"trD" = (
+/turf/simulated/floor/carpet,
+/area/science/hallway)
 "trM" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -57439,7 +57436,7 @@
 /area/syndicate_mothership/elite_squad)
 "wAM" = (
 /turf/simulated/floor/carpet{
-	icon_state = "carpet14-10"
+	icon_state = "carpet5-1"
 	},
 /area/science/hallway)
 "wBh" = (
@@ -138104,7 +138101,7 @@ oEI
 hhB
 sKT
 qBo
-ewA
+dEP
 tew
 dvq
 rdz
@@ -140152,9 +140149,9 @@ cLz
 iLp
 iLp
 sUd
-ltL
+fUB
 gaG
-axA
+wAM
 iRG
 qCI
 rNK
@@ -141208,8 +141205,8 @@ jcS
 xIb
 mfN
 sUd
-wAM
 dwx
+trD
 tfl
 gRa
 kNI
