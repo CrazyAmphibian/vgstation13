@@ -25555,6 +25555,19 @@
 	dir = 6
 	},
 /area/engineering/atmos_control)
+"jWs" = (
+/obj/machinery/door/window{
+	base_state = "right";
+	dir = 1
+	},
+/obj/machinery/shower{
+	dir = 8;
+	pixel_y = -6
+	},
+/turf/simulated/floor{
+	icon_state = "freezerfloor"
+	},
+/area/crew_quarters/captain)
 "jWx" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -138214,7 +138227,7 @@ dCc
 mSW
 oXt
 jPq
-mSW
+jWs
 mSW
 wld
 wld
