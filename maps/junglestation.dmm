@@ -177,6 +177,13 @@
 	},
 /turf/simulated/floor/shuttle/plating,
 /area/centcom/evac)
+"ady" = (
+/obj/machinery/portable_atmospherics/pump,
+/obj/machinery/atmospherics/unary/portables_connector{
+	dir = 1
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "adI" = (
 /obj/structure/cult_legacy/tome,
 /obj/item/clothing/under/suit_jacket/red,
@@ -764,10 +771,10 @@
 	},
 /area/hydroponics)
 "aoI" = (
-/obj/machinery/vending/engivend,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/machinery/vending/coffee,
 /turf/simulated/floor,
 /area/engineering/engine)
 "apc" = (
@@ -1533,6 +1540,13 @@
 	},
 /turf/simulated/floor,
 /area/engineering/mechanics)
+"aCN" = (
+/obj/machinery/portable_atmospherics/scrubber,
+/obj/machinery/atmospherics/unary/portables_connector{
+	dir = 1
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "aCS" = (
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
@@ -8368,7 +8382,7 @@
 "dgC" = (
 /obj/machinery/door/airlock/glass_engineering{
 	name = "Engineering";
-	req_one_access_txt = "11;24"
+	req_access_txt = "11"
 	},
 /obj/structure/cable/orange{
 	icon_state = "1-2";
@@ -9001,7 +9015,7 @@
 "dtV" = (
 /obj/machinery/door/airlock/glass_engineering{
 	name = "Reactor Room";
-	req_one_access_txt = "10;24"
+	req_access_txt = "10"
 	},
 /obj/structure/cable/orange{
 	icon_state = "4-8";
@@ -12664,7 +12678,7 @@
 "eON" = (
 /obj/machinery/door/airlock/glass_engineering{
 	name = "Supermatter Room";
-	req_one_access_txt = "10;24"
+	req_access_txt = "10"
 	},
 /obj/structure/cable/orange{
 	icon_state = "4-8";
@@ -14573,7 +14587,8 @@
 /area/science/hallway)
 "fEA" = (
 /obj/machinery/door/airlock/glass_atmos{
-	name = "Atmospherics"
+	name = "Atmospherics";
+	req_access_txt = "24"
 	},
 /turf/simulated/floor,
 /area/engineering/atmos)
@@ -18411,6 +18426,7 @@
 "hef" = (
 /obj/structure/closet/secure_closet/engineering_atmos,
 /obj/structure/window/reinforced,
+/obj/item/weapon/tank/emergency_oxygen/double,
 /turf/simulated/floor{
 	icon_state = "yellow";
 	dir = 8
@@ -19022,6 +19038,13 @@
 	icon_state = "carpet3-0"
 	},
 /area/chapel/main)
+"hqV" = (
+/obj/structure/fence/door{
+	dir = 4;
+	req_access_txt = "24"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/atmos_outside)
 "hqY" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -26000,10 +26023,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/vending/tool,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/machinery/vending/snack,
 /turf/simulated/floor,
 /area/engineering/engine)
 "kfF" = (
@@ -26281,7 +26304,7 @@
 "klr" = (
 /obj/machinery/door/airlock/glass_engineering{
 	name = "Supermatter Room";
-	req_one_access_txt = "10;24"
+	req_access_txt = "10"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -26773,7 +26796,9 @@
 /turf/simulated,
 /area/mine/explored)
 "kvT" = (
-/obj/machinery/door/airlock/glass_atmos,
+/obj/machinery/door/airlock/glass_atmos{
+	req_access_txt = "24"
+	},
 /turf/simulated/floor,
 /area/engineering/atmos_control)
 "kwa" = (
@@ -32970,7 +32995,8 @@
 /area/security/lobby)
 "mRH" = (
 /obj/machinery/door/airlock/glass_atmos{
-	name = "Atmospherics"
+	name = "Atmospherics";
+	req_access_txt = "24"
 	},
 /obj/structure/cable/orange{
 	icon_state = "4-8";
@@ -34561,7 +34587,7 @@
 "nCS" = (
 /obj/machinery/door/airlock/glass_engineering{
 	name = "Engineering";
-	req_one_access_txt = "11;24"
+	req_access_txt = "11"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -42807,6 +42833,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/item/weapon/tank/emergency_oxygen/double,
 /turf/simulated/floor{
 	icon_state = "yellow";
 	dir = 8
@@ -47254,6 +47281,9 @@
 /obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated,
 /area/shuttle/trade/start)
+"sCN" = (
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/atmos_outside)
 "sCY" = (
 /obj/structure/shuttle/engine/propulsion,
 /turf/space,
@@ -48633,7 +48663,7 @@
 "tew" = (
 /obj/machinery/door/airlock/glass_engineering{
 	name = "Engineering";
-	req_one_access_txt = "11;24"
+	req_access_txt = "11"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
@@ -48826,8 +48856,8 @@
 	},
 /obj/machinery/door/window{
 	name = "Atmospherics Monitoring";
-	req_access_txt = "32";
-	dir = 2
+	dir = 2;
+	req_one_access_txt = "11;24"
 	},
 /obj/machinery/door/poddoor{
 	density = 0;
@@ -50026,7 +50056,9 @@
 /turf/simulated/floor,
 /area/engineering/engine)
 "tCN" = (
-/obj/structure/fence/door,
+/obj/structure/fence/door{
+	req_access_txt = "10;24"
+	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/atmos_outside)
 "tCU" = (
@@ -52515,7 +52547,7 @@
 "uFO" = (
 /obj/machinery/door/airlock/glass_engineering{
 	name = "AME Room";
-	req_one_access_txt = "11;24"
+	req_access_txt = "11"
 	},
 /obj/structure/cable/orange{
 	icon_state = "4-8";
@@ -136833,8 +136865,8 @@ vEs
 wld
 maR
 iMQ
-xMH
-wld
+vsz
+aCN
 vay
 qTP
 xkn
@@ -137185,8 +137217,8 @@ wnO
 wld
 maR
 iMQ
-xMH
-wld
+vsz
+aCN
 vay
 qTP
 xkn
@@ -137537,8 +137569,8 @@ wld
 wld
 maR
 iMQ
-xMH
-wld
+vsz
+aCN
 vay
 qTP
 flh
@@ -138241,7 +138273,7 @@ wld
 wld
 vhv
 xOV
-qcB
+iDZ
 qcB
 jkg
 oEI
@@ -138593,8 +138625,8 @@ wld
 wld
 xor
 iMQ
-wld
-wld
+bBI
+ady
 vay
 qTP
 wSQ
@@ -138945,8 +138977,8 @@ wld
 wld
 xor
 iMQ
-wld
-wld
+bBI
+ady
 vay
 qTP
 moC
@@ -139297,8 +139329,8 @@ wld
 xor
 xor
 iMQ
-wld
-wld
+vhv
+ady
 vay
 nql
 moC
@@ -147042,21 +147074,21 @@ eOA
 eOA
 eOA
 eOA
-cge
-cge
-auf
-auf
-auf
-auf
-auf
-auf
-auf
-auf
-auf
-auf
-auf
-auf
-auf
+rRT
+dhG
+jyd
+jyd
+jyd
+jyd
+jyd
+jyd
+jyd
+jyd
+jyd
+hqV
+jyd
+jyd
+jyd
 jsN
 tRU
 ifp
@@ -147394,21 +147426,21 @@ snf
 snf
 snf
 snf
-rRT
-dhG
-jyd
-jyd
-jyd
-jyd
-jyd
-jyd
-jyd
-jyd
-jyd
-jyd
-jyd
-jyd
-jyd
+cge
+sCN
+sCN
+sCN
+sCN
+sCN
+sCN
+sCN
+sCN
+sCN
+sCN
+sCN
+sCN
+sCN
+sCN
 jsN
 jsN
 jsN
