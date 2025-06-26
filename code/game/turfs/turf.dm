@@ -818,7 +818,7 @@
 						R.reaction_animal(A, turf_reagent_method , turf_reagent_amount)
 					else
 						R.reaction_mob(A, turf_reagent_method , turf_reagent_amount, ALL_LIMBS)
-			else if (isobj(A) && !istype(A,/atom/movable/lighting_overlay))
+			else if ( istype(A,/obj) )
 				R.reaction_obj(A, turf_reagent_amount)
 			
 			qdel(R)
