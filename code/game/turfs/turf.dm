@@ -99,8 +99,7 @@
 	universe.OnTurfTick(src)
 	if((reagent_interaction_flags & TURF_REAGENT_PROCESS))
 		for(var/mob/M in contents)
-			if( (!(M.flags & INVULNERABLE)) || (reagent_interaction_flags & TURF_REAGENT_INGORES_INVULNERABLE) )
-				GiveReagentsTo(M)
+			GiveReagentsTo(M)
 
 /turf/initialize()
 	..()
@@ -125,12 +124,7 @@
 
 /turf/Exit(atom/movable/mover, atom/target)
 	if(reagent_interaction_flags & TURF_REAGENT_EXIT)
-		if(istype(mover,/mob))
-			var/mob/M=mover
-			if( (!(M.flags & INVULNERABLE)) || (reagent_interaction_flags & TURF_REAGENT_INGORES_INVULNERABLE) )
-				GiveReagentsTo(M)
-		else
-			GiveReagentsTo(mover)
+		GiveReagentsTo(mover)
 	return TRUE
 
 /turf/Exited(atom/movable/mover, atom/newloc)
@@ -144,12 +138,7 @@
 			if(!AM.Cross(mover))
 				return FALSE
 	if(reagent_interaction_flags & TURF_REAGENT_ENTER)
-		if(istype(mover,/mob))
-			var/mob/M=mover
-			if( (!(M.flags & INVULNERABLE)) || (reagent_interaction_flags & TURF_REAGENT_INGORES_INVULNERABLE) )
-				GiveReagentsTo(M)
-		else
-			GiveReagentsTo(mover)
+		GiveReagentsTo(mover)
 
 /turf/Entered(atom/movable/A as mob|obj, atom/OldLoc)
 	if(movement_disabled)
@@ -823,10 +812,12 @@
 			R.adj_temp = turf_reagents_temp
 
 			if (ismob(A))
-				if (isanimal(A))
-					R.reaction_animal(A, turf_reagent_method , turf_reagent_amount)
-				else
-					R.reaction_mob(A, turf_reagent_method , turf_reagent_amount, ALL_LIMBS)
+				var/mob/M=A
+				if( (!(M.flags & INVULNERABLE)) || (reagent_interaction_flags & TURF_REAGENT_INGORES_INVULNERABLE) )
+					if (isanimal(A))
+						R.reaction_animal(A, turf_reagent_method , turf_reagent_amount)
+					else
+						R.reaction_mob(A, turf_reagent_method , turf_reagent_amount, ALL_LIMBS)
 			else if (isobj(A) && !istype(A,/atom/movable/lighting_overlay))
 				R.reaction_obj(A, turf_reagent_amount)
 			
