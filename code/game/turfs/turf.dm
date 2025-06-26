@@ -818,7 +818,7 @@
 						R.reaction_animal(A, turf_reagent_method , turf_reagent_amount)
 					else
 						R.reaction_mob(A, turf_reagent_method , turf_reagent_amount, ALL_LIMBS)
-			else if ( istype(A,/obj) )
+			else if ( istype(A,/obj/machinery) || istype(A,/obj/item)  || istype(A,/obj/structure) )
 				R.reaction_obj(A, turf_reagent_amount)
 			
 			qdel(R)
