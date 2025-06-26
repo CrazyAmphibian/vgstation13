@@ -86,7 +86,6 @@
 	var/turf_reagent_method = TOUCH
 	var/turf_reagents_limited = null // if a non-null value, will treat it as a limited resivoir and will drain by reducing this number.
 	var/turf_reagents_temp = 0 //this uses strange reagent temperature stuff. i don't know what kind of unit method it's using but it's here regardless.
-	var/turf_reagent_fills_containers = TRUE // if true, we can click on it with a beaker in hand to fill it
 
 /turf/examine(mob/user)
 	..()
@@ -98,9 +97,10 @@
 /turf/proc/process()
 	set waitfor = FALSE
 	universe.OnTurfTick(src)
-	if(reagent_interaction_flags & TURF_REAGENT_PROCESS)
+	if((reagent_interaction_flags & TURF_REAGENT_PROCESS))
 		for(var/mob/M in contents)
-			GiveReagentsTo(M)
+			if( (!(M.flags & INVULNERABLE)) || (reagent_interaction_flags & TURF_REAGENT_INGORES_INVULNERABLE) )
+				GiveReagentsTo(M)
 
 /turf/initialize()
 	..()
@@ -125,7 +125,12 @@
 
 /turf/Exit(atom/movable/mover, atom/target)
 	if(reagent_interaction_flags & TURF_REAGENT_EXIT)
-		GiveReagentsTo(mover)
+		if(istype(mover,/mob))
+			var/mob/M=mover
+			if( (!(M.flags & INVULNERABLE)) || (reagent_interaction_flags & TURF_REAGENT_INGORES_INVULNERABLE) )
+				GiveReagentsTo(M)
+		else
+			GiveReagentsTo(mover)
 	return TRUE
 
 /turf/Exited(atom/movable/mover, atom/newloc)
@@ -139,7 +144,12 @@
 			if(!AM.Cross(mover))
 				return FALSE
 	if(reagent_interaction_flags & TURF_REAGENT_ENTER)
-		GiveReagentsTo(mover)
+		if(istype(mover,/mob))
+			var/mob/M=mover
+			if( (!(M.flags & INVULNERABLE)) || (reagent_interaction_flags & TURF_REAGENT_INGORES_INVULNERABLE) )
+				GiveReagentsTo(M)
+		else
+			GiveReagentsTo(mover)
 
 /turf/Entered(atom/movable/A as mob|obj, atom/OldLoc)
 	if(movement_disabled)
@@ -769,7 +779,7 @@
 
 /turf/attackby(var/obj/item/I, var/mob/user)
 	//if you're using this and it's not triggering, ensure your turf is calling ..() properly
-	if(turf_reagent_amount!=null && turf_reagent_fills_containers && istype(I,/obj/item/weapon/reagent_containers))
+	if(turf_reagent_amount!=null && (reagent_interaction_flags & TURF_REAGENT_FILLS_CONTAINERS) && istype(I,/obj/item/weapon/reagent_containers))
 		to_chat(user,"<span class='notice'>You fill \the [I] from \the [src]</span>")
 		var/obj/item/weapon/reagent_containers/RC=I
 		for(var/RID in turf_reagents)

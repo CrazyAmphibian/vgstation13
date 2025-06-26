@@ -389,7 +389,7 @@ var/list/foliage_replacments=list(
 	plane = ABOVE_OBJ_PLANE
 	DIGGING_BLOCKED = "Something tells you that this is a really bad idea."
 	turf_reagents = list(WATER=1.0)
-	reagent_interaction_flags = TURF_REAGENT_ENTER
+	reagent_interaction_flags = TURF_REAGENT_ENTER | TURF_REAGENT_FILLS_CONTAINERS
 	turf_reagent_amount = 5
 
 /turf/unsimulated/floor/jungle/water_deep
@@ -401,7 +401,7 @@ var/list/foliage_replacments=list(
 	plane = MOB_PLANE
 	DIGGING_BLOCKED = "Something tells you that this is a really bad idea."
 	turf_reagents = list(WATER=1.0)
-	reagent_interaction_flags = TURF_REAGENT_ENTER
+	reagent_interaction_flags = TURF_REAGENT_ENTER | TURF_REAGENT_FILLS_CONTAINERS
 	turf_reagent_amount = 10
 
 
