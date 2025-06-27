@@ -27,7 +27,7 @@ var/list/junglemobs_passive_rare=list(
 
 /obj/abstract/map/spawner/jungle_any/New()
 	var/rng=rand()
-	if(rng < .65) //65% chance of friendly mobs
+	if(rng < 0.65) //65% chance of friendly mobs
 		amount=rand(3,6)
 		if(prob(20)) //20% chance for rare (13% overall)
 			amount = floor((1.0+amount)/3.0) //between 1 and 2 of em
