@@ -43,6 +43,7 @@
 	center_y = 163
 
 /datum/map/active/New()
+	..()
 	world.name = "NT Colony Gamma-8"
 	station_name="NT Colony Gamma-8"
 

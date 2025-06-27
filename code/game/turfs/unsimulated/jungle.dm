@@ -139,12 +139,13 @@ var/list/foliage_replacments=list(
 	name="Jungle Grass"
 	desc="A thick and lush carpet of various plant species, sustained by a regular supply to water."
 	icon = 'icons/turf/floors.dmi'
-	icon_state = "grass_alt1"
+	icon_state = "grass_jungle1"
 	turf_speed_multiplier=1.1 // tall grass.
 	construction_allowed=TRUE
 
 /turf/unsimulated/floor/jungle/grass/New(var/loc,var/NO_GROW=FALSE)
 	..()
+	icon_state="grass_jungle[rand(1,4)]"
 	footstep_sound = sounds_grass
 	footstep_sound_barefoot = sounds_grass
 	footstep_sound_claw = sounds_grass
@@ -169,7 +170,6 @@ var/list/foliage_replacments=list(
 	else if(prob(50)) //25% overall
 		if( !(locate(/obj/structure/flora/tree) in range(2,src)) )
 			new/obj/structure/flora/tree/shitty(src)
-
 
 /turf/unsimulated/floor/jungle/grass/Destroy()
 	..()
@@ -200,11 +200,8 @@ var/list/foliage_replacments=list(
 			if(prob(40))
 				ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
 
-/turf/unsimulated/floor/jungle/grass/New()
-	..()
-	icon_state="grass_alt[rand(1,4)]"
-
-/turf/unsimulated/floor/jungle/grass/no_flora //BYOND...
+/turf/unsimulated/floor/jungle/grass/no_flora
+	icon_state="grass_alt1" //uses an alt texture at first so that it appears different while mapping. this will correct itself when it spawns.
 /turf/unsimulated/floor/jungle/grass/no_flora/New(var/loc)
 	..(loc,TRUE)
 
