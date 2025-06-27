@@ -33,10 +33,7 @@ var/list/junglemobs_passive_rare=list(
 			amount = floor((1.0+amount)/3.0) //between 1 and 2 of em
 			to_spawn = pick(junglemobs_passive_rare)
 		else
-			var/list/pickfrom=list()
-			pickfrom+=junglemobs_dangerous
-			pickfrom+=junglemobs_passive
-			to_spawn = pick(pickfrom)
+			to_spawn = pick(junglemobs_passive)
 	else
 		amount=rand(2,5)
 		to_spawn = pick(junglemobs_hostile)
