@@ -5280,8 +5280,11 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep)
 "cbn" = (
-/obj/structure/table/reinforced,
 /obj/machinery/light,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/cooking/icemachine,
 /turf/unsimulated/floor/jungle/path_plated,
 /area/crew_quarters/bar)
 "cbp" = (
@@ -25283,6 +25286,13 @@
 	dir = 1
 	},
 /area/engineering/reactor_room)
+"jSk" = (
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/crew_quarters/bar)
 "jSw" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 5
@@ -34459,6 +34469,17 @@
 	name = "plating"
 	},
 /area/centcom/striketeam)
+"nFZ" = (
+/obj/structure/table/reinforced,
+/obj/item/weapon/reagent_containers/food/condiment/saltshaker{
+	pixel_y = 4
+	},
+/obj/item/weapon/reagent_containers/food/condiment/peppermill{
+	pixel_x = -7;
+	pixel_y = 4
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/crew_quarters/bar)
 "nGC" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -42313,7 +42334,8 @@
 /area/security/interrogation)
 "qLt" = (
 /obj/effect/decal/arrow{
-	dir = 8
+	dir = 8;
+	anchored = 1
 	},
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/fenced)
@@ -44571,6 +44593,10 @@
 "rCb" = (
 /obj/structure/table,
 /obj/item/stack/package_wrap,
+/obj/item/weapon/storage/box/large/utensils_plastic{
+	pixel_y = 6;
+	pixel_x = -1
+	},
 /turf/simulated/floor{
 	icon_state = "showroomfloor"
 	},
@@ -49706,6 +49732,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/item/weapon/storage/box/large/utensils_plastic,
 /turf/unsimulated/floor/jungle/path_plated,
 /area/crew_quarters/bar)
 "tCk" = (
@@ -53614,7 +53641,9 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/effect/decal/arrow,
+/obj/effect/decal/arrow{
+	anchored = 1
+	},
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/fenced)
 "vib" = (
@@ -55762,10 +55791,10 @@
 	},
 /area/shuttle/nuclearops)
 "vUL" = (
-/obj/machinery/cooking/icemachine,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/cooking/deepfryer,
 /turf/unsimulated/floor/jungle/path_plated,
 /area/crew_quarters/bar)
 "vUM" = (
@@ -126962,8 +126991,8 @@ xHj
 xHj
 edD
 edD
-fMh
-fMh
+nFZ
+jSk
 cbn
 why
 vrD

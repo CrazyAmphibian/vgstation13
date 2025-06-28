@@ -1492,3 +1492,24 @@
 	new	/obj/item/clothing/gloves/sonicman(src)
 	new	/obj/item/clothing/shoes/sonicman(src)
 	..()
+
+/obj/item/weapon/storage/box/large/utensils_plastic
+	name = "Plastic Utensils"
+	desc = "For your picnic needs"
+	icon_state = "putensil_box"
+	item_state = "box"
+
+/obj/item/weapon/storage/box/large/utensils_plastic/New() //7 of each.
+	var/n=7
+	while(n)
+		new/obj/item/weapon/kitchen/utensil/spoon/plastic(src)
+		n--
+	n=7
+	while(n)
+		new/obj/item/weapon/kitchen/utensil/fork/plastic(src)
+		n--
+	n=7
+	while(n)
+		new/obj/item/weapon/kitchen/utensil/knife/plastic(src)
+		n--
+	..()
