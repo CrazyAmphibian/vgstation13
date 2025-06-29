@@ -23,7 +23,7 @@
 	dir = 4
 	},
 /obj/structure/grille,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "aaE" = (
 /obj/structure/bed/chair,
@@ -151,7 +151,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/warden)
 "acX" = (
 /obj/structure/crematorium{
@@ -507,6 +507,16 @@
 "akm" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/machinery/door_control{
+	desc = "A remote control switch for the brig foyer.";
+	id_tag = "inter_privacy";
+	name = "Privacy Toggle";
+	normaldoorcontrol = 1;
+	pixel_y = -25;
+	range = 3;
+	req_access_txt = "63";
+	pixel_x = -5
 	},
 /turf/simulated/floor{
 	dir = 5;
@@ -1057,7 +1067,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/prison/solitary)
 "auf" = (
 /turf/unsimulated/floor/jungle/concrete,
@@ -1688,7 +1698,7 @@
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/supermatter_room)
 "aFq" = (
 /obj/structure/table,
@@ -2218,7 +2228,7 @@
 /area/security/armory)
 "aRn" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/science/chargebay)
 "aRZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -2281,7 +2291,7 @@
 /area/surface/jungle)
 "aSF" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/xenobot)
 "aSI" = (
 /obj/structure/table,
@@ -2311,7 +2321,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/paramedics)
 "aSO" = (
 /obj/machinery/door/airlock/external,
@@ -2706,12 +2716,12 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/crew_quarters/heads/hos)
 "bbc" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/tcomms/chamber)
 "bbx" = (
 /obj/structure/table/woodentable,
@@ -3330,7 +3340,7 @@
 	},
 /obj/structure/window/reinforced/plasma,
 /obj/structure/grille/broken,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "bnw" = (
 /obj/structure/table,
@@ -3921,7 +3931,7 @@
 	name = "Privacy Shutters";
 	opacity = 0
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/cmo)
 "bzu" = (
 /obj/machinery/seed_extractor,
@@ -4081,7 +4091,7 @@
 /obj/structure/window/reinforced/plasma{
 	dir = 1
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "bBG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -4266,7 +4276,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/ce)
 "bES" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord,
@@ -5135,7 +5145,7 @@
 "bXO" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/atmos)
 "bXQ" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
@@ -6507,7 +6517,7 @@
 "cwo" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/maintstore1{
 	icon_state = "toxstorage";
 	name = "Toxins Storage"
@@ -6771,7 +6781,7 @@
 	icon_state = "0-2";
 	pixel_y = 1
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/checkpoint2)
 "cCb" = (
 /obj/structure/table/woodentable,
@@ -6967,7 +6977,7 @@
 /area/research_outpost/xenobot)
 "cFY" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/hydroponics)
 "cGe" = (
 /obj/effect/decal/warning_stripes{
@@ -7221,7 +7231,7 @@
 "cKx" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/structure/cable/yellow,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/main)
 "cKC" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -8017,7 +8027,7 @@
 "daH" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/tcomms/chamber)
 "daU" = (
 /obj/structure/closet/syndicate/personal,
@@ -8638,12 +8648,6 @@
 /obj/structure/lattice,
 /turf/space,
 /area/centcom/specops)
-"dnj" = (
-/obj/machinery/camera{
-	dir = 8
-	},
-/turf/unsimulated/floor/jungle/grass/no_flora,
-/area/surface/jungle/fenced)
 "dnI" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -8931,7 +8935,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/gearstore)
 "dti" = (
 /obj/item/weapon/storage/box/labels,
@@ -9417,7 +9421,7 @@
 "dBm" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/xenobot)
 "dBu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -9524,7 +9528,7 @@
 	dir = 4
 	},
 /obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/engine)
 "dEu" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -9674,7 +9678,7 @@
 "dHA" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/harvesting)
 "dHD" = (
 /obj/structure/grille,
@@ -9995,7 +9999,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/science/chargebay)
 "dPM" = (
 /obj/structure/grille,
@@ -10248,14 +10252,15 @@
 	one_way = 1
 	},
 /obj/structure/grille,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/structure/cable/yellow{
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated,
+/obj/structure/window/reinforced/smart{
+	dir = 8;
+	id_tag = "inter_privacy"
+	},
+/turf/simulated/floor/plating,
 /area/security/interrogation)
 "dUS" = (
 /obj/structure/bed/chair/wood/normal{
@@ -10624,7 +10629,7 @@
 /area/surface/jungle/zoned/outdoor_bar)
 "eas" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/science/shuttlebay)
 "eaO" = (
 /obj/structure/shuttle/diag_wall/smooth{
@@ -11894,7 +11899,7 @@
 /area/centcom/holding)
 "ext" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "exu" = (
 /obj/structure/closet/crate/secure/loot/bay_06,
@@ -12506,7 +12511,7 @@
 	},
 /obj/structure/cable/yellow,
 /obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/lobby)
 "eNw" = (
 /obj/machinery/light,
@@ -12699,7 +12704,7 @@
 /area/crew_quarters/courtroom)
 "ePq" = (
 /obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/warden)
 "ePx" = (
 /turf/simulated/wall/r_wall,
@@ -12992,7 +12997,7 @@
 	},
 /obj/structure/window/reinforced/plasma,
 /obj/structure/grille/broken,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "eXG" = (
 /obj/structure/table,
@@ -13489,7 +13494,7 @@
 /area/centcom/living)
 "fjo" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/sleeper)
 "fjE" = (
 /turf/simulated/floor{
@@ -14008,7 +14013,7 @@
 "ftR" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/harvesting)
 "ftX" = (
 /obj/structure/table,
@@ -14065,7 +14070,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/warden)
 "fvy" = (
 /obj/machinery/computer/mech_bay_power_console,
@@ -14669,7 +14674,7 @@
 	dir = 1
 	},
 /obj/structure/grille/broken,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "fHS" = (
 /turf/simulated/floor{
@@ -14959,7 +14964,7 @@
 /area/alien)
 "fNB" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/vox_trading_post/trade_processing)
 "fOb" = (
 /obj/machinery/atmospherics/unary/heat_exchanger{
@@ -15307,7 +15312,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/cmo)
 "fUK" = (
 /turf/simulated/floor/wood,
@@ -15468,7 +15473,7 @@
 	dir = 4
 	},
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/reactor_room)
 "fYE" = (
 /obj/machinery/light{
@@ -15674,7 +15679,7 @@
 "gcX" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/med)
 "gdh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -16382,7 +16387,7 @@
 	name = "Security Blast Door";
 	opacity = 0
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/prison)
 "gqi" = (
 /obj/machinery/door/window{
@@ -16593,7 +16598,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/warden)
 "gty" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -16692,7 +16697,7 @@
 	dir = 1
 	},
 /obj/structure/grille/broken,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "gvs" = (
 /obj/structure/table/woodentable,
@@ -17160,7 +17165,7 @@
 /area/centcom/control)
 "gGr" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/production)
 "gGy" = (
 /obj/machinery/door/airlock/glass_mining{
@@ -17469,10 +17474,10 @@
 	},
 /area/engineering/atmos)
 "gNi" = (
-/obj/item/weapon/stool/bar,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/media/jukebox/bar,
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/outdoor_bar)
 "gNm" = (
@@ -17520,7 +17525,7 @@
 /area/shuttle/striketeam/centcom)
 "gNU" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/genetics)
 "gNV" = (
 /obj/structure/table,
@@ -17828,7 +17833,7 @@
 /area/engineering/ce)
 "gTF" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/dorm2{
 	icon_state = "toxlab";
 	name = "Toxins"
@@ -18322,7 +18327,7 @@
 "hdV" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/dorm2{
 	icon_state = "toxlab";
 	name = "Toxins"
@@ -18758,7 +18763,7 @@
 "hnj" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/anomaly)
 "hnw" = (
 /obj/structure/cable/yellow{
@@ -18837,7 +18842,7 @@
 /area/surface/jungle)
 "hoS" = (
 /obj/structure/grille/window_spawner/reinforced/tinted,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "hpr" = (
 /obj/machinery/power/battery/smes,
@@ -19248,9 +19253,7 @@
 /area/centcom/suppy)
 "hzu" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated/floor{
-	icon_state = "white"
-	},
+/turf/simulated/floor/plating,
 /area/medical/medbay)
 "hzP" = (
 /obj/structure/window/reinforced{
@@ -19939,7 +19942,7 @@
 	pixel_y = -26;
 	pixel_x = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/hallway)
 "hNy" = (
 /obj/machinery/door_control{
@@ -20630,7 +20633,7 @@
 "iat" = (
 /obj/structure/grille/broken,
 /obj/structure/window/reinforced/plasma,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "iaw" = (
 /obj/structure/bed/chair/shuttle/red{
@@ -20859,7 +20862,7 @@
 /obj/structure/window/reinforced/plasma{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "ifY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -21030,7 +21033,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/gearstore)
 "ijG" = (
 /obj/structure/bookcase{
@@ -21515,7 +21518,7 @@
 /obj/machinery/door/airlock/glass_research{
 	name = "Research"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "iuV" = (
 /obj/machinery/vending/coffee,
@@ -21860,7 +21863,7 @@
 	dir = 4
 	},
 /obj/structure/grille/broken,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "iCs" = (
 /obj/machinery/chem_dispenser/mapping,
@@ -21874,7 +21877,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/science/shuttlebay)
 "iCB" = (
 /obj/structure/table/woodentable,
@@ -22911,7 +22914,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/visible{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/atmos)
 "iYa" = (
 /obj/structure/window/reinforced{
@@ -22972,7 +22975,7 @@
 	d1 = 1;
 	d2 = 2
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/mechanics)
 "iYJ" = (
 /obj/structure/shuttle/engine/propulsion/right{
@@ -23465,7 +23468,7 @@
 /area/surface/jungle)
 "jhJ" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/hallway)
 "jhX" = (
 /obj/structure/table/reinforced,
@@ -23577,7 +23580,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/storage)
 "jjL" = (
 /obj/structure/closet,
@@ -23785,7 +23788,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/range)
 "joH" = (
 /obj/structure/cable/yellow{
@@ -23905,7 +23908,7 @@
 /area/engineering/supermatter_room)
 "jrq" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/chemistry)
 "jry" = (
 /obj/structure/table,
@@ -23991,7 +23994,7 @@
 /area/centcom/suppy)
 "jtw" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/science/hallway)
 "jtB" = (
 /obj/machinery/door/window{
@@ -24058,7 +24061,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/range)
 "jvq" = (
 /obj/machinery/light/small{
@@ -24084,7 +24087,7 @@
 	name = "Security Blast Door";
 	opacity = 0
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/prison)
 "jvL" = (
 /obj/structure/table/woodentable,
@@ -24107,6 +24110,7 @@
 	pixel_y = 1
 	},
 /obj/item/device/instrument/guitar,
+/obj/item/weapon/bikehorn/rubberducky,
 /turf/simulated/floor,
 /area/crew_quarters/theatre)
 "jwM" = (
@@ -24239,7 +24243,7 @@
 /obj/structure/window/reinforced/plasma{
 	dir = 1
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "jzG" = (
 /obj/structure/grille,
@@ -24449,7 +24453,7 @@
 "jCu" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/maintstore1{
 	icon_state = "toxstorage";
 	name = "Toxins Storage"
@@ -24737,7 +24741,7 @@
 	dir = 4
 	},
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/atmos)
 "jHZ" = (
 /obj/machinery/vending/mining,
@@ -25495,6 +25499,7 @@
 	dir = 8;
 	pixel_y = -6
 	},
+/obj/item/weapon/bikehorn/rubberducky,
 /turf/simulated/floor{
 	icon_state = "freezerfloor"
 	},
@@ -25784,7 +25789,7 @@
 /area/centcom/control)
 "kdb" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/atmos)
 "kdj" = (
 /turf/simulated/floor{
@@ -26077,7 +26082,7 @@
 	pixel_y = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/lobby)
 "kiK" = (
 /obj/machinery/camera{
@@ -26210,7 +26215,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/science/robotics)
 "klP" = (
 /obj/item/clothing/glasses/sunglasses,
@@ -26400,7 +26405,7 @@
 /obj/structure/window/reinforced/plasma{
 	dir = 1
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "kpY" = (
 /turf/unsimulated/floor{
@@ -26667,7 +26672,7 @@
 /obj/structure/window/reinforced/plasma{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "kvT" = (
 /obj/machinery/door/airlock/glass_atmos{
@@ -26899,7 +26904,7 @@
 "kBt" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/atmos)
 "kBG" = (
 /turf/simulated/wall,
@@ -27431,7 +27436,7 @@
 	opacity = 0
 	},
 /obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/lawoffice)
 "kNh" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
@@ -27501,7 +27506,7 @@
 /area/mine/explored)
 "kOU" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/science/lab)
 "kOW" = (
 /obj/structure/flora/tree/pine,
@@ -27801,9 +27806,7 @@
 /area/alien)
 "kTU" = (
 /obj/structure/window/reinforced{
-	dir = 8;
-	name = "reinforced one-way window";
-	one_way = 1
+	dir = 8
 	},
 /turf/simulated/floor{
 	dir = 9;
@@ -28477,18 +28480,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/library)
-"ljj" = (
-/obj/structure/grille/window_spawner/reinforced,
-/turf/simulated/floor{
-	icon_state = "hydrofloor"
-	},
-/area/hydroponics)
 "ljl" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/antimatter_room)
 "ljm" = (
 /obj/machinery/door/poddoor/preopen,
@@ -29625,7 +29622,7 @@
 /area/surface/jungle/zoned/botanty_outside)
 "lGd" = (
 /obj/machinery/door/airlock/hatch,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "lGo" = (
 /turf/simulated/floor{
@@ -29990,7 +29987,7 @@
 /area/engineering/engine)
 "lMI" = (
 /obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/antimatter_room)
 "lML" = (
 /obj/structure/table,
@@ -30073,7 +30070,7 @@
 	name = "Security Blast Door";
 	opacity = 0
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/prison)
 "lNY" = (
 /obj/machinery/door/airlock/glass_research{
@@ -30448,7 +30445,7 @@
 	name = "Security Blast Door";
 	opacity = 0
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/prison)
 "lTM" = (
 /obj/effect/decal/warning_stripes{
@@ -30736,7 +30733,7 @@
 /area/engineering/atmos)
 "lZL" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/storage)
 "lZQ" = (
 /obj/structure/grille,
@@ -31089,7 +31086,7 @@
 /area/shuttle/nuclearops)
 "mgF" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/gearstore)
 "mgS" = (
 /obj/effect/decal/warning_stripes{
@@ -31586,15 +31583,13 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/crew_quarters/heads/hos)
 "mpm" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/sign/redcross,
-/turf/simulated/floor{
-	icon_state = "white"
-	},
+/turf/simulated/floor/plating,
 /area/medical/medbay)
 "mpt" = (
 /turf/unsimulated/floor/jungle/path_plated,
@@ -31616,7 +31611,7 @@
 	})
 "mqV" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/science/robotics)
 "mqZ" = (
 /turf/simulated/wall,
@@ -31830,7 +31825,7 @@
 "mvX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/paramedics)
 "mwg" = (
 /obj/structure/table,
@@ -32335,7 +32330,7 @@
 /area/security/evidence)
 "mGT" = (
 /obj/machinery/door/airlock/external,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/hallway)
 "mHo" = (
 /obj/machinery/light{
@@ -32888,7 +32883,7 @@
 /area/vox_trading_post/vault)
 "mTl" = (
 /obj/structure/closet/emcloset,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/hallway)
 "mTx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -33321,7 +33316,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/supermatter_room)
 "nbS" = (
 /obj/machinery/teleport/station,
@@ -33467,7 +33462,7 @@
 	pixel_y = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/warden)
 "ngs" = (
 /obj/machinery/disposal/compactor,
@@ -34262,7 +34257,7 @@
 	},
 /obj/structure/grille/window_spawner/reinforced_plasma/full,
 /obj/structure/girder,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/perma)
 "nBk" = (
 /turf/simulated/floor/carpet{
@@ -34580,7 +34575,7 @@
 /area/janitor)
 "nIP" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/virology)
 "nIQ" = (
 /obj/structure/closet/secure_closet/freezer/meat,
@@ -34613,7 +34608,7 @@
 /area/storage/tech)
 "nJa" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/atmos)
 "nJe" = (
 /obj/structure/bed,
@@ -34900,7 +34895,7 @@
 "nNC" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/science/chargebay)
 "nNE" = (
 /obj/machinery/door/airlock/centcom{
@@ -35820,7 +35815,7 @@
 /obj/structure/window/reinforced/plasma{
 	dir = 1
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "oeY" = (
 /obj/structure/table,
@@ -36148,7 +36143,7 @@
 "olu" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/entry)
 "olB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
@@ -36255,7 +36250,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/crew_quarters/heads/hos)
 "onW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -36836,7 +36831,7 @@
 /area/medical/medbay)
 "ozP" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/reactor_room)
 "oAb" = (
 /turf/simulated/floor/asteroid,
@@ -37144,7 +37139,7 @@
 /area/surface/jungle)
 "oHy" = (
 /obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/engine)
 "oHF" = (
 /obj/machinery/atmospherics/miner/nitrogen,
@@ -37244,7 +37239,7 @@
 "oJM" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/chemistry)
 "oKa" = (
 /obj/structure/rack,
@@ -37787,7 +37782,7 @@
 /area/crew_quarters/captain)
 "oXv" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/maintstore1{
 	icon_state = "toxstorage";
 	name = "Toxins Storage"
@@ -37960,7 +37955,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/ce)
 "pai" = (
 /turf/simulated/floor{
@@ -38449,7 +38444,7 @@
 /area/vox_trading_post/gardens)
 "plG" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/entry)
 "plL" = (
 /obj/structure/table,
@@ -38582,7 +38577,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/prison)
 "poT" = (
 /obj/structure/bed/chair/comfy/black{
@@ -39408,7 +39403,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/reactor_room)
 "pFk" = (
 /obj/machinery/recharge_station,
@@ -39632,7 +39627,7 @@
 /area/centcom/specops)
 "pKV" = (
 /obj/item/weapon/storage/fancy/beer_box,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/perma)
 "pKW" = (
 /turf/simulated/floor{
@@ -39677,9 +39672,6 @@
 	one_way = 1
 	},
 /obj/structure/grille,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
@@ -39691,7 +39683,11 @@
 	dir = 1;
 	pixel_y = 1
 	},
-/turf/simulated,
+/obj/structure/window/reinforced/smart{
+	dir = 8;
+	id_tag = "inter_privacy"
+	},
+/turf/simulated/floor/plating,
 /area/security/interrogation)
 "pLH" = (
 /obj/structure/table,
@@ -39910,7 +39906,7 @@
 	dir = 8
 	},
 /obj/structure/grille/broken,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "pPh" = (
 /obj/structure/table/woodentable,
@@ -40573,7 +40569,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/hallway)
 "qdg" = (
 /obj/item/weapon/beach_ball/holoball,
@@ -41332,7 +41328,7 @@
 	name = "Security Blast Door";
 	opacity = 0
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/prison)
 "qrt" = (
 /obj/machinery/conveyor{
@@ -41530,7 +41526,7 @@
 /obj/machinery/door/airlock{
 	name = "Dorms"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "qvG" = (
 /turf/simulated/floor,
@@ -41803,7 +41799,7 @@
 "qBb" = (
 /obj/structure/cable/yellow,
 /obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/main)
 "qBi" = (
 /obj/structure/table/reinforced,
@@ -42519,7 +42515,7 @@
 	name = "KEEP CLEAR: DOCKING AREA";
 	icon_state = "shuttle3"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/entry)
 "qOP" = (
 /obj/structure/table/woodentable,
@@ -43090,7 +43086,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/science/shuttlebay)
 "rbU" = (
 /obj/structure/grille/window_spawner/reinforced/full,
@@ -43099,7 +43095,7 @@
 	icon_state = "0-2";
 	pixel_y = 1
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/prison)
 "rce" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
@@ -43490,7 +43486,7 @@
 "rjA" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/xenobot)
 "rjF" = (
 /obj/machinery/alarm{
@@ -44374,7 +44370,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/lobby)
 "ryz" = (
 /obj/structure/bed/chair/wood/normal{
@@ -44633,7 +44629,7 @@
 	name = "KEEP CLEAR: DOCKING AREA";
 	icon_state = "shuttle3"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/production)
 "rCx" = (
 /obj/effect/decal/warning_stripes{
@@ -45029,7 +45025,7 @@
 /area/supply/lobby)
 "rMB" = (
 /obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/tcomms/chamber)
 "rMI" = (
 /obj/structure/closet/crate{
@@ -45459,7 +45455,7 @@
 /area/mine/production)
 "rUS" = (
 /obj/structure/falsewall/rwall,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/perma)
 "rVE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -45533,7 +45529,7 @@
 "rWC" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/virology)
 "rWF" = (
 /obj/structure/table,
@@ -46163,7 +46159,7 @@
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
 "sgH" = (
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/hallway)
 "sgL" = (
 /turf/simulated/floor{
@@ -46191,7 +46187,7 @@
 /area/bridge/meeting_room)
 "shJ" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/surface/jungle/zoned/atmos_outside)
 "sie" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -46371,7 +46367,7 @@
 /area/vox_trading_post/gardens)
 "snD" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "snE" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
@@ -46619,8 +46615,7 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/maintenance/disposal)
@@ -46661,7 +46656,7 @@
 	name = "KEEP CLEAR: DOCKING AREA";
 	icon_state = "shuttle3"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/science/shuttlebay)
 "sva" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -46982,7 +46977,7 @@
 /area/science/rd)
 "sCJ" = (
 /obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/shuttle/trade/start)
 "sCN" = (
 /obj/structure/cable/orange{
@@ -47392,7 +47387,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/production)
 "sKQ" = (
 /obj/structure/table/reinforced,
@@ -47535,7 +47530,7 @@
 "sMV" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/science/lab)
 "sNg" = (
 /obj/structure/cable/yellow{
@@ -47780,7 +47775,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/storage)
 "sTq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -47906,7 +47901,7 @@
 	name = "Security Blast Door";
 	opacity = 0
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/crew_quarters/courtroom)
 "sVC" = (
 /obj/machinery/artifact_scanpad,
@@ -48109,7 +48104,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	req_access_txt = 1
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/hallway)
 "sYC" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -48497,7 +48492,7 @@
 	icon_state = "0-2";
 	pixel_y = 1
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/lobby)
 "tgU" = (
 /obj/machinery/power/apc{
@@ -49455,7 +49450,7 @@
 "twd" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/structure/cable/yellow,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/crew_quarters/courtroom)
 "twk" = (
 /obj/machinery/door/airlock/centcom{
@@ -50112,7 +50107,7 @@
 	name = "Security Blast Door";
 	opacity = 0
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/crew_quarters/courtroom)
 "tJY" = (
 /obj/structure/table,
@@ -50696,7 +50691,7 @@
 /area/surface/jungle/underground/zoned/speakeasy)
 "tWQ" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/paramedics)
 "tWZ" = (
 /obj/structure/sink/kitchen{
@@ -50789,7 +50784,7 @@
 	name = "KEEP CLEAR: DOCKING AREA";
 	icon_state = "shuttle3"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/science/hallway)
 "tZq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -51108,7 +51103,7 @@
 	name = "Security Blast Door";
 	opacity = 0
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/prison)
 "uis" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -51537,7 +51532,7 @@
 	name = "Engineering Security Doors";
 	opacity = 0
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/atmos_control)
 "uqc" = (
 /obj/machinery/door/airlock/glass{
@@ -51628,7 +51623,7 @@
 /area/security/main)
 "urp" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/mechanics)
 "urr" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -52426,7 +52421,7 @@
 	name = "Privacy Shutters";
 	opacity = 0
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/surgery)
 "uKA" = (
 /obj/structure/cable/yellow{
@@ -52524,7 +52519,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	req_access_txt = 1
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/production)
 "uNJ" = (
 /obj/machinery/light/small{
@@ -52651,7 +52646,7 @@
 	name = "Engineering Security Doors";
 	opacity = 0
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/atmos_control)
 "uPX" = (
 /obj/structure/window/barricade{
@@ -53191,7 +53186,7 @@
 /area)
 "vay" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/break_room)
 "vaJ" = (
 /obj/structure/bed/chair/office/light,
@@ -53299,7 +53294,7 @@
 	name = "Security Blast Door";
 	opacity = 0
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/brig)
 "vcf" = (
 /obj/structure/cable/yellow{
@@ -53792,7 +53787,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/crew_quarters/courtroom)
 "vjF" = (
 /obj/structure/window/reinforced{
@@ -53947,7 +53942,7 @@
 "vmy" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/atmos)
 "vmJ" = (
 /obj/structure/cable/yellow{
@@ -53977,7 +53972,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/reactor_room)
 "vnA" = (
 /turf/simulated/wall,
@@ -54006,7 +54001,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/lobby)
 "vnP" = (
 /turf/simulated/floor/plating,
@@ -54623,7 +54618,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	req_access_txt = 1
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/genetics)
 "vzo" = (
 /obj/docking_port/destination/deathsquad/centcom{
@@ -55426,7 +55421,7 @@
 /area/turret_protected/ai_upload_foyer)
 "vNA" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/anomaly)
 "vNM" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -56626,7 +56621,7 @@
 "wno" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/research_outpost/anomaly)
 "wnp" = (
 /obj/structure/catwalk{
@@ -56647,7 +56642,7 @@
 /area)
 "wnC" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/supermatter_room)
 "wnL" = (
 /obj/machinery/light,
@@ -56758,7 +56753,7 @@
 	icon_state = "0-2";
 	pixel_y = 1
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/warden)
 "wqc" = (
 /obj/structure/grille/window_spawner/reinforced,
@@ -57079,7 +57074,7 @@
 	name = "Security Blast Door";
 	opacity = 0
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/crew_quarters/courtroom)
 "wyd" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -58430,9 +58425,6 @@
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
 	pixel_y = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -58442,7 +58434,11 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated,
+/obj/structure/window/reinforced/smart{
+	dir = 8;
+	id_tag = "inter_privacy"
+	},
+/turf/simulated/floor/plating,
 /area/security/interrogation)
 "wXa" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -58846,7 +58842,7 @@
 "xgk" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/science/lab)
 "xgm" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -58932,7 +58928,7 @@
 /area/security/detectives_office)
 "xiw" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/janitor)
 "xiB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -59246,7 +59242,7 @@
 	pixel_y = 1
 	},
 /obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/lobby)
 "xnZ" = (
 /obj/structure/fence{
@@ -59440,7 +59436,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/mine/production)
 "xrk" = (
 /obj/structure/shuttle/window{
@@ -59582,7 +59578,7 @@
 	pixel_x = -8;
 	pixel_y = 6
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/perma)
 "xvh" = (
 /obj/machinery/door/airlock/glass{
@@ -59696,7 +59692,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/ce)
 "xxy" = (
 /obj/effect/step_trigger/thrower{
@@ -59714,7 +59710,7 @@
 "xxK" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/medical/genetics)
 "xxV" = (
 /obj/structure/table,
@@ -60026,7 +60022,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/security/prison)
 "xFL" = (
 /obj/structure/table,
@@ -60335,7 +60331,7 @@
 /area/medical/break_room)
 "xLp" = (
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated,
+/turf/simulated/floor/plating,
 /area/engineering/engine)
 "xLr" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -61210,9 +61206,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/simulated/floor{
-	icon_state = "hydrofloor"
-	},
+/turf/simulated/floor/plating,
 /area/hydroponics)
 "ydp" = (
 /obj/structure/table,
@@ -117163,9 +117157,9 @@ mEG
 xKy
 snf
 xor
-nre
-nre
-nre
+wld
+wld
+wld
 aUE
 cGe
 smp
@@ -117515,9 +117509,9 @@ wld
 wld
 wld
 xor
-nre
-nre
-nre
+wld
+wld
+wld
 fMu
 cGe
 sed
@@ -117867,9 +117861,9 @@ wld
 wld
 wld
 xor
-nre
-nre
-nre
+wld
+wld
+wld
 fMu
 cGe
 bWj
@@ -118220,8 +118214,8 @@ wld
 xor
 xor
 xor
-nre
-nre
+wld
+wld
 fMu
 cGe
 smp
@@ -126999,7 +126993,7 @@ vrD
 why
 rxr
 ydn
-ljj
+cFY
 why
 jUy
 jUy
@@ -129802,8 +129796,8 @@ vhZ
 hzP
 hzP
 mOx
-nre
-nre
+wld
+wld
 xMH
 psY
 maR
@@ -130154,8 +130148,8 @@ hzP
 hzP
 hzP
 pdc
-dnj
-nre
+jaT
+wld
 xMH
 psY
 maR
@@ -130484,8 +130478,8 @@ rOD
 wfk
 psY
 maR
-nre
-nre
+wld
+wld
 lBd
 tuW
 tlM
@@ -130836,8 +130830,8 @@ jUa
 sLX
 dfc
 maR
-nre
-nre
+wld
+wld
 gts
 xnl
 doQ
@@ -135760,7 +135754,7 @@ bka
 avb
 lKg
 nre
-nre
+wld
 xMH
 psY
 maR
@@ -136112,7 +136106,7 @@ bka
 etT
 lKg
 azy
-nre
+wld
 xMH
 psY
 maR
@@ -136464,7 +136458,7 @@ lKg
 lKg
 lKg
 bsv
-nre
+wld
 xMH
 psY
 ksX
@@ -136816,7 +136810,7 @@ qbp
 sSS
 jtw
 nre
-nre
+wld
 xMH
 psY
 maR
@@ -137168,7 +137162,7 @@ cSx
 sSS
 jtw
 nre
-nre
+wld
 vsz
 eZy
 xXD
@@ -137520,7 +137514,7 @@ ffm
 sSS
 jtw
 nre
-nre
+wld
 xMH
 dMi
 kri
