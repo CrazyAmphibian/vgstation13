@@ -4013,12 +4013,6 @@
 	icon_state = "whiteyellow"
 	},
 /area/medical/chemistry)
-"bAU" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 6
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
 "bAV" = (
 /obj/structure/table/glass,
 /obj/item/weapon/storage/bag/gadgets/part_replacer/pre_loaded,
@@ -5133,6 +5127,13 @@
 /obj/machinery/atmospherics/pipe/simple/general/visible,
 /turf/simulated/floor,
 /area/tdome)
+"bXE" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "bXJ" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -14845,6 +14846,21 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/turret_protected/ai)
+"fKM" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "vault";
+	tag = "icon-vault (NORTHEAST)"
+	},
+/area/bridge)
 "fKW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
@@ -18536,6 +18552,11 @@
 /area/crew_quarters/kitchen)
 "hhQ" = (
 /obj/machinery/computer/atmos_alert,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -19208,6 +19229,20 @@
 	},
 /turf/simulated/floor,
 /area/engineering/engine)
+"hwm" = (
+/obj/structure/table,
+/obj/machinery/recharger,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "vault";
+	tag = "icon-vault (NORTHEAST)"
+	},
+/area/bridge)
 "hwv" = (
 /turf/unsimulated/floor{
 	dir = 1;
@@ -19585,6 +19620,14 @@
 "hFS" = (
 /turf/simulated/wall,
 /area/security/perma)
+"hFV" = (
+/obj/structure/hanging_lantern/dim,
+/obj/structure/sign/directions/trader{
+	dir = 1;
+	pixel_y = -22
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/fenced)
 "hFZ" = (
 /turf/simulated/floor/engine{
 	name = "plasma floor";
@@ -19751,12 +19794,8 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/closet/secure_closet/brig{
-	id_tag = "Cell 4";
-	name = "Cell 4 Locker"
-	},
 /obj/machinery/flasher{
-	id_tag = "Cell 3";
+	id_tag = "Cell 4";
 	pixel_y = -28
 	},
 /turf/simulated/floor{
@@ -22228,6 +22267,15 @@
 	icon_state = "white"
 	},
 /area/centcom/test)
+"iLu" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "iLA" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -22236,10 +22284,6 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
-	},
-/obj/structure/closet/secure_closet/brig{
-	id_tag = "Cell 3";
-	name = "Cell 3 Locker"
 	},
 /obj/machinery/flasher{
 	id_tag = "Cell 3";
@@ -23014,14 +23058,6 @@
 	icon_state = "floor3"
 	},
 /area/shuttle/escape/centcom)
-"iZa" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
 "iZm" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable/yellow{
@@ -24680,6 +24716,26 @@
 	icon_state = "hydrofloor"
 	},
 /area/surface/jungle/underground/zoned/ghettosurgery)
+"jGJ" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "vault";
+	tag = "icon-vault (NORTHEAST)"
+	},
+/area/bridge)
 "jGU" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -26257,10 +26313,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
-/obj/structure/closet/secure_closet/brig{
-	id_tag = "Cell 1";
-	name = "Cell 1 Locker"
-	},
 /obj/machinery/flasher{
 	id_tag = "Cell 1";
 	pixel_x = 28
@@ -26530,12 +26582,8 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/closet/secure_closet/brig{
-	id_tag = "Cell 2";
-	name = "Cell 2 Locker"
-	},
 /obj/machinery/flasher{
-	id_tag = "Cell 1";
+	id_tag = "Cell 2";
 	pixel_x = 28
 	},
 /turf/simulated/floor{
@@ -28185,6 +28233,11 @@
 "ldM" = (
 /obj/structure/table,
 /obj/item/device/aicard,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -28344,6 +28397,19 @@
 	},
 /turf/unsimulated/floor/snow/asphalt/mine,
 /area/centcom/holding)
+"lhj" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/closet/secure_closet/brig{
+	id_tag = "Cell 3";
+	name = "Cell 3 Locker"
+	},
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
+/area/security/prison)
 "lhu" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/reagent_containers/food/drinks/flask/detflask{
@@ -28968,12 +29034,20 @@
 /turf/simulated/floor,
 /area/mine/explored)
 "ltk" = (
-/obj/structure/sign/directions/trader{
-	dir = 1;
-	pixel_y = -22
+/obj/structure/grille/window_spawner/reinforced/full,
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "bridge blast";
+	name = "Bridge Blast Doors";
+	opacity = 0
 	},
-/turf/unsimulated/floor/jungle/path,
-/area/surface/jungle/fenced)
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating,
+/area/bridge)
 "ltH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
@@ -29355,6 +29429,11 @@
 "lBe" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor{
 	dir = 5;
@@ -32347,13 +32426,6 @@
 	},
 /turf/simulated/floor/engine,
 /area/surface/jungle)
-"mHq" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
 "mHK" = (
 /turf/simulated/wall,
 /area/security/warden)
@@ -33525,6 +33597,11 @@
 "ngx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor{
 	dir = 5;
@@ -37883,6 +37960,21 @@
 	icon_state = "whitepurple"
 	},
 /area/science/hallway)
+"oYA" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/closet/secure_closet/brig{
+	id_tag = "Cell 1";
+	name = "Cell 1 Locker"
+	},
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
+/area/security/prison)
 "oYQ" = (
 /turf/simulated/floor{
 	icon_state = "brown"
@@ -38428,6 +38520,14 @@
 	icon_state = "white"
 	},
 /area/turret_protected/tcomms_control_room)
+"pjJ" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "pjS" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 6
@@ -38810,15 +38910,6 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
-"pta" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
 "pte" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
@@ -42678,27 +42769,8 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep)
 "qSc" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/sign/directions/medical{
-	pixel_y = -21;
-	dir = 4
-	},
-/obj/structure/sign/directions/engineering{
-	dir = 4;
-	pixel_y = -28
-	},
-/obj/structure/sign/directions/science{
-	dir = 4;
-	pixel_y = -34
-	},
-/obj/structure/sign/directions/carg{
-	dir = 4;
-	pixel_y = -42
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/turf/simulated/wall/r_wall,
+/area/surface/jungle/zoned/aifenced)
 "qSd" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -44136,6 +44208,10 @@
 "rus" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
+	},
+/obj/structure/closet/secure_closet/brig{
+	id_tag = "Cell 4";
+	name = "Cell 4 Locker"
 	},
 /turf/simulated/floor{
 	dir = 6;
@@ -46645,9 +46721,6 @@
 	},
 /turf/simulated/floor/shuttle/plating,
 /area/shuttle/escape/centcom)
-"ssp" = (
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
 "ssq" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/soap,
@@ -49463,7 +49536,6 @@
 /area/medical/paramedics)
 "tuW" = (
 /obj/structure/grille/window_spawner/reinforced/full,
-/obj/structure/grille/window_spawner/reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
@@ -50743,9 +50815,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle/zoned/outdoor_bar)
-"tUM" = (
-/turf/simulated/wall/r_wall,
-/area/surface/jungle/zoned/aifenced)
 "tUU" = (
 /obj/machinery/vending/tool,
 /turf/unsimulated/floor{
@@ -52409,6 +52478,9 @@
 	icon_state = "white"
 	},
 /area/centcom/test)
+"uGl" = (
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "uGs" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -56353,6 +56425,10 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/structure/closet/secure_closet/brig{
+	id_tag = "Cell 2";
+	name = "Cell 2 Locker"
+	},
 /turf/simulated/floor{
 	dir = 6;
 	icon_state = "dark"
@@ -57804,6 +57880,29 @@
 	icon_state = "brown"
 	},
 /area/supply/storage)
+"wJj" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/hanging_lantern/dim,
+/obj/structure/sign/directions/medical{
+	pixel_y = -21;
+	dir = 4
+	},
+/obj/structure/sign/directions/engineering{
+	dir = 4;
+	pixel_y = -28
+	},
+/obj/structure/sign/directions/science{
+	dir = 4;
+	pixel_y = -34
+	},
+/obj/structure/sign/directions/carg{
+	dir = 4;
+	pixel_y = -42
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "wJm" = (
 /obj/structure/deathsquad_gravpult{
 	ID = 4;
@@ -58661,6 +58760,12 @@
 	icon_state = "dark"
 	},
 /area/science/server)
+"wZj" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 6
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "wZm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -105988,7 +106093,7 @@ tnZ
 tnZ
 xor
 xor
-ltk
+xor
 lQc
 gzD
 bNF
@@ -106340,7 +106445,7 @@ tnZ
 tnZ
 xor
 xor
-mlR
+hFV
 lQc
 lQc
 lQc
@@ -108804,7 +108909,7 @@ nre
 nre
 maR
 iMQ
-qSc
+xMH
 oxA
 hnA
 vCr
@@ -109156,7 +109261,7 @@ eOA
 wFg
 maR
 iMQ
-gHf
+wJj
 uOh
 uOh
 uOh
@@ -110217,7 +110322,7 @@ vPP
 iuN
 iuN
 rbU
-weo
+oYA
 kmD
 gpi
 bsU
@@ -113038,7 +113143,7 @@ iuN
 beB
 qtd
 jRK
-rus
+lhj
 beB
 qtd
 jRK
@@ -135186,11 +135291,11 @@ maR
 lCS
 vcA
 dFt
-hdK
+fKM
 lBe
 vJe
 ilK
-ilK
+qBN
 qBN
 loH
 xzO
@@ -135542,7 +135647,7 @@ ngx
 iCf
 ehl
 iCf
-iCf
+syo
 syo
 qeB
 dGF
@@ -135890,11 +135995,11 @@ maR
 lCS
 baa
 wNp
-npQ
+lRA
 ukg
 gts
 fmr
-ilq
+hwm
 kPl
 mSW
 mPT
@@ -136242,11 +136347,11 @@ maR
 lCS
 vXQ
 npQ
-npQ
+lRA
 nZB
 gts
 gts
-lCS
+ltk
 gts
 mSW
 mPT
@@ -136594,7 +136699,7 @@ ksX
 gts
 gts
 hhQ
-npQ
+jGJ
 ldM
 gts
 wld
@@ -136945,9 +137050,9 @@ psY
 maR
 nre
 gts
-lCS
-lCS
-lCS
+ltk
+ltk
+ltk
 gts
 cXH
 wld
@@ -138723,14 +138828,14 @@ wld
 quU
 sFg
 lpf
-ssp
-ssp
+uGl
+uGl
 eDb
 cyT
 szi
 mRJ
-iZa
-ssp
+pjJ
+uGl
 nXG
 rNB
 oqo
@@ -139074,16 +139179,16 @@ eOA
 eOA
 eOA
 qQj
-ssp
+uGl
 vxH
-bAU
-pta
-mHq
+wZj
+iLu
+bXE
 gJt
-mHq
+bXE
 hnd
 vxH
-ssp
+uGl
 qQj
 eOA
 eOA
@@ -140830,9 +140935,9 @@ viD
 lIK
 lIK
 lIK
-tUM
-tUM
-tUM
+qSc
+qSc
+qSc
 kUj
 wPe
 wPe
@@ -141182,9 +141287,9 @@ viD
 lIK
 lIK
 lIK
-tUM
-tUM
-tUM
+qSc
+qSc
+qSc
 kUj
 wPe
 avZ
@@ -141195,8 +141300,8 @@ nod
 wPe
 kUj
 kUj
-tUM
-tUM
+qSc
+qSc
 lIK
 lIK
 lIK
