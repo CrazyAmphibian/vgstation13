@@ -493,17 +493,19 @@
 	req_access_txt = "16"
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
-/area/turret_protected/ai_upload_foyer)
+/area/comms{
+	name = "\improper Cyborg Station"
+	})
 "akm" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -573,19 +575,16 @@
 	},
 /area/medical/chemistry)
 "alG" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "bridge blast";
-	name = "Bridge Blast Doors";
-	opacity = 0
+/obj/machinery/camera{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "dark"
 	},
-/area/bridge)
+/area/turret_protected/ai)
 "alP" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil,
 /obj/structure/window/reinforced,
@@ -899,14 +898,20 @@
 /area/security/perma)
 "arK" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor{
-	icon_state = "dark"
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
-/area/turret_protected/ai)
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/aifenced)
 "arM" = (
 /obj/structure/shuttle/diag_wall/smooth,
 /turf/space,
@@ -1147,21 +1152,16 @@
 /turf/simulated/floor,
 /area/tdome)
 "avZ" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/structure/table,
+/obj/item/weapon/aiModule/core/nanotrasen{
+	pixel_y = -3;
+	pixel_x = -4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 1
+/obj/item/weapon/aiModule/standard/protectStation{
+	pixel_y = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/turret_protected/ai_upload_foyer)
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai_upload)
 "awa" = (
 /obj/structure/table/woodentable,
 /turf/unsimulated/floor{
@@ -1296,8 +1296,11 @@
 	},
 /area/science/xenobiology)
 "aym" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/simulated/wall/r_wall,
-/area/turret_protected/ai_upload_foyer)
+/area/turret_protected/ai)
 "ayU" = (
 /obj/structure/table,
 /obj/item/weapon/storage/toolbox/electrical,
@@ -1343,19 +1346,12 @@
 	},
 /area/centcom/living)
 "azl" = (
-/obj/machinery/ai_slipper{
-	icon_state = "motion0"
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/effect/landmark{
-	name = "lightsout"
-	},
-/obj/machinery/camera/all{
-	dir = 1;
-	failure_chance = 0;
-	name = "AI Chamber";
-	pixel_x = 12
-	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
 "azy" = (
 /obj/structure/sign/directions/carg{
@@ -1601,6 +1597,15 @@
 	icon_state = "white"
 	},
 /area/centcom/test)
+"aDr" = (
+/obj/machinery/turret{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai)
 "aDu" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -2017,7 +2022,11 @@
 	},
 /area/centcom/living)
 "aNh" = (
-/turf/simulated/floor/bluegrid,
+/obj/structure/window/reinforced,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
 "aNl" = (
 /obj/structure/grille,
@@ -2833,14 +2842,20 @@
 	},
 /area/security/perma)
 "bcJ" = (
-/obj/machinery/power/apc{
-	pixel_y = -24
+/obj/structure/fence{
+	dir = 4
 	},
-/obj/structure/cable/yellow,
-/turf/simulated/floor{
-	icon_state = "dark"
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
 	},
-/area/turret_protected/ai_upload)
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/aifenced)
 "bcO" = (
 /obj/machinery/atmospherics/pipe/simple/insulated/hidden{
 	dir = 1
@@ -2910,17 +2925,11 @@
 /turf/simulated/floor,
 /area/maintenance/disposal)
 "bei" = (
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 24
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
-	},
-/area/bridge)
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai_upload)
 "beB" = (
 /turf/simulated/wall,
 /area/security/prison)
@@ -3141,32 +3150,8 @@
 /turf/simulated/floor,
 /area/surface/jungle)
 "bje" = (
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/effect/landmark{
-	name = "tripai"
-	},
-/obj/item/device/radio/intercom{
-	freerange = 1;
-	listening = 0;
-	name = "Custom Channel";
-	pixel_y = 20
-	},
-/obj/item/device/radio/intercom/aiprivate{
-	freerange = 1;
-	name = "Private Channel";
-	pixel_y = -26
-	},
-/obj/item/device/radio/intercom{
-	freerange = 1;
-	name = "Common Channel";
-	pixel_x = -25;
-	pixel_y = -4
-	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/zoned/aifenced)
 "bjf" = (
 /obj/machinery/computer/fluff/shuttle_control,
 /turf/simulated/floor/shuttle,
@@ -4028,6 +4013,12 @@
 	icon_state = "whiteyellow"
 	},
 /area/medical/chemistry)
+"bAU" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 6
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "bAV" = (
 /obj/structure/table/glass,
 /obj/item/weapon/storage/bag/gadgets/part_replacer/pre_loaded,
@@ -4871,15 +4862,21 @@
 /turf/space,
 /area)
 "bSN" = (
+/obj/structure/fence,
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 8;
+	icon_state = "0-8"
 	},
-/turf/simulated/floor{
-	icon_state = "dark"
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
 	},
-/area/turret_protected/ai)
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/aifenced)
 "bTo" = (
 /obj/structure/shuttle/diag_wall/black,
 /turf/unsimulated/floor{
@@ -6546,18 +6543,9 @@
 	},
 /area/mine/explored)
 "cxj" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	pixel_y = 24
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/turret_protected/ai_upload_foyer)
+/obj/machinery/computer/aiupload/longrange,
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai_upload)
 "cxo" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -6619,13 +6607,16 @@
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
 "cyT" = (
-/obj/item/toy/gasha/AI,
-/turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/area/turret_protected/ai)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "cyZ" = (
 /obj/machinery/light/small{
 	dir = 1;
@@ -7283,18 +7274,13 @@
 	},
 /area/centcom/suppy)
 "cLs" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/turret_protected/ai_upload)
+/turf/simulated/wall/r_wall,
+/area/server{
+	name = "AI Integrity Restoration Room"
+	})
 "cLx" = (
 /obj/machinery/door/airlock/command{
 	name = "Head of Personnel's Office";
@@ -7480,12 +7466,19 @@
 	},
 /area/centcom/test)
 "cPk" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 4;
-	on = 1
+/obj/structure/fence,
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "cPx" = (
 /turf/simulated/floor/engine,
 /area/science/xenobiology/specimen_5)
@@ -8914,17 +8907,18 @@
 	},
 /area/vox_trading_post/gardens)
 "dsU" = (
-/obj/machinery/turret{
+/obj/machinery/camera{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/machinery/light{
-	dir = 8
+/turf/simulated/floor{
+	icon_state = "dark"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/area/server{
+	name = "AI Integrity Restoration Room"
+	})
 "dsV" = (
 /turf/simulated/floor/carpet{
 	icon_state = "carpet14-10"
@@ -10670,21 +10664,11 @@
 	name = "Toxins"
 	})
 "ebA" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/machinery/door/airlock/highsecurity{
-	name = "AI Upload Access";
-	req_access_txt = "16";
-	normalspeed = 0
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/turret_protected/ai_upload_foyer)
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai_upload)
 "ebM" = (
 /obj/machinery/door/mineral/wood{
 	name = "Quack Doctor "
@@ -10974,8 +10958,6 @@
 /turf/simulated/floor,
 /area/security/perma)
 "ehl" = (
-/obj/structure/table,
-/obj/machinery/recharger,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/light{
 	dir = 4
@@ -11173,12 +11155,15 @@
 /turf/space,
 /area/shuttle/alien/base)
 "elI" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/hanging_lantern/dim{
-	dir = 8
+/obj/structure/fence{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/area/surface/jungle/zoned/aifenced)
 "elK" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8;
@@ -11768,11 +11753,17 @@
 	},
 /area/alien)
 "euz" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/obj/structure/table,
+/obj/item/stack/cable_coil,
+/obj/item/stack/sheet/glass/glass{
+	amount = 25
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
-/area/turret_protected/ai_upload)
+/area/server{
+	name = "AI Integrity Restoration Room"
+	})
 "euD" = (
 /obj/machinery/computer/station_alert,
 /turf/unsimulated/floor{
@@ -12089,22 +12080,28 @@
 	name = "Toxins"
 	})
 "eAS" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "bridge blast";
-	name = "Bridge Blast Doors";
-	opacity = 0
+/obj/effect/landmark{
+	name = "tripai"
 	},
-/obj/machinery/light/small{
-	dir = 1
+/obj/item/device/radio/intercom{
+	freerange = 1;
+	name = "Common Channel";
+	pixel_y = -28
 	},
-/turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+/obj/item/device/radio/intercom/aiprivate{
+	freerange = 1;
+	frequency = 1447;
+	pixel_x = -29
 	},
-/area/bridge)
+/obj/item/device/radio/intercom{
+	freerange = 1;
+	listening = 0;
+	name = "Custom Channel";
+	pixel_x = 27;
+	pixel_y = 4
+	},
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai)
 "eBg" = (
 /obj/structure/holohoop{
 	dir = 1
@@ -12171,12 +12168,13 @@
 	},
 /area/medical/medbay)
 "eDb" = (
-/obj/item/weapon/aiModule/standard/protectStation,
-/obj/structure/table,
-/turf/simulated/floor{
-	icon_state = "dark"
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
-/area/turret_protected/ai_upload)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "eDq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
@@ -12195,13 +12193,29 @@
 	},
 /area/security/warden)
 "eEN" = (
+/obj/structure/fence,
 /obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor{
-	icon_state = "dark"
+/obj/structure/sign/securearea{
+	desc = "A warning sign which reads 'CAUTION: ELECTRIC FENCE'";
+	icon_state = "shock";
+	name = "CAUTION: ELECTRIC FENCE"
 	},
-/area/turret_protected/ai)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "eFF" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -13497,12 +13511,8 @@
 /turf/simulated/floor/plating,
 /area/medical/sleeper)
 "fjE" = (
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/server{
-	name = "AI Integrity Restoration Room"
-	})
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai_upload)
 "fjQ" = (
 /obj/structure/bed/chair/wood/pew/right{
 	name = "courtroom observation";
@@ -13680,14 +13690,22 @@
 	},
 /area/shuttle/administration/centcom)
 "fmr" = (
-/obj/machinery/ai_status_display{
-	pixel_y = -32
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
 	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
+/obj/structure/table,
+/obj/item/device/radio,
+/obj/item/device/radio{
+	pixel_y = 7;
+	pixel_x = -6
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "vault";
+	tag = "icon-vault (NORTHEAST)"
+	},
+/area/bridge)
 "fmX" = (
 /obj/machinery/computer/security,
 /obj/machinery/recharger/defibcharger/wallcharger{
@@ -14387,18 +14405,10 @@
 /turf/simulated/floor,
 /area/surface/jungle)
 "fBx" = (
-/obj/effect/landmark/start{
-	name = "Cyborg"
-	},
-/obj/machinery/camera{
-	dir = 4
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/comms{
-	name = "\improper Cyborg Station"
-	})
+/obj/structure/fence,
+/obj/structure/cable/yellow,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/aifenced)
 "fBz" = (
 /obj/machinery/door/poddoor{
 	density = 0;
@@ -14828,10 +14838,12 @@
 	},
 /area/security/evidence)
 "fKE" = (
-/obj/machinery/light{
-	dir = 4
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/wall/r_wall,
 /area/turret_protected/ai)
 "fKW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -15457,7 +15469,7 @@
 "fYs" = (
 /obj/structure/grille/window_spawner/reinforced/tinted,
 /obj/structure/window/full/reinforced/tinted,
-/turf/simulated/floor,
+/turf/simulated/floor/plating,
 /area/security/perma)
 "fYw" = (
 /obj/structure/table/reinforced,
@@ -16852,22 +16864,18 @@
 /turf/simulated/floor/server,
 /area/tcomms/chamber)
 "gzQ" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "AI Integrity Restorer";
-	req_access_txt = "16"
-	},
 /obj/structure/cable/yellow{
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
-/area/server{
-	name = "AI Integrity Restoration Room"
-	})
+/area/turret_protected/ai_upload)
 "gzZ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -16955,16 +16963,9 @@
 /area/surface/jungle)
 "gBK" = (
 /obj/structure/window/reinforced{
-	dir = 4
+	dir = 1
 	},
-/obj/structure/window/reinforced,
-/obj/machinery/camera{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
 "gCb" = (
 /obj/machinery/computer/supermatter,
@@ -17303,9 +17304,14 @@
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
 "gJt" = (
-/turf/unsimulated/floor/jungle/underground,
-/turf/unsimulated/floor/jungle/bedrock,
-/area/surface/jungle/underground)
+/obj/machinery/camera{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "gJu" = (
 /obj/structure/closet/emcloset,
 /turf/simulated/floor/shuttle{
@@ -17787,7 +17793,7 @@
 /area/engineering/reactor_room)
 "gTg" = (
 /obj/machinery/door/airlock/glass_engineering{
-	req_one_access_txt = "47;10;24";
+	req_one_access_txt = "7;48;47;10;24";
 	name = "Outpost Engineering"
 	},
 /obj/structure/cable/yellow{
@@ -17801,17 +17807,21 @@
 /turf/simulated/floor,
 /area/research_outpost/atmos)
 "gTv" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 1
+/obj/machinery/power/apc{
+	dir = 4;
+	pixel_x = 24
 	},
 /obj/structure/cable/yellow{
-	icon_state = "2-8"
+	d2 = 2;
+	icon_state = "0-2"
 	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/turret_protected/ai_upload)
 "gTA" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
@@ -18747,19 +18757,16 @@
 	},
 /area/centcom/evac)
 "hnd" = (
-/obj/machinery/flasher{
-	id_tag = "AI";
-	pixel_y = 24
-	},
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/structure/cable/yellow{
+	d1 = 4;
 	d2 = 8;
-	icon_state = "0-8"
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 5
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "hnj" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -19259,7 +19266,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "hzT" = (
 /obj/machinery/computer/security/engineering,
@@ -20713,11 +20720,9 @@
 /turf/simulated/floor/vox,
 /area/vox_trading_post/vault)
 "icC" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/obj/machinery/computer/borgupload,
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai_upload)
 "icJ" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/paper_bin/yellow{
@@ -21348,20 +21353,16 @@
 	},
 /area/maintenance/disposal)
 "iqP" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
+/obj/machinery/camera{
+	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump{
-	canSpawnMice = 0;
-	dir = 1;
-	on = 1
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
-/area/server{
-	name = "AI Integrity Restoration Room"
-	})
+/area/turret_protected/ai_upload)
 "iqV" = (
 /obj/machinery/portable_atmospherics/canister/plasma,
 /turf/simulated/floor{
@@ -21769,25 +21770,26 @@
 /turf/space,
 /area/shuttle/nuclearops)
 "iAQ" = (
-/obj/machinery/ai_slipper{
-	icon_state = "motion0"
+/obj/effect/landmark{
+	name = "tripai"
 	},
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/item/device/radio/intercom{
+	freerange = 1;
+	name = "Common Channel";
+	pixel_y = 25
 	},
-/obj/machinery/flasher{
-	id_tag = "AI";
-	pixel_x = 24;
-	pixel_y = 32
+/obj/item/device/radio/intercom/aiprivate{
+	freerange = 1;
+	frequency = 1447;
+	pixel_x = 28
 	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/item/device/radio/intercom{
+	freerange = 1;
+	listening = 0;
+	name = "Custom Channel";
+	pixel_x = -27
 	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
 "iAR" = (
 /obj/structure/disposalpipe/trunk{
@@ -23012,6 +23014,14 @@
 	icon_state = "floor3"
 	},
 /area/shuttle/escape/centcom)
+"iZa" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "iZm" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable/yellow{
@@ -24706,14 +24716,10 @@
 	},
 /area/maintenance/disposal)
 "jHu" = (
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
 	},
-/obj/machinery/camera{
-	dir = 8
-	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/wall/r_wall,
 /area/turret_protected/ai)
 "jHx" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
@@ -25431,31 +25437,12 @@
 	},
 /area/engineering/reactor_room)
 "jUq" = (
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
-/obj/effect/landmark{
-	name = "tripai"
+/turf/simulated/floor{
+	icon_state = "dark"
 	},
-/obj/item/device/radio/intercom{
-	freerange = 1;
-	listening = 0;
-	name = "Custom Channel";
-	pixel_y = 19
-	},
-/obj/item/device/radio/intercom/aiprivate{
-	freerange = 1;
-	frequency = 1447;
-	pixel_y = -26
-	},
-/obj/item/device/radio/intercom{
-	freerange = 1;
-	name = "Common Channel";
-	pixel_x = 27;
-	pixel_y = -3
-	},
-/turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "jUt" = (
 /obj/machinery/alarm{
@@ -25878,16 +25865,15 @@
 	},
 /area/centcom/specops)
 "kep" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
+/turf/simulated/floor{
+	icon_state = "dark"
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/area/server{
+	name = "AI Integrity Restoration Room"
+	})
 "ket" = (
 /obj/effect/landmark/corpse/surgeon,
 /turf/simulated/floor{
@@ -26320,19 +26306,12 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle)
 "knv" = (
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 24
+/obj/machinery/hologram/holopad,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/server{
-	name = "AI Integrity Restoration Room"
-	})
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai_upload)
 "kop" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor,
@@ -26896,11 +26875,15 @@
 /turf/simulated/floor/plating,
 /area/research_outpost/atmos)
 "kBp" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
+/obj/structure/table,
+/obj/item/tool/solder,
+/obj/item/tool/wirecutters,
+/turf/simulated/floor{
+	icon_state = "dark"
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/area/server{
+	name = "AI Integrity Restoration Room"
+	})
 "kBt" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
@@ -27292,20 +27275,18 @@
 	},
 /area/science/rd)
 "kIE" = (
-/obj/machinery/power/apc{
-	dir = 4;
-	pixel_x = 24
+/obj/machinery/turretid{
+	control_area = "\improper AI Upload Chamber";
+	name = "AI Upload turret control";
+	pixel_x = 24;
+	pixel_y = 8
 	},
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
-/area/comms{
-	name = "\improper Cyborg Station"
+/area/server{
+	name = "AI Integrity Restoration Room"
 	})
 "kIJ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -27525,17 +27506,26 @@
 /turf/simulated/floor,
 /area/security/perma)
 "kPl" = (
-/obj/machinery/alarm{
-	pixel_y = 23
+/obj/machinery/power/apc{
+	dir = 4;
+	pixel_x = 24
 	},
-/obj/machinery/turret,
 /obj/structure/cable/yellow{
-	d1 = 4;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "0-8"
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/obj/structure/table,
+/obj/item/weapon/storage/firstaid/internalbleed,
+/obj/item/weapon/storage/firstaid/fire{
+	pixel_x = 8;
+	pixel_y = 9
+	},
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "vault";
+	tag = "icon-vault (NORTHEAST)"
+	},
+/area/bridge)
 "kPn" = (
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
@@ -27787,14 +27777,33 @@
 /turf/simulated/floor/bluegrid,
 /area/tdome)
 "kTG" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	on = 1
+/obj/structure/fence/door{
+	dir = 4;
+	req_access_txt = "16";
+	name = "AI"
 	},
 /obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "kTH" = (
 /obj/item/clothing/head/collectable/petehat,
 /turf/unsimulated/floor/snow/dirt,
@@ -28718,16 +28727,11 @@
 	},
 /area/security/armory)
 "lpf" = (
-/obj/machinery/flasher{
-	id_tag = "AI";
-	pixel_y = 24
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
 	},
-/obj/machinery/computer/borgupload,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 1
-	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "lpq" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/paper{
@@ -29487,7 +29491,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/plating,
 /area/security/perma)
 "lCJ" = (
 /obj/structure/cable/yellow{
@@ -30917,10 +30921,15 @@
 	},
 /area/security/warden)
 "mdf" = (
-/obj/structure/table,
-/obj/item/weapon/aiModule/core/nanotrasen,
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/obj/machinery/light,
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 8;
+	on = 1
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/turret_protected/ai)
 "mdi" = (
 /obj/structure/fence{
 	dir = 4
@@ -31120,9 +31129,13 @@
 	},
 /area/centcom/test)
 "mhw" = (
-/obj/machinery/turret,
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/obj/structure/fence/corner,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/aifenced)
 "mhT" = (
 /obj/machinery/telecomms/processor/preset_four,
 /turf/simulated/floor/server,
@@ -31552,13 +31565,15 @@
 	},
 /area/science/telescience)
 "moM" = (
-/obj/machinery/alarm{
-	pixel_y = 23
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
 	},
-/obj/machinery/computer/aiupload/longrange,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/server{
+	name = "AI Integrity Restoration Room"
+	})
 "mph" = (
 /obj/machinery/kinetic_accelerator{
 	dir = 8;
@@ -31873,11 +31888,10 @@
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
 "mwM" = (
-/obj/structure/hanging_lantern/dim{
-	dir = 8
-	},
-/turf/unsimulated/floor/jungle/grass/no_flora,
-/area/surface/jungle/fenced)
+/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/zoned/aifenced)
 "mxc" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -31896,15 +31910,9 @@
 	},
 /area/research_outpost/anomaly)
 "mxB" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/turret_protected/ai)
+/obj/structure/ore_box,
+/turf/simulated/floor/plating,
+/area/mine/explored)
 "mxR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
@@ -31946,9 +31954,10 @@
 "myr" = (
 /obj/structure/rack,
 /obj/item/weapon/handcuffs,
-/obj/item/weapon/storage/secure/briefcase,
-/obj/item/weapon/storage/box/PDAs,
-/obj/item/weapon/storage/box/ids,
+/obj/item/weapon/storage/secure/briefcase{
+	pixel_y = 8;
+	pixel_x = 6
+	},
 /obj/structure/table,
 /turf/simulated/floor{
 	dir = 5;
@@ -32338,6 +32347,13 @@
 	},
 /turf/simulated/floor/engine,
 /area/surface/jungle)
+"mHq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "mHK" = (
 /turf/simulated/wall,
 /area/security/warden)
@@ -32649,7 +32665,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "mOy" = (
 /turf/simulated/wall/r_wall,
@@ -32665,13 +32681,40 @@
 /turf/simulated/floor/vox/wood,
 /area/vox_trading_post/dorms)
 "mPb" = (
-/obj/structure/window/reinforced{
-	dir = 1
+/obj/machinery/door/window{
+	dir = 8;
+	name = "AI Core Door";
+	req_access_txt = "16"
 	},
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/bluegrid,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	pixel_y = 24
+	},
+/obj/machinery/flasher{
+	id_tag = "AI";
+	pixel_y = -25
+	},
+/obj/machinery/turretid{
+	name = "AI Chamber turret control";
+	pixel_x = 12;
+	pixel_y = -24
+	},
+/obj/machinery/requests_console{
+	department = "AI";
+	departmentType = 5;
+	pixel_y = 33;
+	pixel_x = 16
+	},
+/turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
 "mPm" = (
 /obj/structure/closet/emcloset,
@@ -32701,11 +32744,13 @@
 	},
 /area/medical/medbay)
 "mPV" = (
-/obj/machinery/camera{
+/obj/machinery/turret{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle/fenced)
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/turret_protected/ai)
 "mQa" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/unsimulated/floor/jungle/path_plated,
@@ -32775,8 +32820,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "mRO" = (
 /obj/structure/table/woodentable,
 /obj/structure/window/reinforced{
@@ -33194,14 +33240,17 @@
 	},
 /area/security/lobby)
 "mYY" = (
-/obj/machinery/light{
-	dir = 4
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/machinery/turret{
-	dir = 1
+/turf/simulated/floor{
+	icon_state = "dark"
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/area/server{
+	name = "AI Integrity Restoration Room"
+	})
 "mZo" = (
 /obj/machinery/camera{
 	dir = 1;
@@ -33378,15 +33427,17 @@
 /area/science/hallway)
 "nec" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	icon_state = "1-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 5
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
 	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/comms{
+	name = "\improper Cyborg Station"
+	})
 "ned" = (
 /obj/machinery/vending/cigarette,
 /turf/unsimulated/floor{
@@ -33563,13 +33614,20 @@
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/zoned/atmos_outside)
 "niw" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow,
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/aifenced)
 "niN" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor{
@@ -33810,13 +33868,11 @@
 /turf/simulated/floor,
 /area/engineering/atmos_control)
 "nod" = (
-/obj/machinery/computer/aifixer,
-/turf/simulated/floor{
-	icon_state = "dark"
+/obj/machinery/turret{
+	dir = 1
 	},
-/area/server{
-	name = "AI Integrity Restoration Room"
-	})
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai_upload)
 "noz" = (
 /obj/machinery/telecomms/relay/preset/telecomms,
 /turf/simulated/floor/server,
@@ -34513,21 +34569,11 @@
 	},
 /area/turret_protected/tcomms_control_room)
 "nGZ" = (
-/obj/structure/table,
-/obj/item/weapon/aiModule/core/asimov,
-/obj/item/weapon/aiModule/freeform/core,
-/obj/machinery/door/window{
-	base_state = "right";
-	icon_state = "right";
-	name = "Core Modules";
-	req_access_txt = "20"
+/obj/machinery/turret{
+	dir = 8
 	},
-/obj/structure/window/reinforced,
-/obj/item/weapon/aiModule/core/corp,
-/obj/item/weapon/aiModule/core/paladin,
-/obj/item/weapon/aiModule/core/robocop,
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai)
 "nHl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
@@ -35437,21 +35483,11 @@
 	},
 /area/security/interrogation)
 "nXG" = (
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -23
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/light/small{
-	dir = 1;
-	invisibility = 1
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/turret_protected/ai_upload_foyer)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "nYj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
@@ -35540,6 +35576,7 @@
 "nZB" = (
 /obj/structure/table,
 /obj/item/weapon/storage/toolbox/electrical,
+/obj/machinery/light,
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -35676,12 +35713,16 @@
 /turf/simulated/floor/plating,
 /area/surface/jungle)
 "obO" = (
-/turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+/obj/machinery/recharge_station,
+/obj/machinery/light{
+	dir = 4
 	},
-/area/turret_protected/ai)
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/comms{
+	name = "\improper Cyborg Station"
+	})
 "obY" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/folder/blue,
@@ -36020,16 +36061,18 @@
 	},
 /area/centcom/living)
 "ojl" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/light{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 1
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
 	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/turret_protected/ai_upload)
 "ojt" = (
 /obj/structure/sink{
 	dir = 4;
@@ -36056,50 +36099,19 @@
 /turf/simulated/floor,
 /area/security/interrogation)
 "oko" = (
-/obj/item/device/radio/intercom/aiprivate{
-	freerange = 1;
-	frequency = 1447;
-	pixel_x = 28;
-	pixel_y = 5
-	},
-/obj/item/device/radio/intercom{
-	freerange = 1;
-	listening = 0;
-	name = "Custom Channel";
-	pixel_x = -27;
-	pixel_y = 4
-	},
-/obj/effect/landmark/start{
-	name = "AI"
-	},
-/obj/item/device/radio/intercom{
-	freerange = 1;
-	name = "Common Channel";
-	pixel_y = 25
-	},
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/door_control{
-	desc = "A remote control switch for the AI chamber door.";
-	id_tag = "AI Door";
-	name = "AI Chamber Door Control";
-	pixel_x = 27;
-	pixel_y = 27;
+/obj/machinery/door/window{
+	base_state = "right";
+	dir = 2;
+	icon_state = "right";
+	name = "AI Core Door";
 	req_access_txt = "16"
 	},
-/obj/machinery/media/receiver/boombox/wallmount{
-	pixel_y = 40
-	},
-/turf/simulated/floor/bluegrid,
+/turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
 "oku" = (
-/obj/machinery/status_display{
-	pixel_y = -32
-	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/zoned/aifenced)
 "okz" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -36542,31 +36554,12 @@
 /turf/simulated/floor/engine,
 /area/storage/nuke_storage)
 "ovz" = (
-/obj/machinery/door/window{
-	dir = 2;
-	name = "AI Core Door";
-	req_access_txt = "16"
+/obj/machinery/camera{
+	dir = 6
 	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/turretid{
-	name = "AI Chamber turret control";
-	pixel_x = 24;
-	pixel_y = 24
-	},
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc{
-	dir = 8;
-	pixel_x = -24
-	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/zoned/aifenced)
 "ovC" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -36847,11 +36840,25 @@
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/zoned/reactor_outside)
 "oAr" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 1
+/obj/structure/table,
+/obj/item/weapon/aiModule/standard/oxygen,
+/obj/item/weapon/aiModule/targetted/oneHuman,
+/obj/machinery/door/window{
+	dir = 1;
+	name = "High-Risk Modules";
+	req_access_txt = "20"
 	},
-/turf/simulated/wall,
-/area/turret_protected/ai_upload_foyer)
+/obj/item/weapon/aiModule/purge,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/item/weapon/aiModule/core/antimov,
+/obj/item/weapon/aiModule/standard/teleporterOffline,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai_upload)
 "oAu" = (
 /obj/structure/table,
 /obj/item/weapon/storage/box/donkpockets,
@@ -36978,11 +36985,21 @@
 	},
 /area/centcom/evac)
 "oDb" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
+/obj/structure/table,
+/obj/item/weapon/aiModule/reset{
+	pixel_x = 3;
+	pixel_y = -3
 	},
-/turf/simulated/wall/r_wall,
-/area/turret_protected/ai_upload_foyer)
+/obj/item/weapon/aiModule/freeform{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/machinery/flasher{
+	id_tag = "AI";
+	pixel_y = 24
+	},
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai_upload)
 "oDr" = (
 /mob/living/simple_animal/hostile/bear{
 	faction = "jungle"
@@ -37128,12 +37145,16 @@
 	},
 /area/engineering/ce)
 "oHe" = (
-/obj/machinery/turret,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
+/obj/machinery/computer/aifixer,
+/obj/machinery/alarm{
+	pixel_y = 24
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/server{
+	name = "AI Integrity Restoration Room"
+	})
 "oHr" = (
 /turf/simulated/wall/mineral/wood,
 /area/surface/jungle)
@@ -38006,19 +38027,9 @@
 	},
 /area/surface/jungle/zoned/art_zone)
 "pax" = (
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -23
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/comms{
-	name = "\improper Cyborg Station"
-	})
+/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/zoned/aifenced)
 "paF" = (
 /obj/structure/table,
 /obj/item/tool/wrench{
@@ -38121,7 +38132,7 @@
 /area/centcom/specops)
 "pdc" = (
 /obj/structure/window/reinforced,
-/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "pdh" = (
 /obj/structure/table,
@@ -38537,8 +38548,20 @@
 /turf/simulated/floor,
 /area/security/prison)
 "pnK" = (
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/server{
+	name = "AI Integrity Restoration Room"
+	})
 "pnV" = (
 /obj/item/beacon,
 /obj/effect/decal/warning_stripes{
@@ -38787,6 +38810,15 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
+"pta" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "pte" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
@@ -38905,10 +38937,14 @@
 /turf/simulated/floor,
 /area/research_outpost/gearstore)
 "puC" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -38999,18 +39035,20 @@
 /area/science/xenobiology)
 "pwv" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 1
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
 	},
-/obj/structure/hanging_lantern/dim{
-	dir = 8
+/obj/machinery/atmospherics/unary/vent_pump{
+	on = 1
 	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/turret_protected/ai_upload)
 "pwH" = (
 /obj/effect/decal/warning_stripes{
 	dir = 9;
@@ -39726,9 +39764,23 @@
 	},
 /area/chapel/main)
 "pLZ" = (
-/obj/effect/decal/cleanable/cobweb2,
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/unary/vent_pump{
+	on = 1
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/server{
+	name = "AI Integrity Restoration Room"
+	})
 "pMm" = (
 /obj/item/weapon/stool,
 /turf/unsimulated/floor{
@@ -40548,11 +40600,20 @@
 	},
 /area/centcom/control)
 "qcB" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 1
+/obj/machinery/door/poddoor{
+	desc = "A pair of heavy reinforced plasteel doors.";
+	id_tag = "AI Door";
+	name = "AI Chamber Blast Door"
 	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/turret_protected/ai)
 "qcI" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -40770,13 +40831,22 @@
 	},
 /area/engineering/antimatter_room)
 "qgJ" = (
-/obj/machinery/camera{
-	dir = 1
+/obj/machinery/door/airlock/highsecurity{
+	name = "AI Upload Access";
+	req_access_txt = "16";
+	normalspeed = 0
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
-/area/turret_protected/ai_upload)
+/area/server{
+	name = "AI Integrity Restoration Room"
+	})
 "qgR" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
@@ -41264,19 +41334,12 @@
 	},
 /area/centcom/suppy)
 "qpG" = (
-/obj/structure/sign/directions/evac{
-	dir = 1;
-	pixel_y = 25
+/turf/simulated/floor{
+	icon_state = "dark"
 	},
-/obj/machinery/camera,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/area/comms{
+	name = "\improper Cyborg Station"
+	})
 "qqm" = (
 /turf/simulated/wall,
 /area/medical/storage)
@@ -41863,17 +41926,25 @@
 	},
 /area/bridge)
 "qCg" = (
-/obj/structure/table,
-/obj/item/weapon/aiModule/reset,
-/obj/machinery/camera/flawless{
-	dir = 4;
-	name = "AI Upload Chamber"
+/obj/structure/fence{
+	dir = 4
 	},
-/obj/machinery/light{
-	dir = 8
+/obj/structure/sign/securearea{
+	desc = "A warning sign which reads 'CAUTION: ELECTRIC FENCE'";
+	icon_state = "shock";
+	name = "CAUTION: ELECTRIC FENCE"
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/aifenced)
 "qCj" = (
 /obj/effect/landmark/corpse/russian,
 /turf/simulated/floor{
@@ -42333,7 +42404,7 @@
 	dir = 8;
 	anchored = 1
 	},
-/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "qLu" = (
 /obj/structure/table/woodentable,
@@ -42558,20 +42629,8 @@
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle)
 "qQj" = (
-/obj/machinery/door/poddoor{
-	desc = "A pair of heavy reinforced plasteel doors.";
-	id_tag = "AI Door";
-	name = "AI Chamber Blast Door"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/turret_protected/ai)
+/turf/simulated/wall/r_wall,
+/area/surface/jungle/zoned/ailobby)
 "qQq" = (
 /obj/machinery/door/airlock/external{
 	name = "Salvage Shuttle Dock"
@@ -42710,24 +42769,11 @@
 /turf/simulated/floor,
 /area/security/armory)
 "qTP" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
+/obj/machinery/camera{
+	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/turret_protected/ai_upload_foyer)
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/zoned/aifenced)
 "qTV" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/glasses/hud/security/sunglasses{
@@ -43437,16 +43483,25 @@
 /turf/simulated/floor/wood,
 /area/library)
 "riZ" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	pixel_y = 24
+	},
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 10
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 8;
+	on = 1
 	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/comms{
+	name = "\improper Cyborg Station"
+	})
 "rje" = (
 /obj/machinery/door/airlock/glass_security{
 	name = "Interrogation Room";
@@ -44581,10 +44636,10 @@
 	},
 /area/centcom/striketeam)
 "rBS" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
+/obj/machinery/turret,
+/turf/simulated/floor{
+	icon_state = "dark"
 	},
-/turf/simulated/floor/bluegrid,
 /area/turret_protected/ai)
 "rCb" = (
 /obj/structure/table,
@@ -45055,6 +45110,13 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/shuttle,
 /area/centcom/evac)
+"rNB" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/obj/structure/cable/yellow,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "rNK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -45405,18 +45467,26 @@
 /turf/simulated/floor/server/bluegrid,
 /area/science/server)
 "rTY" = (
-/obj/machinery/requests_console{
-	department = "AI";
-	departmentType = 5;
-	pixel_y = 29
+/obj/structure/fence{
+	dir = 4
 	},
 /obj/structure/cable/yellow{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/aifenced)
 "rUh" = (
 /obj/machinery/door/window{
 	name = "Robotics Desk";
@@ -45878,11 +45948,27 @@
 /turf/simulated/wall,
 /area/vox_trading_post/dorms)
 "sbI" = (
-/obj/structure/hanging_lantern{
+/obj/structure/table,
+/obj/item/weapon/aiModule/core/asimov,
+/obj/item/weapon/aiModule/freeform/core,
+/obj/machinery/door/window{
+	base_state = "right";
+	icon_state = "right";
+	name = "Core Modules";
+	req_access_txt = "20";
+	dir = 1
+	},
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/bedrock,
-/area/surface/jungle/underground)
+/obj/item/weapon/aiModule/core/corp,
+/obj/item/weapon/aiModule/core/paladin,
+/obj/item/weapon/aiModule/core/robocop,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai_upload)
 "sbS" = (
 /obj/effect/decal/warning_stripes{
 	dir = 8;
@@ -46559,6 +46645,9 @@
 	},
 /turf/simulated/floor/shuttle/plating,
 /area/shuttle/escape/centcom)
+"ssp" = (
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "ssq" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/soap,
@@ -46724,16 +46813,19 @@
 /turf/simulated/floor/vox,
 /area/vox_trading_post/trade_processing)
 "swZ" = (
-/obj/machinery/power/battery/smes{
-	charge = 5e+006
+/obj/structure/fence,
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
 	},
 /obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/machinery/camera,
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/aifenced)
 "sxu" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/structure/cable/yellow{
@@ -46772,14 +46864,11 @@
 /turf/simulated/floor,
 /area/security/armory)
 "syo" = (
-/obj/machinery/power/apc{
-	dir = 4;
-	pixel_x = 24
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
+	d1 = 4;
 	d2 = 8;
-	icon_state = "0-8"
+	icon_state = "4-8"
 	},
 /turf/simulated/floor{
 	dir = 5;
@@ -46807,6 +46896,21 @@
 	icon_state = "dark-markings"
 	},
 /area/centcom/specops)
+"szi" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "szI" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -47000,26 +47104,11 @@
 /turf/simulated/floor/plating,
 /area/science/rd)
 "sDn" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	pixel_y = 24
-	},
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/machinery/camera{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/server{
-	name = "AI Integrity Restoration Room"
-	})
+/turf/simulated/wall/r_wall,
+/area/turret_protected/ai_upload)
 "sDs" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
 /turf/simulated/floor,
@@ -47100,11 +47189,16 @@
 	},
 /area/centcom/suppy)
 "sFg" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 1
+/obj/structure/fence{
+	dir = 4
 	},
-/turf/simulated/wall/r_wall,
-/area/turret_protected/ai)
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "sFi" = (
 /obj/structure/bed/chair/shuttle/yellow,
 /turf/simulated/floor/shuttle{
@@ -47298,7 +47392,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/asteroid,
+/obj/structure/ore_box,
+/obj/structure/window/reinforced,
+/turf/simulated/floor/plating,
 /area/mine/explored)
 "sJg" = (
 /turf/simulated/wall,
@@ -48352,8 +48448,18 @@
 	},
 /area/centcom/control)
 "tdn" = (
-/turf/simulated/wall,
-/area/turret_protected/ai)
+/obj/effect/landmark/start{
+	name = "Cyborg"
+	},
+/obj/machinery/alarm{
+	pixel_y = 24
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/comms{
+	name = "\improper Cyborg Station"
+	})
 "tdB" = (
 /turf/simulated/wall/r_wall,
 /area/surface/jungle)
@@ -48531,15 +48637,14 @@
 /turf/simulated/wall/r_wall,
 /area/engineering/antimatter_room)
 "tha" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
+/obj/machinery/door/window{
+	base_state = "right";
+	dir = 1;
+	icon_state = "right";
+	name = "AI Core Door";
+	req_access_txt = "16"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
+/turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
 "thl" = (
 /obj/structure/window/reinforced{
@@ -48653,20 +48758,16 @@
 	},
 /area/medical/virology)
 "tin" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/light,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
-/obj/machinery/door/window{
-	base_state = "right";
-	dir = 8;
-	icon_state = "right";
-	name = "AI Core Door";
-	req_access_txt = "16"
+/turf/simulated/floor{
+	icon_state = "dark"
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/area/server{
+	name = "AI Integrity Restoration Room"
+	})
 "tio" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/paper_bin/white{
@@ -49557,10 +49658,11 @@
 /turf/simulated/floor/carpet,
 /area/security/detectives_office)
 "txZ" = (
-/obj/item/weapon/aiModule/freeform,
-/obj/structure/table,
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/obj/machinery/camera{
+	dir = 1
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/zoned/aifenced)
 "tyv" = (
 /obj/machinery/light,
 /obj/machinery/computer/shuttle_control/elite_syndie,
@@ -49760,24 +49862,21 @@
 	},
 /area/shuttle/trade/start)
 "tCs" = (
-/obj/machinery/hologram/holopad,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+/obj/machinery/power/terminal{
 	dir = 4
 	},
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/hologram/holopad,
+/obj/effect/landmark{
+	name = "lightsout"
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
-/area/turret_protected/ai_upload)
+/area/turret_protected/ai)
 "tCA" = (
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
@@ -49858,13 +49957,33 @@
 	},
 /area/supply/office)
 "tEo" = (
-/obj/machinery/light{
-	dir = 8
+/obj/effect/landmark/start{
+	name = "AI"
 	},
 /obj/structure/cable/yellow{
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/bluegrid,
+/obj/item/device/radio/intercom{
+	freerange = 1;
+	name = "Common Channel";
+	pixel_x = 27;
+	pixel_y = -3
+	},
+/obj/item/device/radio/intercom/aiprivate{
+	freerange = 1;
+	frequency = 1447;
+	pixel_y = -26
+	},
+/obj/item/device/radio/intercom{
+	freerange = 1;
+	listening = 0;
+	name = "Custom Channel";
+	pixel_y = 23;
+	pixel_x = 6
+	},
+/turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
 "tES" = (
 /obj/structure/window/reinforced{
@@ -50120,6 +50239,19 @@
 	icon_state = "darkred"
 	},
 /area/centcom/suppy)
+"tJZ" = (
+/obj/structure/fence,
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "tKN" = (
 /obj/machinery/navbeacon{
 	codes_txt = "delivery;dir=2";
@@ -50336,13 +50468,13 @@
 	},
 /area/research_outpost/harvesting)
 "tOv" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 1
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/wall/r_wall,
-/area/server{
-	name = "AI Integrity Restoration Room"
-	})
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai_upload)
 "tOR" = (
 /obj/machinery/suit_storage_unit/excavation,
 /turf/simulated/floor,
@@ -50611,6 +50743,9 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle/zoned/outdoor_bar)
+"tUM" = (
+/turf/simulated/wall/r_wall,
+/area/surface/jungle/zoned/aifenced)
 "tUU" = (
 /obj/machinery/vending/tool,
 /turf/unsimulated/floor{
@@ -50702,14 +50837,12 @@
 	},
 /area/centcom/ert)
 "tXd" = (
-/obj/machinery/turret{
+/obj/structure/fence/corner{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/obj/structure/cable/yellow,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "tXe" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -52135,14 +52268,8 @@
 	},
 /area/lawoffice)
 "uDF" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 1
-	},
-/turf/simulated/floor{
-	dir = 8;
-	icon_state = "dark-markings"
-	},
-/area/turret_protected/ai_upload)
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai)
 "uDM" = (
 /obj/structure/table/reinforced,
 /obj/item/device/pda/captain,
@@ -52163,9 +52290,19 @@
 	},
 /area/centcom/living)
 "uEj" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/simulated/wall/r_wall,
-/area/turret_protected/ai)
+/obj/machinery/door/airlock/highsecurity{
+	name = "AI Upload";
+	req_access_txt = "16"
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/turret_protected/ai_upload)
 "uEs" = (
 /obj/machinery/vending/wallmed1{
 	pixel_y = -30
@@ -52213,17 +52350,25 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/medical/break_room)
 "uFk" = (
-/obj/machinery/door/airlock/glass_command{
-	name = "Bridge";
-	req_access_txt = "19";
-	normalspeed = 0
+/obj/structure/fence,
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
-/area/bridge)
+/obj/structure/sign/securearea{
+	desc = "A warning sign which reads 'CAUTION: ELECTRIC FENCE'";
+	icon_state = "shock";
+	name = "CAUTION: ELECTRIC FENCE"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "uFq" = (
 /turf/simulated/floor{
 	icon_state = "dark yellow stripe";
@@ -52895,20 +53040,13 @@
 	},
 /area/crew_quarters/heads/hos)
 "uUU" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "bridge blast";
-	name = "Bridge Blast Doors";
-	opacity = 0
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
-/obj/machinery/light/small,
-/turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
-	},
-/area/bridge)
+/turf/simulated/wall/r_wall,
+/area/server{
+	name = "AI Integrity Restoration Room"
+	})
 "uVo" = (
 /obj/structure/table,
 /obj/item/device/modkit/gold_rig,
@@ -53312,13 +53450,15 @@
 /area/medical/medbay)
 "vcu" = (
 /obj/structure/table,
-/obj/item/device/radio,
-/obj/item/device/radio{
-	pixel_y = 7
-	},
 /obj/machinery/light,
 /obj/machinery/light_switch{
 	pixel_y = -28
+	},
+/obj/item/weapon/storage/box/ids{
+	pixel_y = 6
+	},
+/obj/item/weapon/storage/box/PDAs{
+	pixel_x = 9
 	},
 /turf/simulated/floor{
 	dir = 5;
@@ -53639,7 +53779,7 @@
 /obj/effect/decal/arrow{
 	anchored = 1
 	},
-/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "vib" = (
 /obj/structure/table{
@@ -53802,9 +53942,13 @@
 /obj/structure/fence/corner{
 	dir = 8
 	},
-/obj/structure/fence/corner,
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
+	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/area/surface/jungle/zoned/ailobby)
 "vjR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
@@ -54508,16 +54652,11 @@
 	},
 /area/medical/sleeper)
 "vxH" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
+/obj/structure/hanging_lantern/dim{
 	dir = 4
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "vxN" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -54945,7 +55084,7 @@
 /area/centcom/evac)
 "vFL" = (
 /obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated/floor,
+/turf/simulated/floor/plating,
 /area/security/perma)
 "vFP" = (
 /obj/structure/bed/chair/comfy/teal{
@@ -55209,17 +55348,11 @@
 /turf/simulated/floor,
 /area/surface/jungle)
 "vJP" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/aifenced)
 "vJR" = (
 /obj/machinery/computer/security_alerts,
 /obj/machinery/light{
@@ -55401,24 +55534,16 @@
 	},
 /area/centcom/specops)
 "vNu" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/light{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 1
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
-/area/turret_protected/ai_upload_foyer)
+/area/turret_protected/ai_upload)
 "vNA" = (
 /obj/structure/grille/window_spawner/reinforced,
 /turf/simulated/floor/plating,
@@ -55463,11 +55588,18 @@
 /turf/simulated/floor,
 /area/medical/genetics)
 "vPc" = (
-/obj/machinery/turret{
-	dir = 4
+/obj/effect/landmark/start{
+	name = "Cyborg"
 	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/obj/machinery/camera{
+	dir = 1
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/comms{
+	name = "\improper Cyborg Station"
+	})
 "vPe" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
@@ -57159,9 +57291,20 @@
 /turf/simulated/floor/plating/vox,
 /area/shuttle/trade/start)
 "wyQ" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/obj/structure/fence,
+/obj/structure/sign/securearea{
+	desc = "A warning sign which reads 'CAUTION: ELECTRIC FENCE'";
+	icon_state = "shock";
+	name = "CAUTION: ELECTRIC FENCE"
+	},
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/aifenced)
 "wyR" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -57409,7 +57552,7 @@
 /turf/simulated/floor/plating,
 /area/library)
 "wDC" = (
-/turf/simulated/wall,
+/turf/simulated/wall/r_wall,
 /area/mine/maintenance)
 "wDJ" = (
 /obj/machinery/camera,
@@ -58089,18 +58232,9 @@
 /turf/space,
 /area)
 "wSw" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/obj/machinery/atmospherics/unary/vent_pump{
-	on = 1
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/comms{
-	name = "\improper Cyborg Station"
-	})
+/obj/structure/window/reinforced,
+/turf/simulated/floor/greengrid,
+/area/turret_protected/ai)
 "wSL" = (
 /obj/structure/rack,
 /obj/item/clothing/shoes/magboots{
@@ -58138,20 +58272,12 @@
 	},
 /area/shuttle/nuclearops)
 "wSQ" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/structure/window/reinforced{
+	dir = 1
 	},
-/obj/machinery/door/window{
-	name = "AI Core Door";
-	req_access_txt = "16"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai)
+/obj/structure/ore_box,
+/turf/simulated/floor/plating,
+/area/mine/explored)
 "wTf" = (
 /obj/structure/closet/secure_closet/miner{
 	req_access = null
@@ -58582,20 +58708,13 @@
 	},
 /area/centcom/test)
 "xas" = (
-/obj/structure/table,
-/obj/item/weapon/aiModule/standard/oxygen,
-/obj/item/weapon/aiModule/targetted/oneHuman,
-/obj/machinery/door/window{
-	dir = 8;
-	name = "High-Risk Modules";
-	req_access_txt = "20"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
-/obj/item/weapon/aiModule/purge,
-/obj/structure/window/reinforced,
-/obj/item/weapon/aiModule/core/antimov,
-/obj/item/weapon/aiModule/standard/teleporterOffline,
-/turf/simulated/floor/bluegrid,
-/area/turret_protected/ai_upload)
+/turf/simulated/wall/r_wall,
+/area/comms{
+	name = "\improper Cyborg Station"
+	})
 "xau" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/effect/decal/warning_stripes{
@@ -58778,22 +58897,24 @@
 	},
 /area/library)
 "xeA" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "AI Upload";
-	req_access_txt = "16"
+/obj/machinery/power/apc{
+	dir = 4;
+	pixel_x = 24
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
-/area/turret_protected/ai_upload)
+/area/server{
+	name = "AI Integrity Restoration Room"
+	})
 "xfk" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
 /turf/unsimulated/floor/jungle/concrete,
@@ -58937,8 +59058,24 @@
 /turf/simulated/wall/r_wall,
 /area/engineering/mechanics)
 "xiD" = (
-/turf/simulated/wall,
-/area/turret_protected/ai_upload_foyer)
+/obj/structure/fence,
+/obj/structure/sign/securearea{
+	desc = "A warning sign which reads 'CAUTION: ELECTRIC FENCE'";
+	icon_state = "shock";
+	name = "CAUTION: ELECTRIC FENCE"
+	},
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/aifenced)
 "xiF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
@@ -59040,18 +59177,15 @@
 	},
 /area/research_outpost/xenobot)
 "xkn" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/sign/directions/evac{
-	dir = 1;
-	pixel_y = -26
-	},
+/obj/structure/fence,
+/obj/structure/cable/yellow,
 /obj/structure/cable/yellow{
-	icon_state = "4-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/area/surface/jungle/zoned/ailobby)
 "xkr" = (
 /obj/structure/table,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -59870,7 +60004,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/plating,
 /area/security/perma)
 "xBr" = (
 /obj/structure/table/plastic,
@@ -60207,15 +60341,14 @@
 	},
 /area/security/interrogation)
 "xIq" = (
-/obj/machinery/light{
-	dir = 4
+/obj/structure/fence,
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
 	},
-/turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
-	},
-/area/bridge)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/aifenced)
 "xIy" = (
 /turf/simulated/floor,
 /area/surface/jungle)
@@ -60234,13 +60367,16 @@
 /turf/simulated/floor,
 /area/security/perma)
 "xJm" = (
-/obj/machinery/hologram/holopad,
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+/obj/machinery/power/battery/smes{
+	charge = 5e+006
 	},
-/turf/simulated/floor/bluegrid,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
 /area/turret_protected/ai)
 "xJv" = (
 /obj/structure/table,
@@ -60278,13 +60414,15 @@
 /turf/simulated/floor,
 /area/security/perma)
 "xJI" = (
-/obj/item/weapon/planning_frame,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
-/turf/simulated/floor{
-	dir = 8;
-	icon_state = "dark-markings"
+/obj/structure/fence,
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/area/turret_protected/ai_upload)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/aifenced)
 "xJP" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -61231,24 +61369,15 @@
 	},
 /area/engineering/engine_storage)
 "ydA" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+/obj/structure/hanging_lantern/dim{
 	dir = 4
 	},
-/obj/machinery/turretid{
-	control_area = "\improper AI Upload Chamber";
-	name = "AI Upload turret control";
-	pixel_x = 8;
-	pixel_y = -23
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/turret_protected/ai_upload_foyer)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "ydE" = (
 /turf/simulated/wall/mineral/wood,
 /area/surface/jungle/underground/zoned/casino)
@@ -130143,7 +130272,7 @@ wld
 wld
 lyS
 bzK
-xor
+snf
 hzP
 hzP
 hzP
@@ -135412,7 +135541,7 @@ npQ
 ngx
 iCf
 ehl
-bei
+iCf
 iCf
 syo
 qeB
@@ -135764,9 +135893,9 @@ wNp
 npQ
 ukg
 gts
-gts
-uFk
-gts
+fmr
+ilq
+kPl
 mSW
 mPT
 mPT
@@ -136116,9 +136245,9 @@ npQ
 npQ
 nZB
 gts
-eAS
-alG
-uUU
+gts
+lCS
+gts
 mSW
 mPT
 mPT
@@ -136465,12 +136594,12 @@ ksX
 gts
 gts
 hhQ
-xIq
+npQ
 ldM
 gts
-lBd
-uFk
-lBd
+wld
+wld
+wld
 mSW
 bLU
 pBW
@@ -136487,8 +136616,8 @@ mSW
 mSW
 mSW
 dKf
-vhv
-qtJ
+maR
+nre
 kzq
 nvA
 jfa
@@ -136816,19 +136945,19 @@ psY
 maR
 nre
 gts
+lCS
+lCS
+lCS
 gts
-gts
-gts
-gts
-xor
-xor
-xor
-kUj
-kUj
-kUj
-kUj
-kUj
-kUj
+cXH
+wld
+wld
+mSW
+mSW
+mSW
+mSW
+mSW
+mSW
 qGf
 efD
 mPT
@@ -136838,9 +136967,9 @@ oXt
 jPq
 jWs
 mSW
-riZ
-nec
+dKf
 maR
+wld
 kqa
 kqa
 kzq
@@ -137170,29 +137299,29 @@ rOD
 rOD
 rOD
 rOD
-elI
 rOD
 rOD
 rOD
 muY
-kUj
-kUj
-cyT
-obO
-kUj
-kUj
-kUj
-kUj
-kUj
-kUj
-wPe
-wPe
-wPe
-wPe
-wPe
-wPe
+wld
+wld
+wld
+wld
+wld
+wld
+mSW
+mSW
+mSW
+mSW
+mSW
+mSW
+mSW
+mSW
+mSW
+mSW
 dKf
 maR
+wld
 ait
 wld
 wld
@@ -137520,31 +137649,31 @@ dMi
 kri
 keH
 keH
-keH
-keH
+ydA
 keH
 keH
 keH
 wJc
 iqz
-kUj
-kUj
-kUj
-kUj
-kUj
-bje
-kUj
-kUj
-kUj
-kUj
-wPe
-wPe
-wPe
-wPe
-wPe
-wPe
+wld
+wld
+wld
+wld
+wld
+wld
+wld
+wld
+wld
+wld
+wld
+wld
+wld
+wld
+wld
+wld
 dKf
 maR
+wld
 wld
 wld
 wld
@@ -137872,29 +138001,28 @@ rcM
 maR
 wld
 wld
+viD
+lmn
+lmn
+lmn
+uiR
+bzT
+lmn
+lmn
+lmn
+viD
 wld
 wld
 wld
 wld
 wld
-maR
-ibi
-kUj
-kUj
-rBS
-tEo
-vJP
-wSQ
-gBK
-dsU
-icC
-kUj
-nGZ
-vPc
-mdf
-qCg
-wPe
-wPe
+wld
+wld
+wld
+wld
+wld
+wld
+wld
 dKf
 maR
 wld
@@ -137903,6 +138031,7 @@ wld
 wld
 wld
 wld
+kiK
 vnA
 nZH
 xOV
@@ -138224,34 +138353,34 @@ mEG
 bEw
 wld
 wld
+lmn
+sdg
+trk
+aIN
+pHk
+qcI
+sdg
+trk
+aIN
+lmn
 wld
 wld
 wld
 wld
 wld
-maR
-ibi
-kUj
-kUj
-kPl
-hMp
-hMp
-mxB
-bSN
-arK
-fmr
-kUj
-pnK
-pnK
+wld
+vjL
+eEN
 cPk
-txZ
-wPe
-wPe
-dKf
-maR
-wld
-wld
-wld
+cPk
+cPk
+cPk
+kTG
+tJZ
+xkn
+xkn
+uFk
+tXd
 wld
 wld
 wld
@@ -138574,37 +138703,37 @@ oof
 oof
 oof
 oof
+oqo
+wld
+lmn
+nBk
+vwp
+sLj
+xdJ
+qGb
+nBk
+vwp
+sLj
+lmn
 wld
 wld
 wld
 wld
 wld
-wld
-wld
-maR
-ibi
-kUj
-kUj
-hnd
-aNh
-tdn
-tdn
-tdn
-jIZ
-kTG
+quU
 sFg
 lpf
-uDF
-euz
+ssp
+ssp
 eDb
-wPe
-wPe
-dKf
-maR
-wld
-wld
-wld
-wld
+cyT
+szi
+mRJ
+iZa
+ssp
+nXG
+rNB
+oqo
 wld
 wld
 vay
@@ -138926,39 +139055,39 @@ rLM
 qMo
 qMo
 oof
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-maR
-ibi
-kUj
-kUj
-swZ
-azl
-tdn
-oko
-ovz
-iAQ
-xJm
+eOA
+eOA
+lmn
+vQV
+xVp
+pLW
+pHk
+qcI
+vQV
+xVp
+pLW
+lmn
+eOA
+eOA
+eOA
+eOA
+eOA
+eOA
 qQj
-mRJ
+ssp
 vxH
-tCs
-bcJ
-wPe
-wPe
-dKf
-maR
-wld
-wld
-wld
-wld
-wld
-wld
+bAU
+pta
+mHq
+gJt
+mHq
+hnd
+vxH
+ssp
+qQj
+eOA
+eOA
+eOA
 vay
 oyO
 jCt
@@ -139278,39 +139407,39 @@ qMo
 qMo
 qMo
 oof
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-maR
-ibi
-kUj
-kUj
-rTY
-niw
-tdn
-tdn
-tdn
-jIZ
-wyQ
-uEj
-moM
-xJI
+snf
+snf
+lmn
+nBk
+vwp
+sLj
+xdJ
+qGb
+nBk
+vwp
+sLj
+lmn
+snf
+snf
+snf
+snf
+snf
+snf
+dWi
+dWi
+dWi
 cLs
 qgJ
-wPe
-wPe
-dKf
-vhv
-qtJ
-wld
-wld
-wld
-wld
-mPV
+uUU
+dWi
+xas
+aki
+gfm
+gfm
+gfm
+snf
+snf
+snf
 grk
 efu
 qtz
@@ -139630,39 +139759,39 @@ qMo
 qMo
 dUA
 oof
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-maR
-ibi
-kUj
-kUj
-mhw
-mxB
-eEN
-tha
-bSN
-puC
-oku
-kUj
-pnK
+eOA
+eOA
+viD
+vQV
+xVp
+pLW
+pHk
+qcI
+vQV
+xVp
+pLW
+viD
+lWz
+lWz
+lWz
+lWz
+lWz
+lWz
+dWi
+dWi
 kBp
 kep
 pnK
-wPe
-wPe
+dsU
+dWi
 riZ
 nec
-maR
-wld
-wld
-wld
-wld
-ohD
+qpG
+gfm
+gfm
+lWz
+lWz
+lWz
 uUI
 jgU
 jgU
@@ -139982,39 +140111,39 @@ uNl
 qMo
 qMo
 oof
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-maR
-ibi
-kUj
-kUj
-pLZ
-fKE
-mPb
-tin
-jHu
-tXd
-aNh
-kUj
-xas
+lIK
+lIK
+viD
+inx
+vwp
+uOT
+mKv
+rOJ
+oay
+rGg
+qli
+viD
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+dWi
+dWi
 oHe
-kep
+moM
 mYY
-wPe
-wPe
-jnw
-dKf
-maR
-wld
-wld
-wld
-wld
-wld
+tin
+dWi
+tdn
+hLP
+vPc
+gfm
+gfm
+lIK
+lIK
+lIK
 uUI
 bwZ
 nCT
@@ -140334,39 +140463,39 @@ qMo
 bLx
 qMo
 oof
-oqo
-wld
-wld
-wld
-wld
-wld
-wld
-maR
-ibi
-kUj
-kUj
-kUj
-kUj
-kUj
-jUq
-kUj
-kUj
-kUj
-kUj
-wPe
-gIn
+lIK
+lIK
+viD
+rAp
+seu
+qnn
+rKG
+oyl
+hEF
+kpE
+sLj
+viD
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+dWi
+dWi
+euz
 xeA
+pLZ
+kIE
 dWi
-dWi
-dWi
-dWi
-dKf
-maR
-wld
-wld
-wld
-wld
-wld
+pFk
+obO
+pFk
+gfm
+gfm
+lIK
+lIK
+lIK
 uUI
 bwZ
 nCT
@@ -140687,38 +140816,38 @@ uyR
 uGw
 oof
 oof
-wld
-wld
-wld
-wld
-wld
-wld
-maR
-xkn
+lIK
+viD
+sjE
+vwp
+nDb
+ulV
+egf
+gCy
+kpE
+mSC
+viD
+lIK
+lIK
+lIK
+tUM
+tUM
+tUM
 kUj
-kUj
-kUj
-kUj
-kUj
-kUj
-gfm
-pFk
-fBx
-pax
-xiD
-nXG
-ydA
-dWi
+wPe
+wPe
+gIn
+uEj
 sDn
-fjE
-dWi
-dKf
-maR
-wld
-wld
-wld
-wld
-wld
+wPe
+gfm
+gfm
+gfm
+gfm
+gfm
+lIK
+lIK
+lIK
 uUI
 uWB
 nCT
@@ -141039,38 +141168,38 @@ mQL
 dYE
 ozu
 oof
-wld
-wld
-wld
-wld
-wld
-wld
-maR
-ibi
-mwM
-nre
-nre
-nre
+lIK
+viD
+oNU
+cpB
+vwn
+tGn
+hqK
+xQw
+jeO
+pIx
+viD
+lIK
+lIK
+lIK
+tUM
+tUM
+tUM
 kUj
-kUj
-gfm
-pFk
-hLP
-wSw
-aki
+wPe
 avZ
 vNu
 gzQ
 iqP
 nod
-dWi
-dKf
-maR
-wld
-wld
-wld
-wld
-wld
+wPe
+kUj
+kUj
+tUM
+tUM
+lIK
+lIK
+lIK
 uUI
 fus
 fus
@@ -141391,38 +141520,38 @@ txM
 hcu
 cBE
 oof
-wld
-wld
-wld
-wld
-wld
-wld
-maR
-ibi
-xor
-xor
-xor
-xor
-xor
-xor
-gfm
-pFk
-hLP
-kIE
-oAr
+lIK
+fJZ
+fJZ
+fJZ
+fJZ
+jQz
+pmt
+ios
+eOY
+fJZ
+fJZ
+lIK
+lIK
+lIK
+elI
+bje
+bje
+kUj
+wPe
 cxj
-qTP
+ebA
 tOv
 knv
 fjE
-dWi
-dKf
-maR
-wld
-wld
-wld
-wld
-wld
+sbI
+kUj
+kUj
+bje
+elI
+lIK
+lIK
+lIK
 uUI
 wvA
 gsG
@@ -141743,38 +141872,38 @@ urA
 eSE
 vnY
 oof
-wld
-wld
-fjR
-wld
-wld
-wld
-maR
-ibi
-xor
-xor
-xor
-xor
-xor
-xor
-gfm
-gfm
-gfm
-gfm
-aym
+lIK
+fJZ
+acX
+cLA
+fJZ
+jFT
+fIf
+hIP
+iQT
+hIP
+fJZ
+lIK
+lIK
+lIK
+bcJ
+bje
+bje
+kUj
+wPe
 oDb
 ebA
-dWi
-dWi
-dWi
-dWi
-qpG
-maR
-wld
-wld
-wld
-wld
-wld
+tOv
+bei
+fjE
+oAr
+kUj
+kUj
+bje
+bcJ
+lIK
+lIK
+lIK
 uUI
 cPE
 cPE
@@ -142095,38 +142224,38 @@ oof
 mtQ
 oof
 oof
-wld
-wld
-viD
-lmn
-lmn
-lmn
-uiR
-bzT
-lmn
-lmn
-lmn
-viD
-xor
-xor
-xor
-xor
-xor
-xor
-xor
-aWo
+lIK
+fJZ
+xnS
+xnS
+cAu
+pmu
+wuV
+oVB
+wXw
+svN
+fJZ
+lIK
+lIK
+lIK
+qCg
+bje
+bje
+kUj
+wPe
+icC
 gTv
-ojl
-ojl
-ojl
 pwv
-inf
-maR
-wld
-wld
-wld
-wld
-wld
+ojl
+nod
+wPe
+kUj
+kUj
+bje
+qCg
+lIK
+lIK
+lIK
 uUI
 enZ
 mZK
@@ -142447,38 +142576,38 @@ aTo
 mgo
 rly
 bkA
-wld
-wld
-lmn
-sdg
-trk
-aIN
-pHk
-qcI
-sdg
-trk
-aIN
-lmn
-xor
-xor
-xor
-xor
-xor
-xor
-xor
-xor
-vhv
+lIK
+fJZ
+sLT
+xnS
+fJZ
+eva
+fIf
+wHM
+wca
+hIP
+fJZ
+lIK
+lIK
+lIK
+bcJ
+bje
+txZ
+kUj
+kUj
+kUj
+jHu
 qcB
-qcB
-qcB
-qcB
-qcB
-xKy
-wld
-wld
-wld
-wld
-wld
+aym
+kUj
+kUj
+kUj
+kUj
+qTP
+bcJ
+lIK
+lIK
+lIK
 uUI
 bdc
 mZK
@@ -142799,38 +142928,38 @@ oYs
 aqP
 uFw
 bkA
-wld
-wld
-lmn
-nBk
-vwp
-sLj
-xdJ
-qGb
-nBk
-vwp
-sLj
-lmn
-nre
-nre
-nre
-nre
-nre
-nre
-nre
-nre
-nre
-nre
-nre
-nre
-nre
-nre
-nre
-wld
-wld
-wld
-wld
-quU
+lIK
+fJZ
+tIP
+tIP
+fJZ
+uUH
+dAf
+oFg
+uAb
+eGa
+fJZ
+lIK
+lIK
+lIK
+bcJ
+bje
+bje
+kUj
+kUj
+rBS
+alG
+jIZ
+jUq
+mPV
+kUj
+kUj
+bje
+bje
+bcJ
+lIK
+lIK
+lIK
 uUI
 bdc
 mZK
@@ -143151,38 +143280,38 @@ hsh
 aSM
 hsh
 sfX
-wld
-wld
-lmn
-vQV
-xVp
-pLW
-pHk
-qcI
-vQV
-xVp
-pLW
-lmn
-eOA
-eOA
-eOA
-bar
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
+lIK
+fJZ
+fJZ
+fJZ
+fJZ
+fJZ
+fJZ
+fJZ
+fJZ
+fJZ
+fJZ
+lIK
+lIK
+lIK
+bcJ
+bje
+bje
+kUj
+kUj
+kUj
+puC
+jIZ
+mdf
+kUj
+kUj
+kUj
+bje
+bje
+bcJ
+lIK
+lIK
+lIK
 uUI
 uUI
 nJa
@@ -143503,38 +143632,38 @@ kAu
 oEj
 cEw
 hsh
-wld
-wld
-lmn
-nBk
-vwp
-sLj
-xdJ
-qGb
-nBk
-vwp
-sLj
-lmn
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+bcJ
+bje
+kUj
+kUj
+kUj
+wSw
+hMp
+tCs
+hMp
+gBK
+kUj
+kUj
+kUj
+bje
+bcJ
+lIK
+lIK
+lIK
 cge
 cge
 auf
@@ -143855,38 +143984,38 @@ ipW
 jjc
 wYM
 hsh
-wld
-wld
-lmn
-vQV
-xVp
-pLW
-pHk
-qcI
-vQV
-xVp
-pLW
-viD
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+bcJ
+bje
+kUj
+kUj
+iAQ
+oko
+uDF
+xJm
+uDF
+tha
+eAS
+kUj
+kUj
+bje
+bcJ
+lIK
+lIK
+lIK
 rRT
 cge
 auf
@@ -144207,18 +144336,6 @@ sHl
 fXf
 bob
 hsh
-wld
-wld
-viD
-inx
-vwp
-uOT
-mKv
-rOJ
-oay
-rGg
-qli
-viD
 lIK
 lIK
 lIK
@@ -144233,9 +144350,21 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
+bcJ
+bje
+kUj
+kUj
+kUj
+aNh
+uDF
+azl
+uDF
+gBK
+kUj
+kUj
+kUj
+bje
+bcJ
 lIK
 lIK
 lIK
@@ -144559,18 +144688,6 @@ sAe
 nNb
 gYR
 hsh
-wld
-wld
-viD
-rAp
-seu
-qnn
-rKG
-oyl
-hEF
-kpE
-sLj
-viD
 lIK
 lIK
 lIK
@@ -144585,9 +144702,21 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
+bcJ
+bje
+bje
+kUj
+kUj
+kUj
+nGZ
+azl
+aDr
+kUj
+kUj
+kUj
+bje
+bje
+bcJ
 lIK
 lIK
 lIK
@@ -144911,18 +145040,6 @@ hgt
 cgd
 rTV
 hsh
-wld
-wld
-viD
-sjE
-vwp
-nDb
-ulV
-egf
-gCy
-kpE
-mSC
-viD
 lIK
 lIK
 lIK
@@ -144937,9 +145054,21 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
+bcJ
+bje
+bje
+bje
+kUj
+kUj
+kUj
+mPb
+kUj
+kUj
+kUj
+bje
+bje
+bje
+bcJ
 lIK
 lIK
 lIK
@@ -145263,18 +145392,6 @@ dsP
 mWp
 dsP
 hsh
-wld
-wld
-viD
-oNU
-cpB
-vwn
-tGn
-hqK
-xQw
-jeO
-pIx
-viD
 lIK
 lIK
 lIK
@@ -145289,9 +145406,21 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
+bcJ
+bje
+bje
+bje
+bje
+kUj
+kUj
+tEo
+kUj
+kUj
+bje
+bje
+bje
+bje
+bcJ
 lIK
 lIK
 lIK
@@ -145615,18 +145744,6 @@ jNj
 nqt
 gNv
 hsh
-wld
-wld
-fJZ
-fJZ
-fJZ
-fJZ
-jQz
-pmt
-ios
-eOY
-fJZ
-fJZ
 lIK
 lIK
 lIK
@@ -145641,9 +145758,21 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
+qCg
+bje
+bje
+bje
+bje
+bje
+kUj
+fKE
+kUj
+pax
+pax
+pax
+oku
+bje
+qCg
 lIK
 lIK
 lIK
@@ -145967,18 +146096,6 @@ hsh
 hsh
 hsh
 hsh
-wld
-quU
-fJZ
-acX
-cLA
-fJZ
-jFT
-fIf
-hIP
-iQT
-hIP
-fJZ
 lIK
 lIK
 lIK
@@ -145993,9 +146110,21 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
+bcJ
+bje
+bje
+bje
+bje
+txZ
+kUj
+fKE
+kUj
+ovz
+mwM
+pax
+pax
+bje
+bcJ
 lIK
 lIK
 lIK
@@ -146310,27 +146439,12 @@ cHX
 cHX
 cHX
 iSF
-vjL
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-eOA
-fJZ
-xnS
-xnS
-cAu
-pmu
-wuV
-oVB
-wXw
-svN
-fJZ
+mUo
+nre
+nre
+nre
+mUo
+iRw
 lIK
 lIK
 lIK
@@ -146348,6 +146462,21 @@ lIK
 lIK
 lIK
 lIK
+rTY
+vJP
+vJP
+vJP
+vJP
+vJP
+vJP
+arK
+vJP
+vJP
+vJP
+vJP
+vJP
+vJP
+niw
 lIK
 lIK
 lIK
@@ -146663,26 +146792,11 @@ eOA
 eOA
 eOA
 ecN
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-snf
-fJZ
-sLT
-xnS
-fJZ
-eva
-fIf
-wHM
-wca
-hIP
-fJZ
+eOA
+eOA
+eOA
+wfz
+iRw
 lIK
 lIK
 lIK
@@ -146700,6 +146814,21 @@ lIK
 lIK
 lIK
 lIK
+mhw
+xIq
+swZ
+xiD
+swZ
+swZ
+swZ
+bSN
+xJI
+xJI
+xJI
+wyQ
+xJI
+fBx
+mhw
 lIK
 lIK
 lIK
@@ -147019,22 +147148,22 @@ lWz
 lWz
 lWz
 lWz
-lWz
-lWz
-lWz
-lWz
-lWz
-lWz
-fJZ
-tIP
-tIP
-fJZ
-uUH
-dAf
-oFg
-uAb
-eGa
-fJZ
+opc
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -147377,16 +147506,16 @@ lIK
 lIK
 lIK
 lIK
-fJZ
-fJZ
-fJZ
-fJZ
-fJZ
-fJZ
-fJZ
-fJZ
-fJZ
-fJZ
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -149508,7 +149637,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
@@ -151958,7 +152087,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+xtL
 lIK
 lIK
 lIK
@@ -258299,8 +258428,8 @@ rDI
 rDI
 rDI
 rDI
-gJt
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -258651,8 +258780,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -259003,8 +259132,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -259355,8 +259484,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -259707,8 +259836,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -260059,8 +260188,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -260411,8 +260540,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -260743,8 +260872,8 @@ rDI
 rDI
 rDI
 rDI
+qJE
 bRI
-bRI
 rDI
 rDI
 rDI
@@ -260763,8 +260892,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -261115,8 +261244,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -261467,8 +261596,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -261791,36 +261920,36 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+hMT
 bRI
 bRI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
 bRI
 bRI
+bRI
+qsT
+bRI
+bRI
+xKn
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -262143,14 +262272,14 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
+bRI
 bRI
 bRI
 rDI
@@ -262171,8 +262300,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -262503,8 +262632,6 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
 rDI
 rDI
 rDI
@@ -262523,8 +262650,10 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -262848,15 +262977,6 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
 rDI
 rDI
 rDI
@@ -262875,8 +262995,17 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -263200,15 +263329,6 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
 rDI
 rDI
 rDI
@@ -263227,8 +263347,17 @@ rDI
 rDI
 rDI
 rDI
-bRI
-qJE
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -263552,8 +263681,6 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
 rDI
 rDI
 rDI
@@ -263579,8 +263706,10 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -263904,8 +264033,6 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
 rDI
 rDI
 rDI
@@ -263919,7 +264046,6 @@ rDI
 rDI
 rDI
 rDI
-xKn
 rDI
 rDI
 rDI
@@ -263931,8 +264057,11 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -264256,8 +264385,6 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
 rDI
 rDI
 rDI
@@ -264270,21 +264397,23 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -264608,8 +264737,6 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
 rDI
 rDI
 rDI
@@ -264622,21 +264749,23 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
-sbI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -264960,8 +265089,6 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
 rDI
 rDI
 rDI
@@ -264974,8 +265101,10 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -265312,8 +265441,6 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
 rDI
 rDI
 rDI
@@ -265326,8 +265453,10 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -265664,8 +265793,6 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
 rDI
 rDI
 rDI
@@ -265678,8 +265805,10 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -266016,8 +266145,6 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
 rDI
 rDI
 rDI
@@ -266030,10 +266157,12 @@ rDI
 rDI
 rDI
 rDI
-gJt
-hMT
 rDI
-kRi
+rDI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -266368,8 +266497,6 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
 rDI
 rDI
 rDI
@@ -266382,10 +266509,12 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
 rDI
-kRi
+rDI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -266720,8 +266849,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -267072,8 +267201,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -267424,8 +267553,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -267776,8 +267905,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -268128,8 +268257,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -268480,8 +268609,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -268832,8 +268961,8 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -269168,25 +269297,25 @@ rDI
 rDI
 rDI
 rDI
-bRI
-hMT
-bRI
-bRI
-bRI
-bRI
-qsT
-bRI
-bRI
-bRI
-bRI
-bRI
-qJE
-bRI
-bRI
-bRI
-bRI
-bRI
-xKn
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -269520,24 +269649,24 @@ rDI
 rDI
 rDI
 rDI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
-bRI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
+rDI
 rDI
 rDI
 rDI
@@ -473708,7 +473837,7 @@ sgH
 sgH
 mTl
 syv
-ocC
+esa
 esa
 ocC
 ocC
@@ -474405,8 +474534,8 @@ tFd
 tFd
 tFd
 tFd
-tFd
-tFd
+wSQ
+mxB
 sJd
 tFd
 tFd
