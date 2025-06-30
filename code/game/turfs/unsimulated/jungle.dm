@@ -282,12 +282,12 @@ var/list/foliage_replacments=list(
 			return
 	if(C.type== /obj/item/stack/ore/glass && hashole)
 		var/obj/item/stack/ore/glass/T = C
-		if(T.amount<50)
-			to_chat(usr,"you need 50 sand to do this!")
+		if(T.amount<25)
+			to_chat(usr,"you need 25 sand to do this!")
 			return
 		to_chat(usr,"you start filling the hole back with soil...")
 		if(do_after(user, src, 80 ))
-			if(T.use(50))
+			if(T.use(25))
 				to_chat(usr,"you fill the hole back with soil.")
 				var/turf/T2=hashole.down.loc
 				T2?.ChangeTurf(/turf/unsimulated/floor/jungle/underground)
@@ -420,7 +420,7 @@ var/list/foliage_replacments=list(
 	opacity=1
 	desc="Solid dirt as far as the eye can see."
 	icon='icons/turf/walls.dmi'
-	icon_state = "gingerbread15"
+	icon_state = "j_dirtwall"	
 	var/loosened=FALSE // you dig with a pickaxe, too, dumbass.
 
 
@@ -445,22 +445,26 @@ var/list/foliage_replacments=list(
 	s=item_terraforming_ispickaxe(C)
 	if(s>0.0)
 		if (loosened)
-			to_chat(user, "<span class='notice'>The soil is already loose.</span>")
+			to_chat(user,"<span class='notice'>You begin to break apart the soil...</span>")
+			if(do_after(user, src, 30/s ))
+				generate_loot(C,user)
+				ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
+				return
 		else
 			to_chat(user, "<span class='notice'>You start to loosen the soil...</span>")
-			if(do_after(user, src, 20/s ))
+			if(do_after(user, src, 15/s ))
 				loosened=TRUE
 	s=item_terraforming_isshovel(C)
 	if(s>0.0)
 		to_chat(user, loosened ? "<span class='notice'>You begin to break apart the soil...</span>" : "<span class='notice'>You struggle to break up the soil...</span>")
-		if(do_after(user, src, (loosened ? 20 : 60)/s ))
+		if(do_after(user, src, (loosened ? 15 : 45)/s ))
 			generate_loot(C,user)
 			ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
 			return
 
 
 /turf/unsimulated/floor/jungle/underground/generate_loot(var/obj/item/C, var/mob/user)
-	new/obj/item/stack/ore/glass(src,50) //theres no dirt, so we use sand instead.
+	new/obj/item/stack/ore/glass(src,25) //theres no dirt, so we use sand instead.
 	if(!user)
 		return
 	if (user.lucky_prob_rand()>0.5) //50% base chance
@@ -481,17 +485,17 @@ var/list/foliage_replacments=list(
 	name="Bedrock"
 	desc="A very dense rock. Nothing seems to be able to dig through it."
 	icon='icons/turf/walls.dmi'
-	icon_state = "mariahive_noanimation"
+	icon_state = "j_rockfloor"	
 	var/obj/structure/ladder/jungle_tunnel/hashole=null
 	construction_allowed=TRUE
 
 
 /turf/unsimulated/floor/jungle/bedrock/New(var/loc)
 	if(locate(/obj/structure/ladder/jungle_tunnel) in contents)
-		icon_state="mariahive_noanimation_l"
+		icon_state="j_rockfloor_l"
 
 	if(cannot_dig_up())
-		icon_state="mariahive_noanimation_d"
+		icon_state="j_rockfloor_d"
 
 /turf/unsimulated/floor/jungle/bedrock/attackby(obj/item/C as obj, mob/user as mob)
 	..()
@@ -505,8 +509,8 @@ var/list/foliage_replacments=list(
 			if(do_after(user, src, 80/s ))
 				if(!hashole && !cannot_dig_up() )
 					to_chat(usr,"you finish making a hole.")
-					icon_state="mariahive_noanimation_l"
-
+					icon_state="j_rockfloor_l"
+					
 					var/obj/structure/ladder/jungle_tunnel/l_tunnel=new(src)
 					var/obj/structure/ladder/jungle_tunnel/l_surf=new(locate(x,y,1))
 
@@ -527,10 +531,10 @@ var/list/foliage_replacments=list(
 
 /turf/unsimulated/floor/jungle/bedrock/examine()
 	..()
-	if(icon_state=="mariahive_noanimation_d")
+	if(icon_state=="j_rockfloor_d")
 		to_chat(usr,cannot_dig_up() || "it seems that there's something solid above you that you won't be able to dig through.")
 		return
-	if(icon_state=="mariahive_noanimation_l")
+	if(icon_state=="j_rockfloor_l")
 		to_chat(usr,"there's a hole leading to the surface.")
 
 
@@ -538,13 +542,13 @@ var/list/foliage_replacments=list(
 /turf/unsimulated/floor/jungle/bedrock/Entered(var/atom/movable/Obj,var/recursive=TRUE)
 	if(recursive)
 		..()
-	icon_state="mariahive_noanimation"
-
+	icon_state="j_rockfloor"
+	
 	if(locate(/obj/structure/ladder/jungle_tunnel) in contents)
-		icon_state="mariahive_noanimation_l"
-
+		icon_state="j_rockfloor_l"
+	
 	if(cannot_dig_up())
-		icon_state="mariahive_noanimation_d"
+		icon_state="j_rockfloor_d"
 
 	if(recursive) //we reveal the state of surrounding bedrock. there's probably a better way to do this.
 		var/turf/T2=get_step(src,NORTH)
