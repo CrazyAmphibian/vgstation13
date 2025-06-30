@@ -50055,6 +50055,14 @@
 	pixel_y = 23;
 	pixel_x = 6
 	},
+/obj/machinery/door_control{
+	desc = "A remote control switch for the AI chamber door.";
+	id_tag = "AI Door";
+	name = "AI Chamber Door Control";
+	pixel_x = 24;
+	pixel_y = 14;
+	req_access_txt = "16"
+	},
 /turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
 "tES" = (
