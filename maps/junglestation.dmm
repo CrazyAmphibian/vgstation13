@@ -683,7 +683,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood,
-/area/crew_quarters)
+/area/crew_quarters/sleep)
 "anl" = (
 /obj/structure/fence,
 /obj/structure/cable/yellow,
@@ -8479,12 +8479,13 @@
 /turf/simulated/floor/wood,
 /area/surface/jungle/underground/zoned/speakeasy)
 "did" = (
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 24
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "brown";
+	tag = "icon-brown (NORTH)"
 	},
-/turf/simulated/floor/wood,
-/area/crew_quarters/sleep)
+/area/supply/lobby)
 "die" = (
 /obj/effect/decal/warning_stripes{
 	dir = 1;
@@ -10389,7 +10390,10 @@
 	},
 /area/science/xenobiology/specimen_3)
 "dXi" = (
-/turf/simulated/floor/wood,
+/obj/machinery/washing_machine,
+/turf/simulated/floor{
+	icon_state = "freezerfloor"
+	},
 /area/crew_quarters)
 "dXu" = (
 /obj/effect/step_trigger/teleporter/random{
@@ -18218,10 +18222,15 @@
 	},
 /area/engineering/engine)
 "hbh" = (
+/obj/machinery/door/airlock{
+	name = "Showers"
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "freezerfloor"
+	},
 /area/crew_quarters)
 "hbi" = (
 /obj/structure/fence/corner,
@@ -20392,13 +20401,12 @@
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/zoned/atmos_outside)
 "hUZ" = (
-/obj/machinery/shower{
-	pixel_y = 17
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
 	},
-/turf/simulated/floor{
-	icon_state = "freezerfloor"
-	},
-/area/crew_quarters)
+/turf/simulated/floor/wood,
+/area/crew_quarters/sleep)
 "hVc" = (
 /obj/structure/table,
 /obj/item/weapon/storage/box/labels,
@@ -27990,11 +27998,13 @@
 	},
 /area/medical/sleeper)
 "kVF" = (
-/obj/machinery/light/small{
-	dir = 8;
-	flickering = 1
+/obj/structure/window/reinforced{
+	dir = 4
 	},
-/turf/simulated/floor/wood,
+/obj/machinery/washing_machine,
+/turf/simulated/floor{
+	icon_state = "freezerfloor"
+	},
 /area/crew_quarters)
 "kVJ" = (
 /obj/structure/cable/yellow{
@@ -31379,10 +31389,9 @@
 /turf/simulated/floor/plating,
 /area/surface/jungle)
 "mkc" = (
-/obj/structure/window/reinforced{
-	dir = 4
+/obj/machinery/shower{
+	pixel_y = 17
 	},
-/obj/machinery/washing_machine,
 /turf/simulated/floor{
 	icon_state = "freezerfloor"
 	},
@@ -31503,13 +31512,11 @@
 /turf/simulated/floor,
 /area/surface/jungle)
 "mmb" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/simulated/floor{
-	dir = 5;
-	icon_state = "brown";
-	tag = "icon-brown (NORTH)"
+/obj/structure/sign/securearea{
+	name = "VEHICLES PASSING"
 	},
-/area/supply/lobby)
+/turf/simulated/wall,
+/area/supply/miningdock)
 "mmh" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -32706,14 +32713,11 @@
 	},
 /area/centcom/test)
 "mNL" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood,
-/area/crew_quarters/sleep)
+/area/crew_quarters)
 "mNY" = (
 /obj/machinery/camera{
 	dir = 1
@@ -45990,8 +45994,8 @@
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/atmos)
 "saC" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters)
@@ -48527,11 +48531,8 @@
 /turf/simulated/floor,
 /area/research_outpost/hallway)
 "tcV" = (
-/obj/structure/sign/securearea{
-	name = "VEHICLES PASSING"
-	},
-/turf/simulated/wall,
-/area/supply/miningdock)
+/turf/simulated/floor/wood,
+/area/crew_quarters)
 "tde" = (
 /obj/machinery/vending/snack,
 /turf/unsimulated/floor{
@@ -51144,16 +51145,11 @@
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/fenced)
 "ucP" = (
-/obj/machinery/door/airlock{
-	name = "Showers"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+/obj/structure/hanging_lantern{
 	dir = 4
 	},
-/turf/simulated/floor{
-	icon_state = "freezerfloor"
-	},
-/area/crew_quarters)
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground)
 "ucR" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced,
@@ -56599,6 +56595,15 @@
 	icon_state = "dark loading"
 	},
 /area/centcom/specops)
+"wgU" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters)
 "wgW" = (
 /obj/item/weapon/storage/box/donkpockets{
 	pixel_x = 3;
@@ -59868,10 +59873,11 @@
 	},
 /area/shuttle/nuclearops)
 "xvk" = (
-/obj/machinery/washing_machine,
-/turf/simulated/floor{
-	icon_state = "freezerfloor"
+/obj/machinery/light/small{
+	dir = 8;
+	flickering = 1
 	},
+/turf/simulated/floor/wood,
 /area/crew_quarters)
 "xvy" = (
 /obj/machinery/power/apc{
@@ -121958,7 +121964,7 @@ idZ
 idZ
 idZ
 idZ
-tcV
+mmb
 xor
 xor
 xor
@@ -125825,7 +125831,7 @@ nuX
 btG
 sTq
 oQc
-mmb
+did
 bAt
 bAt
 qgR
@@ -128259,7 +128265,7 @@ lIK
 lIK
 lIK
 rlt
-hUZ
+mkc
 kBX
 jOW
 rlt
@@ -128611,7 +128617,7 @@ lIK
 lIK
 lIK
 rlt
-hUZ
+mkc
 dfc
 jOW
 rlt
@@ -128964,7 +128970,7 @@ lIK
 lIK
 rlt
 rlt
-ucP
+hbh
 rlt
 rlt
 rlt
@@ -129315,9 +129321,9 @@ lIK
 lIK
 lIK
 rlt
+dXi
+saC
 xvk
-hbh
-kVF
 rlt
 pJD
 rlt
@@ -129667,9 +129673,9 @@ qCc
 qCc
 qCc
 rlt
-xvk
-hbh
 dXi
+saC
+tcV
 rlt
 lip
 rlt
@@ -130019,9 +130025,9 @@ lxN
 lxN
 aKk
 rlt
-mkc
-hbh
-dXi
+kVF
+saC
+tcV
 rlt
 ipd
 rlt
@@ -130372,12 +130378,12 @@ gRF
 qxY
 lqv
 ggP
-hbh
-dXi
+saC
+tcV
 fgx
-dXi
+tcV
 gnK
-dXi
+tcV
 lqv
 wld
 wld
@@ -130723,13 +130729,13 @@ gUG
 gRF
 qxY
 lqv
-dXi
-hbh
-dXi
-dXi
+tcV
+saC
+tcV
+tcV
 hpI
-dXi
-dXi
+tcV
+tcV
 lqv
 wld
 wld
@@ -131779,13 +131785,13 @@ lxN
 pBk
 wIs
 lqv
-dXi
-hbh
-anh
+tcV
 saC
-dXi
-dXi
-dXi
+wgU
+mNL
+tcV
+tcV
+tcV
 lqv
 psY
 wld
@@ -132133,7 +132139,7 @@ qCc
 lqv
 xgj
 lWw
-anh
+wgU
 oXo
 nVJ
 cbl
@@ -132837,7 +132843,7 @@ lIK
 lIK
 jAP
 xrU
-mNL
+anh
 mnv
 bOl
 jAP
@@ -134246,7 +134252,7 @@ lIK
 jAP
 yaH
 wmy
-did
+hUZ
 yaH
 jAP
 wld
@@ -238814,12 +238820,12 @@ rDI
 rDI
 rDI
 bRI
-hMT
 bRI
 bRI
 bRI
 bRI
-qsT
+bRI
+bRI
 bRI
 bRI
 bRI
@@ -239166,12 +239172,12 @@ rDI
 rDI
 rDI
 bRI
+hMT
 bRI
 bRI
 bRI
 bRI
-bRI
-bRI
+ucP
 bRI
 bRI
 bRI
