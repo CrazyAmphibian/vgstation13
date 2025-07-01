@@ -2101,6 +2101,9 @@ var/global/list/adminbusteleportlocs = list()
 /area/surface/jungle/zoned/aifenced
 	name = "\improper AI Restricted Fenced Zone"
 
+/area/surface/jungle/zoned/dorms_patio
+	name = "\improper Dormitory Patio"
+
 /area/surface/jungle/landing
 	name = "\improper Landing Area"
 	icon_state="jungle_landing"
