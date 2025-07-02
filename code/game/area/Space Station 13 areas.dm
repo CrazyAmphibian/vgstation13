@@ -2060,6 +2060,9 @@ var/global/list/adminbusteleportlocs = list()
 /area/surface/jungle/underground/zoned/casino
 	name = "\improper Casino"	
 
+/area/surface/jungle/underground/zoned/ghetto_morgue
+	name = "\improper Crypt"
+
 /area/surface/jungle/zoned
 	forbid_apc=FALSE
 	construction_zone=FALSE
