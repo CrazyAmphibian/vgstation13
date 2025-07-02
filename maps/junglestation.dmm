@@ -4777,7 +4777,7 @@
 	},
 /obj/structure/table,
 /turf/simulated/floor{
-	dir = 1;
+	dir = 5;
 	icon_state = "whitepurple"
 	},
 /area/research_outpost/dorm2{
@@ -5510,6 +5510,7 @@
 /obj/structure/table,
 /obj/item/stack/cable_coil/random,
 /obj/item/device/radio/electropack,
+/obj/item/device/analyzer,
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "whitepurple"
@@ -11690,6 +11691,15 @@
 	icon_state = "floor5"
 	},
 /area/alien)
+"etq" = (
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "whitepurple"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "etF" = (
 /obj/machinery/computer/tetris,
 /turf/simulated/floor{
@@ -11853,6 +11863,15 @@
 	icon_state = "white"
 	},
 /area/medical/medbay)
+"ewE" = (
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "whitepurple"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "ewI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/disposal/compactor,
@@ -17662,6 +17681,15 @@
 	icon_state = "dark"
 	},
 /area/centcom/specops)
+"gQh" = (
+/turf/simulated/floor{
+	dir = 9;
+	icon_state = "whitepurple"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "gQI" = (
 /obj/machinery/computer/scan_consolenew,
 /turf/unsimulated/floor{
@@ -25538,6 +25566,14 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
+"jVL" = (
+/turf/simulated/floor{
+	icon_state = "whitepurple"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "jVS" = (
 /obj/structure/dispenser,
 /turf/simulated/floor{
@@ -28850,6 +28886,15 @@
 	icon_state = "white"
 	},
 /area/medical/genetics)
+"lqh" = (
+/turf/simulated/floor{
+	dir = 10;
+	icon_state = "whitepurple"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "lqt" = (
 /obj/machinery/door/window{
 	name = "Containment Pen";
@@ -31329,6 +31374,15 @@
 /obj/item/tool/wirecutters/clippers,
 /turf/unsimulated/floor/jungle/dirt,
 /area/surface/jungle)
+"mku" = (
+/obj/machinery/pipedispenser,
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "mky" = (
 /turf/unsimulated/wall{
 	icon_state = "plasma12"
@@ -32629,6 +32683,18 @@
 	icon_state = "dark"
 	},
 /area/centcom/suppy)
+"mNo" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor{
+	dir = 1;
+	icon_state = "whitepurple"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "mNu" = (
 /obj/structure/fence,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -43599,6 +43665,7 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 9
 	},
+/obj/machinery/meter,
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -44175,6 +44242,18 @@
 	icon_state = "white"
 	},
 /area/medical/sleeper)
+"rtA" = (
+/obj/machinery/door/airlock/glass_research{
+	name = "Toxins Laboratory";
+	req_access_txt = "8"
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "rtH" = (
 /obj/machinery/door/airlock/command{
 	name = "E.V.A.";
@@ -46490,6 +46569,16 @@
 "smp" = (
 /turf/simulated/wall/shuttle,
 /area/shuttle/arrival/station)
+"smx" = (
+/obj/structure/table,
+/obj/item/device/pipe_painter,
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "snf" = (
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
@@ -55283,6 +55372,18 @@
 	icon_state = "red"
 	},
 /area/tdome)
+"vIw" = (
+/obj/structure/rack,
+/obj/item/tool/crowbar/red,
+/obj/item/tool/wrench,
+/obj/item/device/analyzer,
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "vIz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
@@ -58212,6 +58313,15 @@
 	},
 /turf/simulated/floor,
 /area/construction/mommi_nest)
+"wQx" = (
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "whitepurple"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "wQz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
@@ -457010,10 +457120,10 @@ rIh
 rIh
 rIh
 rIh
-tFd
-ocC
-ocC
-ocC
+epp
+iKu
+iKu
+iKu
 epp
 epp
 iKu
@@ -457362,12 +457472,12 @@ rIh
 rIh
 rIh
 tFd
-tFd
-ocC
-ocC
-ocC
-ocC
 epp
+gQh
+etq
+lqh
+mku
+gTF
 pQF
 fnQ
 wGB
@@ -457714,11 +457824,11 @@ rIh
 rIh
 rIh
 tFd
-ocC
-ocC
-ocC
-ocC
-ocC
+epp
+pQF
+mqQ
+jVL
+vIw
 gTF
 pQF
 fnQ
@@ -458066,12 +458176,12 @@ rIh
 rIh
 tFd
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-gTF
+epp
+mNo
+mqQ
+jVL
+mqQ
+rtA
 pQF
 fnQ
 wGB
@@ -458418,12 +458528,12 @@ rIh
 rIh
 tFd
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
 epp
+pQF
+mqQ
+jVL
+smx
+gTF
 pQF
 lZU
 nja
@@ -458770,10 +458880,10 @@ rIh
 rIh
 tFd
 ocC
-ocC
-ocC
-ocC
-ocC
+epp
+wQx
+oom
+ewE
 epp
 epp
 pQF
