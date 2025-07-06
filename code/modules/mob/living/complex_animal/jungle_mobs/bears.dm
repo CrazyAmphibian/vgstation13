@@ -4,6 +4,7 @@
 	icon_state="brownbear"
 	icon_living = "brownbear"
 	icon_dead = "brownbear_dead"
+	faction="bears"
 	size=SIZE_BIG
 	health=60
 	maxHealth=60
@@ -12,7 +13,7 @@
 	food_flags = ANIMAL_CARNIVORE | ANIMAL_HERBIVORE
 	base_damage = 25
 	damage_variance = 5
-	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS
+	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	movespeed=5
 	kin_check_type_path=/mob/living/complex_animal/bear
 
@@ -49,10 +50,11 @@
 	maxHealth=250
 	armor=list(melee=10,bullet=30,laser=40,energy=0,bomb=0,bio=0,rad=0)
 	max_food=200
+	healthregen=0.02
 	food_per_tick = 0.00333333
 	base_damage = 35
 	damage_variance = 5
-	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_TERRITORIAL | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS
+	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_TERRITORIAL | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	movespeed=4
 
 /mob/living/complex_animal/bear/spare/can_offspring(var/mob/living/complex_animal/mate)
@@ -64,7 +66,23 @@
 /mob/living/complex_animal/bear/spare/get_butchering_products()
 	return list(/datum/butchering_product/skin/bear/spare, /datum/butchering_product/teeth/lots)
 
-
+/mob/living/complex_animal/bear/spare/aggro_drawn(var/victim,var/state=ANIMAL_STATE_ATTACKING)
+	if(!victim)
+		return
+	target=victim
+	behavior_state=state
+	get_aggro_msg(victim)
+	if( !(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) && !family.len)
+		return
+	if(istype(target,/mob/living))
+		var/mob/living/T=target
+		if(T.stat!=DEAD)
+			var/list/nearby_objects=range(15,src) //increased range, and ignores visibility. have fun!
+			for(var/mob/living/complex_animal/M in nearby_objects)
+				if( (behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) || (M in family))
+					if(is_kin(M) && !M.is_kin(target))
+						if(M.behavior_state!=state)
+							M.aggro_drawn(victim,state)
 
 /mob/living/complex_animal/bear/panda
 	name="Panda Bear"
@@ -72,7 +90,7 @@
 	icon_state="panda"
 	icon_living = "panda"
 	icon_dead = "panda_dead"
-	behavior_flags = ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS
+	behavior_flags = ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_DESTRUCTIVE
 	movespeed=6
 	food_per_tick=0.0075
 	
@@ -91,10 +109,9 @@
 	icon_state="polarbear"
 	icon_living = "polarbear"
 	icon_dead = "polarbear_dead"
-	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_TERRITORIAL | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS
+	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_TERRITORIAL | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	base_damage=35
 	damage_variance=10
-	food_per_tick=0.0075
 	health=70
 	maxHealth=70
 	
@@ -105,11 +122,13 @@
 
 /mob/living/complex_animal/bear/polar/chef
 	name="Chef Bear"
-	desc="Not to be confused with Chief Bear, the leader of bear tribe. This one just likes to cook."
-	behavior_flags = ANIMAL_BEHAVIOR_TERRITORIAL | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
+	desc="Not to be confused with Chief Bear, leader of bear tribe. This one just likes to cook."
+	behavior_flags = ANIMAL_BEHAVIOR_TERRITORIAL | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	movespeed=4
 	health=100
 	base_damage=35
 	damage_variance=15
 	maxHealth=100
+	food_per_tick=0.005
+	healthregen=.015
 	

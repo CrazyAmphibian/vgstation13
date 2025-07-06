@@ -45,6 +45,10 @@
 /mob/living/complex_animal/capybara_wild/get_idle_sounds()
 	return
 
+//no predators, so leaving this out is probably a bad idea.
+/mob/living/complex_animal/capybara_wild/can_offspring(var/mob/living/complex_animal/mate)
+	return FALSE
+
 /mob/living/complex_animal/capybara_wild/get_attack_msg(var/individual)
 	var/i=rand(1,2)
 	switch(i)

@@ -546,6 +546,7 @@
 /area/shuttle/syndicate_elite/mothership)
 "ali" = (
 /obj/machinery/microwave,
+/obj/structure/table,
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle)
 "alj" = (
@@ -6059,10 +6060,8 @@
 /turf/simulated/floor,
 /area/research_outpost/hallway)
 "cnU" = (
-/mob/living/simple_animal/hostile/bear/brownbear{
-	faction = "jungle"
-	},
-/turf/unsimulated/floor/jungle/grass,
+/mob/living/complex_animal/bear/panda,
+/turf/simulated/floor/shuttle,
 /area/surface/jungle)
 "coc" = (
 /obj/structure/bed/chair/comfy/teal,
@@ -6413,10 +6412,8 @@
 /turf/simulated/wall,
 /area/supply/office)
 "ctP" = (
-/mob/living/simple_animal/hostile/giant_spider{
-	faction = "jungle"
-	},
-/turf/simulated/floor/shuttle,
+/obj/effect/landmark/corpse,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "cuy" = (
 /obj/machinery/door/poddoor{
@@ -7714,9 +7711,7 @@
 	},
 /area/security/armory)
 "cTq" = (
-/mob/living/simple_animal/hostile/bear/panda{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear/panda,
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -12889,9 +12884,6 @@
 /area/engineering/engine_storage)
 "eTw" = (
 /obj/machinery/light/built,
-/mob/living/simple_animal/hostile/giant_spider/hunter{
-	faction = "jungle"
-	},
 /turf/simulated/floor/shuttle,
 /area/surface/jungle)
 "eTN" = (
@@ -13695,9 +13687,7 @@
 	},
 /area/bridge)
 "flr" = (
-/mob/living/simple_animal/hostile/bear/brownbear{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear,
 /turf/simulated/floor/wood,
 /area/surface/jungle)
 "flM" = (
@@ -17411,10 +17401,8 @@
 	},
 /area/centcom/test)
 "gKd" = (
-/mob/living/simple_animal/hostile/bear/polarbear{
-	faction = "jungle"
-	},
-/turf/unsimulated/floor/jungle/grass,
+/mob/living/complex_animal/bear,
+/turf/simulated/floor/shuttle,
 /area/surface/jungle)
 "gKl" = (
 /obj/structure/hanging_lantern/dim{
@@ -17966,9 +17954,7 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/dorms_patio)
 "gUP" = (
-/mob/living/simple_animal/hostile/bear/brownbear{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear,
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -18705,9 +18691,7 @@
 /turf/simulated/floor/plating,
 /area/surface/jungle)
 "hlL" = (
-/mob/living/simple_animal/hostile/bear/panda{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear/panda,
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle)
 "hlP" = (
@@ -24049,7 +24033,10 @@
 	name = "RADIOACTIVE AREA";
 	pixel_y = 32
 	},
-/turf/simulated/floor,
+/turf/simulated/floor{
+	icon_state = "yellow";
+	dir = 1
+	},
 /area/engineering/supermatter_room)
 "jrq" = (
 /obj/structure/grille/window_spawner/reinforced,
@@ -25476,9 +25463,7 @@
 	},
 /area/medical/medbay)
 "jSA" = (
-/mob/living/simple_animal/hostile/bear/polarbear{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear/polar/chef,
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle)
 "jSP" = (
@@ -27497,9 +27482,7 @@
 /area/shuttle/striketeam/centcom)
 "kLi" = (
 /obj/structure/bed/chair/comfy/teal,
-/mob/living/simple_animal/hostile/bear{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear,
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -32276,9 +32259,7 @@
 	name = "Toxins"
 	})
 "mCs" = (
-/mob/living/simple_animal/hostile/bear{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "mCB" = (
@@ -36337,14 +36318,8 @@
 	},
 /area/centcom/control)
 "olm" = (
-/mob/living/simple_animal/hostile/bear{
-	faction = "jungle"
-	},
-/turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
-	},
+/mob/living/complex_animal/bear/polar,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "olu" = (
 /obj/structure/grille/window_spawner/reinforced,
@@ -37195,9 +37170,7 @@
 /turf/simulated/floor/greengrid,
 /area/turret_protected/ai_upload)
 "oDr" = (
-/mob/living/simple_animal/hostile/bear{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear,
 /turf/simulated/floor/plating,
 /area/surface/jungle)
 "oDN" = (
@@ -39894,7 +39867,9 @@
 	d1 = 4;
 	d2 = 8
 	},
-/turf/simulated/floor,
+/turf/simulated/floor{
+	icon_state = "yellow"
+	},
 /area/engineering/supermatter_room)
 "pLw" = (
 /obj/machinery/door/airlock/glass_command{
@@ -44295,9 +44270,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (WEST)"
 	},
-/mob/living/simple_animal/hostile/bear{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear,
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle)
 "rsW" = (
@@ -46980,7 +46953,9 @@
 	dir = 1;
 	on = 1
 	},
-/turf/simulated/floor,
+/turf/simulated/floor{
+	icon_state = "yellowcorner"
+	},
 /area/engineering/engine)
 "suW" = (
 /obj/structure/grille/window_spawner/reinforced,
@@ -47517,6 +47492,23 @@
 "sGg" = (
 /obj/effect/landmark/corpse,
 /obj/effect/decal/cleanable/blood/drip,
+/obj/item/weapon/reagent_containers/food/snacks/meat/human,
+/obj/item/weapon/reagent_containers/food/snacks/meat/human{
+	pixel_x = 9;
+	pixel_y = -5
+	},
+/obj/item/weapon/reagent_containers/food/snacks/meat/human{
+	pixel_y = 11;
+	pixel_x = -3
+	},
+/obj/item/weapon/reagent_containers/food/snacks/meat/human{
+	pixel_y = -6;
+	pixel_x = -8
+	},
+/obj/item/weapon/reagent_containers/food/snacks/meat/human{
+	pixel_y = 9;
+	pixel_x = 7
+	},
 /turf/simulated/floor/wood,
 /area/surface/jungle)
 "sGm" = (
@@ -51470,6 +51462,7 @@
 /obj/structure/bed/chair/comfy/teal{
 	dir = 1
 	},
+/mob/living/complex_animal/bear/polar,
 /turf/simulated/floor/plating,
 /area/surface/jungle)
 "uhL" = (
@@ -51631,9 +51624,7 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "ukV" = (
-/mob/living/simple_animal/hostile/bear/panda{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear/panda,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "ukZ" = (
@@ -53895,9 +53886,7 @@
 	},
 /area/security/perma)
 "vfF" = (
-/mob/living/simple_animal/hostile/bear{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear,
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle)
 "vfK" = (
@@ -55376,9 +55365,7 @@
 /obj/structure/bed/chair/comfy/teal{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/bear/panda{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear/panda,
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -58087,9 +58074,7 @@
 /obj/structure/bed/chair/comfy/teal{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/bear{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear/panda,
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -59489,9 +59474,7 @@
 /turf/simulated/floor/wood,
 /area/surface/jungle)
 "xjN" = (
-/mob/living/simple_animal/hostile/giant_spider/hunter{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear/polar,
 /turf/simulated/floor/shuttle,
 /area/surface/jungle)
 "xjQ" = (
@@ -60404,9 +60387,7 @@
 /area/prison/solitary)
 "xBU" = (
 /obj/structure/bed/chair,
-/mob/living/simple_animal/hostile/bear/panda{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear/panda,
 /turf/simulated/floor/wood,
 /area/surface/jungle)
 "xCz" = (
@@ -62133,9 +62114,7 @@
 /obj/structure/bed/chair/comfy/brown{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/bear/spare{
-	faction = "jungle"
-	},
+/mob/living/complex_animal/bear/spare,
 /turf/simulated/floor/plating,
 /area/surface/jungle)
 "ylX" = (
@@ -109040,7 +109019,7 @@ lIK
 lIK
 lIK
 lIK
-cnU
+mCs
 lIK
 lIK
 lIK
@@ -113921,7 +113900,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+ukV
 lIK
 lIK
 lIK
@@ -117439,7 +117418,7 @@ lIK
 lIK
 lIK
 lIK
-gKd
+lIK
 lIK
 lIK
 lIK
@@ -117831,7 +117810,7 @@ uXC
 gab
 fnU
 wos
-ctP
+gab
 gab
 uXC
 acE
@@ -118181,8 +118160,8 @@ pWq
 bRe
 jtG
 xbQ
-xjN
 gab
+gKd
 gab
 bDn
 jtG
@@ -118534,7 +118513,7 @@ lpV
 jtG
 dxb
 crp
-gab
+cnU
 gab
 gab
 jtG
@@ -118886,8 +118865,8 @@ bRe
 adi
 gab
 gab
+xjN
 gab
-ctP
 gab
 ydT
 acE
@@ -119237,7 +119216,7 @@ pWq
 lpV
 sEg
 gab
-xjN
+gab
 fnU
 gab
 gab
@@ -120270,7 +120249,7 @@ xgw
 xgw
 hkY
 xgw
-hkY
+ctP
 hkY
 tdB
 hkY
@@ -120977,7 +120956,7 @@ uhz
 hkY
 xgw
 tdB
-hkY
+olm
 wAq
 jaR
 hkY
@@ -121375,7 +121354,7 @@ lIK
 lIK
 lIK
 lIK
-cnU
+mCs
 lIK
 lIK
 lIK
@@ -122027,7 +122006,7 @@ uXL
 uXL
 tkW
 xgw
-hkY
+ctP
 xgw
 hkY
 gUP
@@ -123085,7 +123064,7 @@ uXL
 uXL
 uXL
 tdB
-olm
+gUP
 hkY
 gUP
 tdB
@@ -125188,7 +125167,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+ukV
 lIK
 lIK
 lIK
@@ -132220,7 +132199,7 @@ lIK
 lIK
 lIK
 lIK
-cnU
+mCs
 lIK
 lIK
 lIK
@@ -136461,7 +136440,7 @@ lIK
 lIK
 lIK
 lIK
-cnU
+mCs
 lIK
 lIK
 lIK
@@ -139993,7 +139972,7 @@ lIK
 lIK
 lIK
 lIK
-cnU
+mCs
 lIK
 lIK
 lIK
@@ -142424,8 +142403,8 @@ bsH
 lIK
 lIK
 lIK
-cnU
-cnU
+mCs
+mCs
 lIK
 lIK
 lIK

@@ -52,6 +52,9 @@
 	var/icon_living = ""
 	var/icon_dead = ""
 	
+	var/healthregen=0.01
+	var/lasthealth=0.0
+	
 
 /mob/living/complex_animal/New(var/loc)
 	..()
@@ -69,6 +72,12 @@
 		return 0
 	icon_state=icon_living
 	nutrition-=max_food*food_per_tick
+	
+	if(lasthealth<=health && health<maxhealth)
+		health=min(maxhealth,health+maxhealth*healthregen)
+		nutrition-=max_food*food_per_tick*0.25 //use extra food when regaining health
+	lasthealth=health
+	
 	if(nutrition<0 && prob(20))
 		emote("deathgasp")
 		health=0
@@ -258,6 +267,9 @@
 			if(istype(A,/obj/structure/flora) && !istype(A,/obj/structure/flora/tree))
 				foodsources+=A
 				continue
+			if(istype(A,/turf/unsimulated/floor/jungle/grass))
+				foodsources+=A
+				continue
 		if(food_flags & ANIMAL_CARNIVORE)
 			if(istype(A,/mob/living/carbon) || istype(A,/mob/living/simple_animal))
 				var/mob/living/M=A
@@ -345,13 +357,19 @@
 			if(UnarmedAttack(victim,Adjacent(victim)))
 				M.nutrition-=5
 				nutrition+=5
+				emote("me",MESSAGE_SEE,"chomps on \the [target]")
 				return TRUE
 	else if(istype(target,/obj/structure/flora))
 		if(prob(20))
 			qdel(target)
 		nutrition+=5
+		emote("me",MESSAGE_SEE,"nibbles at \the [target]")
+	else if (istype(target,/turf))
+		nutrition+=1
+		emote("me",MESSAGE_SEE,"nibbles at \the [target]")
 	else if(istype(target,/obj/item/weapon/reagent_containers/food/snacks))
 		var/obj/item/weapon/reagent_containers/food/snacks/F=target
+		emote("me",MESSAGE_SEE,"take a bite out of \the [F]")
 		F.consume(src)
 	return TRUE
 
