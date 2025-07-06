@@ -1,24 +1,21 @@
 //things that try to kill you.
 var/list/junglemobs_hostile=list(
-	/mob/living/simple_animal/hostile/giant_spider/jungle,
-	/mob/living/simple_animal/hostile/bear/dinosaur, //duplicated entries for more commonality.
-	/mob/living/simple_animal/hostile/bear/dinosaur,
-	/mob/living/simple_animal/hostile/bear/panther,
-	/mob/living/simple_animal/hostile/bear/panther,
-	/mob/living/simple_animal/hostile/bear/brownbear/jungle,
+	/mob/living/complex_animal/dinosaur,
+	/mob/living/complex_animal/panther,
+	/mob/living/complex_animal/bear,
 )
 
 
 //things that won't attack you
 var/list/junglemobs_passive=list(
-/mob/living/simple_animal/hostile/lizard/frog,
-/mob/living/simple_animal/hostile/lizard/frog/poison,
+/mob/living/complex_animal/frog,
+/mob/living/complex_animal/frog/poison,
 /mob/living/simple_animal/parrot/jungle,
 /mob/living/carbon/monkey,
 )
 //they don't kill you, but also are less frequent. capy bappies are here because the pacify aura is quite strong and funny. so we limit that, because we HATE fun.
 var/list/junglemobs_passive_rare=list(
-/mob/living/simple_animal/capybara/jungle,
+/mob/living/complex_animal/capybara_wild,
 )
 
 //any wildlife, be it fren-shaped or not.

@@ -175,6 +175,10 @@
 			return FALSE
 		if(SA.pacify_aura)
 			return FALSE
+	if(istype(A,/mob/living/complex_animal))
+		var/mob/living/complex_animal/CA=A
+		if(CA.pacify_aura)
+			return FALSE
 	return !loneliness_affected(A)
 
 /mob/living/simple_animal/hostile/proc/PickTarget(var/list/Targets)//Step 3, pick amongst the possible, attackable targets
@@ -232,7 +236,10 @@
 			var/mob/living/simple_animal/SA = L
 			if (SA.pacify_aura)
 				return 0
-
+		if(istype(L,/mob/living/complex_animal))
+			var/mob/living/complex_animal/CA=L
+			if(CA.pacify_aura)
+				return 0		
 		return 1
 	if(isobj(the_target))
 		//if(the_target.type in wanted_objects)

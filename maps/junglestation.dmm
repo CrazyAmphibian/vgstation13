@@ -4770,8 +4770,8 @@
 /turf/unsimulated/floor/snow,
 /area/centcom/holding)
 "bPc" = (
-/obj/machinery/door/mineral/wood{
-	name = "wooden door"
+/obj/machinery/door/mineral/iron{
+	name = "Crypt Preperation"
 	},
 /turf/simulated/floor{
 	dir = 6;
@@ -21473,7 +21473,7 @@
 	},
 /area/vox_trading_post/gardens)
 "iqN" = (
-/obj/machinery/door/mineral/wood{
+/obj/machinery/door/mineral/iron{
 	name = "Crypt"
 	},
 /turf/simulated/floor{
@@ -46966,6 +46966,7 @@
 "suf" = (
 /obj/structure/table/woodentable,
 /obj/item/device/flashlight/lamp/green,
+/mob,
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "suC" = (
@@ -51248,7 +51249,7 @@
 /turf/simulated/floor,
 /area/security/brig)
 "ucr" = (
-/turf/simulated/wall/mineral/wood,
+/turf/simulated/wall,
 /area/surface/jungle/underground/zoned/ghetto_morgue)
 "ucv" = (
 /obj/structure/cable/orange,
@@ -54385,7 +54386,7 @@
 /area/shuttle/ert/centcom)
 "vnq" = (
 /obj/structure/bed/chair/wood/normal,
-/mob/living/simple_animal/capybara/jungle,
+/mob/living/complex_animal/capybara_wild,
 /turf/unsimulated/floor/jungle/sand,
 /area/surface/jungle)
 "vnz" = (
@@ -60062,7 +60063,7 @@
 	},
 /area/engineering/reactor_room)
 "xtQ" = (
-/mob/living/simple_animal/capybara/jungle,
+/mob/living/complex_animal/capybara_wild,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "xuh" = (
