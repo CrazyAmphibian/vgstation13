@@ -73,8 +73,8 @@
 	icon_state=icon_living
 	nutrition-=max_food*food_per_tick
 	
-	if(lasthealth<=health && health<maxhealth)
-		health=min(maxhealth,health+maxhealth*healthregen)
+	if(lasthealth<=health && health<maxHealth)
+		health=min(maxHealth,health+maxHealth*healthregen)
 		nutrition-=max_food*food_per_tick*0.25 //use extra food when regaining health
 	lasthealth=health
 	
