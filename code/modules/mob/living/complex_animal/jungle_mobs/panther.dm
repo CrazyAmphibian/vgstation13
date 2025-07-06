@@ -21,21 +21,21 @@
 		var/i=rand(1,3)
 		switch(i)
 			if(1)
-				return "\the [src] meows"
+				emote("me", MESSAGE_HEAR, "meows")
 			if(2)
-				return "\the [src] purrs"
+				emote("me", MESSAGE_HEAR, "purrs")
 			if(3)
-				return "\the [src] hisses"
+				emote("me", MESSAGE_HEAR, "hisses")
 
 /mob/living/complex_animal/panther/get_attack_msg(var/individual)
 	var/i=rand(1,3)
 	switch(i)
 		if(1)
-			return "\the [src] bites \the [individual]."
+			emote("me", MESSAGE_SEE, "bites \the [individual].")
 		if(2)
-			return "\the [src] swipes at \the [individual]."
+			emote("me", MESSAGE_SEE, "swipes at \the [individual].")
 		if(3)
-			return "\the [src] claws \the [individual]."
+			emote("me", MESSAGE_SEE, "claws \the [individual].")
 
 /mob/living/complex_animal/panther/is_kin(var/mob/target)
 	if(istype(target,/mob/living/simple_animal/cat) && !istype(target,/mob/living/simple_animal/cat/snek))

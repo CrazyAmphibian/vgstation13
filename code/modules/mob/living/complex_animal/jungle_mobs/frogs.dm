@@ -20,9 +20,18 @@
 	return list(/datum/butchering_product/frog_leg)
 
 
+/mob/living/complex_animal/frog/get_idle_sounds()
+	if(prob(20))
+		var/i=rand(1,2)
+		switch(i)
+			if(1)
+				emote("me", MESSAGE_HEAR, "ribbits")
+			if(2)
+				emote("me", MESSAGE_HEAR, "croaks")
+
 /mob/living/complex_animal/frog/poison
 	name="Poison Dart Frog"
-	desc="Ribbit, but toxic."
+	desc="Poisonous, not venomous"
 	icon_state="poison_dart_frog"
 	icon_living = "poison_dart_frog"
 	icon_dead = "poison_dart_frog_dead"

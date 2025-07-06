@@ -94,7 +94,7 @@
 		if(ANIMAL_STATE_IDLE)
 			target=null
 			if(nutrition<max_food*0.5)
-				visible_message("\the [src] looks hungry.")
+				emote("me",MESSAGE_SEE,"looks hungry")
 				behavior_state=ANIMAL_STATE_HUNTING
 			//attempt reproduction only while full
 			if(nutrition >= (max_food- get_offspring_cost()*2) && get_offspring_cost() && prob(33))
@@ -103,7 +103,7 @@
 			var/list/nearby_objects=view(7,src)
 			for(var/mob/living/M in nearby_objects) //check for danger and flee
 				if(determine_isthreat(M))
-					visible_message(get_flee_msg(M))
+					get_flee_msg(M)
 					behavior_state = ANIMAL_STATE_FLEEING
 					target=M
 					distraction=TRUE
@@ -111,15 +111,13 @@
 			if(!distraction)
 				for(var/mob/living/M in nearby_objects) //if not, check for trespassers
 					if(behavior_flags & ANIMAL_BEHAVIOR_TERRITORIAL && get_dist(M,territory)<10 && determine_tresspass(M) )
-						visible_message(get_tesspass_msg(M))
+						get_tesspass_msg(M)
 						behavior_state = ANIMAL_STATE_DEFENDING
 						target=M
 						distraction=TRUE
 						break
 			if(!distraction)
-				var/msg=get_idle_sounds()
-				if(msg)
-					visible_message(msg)
+				get_idle_sounds()
 			if(!distraction) //if none, randomly move the territory
 				walk_to(src,locate(territory.x+rand(-2,2),territory.y+rand(-2,2),territory.z),movespeed)
 				if(prob(33)) //sometimes, randomly mess with the territory to shift where we are
@@ -155,7 +153,7 @@
 				if(!target) //if we can't find a suitable target, move around randomly
 					walk_to(src,locate(x+rand(-15,15),y+rand(-15,15),z),0,movespeed)
 				else
-					visible_message(get_hunting_msg(target))
+					get_hunting_msg(target)
 					aggro_drawn(target,ANIMAL_STATE_HUNTING)
 			else
 				if(get_dist(src,target)>1)
@@ -207,9 +205,9 @@
 					if(istype(A,/mob/living/complex_animal))
 						var/mob/living/complex_animal/CA=A
 						if(can_offspring(CA) && CA.can_offspring(src) && CA.behavior_state==ANIMAL_STATE_MATING && !CA.target) //you better believe we're going to enforce the communicative property.
-							visible_message("\the [src] looks lovingly at \the [CA]")
+							emote("me",MESSAGE_SEE,"looks lovingly at \the [CA]")
 							target=CA
-							CA.visible_message("\the [CA] looks lovingly at \the [src]")
+							CA.emote("me",MESSAGE_SEE,"looks lovingly at \the [src]")
 							CA.target=src
 			else
 				if(istype(target,/mob/living/complex_animal))
@@ -315,7 +313,7 @@
 		return
 	target=victim
 	behavior_state=state
-	visible_message(get_aggro_msg(victim))
+	get_aggro_msg(victim)
 	if( !(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) && !family.len)
 		return
 	if(istype(target,/mob/living))
@@ -434,23 +432,24 @@
 
 
 /mob/living/complex_animal/proc/get_aggro_msg(var/individual)
-	return "\the [src] stares alertly at \the [individual]."
+	emote("me",MESSAGE_SEE,"stares alertly at \the [individual].")
 
 /mob/living/complex_animal/proc/get_flee_msg(var/individual)
-	return "\the [src] stares at \the [individual] and runs away."
+	emote("me",MESSAGE_SEE,"stares at \the [individual] and runs away.")
 
 /mob/living/complex_animal/proc/get_tesspass_msg(var/individual)
-	return "\the [src] stares alertly at \the [individual]."
+	emote("me",MESSAGE_SEE,"stares alertly at \the [individual].")
 
 /mob/living/complex_animal/proc/get_hunting_msg(var/individual)
-	return "\the [src] stares hungrily at \the [individual]."
+	
+	emote("me",MESSAGE_SEE,"stares hungrily at \the [individual].")
 
 /mob/living/complex_animal/proc/get_attack_msg(var/individual)
-	return "\the [src] attacks \the [individual]."
+	emote("me",MESSAGE_SEE,"attacks \the [individual].")
 
 /mob/living/complex_animal/proc/get_idle_sounds()
 	if(prob(20))
-		return "\the [src] vocalizes."
+		emote("me",MESSAGE_HEAR, "vocalizes.")
 
 
 /mob/living/complex_animal/proc/get_offspring_cost()
@@ -502,7 +501,7 @@
 			behavior_state=behavior_state=ANIMAL_STATE_ATTACKING
 			aggro_drawn(H,ANIMAL_STATE_ATTACKING)
 		else
-			visible_message(get_flee_msg(H))
+			get_flee_msg(H)
 			behavior_state = ANIMAL_STATE_FLEEING
 			target=H
 		
@@ -518,7 +517,7 @@
 			behavior_state=behavior_state=ANIMAL_STATE_ATTACKING
 			aggro_drawn(user,ANIMAL_STATE_ATTACKING)
 		else
-			visible_message(get_flee_msg(user))
+			get_flee_msg(user)
 			behavior_state = ANIMAL_STATE_FLEEING
 			target=user
 
@@ -528,7 +527,7 @@
 		behavior_state=behavior_state=ANIMAL_STATE_ATTACKING
 		aggro_drawn(M,ANIMAL_STATE_ATTACKING)
 	else
-		visible_message(get_flee_msg(M))
+		get_flee_msg(M)
 		behavior_state = ANIMAL_STATE_FLEEING
 		target=M
 	return ..()

@@ -40,3 +40,15 @@
 /mob/living/complex_animal/capybara_wild/get_flee_msg(var/individual)
 	..()
 	icon_state="capybara"
+
+
+/mob/living/complex_animal/capybara_wild/get_idle_sounds()
+	return
+
+/mob/living/complex_animal/capybara_wild/get_attack_msg(var/individual)
+	var/i=rand(1,2)
+	switch(i)
+		if(1)
+			emote("me", MESSAGE_SEE, "nibbles \the [individual].")
+		if(2)
+			emote("me", MESSAGE_SEE, "scratches \the [individual].")
