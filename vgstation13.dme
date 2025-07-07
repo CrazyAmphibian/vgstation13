@@ -2083,6 +2083,7 @@
 #include "code\modules\mob\living\complex_animal\jungle_mobs\dino.dm"
 #include "code\modules\mob\living\complex_animal\jungle_mobs\frogs.dm"
 #include "code\modules\mob\living\complex_animal\jungle_mobs\panther.dm"
+#include "code\modules\mob\living\complex_animal\jungle_mobs\parrot.dm"
 #include "code\modules\mob\living\silicon\death.dm"
 #include "code\modules\mob\living\silicon\emote.dm"
 #include "code\modules\mob\living\silicon\examine.dm"

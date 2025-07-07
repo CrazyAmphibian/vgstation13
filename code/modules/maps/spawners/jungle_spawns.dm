@@ -10,7 +10,7 @@ var/list/junglemobs_hostile=list(
 var/list/junglemobs_passive=list(
 /mob/living/complex_animal/frog,
 /mob/living/complex_animal/frog/poison,
-/mob/living/simple_animal/parrot/jungle,
+/mob/living/complex_animal/parrot,
 /mob/living/carbon/monkey,
 )
 //they don't kill you, but also are less frequent. capy bappies are here because the pacify aura is quite strong and funny. so we limit that, because we HATE fun.
