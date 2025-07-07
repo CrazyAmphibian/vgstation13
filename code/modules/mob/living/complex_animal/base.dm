@@ -515,7 +515,7 @@
 
 /mob/living/complex_animal/attack_hand(var/mob/living/carbon/human/H)
 	. = ..()
-	M.delayNextAttack(2 SECONDS)
+	H.delayNextAttack(2 SECONDS)
 	if(H.a_intent==I_HURT)
 		if(behavior_flags & ANIMAL_BEHAVIOR_RETALIATE)
 			behavior_state=behavior_state=ANIMAL_STATE_ATTACKING
@@ -532,7 +532,7 @@
 		H.emote("me",MESSAGE_SEE,"pets \the [src]")
 		var/image/heart = image('icons/mob/animal.dmi',src,"heart-ani2")
 		heart.plane = ABOVE_HUMAN_PLANE
-		flick_overlay(heart, list(M.client), 20)
+		flick_overlay(heart, list(H.client), 20)
 		
 /mob/living/complex_animal/attackby(var/obj/item/I, var/mob/user, var/no_delay = 0, var/originator = null, var/def_zone = null)
 	if(user.a_intent == I_HELP)

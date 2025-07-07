@@ -49,7 +49,7 @@
 	playsound(loc, 'sound/voice/cathiss.ogg', 50, 1)
 	emote("me", EMOTE_AUDIBLE, "hisses.")
 	if(state==ANIMAL_STATE_ATTACKING && istype(victim,/mob))
-		affinity_change(victim,-1.0)
+		modify_affinity(victim,-1.0)
 	..()
 
 /mob/living/complex_animal/panther/trypet(mob/living/carbon/human/M)
