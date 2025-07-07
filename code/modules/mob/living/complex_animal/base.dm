@@ -48,6 +48,7 @@
 	var/movespeed=5 //lower=faster.
 	var/pacify_aura=FALSE
 	var/kin_check_type_path=null //for mobs with many subtypes. set to the parent mob type. leave null if not needed
+	var/petable=FALSE
 	
 	var/icon_living = ""
 	var/icon_dead = ""
@@ -514,6 +515,7 @@
 
 /mob/living/complex_animal/attack_hand(var/mob/living/carbon/human/H)
 	. = ..()
+	M.delayNextAttack(2 SECONDS)
 	if(H.a_intent==I_HURT)
 		if(behavior_flags & ANIMAL_BEHAVIOR_RETALIATE)
 			behavior_state=behavior_state=ANIMAL_STATE_ATTACKING
@@ -522,6 +524,15 @@
 			get_flee_msg(H)
 			behavior_state = ANIMAL_STATE_FLEEING
 			target=H
+	else if(H.a_intent==I_HELP)
+		trypet(H)
+
+/mob/living/complex_animal/proc/trypet(var/mob/living/carbon/human/H)
+	if(petable)
+		H.emote("me",MESSAGE_SEE,"pets \the [src]")
+		var/image/heart = image('icons/mob/animal.dmi',src,"heart-ani2")
+		heart.plane = ABOVE_HUMAN_PLANE
+		flick_overlay(heart, list(M.client), 20)
 		
 /mob/living/complex_animal/attackby(var/obj/item/I, var/mob/user, var/no_delay = 0, var/originator = null, var/def_zone = null)
 	if(user.a_intent == I_HELP)

@@ -14,6 +14,7 @@
 	pacify_aura = TRUE
 	base_damage=5
 	damage_variance=2
+	petable=TRUE
 
 
 /mob/living/complex_animal/capybara_wild/Life()
@@ -56,3 +57,8 @@
 			emote("me", MESSAGE_SEE, "nibbles \the [individual].")
 		if(2)
 			emote("me", MESSAGE_SEE, "scratches \the [individual].")
+
+
+/mob/living/complex_animal/capybara_wild/trypet(mob/living/carbon/human/M)
+	..()
+	emote("me", MESSAGE_SEE, "closes its eyes for a moment and looks content")

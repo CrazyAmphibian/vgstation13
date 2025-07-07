@@ -15,6 +15,7 @@
 	behavior_flags = ANIMAL_BEHAVIOR_AVOID_PRED
 	movespeed=7
 	kin_check_type_path=/mob/living/complex_animal/frog
+	petable=TRUE
 
 /mob/living/complex_animal/frog/get_butchering_products()
 	return list(/datum/butchering_product/frog_leg)
@@ -28,6 +29,13 @@
 				emote("me", MESSAGE_HEAR, "ribbits")
 			if(2)
 				emote("me", MESSAGE_HEAR, "croaks")
+
+
+/mob/living/complex_animal/frog/trypet(mob/living/carbon/human/M)
+	..()
+	emote("me", EMOTE_AUDIBLE, "croaks.")
+	playsound(loc, 'sound/voice/frogcroak.ogg', 50, 1)
+
 
 /mob/living/complex_animal/frog/poison
 	name="Poison Dart Frog"

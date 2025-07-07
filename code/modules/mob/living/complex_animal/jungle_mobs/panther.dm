@@ -14,6 +14,8 @@
 	damage_variance = 8
 	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_TERRITORIAL | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	movespeed=2
+	petable=TRUE
+	var/list/mob/affinity_list=list() // stores people we like.
 
 
 /mob/living/complex_animal/panther/get_idle_sounds()
@@ -41,3 +43,42 @@
 	if(istype(target,/mob/living/simple_animal/cat) && !istype(target,/mob/living/simple_animal/cat/snek))
 		return TRUE
 	return ..()
+
+
+/mob/living/complex_animal/proc/aggro_drawn(var/victim,var/state=ANIMAL_STATE_ATTACKING)
+	playsound(loc, 'sound/voice/cathiss.ogg', 50, 1)
+	emote("me", EMOTE_AUDIBLE, "hisses.")
+	if(state==ANIMAL_STATE_ATTACKING && istype(victim,/mob))
+		affinity_change(victim,-1.0)
+	..()
+
+/mob/living/complex_animal/panther/trypet(mob/living/carbon/human/M)
+	..()
+	emote("me", MESSAGE_SEE, "purrs")
+	playsound(loc, 'sound/voice/catpurr.ogg', 50, 1)
+	modify_affinity(M,0.5)
+
+/mob/living/complex_animal/panther/tryeat(var/victim)
+	if(istype(target,/obj/item/weapon/reagent_containers/food/snacks))
+		var/obj/item/weapon/reagent_containers/food/snacks/F=target
+		if(F.fingerprintslast)
+			modify_affinity(get_mob_by_key(F.fingerprintslast),4.5)
+	..()
+
+//you can tame the kitty :)
+/mob/living/complex_animal/panther/proc/modify_affinity(var/mob/M,var/affinity_change)
+	if(!M)
+		return
+	if(!affinity_list[M])
+		affinity_list[M]=0
+	affinity_list[M]+=affinity_change
+	var/aff=affinity_list[M]
+	if(modifies_relation)
+		if(aff>10 && !(M in family) )
+			to_chat(M,"<span class='notice'>\the [src] looks like it warmed up to you!</span>")
+			family+=M
+		if(aff<0 && (M in family))
+			to_chat(M,"<span class='notice'>\the [src] looks at you with contempt.</span>")
+			family-=M
+
+
