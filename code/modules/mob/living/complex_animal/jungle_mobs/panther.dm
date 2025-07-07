@@ -45,7 +45,7 @@
 	return ..()
 
 
-/mob/living/complex_animal/proc/aggro_drawn(var/victim,var/state=ANIMAL_STATE_ATTACKING)
+/mob/living/complex_animal/panther/aggro_drawn(var/victim,var/state=ANIMAL_STATE_ATTACKING)
 	playsound(loc, 'sound/voice/cathiss.ogg', 50, 1)
 	emote("me", EMOTE_AUDIBLE, "hisses.")
 	if(state==ANIMAL_STATE_ATTACKING && istype(victim,/mob))
@@ -73,12 +73,11 @@
 		affinity_list[M]=0
 	affinity_list[M]+=affinity_change
 	var/aff=affinity_list[M]
-	if(modifies_relation)
-		if(aff>10 && !(M in family) )
-			to_chat(M,"<span class='notice'>\the [src] looks like it warmed up to you!</span>")
-			family+=M
-		if(aff<0 && (M in family))
-			to_chat(M,"<span class='notice'>\the [src] looks at you with contempt.</span>")
-			family-=M
+	if(aff>10 && !(M in family) )
+		to_chat(M,"<span class='notice'>\the [src] looks like it warmed up to you!</span>")
+		family+=M
+	if(aff<0 && (M in family))
+		to_chat(M,"<span class='notice'>\the [src] looks at you with contempt.</span>")
+		family-=M
 
 
