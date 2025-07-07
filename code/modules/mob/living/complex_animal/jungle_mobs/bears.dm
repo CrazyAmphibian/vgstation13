@@ -130,5 +130,5 @@
 	damage_variance=15
 	maxHealth=100
 	food_per_tick=0.005
-	healthregen=.015
+	healthregen=0.015
 	

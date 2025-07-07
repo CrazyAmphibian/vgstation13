@@ -714,6 +714,15 @@
 	dir = 1
 	},
 /area/engineering/supermatter_room)
+"anB" = (
+/obj/machinery/door_control{
+	id_tag = "ilil_vault_spiderlab";
+	name = "cargo dock shutters";
+	req_access_txt = "3";
+	pixel_x = -26
+	},
+/turf/simulated/floor,
+/area/surface/jungle)
 "anD" = (
 /obj/machinery/r_n_d/fabricator/circuit_imprinter,
 /turf/simulated/floor{
@@ -3146,8 +3155,11 @@
 	},
 /area/security/prison)
 "bjd" = (
-/obj/structure/closet/syndicate/resources,
-/turf/simulated/floor,
+/obj/structure/table,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/surface/jungle)
 "bje" = (
 /turf/unsimulated/floor/jungle/path,
@@ -3790,8 +3802,8 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "bwb" = (
-/obj/effect/landmark/corpse/scientist,
-/turf/simulated/floor,
+/obj/item/weapon/gun/projectile/mosin,
+/turf/simulated/floor/engine,
 /area/surface/jungle)
 "bwc" = (
 /obj/structure/closet/crate/secure/large/reinforced/shard/crystal,
@@ -4779,6 +4791,13 @@
 	icon_state = "dark"
 	},
 /area/surface/jungle/underground/zoned/ghetto_morgue)
+"bPt" = (
+/obj/structure/table/woodentable,
+/obj/structure/hanging_lantern{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/bedrock,
+/area/surface/jungle/underground)
 "bPO" = (
 /obj/item/device/assembly/signaler{
 	pixel_y = 8
@@ -6060,8 +6079,8 @@
 /turf/simulated/floor,
 /area/research_outpost/hallway)
 "cnU" = (
-/mob/living/complex_animal/bear/panda,
-/turf/simulated/floor/shuttle,
+/mob/living/complex_animal/bear,
+/turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "coc" = (
 /obj/structure/bed/chair/comfy/teal,
@@ -6412,8 +6431,11 @@
 /turf/simulated/wall,
 /area/supply/office)
 "ctP" = (
-/obj/effect/landmark/corpse,
-/turf/simulated/floor/plating,
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/effect/landmark/corpse/russian,
+/turf/simulated/floor,
 /area/surface/jungle)
 "cuy" = (
 /obj/machinery/door/poddoor{
@@ -8581,11 +8603,9 @@
 	},
 /area/crew_quarters/captain)
 "dli" = (
-/obj/structure/table,
-/obj/machinery/microwave{
-	pixel_x = -3;
-	pixel_y = 6
-	},
+/obj/structure/bed/chair,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/item/ammo_casing/c9mm,
 /turf/simulated/floor,
 /area/surface/jungle)
 "dlj" = (
@@ -9758,9 +9778,16 @@
 	},
 /area/centcom/specops)
 "dJJ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/outdoor_bar)
+/obj/structure/table,
+/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka,
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = 10
+	},
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -8
+	},
+/turf/simulated/floor,
+/area/surface/jungle)
 "dKa" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced,
@@ -11142,8 +11169,8 @@
 /turf/simulated/floor/plating,
 /area/surface/jungle/underground/zoned/ghettomining)
 "ejx" = (
-/obj/effect/landmark/corpse/russian/ranged,
-/turf/simulated/floor/engine,
+/mob/living/complex_animal/bear/panda,
+/turf/simulated/floor/shuttle,
 /area/surface/jungle)
 "ejD" = (
 /obj/structure/bed/chair,
@@ -12207,6 +12234,10 @@
 	},
 /turf/simulated/wall,
 /area/supply/lobby)
+"eEx" = (
+/obj/item/weapon/gun/projectile/russian/empty,
+/turf/simulated/floor/engine,
+/area/surface/jungle)
 "eEB" = (
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -13545,6 +13576,10 @@
 	icon_state = "carpetsymbol"
 	},
 /area/centcom/living)
+"fjk" = (
+/obj/machinery/door/airlock/hatch,
+/turf/space,
+/area/surface/jungle)
 "fjo" = (
 /obj/structure/grille/window_spawner/reinforced,
 /turf/simulated/floor/plating,
@@ -14433,12 +14468,22 @@
 	},
 /area/supply/qm)
 "fBw" = (
-/mob/living/simple_animal/hostile/giant_spider{
-	faction = "jungle"
+/obj/structure/table,
+/obj/item/weapon/reagent_containers/glass/beaker{
+	pixel_y = 12
 	},
-/obj/structure/bed/chair{
-	dir = 8
+/obj/item/weapon/reagent_containers/glass/beaker/vial/mystery,
+/obj/item/weapon/reagent_containers/glass/beaker/vial/mystery{
+	pixel_x = 8
 	},
+/obj/item/weapon/reagent_containers/glass/beaker{
+	pixel_y = 3;
+	pixel_x = -6
+	},
+/obj/structure/sign/chemtable{
+	pixel_y = -30
+	},
+/obj/machinery/light,
 /turf/simulated/floor,
 /area/surface/jungle)
 "fBx" = (
@@ -15248,6 +15293,9 @@
 /obj/structure/table/woodentable,
 /obj/item/weapon/kitchen/utensil/knife/large/butch,
 /obj/item/weapon/kitchen/utensil/knife/large,
+/obj/structure/hanging_lantern/dim{
+	dir = 1
+	},
 /turf/simulated/floor/wood,
 /area/surface/jungle)
 "fSB" = (
@@ -17401,8 +17449,8 @@
 	},
 /area/centcom/test)
 "gKd" = (
-/mob/living/complex_animal/bear,
-/turf/simulated/floor/shuttle,
+/obj/structure/bed/chair,
+/turf/simulated/floor,
 /area/surface/jungle)
 "gKl" = (
 /obj/structure/hanging_lantern/dim{
@@ -17655,18 +17703,15 @@
 /turf/simulated/floor/wood,
 /area/library)
 "gPg" = (
-/obj/structure/closet/l3closet/virology,
-/obj/machinery/light/small{
-	dir = 4
+/obj/structure/sign/securearea{
+	name = "DANGER: SPIDERS";
+	desc = "A warning sign which reads 'DANGER:SPIDERS'.";
+	icon_state = "fauna1";
+	pixel_y = 32
 	},
-/obj/machinery/door_control{
-	id_tag = "vault_spiders";
-	name = "emergency lockdown";
-	pixel_y = -1;
-	req_access_txt = "3";
-	pixel_x = 28
-	},
-/turf/simulated/floor/engine,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/item/ammo_casing/c9mm,
+/turf/simulated/floor,
 /area/surface/jungle)
 "gPv" = (
 /obj/structure/grille/window_spawner/reinforced,
@@ -17954,11 +17999,10 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/dorms_patio)
 "gUP" = (
-/mob/living/complex_animal/bear,
+/obj/structure/closet,
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	dir = 6;
+	icon_state = "dark"
 	},
 /area/surface/jungle)
 "gUQ" = (
@@ -18888,14 +18932,10 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "hoM" = (
-/obj/structure/sign/securearea{
-	pixel_y = 32;
-	name = "DANGER: SPIDERS";
-	desc = "A warning sign which reads 'DANGER:SPIDERS'.";
-	icon_state = "fauna1"
+/obj/structure/hanging_lantern/dim{
+	dir = 4
 	},
-/obj/structure/closet/l3closet/scientist,
-/turf/simulated/floor,
+/turf/simulated/floor/wood,
 /area/surface/jungle)
 "hoS" = (
 /obj/structure/grille/window_spawner/reinforced/tinted,
@@ -19141,11 +19181,9 @@
 	},
 /area/security/perma)
 "hul" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 5
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/outdoor_bar)
+/mob/living/complex_animal/bear/polar,
+/turf/simulated/floor/plating,
+/area/surface/jungle)
 "hus" = (
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
 /turf/simulated/floor{
@@ -20123,11 +20161,10 @@
 	},
 /area/crew_quarters/kitchen)
 "hPe" = (
-/mob/living/simple_animal/hostile/giant_spider{
-	faction = "jungle"
-	},
-/obj/machinery/light,
-/turf/simulated/floor,
+/obj/effect/landmark/corpse/russian/ranged,
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/item/weapon/gun/projectile/russian,
+/turf/simulated/floor/engine,
 /area/surface/jungle)
 "hPh" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
@@ -20637,10 +20674,8 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle)
 "hYt" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor,
+/obj/item/ammo_casing/a357,
+/turf/simulated/floor/engine,
 /area/surface/jungle)
 "hYY" = (
 /obj/machinery/atmospherics/pipe/manifold/insulated/hidden/blue{
@@ -20844,6 +20879,12 @@
 	icon_state = "neutralfull"
 	},
 /area/engineering/ce)
+"icO" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/surface/jungle)
 "ida" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -21531,10 +21572,13 @@
 /turf/unsimulated/floor,
 /area/shuttle/striketeam/centcom)
 "irV" = (
-/obj/machinery/light{
-	dir = 8
+/obj/structure/rack,
+/obj/item/ammo_storage/box/c9mm,
+/obj/item/ammo_storage/box/b762x55,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
 	},
-/turf/simulated/floor/engine,
 /area/surface/jungle)
 "itb" = (
 /obj/structure/cable/yellow{
@@ -22078,13 +22122,11 @@
 	},
 /area/centcom/test)
 "iEJ" = (
-/obj/structure/bed,
-/obj/item/weapon/bedsheet/green,
-/obj/machinery/light/small{
-	dir = 1;
-	invisibility = 1
+/mob/living/simple_animal/hostile/giant_spider{
+	faction = "jungle"
 	},
-/turf/simulated/floor/wood,
+/obj/item/ammo_casing/a762x55,
+/turf/simulated/floor,
 /area/surface/jungle)
 "iES" = (
 /obj/structure/table,
@@ -23414,9 +23456,13 @@
 /turf/simulated/floor,
 /area/security/perma)
 "jeN" = (
-/obj/structure/bed,
-/obj/item/weapon/bedsheet/purple/plaid,
-/turf/simulated/floor/wood,
+/obj/structure/table,
+/obj/item/weapon/gun/projectile/luger,
+/obj/item/weapon/gun/projectile/mosin,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/surface/jungle)
 "jeO" = (
 /obj/structure/cable/yellow{
@@ -23671,6 +23717,11 @@
 	icon_state = "carpetside"
 	},
 /area/centcom/test)
+"jiZ" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/item/ammo_casing/a762x55,
+/turf/simulated/floor,
+/area/surface/jungle)
 "jjb" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4
@@ -26003,10 +26054,10 @@
 	name = "AI Integrity Restoration Room"
 	})
 "ket" = (
-/obj/effect/landmark/corpse/surgeon,
-/turf/simulated/floor{
-	icon_state = "freezerfloor"
+/obj/machinery/light{
+	dir = 4
 	},
+/turf/simulated/floor,
 /area/surface/jungle)
 "kex" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -28461,6 +28512,27 @@
 	},
 /turf/unsimulated/floor/snow/asphalt/mine,
 /area/centcom/holding)
+"lhb" = (
+/obj/item/weapon/reagent_containers/food/condiment/chillwax,
+/obj/item/weapon/reagent_containers/food/condiment/chillwax{
+	pixel_x = 7
+	},
+/obj/item/weapon/reagent_containers/food/condiment/chillwax{
+	pixel_x = -7
+	},
+/obj/structure/rack,
+/obj/structure/sign/securearea{
+	name = "DANGER: SPIDERS";
+	desc = "A warning sign which reads 'DANGER:SPIDERS'.";
+	icon_state = "fauna1";
+	pixel_y = 32
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	flickering = 1
+	},
+/turf/simulated/floor/engine,
+/area/surface/jungle)
 "lhj" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -28715,10 +28787,12 @@
 /turf/simulated/floor/plating,
 /area/chapel/main)
 "lmr" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 1
+/mob/living/simple_animal/hostile/giant_spider{
+	faction = "jungle"
 	},
-/turf/simulated/floor,
+/obj/item/weapon/fireaxe,
+/obj/item/ammo_casing/a357,
+/turf/simulated/floor/engine,
 /area/surface/jungle)
 "lmu" = (
 /obj/docking_port/destination/syndicate/north,
@@ -28789,6 +28863,11 @@
 	icon_state = "wood"
 	},
 /area/centcom/living)
+"lnw" = (
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/item/ammo_casing/a357,
+/turf/simulated/floor/engine,
+/area/surface/jungle)
 "lnJ" = (
 /obj/machinery/vending/tool,
 /turf/simulated/floor/wood,
@@ -29762,8 +29841,12 @@
 /turf/unsimulated/floor/jungle/grass/no_flora,
 /area/surface/jungle/zoned/botanty_outside)
 "lGd" = (
-/obj/machinery/door/airlock/hatch,
-/turf/simulated/floor/plating,
+/mob/living/simple_animal/hostile/giant_spider{
+	faction = "jungle";
+	icon_state = "guard_dead";
+	health = 0
+	},
+/turf/simulated/floor,
 /area/surface/jungle)
 "lGo" = (
 /turf/simulated/floor{
@@ -32259,7 +32342,7 @@
 	name = "Toxins"
 	})
 "mCs" = (
-/mob/living/complex_animal/bear,
+/mob/living/complex_animal/bear/panda,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "mCB" = (
@@ -35373,6 +35456,14 @@
 	dir = 6
 	},
 /area/engineering/atmos)
+"nSk" = (
+/mob/living/simple_animal/hostile/giant_spider{
+	faction = "jungle";
+	icon_state = "guard_dead";
+	health = 0
+	},
+/turf/simulated/floor/engine,
+/area/surface/jungle)
 "nSr" = (
 /turf/simulated/floor{
 	icon_state = "whitepurple"
@@ -35827,6 +35918,11 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/landing)
+"oaH" = (
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/item/ammo_casing/a762x55,
+/turf/simulated/floor,
+/area/surface/jungle)
 "oaR" = (
 /obj/structure/bed/chair/wood/pew/mid{
 	name = "courtroom observation";
@@ -36036,6 +36132,17 @@
 	},
 /turf/simulated/floor/plating,
 /area/mine/explored)
+"oeU" = (
+/obj/machinery/door/airlock/security{
+	name = "Armory";
+	icon_state = "door_open";
+	density = 0
+	},
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
+/area/surface/jungle)
 "oeY" = (
 /obj/structure/table,
 /obj/item/tool/hemostat{
@@ -36318,8 +36425,12 @@
 	},
 /area/centcom/control)
 "olm" = (
-/mob/living/complex_animal/bear/polar,
-/turf/simulated/floor/plating,
+/mob/living/complex_animal/bear,
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "vault";
+	tag = "icon-vault (NORTHEAST)"
+	},
 /area/surface/jungle)
 "olu" = (
 /obj/structure/grille/window_spawner/reinforced,
@@ -37055,6 +37166,17 @@
 	icon_state = "white"
 	},
 /area/research_outpost/med)
+"oBh" = (
+/obj/machinery/door_control{
+	id_tag = "vault_spiders";
+	name = "emergency lockdown";
+	pixel_y = -1;
+	req_access_txt = "3";
+	pixel_x = 28
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/simulated/floor,
+/area/surface/jungle)
 "oBm" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated/floor/plating/vox,
@@ -37885,8 +38007,9 @@
 	},
 /area/security/interrogation)
 "oVl" = (
-/obj/structure/closet/l3closet/scientist,
-/turf/simulated/floor,
+/obj/item/ammo_casing/a357,
+/obj/item/ammo_casing/a357,
+/turf/simulated/floor/engine,
 /area/surface/jungle)
 "oVB" = (
 /obj/structure/table/woodentable,
@@ -38002,10 +38125,8 @@
 	},
 /area/centcom/control)
 "oXL" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Spider Pen"
-	},
-/turf/simulated/floor/engine,
+/obj/item/ammo_casing/a762x55,
+/turf/simulated/floor,
 /area/surface/jungle)
 "oXM" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -39771,6 +39892,10 @@
 	icon_state = "whitepurple"
 	},
 /area/science/robotics)
+"pIw" = (
+/turf/simulated/wall/r_wall,
+/turf/simulated/wall/r_wall,
+/area/surface/jungle)
 "pIx" = (
 /obj/machinery/navbeacon{
 	codes_txt = "delivery;dir=2";
@@ -40376,6 +40501,10 @@
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
+"pTf" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/simulated/floor/engine,
+/area/surface/jungle)
 "pTs" = (
 /obj/machinery/computer/security/mining,
 /turf/simulated/floor{
@@ -40886,8 +41015,13 @@
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/vault)
 "qeP" = (
-/obj/machinery/light/small,
-/turf/simulated/floor/wood,
+/obj/structure/rack,
+/obj/item/ammo_storage/box/b762x55,
+/obj/item/ammo_storage/box/c762x38r,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/surface/jungle)
 "qeT" = (
 /obj/structure/cable/orange{
@@ -41338,10 +41472,49 @@
 /turf/simulated/floor/shuttle/plating,
 /area/centcom/evac)
 "qmh" = (
-/obj/machinery/light/small{
-	dir = 4
+/obj/structure/closet/crate/freezer,
+/obj/item/weapon/reagent_containers/food/snacks/meat/spidermeat{
+	pixel_x = 3;
+	pixel_y = -3
 	},
-/turf/unsimulated/floor/jungle/grass,
+/obj/item/weapon/reagent_containers/food/snacks/meat/spidermeat{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/item/weapon/reagent_containers/food/snacks/meat/spidermeat{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/item/weapon/reagent_containers/food/snacks/meat/spidermeat{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/item/weapon/reagent_containers/food/snacks/meat/spidermeat{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/item/weapon/reagent_containers/food/snacks/spiderpoisongland{
+	pixel_y = 6
+	},
+/obj/item/weapon/reagent_containers/food/snacks/spiderpoisongland{
+	pixel_y = 6
+	},
+/obj/item/weapon/reagent_containers/food/snacks/spiderpoisongland{
+	pixel_y = 6
+	},
+/obj/item/weapon/reagent_containers/food/snacks/spiderpoisongland{
+	pixel_y = 6
+	},
+/obj/item/weapon/reagent_containers/food/snacks/spiderpoisongland{
+	pixel_y = 6
+	},
+/obj/item/weapon/reagent_containers/food/snacks/spiderpoisongland{
+	pixel_y = 6
+	},
+/obj/item/weapon/reagent_containers/food/snacks/spiderpoisongland{
+	pixel_y = 6
+	},
+/turf/simulated/floor,
 /area/surface/jungle)
 "qml" = (
 /turf/simulated/floor{
@@ -43991,23 +44164,8 @@
 	},
 /area/science/xenobiology)
 "roR" = (
-/obj/structure/table,
-/obj/item/weapon/reagent_containers/glass/beaker{
-	pixel_y = 12
-	},
-/obj/item/weapon/reagent_containers/glass/beaker/vial/mystery,
-/obj/item/weapon/reagent_containers/glass/beaker/vial/mystery{
-	pixel_y = 8;
-	pixel_x = 8
-	},
-/obj/item/weapon/reagent_containers/glass/beaker{
-	pixel_y = 1;
-	pixel_x = -7
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor,
+/obj/structure/closet/l3closet/scientist,
+/turf/simulated/floor/engine,
 /area/surface/jungle)
 "rpF" = (
 /obj/structure/cable/yellow{
@@ -45377,9 +45535,11 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "rOF" = (
-/obj/structure/bed,
-/obj/item/weapon/bedsheet/yellow/plaid,
-/turf/simulated/floor/wood,
+/obj/machinery/door/poddoor/shutters{
+	dir = 2;
+	id_tag = "ilil_vault_spiderlab"
+	},
+/turf/simulated/floor,
 /area/surface/jungle)
 "rOJ" = (
 /obj/structure/cable/yellow{
@@ -45716,6 +45876,11 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/aifenced)
+"rTZ" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/item/ammo_casing/c9mm,
+/turf/simulated/floor,
+/area/surface/jungle)
 "rUh" = (
 /obj/machinery/door/window{
 	name = "Robotics Desk";
@@ -46939,7 +47104,6 @@
 "suf" = (
 /obj/structure/table/woodentable,
 /obj/item/device/flashlight/lamp/green,
-/mob,
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "suC" = (
@@ -47138,12 +47302,8 @@
 	},
 /area/vox_trading_post/gardens)
 "szV" = (
-/obj/structure/table,
-/obj/item/weapon/storage/box/donkpockets{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/turf/simulated/floor,
+/mob/living/complex_animal/bear,
+/turf/simulated/floor/shuttle,
 /area/surface/jungle)
 "szW" = (
 /obj/structure/cable/yellow{
@@ -48205,11 +48365,9 @@
 	},
 /area/centcom/test)
 "sUX" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/outdoor_bar)
+/obj/effect/landmark/corpse,
+/turf/simulated/floor/plating,
+/area/surface/jungle)
 "sVi" = (
 /obj/effect/decal/warning_stripes{
 	icon_state = "bot"
@@ -48375,15 +48533,9 @@
 	},
 /area/centcom/ert)
 "sXJ" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/obj/structure/sign/securearea{
-	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
-	name = "KEEP CLEAR: DOCKING AREA";
-	icon_state = "shuttle2"
-	},
-/turf/unsimulated/floor/jungle/concrete,
+/obj/machinery/portable_atmospherics/hydroponics/soil,
+/obj/item/weapon/reagent_containers/glass/bucket,
+/turf/unsimulated/floor/jungle/dirt,
 /area/surface/jungle)
 "sXU" = (
 /obj/structure/table/plastic,
@@ -48608,15 +48760,13 @@
 /turf/simulated/floor/wood,
 /area/library)
 "tcp" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Spider Pen"
+/obj/structure/fence/corner,
+/obj/structure/sign/securearea{
+	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
+	name = "KEEP CLEAR: DOCKING AREA";
+	icon_state = "shuttle2"
 	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 2;
-	id_tag = "vault_spiders";
-	name = "Emergency Lockdown"
-	},
-/turf/simulated/floor/engine,
+/turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle)
 "tct" = (
 /obj/docking_port/destination/syndicate/miningoutpost,
@@ -49713,6 +49863,10 @@
 "ttR" = (
 /turf/simulated/wall,
 /area/research_outpost/med)
+"tuG" = (
+/obj/structure/closet/crate/chest,
+/turf/simulated/floor,
+/area/surface/jungle)
 "tuV" = (
 /obj/machinery/atmospherics/pipe/manifold/insulated/hidden/blue{
 	dir = 1
@@ -50659,6 +50813,10 @@
 	icon_state = "showroomfloor"
 	},
 /area/crew_quarters/kitchen)
+"tNb" = (
+/mob/living/complex_animal/bear/polar,
+/turf/simulated/floor/shuttle,
+/area/surface/jungle)
 "tNm" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -51142,6 +51300,13 @@
 	icon_state = "showroomfloor"
 	},
 /area/vox_trading_post/dorms)
+"tYe" = (
+/obj/effect/landmark/corpse/surgeon,
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/simulated/floor{
+	icon_state = "freezerfloor"
+	},
+/area/surface/jungle)
 "tYD" = (
 /obj/machinery/door/airlock/glass_research{
 	name = "Toxins Laboratory";
@@ -51624,8 +51789,20 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "ukV" = (
-/mob/living/complex_animal/bear/panda,
-/turf/unsimulated/floor/jungle/grass,
+/obj/machinery/door/airlock/highsecurity{
+	name = "Spider Pen";
+	density = 0;
+	icon_state = "door_open"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 2;
+	id_tag = "vault_spiders";
+	name = "Emergency Lockdown";
+	cut_open = 1;
+	density = 0;
+	icon_state = "shutter3"
+	},
+/turf/simulated/floor/engine,
 /area/surface/jungle)
 "ukZ" = (
 /obj/machinery/door/airlock/glass_mining{
@@ -51657,6 +51834,13 @@
 	icon_state = "whiteblue"
 	},
 /area/medical/paramedics)
+"ult" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/effect/landmark/corpse/russian/ranged,
+/turf/simulated/floor,
+/area/surface/jungle)
 "ulu" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
@@ -53031,11 +53215,10 @@
 	},
 /area/syndicate_mothership)
 "uPE" = (
-/obj/structure/table/holotable/wood,
-/obj/machinery/light/small{
+/obj/structure/bed/chair{
 	dir = 1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor,
 /area/surface/jungle)
 "uPR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -53489,6 +53672,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor,
 /area/supply/miningdock)
+"uYF" = (
+/obj/structure/hanging_lantern/dim{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "uYK" = (
 /obj/machinery/telecomms/server/presets/command,
 /turf/simulated/floor/server,
@@ -53843,18 +54032,12 @@
 	},
 /area/tdome/tdomeadmin)
 "vel" = (
-/obj/structure/table,
-/obj/item/weapon/reagent_containers/food/snacks/meat/spidermeat,
-/obj/item/weapon/reagent_containers/food/snacks/meat/spidermeat{
-	pixel_y = 6;
-	pixel_x = 5
-	},
-/obj/item/weapon/reagent_containers/food/snacks/spiderpoisongland{
-	pixel_y = 6;
-	pixel_x = -5
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor{
-	icon_state = "freezerfloor"
+	dir = 6;
+	icon_state = "dark"
 	},
 /area/surface/jungle)
 "veq" = (
@@ -53927,7 +54110,10 @@
 /turf/simulated/floor/plating/airless,
 /area/centcom/evac)
 "vgr" = (
-/obj/effect/landmark/corpse/russian,
+/obj/structure/closet/crate{
+	icon_state = "crateopen";
+	opened = 1
+	},
 /turf/simulated/floor,
 /area/surface/jungle)
 "vgw" = (
@@ -54085,20 +54271,8 @@
 	},
 /area/tdome)
 "vij" = (
-/obj/item/weapon/reagent_containers/food/condiment/chillwax,
-/obj/item/weapon/reagent_containers/food/condiment/chillwax{
-	pixel_x = 7
-	},
-/obj/item/weapon/reagent_containers/food/condiment/chillwax{
-	pixel_x = -7
-	},
-/obj/structure/rack,
-/obj/structure/sign/securearea{
-	name = "DANGER: SPIDERS";
-	desc = "A warning sign which reads 'DANGER:SPIDERS'.";
-	icon_state = "fauna1";
-	pixel_x = 32
-	},
+/obj/machinery/light,
+/obj/item/ammo_casing/a357,
 /turf/simulated/floor/engine,
 /area/surface/jungle)
 "vik" = (
@@ -54624,13 +54798,10 @@
 /turf/simulated/floor,
 /area/crew_quarters/theatre)
 "vrk" = (
-/obj/structure/bed,
-/obj/item/weapon/bedsheet/blue/plaid,
-/obj/machinery/light/small{
-	dir = 1;
-	invisibility = 1
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
 	},
-/turf/simulated/floor/wood,
 /area/surface/jungle)
 "vrm" = (
 /obj/structure/cable/yellow{
@@ -55616,9 +55787,8 @@
 /turf/simulated/floor/engine/vacuum,
 /area/science/test_area)
 "vJI" = (
-/obj/effect/landmark/corpse/scientist,
-/obj/structure/bed/chair/office/dark{
-	dir = 1
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/simulated/floor,
 /area/surface/jungle)
@@ -58191,7 +58361,7 @@
 	},
 /area/science/xenobiology/specimen_6)
 "wKd" = (
-/obj/item/weapon/fireaxe,
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/simulated/floor/engine,
 /area/surface/jungle)
 "wKp" = (
@@ -58522,8 +58692,8 @@
 	},
 /area/centcom/test)
 "wRR" = (
-/obj/machinery/light,
-/turf/simulated/floor,
+/turf/simulated/wall,
+/turf/simulated/wall/r_wall,
 /area/surface/jungle)
 "wRV" = (
 /obj/structure/table/holotable/wood,
@@ -58766,21 +58936,7 @@
 	},
 /area/security/perma)
 "wVT" = (
-/obj/structure/table,
-/obj/item/weapon/reagent_containers/glass/beaker{
-	pixel_y = 12
-	},
-/obj/item/weapon/reagent_containers/glass/beaker/vial/mystery,
-/obj/item/weapon/reagent_containers/glass/beaker/vial/mystery{
-	pixel_x = 8
-	},
-/obj/item/weapon/reagent_containers/glass/beaker{
-	pixel_y = 3;
-	pixel_x = -6
-	},
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor,
 /area/surface/jungle)
 "wWe" = (
@@ -59474,8 +59630,12 @@
 /turf/simulated/floor/wood,
 /area/surface/jungle)
 "xjN" = (
-/mob/living/complex_animal/bear/polar,
-/turf/simulated/floor/shuttle,
+/obj/structure/table/holotable/wood,
+/obj/machinery/light/small{
+	dir = 8;
+	flickering = 1
+	},
+/turf/simulated/floor/wood,
 /area/surface/jungle)
 "xjQ" = (
 /obj/machinery/door/airlock/glass_command{
@@ -60416,10 +60576,11 @@
 	},
 /area/tdome/tdomeadmin)
 "xCU" = (
-/obj/machinery/chem_master,
-/obj/structure/sign/chemtable{
-	pixel_y = 30
+/obj/machinery/light{
+	dir = 4
 	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/item/ammo_casing/c9mm,
 /turf/simulated/floor,
 /area/surface/jungle)
 "xCY" = (
@@ -61449,7 +61610,7 @@
 	icon_state = "1-4"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/outdoor_bar)
+/area/surface/jungle/fenced)
 "xYb" = (
 /turf/simulated/wall/r_wall,
 /area/security/range)
@@ -61464,11 +61625,10 @@
 	},
 /area/centcom/specops)
 "xYq" = (
-/obj/effect/landmark/corpse/russian/ranged,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/engine,
+/obj/effect/landmark/corpse/scientist,
+/obj/structure/bed/chair/office/dark,
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/simulated/floor,
 /area/surface/jungle)
 "xYw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -77337,7 +77497,7 @@ lIK
 aOm
 wra
 wra
-wra
+sXJ
 wra
 uXL
 uXL
@@ -78391,13 +78551,13 @@ lIK
 lIK
 lIK
 aOm
-wra
+sXJ
 wra
 wra
 wra
 uXL
 uXL
-uXL
+uYF
 uXL
 uXL
 uxO
@@ -81913,7 +82073,7 @@ lIK
 oHr
 wAq
 wAq
-wAq
+hoM
 wAq
 wAq
 iZq
@@ -109019,7 +109179,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+cnU
 lIK
 lIK
 lIK
@@ -111441,7 +111601,7 @@ lIK
 lIK
 lIK
 lIK
-ukV
+mCs
 lIK
 lIK
 lIK
@@ -111814,7 +111974,7 @@ lIK
 lIK
 lIK
 lIK
-ukV
+mCs
 lIK
 lIK
 lIK
@@ -112154,7 +112314,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+cnU
 lIK
 lIK
 lIK
@@ -112483,7 +112643,7 @@ bsH
 lIK
 lIK
 lIK
-ukV
+mCs
 lIK
 lIK
 lIK
@@ -112886,7 +113046,7 @@ lIK
 lIK
 lIK
 lIK
-ukV
+mCs
 lIK
 lIK
 lIK
@@ -113900,7 +114060,7 @@ lIK
 lIK
 lIK
 lIK
-ukV
+mCs
 lIK
 lIK
 lIK
@@ -114318,7 +114478,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+cnU
 lIK
 lIK
 lIK
@@ -117097,7 +117257,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+cnU
 lIK
 lIK
 wlz
@@ -118114,7 +118274,7 @@ bsH
 bsH
 lIK
 lIK
-ukV
+mCs
 lIK
 lIK
 lIK
@@ -118161,7 +118321,7 @@ bRe
 jtG
 xbQ
 gab
-gKd
+szV
 gab
 bDn
 jtG
@@ -118513,7 +118673,7 @@ lpV
 jtG
 dxb
 crp
-cnU
+ejx
 gab
 gab
 jtG
@@ -118865,7 +119025,7 @@ bRe
 adi
 gab
 gab
-xjN
+tNb
 gab
 gab
 ydT
@@ -118996,9 +119156,9 @@ rWK
 rWK
 rWK
 wld
-edD
-edD
-edD
+xor
+xor
+xor
 hVX
 fRo
 hVX
@@ -119893,7 +120053,7 @@ uXL
 uXL
 uXL
 tkW
-gUP
+olm
 xgw
 hkY
 xgw
@@ -120249,7 +120409,7 @@ xgw
 xgw
 hkY
 xgw
-ctP
+sUX
 hkY
 tdB
 hkY
@@ -120956,7 +121116,7 @@ uhz
 hkY
 xgw
 tdB
-olm
+hul
 wAq
 jaR
 hkY
@@ -121354,7 +121514,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+cnU
 lIK
 lIK
 lIK
@@ -122006,10 +122166,10 @@ uXL
 uXL
 tkW
 xgw
-ctP
+sUX
 xgw
 hkY
-gUP
+olm
 www
 tdB
 hkY
@@ -122383,7 +122543,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+cnU
 lIK
 lIK
 lIK
@@ -123064,9 +123224,9 @@ uXL
 uXL
 uXL
 tdB
-gUP
+olm
 hkY
-gUP
+olm
 tdB
 lIK
 lIK
@@ -123397,7 +123557,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+cnU
 lIK
 lIK
 lIK
@@ -125167,7 +125327,7 @@ lIK
 lIK
 lIK
 lIK
-ukV
+mCs
 lIK
 lIK
 lIK
@@ -125536,7 +125696,7 @@ lIK
 lIK
 lIK
 lIK
-ukV
+mCs
 lIK
 lIK
 lIK
@@ -125904,7 +126064,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+cnU
 lIK
 lIK
 lIK
@@ -126210,7 +126370,7 @@ bsH
 bsH
 lIK
 lIK
-ukV
+mCs
 lIK
 lIK
 lIK
@@ -127290,7 +127450,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+cnU
 lIK
 lIK
 lIK
@@ -129204,14 +129364,14 @@ ppF
 xMH
 psY
 vhv
-dJJ
-dJJ
-dJJ
-dJJ
-dJJ
-dJJ
-dJJ
-jTz
+mEG
+mEG
+mEG
+mEG
+mEG
+mEG
+mEG
+qtJ
 gnA
 bWM
 fpx
@@ -129556,14 +129716,14 @@ vEs
 xMH
 sCf
 tsV
-fJG
-fJG
-fJG
-fJG
-fJG
-fJG
+tsV
+tsV
+tsV
+tsV
+tsV
+tsV
 xYa
-upa
+maR
 nTf
 xTn
 aCN
@@ -129908,14 +130068,14 @@ hMX
 aWo
 rOD
 rOD
-mQa
-mQa
-mQa
-mQa
-mQa
-hul
-sUX
-upa
+rOD
+rOD
+rOD
+rOD
+rOD
+muY
+psY
+maR
 nTf
 xTn
 aCN
@@ -132199,7 +132359,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+cnU
 lIK
 lIK
 lIK
@@ -132561,7 +132721,7 @@ lIK
 lIK
 lIK
 lIK
-ukV
+mCs
 lIK
 lIK
 lIK
@@ -136440,7 +136600,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+cnU
 lIK
 lIK
 lIK
@@ -139972,7 +140132,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+cnU
 lIK
 lIK
 lIK
@@ -142403,8 +142563,8 @@ bsH
 lIK
 lIK
 lIK
-mCs
-mCs
+cnU
+cnU
 lIK
 lIK
 lIK
@@ -156924,7 +157084,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
@@ -166735,7 +166895,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+xtL
 lIK
 lIK
 lIK
@@ -171638,13 +171798,13 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+uXL
+uXL
+uXL
+uXL
+uXL
+uXL
+uXL
 lIK
 lIK
 lIK
@@ -171990,13 +172150,13 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+uXL
+uXL
+uXL
+uXL
+uXL
+uXL
+uXL
 lIK
 lIK
 lIK
@@ -172336,19 +172496,19 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+oRj
+jZn
+jZn
+jZn
+jZn
+jZn
+bRe
+bRe
+jZn
+jZn
+oRj
+uXL
+uXL
 lIK
 lIK
 lIK
@@ -172681,13 +172841,6 @@ lIK
 lIK
 lIK
 lIK
-oRj
-jZn
-jZn
-owa
-jZn
-jZn
-wBV
 lIK
 lIK
 lIK
@@ -172695,12 +172848,19 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+wlz
+bRe
+bRe
+bRe
+bRe
+bRe
+eyI
+eyI
+bRe
+bRe
+wlz
+uXL
+uXL
 lIK
 lIK
 lIK
@@ -173033,26 +173193,26 @@ lIK
 lIK
 lIK
 lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 wlz
 bRe
 bRe
 bRe
 bRe
 bRe
-pWq
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+bRe
+bRe
+bRe
+bRe
+wlz
+uXL
+uXL
 lIK
 lIK
 lIK
@@ -173385,26 +173545,26 @@ lIK
 lIK
 lIK
 lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 wlz
 bRe
 bRe
 bRe
 bRe
 bRe
-sXJ
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+bRe
+bRe
+bRe
+bRe
+wlz
+uXL
+uXL
 lIK
 lIK
 lIK
@@ -173737,26 +173897,26 @@ lIK
 lIK
 lIK
 lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 wlz
 bRe
 bRe
 bRe
 bRe
 bRe
+bRe
+bRe
+bRe
+bRe
 wlz
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+uXL
+uXL
 lIK
 lIK
 lIK
@@ -174089,26 +174249,26 @@ lIK
 lIK
 lIK
 lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 wlz
 bRe
 bRe
 bRe
 bRe
 bRe
-lpV
+bRe
+bRe
+bRe
+bRe
+wlz
 uXL
 uXL
-uXL
-uXL
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
 lIK
 lIK
 lIK
@@ -174441,32 +174601,32 @@ lIK
 lIK
 lIK
 lIK
-pWq
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+wlz
 bRe
 bRe
 bRe
 bRe
 bRe
-lpV
+wzV
+wzV
+bRe
+bRe
+wlz
 uXL
 uXL
-uXL
-uXL
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+dhZ
+dhZ
+ext
+ext
+ext
+dhZ
 lIK
 lIK
 lIK
@@ -174793,17 +174953,6 @@ lIK
 lIK
 lIK
 lIK
-dFK
-wBV
-bRe
-bRe
-bRe
-wBV
-dFK
-lIK
-uXL
-uXL
-uXL
 lIK
 lIK
 lIK
@@ -174811,14 +174960,25 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+tcp
+jZn
+jZn
+dhZ
+ext
+dhZ
+rOF
+rOF
+ext
+ext
+dhZ
+fjk
+ext
+dhZ
+flh
+lSL
+wWh
+dkZ
+ext
 lIK
 lIK
 lIK
@@ -175146,31 +175306,31 @@ lIK
 lIK
 lIK
 lIK
-wlz
-bRe
-bRe
-bRe
-wlz
 lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+ext
 qmh
-uXL
-uXL
-uXL
-qmh
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+anB
+xIy
+xIy
+xIy
+xIy
+vJI
+xIy
+xIy
+dhZ
+wWh
+wWh
+tYe
+lRX
+ext
 lIK
 lIK
 lIK
@@ -175498,31 +175658,31 @@ lIK
 lIK
 lIK
 lIK
-wlz
-bRe
-bRe
-bRe
-dhZ
-dhZ
-dhZ
-dhZ
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+ext
+vgr
+xIy
+oRo
+xIy
+rTZ
 lGd
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+oaH
+xIy
+wVT
+edV
+wWh
+oeY
+boD
+iio
+ext
 lIK
 lIK
 lIK
@@ -175850,31 +176010,31 @@ lIK
 lIK
 lIK
 lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+ext
+tuG
+xIy
+xIy
+wVT
+wVT
+icO
+ctP
+xIy
+jiZ
 dhZ
 ext
 ext
 ext
 dhZ
-dli
-fsA
-szV
-xIy
-xIy
-xIy
 dhZ
-wRV
-wAq
-wAq
-wAq
-bjJ
-dhZ
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
 lIK
 lIK
 lIK
@@ -176202,30 +176362,30 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-wdW
-bwb
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+ext
+vgr
+ket
+xIy
+jiZ
+dli
+dJJ
+fsA
+uPE
 xIy
 ext
+blg
 xIy
-mma
-fBw
-xIy
-xIy
-vgr
+cwY
 dhZ
-uPE
-wAq
-wAq
-wAq
-qeP
-dhZ
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
 lIK
 lIK
 lIK
@@ -176554,30 +176714,30 @@ lIK
 lIK
 lIK
 lIK
+lIK
+lIK
+lIK
+tdB
+tdB
+tdB
+tdB
+tdB
+tdB
+tdB
+tdB
+tdB
+xIy
+wVT
+gKd
+fsA
+fsA
+uPE
+xIy
+iuT
+oRo
+xYq
+fBw
 dhZ
-roR
-lmr
-xIy
-ext
-xIy
-xIy
-xIy
-xIy
-xIy
-xIy
-qvz
-wAq
-wAq
-wAq
-wAq
-jqL
-dhZ
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
 lIK
 lIK
 lIK
@@ -176906,30 +177066,30 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-xCU
+lIK
+lIK
+lIK
+tdB
+lEE
+lEE
+lEE
+hYt
+tdB
+lhb
+bwb
+tdB
+gPg
+lGd
+oaH
+mma
+ult
+oXL
 xIy
-oRo
 ext
+wPI
 xIy
-xIy
-xIy
-xIy
-xIy
-xIy
+wdW
 dhZ
-wRV
-wAq
-wAq
-wAq
-wAq
-dhZ
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
 lIK
 lIK
 lIK
@@ -177258,31 +177418,31 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-blg
-xIy
-xIy
-iuT
-xIy
-vgr
-xIy
-xIy
-xIy
+lIK
+lIK
+lIK
+tdB
+gbU
+hYt
+lmr
+lnw
+ukV
+pTf
 hPe
-dhZ
-dhZ
-dhZ
+ukV
+oBh
+xIy
 iEJ
-wAq
-heH
+xCU
+xIy
+xIy
+xIy
 dhZ
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+dhZ
+dhZ
+dhZ
+dhZ
+dhZ
 lIK
 lIK
 lIK
@@ -177610,31 +177770,31 @@ lIK
 lIK
 lIK
 lIK
+lIK
+lIK
+lIK
+tdB
+lEE
+hYt
+wKd
+oVl
+tdB
+srt
+roR
+tdB
 dhZ
-cwY
-xIy
-xIy
-ext
-xIy
-xIy
-xIy
-xIy
-xIy
-xIy
-bjd
-bjd
 dhZ
+oeU
+dhZ
+dhZ
+qvz
+dhZ
+dhZ
+bjJ
+wRV
 wAq
-wAq
-qeP
+jqL
 dhZ
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
 lIK
 lIK
 lIK
@@ -177962,31 +178122,31 @@ lIK
 lIK
 lIK
 lIK
+lIK
+lIK
+lIK
+tdB
+lEE
+eEx
+mBf
+vij
+wRR
+wRR
+wRR
+wRR
+wRR
+jeN
+vrk
+irV
 dhZ
-wVT
-vJI
-oRo
-ext
-xIy
-xIy
-xIy
-xIy
-xIy
-xIy
-xIy
-xIy
-dhZ
-sap
 wAq
-juT
+wRV
+xjN
+wAq
+wAq
+wAq
+wRV
 dhZ
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
 lIK
 lIK
 lIK
@@ -178314,31 +178474,31 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-wdW
-xIy
-wPI
-ext
-xIy
-oRo
-xIy
-xIy
-xIy
-vgr
-xIy
-xIy
+lIK
+lIK
+lIK
+tdB
+lEE
+upF
+bwb
+lEE
+lEE
+nSk
+lEE
+lEE
+wRR
+jeN
+vrk
+irV
 dhZ
 wAq
 wAq
 wAq
+wAq
+wAq
+wAq
+juT
 dhZ
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
 lIK
 lIK
 lIK
@@ -178666,31 +178826,31 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
+lIK
+lIK
+lIK
+tdB
+lEE
 hYt
-xIy
-xIy
-xIy
-xIy
-xIy
-xIy
+lEE
+lEE
+lEE
+lEE
+lEE
+lEE
 wRR
-dhZ
+bjd
 vrk
-wAq
-cIf
+qeP
 dhZ
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+wAq
+wAq
+wAq
+wAq
+wAq
+wAq
+wAq
+dhZ
 lIK
 lIK
 lIK
@@ -179018,31 +179178,31 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-srt
-mBf
+lIK
+lIK
+lIK
+tdB
 lEE
-oXL
-xIy
-vgr
-xIy
-xIy
-xIy
-xIy
-xIy
-xIy
+lEE
+upF
+lEE
+lEE
+lEE
+lEE
+lEE
+wRR
+bjd
+vel
+gUP
 dhZ
+heH
 wAq
+heH
 wAq
-qeP
+cIf
+wAq
+sap
 dhZ
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
 lIK
 lIK
 lIK
@@ -179370,31 +179530,31 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-gPg
+lIK
+lIK
+lIK
+tdB
 lEE
-vij
+lEE
+lEE
+lEE
+lEE
+upF
+lEE
+lEE
+wRR
 dhZ
-hoM
-oVl
-xIy
-xIy
-oRo
-xIy
-xIy
-xIy
 dhZ
-jeN
-wAq
-rOF
 dhZ
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+dhZ
+dhZ
+dhZ
+dhZ
+dhZ
+dhZ
+dhZ
+dhZ
+dhZ
 lIK
 lIK
 lIK
@@ -179717,29 +179877,29 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-tcp
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-ext
-ext
-edV
-ext
-ext
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+tdB
+lEE
+lEE
+lEE
+lEE
+mHo
+lEE
+lEE
+lEE
+wRR
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -180069,25 +180229,25 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-lEE
-lEE
-irV
-lEE
-lEE
-lEE
-lEE
-lEE
-irV
-lEE
-lEE
-dhZ
-flh
-wWh
-wWh
-wWh
-lSL
-dhZ
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+tdB
+tdB
+tdB
+tdB
+tdB
+tdB
+tdB
+tdB
+tdB
+pIw
+lIK
 lIK
 lIK
 lIK
@@ -180421,25 +180581,25 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-lEE
-lEE
-ejx
-lEE
-lEE
-lEE
-ejx
-lEE
-lEE
-lEE
-upF
-dhZ
-wWh
-ket
-oeY
-wWh
-wWh
-dhZ
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -180773,25 +180933,25 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-lEE
-lEE
-upF
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-dhZ
-wWh
-wWh
-boD
-wWh
-wWh
-dhZ
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -181125,25 +181285,25 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-dhZ
-vel
-lRX
-iio
-lRX
-dkZ
-dhZ
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -181477,25 +181637,25 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-gbU
-lEE
-lEE
-lEE
-lEE
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -181829,19 +181989,19 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-dhZ
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -182181,19 +182341,19 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-dhZ
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -182533,19 +182693,19 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-lEE
-lEE
-upF
-wKd
-lEE
-upF
-lEE
-lEE
-upF
-lEE
-lEE
-dhZ
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -182885,19 +183045,19 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-lEE
-ejx
-lEE
-dhZ
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -183237,19 +183397,19 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-lEE
-lEE
-xYq
-lEE
-lEE
-lEE
-lEE
-lEE
-mHo
-lEE
-lEE
-dhZ
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -183589,19 +183749,19 @@ lIK
 lIK
 lIK
 lIK
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
-dhZ
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -202660,7 +202820,7 @@ rDI
 rDI
 rDI
 rel
-rel
+bPt
 rel
 rDI
 rDI
