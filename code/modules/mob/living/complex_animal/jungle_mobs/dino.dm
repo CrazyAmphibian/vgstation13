@@ -77,7 +77,7 @@
 	for(var/atom/A in out)
 		var/p=out[A]
 		if(istype(A,/mob/living/carbon)) //mobs on the floor shouldn't be eaten as much.
-			var/mob/living/carbon/M
+			var/mob/living/carbon/M = A
 			if(M.resting)
 				p-=4
 	return out

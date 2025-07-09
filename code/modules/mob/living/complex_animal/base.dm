@@ -107,7 +107,7 @@
 				emote("me",MESSAGE_SEE,"looks hungry")
 				behavior_state=ANIMAL_STATE_HUNTING
 			//attempt reproduction only while full
-			if(nutrition >= (max_food- get_offspring_cost()*2) && get_offspring_cost() && prob(33))
+			if(nutrition >= (max_food- get_offspring_cost()*2) && get_offspring_cost() && prob(20))
 				behavior_state=ANIMAL_STATE_MATING
 			var/distraction=FALSE
 			var/list/nearby_objects=view(7,src)
@@ -129,18 +129,23 @@
 			if(!distraction)
 				get_idle_sounds()
 			if(!distraction) //if none, randomly move the territory
-				walk_to(src,locate(territory.x+rand(-2,2),territory.y+rand(-2,2),territory.z),movespeed)
-				if(prob(33)) //sometimes, randomly mess with the territory to shift where we are
-					territory = locate(territory.x+rand(-5,5),territory.y+rand(-5,5),territory.z)
-				if(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) //if we are running as a pack, shift our territory towards another kin's
-					for(var/mob/living/complex_animal/M in nearby_objects)
-						if(is_kin(M) && prob(20))
-							var/traversedir = get_dir(territory,M.territory)
-							for(var/i=0,i<3,i++)
-								var/turf/T=get_step(M.territory,traversedir)
-								if(T)
-									territory =T
-							break
+				if(territory && prob(50))
+					walk_to(src,locate(territory.x+rand(-2,2),territory.y+rand(-2,2),territory.z),0,movespeed)
+					if(prob(33)) //sometimes, randomly mess with the territory to shift where we are
+						territory = locate(territory.x+rand(-5,5),territory.y+rand(-5,5),territory.z)
+					if(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) //if we are running as a pack, shift our territory towards another kin's
+						for(var/mob/living/complex_animal/M in nearby_objects)
+							if(is_kin(M) && prob(20))
+								var/traversedir = get_dir(territory,M.territory)
+								for(var/i=0,i<3,i++)
+									var/turf/T=get_step(M.territory,traversedir)
+									if(T)
+										territory =T
+								break
+				else
+					walk_to(src,locate(x+rand(-2,2),y+rand(-2,2),z),0,movespeed)
+					territory=get_turf(src)
+				
 		if(ANIMAL_STATE_HUNTING)
 			fuckshitup()
 			if(!target || target.z!=z || get_dist(src,target)>20)
@@ -155,7 +160,8 @@
 						highestprio=rank
 					else if(rank==highestprio)
 						pickfrom+=A
-				target=pick(pickfrom)
+				if(pickfrom.len)
+					target=pick(pickfrom)
 				if(highestprio<0 && nutrition>max_food*0.2) //avoid disliked targets, unless we are really desperate for food.
 					target=null
 				if(highestprio<-4 && nutrition>max_food*0.05) //I NEEEEEEEED IIIIIIIIT
@@ -185,6 +191,12 @@
 					walk_to(src,target,0,movespeed)
 				else //attack em!
 					attack(target)
+				if(istype(target,/mob/living/))
+					var/mob/living/L=target
+					if(L.stat==DEAD)
+						target=null
+						behavior_state=ANIMAL_STATE_IDLE
+						walk_to(src,territory,0,movespeed)
 		if(ANIMAL_STATE_ATTACKING)
 			fuckshitup()
 			if(!target || target.z!=src.z || get_dist(src,target)>15)
@@ -196,11 +208,17 @@
 				else //attack em!
 					attack(target)
 				aggro_drawn(target,ANIMAL_STATE_ATTACKING)
+				if(istype(target,/mob/living/))
+				var/mob/living/L=target
+					if(L.stat==DEAD)
+						target=null
+						behavior_state=ANIMAL_STATE_IDLE
 		if(ANIMAL_STATE_FLEEING)
 			fuckshitup()
 			if(!target || target.z!=src.z)
 				target=null
 				behavior_state=ANIMAL_STATE_IDLE
+				walk(src,0)
 			else
 				if(get_dist(src,target)<10)
 					walk_away(src,target,10,movespeed)
@@ -208,6 +226,12 @@
 					walk(src,0)
 					target=null
 					behavior_state=ANIMAL_STATE_IDLE
+				if(istype(target,/mob/living))
+					var/mob/living/L=target
+					if(L.stat==DEAD)
+						walk(src,0)
+						target=null
+						behavior_state=ANIMAL_STATE_IDLE
 		if(ANIMAL_STATE_MATING)
 			if(!target)
 				var/list/nearby_objects=view(7,src)
@@ -265,7 +289,7 @@
 	var/list/nearby_objects=view(7,src)
 	for(var/atom/A in nearby_objects)
 		if(food_flags & ANIMAL_HERBIVORE)
-			if(istype(A,/obj/structure/flora) && !istype(A,/obj/structure/flora/tree))
+			if(istype(A,/obj/structure/flora) && !istype(A,/obj/structure/flora/tree) && !istype(A,/obj/structure/flora/rock))
 				foodsources+=A
 				continue
 			if(istype(A,/turf/unsimulated/floor/jungle/grass))
@@ -395,8 +419,6 @@
 	smash_dirs |= widen_dir(targdir) //otherwise smash towards the target
 	for(var/dir in smash_dirs)
 		var/turf/T = get_step(src, dir)
-		if(istype(T, /turf/simulated/wall) && Adjacent(T))
-			UnarmedAttack(T, Adjacent(T))
 		for(var/atom/A in T)
 			var/static/list/destructible_objects = list(/obj/structure/window,
 				 /obj/structure/closet,
@@ -424,6 +446,8 @@
 
 //only fired when the mob is within our territory, and we have the TERRITORIAL flag
 /mob/living/complex_animal/proc/determine_tresspass(var/mob/trespasser)
+	if(trespasser.stat==DEAD)
+		return FALSE
 	if(is_pacified())
 		return FALSE
 	if(istype(trespasser,/mob/living/simple_animal))
@@ -438,6 +462,8 @@
 
 //only fired when the mob is seen by us, and we have the AVOID_PRED flag
 /mob/living/complex_animal/proc/determine_isthreat(var/mob/individual)
+	if(is_kin(individual))
+		return FALSE
 	if(istype(individual,/mob/living/carbon))
 		return !(behavior_flags & ANIMAL_BEHAVIOR_TERRITORIAL)
 	if(istype(individual,/mob/living/silicon))

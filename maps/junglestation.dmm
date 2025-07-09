@@ -13578,7 +13578,7 @@
 /area/centcom/living)
 "fjk" = (
 /obj/machinery/door/airlock/hatch,
-/turf/space,
+/turf/simulated/floor,
 /area/surface/jungle)
 "fjo" = (
 /obj/structure/grille/window_spawner/reinforced,

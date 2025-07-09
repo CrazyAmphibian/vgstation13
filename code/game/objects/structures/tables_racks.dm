@@ -293,8 +293,8 @@
 	visible_message("<span class='danger'>[user] slices [src] apart!</span>")
 	destroy()
 
-/obj/structure/table/attack_animal(mob/living/simple_animal/user)
-	if(user.environment_smash_flags & SMASH_LIGHT_STRUCTURES)
+/obj/structure/table/attack_animal(var/mob/living/simple_animal/user)
+	if(istype(user,/mob/living/simple_animal) && user.environment_smash_flags & SMASH_LIGHT_STRUCTURES)
 		user.do_attack_animation(src, user)
 		visible_message("<span class='danger'>[user] smashes [src] apart!</span>")
 		destroy()

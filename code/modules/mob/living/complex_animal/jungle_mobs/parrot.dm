@@ -45,7 +45,7 @@
 			walk_to(src,perch,0,movespeed)
 			cur_perch=perch
 	else if(behavior_state==ANIMAL_STATE_SPECIAL)
-		if(loc==cur_perch.loc)
+		if(loc==cur_perch?.loc)
 			icon_state = "parrot_sit"
 		if(prob(20) || !cur_perch)
 			cur_perch=null
@@ -83,4 +83,6 @@
 			if(istype(O,T))
 				candidates+=O
 				break
+	if(!candidates.len)
+		return null
 	return pick(candidates)

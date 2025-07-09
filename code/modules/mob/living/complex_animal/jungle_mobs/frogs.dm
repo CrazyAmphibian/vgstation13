@@ -58,7 +58,7 @@
 		if(istype(M,/mob/living/carbon/human))
 			var/mob/living/carbon/human/H = M
 			if(!H.shoes) //don't tread on him (without footwear).
-				H.reagents.add_reagent(CARPOTOXIN, 10)
+				H.reagents?.add_reagent(CARPOTOXIN, 10)
 		else		
-			M.reagents.add_reagent(CARPOTOXIN, 10)
+			M.reagents?.add_reagent(CARPOTOXIN, 10)
 
