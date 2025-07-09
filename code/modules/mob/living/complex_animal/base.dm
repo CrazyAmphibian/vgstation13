@@ -546,6 +546,9 @@
 		if(behavior_flags & ANIMAL_BEHAVIOR_RETALIATE)
 			behavior_state=behavior_state=ANIMAL_STATE_ATTACKING
 			aggro_drawn(H,ANIMAL_STATE_ATTACKING)
+			H.UnarmedAttack(src,H.Adjacent(src))
+			if(health<=0)
+				death()
 		else
 			get_flee_msg(H)
 			behavior_state = ANIMAL_STATE_FLEEING
@@ -568,6 +571,8 @@
 		..()
 		user.visible_message("<span class='danger'>[user] hits \the [src] with \the [I]</span>")
 		to_chat(user, "<span class='danger'>You hit \the [src] with \the [I]</span>")
+		if(health<=0)
+			death()
 		if(behavior_flags & ANIMAL_BEHAVIOR_RETALIATE)
 			behavior_state=behavior_state=ANIMAL_STATE_ATTACKING
 			aggro_drawn(user,ANIMAL_STATE_ATTACKING)
