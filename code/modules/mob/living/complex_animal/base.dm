@@ -209,7 +209,7 @@
 					attack(target)
 				aggro_drawn(target,ANIMAL_STATE_ATTACKING)
 				if(istype(target,/mob/living/))
-				var/mob/living/L=target
+					var/mob/living/L=target
 					if(L.stat==DEAD)
 						target=null
 						behavior_state=ANIMAL_STATE_IDLE
