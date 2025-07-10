@@ -35,7 +35,7 @@
 	var/behavior_flags=0
 	nutrition = 50
 	var/max_food = 50
-	var/food_per_tick = 0.00666666 //how much of max_food should be deducted from food per tick. This number gives us about 300 seconds until hungry
+	var/food_per_tick = 0.002 //how much of max_food should be deducted from food per tick. This number gives us about 1000 seconds until we starve
 	var/food_flags = 0
 	var/behavior_state = ANIMAL_STATE_IDLE
 	var/mob_age = 0
@@ -104,7 +104,16 @@
 	mob_age++
 	
 	escape()
-	
+	var/interrupt=FALSE
+	if(check_hunger()) //prioritize eating over all other things
+		interrupt=TRUE
+	if(behavior_state!=ANIMAL_STATE_ATTACKING)
+		if(!interrupt && check_territory()) //next, prioritize defending our home
+			interrupt=TRUE
+		if(behavior_state!=ANIMAL_STATE_DEFENDING)
+			if(!interrupt && check_fear()) //then, prioritize saving our own ass.
+				interrupt=TRUE
+
 	switch(behavior_state)
 		if(ANIMAL_STATE_IDLE)
 			tick_state_idle()
@@ -122,19 +131,15 @@
 			tick_state_special()
 	return 1
 
-
-//state functions return TRUE if the behavior_state is unchanged, and FALSE if not. basically just do if(..())
-/mob/living/complex_animal/proc/tick_state_idle()
-	abort_target()
+//runs independently of other states so we won't starve to death running away.
+/mob/living/complex_animal/proc/check_hunger()
 	if(nutrition<max_food*0.5)
-		emote("me",MESSAGE_SEE,"looks hungry")
+		visible_message("<b>\the [src]</b> looks hungry")
 		behavior_state=ANIMAL_STATE_HUNTING
-		return FALSE
-	//attempt reproduction only while full
-	if(nutrition >= (max_food- get_offspring_cost()*2) && get_offspring_cost() && prob(20))
-		behavior_state=ANIMAL_STATE_MATING
-		return FALSE
-	
+		return TRUE
+
+//so we aren't too busy to run from a bear.
+/mob/living/complex_animal/proc/check_fear()
 	var/list/nearby_objects=view(7,src)
 	for(var/mob/living/M in nearby_objects) //check for danger and flee
 		if(determine_isthreat(M))
@@ -142,17 +147,29 @@
 			behavior_state = ANIMAL_STATE_FLEEING
 			target=M
 			return FALSE
-			
+
+//defend our /turf before other stuff
+/mob/living/complex_animal/proc/check_territory()
+	var/list/nearby_objects=view(7,src)
 	for(var/mob/living/M in nearby_objects) //if not, check for trespassers
 		if(behavior_flags & ANIMAL_BEHAVIOR_TERRITORIAL && get_dist(M,territory)<10 && determine_tresspass(M) )
 			get_tesspass_msg(M)
 			behavior_state = ANIMAL_STATE_DEFENDING
 			target=M
 			return FALSE
+
+//state functions return TRUE if the behavior_state is unchanged, and FALSE if not. basically just do if(..())
+/mob/living/complex_animal/proc/tick_state_idle()
+	abort_target()
+	
+	//attempt reproduction only while full
+	if(nutrition >= (max_food- get_offspring_cost()*2) && get_offspring_cost() && prob(20))
+		behavior_state=ANIMAL_STATE_MATING
+		return FALSE
 	
 	get_idle_sounds()
 	
-	if(prob(50))//move around randomly sometimes
+	if(prob(25))//move around randomly sometimes
 		if(territory && prob(50))
 			walk_to(src,locate(territory.x+rand(-3,3),territory.y+rand(-3,3),territory.z),0,movespeed)
 		else
@@ -161,6 +178,7 @@
 	if(territory && prob(25)) //randomly move the territory
 		if(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) //move our territory closer to pack members
 			var/list/mob/living/complex_animal/members=list()
+			var/list/nearby_objects=view(7,src)
 			for(var/mob/living/complex_animal/M in nearby_objects)
 				if(is_kin(M))
 					members+=M
@@ -233,7 +251,7 @@
 		return FALSE
 	else
 		fuckshitup()
-		aggro_drawn(target,ANIMAL_STATE_ATTACKING)
+		aggro_drawn(target,ANIMAL_STATE_ATTACKING,TRUE)
 		if(get_dist(src,target)>1)
 			walk_to(src,target,0,movespeed)
 		else //attack em!
@@ -256,9 +274,9 @@
 			if(istype(A,/mob/living/complex_animal))
 				var/mob/living/complex_animal/CA=A
 				if(can_offspring(CA) && CA.can_offspring(src) && CA.behavior_state==ANIMAL_STATE_MATING && !CA.target) //you better believe we're going to enforce the communicative property.
-					emote("me",MESSAGE_SEE,"looks lovingly at \the [CA]")
+					visible_message("<b>\the [src]</b> looks lovingly at \the [CA]")
 					target=CA
-					CA.emote("me",MESSAGE_SEE,"looks lovingly at \the [src]")
+					CA.visible_message("<b>\the [CA]</b> looks lovingly at \the [src]")
 					CA.target=src
 		if(!target) //if we can't find one, exit back to idle
 			abort_target()
@@ -345,6 +363,10 @@
 				else
 					foodsources+=M
 					continue
+			else if(istype(A,/obj/item/organ) && !istype(A,/obj/item/organ/external/head) && !istype(A,/obj/item/organ/internal/brain)) //we don't want to round remove people
+				foodsources+=M
+				continue
+				
 		//no easy way to check if it's meat. oh well.
 		if(istype(A,/obj/item/weapon/reagent_containers/food/snacks))
 			foodsources+=A
@@ -429,17 +451,23 @@
 						new M.meat_type(M.loc)
 				M.gib()
 				return TRUE
+	else if(istype(target,/obj/item/organ))
+		var/obj/item/organ/O=target
+		emote("me",MESSAGE_SEE,"scarfs down \the [O]")
+		nutrition+=O.w_class*4
+		qdel(O)
+		target=null
 	else if(istype(target,/obj/structure/flora))
 		if(prob(20))
 			qdel(target)
 		nutrition+=5
-		emote("me",MESSAGE_SEE,"nibbles at \the [target]")
+		visible_message("<b>\the [src]</b> nibbles at \the [target]")
 	else if (istype(target,/turf))
 		nutrition+=1
-		emote("me",MESSAGE_SEE,"nibbles at \the [target]")
+		visible_message("<b>\the [src]</b> nibbles at \the [target]")
 	else if(istype(target,/obj/item/weapon/reagent_containers/food/snacks))
 		var/obj/item/weapon/reagent_containers/food/snacks/F=target
-		emote("me",MESSAGE_SEE,"take a bite out of \the [F]")
+		visible_message("<b>\the [src]</b> takes a bite out of <b>\the [F]</b>")
 		F.consume(src)
 	return TRUE
 
@@ -509,6 +537,8 @@
 /mob/living/complex_animal/proc/determine_isthreat(var/mob/individual)
 	if(individual.stat==DEAD)
 		return FALSE
+	if(is_pacified())
+		return FALSE
 	if(is_kin(individual))
 		return FALSE
 	if(istype(individual,/mob/living/carbon))
@@ -533,14 +563,16 @@
 	emote("me",MESSAGE_SEE,"stares alertly at \the [individual].")
 
 /mob/living/complex_animal/proc/get_hunting_msg(var/individual)
-	
-	emote("me",MESSAGE_SEE,"stares hungrily at \the [individual].")
+	if(istype(individual,/mob))
+		emote("me",MESSAGE_SEE,"stares hungrily at \the [individual].")
+	else
+		visible_message("<b>\the [src]</b> stares hungrily at <b>\the [individual]</b>.")
 
 /mob/living/complex_animal/proc/get_attack_msg(var/individual)
 	emote("me",MESSAGE_SEE,"attacks \the [individual].")
 
 /mob/living/complex_animal/proc/get_idle_sounds()
-	if(prob(20))
+	if(prob(10))
 		emote("me",MESSAGE_HEAR, "vocalizes.")
 
 
@@ -642,6 +674,16 @@
 		target=M
 	return ..()
 
+/mob/living/complex_animal/unarmed_attacked(mob/living/attacker, damage, damage_type, zone)
+	if(behavior_flags & ANIMAL_BEHAVIOR_RETALIATE)
+		behavior_state=behavior_state=ANIMAL_STATE_ATTACKING
+		aggro_drawn(attacker,ANIMAL_STATE_ATTACKING)
+	else
+		get_flee_msg(attacker)
+		behavior_state = ANIMAL_STATE_FLEEING
+		target=attacker
+	return ..()
 
 /mob/living/complex_animal/getarmor(var/def_zone, var/type)
 	return armor[type] || 0
+

@@ -18,7 +18,7 @@
 	kin_check_type_path=/mob/living/complex_animal/bear
 
 /mob/living/complex_animal/bear/get_idle_sounds()
-	if(prob(20))
+	if(prob(10))
 		var/i=rand(1,2)
 		switch(i)
 			if(1)
@@ -51,7 +51,7 @@
 	armor=list(melee=10,bullet=30,laser=40,energy=0,bomb=0,bio=0,rad=0)
 	max_food=200
 	healthregen=0.02
-	food_per_tick = 0.00333333
+	food_per_tick = 0.001
 	base_damage = 35
 	damage_variance = 5
 	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_TERRITORIAL | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
@@ -92,7 +92,7 @@
 	icon_dead = "panda_dead"
 	behavior_flags = ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_DESTRUCTIVE
 	movespeed=6
-	food_per_tick=0.0075
+	food_per_tick=0.0015
 	
 
 /mob/living/complex_animal/bear/panda/can_offspring(var/mob/living/complex_animal/mate)

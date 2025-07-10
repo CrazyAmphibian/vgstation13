@@ -59,7 +59,7 @@
 
 
 /mob/living/complex_animal/parrot/get_idle_sounds()
-	if(prob(20))
+	if(prob(10))
 		var/list/allphrases=list()
 		allphrases|=builtin_phrases
 		allphrases|=heard_phrases

@@ -22,7 +22,7 @@
 
 
 /mob/living/complex_animal/frog/get_idle_sounds()
-	if(prob(20))
+	if(prob(10))
 		var/i=rand(1,2)
 		switch(i)
 			if(1)

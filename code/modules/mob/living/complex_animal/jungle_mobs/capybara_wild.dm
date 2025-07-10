@@ -36,6 +36,16 @@
 		visible_message("\the [src] gets back up")
 	return TRUE
 
+/mob/living/complex_animal/capybara_wild/tick_state_fleeing()
+	if(!..())
+		return FALSE
+	if(prob(33))
+		visible_message("\the [src] forgives \the [target]")
+		abort_target()
+		return FALSE
+	return TRUE
+
+
 /mob/living/complex_animal/capybara_wild/determine_isthreat(var/mob/individual)
 	return FALSE
 

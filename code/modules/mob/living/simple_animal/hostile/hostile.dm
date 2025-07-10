@@ -152,7 +152,7 @@
 	var/Target
 	for(var/atom/A in ListTargets())
 		if (!isValidTarget(A))
-			break
+			continue
 		if(Found(A))//Just in case people want to override targetting
 			var/list/FoundTarget = list()
 			FoundTarget += A
@@ -488,6 +488,11 @@
 
 /mob/living/simple_animal/hostile/proc/create_projectile(var/mob/user)
 	return new projectiletype(user.loc)
+
+/mob/living/simple_animal/hostile/UnarmedAttack(var/atom/A,var/proximity,var/params)
+	if(istype(A,/mob/living/complex_animal))
+		unarmed_attack_mob(A)
+	..()
 
 /mob/living/simple_animal/hostile/proc/DestroySurroundings()
 	if(environment_smash_flags & SMASH_LIGHT_STRUCTURES)
