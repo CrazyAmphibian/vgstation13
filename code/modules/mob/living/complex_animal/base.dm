@@ -107,7 +107,6 @@
 	
 	switch(behavior_state)
 		if(ANIMAL_STATE_IDLE)
-										territory =T
 			tick_state_idle()
 		if(ANIMAL_STATE_HUNTING)
 			tick_state_hunting()
