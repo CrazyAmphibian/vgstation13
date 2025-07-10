@@ -1,5 +1,5 @@
 /mob/living/complex_animal/frog
-	name="Frog"
+	name="\improper Frog"
 	desc="Ribbit."
 	icon_state="smallfrog"
 	icon_living = "smallfrog"
@@ -38,7 +38,7 @@
 
 
 /mob/living/complex_animal/frog/poison
-	name="Poison Dart Frog"
+	name="\improper Poison Dart Frog"
 	desc="Poisonous, not venomous"
 	icon_state="poison_dart_frog"
 	icon_living = "poison_dart_frog"

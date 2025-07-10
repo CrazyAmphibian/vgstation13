@@ -1,5 +1,5 @@
 /mob/living/complex_animal/parrot
-	name="Parrot"
+	name="\improper Parrot"
 	desc="BWAK!"
 	icon_state="parrot_fly"
 	icon_living = "parrot_fly"
@@ -33,27 +33,29 @@
 		heard_phrases |= speech.message
 	..()
 
-/mob/living/complex_animal/parrot/Life()
+/mob/living/complex_animal/parrot/tick_state_idle()
 	if(!..())
-		return 0
-		
-	if(behavior_state==ANIMAL_STATE_IDLE && prob(50))
+		return FALSE
+	if(prob(50))
 		visible_message("\the [src] flies to a comfortable spot")
 		behavior_state=ANIMAL_STATE_SPECIAL
 		var/obj/perch=find_pearch()
 		if(perch)
 			walk_to(src,perch,0,movespeed)
 			cur_perch=perch
-	else if(behavior_state==ANIMAL_STATE_SPECIAL)
-		if(loc==cur_perch?.loc)
-			icon_state = "parrot_sit"
-		if(prob(20) || !cur_perch)
-			cur_perch=null
-			icon_state="parrot_fly"
-			behavior_state=ANIMAL_STATE_IDLE
-			visible_message("\the [src] flies away")
-		
-	return 1
+	return TRUE
+
+/mob/living/complex_animal/parrot/tick_state_special()
+	if(!..())
+		return FALSE
+	if(loc==cur_perch?.loc)
+		icon_state = "parrot_sit"
+	if(prob(20) || !cur_perch)
+		cur_perch=null
+		icon_state="parrot_fly"
+		behavior_state=ANIMAL_STATE_IDLE
+		visible_message("\the [src] flies away")
+	return TRUE
 
 
 /mob/living/complex_animal/parrot/get_idle_sounds()

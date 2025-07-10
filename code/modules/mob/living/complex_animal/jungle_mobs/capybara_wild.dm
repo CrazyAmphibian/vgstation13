@@ -1,5 +1,5 @@
 /mob/living/complex_animal/capybara_wild
-	name="Wild Capybara"
+	name="\improper Wild Capybara"
 	desc="The capybara is the largest of the rodents. This one is unaccustomed to human contact."
 	icon_state="capybara"
 	icon_living = "capybara"
@@ -16,24 +16,25 @@
 	damage_variance=2
 	petable=TRUE
 
-
-/mob/living/complex_animal/capybara_wild/Life()
+/mob/living/complex_animal/capybara_wild/tick_state_idle()
 	if(!..())
-		return 0
-		
-	if(behavior_state==ANIMAL_STATE_IDLE && prob(33))
+		return FALSE
+	if(prob(33))
 		visible_message("\the [src] starts resting")
 		behavior_state=ANIMAL_STATE_SPECIAL
 		icon_state="capybara-rest"
 		walk(src,0)
-	else if(behavior_state==ANIMAL_STATE_SPECIAL)
-		icon_state="capybara-rest"
-		if(prob(20))
-			behavior_state=ANIMAL_STATE_IDLE
-			icon_state="capybara"
-			visible_message("\the [src] gets back up")
-		
-	return 1
+	return TRUE
+
+/mob/living/complex_animal/capybara_wild/tick_state_special()
+	if(!..())
+		return FALSE
+	icon_state="capybara-rest"
+	if(prob(20))
+		behavior_state=ANIMAL_STATE_IDLE
+		icon_state="capybara"
+		visible_message("\the [src] gets back up")
+	return TRUE
 
 /mob/living/complex_animal/capybara_wild/determine_isthreat(var/mob/individual)
 	return FALSE

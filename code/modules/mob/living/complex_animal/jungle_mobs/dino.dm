@@ -1,5 +1,5 @@
 /mob/living/complex_animal/dinosaur
-	name="Dinosaur"
+	name="\improper Dinosaur"
 	desc="Boom boom acka lacka boom boom."
 	icon_state="dino"
 	icon_living = "dino"
@@ -16,32 +16,37 @@
 	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	movespeed=7
 	
-/mob/living/complex_animal/dinosaur/Life()
+
+/mob/living/complex_animal/dinosaur/tick_state_idle()
 	if(!..())
-		return 0
-	if(behavior_state==ANIMAL_STATE_SPECIAL)
-		var/shouldwalk=FALSE
-		for(var/mob/living/carbon/M in range(src,7))
-			if(M.resting)
-				shouldwalk=TRUE
-			else
-				shouldwalk=FALSE
-				break
-		if(!shouldwalk)
-			behavior_state=ANIMAL_STATE_IDLE
+		return FALSE
+	var/shouldwalk=FALSE
+	for(var/mob/living/carbon/M in range(src,7))
+		if(M.resting)
+			shouldwalk=TRUE
 		else
-			walkthedinosaur()
-	else if(behavior_state==ANIMAL_STATE_IDLE)
-		var/shouldwalk=FALSE
-		for(var/mob/living/carbon/M in range(src,7))
-			if(M.resting)
-				shouldwalk=TRUE
-			else
-				shouldwalk=FALSE
-				break
-		if(shouldwalk)
-			behavior_state=ANIMAL_STATE_SPECIAL
-	return 1
+			shouldwalk=FALSE
+			break
+	if(shouldwalk)
+		behavior_state=ANIMAL_STATE_SPECIAL
+	return TRUE
+
+/mob/living/complex_animal/dinosaur/tick_state_special()
+	if(!..())
+		return FALSE
+	var/shouldwalk=FALSE
+	for(var/mob/living/carbon/M in range(src,7))
+		if(M.resting)
+			shouldwalk=TRUE
+		else
+			shouldwalk=FALSE
+			break
+	if(!shouldwalk)
+		behavior_state=ANIMAL_STATE_IDLE
+	else
+		walkthedinosaur()
+	return TRUE
+
 
 /mob/living/complex_animal/dinosaur/get_attack_msg(var/individual)
 	var/i=rand(1,3)
@@ -75,11 +80,10 @@
 /mob/living/complex_animal/dinosaur/rank_foodsources(var/list/sources)
 	var/list/out=..()
 	for(var/atom/A in out)
-		var/p=out[A]
 		if(istype(A,/mob/living/carbon)) //mobs on the floor shouldn't be eaten as much.
 			var/mob/living/carbon/M = A
 			if(M.resting)
-				p-=4
+				out[A]-=4
 	return out
 
 /mob/living/complex_animal/dinosaur/attack(var/victim)

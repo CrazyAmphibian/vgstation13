@@ -43,8 +43,8 @@
 	var/atom/target = null
 	var/turf/territory=null //turf location
 	var/list/family = list() //list of mobs. avoid attacking them and whatnot. also can be used for taming.
-	var/base_damage=0
-	var/damage_variance=0
+	var/base_damage=2
+	var/damage_variance=1
 	var/movespeed=5 //lower=faster.
 	var/pacify_aura=FALSE
 	var/kin_check_type_path=null //for mobs with many subtypes. set to the parent mob type. leave null if not needed
@@ -59,6 +59,7 @@
 
 /mob/living/complex_animal/New(var/loc)
 	..()
+	create_reagents(100)
 	nutrition = rand(ceil(max_food/2),max_food)
 	gender="female"
 	if(prob(50))
@@ -71,6 +72,9 @@
 		return 0
 	if(stat == DEAD)
 		return 0
+	
+	reagents?.metabolize(src)
+		
 	icon_state=icon_living
 	nutrition-=max_food*food_per_tick
 	
@@ -82,7 +86,8 @@
 	if(nutrition<0 && prob(20))
 		emote("deathgasp")
 		health=0
-		stat=DEAD
+	if(health<=0 && stat != DEAD)
+		death()
 		return 0
 	if(mob_max_age && mob_age > mob_max_age)
 		var/chancetokeelover = (mob_age-mob_max_age)/mob_max_age
@@ -102,171 +107,205 @@
 	
 	switch(behavior_state)
 		if(ANIMAL_STATE_IDLE)
-			target=null
-			if(nutrition<max_food*0.5)
-				emote("me",MESSAGE_SEE,"looks hungry")
-				behavior_state=ANIMAL_STATE_HUNTING
-			//attempt reproduction only while full
-			if(nutrition >= (max_food- get_offspring_cost()*2) && get_offspring_cost() && prob(20))
-				behavior_state=ANIMAL_STATE_MATING
-			var/distraction=FALSE
-			var/list/nearby_objects=view(7,src)
-			for(var/mob/living/M in nearby_objects) //check for danger and flee
-				if(determine_isthreat(M))
-					get_flee_msg(M)
-					behavior_state = ANIMAL_STATE_FLEEING
-					target=M
-					distraction=TRUE
-					break
-			if(!distraction)
-				for(var/mob/living/M in nearby_objects) //if not, check for trespassers
-					if(behavior_flags & ANIMAL_BEHAVIOR_TERRITORIAL && get_dist(M,territory)<10 && determine_tresspass(M) )
-						get_tesspass_msg(M)
-						behavior_state = ANIMAL_STATE_DEFENDING
-						target=M
-						distraction=TRUE
-						break
-			if(!distraction)
-				get_idle_sounds()
-			if(!distraction) //if none, randomly move the territory
-				if(territory && prob(50))
-					walk_to(src,locate(territory.x+rand(-2,2),territory.y+rand(-2,2),territory.z),0,movespeed)
-					if(prob(33)) //sometimes, randomly mess with the territory to shift where we are
-						territory = locate(territory.x+rand(-5,5),territory.y+rand(-5,5),territory.z)
-					if(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) //if we are running as a pack, shift our territory towards another kin's
-						for(var/mob/living/complex_animal/M in nearby_objects)
-							if(is_kin(M) && prob(20))
-								var/traversedir = get_dir(territory,M.territory)
-								for(var/i=0,i<3,i++)
-									var/turf/T=get_step(M.territory,traversedir)
-									if(T)
 										territory =T
-								break
-				else
-					walk_to(src,locate(x+rand(-2,2),y+rand(-2,2),z),0,movespeed)
-					territory=get_turf(src)
-				
+			tick_state_idle()
 		if(ANIMAL_STATE_HUNTING)
-			fuckshitup()
-			if(!target || target.z!=z || get_dist(src,target)>20)
-				target=null
-				var/list/possible=rank_foodsources(get_food())
-				var/list/pickfrom=list()
-				var/highestprio=-9999999999999999999999999999
-				for(var/atom/A in possible) //get the highest ranked objects
-					var/rank=possible[A]
-					if(rank>highestprio)
-						pickfrom=list(A)
-						highestprio=rank
-					else if(rank==highestprio)
-						pickfrom+=A
-				if(pickfrom.len)
-					target=pick(pickfrom)
-				if(highestprio<0 && nutrition>max_food*0.2) //avoid disliked targets, unless we are really desperate for food.
-					target=null
-				if(highestprio<-4 && nutrition>max_food*0.05) //I NEEEEEEEED IIIIIIIIT
-					target=null
-				if(!target) //if we can't find a suitable target, move around randomly
-					walk_to(src,locate(x+rand(-15,15),y+rand(-15,15),z),0,movespeed)
-				else
-					get_hunting_msg(target)
-					aggro_drawn(target,ANIMAL_STATE_HUNTING)
-			else
-				if(get_dist(src,target)>1)
-					walk_to(src,target,0,movespeed)
-				else //attack em!
-					tryeat(target)
-			if(nutrition>max_food*0.75)
-				behavior_state=ANIMAL_STATE_IDLE
+			tick_state_hunting()
 		if(ANIMAL_STATE_DEFENDING)
-			if(!target || target.z!=src.z)
-				target=null
-				behavior_state=ANIMAL_STATE_IDLE
-			else
-				if(get_dist(territory,target)>10)
-					target=null
-					behavior_state=ANIMAL_STATE_IDLE
-					walk_to(src,territory,0,movespeed)
-				else if(get_dist(src,target)>1)
-					walk_to(src,target,0,movespeed)
-				else //attack em!
-					attack(target)
-				if(istype(target,/mob/living/))
-					var/mob/living/L=target
-					if(L.stat==DEAD)
-						target=null
-						behavior_state=ANIMAL_STATE_IDLE
-						walk_to(src,territory,0,movespeed)
+			tick_state_defending()
 		if(ANIMAL_STATE_ATTACKING)
-			fuckshitup()
-			if(!target || target.z!=src.z || get_dist(src,target)>15)
-				target=null
-				behavior_state=ANIMAL_STATE_IDLE
-			else
-				if(get_dist(src,target)>1)
-					walk_to(src,target,0,movespeed)
-				else //attack em!
-					attack(target)
-				aggro_drawn(target,ANIMAL_STATE_ATTACKING)
-				if(istype(target,/mob/living/))
-					var/mob/living/L=target
-					if(L.stat==DEAD)
-						target=null
-						behavior_state=ANIMAL_STATE_IDLE
+			tick_state_attacking()
 		if(ANIMAL_STATE_FLEEING)
-			fuckshitup()
-			if(!target || target.z!=src.z)
-				target=null
-				behavior_state=ANIMAL_STATE_IDLE
-				walk(src,0)
-			else
-				if(get_dist(src,target)<10)
-					walk_away(src,target,10,movespeed)
-				else
-					walk(src,0)
-					target=null
-					behavior_state=ANIMAL_STATE_IDLE
-				if(istype(target,/mob/living))
-					var/mob/living/L=target
-					if(L.stat==DEAD)
-						walk(src,0)
-						target=null
-						behavior_state=ANIMAL_STATE_IDLE
+			tick_state_fleeing()
 		if(ANIMAL_STATE_MATING)
-			if(!target)
-				var/list/nearby_objects=view(7,src)
-				for(var/atom/A in nearby_objects)
-					if(istype(A,/mob/living/complex_animal))
-						var/mob/living/complex_animal/CA=A
-						if(can_offspring(CA) && CA.can_offspring(src) && CA.behavior_state==ANIMAL_STATE_MATING && !CA.target) //you better believe we're going to enforce the communicative property.
-							emote("me",MESSAGE_SEE,"looks lovingly at \the [CA]")
-							target=CA
-							CA.emote("me",MESSAGE_SEE,"looks lovingly at \the [src]")
-							CA.target=src
-			else
-				if(istype(target,/mob/living/complex_animal))
-					var/mob/living/complex_animal/M=target
-					if(!M || M.stat==DEAD) //my wife is dead
-						target=null
-						behavior_state=ANIMAL_STATE_IDLE
-					else
-						if(get_dist(src,M)>1)
-							walk_to(src,M,0,movespeed)
-						else
-							if(gender=="female")
-								if(generate_offspring(M))
-									M.nutrition-=M.get_offspring_cost()
-									M.behavior_state=ANIMAL_STATE_IDLE
-									M.target=null
-								
-									nutrition-=get_offspring_cost()
-									behavior_state=ANIMAL_STATE_IDLE
-									target=null
-				else
-					target=null
+			tick_state_mating()
+		if(ANIMAL_STATE_SPECIAL)
+			tick_state_special()
 	return 1
 
 
+//state functions return TRUE if the behavior_state is unchanged, and FALSE if not. basically just do if(..())
+/mob/living/complex_animal/proc/tick_state_idle()
+	abort_target()
+	if(nutrition<max_food*0.5)
+		emote("me",MESSAGE_SEE,"looks hungry")
+		behavior_state=ANIMAL_STATE_HUNTING
+		return FALSE
+	//attempt reproduction only while full
+	if(nutrition >= (max_food- get_offspring_cost()*2) && get_offspring_cost() && prob(20))
+		behavior_state=ANIMAL_STATE_MATING
+		return FALSE
+	
+	var/list/nearby_objects=view(7,src)
+	for(var/mob/living/M in nearby_objects) //check for danger and flee
+		if(determine_isthreat(M))
+			get_flee_msg(M)
+			behavior_state = ANIMAL_STATE_FLEEING
+			target=M
+			return FALSE
+			
+	for(var/mob/living/M in nearby_objects) //if not, check for trespassers
+		if(behavior_flags & ANIMAL_BEHAVIOR_TERRITORIAL && get_dist(M,territory)<10 && determine_tresspass(M) )
+			get_tesspass_msg(M)
+			behavior_state = ANIMAL_STATE_DEFENDING
+			target=M
+			return FALSE
+	
+	get_idle_sounds()
+	
+	if(prob(50))//move around randomly sometimes
+		if(territory && prob(50))
+			walk_to(src,locate(territory.x+rand(-3,3),territory.y+rand(-3,3),territory.z),0,movespeed)
+		else
+			walk_to(src,locate(x+rand(-3,3),y+rand(-3,3),z),0,movespeed)
+	
+	if(territory && prob(25)) //randomly move the territory
+		if(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) //move our territory closer to pack members
+			var/list/mob/living/complex_animal/members=list()
+			for(var/mob/living/complex_animal/M in nearby_objects)
+				if(is_kin(M))
+					members+=M
+			if(members.len)
+				var/mob/living/complex_animal/M = pick(members) //pick a random member to move territory towards
+				var/traversedir = get_dir(territory,M.territory)
+				for(var/i=0,i<4,i++) //4 steps ensures that we will overshoot regularly, which adds a bit of random flavor to the pack position
+					var/turf/T=get_step(M.territory,traversedir)
+					if(T)
+						territory =T
+		else //just random movment
+			territory=locate(territory.x+rand(-4,4),territory.y+rand(-4,4),territory.z)
+	
+	if(behavior_flags & ANIMAL_BEHAVIOR_TERRITORIAL && !territory) //if we can't find the territory, regenerate it
+		territory=locate(x,y,z)
+	return TRUE
+
+/mob/living/complex_animal/proc/tick_state_hunting()
+	if(nutrition>max_food*0.75)
+		abort_target()
+		return FALSE
+	if(!verify_target(20,TRUE))
+		abort_target(FALSE)
+		var/list/possible=rank_foodsources(get_food())
+		var/list/pickfrom=list()
+		var/highestprio=-9999999999999999999999999999
+		for(var/atom/A in possible) //get the highest ranked objects
+			var/rank=possible[A]
+			if(rank>highestprio)
+				pickfrom=list(A)
+				highestprio=rank
+			else if(rank==highestprio)
+				pickfrom+=A
+		if(pickfrom.len)
+			target=pick(pickfrom)
+		if(highestprio<0 && nutrition>max_food*0.2) //avoid disliked targets, unless we are really desperate for food.
+			target=null
+		if(highestprio<-4 && nutrition>max_food*0.05) //I NEEEEEEEED IIIIIIIIT
+			target=null
+		if(!target) //if we can't find a suitable target, move around randomly
+			walk_to(src,locate(x+rand(-15,15),y+rand(-15,15),z),0,movespeed)
+		else
+			get_hunting_msg(target)
+			aggro_drawn(target,ANIMAL_STATE_HUNTING,TRUE)
+	else
+		fuckshitup()
+		if(get_dist(src,target)>1)
+			walk_to(src,target,0,movespeed)
+		else //attack em!
+			tryeat(target)
+	return TRUE
+
+/mob/living/complex_animal/proc/tick_state_defending()
+	if(!verify_target())
+		abort_target()
+		return FALSE
+	else
+		if(get_dist(territory,target)>10) //if they're far enough from our territory, forget about them
+			abort_target()
+			return FALSE
+		if(get_dist(src,target)>1)
+			walk_to(src,target,0,movespeed)
+		else //attack em!
+			attack(target)
+	return TRUE
+
+/mob/living/complex_animal/proc/tick_state_attacking()
+	if(!verify_target(15))
+		abort_target()
+		return FALSE
+	else
+		fuckshitup()
+		aggro_drawn(target,ANIMAL_STATE_ATTACKING)
+		if(get_dist(src,target)>1)
+			walk_to(src,target,0,movespeed)
+		else //attack em!
+			attack(target)
+	return TRUE
+
+/mob/living/complex_animal/proc/tick_state_fleeing()
+	if(!verify_target(10))
+		abort_target()
+		return FALSE
+	else
+		fuckshitup()
+		walk_away(src,target,10,movespeed)
+	return TRUE
+
+/mob/living/complex_animal/proc/tick_state_mating()
+	if(!verify_target(8))
+		var/list/nearby_objects=view(7,src)
+		for(var/atom/A in nearby_objects)
+			if(istype(A,/mob/living/complex_animal))
+				var/mob/living/complex_animal/CA=A
+				if(can_offspring(CA) && CA.can_offspring(src) && CA.behavior_state==ANIMAL_STATE_MATING && !CA.target) //you better believe we're going to enforce the communicative property.
+					emote("me",MESSAGE_SEE,"looks lovingly at \the [CA]")
+					target=CA
+					CA.emote("me",MESSAGE_SEE,"looks lovingly at \the [src]")
+					CA.target=src
+		if(!target) //if we can't find one, exit back to idle
+			abort_target()
+			return FALSE
+	else
+		if(!istype(target,/mob/living/complex_animal)) //something has gone terribly wrong
+			abort_target()
+			return FALSE
+		var/mob/living/complex_animal/M = target
+		if(get_dist(src,M)>1)
+			walk_to(src,M,0,movespeed)
+		else
+			if(gender=="female")
+				if(generate_offspring(M))
+					M.nutrition-=M.get_offspring_cost()
+					M.abort_target()
+				
+					nutrition-=get_offspring_cost()
+					abort_target()
+					return FALSE
+	return TRUE
+
+/mob/living/complex_animal/proc/tick_state_special()
+	return TRUE
+
+
+//checks our target variable and returns if it's valid.
+/mob/living/complex_animal/proc/verify_target(var/max_distance=-1,var/allow_dead=FALSE)
+	if(!target)
+		return FALSE
+	if(max_distance>=0)
+		if(get_dist(src,target)>max_distance)
+			return FALSE
+	if(target.z!=src.z)
+		return FALSE
+	if(!allow_dead && istype(target,/mob/living))
+		var/mob/living/M = target
+		if(M.stat==DEAD)
+			return FALSE
+	return TRUE
+
+/mob/living/complex_animal/proc/abort_target(var/reset_state=TRUE)
+	target=null
+	walk(src,0)
+	if(reset_state)
+		behavior_state=ANIMAL_STATE_IDLE
 
 /mob/living/complex_animal/proc/is_kin(var/mob/target)
 	if(!istype(target,/mob))
@@ -288,6 +327,8 @@
 	var/list/foodsources=list()
 	var/list/nearby_objects=view(7,src)
 	for(var/atom/A in nearby_objects)
+		if(A==src) //do not eat ourselves
+			continue
 		if(food_flags & ANIMAL_HERBIVORE)
 			if(istype(A,/obj/structure/flora) && !istype(A,/obj/structure/flora/tree) && !istype(A,/obj/structure/flora/rock))
 				foodsources+=A
@@ -296,16 +337,15 @@
 				foodsources+=A
 				continue
 		if(food_flags & ANIMAL_CARNIVORE)
-			if(istype(A,/mob/living/carbon) || istype(A,/mob/living/simple_animal))
+			if(istype(A,/mob/living/carbon) || istype(A,/mob/living/simple_animal) || istype(A,/mob/living/complex_animal))
 				var/mob/living/M=A
 				if(M.stat!=DEAD)
 					if(!is_pacified() && behavior_flags & ANIMAL_BEHAVIOR_PREDATORY)
 						foodsources+=M
 						continue
 				else
-					if(M.nutrition>-50)
-						foodsources+=M
-						continue
+					foodsources+=M
+					continue
 		//no easy way to check if it's meat. oh well.
 		if(istype(A,/obj/item/weapon/reagent_containers/food/snacks))
 			foodsources+=A
@@ -345,12 +385,13 @@
 	return out
 
 
-/mob/living/complex_animal/proc/aggro_drawn(var/victim,var/state=ANIMAL_STATE_ATTACKING)
+/mob/living/complex_animal/proc/aggro_drawn(var/victim,var/state=ANIMAL_STATE_ATTACKING,var/skipsmg=FALSE)
 	if(!victim)
 		return
 	target=victim
 	behavior_state=state
-	get_aggro_msg(victim)
+	if(!skipsmg)
+		get_aggro_msg(victim)
 	if( !(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) && !family.len)
 		return
 	if(istype(target,/mob/living))
@@ -369,6 +410,8 @@
 		return FALSE
 	if(!victim)
 		return FALSE
+	if(istype(victim,/mob))
+		return unarmed_attack_mob(victim)
 	return UnarmedAttack(victim,Adjacent(victim))
 
 /mob/living/complex_animal/proc/tryeat(var/victim)
@@ -379,10 +422,13 @@
 		if(M.stat!=DEAD)
 			return attack(victim)
 		else
-			if(UnarmedAttack(victim,Adjacent(victim)))
-				M.nutrition-=5
-				nutrition+=5
+			if(unarmed_attack_mob(victim))
+				nutrition+=M.size*5
 				emote("me",MESSAGE_SEE,"chomps on \the [target]")
+				if(M.meat_type)
+					for(var/i=0,i<(M.size/2),i++)
+						new M.meat_type(M.loc)
+				M.gib()
 				return TRUE
 	else if(istype(target,/obj/structure/flora))
 		if(prob(20))
@@ -462,6 +508,8 @@
 
 //only fired when the mob is seen by us, and we have the AVOID_PRED flag
 /mob/living/complex_animal/proc/determine_isthreat(var/mob/individual)
+	if(individual.stat==DEAD)
+		return FALSE
 	if(is_kin(individual))
 		return FALSE
 	if(istype(individual,/mob/living/carbon))
@@ -524,7 +572,6 @@
 	return child
 	
 	
-	
 /mob/living/complex_animal/get_unarmed_damage(var/atom/victim)
 	return base_damage+ (damage_variance ? rand(-damage_variance,damage_variance) : 0)
 
@@ -537,24 +584,28 @@
 	health = 0 
 	stat = DEAD
 	icon_state = icon_dead
+	walk(src,0)
 	setDensity(FALSE)
 
 /mob/living/complex_animal/attack_hand(var/mob/living/carbon/human/H)
-	. = ..()
 	H.delayNextAttack(2 SECONDS)
 	if(H.a_intent==I_HURT)
-		if(behavior_flags & ANIMAL_BEHAVIOR_RETALIATE)
-			behavior_state=behavior_state=ANIMAL_STATE_ATTACKING
-			aggro_drawn(H,ANIMAL_STATE_ATTACKING)
-			H.UnarmedAttack(src,H.Adjacent(src))
-			if(health<=0)
-				death()
+		H.unarmed_attack_mob(src)
+		if(health<=0)
+			death()
 		else
-			get_flee_msg(H)
-			behavior_state = ANIMAL_STATE_FLEEING
-			target=H
+			if(behavior_flags & ANIMAL_BEHAVIOR_RETALIATE)
+				behavior_state=behavior_state=ANIMAL_STATE_ATTACKING
+				aggro_drawn(H,ANIMAL_STATE_ATTACKING)
+			else
+				get_flee_msg(H)
+				behavior_state = ANIMAL_STATE_FLEEING
+				target=H
+		return
 	else if(H.a_intent==I_HELP)
 		trypet(H)
+		return
+	..()
 
 /mob/living/complex_animal/proc/trypet(var/mob/living/carbon/human/H)
 	if(petable)

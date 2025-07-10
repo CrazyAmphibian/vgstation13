@@ -1,5 +1,5 @@
 /mob/living/complex_animal/bear
-	name="Bear"
+	name="\improper Bear"
 	desc="Does it shit in the woods?"
 	icon_state="brownbear"
 	icon_living = "brownbear"
@@ -41,7 +41,7 @@
 
 
 /mob/living/complex_animal/bear/spare
-	name="Spare Bear"
+	name="\proper Spare Bear"
 	desc="This bear has adapted a form of camouflage from generations of natural selection in which the omnivores scavenge from space stations and their dumpsters. Its golden skin fools card scanners into opening the door."
 	icon_state="sparebear"
 	icon_living = "sparebear"
@@ -85,7 +85,7 @@
 							M.aggro_drawn(victim,state)
 
 /mob/living/complex_animal/bear/panda
-	name="Panda Bear"
+	name="\improper Panda Bear"
 	desc="Endangered even in space."
 	icon_state="panda"
 	icon_living = "panda"
@@ -104,7 +104,7 @@
 	return list(/datum/butchering_product/skin/bear/panda, /datum/butchering_product/teeth/lots)
 	
 /mob/living/complex_animal/bear/polar
-	name="Polar Bear"
+	name="\improper Polar Bear"
 	desc="Its eyes are souless and cold."
 	icon_state="polarbear"
 	icon_living = "polarbear"
@@ -121,7 +121,7 @@
 
 
 /mob/living/complex_animal/bear/polar/chef
-	name="Chef Bear"
+	name="\proper Chef Bear"
 	desc="Not to be confused with Chief Bear, leader of bear tribe. This one just likes to cook."
 	behavior_flags = ANIMAL_BEHAVIOR_TERRITORIAL | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	movespeed=4
