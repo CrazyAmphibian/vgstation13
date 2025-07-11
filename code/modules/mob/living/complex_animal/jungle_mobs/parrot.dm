@@ -14,6 +14,8 @@
 	behavior_flags = ANIMAL_BEHAVIOR_AVOID_PRED | ANIMAL_BEHAVIOR_RETALIATE
 	movespeed=3
 	petable=TRUE
+	pass_flags = PASSTABLE | PASSRAILING | PASSMACHINE | PASSMOB
+	flags = HEAR | PROXMOVE | HEAR_ALWAYS
 	var/obj/cur_perch=null
 	var/list/builtin_phrases=list("Hi","Hello!","Cracker?","BAWWWWK george mellons griffing me")
 	var/list/heard_phrases=list()
@@ -27,7 +29,7 @@
 
 
 /mob/living/complex_animal/parrot/Hear(var/datum/speech/speech, var/rendered_speech="")
-	if(speech.speaker && speech.speaker != src && !(speech.message in heard_phrases) && !(speech.message in builtin_phrases)  ) //Don't imitate outselves
+	if(speech.speaker && speech.speaker != src && !(speech.message in heard_phrases) && !(speech.message in builtin_phrases)  ) //Don't imitate ourselves
 		if(heard_phrases.len >= 20)
 			heard_phrases -= pick(heard_phrases)
 		heard_phrases |= speech.message
@@ -37,17 +39,19 @@
 	if(!..())
 		return FALSE
 	if(prob(50))
-		visible_message("\the [src] flies to a comfortable spot")
-		behavior_state=ANIMAL_STATE_SPECIAL
 		var/obj/perch=find_pearch()
 		if(perch)
-			walk_to(src,perch,0,movespeed)
+			visible_message("\the [src] flies to a comfortable spot")
+			behavior_state=ANIMAL_STATE_SPECIAL
+			walk_to(src,perch,1,movespeed)
 			cur_perch=perch
 	return TRUE
 
 /mob/living/complex_animal/parrot/tick_state_special()
 	if(!..())
 		return FALSE
+	if(Adjacent(cur_perch))
+		forceMove(cur_perch.loc)
 	if(loc==cur_perch?.loc)
 		icon_state = "parrot_sit"
 	if(prob(20) || !cur_perch)
@@ -80,7 +84,7 @@
 
 /mob/living/complex_animal/parrot/proc/find_pearch()
 	var/list/obj/candidates=list()
-	for(var/obj/O in view(src,7))
+	for(var/obj/O in cache_objects_in_view)
 		for(var/T in valid_perches)
 			if(istype(O,T))
 				candidates+=O

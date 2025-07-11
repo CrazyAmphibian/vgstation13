@@ -16,6 +16,7 @@
 	movespeed=7
 	kin_check_type_path=/mob/living/complex_animal/frog
 	petable=TRUE
+	pass_flags = PASSTABLE | PASSRAILING | PASSMACHINE | PASSMOB
 
 /mob/living/complex_animal/frog/get_butchering_products()
 	return list(/datum/butchering_product/frog_leg)

@@ -57,6 +57,9 @@
 	var/healthregen=0.01
 	var/lasthealth=0.0
 	
+	//cache vars. we use this for extra SPEEEEEED. so you can ignore it for vving stuff.
+	var/list/cache_objects_in_view=list()
+	
 
 /mob/living/complex_animal/New(var/loc)
 	..()
@@ -73,6 +76,8 @@
 		return 0
 	if(stat == DEAD)
 		return 0
+	
+	cache_objects_in_view = view(src,7) //refresh it every life tick.
 	
 	reagents?.metabolize(src)
 		
@@ -141,8 +146,7 @@
 /mob/living/complex_animal/proc/interrupt_fear()
 	if(behavior_state==ANIMAL_STATE_HUNTING || behavior_state==ANIMAL_STATE_ATTACKING || behavior_state==ANIMAL_STATE_DEFENDING)
 		return FALSE
-	var/list/nearby_objects=view(7,src)
-	for(var/mob/living/M in nearby_objects) //check for danger and flee
+	for(var/mob/living/M in cache_objects_in_view) //check for danger and flee
 		if(determine_isthreat(M))
 			get_flee_msg(M)
 			abort_target()
@@ -154,8 +158,7 @@
 /mob/living/complex_animal/proc/interrupt_territory()
 	if(behavior_state==ANIMAL_STATE_HUNTING || behavior_state==ANIMAL_STATE_ATTACKING || behavior_state==ANIMAL_STATE_DEFENDING)
 		return FALSE
-	var/list/nearby_objects=view(7,src)
-	for(var/mob/living/M in nearby_objects) //if not, check for trespassers
+	for(var/mob/living/M in cache_objects_in_view) //if not, check for trespassers
 		if(behavior_flags & ANIMAL_BEHAVIOR_TERRITORIAL && get_dist(M,territory)<10 && determine_tresspass(M) )
 			get_tesspass_msg(M)
 			abort_target()
@@ -183,8 +186,7 @@
 	if(territory && prob(25)) //randomly move the territory
 		if(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) //move our territory closer to pack members
 			var/list/mob/living/complex_animal/members=list()
-			var/list/nearby_objects=view(7,src)
-			for(var/mob/living/complex_animal/M in nearby_objects)
+			for(var/mob/living/complex_animal/M in cache_objects_in_view)
 				if(is_kin(M))
 					members+=M
 			if(members.len)
@@ -274,8 +276,7 @@
 
 /mob/living/complex_animal/proc/tick_state_mating()
 	if(!verify_target(8))
-		var/list/nearby_objects=view(7,src)
-		for(var/atom/A in nearby_objects)
+		for(var/atom/A in cache_objects_in_view)
 			if(istype(A,/mob/living/complex_animal))
 				var/mob/living/complex_animal/CA=A
 				if(can_offspring(CA) && CA.can_offspring(src) && CA.behavior_state==ANIMAL_STATE_MATING && !CA.target) //you better believe we're going to enforce the communicative property.
@@ -347,8 +348,7 @@
 //return a list of valid salad
 /mob/living/complex_animal/proc/get_food()
 	var/list/foodsources=list()
-	var/list/nearby_objects=view(7,src)
-	for(var/atom/A in nearby_objects)
+	for(var/atom/A in cache_objects_in_view)
 		if(A==src) //do not eat ourselves
 			continue
 		if(food_flags & ANIMAL_HERBIVORE)
@@ -423,8 +423,7 @@
 	if(istype(target,/mob/living))
 		var/mob/living/T=target
 		if(T.stat!=DEAD)
-			var/list/nearby_objects=view(7,src)
-			for(var/mob/living/complex_animal/M in nearby_objects)
+			for(var/mob/living/complex_animal/M in cache_objects_in_view)
 				if( (behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) || (M in family))
 					if(is_kin(M) && !M.is_kin(target)) //rally the pack to us, if the target is not kin
 						if(M.behavior_state!=state) //if the pack member is not engaged in similar activity

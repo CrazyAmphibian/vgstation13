@@ -481,21 +481,10 @@
 	},
 /area/vox_trading_post/trade_processing)
 "aki" = (
-/obj/machinery/door/airlock/highsecurity{
-	name = "Cyborg Station";
-	req_access_txt = "16"
-	},
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
+/turf/simulated/wall/r_wall,
 /area/comms{
 	name = "\improper Cyborg Station"
 	})
@@ -3841,6 +3830,9 @@
 /obj/machinery/alarm{
 	pixel_y = 24
 	},
+/obj/machinery/camera{
+	dir = 6
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -4122,6 +4114,15 @@
 	dir = 4
 	},
 /area/engineering/atmos)
+"bBz" = (
+/obj/machinery/camera{
+	dir = 1
+	},
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
+/area/maintenance/disposal)
 "bBC" = (
 /obj/structure/grille/broken,
 /obj/structure/window/reinforced/plasma{
@@ -4329,17 +4330,26 @@
 /mob/living/simple_animal/hostile/asteroid/hivelord,
 /turf/simulated/floor/asteroid,
 /area/mine/unexplored)
+"bFq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/hanging_lantern/dim{
+	dir = 4
+	},
+/obj/machinery/camera{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "bFD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
 "bFH" = (
-/obj/machinery/camera,
-/turf/simulated/floor{
-	icon_state = "dark yellow stripe";
-	tag = "icon-vault (NORTHEAST)"
+/obj/machinery/camera{
+	dir = 5
 	},
-/area/engineering/reactor_room)
+/turf/simulated/floor/engine,
+/area/science/xenobiology/specimen_3)
 "bFT" = (
 /turf/unsimulated/mineral/random,
 /area/mine/explored)
@@ -4718,6 +4728,9 @@
 	codes_txt = "delivery;dir=2";
 	freq = 1400;
 	location = "Medical Lobby"
+	},
+/obj/machinery/camera{
+	dir = 8
 	},
 /turf/simulated/floor{
 	dir = 1;
@@ -5205,6 +5218,14 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/fence{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
+	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/ailobby)
 "bXJ" = (
@@ -5240,6 +5261,27 @@
 	icon_state = "hydrofloor"
 	},
 /area/hydroponics)
+"bYN" = (
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/fence/corner{
+	dir = 8
+	},
+/obj/structure/sign/securearea{
+	desc = "A warning sign which reads 'CAUTION: ELECTRIC FENCE'";
+	icon_state = "shock";
+	name = "CAUTION: ELECTRIC FENCE"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "bZc" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8;
@@ -6004,6 +6046,20 @@
 	},
 /turf/simulated/floor/plating,
 /area/surface/jungle/underground/zoned/ghettomining)
+"cmB" = (
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/fence,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/ailobby)
 "cmC" = (
 /obj/item/weapon/gun/portalgun,
 /obj/structure/displaycase/specops{
@@ -6679,6 +6735,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
+/obj/structure/fence/door{
+	req_access_txt = "16";
+	name = "AI"
+	},
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
+	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/ailobby)
 "cyZ" = (
@@ -7202,6 +7267,14 @@
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/wood,
 /area/bridge/meeting_room)
+"cJc" = (
+/obj/machinery/camera{
+	dir = 1
+	},
+/turf/simulated/floor{
+	icon_state = "red"
+	},
+/area/security/brig)
 "cJl" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -8554,6 +8627,12 @@
 	icon_state = "showroomfloor"
 	},
 /area/crew_quarters/kitchen)
+"djd" = (
+/obj/machinery/camera{
+	dir = 1
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/fenced)
 "dkG" = (
 /obj/item/weapon/stool{
 	pixel_y = 8
@@ -9074,6 +9153,9 @@
 /obj/structure/cable/orange{
 	d2 = 4;
 	icon_state = "0-4"
+	},
+/obj/machinery/camera{
+	dir = 4
 	},
 /turf/simulated/floor{
 	icon_state = "yellow";
@@ -11087,6 +11169,9 @@
 	dir = 4
 	},
 /obj/structure/cable/yellow,
+/obj/machinery/camera{
+	dir = 8
+	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/outdoor_bar)
 "ehX" = (
@@ -11743,6 +11828,17 @@
 	icon_state = "floor5"
 	},
 /area/alien)
+"etu" = (
+/obj/structure/hanging_lantern/dim{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "etF" = (
 /obj/machinery/computer/tetris,
 /turf/simulated/floor{
@@ -12259,11 +12355,6 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/structure/sign/securearea{
-	desc = "A warning sign which reads 'CAUTION: ELECTRIC FENCE'";
-	icon_state = "shock";
-	name = "CAUTION: ELECTRIC FENCE"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/ailobby)
@@ -12917,6 +13008,17 @@
 /obj/machinery/light/built,
 /turf/simulated/floor/shuttle,
 /area/surface/jungle)
+"eTK" = (
+/obj/structure/bed/chair/wood/pew/left{
+	dir = 4
+	},
+/obj/machinery/camera{
+	dir = 6
+	},
+/turf/simulated/floor/carpet{
+	icon_state = "carpet14-10"
+	},
+/area/chapel/main)
 "eTN" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -13873,6 +13975,9 @@
 	req_access_txt = "35";
 	name = "Garden"
 	},
+/obj/machinery/camera{
+	dir = 1
+	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/botanty_outside)
 "fpM" = (
@@ -14363,6 +14468,9 @@
 	icon_state = "radiation";
 	name = "RADIOACTIVE AREA";
 	pixel_y = -32
+	},
+/obj/machinery/camera{
+	dir = 1
 	},
 /turf/simulated/floor{
 	icon_state = "yellow";
@@ -17415,8 +17523,11 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
+/area/surface/jungle/fenced)
 "gJu" = (
 /obj/structure/closet/emcloset,
 /turf/simulated/floor/shuttle{
@@ -17683,6 +17794,9 @@
 /obj/machinery/light_switch{
 	pixel_y = -28;
 	pixel_x = -10
+	},
+/obj/machinery/camera{
+	dir = 1
 	},
 /turf/simulated/floor{
 	icon_state = "hydrofloor"
@@ -18842,16 +18956,14 @@
 	},
 /area/centcom/evac)
 "hnd" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/structure/hanging_lantern/dim{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 5
+/obj/machinery/camera{
+	dir = 6
 	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/fenced)
 "hnj" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -19001,6 +19113,12 @@
 	icon_state = "white"
 	},
 /area/centcom/test)
+"hqk" = (
+/obj/machinery/camera{
+	dir = 5
+	},
+/turf/simulated/floor/engine,
+/area/science/xenobiology/specimen_2)
 "hql" = (
 /obj/structure/table/glass,
 /obj/item/weapon/circuitboard/aicore{
@@ -19634,6 +19752,7 @@
 	},
 /area/chapel/main)
 "hER" = (
+/obj/machinery/camera,
 /turf/simulated/floor{
 	icon_state = "dark yellow corner";
 	tag = "icon-vault (NORTHEAST)";
@@ -21303,6 +21422,16 @@
 	icon_state = "dark"
 	},
 /area/tcomms/storage)
+"imJ" = (
+/obj/machinery/camera{
+	dir = 6
+	},
+/turf/simulated/floor{
+	dir = 1;
+	icon_state = "brown";
+	tag = "icon-brown (NORTH)"
+	},
+/area/maintenance/disposal)
 "inf" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -21681,6 +21810,9 @@
 /area/surface/jungle)
 "iuV" = (
 /obj/machinery/vending/coffee,
+/obj/machinery/camera{
+	dir = 8
+	},
 /turf/simulated/floor{
 	dir = 4;
 	icon_state = "red"
@@ -24744,6 +24876,9 @@
 	pixel_y = 10;
 	pixel_x = 23
 	},
+/obj/machinery/camera{
+	dir = 8
+	},
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "jEt" = (
@@ -25882,6 +26017,12 @@
 	icon_state = "showroomfloor"
 	},
 /area/crew_quarters/kitchen)
+"kaQ" = (
+/obj/structure/hanging_lantern/dim{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/fenced)
 "kaT" = (
 /turf/simulated/wall/shuttle/unsmoothed{
 	dir = 1;
@@ -26213,6 +26354,9 @@
 /area/centcom/ert)
 "khE" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/obj/machinery/camera{
+	dir = 1
+	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "khO" = (
@@ -26684,6 +26828,9 @@
 	dir = 4
 	},
 /obj/structure/hanging_lantern,
+/obj/machinery/camera{
+	dir = 1
+	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "ktj" = (
@@ -27875,6 +28022,12 @@
 	icon_state = "barber"
 	},
 /area/medical/cmo)
+"kSI" = (
+/obj/machinery/camera{
+	dir = 5
+	},
+/turf/simulated/floor/engine,
+/area/science/xenobiology/specimen_1)
 "kSL" = (
 /obj/machinery/chem_dispenser/soda_dispenser/mapping,
 /obj/structure/table/reinforced,
@@ -27944,11 +28097,6 @@
 /turf/simulated/floor/bluegrid,
 /area/tdome)
 "kTG" = (
-/obj/structure/fence/door{
-	dir = 4;
-	req_access_txt = "16";
-	name = "AI"
-	},
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -27957,20 +28105,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
+/area/surface/jungle/fenced)
 "kTH" = (
 /obj/item/clothing/head/collectable/petehat,
 /turf/unsimulated/floor/snow/dirt,
@@ -28666,6 +28805,9 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
+	},
+/obj/machinery/camera{
+	dir = 6
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
@@ -29560,6 +29702,17 @@
 	icon_state = "white"
 	},
 /area/science/xenobiology)
+"lAt" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/camera{
+	dir = 1
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/medical/virology)
 "lBd" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated/floor/plating,
@@ -31019,6 +31172,9 @@
 /obj/item/device/analyzer,
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/machinery/camera{
+	dir = 6
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle/zoned/storage_shed)
@@ -33028,14 +33184,11 @@
 /turf/simulated/floor,
 /area/engineering/engine)
 "mRJ" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/camera{
+	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
+/area/medical/break_room)
 "mRO" = (
 /obj/structure/table/woodentable,
 /obj/structure/window/reinforced{
@@ -33635,11 +33788,13 @@
 	},
 /area/science/hallway)
 "nec" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -35697,6 +35852,9 @@
 /area/surface/jungle)
 "nWJ" = (
 /obj/machinery/cooking/deepfryer,
+/obj/machinery/camera{
+	dir = 1
+	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/crew_quarters/bar)
 "nWM" = (
@@ -35754,11 +35912,21 @@
 	},
 /area/security/interrogation)
 "nXG" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
+/obj/machinery/door/airlock/highsecurity{
+	name = "Cyborg Station";
+	req_access_txt = "16"
 	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/comms{
+	name = "\improper Cyborg Station"
+	})
 "nYj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
@@ -35923,6 +36091,13 @@
 /obj/item/ammo_casing/a762x55,
 /turf/simulated/floor,
 /area/surface/jungle)
+"oaO" = (
+/obj/structure/fence,
+/obj/machinery/camera{
+	dir = 6
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/botanty_outside)
 "oaR" = (
 /obj/structure/bed/chair/wood/pew/mid{
 	name = "courtroom observation";
@@ -38591,6 +38766,10 @@
 /obj/item/ammo_storage/magazine/m380auto,
 /obj/item/ammo_storage/magazine/m380auto,
 /obj/item/ammo_storage/magazine/m380auto,
+/obj/machinery/camera/motion{
+	dir = 8;
+	name = "secure armory"
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -38751,13 +38930,11 @@
 	},
 /area/turret_protected/tcomms_control_room)
 "pjJ" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+/obj/machinery/camera{
+	dir = 8
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
+/area/medical/break_room)
 "pjS" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 6
@@ -40283,6 +40460,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
+"pPA" = (
+/obj/machinery/camera{
+	dir = 1
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle/fenced)
 "pPM" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 8;
@@ -40773,6 +40956,9 @@
 /area/science/hallway)
 "pYZ" = (
 /obj/machinery/vending/autodrobe,
+/obj/machinery/camera{
+	dir = 8
+	},
 /turf/simulated/floor,
 /area/crew_quarters/theatre)
 "pZd" = (
@@ -41705,6 +41891,9 @@
 	},
 /area/centcom/suppy)
 "qpG" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -43245,6 +43434,16 @@
 	icon_state = "freezerfloor"
 	},
 /area/centcom/holding)
+"qWK" = (
+/obj/structure/closet/l3closet/scientist,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/camera{
+	dir = 8
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/science/xenobiology)
 "qWQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -43588,6 +43787,9 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 25
+	},
+/obj/machinery/camera{
+	dir = 8
 	},
 /turf/simulated/floor,
 /area/engineering/engine)
@@ -45316,6 +45518,9 @@
 	pixel_x = -2;
 	pixel_y = 30
 	},
+/obj/machinery/camera{
+	dir = 6
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "checker";
@@ -45489,12 +45694,11 @@
 /turf/simulated/floor/shuttle,
 /area/centcom/evac)
 "rNB" = (
-/obj/structure/fence{
+/obj/machinery/camera{
 	dir = 4
 	},
-/obj/structure/cable/yellow,
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle/fenced)
 "rNK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -46006,6 +46210,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/camera,
 /turf/simulated/floor{
 	icon_state = "dark yellow corner";
 	tag = "icon-vault (NORTHEAST)"
@@ -46807,6 +47012,15 @@
 "smp" = (
 /turf/simulated/wall/shuttle,
 /area/shuttle/arrival/station)
+"smW" = (
+/obj/machinery/camera{
+	dir = 5
+	},
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "whitegreen"
+	},
+/area/medical/virology)
 "snb" = (
 /turf/simulated/floor{
 	dir = 8;
@@ -47292,8 +47506,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
+/area/surface/jungle/fenced)
 "szI" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -50319,6 +50538,9 @@
 	name = "Toxins"
 	})
 "tDr" = (
+/obj/machinery/camera{
+	dir = 6
+	},
 /turf/simulated/floor/carpet{
 	icon_state = "carpet14-10"
 	},
@@ -50659,18 +50881,13 @@
 	},
 /area/centcom/suppy)
 "tJZ" = (
-/obj/structure/fence,
-/obj/structure/cable/yellow,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/structure/closet/secure_closet/engineering_mechanic,
+/obj/machinery/camera,
+/turf/simulated/floor{
+	icon_state = "yellow";
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
+/area/engineering/mechanics)
 "tKN" = (
 /obj/machinery/navbeacon{
 	codes_txt = "delivery;dir=2";
@@ -51252,12 +51469,11 @@
 	},
 /area/centcom/ert)
 "tXd" = (
-/obj/structure/fence/corner{
-	dir = 8
+/obj/machinery/camera{
+	dir = 6
 	},
-/obj/structure/cable/yellow,
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle/fenced)
 "tXe" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -52531,6 +52747,9 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/camera{
+	dir = 8
+	},
 /turf/simulated/floor{
 	icon_state = "grimy"
 	},
@@ -52778,25 +52997,11 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/medical/break_room)
 "uFk" = (
-/obj/structure/fence,
-/obj/structure/cable/yellow,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/camera{
+	dir = 8
 	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/sign/securearea{
-	desc = "A warning sign which reads 'CAUTION: ELECTRIC FENCE'";
-	icon_state = "shock";
-	name = "CAUTION: ELECTRIC FENCE"
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
+/turf/simulated/floor/engine,
+/area/science/xenobiology/specimen_5)
 "uFq" = (
 /turf/simulated/floor{
 	icon_state = "dark yellow stripe";
@@ -54387,6 +54592,11 @@
 	d2 = 2;
 	icon_state = "0-2";
 	pixel_y = 1
+	},
+/obj/structure/sign/securearea{
+	desc = "A warning sign which reads 'CAUTION: ELECTRIC FENCE'";
+	icon_state = "shock";
+	name = "CAUTION: ELECTRIC FENCE"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/ailobby)
@@ -57349,6 +57559,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/security/warden)
+"wpO" = (
+/obj/machinery/camera{
+	dir = 8
+	},
+/turf/simulated/floor/engine,
+/area/science/xenobiology/specimen_4)
 "wqc" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
@@ -58140,6 +58356,9 @@
 	},
 /obj/machinery/light,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/camera{
+	dir = 8
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -58264,6 +58483,9 @@
 /obj/machinery/atmospherics/unary/portables_connector{
 	dir = 1
 	},
+/obj/machinery/camera{
+	dir = 1
+	},
 /turf/simulated/floor{
 	icon_state = "yellow";
 	dir = 6
@@ -58297,6 +58519,9 @@
 /obj/structure/sign/directions/carg{
 	dir = 4;
 	pixel_y = -42
+	},
+/obj/machinery/camera{
+	dir = 1
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
@@ -59667,15 +59892,11 @@
 	},
 /area/research_outpost/xenobot)
 "xkn" = (
-/obj/structure/fence,
-/obj/structure/cable/yellow,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/camera{
+	dir = 8
 	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/ailobby)
+/turf/simulated/floor/engine,
+/area/science/xenobiology/specimen_6)
 "xkr" = (
 /obj/structure/table,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -61462,6 +61683,9 @@
 /obj/structure/sign/directions/security{
 	dir = 8;
 	pixel_y = -23
+	},
+/obj/machinery/camera{
+	dir = 1
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
@@ -104374,7 +104598,7 @@ tnZ
 tnZ
 xor
 xor
-xor
+djd
 lQc
 rhl
 ltR
@@ -106878,7 +107102,7 @@ fYs
 fYs
 fYs
 gaI
-lIK
+pmR
 lIK
 lIK
 lIK
@@ -108990,7 +109214,7 @@ gNw
 tDF
 bVg
 fYs
-pmR
+lIK
 lIK
 lIK
 lIK
@@ -109312,7 +109536,7 @@ mHS
 vbR
 pXw
 ubY
-wlL
+cJc
 esJ
 bza
 lIp
@@ -109694,7 +109918,7 @@ hFS
 vFL
 vFL
 gaI
-lIK
+pmR
 lIK
 lIK
 lIK
@@ -117399,7 +117623,7 @@ xor
 vhv
 mEG
 mEG
-tdS
+bFq
 mEG
 mEG
 mEG
@@ -118800,7 +119024,7 @@ fjR
 wld
 wld
 wld
-wld
+jaT
 wld
 fjR
 wld
@@ -118818,7 +119042,7 @@ hZt
 iMQ
 xMH
 wld
-wld
+pPA
 cIm
 kMy
 kMy
@@ -119887,7 +120111,7 @@ tdS
 xKy
 snf
 wld
-jaT
+wld
 wld
 vcK
 vNb
@@ -120200,7 +120424,7 @@ llh
 idZ
 idZ
 idZ
-owT
+hnd
 xor
 xor
 wld
@@ -120966,7 +121190,7 @@ sjp
 qtA
 fTz
 sjp
-xSZ
+mRJ
 xSZ
 iRw
 lIK
@@ -121260,7 +121484,7 @@ xor
 xor
 xor
 wld
-nre
+wld
 oqo
 rWK
 rWK
@@ -121971,7 +122195,7 @@ wld
 wld
 wld
 wld
-wld
+jaT
 upa
 eJs
 edD
@@ -124051,7 +124275,7 @@ wld
 wld
 wld
 cOH
-fXH
+imJ
 fxS
 sHR
 bNc
@@ -124102,7 +124326,7 @@ rSu
 egq
 rSu
 rSu
-owT
+hnd
 xor
 maR
 iMQ
@@ -124839,7 +125063,7 @@ vkY
 teC
 xSZ
 xSZ
-xSZ
+pjJ
 iRw
 lIK
 lIK
@@ -126945,7 +127169,7 @@ jBM
 gUY
 gnb
 gnb
-gnb
+smW
 gnb
 iNB
 wVy
@@ -128281,7 +128505,7 @@ uSS
 uSS
 uSS
 uSS
-uSS
+bBz
 ntD
 hmU
 bGd
@@ -129382,7 +129606,7 @@ bYw
 vDH
 cFY
 why
-bWM
+oaO
 gnA
 maR
 iMQ
@@ -129683,7 +129907,7 @@ wld
 wld
 wld
 wld
-wld
+rNB
 wld
 wld
 xor
@@ -129760,7 +129984,7 @@ hbm
 euh
 eve
 qfI
-jGU
+lAt
 dKH
 urA
 vHG
@@ -131851,7 +132075,7 @@ nTf
 maR
 iMQ
 xMH
-wld
+jaT
 wld
 wld
 wld
@@ -133559,7 +133783,7 @@ wld
 wld
 wld
 wld
-wld
+jaT
 fjR
 wld
 wld
@@ -135743,7 +135967,7 @@ uxZ
 uxZ
 nPf
 pXV
-bFH
+cAf
 gSN
 qVO
 vmj
@@ -136071,7 +136295,7 @@ nre
 emq
 xMH
 yam
-nRj
+tJZ
 qvG
 aCm
 iai
@@ -137800,13 +138024,13 @@ rOD
 rOD
 rOD
 muY
-wld
-wld
-wld
-wld
-wld
-wld
-wld
+xor
+xor
+xor
+xor
+xor
+xor
+xor
 mSW
 mSW
 mSW
@@ -138152,23 +138376,23 @@ keH
 keH
 wJc
 iqz
-wld
-wld
-wld
-fjR
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-wld
+xor
+xor
+xor
+kaQ
+xor
+xor
+xor
+xor
+xor
+xor
+xor
+xor
+xor
+xor
+xor
+xor
+xor
 dKf
 maR
 wld
@@ -138508,19 +138732,19 @@ lmn
 lmn
 lmn
 viD
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-wld
-wld
+tXd
+xor
+xor
+xor
+xor
+xor
+xor
+xor
+xor
+xor
+xor
+xor
+xor
 dKf
 maR
 wld
@@ -138871,14 +139095,14 @@ vjL
 eEN
 cPk
 cPk
-cPk
-cPk
+cmB
+bYN
 kTG
-tJZ
-xkn
-xkn
-uFk
-tXd
+maR
+wld
+wld
+wld
+wld
 wld
 wld
 wld
@@ -139226,12 +139450,12 @@ uGl
 eDb
 cyT
 szi
-mRJ
-pjJ
-uGl
-nXG
-rNB
-oqo
+odV
+tsV
+cAe
+wld
+wld
+wld
 wld
 wld
 vay
@@ -139578,14 +139802,14 @@ wZj
 iLu
 bXE
 gJt
-bXE
-hnd
-vxH
-uGl
-qQj
-eOA
-eOA
-eOA
+xXD
+muY
+etu
+wld
+wld
+wld
+wld
+oqo
 vay
 oyO
 jCt
@@ -139877,15 +140101,15 @@ lIK
 lrQ
 fMg
 rHY
-rHY
+bFH
 lrQ
 ixm
 old
-old
+hqk
 mBi
 cLz
 iLp
-iLp
+kSI
 sUd
 uGW
 gaG
@@ -139932,12 +140156,12 @@ uUU
 dWi
 xas
 aki
+nXG
 gfm
 gfm
-gfm
-snf
-snf
-snf
+eOA
+eOA
+eOA
 grk
 efu
 qtz
@@ -140259,7 +140483,7 @@ qMo
 qMo
 dUA
 oof
-vQV
+eTK
 xVp
 pLW
 pHk
@@ -140287,9 +140511,9 @@ nec
 qpG
 gfm
 gfm
-lWz
-lWz
-lWz
+snf
+snf
+snf
 uUI
 jgU
 jgU
@@ -140639,9 +140863,9 @@ hLP
 vPc
 gfm
 gfm
-lIK
-lIK
-lIK
+lWz
+lWz
+lWz
 uUI
 bwZ
 nCT
@@ -142703,7 +142927,7 @@ lAq
 lAq
 rjg
 mTx
-oUm
+qWK
 oUm
 mTx
 cwv
@@ -144113,7 +144337,7 @@ bcB
 jhf
 wld
 wld
-wld
+rNB
 wld
 mUo
 nPp
@@ -144514,7 +144738,7 @@ bcJ
 lIK
 lIK
 lIK
-rRT
+cge
 cge
 auf
 auf
@@ -144805,15 +145029,15 @@ lIK
 afN
 ptY
 jNT
-jNT
+xkn
 uQw
 lNZ
 cPx
-cPx
+uFk
 uQw
 iAR
 bcB
-bcB
+wpO
 jhf
 wld
 wld
@@ -266606,13 +266830,13 @@ rDI
 rDI
 rDI
 rDI
+rDI
+rDI
 bRI
 hMT
 bRI
 bRI
 bRI
-bRI
-qsT
 rDI
 rDI
 rDI
@@ -266958,15 +267182,15 @@ rDI
 rDI
 rDI
 rDI
+rDI
+rDI
 bRI
 bRI
 bRI
 bRI
 bRI
 bRI
-bRI
-bRI
-bRI
+qsT
 bRI
 bRI
 bRI
