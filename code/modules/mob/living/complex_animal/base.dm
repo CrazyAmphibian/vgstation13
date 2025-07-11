@@ -104,15 +104,10 @@
 	mob_age++
 	
 	escape()
-	var/interrupt=FALSE
-	if(check_hunger()) //prioritize eating over all other things
-		interrupt=TRUE
-	if(behavior_state!=ANIMAL_STATE_ATTACKING)
-		if(!interrupt && check_territory()) //next, prioritize defending our home
-			interrupt=TRUE
-		if(behavior_state!=ANIMAL_STATE_DEFENDING)
-			if(!interrupt && check_fear()) //then, prioritize saving our own ass.
-				interrupt=TRUE
+
+	interrupt_hunger() //prioritize eating over all other things
+	interrupt_territory() //next, prioritize defending our home
+	interrupt_fear() //then, prioritize saving our own ass.
 
 	switch(behavior_state)
 		if(ANIMAL_STATE_IDLE)
@@ -132,28 +127,36 @@
 	return 1
 
 //runs independently of other states so we won't starve to death running away.
-/mob/living/complex_animal/proc/check_hunger()
+/mob/living/complex_animal/proc/interrupt_hunger()
+	if(behavior_state==ANIMAL_STATE_HUNTING || behavior_state==ANIMAL_STATE_ATTACKING || behavior_state==ANIMAL_STATE_DEFENDING)
+		return FALSE
 	if(nutrition<max_food*0.5)
 		visible_message("<b>\the [src]</b> looks hungry")
+		abort_target()
 		behavior_state=ANIMAL_STATE_HUNTING
 		return TRUE
 
 //so we aren't too busy to run from a bear.
-/mob/living/complex_animal/proc/check_fear()
+/mob/living/complex_animal/proc/interrupt_fear()
+	if(behavior_state==ANIMAL_STATE_HUNTING || behavior_state==ANIMAL_STATE_ATTACKING || behavior_state==ANIMAL_STATE_DEFENDING)
+		return FALSE
 	var/list/nearby_objects=view(7,src)
 	for(var/mob/living/M in nearby_objects) //check for danger and flee
 		if(determine_isthreat(M))
 			get_flee_msg(M)
+			abort_target()
 			behavior_state = ANIMAL_STATE_FLEEING
-			target=M
-			return FALSE
+			return TRUE
 
 //defend our /turf before other stuff
-/mob/living/complex_animal/proc/check_territory()
+/mob/living/complex_animal/proc/interrupt_territory()
+	if(behavior_state==ANIMAL_STATE_HUNTING || behavior_state==ANIMAL_STATE_ATTACKING || behavior_state==ANIMAL_STATE_DEFENDING)
+		return FALSE
 	var/list/nearby_objects=view(7,src)
 	for(var/mob/living/M in nearby_objects) //if not, check for trespassers
 		if(behavior_flags & ANIMAL_BEHAVIOR_TERRITORIAL && get_dist(M,territory)<10 && determine_tresspass(M) )
 			get_tesspass_msg(M)
+			abort_target()
 			behavior_state = ANIMAL_STATE_DEFENDING
 			target=M
 			return FALSE
@@ -364,7 +367,7 @@
 					foodsources+=M
 					continue
 			else if(istype(A,/obj/item/organ) && !istype(A,/obj/item/organ/external/head) && !istype(A,/obj/item/organ/internal/brain)) //we don't want to round remove people
-				foodsources+=M
+				foodsources+=A
 				continue
 				
 		//no easy way to check if it's meat. oh well.
