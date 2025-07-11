@@ -2098,9 +2098,6 @@ var/global/list/adminbusteleportlocs = list()
 /area/surface/jungle/zoned/dump
 	name = "\improper Dump"
 
-/area/surface/jungle/zoned/ailobby
-	name = "\improper AI Maintenance Patio"
-
 /area/surface/jungle/zoned/aifenced
 	name = "\improper AI Restricted Fenced Zone"
 
