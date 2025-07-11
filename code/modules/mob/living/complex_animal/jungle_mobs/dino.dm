@@ -60,7 +60,7 @@
 
 /mob/living/complex_animal/dinosaur/get_idle_sounds()
 	if(prob(10))
-		var/i=rand(1,5)
+		var/i=rand(1,3)
 		switch(i)
 			if(1)
 				emote("me", MESSAGE_HEAR, "growls")
@@ -68,14 +68,15 @@
 				emote("me", MESSAGE_HEAR, "roars")
 			if(3)
 				emote("me", MESSAGE_HEAR, "stomps")
-			if(4)
-				say("acka lacka.")
-			if(5)
-				say("boom boom.")
 
 
 /mob/living/complex_animal/dinosaur/determine_tresspass(var/mob/trespasser)	
 	if(trespasser.resting)
+		return FALSE
+	return ..()
+
+/mob/living/complex_animal/dinosaur/determine_isthreat(var/mob/individual)
+	if(individual.resting)
 		return FALSE
 	return ..()
 
@@ -104,3 +105,8 @@
 			Move(get_step(src,pick(dirlist)))
 		dir=pick(dirlist_cardinal)
 		sleep(5)
+	if(prob(20))
+		if(world.time % 3==1)
+			say("acka lacka.")
+		else
+			say("boom boom.")

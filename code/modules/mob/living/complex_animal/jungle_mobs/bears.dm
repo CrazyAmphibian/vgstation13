@@ -16,6 +16,7 @@
 	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	movespeed=5
 	kin_check_type_path=/mob/living/complex_animal/bear
+	var/sea_bear=TRUE
 
 /mob/living/complex_animal/bear/get_idle_sounds()
 	if(prob(10))
@@ -35,6 +36,14 @@
 			emote("me", MESSAGE_SEE, "swings at \the [individual].")
 		if(3)
 			emote("me", MESSAGE_SEE, "claws \the [individual].")
+
+
+/mob/living/complex_animal/bear/verify_target(var/individual,var/max_distance=-1,var/allow_dead=FALSE)
+	if(sea_bear)
+		for(var/obj/effect/decal/cleanable/crayon/C in get_turf(individual))
+			if(!C.on_wall && C.name == "o") //drawing a circle around yourself is the only way to ward off space bears!
+				return FALSE
+	return ..()
 
 /mob/living/complex_animal/bear/get_butchering_products()
 	return list(/datum/butchering_product/skin/bear/brownbear, /datum/butchering_product/teeth/lots)
@@ -56,6 +65,7 @@
 	damage_variance = 5
 	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_TERRITORIAL | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	movespeed=4
+	sea_bear=FALSE
 
 /mob/living/complex_animal/bear/spare/can_offspring(var/mob/living/complex_animal/mate)
 	return FALSE
@@ -131,4 +141,5 @@
 	maxHealth=100
 	food_per_tick=0.005
 	healthregen=0.015
+	sea_bear=FALSE
 	

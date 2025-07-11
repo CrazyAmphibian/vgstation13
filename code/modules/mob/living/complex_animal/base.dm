@@ -207,7 +207,7 @@
 	if(nutrition>max_food*0.75)
 		abort_target()
 		return FALSE
-	if(!verify_target(20,TRUE))
+	if(!verify_target(target,20,TRUE))
 		abort_target(FALSE)
 		var/list/possible=rank_foodsources(get_food())
 		var/list/pickfrom=list()
@@ -239,7 +239,7 @@
 	return TRUE
 
 /mob/living/complex_animal/proc/tick_state_defending()
-	if(!verify_target())
+	if(!verify_target(target))
 		abort_target()
 		return FALSE
 	else
@@ -253,7 +253,7 @@
 	return TRUE
 
 /mob/living/complex_animal/proc/tick_state_attacking()
-	if(!verify_target(15))
+	if(!verify_target(target,15))
 		abort_target()
 		return FALSE
 	else
@@ -266,7 +266,7 @@
 	return TRUE
 
 /mob/living/complex_animal/proc/tick_state_fleeing()
-	if(!verify_target(10))
+	if(!verify_target(target,10))
 		abort_target()
 		return FALSE
 	else
@@ -275,7 +275,7 @@
 	return TRUE
 
 /mob/living/complex_animal/proc/tick_state_mating()
-	if(!verify_target(8))
+	if(!verify_target(target,8))
 		for(var/atom/A in cache_objects_in_view)
 			if(istype(A,/mob/living/complex_animal))
 				var/mob/living/complex_animal/CA=A
@@ -310,16 +310,16 @@
 
 
 //checks our target variable and returns if it's valid.
-/mob/living/complex_animal/proc/verify_target(var/max_distance=-1,var/allow_dead=FALSE)
-	if(!target)
+/mob/living/complex_animal/proc/verify_target(var/atom/targ,var/max_distance=-1,var/allow_dead=FALSE)
+	if(!targ)
 		return FALSE
 	if(max_distance>=0)
-		if(get_dist(src,target)>max_distance)
+		if(get_dist(src,targ)>max_distance)
 			return FALSE
-	if(target.z!=src.z)
+	if(targ.z!=src.z)
 		return FALSE
-	if(!allow_dead && istype(target,/mob/living))
-		var/mob/living/M = target
+	if(!allow_dead && istype(targ,/mob/living))
+		var/mob/living/M = targ
 		if(M.stat==DEAD)
 			return FALSE
 	return TRUE
@@ -376,6 +376,9 @@
 		if(istype(A,/obj/item/weapon/reagent_containers/food/snacks))
 			foodsources+=A
 			continue
+	for(var/atom/A in foodsources)
+		if(!verify_target(A))
+			foodsources-=A
 	return foodsources
 
 //take the list from get_food, and create an associated list ranking our affinity for them
@@ -431,6 +434,8 @@
 	
 
 /mob/living/complex_animal/proc/attack(var/victim)
+	if(!verify_target(victim,1,TRUE))
+		return FALSE
 	if(is_pacified())
 		return FALSE
 	if(!victim)
@@ -441,6 +446,8 @@
 
 /mob/living/complex_animal/proc/tryeat(var/victim)
 	if(!victim)
+		return FALSE
+	if(!verify_target(victim,1,TRUE))
 		return FALSE
 	if(istype(target,/mob/living))
 		var/mob/living/M=target
@@ -527,7 +534,7 @@
 
 //only fired when the mob is within our territory, and we have the TERRITORIAL flag
 /mob/living/complex_animal/proc/determine_tresspass(var/mob/trespasser)
-	if(trespasser.stat==DEAD)
+	if(!verify_target(trespasser))
 		return FALSE
 	if(is_pacified())
 		return FALSE
@@ -543,7 +550,7 @@
 
 //only fired when the mob is seen by us, and we have the AVOID_PRED flag
 /mob/living/complex_animal/proc/determine_isthreat(var/mob/individual)
-	if(individual.stat==DEAD)
+	if(!verify_target(individual))
 		return FALSE
 	if(is_pacified())
 		return FALSE
