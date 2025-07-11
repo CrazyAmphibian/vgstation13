@@ -30,6 +30,7 @@
 /mob/living/complex_animal
 	size=0
 	icon='icons/mob/animal.dmi'
+	can_butcher=TRUE
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
 	var/armor=list(melee=0,bullet=0,laser=0,energy=0,bomb=0,bio=0,rad=0)
 	var/behavior_flags=0
@@ -145,6 +146,7 @@
 		if(determine_isthreat(M))
 			get_flee_msg(M)
 			abort_target()
+			target=M
 			behavior_state = ANIMAL_STATE_FLEEING
 			return TRUE
 
@@ -448,10 +450,14 @@
 		else
 			if(unarmed_attack_mob(victim))
 				nutrition+=M.size*5
-				emote("me",MESSAGE_SEE,"chomps on \the [target]")
+				emote("me",MESSAGE_SEE,"chomps on \the [target], tearing them apart.")
+				if(M.butchering_drops && M.butchering_drops.len)
+					for(var/datum/butchering_product/product in M.butchering_drops)
+						while(product.spawn_result(M.loc,M))
+							; //you need this semicolon here or else it won't compile because muh whitespace sensitive language
 				if(M.meat_type)
-					for(var/i=0,i<(M.size/2),i++)
-						new M.meat_type(M.loc)
+					while(M.drop_meat())
+						;  //see above.
 				M.gib()
 				return TRUE
 	else if(istype(target,/obj/item/organ))
@@ -609,7 +615,21 @@
 /mob/living/complex_animal/get_unarmed_damage(var/atom/victim)
 	return base_damage+ (damage_variance ? rand(-damage_variance,damage_variance) : 0)
 
+
+
+/mob/living/complex_animal/init_butchering_list()
+	if(butchering_drops && butchering_drops.len) //Already initialized
+		return
+
+	butchering_drops = list()
+	var/list/animal_butchering_products = get_butchering_products()
+	if(animal_butchering_products.len > 0)
+		for(var/butchering_type in animal_butchering_products)
+			butchering_drops += new butchering_type()
+
 /mob/living/complex_animal/death(gibbed) //stolen from simple_animal
+	..()
+	init_butchering_list()
 	if((status_flags & BUDDHAMODE) || stat == DEAD)
 		return
 
@@ -637,8 +657,9 @@
 				target=H
 		return
 	else if(H.a_intent==I_HELP)
-		trypet(H)
-		return
+		if(stat!=DEAD)
+			trypet(H)
+			return
 	..()
 
 /mob/living/complex_animal/proc/trypet(var/mob/living/carbon/human/H)
