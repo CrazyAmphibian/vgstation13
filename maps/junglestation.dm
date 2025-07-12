@@ -53,6 +53,7 @@
 **	Day and Night Lighting **
 **	See: daynightcycle.dm  **
 ****************************/
+
 /datum/subsystem/daynightcycle
 	var/solartime=0 //start at 0. set not like that for debugging.
 

@@ -36,9 +36,11 @@
 	var/behavior_flags=0
 	nutrition = 50
 	var/max_food = 50
-	var/food_per_tick = 0.002 //how much of max_food should be deducted from food per tick. This number gives us about 1000 seconds until we starve
+	var/food_per_tick = 0.001 //how much of max_food should be deducted from food per tick. This number gives us about 2000 seconds until we starve
 	var/food_flags = 0
 	var/behavior_state = ANIMAL_STATE_IDLE
+	var/last_state = -1
+	var/ticks_this_state=0
 	var/mob_age = 0
 	var/mob_max_age = 300 //10 minutes. above this, the mob will start rolling to die of old age.
 	var/atom/target = null
@@ -50,7 +52,7 @@
 	var/pacify_aura=FALSE
 	var/kin_check_type_path=null //for mobs with many subtypes. set to the parent mob type. leave null if not needed
 	var/petable=FALSE
-	
+	var/max_local_population=7 //to prevent total overpopulation
 	var/icon_living = ""
 	var/icon_dead = ""
 	
@@ -64,7 +66,7 @@
 /mob/living/complex_animal/New(var/loc)
 	..()
 	create_reagents(100)
-	nutrition = rand(ceil(max_food/2),max_food)
+	nutrition = rand(ceil(max_food*0.75),max_food)
 	gender="female"
 	if(prob(50))
 		gender="male"
@@ -76,6 +78,12 @@
 		return 0
 	if(stat == DEAD)
 		return 0
+	
+	if(last_state!=behavior_state)
+		ticks_this_state=0
+		last_state=behavior_state
+	else
+		ticks_this_state++
 	
 	cache_objects_in_view = view(src,7) //refresh it every life tick.
 	
@@ -207,7 +215,7 @@
 	if(nutrition>max_food*0.75)
 		abort_target()
 		return FALSE
-	if(!verify_target(target,20,TRUE))
+	if(!verify_target(target,20,TRUE) || (ticks_this_state>9 && prob(25)) )
 		abort_target(FALSE)
 		var/list/possible=rank_foodsources(get_food())
 		var/list/pickfrom=list()
@@ -556,15 +564,16 @@
 		return FALSE
 	if(is_kin(individual))
 		return FALSE
-	if(istype(individual,/mob/living/carbon))
-		return !(behavior_flags & ANIMAL_BEHAVIOR_TERRITORIAL)
-	if(istype(individual,/mob/living/silicon))
-		return !(behavior_flags & ANIMAL_BEHAVIOR_TERRITORIAL)
-	if(istype(individual,/mob/living/simple_animal))
-		return istype(individual,/mob/living/simple_animal/hostile)
-	if(istype(individual,/mob/living/complex_animal))
-		var/mob/living/complex_animal/A = individual
-		return A.behavior_flags & (ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_TERRITORIAL)
+	if(behavior_flags & ANIMAL_BEHAVIOR_AVOID_PRED)
+		if(istype(individual,/mob/living/carbon))
+			return !(behavior_flags & ANIMAL_BEHAVIOR_TERRITORIAL)
+		if(istype(individual,/mob/living/silicon))
+			return !(behavior_flags & ANIMAL_BEHAVIOR_TERRITORIAL)
+		if(istype(individual,/mob/living/simple_animal))
+			return istype(individual,/mob/living/simple_animal/hostile)
+		if(istype(individual,/mob/living/complex_animal))
+			var/mob/living/complex_animal/A = individual
+			return A.behavior_flags & (ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_TERRITORIAL)
 	return FALSE
 
 
@@ -599,6 +608,12 @@
 	if(!mate)
 		return FALSE
 	if(mate.type!=src.type)
+		return FALSE
+	var/localcount=0
+	for(var/mob/living/complex_animal/A in cache_objects_in_view)
+		if(A.type==src.type && A.stat!=DEAD)
+			localcount++
+	if(localcount>max_local_population)
 		return FALSE
 	if((src.gender=="male" && mate.gender=="female") || (mate.gender=="male" && src.gender=="female"))
 		return TRUE

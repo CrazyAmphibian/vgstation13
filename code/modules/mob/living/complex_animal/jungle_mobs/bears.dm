@@ -60,7 +60,7 @@
 	armor=list(melee=10,bullet=30,laser=40,energy=0,bomb=0,bio=0,rad=0)
 	max_food=200
 	healthregen=0.02
-	food_per_tick = 0.001
+	food_per_tick = 0.0005
 	base_damage = 35
 	damage_variance = 5
 	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_TERRITORIAL | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
@@ -139,7 +139,9 @@
 	base_damage=35
 	damage_variance=15
 	maxHealth=100
-	food_per_tick=0.005
+	food_per_tick=0.0
 	healthregen=0.015
 	sea_bear=FALSE
-	
+
+/mob/living/complex_animal/bear/polar/chef/can_offspring(var/mob/living/complex_animal/mate)
+	return FALSE	
