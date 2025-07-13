@@ -52,7 +52,7 @@
 	var/pacify_aura=FALSE
 	var/kin_check_type_path=null //for mobs with many subtypes. set to the parent mob type. leave null if not needed
 	var/petable=FALSE
-	var/max_local_population=7 //to prevent total overpopulation
+	var/max_local_population=5 //to prevent total overpopulation
 	var/icon_living = ""
 	var/icon_dead = ""
 	
