@@ -139,6 +139,10 @@
 /datum/subsystem/daynightcycle/play_globalsound()
 	return
 
+/datum/subsystem/foliage_regrow_junga
+	flags=0
+
+
 ////////////////////////////////////////////////////////////////
 #include "junglestation.dmm"
 #endif

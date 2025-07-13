@@ -142,34 +142,36 @@ var/list/foliage_replacments=list(
 	icon_state = "grass_jungle1"
 	turf_speed_multiplier=1.1 // tall grass.
 	construction_allowed=TRUE
-
-/turf/unsimulated/floor/jungle/grass/New(var/loc,var/NO_GROW=FALSE)
+	var/regrowticks=0 //world.time
+	
+/turf/unsimulated/floor/jungle/grass/New(var/loc)
 	..()
 	icon_state="grass_jungle[rand(1,4)]"
 	footstep_sound = sounds_grass
 	footstep_sound_barefoot = sounds_grass
 	footstep_sound_claw = sounds_grass
-	if(NO_GROW)
-		return
-
-	//var/area/A = loc
-	//if(prob( (A.type!=/area/surface/jungle) ? 50 : 100 )) //populated areas have less plants. DOESN'T WORK. IS NULL. WHYYYYYYYYYYYYY
+	
+	if(SSFoliageRegrow && !generate_foliage())
+		TURFS_TO_REGROW +=src
+		regrowticks=0
+	
+/turf/unsimulated/floor/jungle/grass/proc/generate_foliage()
 	if (prob(50))
 		if(prob(10)) //10% chance to replace with rocks or some shit. 5% over all
 			var/rep=pick(foliage_replacments)
-			new rep(src)
 			turf_speed_multiplier+=0.6
+			return new rep(src)
 		else //45% over all
 			var/plantseed = abs(( sin((x+rand(-2,2))*5.01+213.998) + sin((y+rand(-2,2))*4.56+71.294) )%%1.0)
 			plantseed = 1+floor(plantseed*(foliage_choices.len-0.01))//mmm, dumb float math
 
 			var/create=foliage_choices[plantseed]
 			if(create)
-				new create(src)
 				turf_speed_multiplier+=0.6
+				return new create(src)
 	else if(prob(50)) //25% overall
 		if( !(locate(/obj/structure/flora/tree) in range(2,src)) )
-			new/obj/structure/flora/tree/shitty(src)
+			return new/obj/structure/flora/tree/shitty(src)
 
 /turf/unsimulated/floor/jungle/grass/Destroy()
 	..()
@@ -202,9 +204,9 @@ var/list/foliage_replacments=list(
 
 /turf/unsimulated/floor/jungle/grass/no_flora
 	icon_state="grass_alt1" //uses an alt texture at first so that it appears different while mapping. this will correct itself when it spawns.
-/turf/unsimulated/floor/jungle/grass/no_flora/New(var/loc)
-	..(loc,TRUE)
 
+/turf/unsimulated/floor/jungle/grass/no_flora/generate_foliage()
+	return
 
 /turf/unsimulated/floor/jungle/mud
 	name="Mud"

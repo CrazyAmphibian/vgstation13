@@ -14,6 +14,9 @@
 	if(istype(loc,/turf/unsimulated/floor/jungle/grass))
 		var/turf/unsimulated/floor/jungle/grass/G=loc
 		G.turf_speed_multiplier=1.1
+		if(SSFoliageRegrow)
+			TURFS_TO_REGROW +=src
+			G.regrowticks=world.time
 	..()
 
 /obj/structure/flora/update_icon()
