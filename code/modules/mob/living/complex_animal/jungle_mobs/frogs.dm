@@ -8,7 +8,7 @@
 	health=10
 	maxHealth=10
 	max_food=20
-	food_per_tick = 0.0 //there's no bugs to eat so uh...
+	food_per_tick = -0.001 //there's no bugs to eat so uh...
 	food_flags = 0
 	base_damage = 5
 	damage_variance = 1
