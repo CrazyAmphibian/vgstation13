@@ -55,9 +55,15 @@
 	var/max_local_population=5 //to prevent total overpopulation
 	var/icon_living = ""
 	var/icon_dead = ""
-	
 	var/healthregen=0.01
 	var/lasthealth=0.0
+	
+	//these are here because we, for some reason that i don't know, call attack_animal. that sounds good, until you realize that attack_animal wants a simple_animal. this causes a lot of runtimes, and i can't find where attack_animal is actually called, or why it's called when we're not even a simple_animal, so instead, we define some of the important variables here so it doesn't totally break. it's still a good practice to revise the code, as was done with most of the common objects that will be broken, like windows and lockers.
+	var/environment_smash_flags = 0xFFFFFFFF
+	var/melee_damage_upper=0
+	var/melee_damage_lower=0
+	
+
 	
 	//cache vars. we use this for extra SPEEEEEED. so you can ignore it for vving stuff.
 	var/list/cache_objects_in_view=list()
@@ -72,6 +78,8 @@
 		gender="male"
 	territory=locate(x,y,z) //store turf where we were born/created
 	
+	melee_damage_upper=base_damage+damage_variance
+	melee_damage_lower=base_damage-damage_variance
 
 /mob/living/complex_animal/Life()
 	if(!..())
