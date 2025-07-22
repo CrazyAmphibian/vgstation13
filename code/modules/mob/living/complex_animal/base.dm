@@ -59,7 +59,7 @@
 	var/lasthealth=0.0
 	
 	//these are here because we, for some reason that i don't know, call attack_animal. that sounds good, until you realize that attack_animal wants a simple_animal. this causes a lot of runtimes, and i can't find where attack_animal is actually called, or why it's called when we're not even a simple_animal, so instead, we define some of the important variables here so it doesn't totally break. it's still a good practice to revise the code, as was done with most of the common objects that will be broken, like windows and lockers.
-	var/environment_smash_flags = 0xFFFFFFFF
+	var/environment_smash_flags = 0xFFFFFF
 	var/melee_damage_upper=0
 	var/melee_damage_lower=0
 	
@@ -227,7 +227,7 @@
 		abort_target(FALSE)
 		var/list/possible=rank_foodsources(get_food())
 		var/list/pickfrom=list()
-		var/highestprio=-9999999999999999999999999999
+		var/highestprio=-999999
 		for(var/atom/A in possible) //get the highest ranked objects
 			var/rank=possible[A]
 			if(rank>highestprio)
