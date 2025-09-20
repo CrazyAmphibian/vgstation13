@@ -63,7 +63,7 @@ On the map dm file, redefine the following:
 		if(!T || T.gcDestroyed)
 			continue
 
-		T.set_light(next_light_range,next_light_power,current_timeOfDay)
+		T.set_light(next_light_range,next_light_power,current_timeOfDay,TRUE)
 
 		if(MC_TICK_CHECK)
 			return
