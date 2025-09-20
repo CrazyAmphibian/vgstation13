@@ -37922,7 +37922,7 @@
 	normalspeed = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/simulated/floor/plating,
+/turf/simulated/floor,
 /area/supply/lobby)
 "oQd" = (
 /obj/machinery/meter,

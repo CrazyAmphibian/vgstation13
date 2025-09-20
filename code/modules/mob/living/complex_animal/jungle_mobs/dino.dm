@@ -31,12 +31,20 @@
 		behavior_state=ANIMAL_STATE_SPECIAL
 	return TRUE
 
+
+/mob/living/complex_animal/dinosaur/verify_target(var/individual,var/max_distance=-1,var/allow_dead=FALSE)
+	if (istype(individual,/mob/living/carbon))
+		var/mob/living/carbon/C=individual
+		if (C.resting)
+			return FALSE
+	return ..()
+
 /mob/living/complex_animal/dinosaur/tick_state_special()
 	if(!..())
 		return FALSE
 	var/shouldwalk=FALSE
 	for(var/mob/living/carbon/M in range(src,7))
-		if(M.resting)
+		if(M.resting || M.stat==DEAD)
 			shouldwalk=TRUE
 		else
 			shouldwalk=FALSE

@@ -263,6 +263,7 @@
 			abort_target()
 			return FALSE
 		if(get_dist(src,target)>1)
+			fuckshitup()
 			walk_to(src,target,0,movespeed)
 		else //attack em!
 			attack(target)
