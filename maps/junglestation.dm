@@ -64,22 +64,27 @@
 
 	//orbit 1: fast, red dwarf:: roughly 33 minutes, red-orange colors.
 	//this is the primary star we are orbiting, so it's fairly simple
-	var/power=max(0.0,sin(solartime*27.0))
-
-	luma+=0.8*power //red dwarves are weak stars.
-	chroma_r+=0.60*power //they also would give off fuckhuge solar flares.
-	chroma_b-=0.25*power // but that's a problem for silicons to deal with.
-
+	var/power=((sin(solartime*32.4)+1)/2)**2.25
+	luma+=0.64*power //red dwarves are weak stars.
+	chroma_r+=0.70*power //they also would give off fuckhuge solar flares.
+	chroma_b-=0.40*power // but that's a problem for silicons to deal with.
+	
+	//long-wave atmospheric absorption when the star is at a sharper angle (this is why sunsets are red)
+	chroma_r+=0.2*(1-power)*power
+	chroma_b-=0.3*(1-power)*power
 
 	//orbit 2: slow, blue giant. more distant, but more power. i hope you brought sunscreen.
-	power=max(0.0,sin(solartime*9.186+12.423)) // about 90 minutes. a bit of offset, too.
-	luma+=1.25*power
+	power=((sin(solartime*11.023+12.423)+1)/2)**2.25 // about 117 minutes. a bit of offset, too.
+	luma+=power
 	chroma_r-=0.20*power
-	chroma_b+=0.75*power
+	chroma_b+=0.70*power
+
+	chroma_r+=0.2*(1-power)*power
+	chroma_b-=0.3*(1-power)*power
 
 
 	luma+=0.02 // minimum light level so it's not pitch black everywhere. atmospheric scattering would cause this.
-	chroma_b-=0.05
+	chroma_b-=0.1
 	chroma_r+=0.04 // chroma shift so light appears a bit green to account for shortwave atmospheric absorption.
 
 
@@ -132,7 +137,7 @@
 	current_timeOfDay=rgb(r,g,b)
 
 
-	next_firetime=world.time + 5 MINUTES //station is too big to tick at 2 minutes. not without severe sever raep, at least.
+	next_firetime=world.time + 4 MINUTES //station is too big to tick at 2 minutes. not without severe sever raep, at least.
 	solartime++
 
 /datum/subsystem/daynightcycle/play_globalsound()
