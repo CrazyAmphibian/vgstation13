@@ -67,6 +67,7 @@
 	//orbit 1: fast, red dwarf:: roughly 33 minutes, red-orange colors.
 	//this is the primary star we are orbiting, so it's fairly simple
 	var/power=((sin(solartime*32.4-12.5)+1)/2)**2.25
+	//what the math is: makes a sine function that goes from 0-1 instead of -1 to 1. avoid max() because that creates hard cutoffs which don't look too good. we take it to the 2.25th power to make the transitions between day and night sharper, and to reduce the overall amount of daylight since we have 2 stars.
 	luma+=0.64*power //red dwarves are weak stars.
 	chroma_r+=0.70*power //they also would give off fuckhuge solar flares.
 	chroma_b-=0.40*power // but that's a problem for silicons to deal with.
@@ -74,6 +75,7 @@
 	//long-wave atmospheric absorption when the star is at a sharper angle (this is why sunsets are red)
 	chroma_r+=0.2*(1-power)*power
 	chroma_b-=0.3*(1-power)*power
+	//what the math is: inverts the power first, because less power also means a sharper angle. then, multiply by power again, because we should only adjust it by the amount of light being given off.
 
 	//orbit 2: slow, blue giant. more distant, but more power. i hope you brought sunscreen.
 	power=((sin(solartime*11.023+6.918)+1)/2)**2.25 // about 117 minutes. a bit of offset, too.
@@ -90,7 +92,9 @@
 	chroma_r+=0.04 // chroma shift so light appears a bit green to account for shortwave atmospheric absorption.
 
 
-	luma=luma**(1/2.2) //apply gamma correction
+	//all numbers above this are completely arbitrary and are there to insure that the day/night cycle looks as cool as possible, meaning we have a lot of color variety and a satisfying progression between light and dark, and that it changes not too fast and not too slow. change them however you want.
+	
+	luma=luma**(1/2.2) //apply standard gamma correction
 
 	//constants defined by ITU-R BT.2020
 	var/r = luma + 1.659 * chroma_r
@@ -105,7 +109,7 @@
 	for(var/n=0,n<3,n++) //3 smoothing passes seems good. This isn't particularly heavy math, anyways.
 		if (r>1)
 			var/redist=(r-1)
-			redist*=0.1
+			redist*=0.1 //increasing this will make bright colors more washed out, lowering it makes the brightness more selective towards each color channel. that 255, 0, 0 light goes hard.
 			r-=2*redist/3
 			g+=redist/3
 			b+=redist/3
@@ -122,6 +126,8 @@
 			g+=redist/3
 			r+=redist/3
 
+
+	//clip to bounds
 	r=min(r,1)
 	g=min(g,1)
 	b=min(b,1)
@@ -134,7 +140,7 @@
 
 	next_light_power=luma*7.5
 
-	message_admins("Jungle day/night system beginning new phase at [world.time], cycle #[solartime], with light stats of [next_light_power]-[r],[g],[b]")
+	message_admins("Jungle day/night system beginning new phase at [world.time], cycle #[solartime], with light stats of [luma] [chroma_b] [chroma_r] -> [next_light_power] [r],[g],[b]")
 
 	current_timeOfDay=rgb(r,g,b)
 
