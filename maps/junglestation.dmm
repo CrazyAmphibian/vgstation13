@@ -507,7 +507,7 @@
 	icon_state = "vault";
 	tag = "icon-vault (NORTHEAST)"
 	},
-/area/security/interrogation)
+/area/security/processing)
 "akL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -1670,7 +1670,7 @@
 	dir = 8
 	},
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "aFl" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Bridge";
@@ -1911,7 +1911,7 @@
 	icon_state = "vault";
 	tag = "icon-vault (NORTHEAST)"
 	},
-/area/security/interrogation)
+/area/security/processing)
 "aKk" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -5080,7 +5080,7 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "bWj" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -6804,7 +6804,7 @@
 	dir = 4
 	},
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "cBk" = (
 /obj/structure/table,
 /obj/item/device/camera{
@@ -9311,7 +9311,7 @@
 /obj/structure/table/woodentable/poker,
 /obj/item/toy/cards,
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "dyN" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/storage/fancy/donut_box,
@@ -10337,7 +10337,7 @@
 	id_tag = "inter_privacy"
 	},
 /turf/simulated/floor/plating,
-/area/security/interrogation)
+/area/security/processing)
 "dUS" = (
 /obj/structure/bed/chair/wood/normal{
 	dir = 1
@@ -13278,7 +13278,7 @@
 	icon_state = "vault";
 	tag = "icon-vault (NORTHEAST)"
 	},
-/area/security/interrogation)
+/area/security/processing)
 "fcF" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/pickaxe,
@@ -17767,7 +17767,7 @@
 	on = 1
 	},
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "gPP" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging,
 /obj/machinery/telecomms/receiver/preset_left,
@@ -17988,7 +17988,7 @@
 	})
 "gTI" = (
 /turf/simulated/wall/r_wall,
-/area/security/interrogation)
+/area/security/processing)
 "gTN" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -20152,7 +20152,7 @@
 /obj/structure/bed,
 /obj/item/weapon/bedsheet/purple,
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "hOd" = (
 /obj/machinery/atmospherics/unary/vent,
 /turf/simulated/floor/bluegrid,
@@ -20703,7 +20703,7 @@
 /obj/structure/bed,
 /obj/item/weapon/bedsheet/brown,
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "hYn" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -22321,7 +22321,7 @@
 	icon_state = "vault";
 	tag = "icon-vault (NORTHEAST)"
 	},
-/area/security/interrogation)
+/area/security/processing)
 "iIt" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
@@ -23492,7 +23492,7 @@
 	dir = 4
 	},
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "jeJ" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -24331,10 +24331,6 @@
 	},
 /area/centcom/control)
 "jwb" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	pixel_y = 24
-	},
 /obj/structure/table/woodentable,
 /obj/item/weapon/cartridge/clown,
 /obj/item/clothing/accessory/waterflower,
@@ -26042,6 +26038,10 @@
 	icon_state = "yellow"
 	},
 /area/engineering/mechanics)
+"kdm" = (
+/obj/structure/grille/window_spawner/reinforced,
+/turf/simulated/floor/plating,
+/area/research_outpost/dorm1)
 "kdp" = (
 /obj/structure/window/reinforced,
 /obj/structure/shuttle/engine/propulsion{
@@ -27045,6 +27045,9 @@
 	},
 /turf/simulated/floor/plating/airless,
 /area/science/test_area)
+"kzN" = (
+/turf/simulated/wall,
+/area/research_outpost/dorm1)
 "kAe" = (
 /obj/structure/closet/crate/hydroponics,
 /obj/item/weapon/minihoe,
@@ -27787,7 +27790,7 @@
 	icon_state = "vault";
 	tag = "icon-vault (NORTHEAST)"
 	},
-/area/security/interrogation)
+/area/security/processing)
 "kQa" = (
 /obj/machinery/r_n_d/fabricator/protolathe,
 /obj/machinery/light_switch{
@@ -30486,7 +30489,7 @@
 "lQA" = (
 /obj/structure/table/woodentable/poker,
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "lQF" = (
 /obj/machinery/atmospherics/unary/portables_connector{
 	dir = 1
@@ -31650,6 +31653,13 @@
 	plated_icon_override = "junglestation5"
 	},
 /area/surface/jungle/zoned/outdoor_bar)
+"mmg" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor,
+/area/research_outpost/dorm1)
 "mmh" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -33230,7 +33240,7 @@
 "mTO" = (
 /obj/structure/bed/chair/wood/normal,
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "mUo" = (
 /obj/structure/fence{
 	dir = 4
@@ -34359,6 +34369,9 @@
 	icon_state = "showroomfloor"
 	},
 /area/crew_quarters/kitchen)
+"nsl" = (
+/turf/simulated/floor,
+/area/research_outpost/dorm1)
 "nsT" = (
 /obj/structure/table,
 /obj/item/device/silicate_sprayer,
@@ -39551,7 +39564,7 @@
 "pxK" = (
 /obj/structure/closet,
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "pyb" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -40140,7 +40153,7 @@
 	id_tag = "inter_privacy"
 	},
 /turf/simulated/floor/plating,
-/area/security/interrogation)
+/area/security/processing)
 "pLH" = (
 /obj/structure/table,
 /obj/item/weapon/paper_bin/purple{
@@ -41812,6 +41825,9 @@
 	icon_state = "whitegreen"
 	},
 /area/centcom/evac)
+"qpg" = (
+/turf/simulated/wall,
+/area/security/processing)
 "qpx" = (
 /turf/unsimulated/floor{
 	dir = 4;
@@ -42457,7 +42473,7 @@
 	dir = 1
 	},
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "qCm" = (
 /obj/machinery/door/window{
 	name = "Containment Pen";
@@ -42907,7 +42923,7 @@
 	icon_state = "vault";
 	tag = "icon-vault (NORTHEAST)"
 	},
-/area/security/interrogation)
+/area/security/processing)
 "qLt" = (
 /obj/effect/decal/arrow{
 	dir = 8;
@@ -44507,7 +44523,7 @@
 	icon_state = "vault";
 	tag = "icon-vault (NORTHEAST)"
 	},
-/area/security/interrogation)
+/area/security/processing)
 "rsc" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -45212,7 +45228,7 @@
 /obj/machinery/door/airlock/glass,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "rDf" = (
 /obj/machinery/door/window/brigdoor{
 	base_state = "right";
@@ -45935,7 +45951,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "rTL" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -48534,7 +48550,7 @@
 "sVN" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "sVP" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible{
 	dir = 1
@@ -49738,7 +49754,7 @@
 	icon_state = "vault";
 	tag = "icon-vault (NORTHEAST)"
 	},
-/area/security/interrogation)
+/area/security/processing)
 "toQ" = (
 /obj/effect/decal/warning_stripes{
 	icon_state = "unloading"
@@ -53273,7 +53289,7 @@
 	icon_state = "vault";
 	tag = "icon-vault (NORTHEAST)"
 	},
-/area/security/interrogation)
+/area/security/processing)
 "uOT" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	on = 1
@@ -53568,7 +53584,7 @@
 	network = list("RD","SS13")
 	},
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "uUD" = (
 /turf/unsimulated/wall/fakeglass{
 	dir = 8
@@ -55608,7 +55624,7 @@
 "vEE" = (
 /obj/structure/curtain/open/bed,
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "vEO" = (
 /turf/simulated/floor/wood,
 /area/bridge/meeting_room)
@@ -56520,7 +56536,7 @@
 	dir = 1
 	},
 /turf/simulated/floor,
-/area/research_outpost/hallway)
+/area/research_outpost/dorm1)
 "vWO" = (
 /obj/structure/railing/wood{
 	dir = 1
@@ -56748,7 +56764,7 @@
 	icon_state = "vault";
 	tag = "icon-vault (NORTHEAST)"
 	},
-/area/security/interrogation)
+/area/security/processing)
 "wbM" = (
 /obj/structure/bed/chair/comfy/brown,
 /turf/simulated/floor/wood,
@@ -59154,7 +59170,7 @@
 	id_tag = "inter_privacy"
 	},
 /turf/simulated/floor/plating,
-/area/security/interrogation)
+/area/security/processing)
 "wXa" = (
 /obj/structure/shuttle/engine/propulsion{
 	dir = 1
@@ -59369,6 +59385,10 @@
 	name = "plating"
 	},
 /area/centcom/striketeam)
+"xbM" = (
+/obj/machinery/light,
+/turf/simulated/floor,
+/area/research_outpost/dorm1)
 "xbO" = (
 /turf/unsimulated/floor/jungle/grass/no_flora,
 /area/surface/jungle/zoned/botanty_outside)
@@ -61000,7 +61020,7 @@
 	icon_state = "vault";
 	tag = "icon-vault (NORTHEAST)"
 	},
-/area/security/interrogation)
+/area/security/processing)
 "xJG" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -62011,6 +62031,10 @@
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/hallway)
+"yep" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/simulated/floor,
+/area/research_outpost/dorm1)
 "yeO" = (
 /obj/machinery/door/airlock/external{
 	name = "Arrival Airlock"
@@ -62305,6 +62329,9 @@
 	icon_state = "dark"
 	},
 /area/maintenance/disposal)
+"ykh" = (
+/turf/simulated/floor/plating,
+/area/research_outpost/dorm1)
 "yki" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -113638,7 +113665,7 @@ beB
 xHQ
 bWV
 hIO
-esJ
+qpg
 kPL
 fcx
 rsa
@@ -113990,7 +114017,7 @@ beB
 qtd
 jRK
 rus
-esJ
+qpg
 qLm
 iHN
 aKf
@@ -114342,7 +114369,7 @@ beB
 lTG
 rDf
 poN
-esJ
+qpg
 qLm
 toO
 aKf
@@ -114694,11 +114721,11 @@ alj
 iuN
 iuN
 iuN
-esJ
-esJ
-esJ
-esJ
-esJ
+qpg
+qpg
+qpg
+qpg
+qpg
 dYI
 dij
 dij
@@ -467375,14 +467402,14 @@ dfr
 dfr
 dfr
 rIh
-syv
-syv
-syv
-syv
-syv
-syv
-syv
-syv
+kzN
+kzN
+kzN
+kzN
+kzN
+kzN
+kzN
+kzN
 lvn
 lvn
 qqs
@@ -467727,14 +467754,14 @@ dfr
 dfr
 dfr
 rIh
-syv
+kzN
 hNZ
 vEE
 hNZ
 vEE
 hNZ
-syv
-sgH
+kzN
+ykh
 lvn
 axy
 hbD
@@ -468079,14 +468106,14 @@ rIh
 rIh
 rIh
 rIh
-syv
+kzN
 vEE
 vEE
 vEE
 vEE
 vEE
-syv
-syv
+kzN
+kzN
 lvn
 axy
 lHz
@@ -468431,12 +468458,12 @@ rIh
 rIh
 rIh
 tFd
-syv
-lYc
-lYc
-lYc
-lYc
-lYc
+kzN
+nsl
+nsl
+nsl
+nsl
+nsl
 vEE
 hYe
 wIo
@@ -468783,12 +468810,12 @@ tFd
 tFd
 tFd
 ocC
-syv
+kzN
 vWA
-lYc
-lYc
-lYc
-lYc
+nsl
+nsl
+nsl
+nsl
 vEE
 vEE
 wIo
@@ -469135,12 +469162,12 @@ esa
 esa
 esa
 esa
-jhJ
-lYc
-lYc
-lYc
-lYc
-lYc
+kdm
+nsl
+nsl
+nsl
+nsl
+nsl
 vEE
 hYe
 wIo
@@ -469487,12 +469514,12 @@ ocC
 ocC
 ocC
 ocC
-jhJ
-lYc
+kdm
+nsl
 jeC
-lYc
-lYc
-lYc
+nsl
+nsl
+nsl
 vEE
 vEE
 wIo
@@ -469839,12 +469866,12 @@ ocC
 ocC
 ocC
 ocC
-jhJ
+kdm
 mTO
 lQA
 qCl
-lYc
-lYc
+nsl
+nsl
 vEE
 hYe
 wIo
@@ -470191,14 +470218,14 @@ ocC
 ocC
 ocC
 ocC
-jhJ
+kdm
 mTO
 dyJ
 qCl
-lYc
-eNw
-syv
-syv
+nsl
+xbM
+kzN
+kzN
 wIo
 mgF
 ijF
@@ -470543,12 +470570,12 @@ ocC
 ocC
 ocC
 ocC
-jhJ
+kdm
 sVN
 aFa
-lYc
+nsl
 gPF
-saV
+yep
 rCL
 saV
 vHo
@@ -470895,12 +470922,12 @@ ocC
 ocC
 ocC
 ocC
-jhJ
+kdm
 pxK
 uUo
 bWi
 cBc
-mkP
+mmg
 rTH
 mkP
 mkP
@@ -471247,13 +471274,13 @@ gRl
 gGr
 mqZ
 gGr
-syv
-syv
-syv
-syv
-syv
-syv
-syv
+kzN
+kzN
+kzN
+kzN
+kzN
+kzN
+kzN
 drS
 lYc
 lYc

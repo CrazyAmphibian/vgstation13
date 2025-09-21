@@ -54,9 +54,11 @@
 ****************************/
 
 /datum/subsystem/daynightcycle
-	var/solartime=0 //start at 0. set not like that for debugging.
+	var/solartime=0 //start at 0. set not like that for debugging. or manually set next_firetime with varedit.
 
 /datum/subsystem/daynightcycle/process_lighting()
+	flags&=(0^SS_FIRE_IN_LOBBY) //we don't want this one firing in lobby constantly, as we've tweaked the lighting to be just right on startup. we still want it to fire once though.
+	
 	// YCbCr is a superior colorspace. fight me.
 	var/luma=0.0
 	var/chroma_b=0.0
@@ -64,7 +66,7 @@
 
 	//orbit 1: fast, red dwarf:: roughly 33 minutes, red-orange colors.
 	//this is the primary star we are orbiting, so it's fairly simple
-	var/power=((sin(solartime*32.4)+1)/2)**2.25
+	var/power=((sin(solartime*32.4-12.5)+1)/2)**2.25
 	luma+=0.64*power //red dwarves are weak stars.
 	chroma_r+=0.70*power //they also would give off fuckhuge solar flares.
 	chroma_b-=0.40*power // but that's a problem for silicons to deal with.
@@ -74,7 +76,7 @@
 	chroma_b-=0.3*(1-power)*power
 
 	//orbit 2: slow, blue giant. more distant, but more power. i hope you brought sunscreen.
-	power=((sin(solartime*11.023+12.423)+1)/2)**2.25 // about 117 minutes. a bit of offset, too.
+	power=((sin(solartime*11.023+6.918)+1)/2)**2.25 // about 117 minutes. a bit of offset, too.
 	luma+=power
 	chroma_r-=0.20*power
 	chroma_b+=0.70*power
