@@ -151,7 +151,7 @@
 /datum/subsystem/daynightcycle/play_globalsound()
 	return
 
-/datum/subsystem/foliage_regrow_junga
+/datum/subsystem/foliage_regrow
 	flags=0
 
 
