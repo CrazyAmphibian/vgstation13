@@ -1498,18 +1498,8 @@
 	desc = "For your picnic needs"
 	icon_state = "putensil_box"
 	item_state = "box"
-
-/obj/item/weapon/storage/box/large/utensils_plastic/New() //7 of each.
-	var/n=7
-	while(n)
-		new/obj/item/weapon/kitchen/utensil/spoon/plastic(src)
-		n--
-	n=7
-	while(n)
-		new/obj/item/weapon/kitchen/utensil/fork/plastic(src)
-		n--
-	n=7
-	while(n)
-		new/obj/item/weapon/kitchen/utensil/knife/plastic(src)
-		n--
-	..()
+	items_to_spawn = list(
+			/obj/item/weapon/kitchen/utensil/spoon/plastic=7,
+			/obj/item/weapon/kitchen/utensil/fork/plastic=7,
+			/obj/item/weapon/kitchen/utensil/knife/plastic=7,
+		)

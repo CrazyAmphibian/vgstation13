@@ -155,7 +155,7 @@
 	if(istype(M,/mob/living/simple_animal))
 		var/mob/living/simple_animal/SA = M
 		M.delayNextAttack(8)
-		if(SA.melee_damage_upper == 0)
+		if(!SA.melee_damage_upper)
 			return
 		M.do_attack_animation(src, M)
 		M.visible_message("<span class='warning'>[M] smashes against \the [src].</span>", \

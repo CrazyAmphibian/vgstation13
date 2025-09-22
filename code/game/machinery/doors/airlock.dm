@@ -1177,7 +1177,6 @@ About the new airlock wires panel:
 			level_of_door_opening = 2
 		dooropendelay=SA.force_airlock_time
 	else if(istype(M,/mob/living/complex_animal))
-		//var/mob/living/complex_animal/CA=M
 		level_of_door_opening = 1
 	
 	

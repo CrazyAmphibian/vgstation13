@@ -426,7 +426,6 @@
 	if(istype(user,/mob/living/simple_animal))
 		var/mob/living/simple_animal/M=user
 		if(M.environment_smash_flags & SMASH_CONTAINERS)
-		//	user.do_attack_animation(src, user) //This will look stupid
 			visible_message("<span class='warning'>[user] destroys the [src]. </span>")
 			broken = 1
 			if(has_electronics)
