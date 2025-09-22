@@ -1,6 +1,6 @@
 var/datum/subsystem/foliage_regrow/SSFoliageRegrow
 
-var/global/list/turf/TURFS_TO_REGROW=list()
+var/global/list/turf/TURFS_TO_REGROW=null //set this to list() to make it start working
 
 /datum/subsystem/foliage_regrow
 	name          = "Foliage Regrowth System"
@@ -9,6 +9,7 @@ var/global/list/turf/TURFS_TO_REGROW=list()
 	priority      = SS_PRIORITY_FOLIAGE_REGROW
 	wait          = 2 MINUTES
 	var/next_firetime=0
+	var/growth_chance=100 //percentage probability
 
 
 /datum/subsystem/foliage_regrow/New()
@@ -16,8 +17,14 @@ var/global/list/turf/TURFS_TO_REGROW=list()
 	NEW_SS_GLOBAL(SSFoliageRegrow)
 
 /datum/subsystem/foliage_regrow/Initialize()
+	if(!TURFS_TO_REGROW)
+		flags = SS_NO_INIT | SS_NO_FIRE
 	..()
 
+//this is the meat and potatoes of the logic.
+/datum/subsystem/foliage_regrow/proc/regrow_turf(var/turf/T)
+	return TRUE
+	
 /datum/subsystem/foliage_regrow/fire(resumed = FALSE)
 	if(world.time < next_firetime)
 		return
@@ -28,16 +35,16 @@ var/global/list/turf/TURFS_TO_REGROW=list()
 			break
 		i++
 		var/turf/T=TURFS_TO_REGROW[i]//first in, last out
-		if(!T || T.type!=/turf/unsimulated/floor/jungle/grass) //don't use istype, since we don't care about the noflora subtype.
-			continue
-		var/turf/unsimulated/floor/jungle/grass/G=T
-		if(/obj/structure/flora in G.contents)
-			continue
-		if((G.regrowticks <= world.time-(5 MINUTES)) && prob(95)) //5 minute delay to regrowth
-			if(!G.generate_foliage())
-				TURFS_TO_REGROW+=G
-	
+		if( prob(growth_chance))
+			regrow_turf(T)
+		else
+			TURFS_TO_REGROW+=T
 	if(TURFS_TO_REGROW.len && i)
-		TURFS_TO_REGROW.Cut(1,i) 
-			
+		if (i==1 && TURFS_TO_REGROW.len==1) //BYOND... for whatever reason, if there is 1 last member in the list, the list does not clear the element, and it keeps regrowing the same tile. this is unlikely to be noticed in a real game due to it being slow, but it's better to be safe.
+			TURFS_TO_REGROW.Cut(1,0)
+		else
+			TURFS_TO_REGROW.Cut(1,i) 
+	world.log << "remaining: [TURFS_TO_REGROW.len]. i was [i]"	
 	next_firetime=world.time +	wait
+
+
