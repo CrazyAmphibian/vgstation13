@@ -152,7 +152,7 @@ var/list/foliage_replacments=list(
 	footstep_sound_claw = sounds_grass
 	
 	if(SSFoliageRegrow && !generate_foliage())
-		TURFS_TO_REGROW +=src
+		turfs_to_regrow +=src
 		regrowticks=0
 	
 /turf/unsimulated/floor/jungle/grass/proc/generate_foliage()

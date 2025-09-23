@@ -15,7 +15,7 @@
 		var/turf/unsimulated/floor/jungle/grass/G=loc
 		G.turf_speed_multiplier=1.1
 		if(SSFoliageRegrow)
-			TURFS_TO_REGROW +=G
+			turfs_to_regrow +=G
 			G.regrowticks=world.time
 	..()
 
