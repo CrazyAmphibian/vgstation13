@@ -115,6 +115,6 @@
 		sleep(5)
 	if(prob(20))
 		if(world.time % 3==1)
-			say("acka lacka.")
+			say("Acka lacka.")
 		else
-			say("boom boom.")
+			say("Boom boom.")

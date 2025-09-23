@@ -47,7 +47,7 @@
 	world.name = "NT Colony Gamma-8"
 	station_name="NT Colony Gamma-8"
 	daynight_z_lvls=list(1)
-	TURFS_TO_REGROW=list()
+	turfs_to_regrow=list()
 
 /****************************
 **	Day and Night Lighting **
@@ -169,10 +169,10 @@
 	if(G.regrowticks <= world.time-growth_delay)
 		var/created=G.generate_foliage()
 		if(!created)
-			TURFS_TO_REGROW+=G
+			turfs_to_regrow+=G
 		return created
 	else
-		TURFS_TO_REGROW+=G
+		turfs_to_regrow+=G
 
 
 ////////////////////////////////////////////////////////////////

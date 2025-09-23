@@ -27,7 +27,7 @@ var/list/junglemobs_passive_rare=list(
 	if(rng < 0.65) //65% chance of friendly mobs
 		amount=rand(3,6)
 		if(prob(20)) //20% chance for rare (13% overall)
-			amount = floor((1.0+amount)/3.0) //between 1 and 2 of em
+			amount = rand(1,2)
 			to_spawn = pick(junglemobs_passive_rare)
 		else
 			to_spawn = pick(junglemobs_passive)
@@ -45,7 +45,7 @@ var/list/junglemobs_passive_rare=list(
 	amount=rand(3,6)
 	if(prob(20))
 		to_spawn = pick(junglemobs_passive_rare)
-		amount = floor((1.0+amount)/3.0) //between 1 and 2 of em
+		amount = rand(1,2)
 	else
 		to_spawn = pick(junglemobs_passive)
 	..()

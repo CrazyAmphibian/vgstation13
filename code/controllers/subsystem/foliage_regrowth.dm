@@ -1,6 +1,6 @@
 var/datum/subsystem/foliage_regrow/SSFoliageRegrow
 
-var/global/list/turf/TURFS_TO_REGROW=null //set this to list() to make it start working
+var/global/list/turf/turfs_to_regrow=null //set this to list() to make it start working
 
 /datum/subsystem/foliage_regrow
 	name          = "Foliage Regrowth System"
@@ -17,7 +17,7 @@ var/global/list/turf/TURFS_TO_REGROW=null //set this to list() to make it start 
 	NEW_SS_GLOBAL(SSFoliageRegrow)
 
 /datum/subsystem/foliage_regrow/Initialize()
-	if(!TURFS_TO_REGROW)
+	if(!turfs_to_regrow)
 		flags = SS_NO_INIT | SS_NO_FIRE
 	..()
 
@@ -30,21 +30,21 @@ var/global/list/turf/TURFS_TO_REGROW=null //set this to list() to make it start 
 		return
 	var/i=0
 
-	while(i<TURFS_TO_REGROW.len)
+	while(i<turfs_to_regrow.len)
 		if(MC_TICK_CHECK)
 			break
 		i++
-		var/turf/T=TURFS_TO_REGROW[i]//first in, last out
+		var/turf/T=turfs_to_regrow[i]//first in, last out
 		if( prob(growth_chance))
 			regrow_turf(T)
 		else
-			TURFS_TO_REGROW+=T
-	if(TURFS_TO_REGROW.len && i)
-		if (i==1 && TURFS_TO_REGROW.len==1) //BYOND... for whatever reason, if there is 1 last member in the list, the list does not clear the element, and it keeps regrowing the same tile. this is unlikely to be noticed in a real game due to it being slow, but it's better to be safe.
-			TURFS_TO_REGROW.Cut(1,0)
+			turfs_to_regrow+=T
+	if(turfs_to_regrow.len && i)
+		if (i==1 && turfs_to_regrow.len==1) //BYOND... for whatever reason, if there is 1 last member in the list, the list does not clear the element, and it keeps regrowing the same tile. this is unlikely to be noticed in a real game due to it being slow, but it's better to be safe.
+			turfs_to_regrow.Cut(1,0)
 		else
-			TURFS_TO_REGROW.Cut(1,i) 
-	world.log << "remaining: [TURFS_TO_REGROW.len]. i was [i]"	
+			turfs_to_regrow.Cut(1,i) 
+	world.log << "remaining: [turfs_to_regrow.len]. i was [i]"	
 	next_firetime=world.time +	wait
 
 
