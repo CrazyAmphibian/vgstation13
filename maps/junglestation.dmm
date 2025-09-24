@@ -43912,6 +43912,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor,
 /area/research_outpost/entry)
+"reb" = (
+/obj/structure/bed/chair/folding{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/zoned/tradearea)
 "rej" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -108537,10 +108543,10 @@ tnZ
 tnZ
 tnZ
 tnZ
-tnZ
-tnZ
-tnZ
-tnZ
+reb
+reb
+reb
+reb
 tnZ
 tnZ
 tnZ
