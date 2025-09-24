@@ -2448,7 +2448,15 @@
 "aUs" = (
 /obj/machinery/vending/mining,
 /obj/machinery/light_switch{
-	pixel_y = 28
+	pixel_y = 28;
+	pixel_x = 10
+	},
+/obj/machinery/requests_console{
+	department = "Cargo Bay";
+	departmentType = 2;
+	pixel_x = -8;
+	phone_name = "Mining Dock";
+	pixel_y = 26
 	},
 /turf/simulated/floor{
 	dir = 1;
@@ -2481,12 +2489,6 @@
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/fenced)
 "aVa" = (
-/obj/machinery/requests_console{
-	department = "Medbay";
-	departmentType = 1;
-	name = "Medbay RC";
-	pixel_y = -30
-	},
 /obj/machinery/light,
 /turf/simulated/floor{
 	icon_state = "whiteblue"
@@ -2601,6 +2603,13 @@
 "aXT" = (
 /obj/machinery/computer/diseasesplicer,
 /obj/machinery/light,
+/obj/machinery/requests_console{
+	department = "Medbay";
+	departmentType = 1;
+	name = "Medbay RC";
+	phone_name = "Virology";
+	pixel_y = -31
+	},
 /turf/simulated/floor{
 	icon_state = "whitegreen"
 	},
@@ -3290,6 +3299,13 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/requests_console{
+	department = "Science";
+	departmentType = 2;
+	name = "Science Requests Console";
+	phone_name = "Research And Development";
+	pixel_y = 25
+	},
 /turf/simulated/floor{
 	dir = 1;
 	icon_state = "whitepurple"
@@ -3871,6 +3887,13 @@
 /obj/machinery/camera{
 	dir = 8
 	},
+/obj/machinery/requests_console{
+	department = "Medbay";
+	departmentType = 1;
+	name = "Medbay RC";
+	phone_name = "Medbay Storage";
+	pixel_x = 28
+	},
 /turf/simulated/floor{
 	dir = 4;
 	icon_state = "whiteblue"
@@ -3930,6 +3953,17 @@
 	icon_state = "cult"
 	},
 /area/crew_quarters/heads/hos)
+"bzo" = (
+/obj/machinery/requests_console{
+	department = "Medbay";
+	departmentType = 1;
+	name = "Medbay RC";
+	phone_name = "Medbay Break Area";
+	pixel_x = -1;
+	pixel_y = 27
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/medical/break_room)
 "bzp" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/machinery/door/poddoor{
@@ -7963,6 +7997,10 @@
 /area/surface/jungle/fenced)
 "cYg" = (
 /obj/machinery/vending/coffee,
+/obj/machinery/light/small{
+	dir = 1;
+	invisibility = 1
+	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/medical/break_room)
 "cYi" = (
@@ -8348,6 +8386,13 @@
 "dfQ" = (
 /obj/machinery/computer/cloning,
 /obj/machinery/light,
+/obj/machinery/requests_console{
+	department = "Medbay";
+	departmentType = 1;
+	name = "Medbay RC";
+	phone_name = "Cloning";
+	pixel_y = -31
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -12280,6 +12325,19 @@
 	icon_state = "dark"
 	},
 /area/security/warden)
+"eEP" = (
+/obj/machinery/requests_console{
+	department = "Cargo Bay";
+	departmentType = 2;
+	phone_name = "Disposals";
+	pixel_x = 31
+	},
+/turf/simulated/floor{
+	dir = 4;
+	icon_state = "brown";
+	tag = "icon-brown (NORTH)"
+	},
+/area/supply/sorting)
 "eFF" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -17235,6 +17293,12 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/requests_console{
+	department = "Robotics";
+	departmentType = 2;
+	name = "Robotics RC";
+	pixel_x = 29
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -17973,7 +18037,12 @@
 	id_tag = "Engineering";
 	name = "Engineering Lockdown";
 	pixel_y = -32;
-	req_access_txt = "10"
+	req_access_txt = "10";
+	pixel_x = 8
+	},
+/obj/machinery/keycard_auth{
+	pixel_y = -26;
+	pixel_x = -7
 	},
 /turf/simulated/floor{
 	icon_state = "yellow"
@@ -18001,6 +18070,13 @@
 "gTQ" = (
 /obj/machinery/computer/telecomms/monitor{
 	network = "tcommsat"
+	},
+/obj/machinery/requests_console{
+	department = "Engineering";
+	departmentType = 4;
+	phone_name = "Telecommunications";
+	name = "Tcomms RC";
+	pixel_x = -29
 	},
 /turf/simulated/floor{
 	icon_state = "white"
@@ -23387,6 +23463,13 @@
 "jcM" = (
 /obj/machinery/computer/secure_data,
 /obj/machinery/camera,
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Head of Personnel's Desk";
+	departmentType = 5;
+	name = "Head of Personnel RC";
+	pixel_y = 25
+	},
 /turf/simulated/floor{
 	dir = 9;
 	icon_state = "blue"
@@ -24940,6 +25023,13 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
+	},
+/obj/machinery/requests_console{
+	department = "Robotics";
+	departmentType = 2;
+	name = "Science Dock RC";
+	pixel_y = -30;
+	phone_name = "Science Dock"
 	},
 /turf/simulated/floor,
 /area/science/shuttlebay)
@@ -31995,7 +32085,16 @@
 	id_tag = "Secure Storage";
 	name = "Engineering Secure Storage";
 	pixel_y = -32;
-	req_access_txt = "11"
+	req_access_txt = "11";
+	pixel_x = -8
+	},
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Chief Engineer's Desk";
+	departmentType = 3;
+	name = "Chief Engineer RC";
+	pixel_y = -30;
+	pixel_x = 10
 	},
 /turf/simulated/floor{
 	icon_state = "yellow"
@@ -32239,6 +32338,14 @@
 	pixel_x = 6
 	},
 /obj/structure/table,
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Bridge";
+	departmentType = 5;
+	name = "Bridge RC";
+	pixel_y = -30;
+	phone_name = "Heads of Staff Meeting Room"
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -32711,9 +32818,12 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -24
+/obj/machinery/requests_console{
+	department = "Engineering";
+	departmentType = 4;
+	name = "Supermatter RC";
+	pixel_x = -31;
+	phone_name = "Supermatter Engine"
 	},
 /turf/simulated/floor{
 	icon_state = "yellow";
@@ -34567,6 +34677,12 @@
 /obj/structure/table,
 /obj/machinery/camera{
 	dir = 4
+	},
+/obj/machinery/requests_console{
+	department = "Cargo Bay";
+	departmentType = 2;
+	pixel_x = -30;
+	phone_name = "Cargo Lobby"
 	},
 /turf/simulated/floor{
 	dir = 8;
@@ -38463,6 +38579,10 @@
 	pixel_x = 6
 	},
 /obj/item/device/analyzer,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
+	},
 /turf/simulated/floor{
 	icon_state = "yellow";
 	dir = 10
@@ -40632,6 +40752,12 @@
 /area/surface/jungle)
 "pTs" = (
 /obj/machinery/computer/security/mining,
+/obj/machinery/requests_console{
+	department = "Cargo Bay";
+	departmentType = 2;
+	phone_name = "Quartermaster's Office";
+	pixel_y = -29
+	},
 /turf/simulated/floor{
 	icon_state = "brown"
 	},
@@ -42924,6 +43050,22 @@
 	tag = "icon-vault (NORTHEAST)"
 	},
 /area/security/processing)
+"qLq" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/requests_console{
+	department = "Engineering";
+	departmentType = 4;
+	name = "Engineering RC";
+	pixel_y = 30;
+	phone_name = "TEG Room"
+	},
+/turf/simulated/floor{
+	icon_state = "yellow";
+	dir = 1
+	},
+/area/engineering/engine)
 "qLt" = (
 /obj/effect/decal/arrow{
 	dir = 8;
@@ -45794,6 +45936,13 @@
 	pixel_y = -1;
 	pixel_x = 6;
 	amount = 50
+	},
+/obj/machinery/requests_console{
+	department = "Engineering";
+	departmentType = 4;
+	phone_name = "Fission Reactor Room";
+	pixel_y = 31;
+	name = "Reactor RC"
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -53405,6 +53554,12 @@
 /obj/structure/sign/atmosplaque{
 	pixel_y = -32
 	},
+/obj/machinery/requests_console{
+	department = "Atmospherics";
+	departmentType = 4;
+	name = "Atmos RC";
+	pixel_x = -30
+	},
 /turf/simulated/floor{
 	icon_state = "yellow";
 	dir = 10
@@ -54993,6 +55148,12 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/computer/card,
+/obj/machinery/requests_console{
+	department = "Security";
+	departmentType = 5;
+	phone_name = "Arrivals Checkpoint";
+	pixel_x = -30
+	},
 /turf/simulated/floor{
 	dir = 9;
 	icon_state = "red"
@@ -57475,6 +57636,11 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
+/obj/machinery/requests_console{
+	department = "Genetics";
+	name = "Genetics Requests Console";
+	pixel_x = 28
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -57711,6 +57877,18 @@
 /obj/structure/table/flipped,
 /turf/simulated/floor/plating,
 /area/surface/jungle)
+"wwK" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/requests_console{
+	department = "Medbay";
+	phone_name = "Medbay Lobby";
+	pixel_x = -29
+	},
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "whitegreen"
+	},
+/area/medical/sleeper)
 "wwO" = (
 /turf/unsimulated/floor/jungle/dirt,
 /area/surface/jungle/zoned/botanty_outside)
@@ -60044,6 +60222,10 @@
 /area/engineering/engine)
 "xoz" = (
 /obj/machinery/r_n_d/reverse_engine,
+/obj/machinery/requests_console/mechanic{
+	dir = 8;
+	pixel_y = -32
+	},
 /turf/simulated/floor{
 	icon_state = "yellow"
 	},
@@ -122481,7 +122663,7 @@ blH
 prK
 bKd
 kSb
-bKd
+wwK
 uJo
 bBG
 kHx
@@ -122498,7 +122680,7 @@ vgQ
 qen
 pXO
 eXo
-xSZ
+bzo
 tIj
 iRw
 lIK
@@ -124892,7 +125074,7 @@ vPt
 hFy
 thl
 vKe
-hFy
+eEP
 wQz
 ctg
 sog
@@ -139720,7 +139902,7 @@ vvp
 vik
 cfy
 omk
-pMo
+qLq
 bUT
 oFo
 pNN

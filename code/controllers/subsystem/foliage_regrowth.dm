@@ -44,7 +44,6 @@ var/global/list/turf/turfs_to_regrow=null //set this to list() to make it start 
 			turfs_to_regrow.Cut(1,0)
 		else
 			turfs_to_regrow.Cut(1,i) 
-	world.log << "remaining: [turfs_to_regrow.len]. i was [i]"	
 	next_firetime=world.time +	wait
 
 

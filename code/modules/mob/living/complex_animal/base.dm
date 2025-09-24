@@ -434,10 +434,10 @@
 /mob/living/complex_animal/proc/aggro_drawn(var/victim,var/state=ANIMAL_STATE_ATTACKING,var/skipsmg=FALSE)
 	if(!victim)
 		return
+	if(!skipsmg && target!=victim && state!=behavior_state)
+		get_aggro_msg(victim)
 	target=victim
 	behavior_state=state
-	if(!skipsmg)
-		get_aggro_msg(victim)
 	if( !(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) && !family.len)
 		return
 	if(istype(target,/mob/living))
