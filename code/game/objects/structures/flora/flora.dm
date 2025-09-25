@@ -13,7 +13,7 @@
 /obj/structure/flora/Destroy()
 	if(istype(loc,/turf/unsimulated/floor/jungle/grass))
 		var/turf/unsimulated/floor/jungle/grass/G=loc
-		G.turf_speed_multiplier=1.1
+		G.turf_speed_multiplier=1.0
 		if(SSFoliageRegrow)
 			turfs_to_regrow +=G
 			G.regrowticks=world.time

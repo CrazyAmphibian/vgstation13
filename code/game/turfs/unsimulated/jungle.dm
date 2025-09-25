@@ -136,11 +136,11 @@ var/list/foliage_replacments=list(
 )
 
 /turf/unsimulated/floor/jungle/grass
-	name="Jungle Grass"
+	name="Dense Grass"
 	desc="A thick and lush carpet of various plant species, sustained by a regular supply to water."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "grass_jungle1"
-	turf_speed_multiplier=1.1 // tall grass.
+	turf_speed_multiplier=1.0 // tall grass.
 	construction_allowed=TRUE
 	var/regrowticks=0 //world.time
 	
