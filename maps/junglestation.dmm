@@ -228,6 +228,16 @@
 	icon_state = "white"
 	},
 /area/medical/medbay)
+"aeu" = (
+/obj/machinery/portable_atmospherics/hydroponics,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_x = -27
+	},
+/turf/unsimulated/floor/jungle/dirt,
+/area/surface/jungle/zoned/botanty_outside)
 "aeF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/light/small{
@@ -4600,6 +4610,12 @@
 	icon_state = "platingdmg3"
 	},
 /area/prison/solitary)
+"bLk" = (
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_y = -24
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/zoned/outdoor_bar)
 "bLv" = (
 /obj/structure/rack,
 /obj/item/weapon/storage/bag/gadgets{
@@ -20168,6 +20184,9 @@
 /obj/item/painting_brush,
 /obj/structure/hanging_lantern/dim{
 	dir = 4
+	},
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_x = 27
 	},
 /turf/simulated/floor/wood{
 	icon_state = "wood_26"
@@ -39720,6 +39739,9 @@
 /obj/machinery/chem_dispenser/brewer/mapping,
 /obj/structure/table,
 /obj/machinery/light,
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_y = -22
+	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/crew_quarters/bar)
 "pyc" = (
@@ -52357,6 +52379,12 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/outdoor_bar)
+"upm" = (
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_x = 27
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/fenced)
 "upA" = (
 /obj/effect/decal/warning_stripes{
 	dir = 8;
@@ -55001,6 +55029,18 @@
 	},
 /turf/simulated/floor,
 /area/mine/production)
+"vpj" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_y = -22
+	},
+/turf/simulated/floor/wood,
+/area/library)
 "vpo" = (
 /obj/effect/decal/warning_stripes{
 	dir = 1;
@@ -121623,7 +121663,7 @@ nwA
 upa
 eJs
 edD
-edD
+bLk
 edD
 edD
 edD
@@ -124101,7 +124141,7 @@ ehO
 xor
 xor
 xor
-xor
+upm
 xor
 xor
 maR
@@ -125490,7 +125530,7 @@ qhG
 fyS
 spZ
 rnM
-dQp
+vpj
 qhG
 jdB
 eJs
@@ -130079,7 +130119,7 @@ maR
 nTf
 xTn
 aCN
-buf
+aeu
 xTn
 xTn
 xTn
