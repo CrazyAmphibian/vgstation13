@@ -6920,7 +6920,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "cEg" = (
 /obj/machinery/light{
@@ -10993,7 +10995,9 @@
 /obj/item/tool/weldingtool{
 	pixel_y = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "efW" = (
 /obj/structure/bed/chair/comfy/black{
@@ -11840,7 +11844,9 @@
 	freq = 1400;
 	location = "Tool Storage"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "etT" = (
 /obj/machinery/recharge_station,
@@ -14819,7 +14825,9 @@
 /obj/item/tool/weldingtool{
 	pixel_y = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "fHw" = (
 /obj/machinery/light{
@@ -15416,7 +15424,9 @@
 	pixel_x = 5;
 	pixel_y = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "fSM" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
@@ -21168,7 +21178,9 @@
 	pixel_x = -3;
 	pixel_y = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "ihY" = (
 /obj/structure/grille/window_spawner/reinforced/full,
@@ -21511,7 +21523,9 @@
 	pixel_x = 4
 	},
 /obj/item/weapon/pickaxe/shovel/spade,
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "ioB" = (
 /obj/item/tool/weldingtool,
@@ -23623,7 +23637,9 @@
 /obj/item/device/assembly/signaler,
 /obj/item/device/assembly/igniter,
 /obj/item/weapon/pickaxe/shovel/spade,
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "jfo" = (
 /obj/structure/disposaloutlet,
@@ -29016,7 +29032,9 @@
 /area/surface/jungle)
 "lnJ" = (
 /obj/machinery/vending/tool,
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "lnW" = (
 /obj/structure/grille/window_spawner/reinforced/full,
@@ -29226,7 +29244,9 @@
 /area/tdome)
 "lrN" = (
 /obj/machinery/vending/assist,
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "lrQ" = (
 /turf/simulated/wall/r_wall,
@@ -31189,7 +31209,9 @@
 /obj/machinery/camera{
 	dir = 6
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "maR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -34606,7 +34628,9 @@
 /area/shuttle/transport1/centcom)
 "nvA" = (
 /obj/structure/reagent_dispensers/fueltank,
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "nwd" = (
 /obj/structure/skele_stand/mrbones,
@@ -37569,7 +37593,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "oEW" = (
 /obj/structure/rack{
@@ -39408,7 +39434,9 @@
 /obj/effect/landmark/start{
 	name = "Assistant"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "ptJ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -44611,7 +44639,9 @@
 	pixel_y = 13;
 	pixel_x = -21
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "rrp" = (
 /obj/docking_port/shuttle{
@@ -46824,7 +46854,9 @@
 	name = "budget insulted gloves";
 	desc = "These gloves are cheap copies of the gloves that mock the wearer when shocked."
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "sfo" = (
 /obj/structure/table,
@@ -47726,7 +47758,9 @@
 	},
 /obj/item/clothing/gloves/fyellow,
 /obj/item/weapon/storage/belt/slim,
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "sBR" = (
 /obj/structure/table,
@@ -50326,7 +50360,9 @@
 /area/engineering/engine)
 "txp" = (
 /obj/structure/reagent_dispensers/silicate,
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "txx" = (
 /turf/unsimulated/floor{
@@ -55797,7 +55833,9 @@
 /area/bridge/meeting_room)
 "vFj" = (
 /obj/structure/reagent_dispensers/watertank,
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "vFk" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -57173,7 +57211,9 @@
 	pixel_y = 10
 	},
 /obj/machinery/light/small,
-/turf/simulated/floor/wood,
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
 /area/surface/jungle/zoned/storage_shed)
 "wgM" = (
 /obj/machinery/firealarm{
