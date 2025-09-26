@@ -727,9 +727,9 @@
 		tickssincelastgrowth=0
 		var/i=3
 		while(i)
-			new/obj/item/weapon/reagent_containers/food/snacks/grown/berries/jungle(loc)
+			new/obj/item/weapon/reagent_containers/food/snacks/grown/berries/jungle(loc,user)
 			i--
-			if(prob(50))
+			if(user.lucky_prob_rand()<0.5) //luckier people get more berries.
 				i=0
 		icon_state="stage-6"
 	else
