@@ -2826,6 +2826,9 @@
 /area/crew_quarters/hop)
 "bci" = (
 /obj/structure/closet/secure_closet/warden,
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_x = 27
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -3290,7 +3293,7 @@
 	dir = 9;
 	icon_state = "whitegreen"
 	},
-/area/medical/medbay)
+/area/medical/sleeper)
 "blR" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -4790,6 +4793,7 @@
 /area/medical/medbay)
 "bNM" = (
 /obj/structure/table,
+/obj/machinery/media/receiver/boombox,
 /turf/simulated/floor,
 /area/security/perma)
 "bNY" = (
@@ -6526,7 +6530,7 @@
 	icon_state = "whitegreen";
 	tag = "icon-whitegreen (NORTHEAST)"
 	},
-/area/medical/medbay)
+/area/medical/sleeper)
 "cuC" = (
 /obj/structure/table/reinforced,
 /obj/item/stack/sheet/glass/glass{
@@ -7007,6 +7011,7 @@
 "cEF" = (
 /obj/structure/table,
 /obj/effect/landmark/xtra_cleanergrenades,
+/obj/machinery/media/receiver/boombox,
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -10151,6 +10156,15 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/shuttle/plating,
 /area/centcom/evac)
+"dPZ" = (
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_x = -26
+	},
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "red"
+	},
+/area/security/lobby)
 "dQp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -10438,6 +10452,17 @@
 	icon_state = "whiteyellow"
 	},
 /area/medical/chemistry)
+"dVB" = (
+/obj/structure/table,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/media/receiver/boombox,
+/turf/simulated/floor{
+	dir = 1;
+	icon_state = "whitepurple"
+	},
+/area/science/xenobiology)
 "dVI" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced,
@@ -11117,6 +11142,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_x = 28
 	},
 /turf/simulated/floor{
 	dir = 5;
@@ -13345,6 +13373,14 @@
 /obj/structure/lattice,
 /turf/space,
 /area/centcom/specops)
+"fbo" = (
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_y = -22
+	},
+/turf/simulated/floor{
+	icon_state = "red"
+	},
+/area/security/brig)
 "fbA" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8;
@@ -14565,6 +14601,12 @@
 	},
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/atmos)
+"fAz" = (
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_y = -23
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters)
 "fAB" = (
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -17977,7 +18019,7 @@
 	dir = 1;
 	icon_state = "whitegreen"
 	},
-/area/medical/medbay)
+/area/medical/sleeper)
 "gRF" = (
 /obj/structure/bed/chair/folding{
 	dir = 1
@@ -21369,6 +21411,14 @@
 "ijr" = (
 /turf/simulated/wall,
 /area/medical/paramedics)
+"ijD" = (
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_y = -23
+	},
+/turf/simulated/floor{
+	icon_state = "brown"
+	},
+/area/maintenance/disposal)
 "ijF" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -22280,6 +22330,7 @@
 /obj/machinery/light_switch{
 	pixel_y = 28
 	},
+/obj/machinery/media/receiver/boombox,
 /turf/simulated/floor/wood,
 /area/prison/solitary)
 "iCP" = (
@@ -22690,6 +22741,7 @@
 	pixel_x = 6;
 	amount = 60
 	},
+/obj/machinery/media/receiver/boombox,
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -26542,6 +26594,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
+/obj/machinery/media/receiver/boombox,
 /turf/simulated/floor,
 /area/engineering/supermatter_room)
 "kkl" = (
@@ -29219,6 +29272,7 @@
 	pixel_x = -5;
 	pixel_y = 3
 	},
+/obj/machinery/media/receiver/boombox,
 /turf/unsimulated/floor/jungle/path_plated,
 /area/medical/break_room)
 "lpV" = (
@@ -35705,6 +35759,9 @@
 	},
 /area/centcom/ferry)
 "nQS" = (
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_x = -27
+	},
 /turf/simulated/floor{
 	icon_state = "cult"
 	},
@@ -39199,6 +39256,11 @@
 	},
 /turf/simulated/floor,
 /area/security/prison)
+"pny" = (
+/obj/structure/table/plastic,
+/obj/machinery/media/receiver/boombox,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/dorms_patio)
 "pnK" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -41100,6 +41162,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_x = -26
 	},
 /turf/simulated/floor{
 	icon_state = "white"
@@ -43472,6 +43537,9 @@
 	dir = 9
 	},
 /obj/machinery/disposal/compactor,
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_y = -22
+	},
 /turf/simulated/floor{
 	icon_state = "whitegreen"
 	},
@@ -43703,6 +43771,9 @@
 /area/security/armory)
 "qYz" = (
 /obj/machinery/r_n_d/fabricator/mechanic_fab/autolathe,
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_x = -28
+	},
 /turf/simulated/floor{
 	dir = 9;
 	icon_state = "brown";
@@ -48648,6 +48719,9 @@
 	},
 /area/prison/solitary)
 "sSS" = (
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_x = 28
+	},
 /turf/simulated/floor{
 	dir = 6;
 	icon_state = "dark"
@@ -50075,7 +50149,7 @@
 /turf/simulated/floor{
 	icon_state = "white"
 	},
-/area/medical/surgery)
+/area/medical/sleeper)
 "trQ" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -54274,7 +54348,7 @@
 	dir = 1;
 	icon_state = "whitegreen"
 	},
-/area/medical/medbay)
+/area/medical/sleeper)
 "vcu" = (
 /obj/structure/table,
 /obj/machinery/light,
@@ -57062,6 +57136,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/media/receiver/boombox,
 /turf/simulated/floor{
 	icon_state = "grimy"
 	},
@@ -58256,6 +58331,20 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/zoned/atmos_outside)
+"wzS" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_y = -23
+	},
+/turf/simulated/floor{
+	icon_state = "whitepurple"
+	},
+/area/science/hallway)
 "wzV" = (
 /obj/effect/decal/warning_stripes{
 	dir = 4;
@@ -59045,6 +59134,9 @@
 "wQz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
+	},
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_x = 28
 	},
 /turf/simulated/floor{
 	dir = 4;
@@ -60163,6 +60255,18 @@
 	icon_state = "warnplate"
 	},
 /area/centcom/suppy)
+"xlX" = (
+/obj/machinery/camera{
+	dir = 4
+	},
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_x = -26
+	},
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "red"
+	},
+/area/security/range)
 "xme" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
@@ -61072,7 +61176,7 @@
 /turf/simulated/floor{
 	icon_state = "white"
 	},
-/area/medical/surgery)
+/area/medical/sleeper)
 "xFn" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -61965,6 +62069,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1;
 	initialize_directions = 11
+	},
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_y = 25
 	},
 /turf/simulated/floor{
 	dir = 1;
@@ -104117,7 +104224,7 @@ nYY
 mOy
 chS
 clB
-xAI
+xlX
 klP
 xYb
 lIK
@@ -107974,7 +108081,7 @@ xor
 xor
 oxA
 nTD
-txd
+dPZ
 liY
 txd
 qAP
@@ -108333,7 +108440,7 @@ mYN
 ixG
 eaR
 iPs
-wlL
+fbo
 esJ
 mlH
 cBk
@@ -123486,7 +123593,7 @@ lxA
 xPN
 gVK
 wqc
-nPm
+jXL
 hTr
 nma
 dFr
@@ -123838,7 +123945,7 @@ lxA
 iie
 aem
 kAv
-xVe
+evJ
 rtl
 vwZ
 dFr
@@ -124190,7 +124297,7 @@ lxA
 oXG
 lQT
 mPU
-xVe
+evJ
 rtl
 xld
 eXo
@@ -124542,7 +124649,7 @@ ewu
 ixg
 nmg
 qfw
-nPm
+jXL
 hTr
 oWK
 eXo
@@ -124838,7 +124945,7 @@ dex
 rvZ
 tvK
 dEu
-sgL
+ijD
 ntD
 vrm
 pfB
@@ -124894,7 +125001,7 @@ lxA
 juC
 lQT
 ciT
-xVe
+evJ
 rtl
 xld
 eXo
@@ -125246,7 +125353,7 @@ lxA
 lSC
 cuO
 iiW
-xVe
+evJ
 rtl
 vwZ
 dFr
@@ -125598,7 +125705,7 @@ lxA
 odD
 iZA
 jRl
-nPm
+jXL
 hTr
 nma
 dFr
@@ -132217,7 +132324,7 @@ omP
 saC
 tcV
 fgx
-anh
+fAz
 saC
 cLt
 saC
@@ -133266,7 +133373,7 @@ lIK
 lIK
 mVO
 xWe
-wtr
+pny
 wtr
 gRF
 qxY
@@ -139968,7 +140075,7 @@ dMN
 dMN
 dMN
 pMv
-nEx
+wzS
 rly
 dGI
 qfO
@@ -143468,7 +143575,7 @@ lIK
 lIK
 lIK
 vQw
-jsu
+dVB
 vza
 vza
 vza
