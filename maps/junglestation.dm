@@ -55,6 +55,8 @@
 ****************************/
 
 /datum/subsystem/daynightcycle
+	overwrite_solars=TRUE
+	solar_orbit_period=130.6359
 	var/solartime=0 //start at 0. set not like that for debugging. or manually set next_firetime with varedit.
 
 /datum/subsystem/daynightcycle/process_lighting()
@@ -67,7 +69,10 @@
 
 	//orbit 1: fast, red dwarf:: roughly 33 minutes, red-orange colors.
 	//this is the primary star we are orbiting, so it's fairly simple
-	var/power=((sin(solartime*32.4-12.5)+1)/2)**2.25
+	var/power_star_a=0.0 //these vars are for the solar panels to work properly
+	var/angle_star_a=solartime*32.4-12.5
+	var/power=((sin(angle_star_a)+1)/2)**2.25
+	power_star_a=0.64*power
 	//what the math is: makes a sine function that goes from 0-1 instead of -1 to 1. avoid max() because that creates hard cutoffs which don't look too good. we take it to the 2.25th power to make the transitions between day and night sharper, and to reduce the overall amount of daylight since we have 2 stars.
 	luma+=0.64*power //red dwarves are weak stars.
 	chroma_r+=0.70*power //they also would give off fuckhuge solar flares.
@@ -79,7 +84,10 @@
 	//what the math is: inverts the power first, because less power also means a sharper angle. then, multiply by power again, because we should only adjust it by the amount of light being given off.
 
 	//orbit 2: slow, blue giant. more distant, but more power. i hope you brought sunscreen.
-	power=((sin(solartime*11.023+6.918)+1)/2)**2.25 // about 117 minutes. a bit of offset, too.
+	var/power_star_b=0.0
+	var/angle_star_b=solartime*11.023+6.918
+	power=((sin(angle_star_b)+1)/2)**2.25 // about 117 minutes. a bit of offset, too.
+	power_star_b=power
 	luma+=power
 	chroma_r-=0.20*power
 	chroma_b+=0.70*power
@@ -145,7 +153,29 @@
 
 	current_timeOfDay=rgb(r,g,b)
 
-
+	//solar panel tracking code
+	//now, to be frank, i have no fucking idea how to derive the proper angle, but i messed around in a graphing calculator, and this solution was not totally terrible.
+	var/ad= (angle_star_a-angle_star_b+180)
+	var/difference_between_star_angles=(ad-360*floor(ad/360)) -180 //equievent to modulo. but we can't use byond's modulo because it keeps the sign, but we don't want that.
+	var/list/angle_choices=list( //this is not a good solution
+		angle_star_a,
+		angle_star_b,
+		angle_star_a+(difference_between_star_angles/2),
+		angle_star_a-(difference_between_star_angles/2),
+		angle_star_b+(difference_between_star_angles/2),
+		angle_star_b-(difference_between_star_angles/2),
+	)
+	var/bestangle=0.0 //fallback angle
+	var/bestpower=0.0
+	for(var/angle in angle_choices) //but it works. kinda. if you're better at math please make it better.
+		var/pow=power_star_a*max(0,cos(angle_star_a-angle)-0.075)**1.5+power_star_b*max(0,cos(angle_star_b-angle)-0.075)**1.5
+		if (pow>bestpower)
+			bestpower=pow*1.25
+			bestangle=angle-90 //offset by 90. we start at 0, which makes it start at -90 (270), making it to that the stars "rise" in the west, then set in the east.
+	nearest_star_angle=bestangle%%360
+	nearest_star_power=bestpower
+	
+	
 	next_firetime=world.time + 4 MINUTES //station is too big to tick at 2 minutes. not without severe sever raep, at least.
 	solartime++
 
