@@ -483,6 +483,22 @@ var/list/foliage_replacments=list(
 			new/obj/item/stack/ore/uranium(src,user.lucky_prob_rand_range(1,3))
 	return
 
+
+
+/turf/unsimulated/floor/jungle/underground/crate_loot
+	icon_state="rock(high)"
+	
+/turf/unsimulated/floor/jungle/underground/crate_loot/New()
+	..()
+	icon_state="j_dirtwall" //use the normal icon. initial icon is different so you can see it in the map editor.
+
+/turf/unsimulated/floor/jungle/underground/crate_loot/generate_loot(var/obj/item/C, var/mob/user)
+	..()
+	if(user.lucky_prob_rand()>0.996) //0.4% chance (1 in 250). affected by luck, naturally.
+		visible_message("<span class='notice'>An old dusty crate was buried within!</span>")
+		var/ctype=pick(valid_abandoned_crate_types)
+		new ctype(src)
+
 /turf/unsimulated/floor/jungle/bedrock
 	name="Bedrock"
 	desc="A very dense rock. Nothing seems to be able to dig through it."
