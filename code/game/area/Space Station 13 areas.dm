@@ -2104,6 +2104,12 @@ var/global/list/adminbusteleportlocs = list()
 /area/surface/jungle/zoned/dorms_patio
 	name = "\improper Dormitory Patio"
 
+/area/surface/jungle/zoned/medbay_patio
+	name = "\improper Medbay Break Patio"
+
+/area/surface/jungle/zoned/solars
+	name = "\improper Solar Array"
+
 /area/surface/jungle/landing
 	name = "\improper Landing Area"
 	icon_state="jungle_landing"
