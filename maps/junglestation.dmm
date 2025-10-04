@@ -42,21 +42,6 @@
 	icon_state = "showroomfloor"
 	},
 /area/mine/explored)
-"aby" = (
-/obj/structure/cable/orange{
-	icon_state = "4-8";
-	d1 = 4;
-	d2 = 8
-	},
-/obj/structure/cable/orange{
-	icon_state = "2-4";
-	d1 = 2;
-	d2 = 4
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/engineering/reactor_room)
 "abN" = (
 /obj/machinery/door/airlock/glass_medical{
 	id_tag = "GeneticsDoor";
@@ -49694,6 +49679,11 @@
 /turf/simulated/floor/plating,
 /area/security/lobby)
 "tgU" = (
+/obj/structure/cable/orange{
+	icon_state = "1-4";
+	d1 = 1;
+	d2 = 4
+	},
 /obj/machinery/power/apc{
 	dir = 8;
 	pixel_x = -24
@@ -63117,19 +63107,6 @@
 	},
 /turf/simulated/floor,
 /area/engineering/engine)
-"ymh" = (
-/obj/machinery/atmospherics/binary/volume_pump{
-	dir = 4
-	},
-/obj/structure/cable/orange{
-	icon_state = "1-2";
-	d1 = 1;
-	d2 = 2
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/engineering/reactor_room)
 
 (1,1,1) = {"
 bsH
@@ -131308,9 +131285,9 @@ fqn
 caN
 wzE
 wuN
-hYr
-lWz
-aPa
+iRw
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -131660,9 +131637,9 @@ fqn
 caN
 wzE
 wuN
-fqn
-fqn
-iRw
+hYr
+lWz
+aPa
 lIK
 lIK
 lIK
@@ -133068,9 +133045,9 @@ fqn
 caN
 dTo
 wuN
-fqn
-fqn
-iRw
+aPa
+lWz
+hYr
 lIK
 lIK
 lIK
@@ -133420,9 +133397,9 @@ fqn
 caN
 dTo
 wuN
-aPa
-lWz
-hYr
+iRw
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -134466,9 +134443,9 @@ oxY
 gru
 gru
 fMF
-liN
+tgU
 mcl
-pXV
+ozP
 caN
 dTo
 wuN
@@ -134820,7 +134797,7 @@ rPJ
 rPJ
 pDK
 iOo
-pXV
+ozP
 caN
 dTo
 wuN
@@ -135172,7 +135149,7 @@ rPJ
 bCl
 cQt
 jXe
-pXV
+ozP
 caN
 dTo
 wuN
@@ -135526,9 +135503,9 @@ kTB
 kYu
 pXV
 pXV
-pXV
-pXV
-pXV
+ozP
+ozP
+ozP
 pXV
 pXV
 lWz
@@ -135879,7 +135856,7 @@ liN
 yeX
 pqz
 gnz
-tgU
+rPJ
 kcB
 kcB
 pXV
@@ -136227,11 +136204,11 @@ eRU
 eRU
 cOi
 jNN
-aby
-vIM
-vIM
-ymh
-pZv
+cQt
+rPJ
+rPJ
+mYM
+rPJ
 rPJ
 wMj
 pXV
