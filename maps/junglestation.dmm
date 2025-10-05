@@ -172,6 +172,15 @@
 	},
 /turf/simulated/floor/plating/airless,
 /area/shuttle/syndicate_elite/mothership)
+"adO" = (
+/obj/effect/landmark/start{
+	name = "Mobile MMI"
+	},
+/turf/simulated/floor{
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)"
+	},
+/area/construction/mommi_nest)
 "adY" = (
 /turf/unsimulated/wall/blastdoor,
 /area/centcom/ferry)
@@ -15833,6 +15842,12 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/zoned/reactor_outside)
+"gab" = (
+/turf/simulated/floor{
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)"
+	},
+/area/construction/mommi_nest)
 "gan" = (
 /obj/machinery/power/emitter{
 	anchored = 1;
@@ -17673,6 +17688,12 @@
 	icon_state = "dark"
 	},
 /area/vox_trading_post/gardens)
+"gLf" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/simulated/wall,
+/area/security/perma)
 "gLm" = (
 /obj/machinery/telecomms/allinone{
 	intercept = 1;
@@ -20624,6 +20645,13 @@
 	tag = "icon-checker (NORTHEAST)"
 	},
 /area/science/rd)
+"hTQ" = (
+/turf/simulated/floor{
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 1
+	},
+/area/construction/mommi_nest)
 "hUg" = (
 /turf/simulated/floor{
 	dir = 1;
@@ -21787,8 +21815,7 @@
 	dir = 4
 	},
 /turf/simulated/floor{
-	dir = 4;
-	icon_state = "whitegreen"
+	icon_state = "freezerfloor"
 	},
 /area/medical/virology)
 "itb" = (
@@ -25083,7 +25110,8 @@
 	dir = 4
 	},
 /turf/simulated/floor{
-	icon_state = "white"
+	dir = 4;
+	icon_state = "whitegreen"
 	},
 /area/medical/virology)
 "jHp" = (
@@ -25227,12 +25255,6 @@
 	tag = "icon-checker"
 	},
 /area/vox_trading_post/gardens)
-"jJr" = (
-/turf/simulated/floor{
-	icon_state = "dark yellow stripe";
-	tag = "icon-vault (NORTHEAST)"
-	},
-/area/construction/mommi_nest)
 "jJt" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -33515,14 +33537,6 @@
 	dir = 1
 	},
 /area/engineering/mechanics)
-"mWA" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/simulated/floor{
-	icon_state = "freezerfloor"
-	},
-/area/medical/virology)
 "mWM" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
@@ -38932,7 +38946,7 @@
 /turf/simulated/floor{
 	icon_state = "dark yellow corner";
 	tag = "icon-vault (NORTHEAST)";
-	dir = 1
+	dir = 8
 	},
 /area/construction/mommi_nest)
 "pgq" = (
@@ -40823,14 +40837,13 @@
 	},
 /area/bridge)
 "pSm" = (
-/obj/effect/landmark/start{
-	name = "Mobile MMI"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
 /turf/simulated/floor{
-	icon_state = "dark yellow stripe";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "white"
 	},
-/area/construction/mommi_nest)
+/area/medical/virology)
 "pSp" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -43848,10 +43861,11 @@
 	},
 /area/medical/sleeper)
 "qZh" = (
+/obj/machinery/recharge_station,
 /turf/simulated/floor{
-	icon_state = "dark yellow stripe";
+	icon_state = "dark yellow corner";
 	tag = "icon-vault (NORTHEAST)";
-	dir = 8
+	dir = 1
 	},
 /area/construction/mommi_nest)
 "qZk" = (
@@ -45005,14 +45019,6 @@
 	},
 /turf/simulated/floor,
 /area/research_outpost/entry)
-"rvi" = (
-/obj/machinery/recharge_station,
-/turf/simulated/floor{
-	icon_state = "dark yellow corner";
-	tag = "icon-vault (NORTHEAST)";
-	dir = 8
-	},
-/area/construction/mommi_nest)
 "rvp" = (
 /obj/machinery/computer/scan_consolenew,
 /obj/machinery/light{
@@ -48345,6 +48351,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/mine/production)
+"sKJ" = (
+/turf/simulated/floor{
+	icon_state = "dark yellow stripe";
+	tag = "icon-vault (NORTHEAST)";
+	dir = 8
+	},
+/area/construction/mommi_nest)
 "sKQ" = (
 /obj/structure/table/reinforced,
 /obj/structure/cable/yellow{
@@ -50992,6 +51005,10 @@
 	},
 /turf/simulated/floor/engine,
 /area/science/telescience)
+"tHD" = (
+/obj/structure/grille/window_spawner/reinforced/full,
+/turf/simulated/floor,
+/area/security/perma)
 "tHF" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/library/checkout,
@@ -53069,10 +53086,6 @@
 	icon_state = "dark"
 	},
 /area/engineering/supermatter_room)
-"uBk" = (
-/obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated/floor,
-/area/security/perma)
 "uBP" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/filtering/hidden{
@@ -56882,7 +56895,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/simulated/wall,
+/turf/simulated/floor,
 /area/security/perma)
 "vVp" = (
 /turf/unsimulated/floor{
@@ -57258,13 +57271,6 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/zoned/atmos_outside)
-"wdO" = (
-/turf/simulated/floor{
-	icon_state = "dark yellow stripe";
-	tag = "icon-vault (NORTHEAST)";
-	dir = 1
-	},
-/area/construction/mommi_nest)
 "wdW" = (
 /obj/machinery/chem_dispenser/mapping,
 /turf/simulated/floor,
@@ -61482,12 +61488,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/item/weapon/stool{
 	pixel_y = 8
-	},
-/turf/simulated/floor,
-/area/security/perma)
-"xJf" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
 	},
 /turf/simulated/floor,
 /area/security/perma)
@@ -109974,7 +109974,7 @@ sqh
 sAG
 fsm
 bVg
-xJf
+vVo
 bVg
 qxS
 bUA
@@ -110328,7 +110328,7 @@ bNM
 bVg
 rVE
 hFS
-uBk
+tHD
 vFL
 gaI
 pmR
@@ -110678,7 +110678,7 @@ nkf
 rVR
 nkf
 tyP
-xJf
+vVo
 qho
 bcD
 wVH
@@ -111382,7 +111382,7 @@ bVg
 sAk
 bVg
 bVg
-xJf
+vVo
 hFS
 hFS
 hFS
@@ -112084,7 +112084,7 @@ fvI
 gLy
 kGS
 wLS
-xJf
+vVo
 fyK
 ldv
 veF
@@ -112790,7 +112790,7 @@ fyd
 crx
 ptJ
 pbp
-xJf
+vVo
 fJo
 bVg
 lMO
@@ -113142,7 +113142,7 @@ mag
 aSq
 hFS
 pMx
-vVo
+gLf
 gaI
 rUS
 gaI
@@ -125829,7 +125829,7 @@ dKH
 dKH
 dKH
 dKH
-dhZ
+opc
 lIK
 lIK
 lIK
@@ -128637,7 +128637,7 @@ iTI
 jBM
 ecv
 rsE
-jGU
+pSm
 rsE
 ijn
 rsE
@@ -128989,7 +128989,7 @@ uTI
 jBM
 pPX
 gpf
-isO
+jGU
 ovp
 riT
 nac
@@ -129693,7 +129693,7 @@ qTt
 jBM
 vdB
 jfY
-mWA
+isO
 dKH
 wnZ
 yju
@@ -130047,11 +130047,11 @@ vSp
 pOB
 qza
 dKH
-jJr
+gab
 uyE
 cSx
 ccs
-wdO
+hTQ
 gBg
 caN
 wzE
@@ -130751,7 +130751,7 @@ cpl
 usm
 vKp
 dKH
-pSm
+adO
 lyE
 sRt
 oRX
@@ -131103,11 +131103,11 @@ vbK
 aCS
 lsn
 dKH
-rvi
+pgl
 tdD
 qhE
+sKJ
 qZh
-pgl
 gBg
 caN
 wzE
