@@ -254,7 +254,10 @@
 		else if(obscured || !sun)
 			icon_state += "-dark"
 		else
-			glow.transform = turn(matrix(), (sun.angle + 180) % 360)
+			if(SSDayNight?.overwrite_solars && (src.z in daynight_z_lvls) )
+				glow.transform = turn(matrix(), (SSDayNight.nearest_star_angle + 180) % 360)
+			else
+				glow.transform = turn(matrix(), (sun.angle + 180) % 360)
 			glow.alpha = glow_intensity
 			overlays += glow
 

@@ -43,7 +43,7 @@ var/global/datum/sun/sun
 		for(T in solars_list)
 			if(T.powernet)
 				if(SSDayNight?.overwrite_solars && (T.z in daynight_z_lvls) )
-					T.set_angle(SSDayNight.nearest_star_angle) //this doesn't work right, and i can't find the code responsible for setting the overlay.
+					T.set_angle(SSDayNight.nearest_star_angle)
 				else
 					occlusion(T)
 					if (!T.obscured)
