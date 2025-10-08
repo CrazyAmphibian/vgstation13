@@ -3,7 +3,7 @@ var/datum/subsystem/foliage_regrow/SSFoliageRegrow
 var/global/list/turf/turfs_to_regrow=null //set this to list() to make it start working
 
 /datum/subsystem/foliage_regrow
-	name          = "Foliage Regrowth System"
+	name          = "Foliage"
 	init_order    = SS_INIT_FOLIAGE_REGROW
 	display_order = SS_DISPLAY_FOLIAGE_REGROW
 	priority      = SS_PRIORITY_FOLIAGE_REGROW
