@@ -30764,8 +30764,11 @@
 	},
 /area/security/lobby)
 "lSC" = (
-/turf/simulated/wall/shuttle/unsmoothed,
-/area/surface/jungle)
+/obj/machinery/light_switch{
+	pixel_y = -25
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle/underground/zoned/speakeasy)
 "lSF" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -32223,11 +32226,9 @@
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/atmos)
 "mtY" = (
-/obj/machinery/light_switch{
-	pixel_y = -25
-	},
-/turf/simulated/floor/wood,
-/area/surface/jungle/underground/zoned/speakeasy)
+/obj/structure/bed/chair/shuttle,
+/turf/simulated/floor/plating,
+/area/surface/jungle)
 "mub" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /turf/simulated/floor{
@@ -41366,10 +41367,6 @@
 	icon_state = "chapel"
 	},
 /area/chapel/main)
-"qcN" = (
-/obj/machinery/vending/dinnerware,
-/turf/unsimulated/floor/jungle/path,
-/area/surface/jungle/zoned/outdoor_bar)
 "qcV" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -51312,8 +51309,7 @@
 	},
 /area/crew_quarters/kitchen)
 "tNb" = (
-/obj/structure/bed/chair/shuttle,
-/turf/simulated/floor/plating,
+/turf/simulated/wall/shuttle/unsmoothed,
 /area/surface/jungle)
 "tNm" = (
 /obj/structure/bed/chair{
@@ -117568,11 +117564,11 @@ lIK
 pWq
 bRe
 iww
-lSC
+tNb
 fQX
 fQX
 fQX
-lSC
+tNb
 qIH
 bRe
 wlz
@@ -117920,11 +117916,11 @@ lIK
 wlz
 lpV
 kIa
-lSC
+tNb
 rqe
 aaq
 eTw
-lSC
+tNb
 mqz
 bRe
 pWq
@@ -118271,13 +118267,13 @@ uXL
 uXL
 wlz
 lpV
-lSC
+tNb
 hkY
 xgw
 hkY
 hkY
 hkY
-lSC
+tNb
 acE
 pWq
 lIK
@@ -118625,7 +118621,7 @@ bRe
 bRe
 uXC
 hkY
-tNb
+mtY
 wos
 xgw
 hkY
@@ -118975,13 +118971,13 @@ uXL
 uXL
 pWq
 bRe
-lSC
+tNb
 xbQ
 hkY
 olm
 hkY
 bDn
-lSC
+tNb
 acE
 wlz
 lIK
@@ -119327,13 +119323,13 @@ lIK
 lIK
 wlz
 lpV
-lSC
+tNb
 dxb
 crp
 cTq
 xgw
 hkY
-lSC
+tNb
 bRe
 wlz
 lIK
@@ -120383,13 +120379,13 @@ lIK
 lIK
 wlz
 lpV
-lSC
+tNb
 iyK
 hkY
 xgw
 hkY
 bDn
-lSC
+tNb
 acE
 wlz
 lIK
@@ -120735,13 +120731,13 @@ lIK
 lIK
 wlz
 bRe
-lSC
+tNb
 hkY
 aXo
 aXo
 eFF
 xgw
-lSC
+tNb
 acE
 wlz
 lIK
@@ -124747,7 +124743,7 @@ edD
 edD
 edD
 edD
-qcN
+edD
 edD
 edD
 hjm
@@ -228606,7 +228602,7 @@ tWM
 bfb
 erp
 tWM
-mtY
+lSC
 kze
 kze
 xJG
