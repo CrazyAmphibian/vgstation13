@@ -59,6 +59,7 @@
 	maxHealth=250
 	armor=list(melee=10,bullet=30,laser=40,energy=0,bomb=0,bio=0,rad=0)
 	max_food=200
+	mob_max_age=9999999
 	healthregen=0.02
 	food_per_tick = 0.0005
 	base_damage = 35
@@ -136,6 +137,7 @@
 	behavior_flags = ANIMAL_BEHAVIOR_TERRITORIAL | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	movespeed=4
 	health=100
+	mob_max_age=9999999
 	base_damage=35
 	damage_variance=15
 	maxHealth=100

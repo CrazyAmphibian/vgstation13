@@ -30764,11 +30764,8 @@
 	},
 /area/security/lobby)
 "lSC" = (
-/obj/machinery/light_switch{
-	pixel_y = -25
-	},
-/turf/simulated/floor/wood,
-/area/surface/jungle/underground/zoned/speakeasy)
+/turf/simulated/wall/shuttle/unsmoothed,
+/area/surface/jungle)
 "lSF" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -32226,9 +32223,11 @@
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/atmos)
 "mtY" = (
-/obj/structure/bed/chair/shuttle,
-/turf/simulated/floor/plating,
-/area/surface/jungle)
+/obj/machinery/light_switch{
+	pixel_y = -25
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle/underground/zoned/speakeasy)
 "mub" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /turf/simulated/floor{
@@ -51309,7 +51308,8 @@
 	},
 /area/crew_quarters/kitchen)
 "tNb" = (
-/turf/simulated/wall/shuttle/unsmoothed,
+/obj/structure/bed/chair/shuttle,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "tNm" = (
 /obj/structure/bed/chair{
@@ -117564,11 +117564,11 @@ lIK
 pWq
 bRe
 iww
-tNb
+lSC
 fQX
 fQX
 fQX
-tNb
+lSC
 qIH
 bRe
 wlz
@@ -117916,11 +117916,11 @@ lIK
 wlz
 lpV
 kIa
-tNb
+lSC
 rqe
 aaq
 eTw
-tNb
+lSC
 mqz
 bRe
 pWq
@@ -118267,13 +118267,13 @@ uXL
 uXL
 wlz
 lpV
-tNb
+lSC
 hkY
 xgw
 hkY
 hkY
 hkY
-tNb
+lSC
 acE
 pWq
 lIK
@@ -118621,7 +118621,7 @@ bRe
 bRe
 uXC
 hkY
-mtY
+tNb
 wos
 xgw
 hkY
@@ -118971,13 +118971,13 @@ uXL
 uXL
 pWq
 bRe
-tNb
+lSC
 xbQ
 hkY
 olm
 hkY
 bDn
-tNb
+lSC
 acE
 wlz
 lIK
@@ -119323,13 +119323,13 @@ lIK
 lIK
 wlz
 lpV
-tNb
+lSC
 dxb
 crp
 cTq
 xgw
 hkY
-tNb
+lSC
 bRe
 wlz
 lIK
@@ -120379,13 +120379,13 @@ lIK
 lIK
 wlz
 lpV
-tNb
+lSC
 iyK
 hkY
 xgw
 hkY
 bDn
-tNb
+lSC
 acE
 wlz
 lIK
@@ -120731,13 +120731,13 @@ lIK
 lIK
 wlz
 bRe
-tNb
+lSC
 hkY
 aXo
 aXo
 eFF
 xgw
-tNb
+lSC
 acE
 wlz
 lIK
@@ -178435,11 +178435,11 @@ tdB
 srt
 roR
 tdB
-dhZ
-dhZ
+tdB
+tdB
 oeU
-dhZ
-dhZ
+tdB
+tdB
 qvz
 dhZ
 dhZ
@@ -178791,7 +178791,7 @@ wRR
 jeN
 vrk
 irV
-dhZ
+tdB
 xIy
 wRV
 xjN
@@ -179143,7 +179143,7 @@ wRR
 jeN
 vrk
 irV
-dhZ
+tdB
 xIy
 xIy
 xIy
@@ -179495,7 +179495,7 @@ wRR
 bjd
 vrk
 qeP
-dhZ
+tdB
 xIy
 xIy
 xIy
@@ -179847,7 +179847,7 @@ wRR
 bjd
 vel
 gUP
-dhZ
+tdB
 iHv
 xIy
 iHv
@@ -180196,10 +180196,10 @@ upF
 lEE
 lEE
 wRR
-dhZ
-dhZ
-dhZ
-dhZ
+tdB
+tdB
+tdB
+tdB
 dhZ
 dhZ
 dhZ
@@ -228602,7 +228602,7 @@ tWM
 bfb
 erp
 tWM
-lSC
+mtY
 kze
 kze
 xJG

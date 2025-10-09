@@ -13,7 +13,6 @@
 	movespeed=5
 	base_damage=20 //gorilla grip strong as shit
 	damage_variance=4
-	max_local_population=2
 
 
 /mob/living/complex_animal/gorilla/get_idle_sounds()
