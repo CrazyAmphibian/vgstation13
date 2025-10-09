@@ -52,7 +52,9 @@
 	var/pacify_aura=FALSE
 	var/kin_check_type_path=null //for mobs with many subtypes. set to the parent mob type. leave null if not needed
 	var/petable=FALSE
-	var/max_local_population=5 //to prevent total overpopulation
+	var/lastmate=0
+	var/matingcooldown=30 //1 minute
+	var/max_local_population=3 //to prevent total overpopulation
 	var/icon_living = ""
 	var/icon_dead = ""
 	var/healthregen=0.01
@@ -99,6 +101,8 @@
 		
 	icon_state=icon_living
 	nutrition-=max_food*food_per_tick
+	
+	lastmate--
 	
 	if(lasthealth<=health && health<maxHealth)
 		health=min(maxHealth,health+maxHealth*healthregen)
@@ -187,7 +191,7 @@
 	abort_target()
 	
 	//attempt reproduction only while full
-	if(nutrition >= (max_food- get_offspring_cost()*2) && get_offspring_cost() && prob(20))
+	if(nutrition >= (max_food- get_offspring_cost()*2) && get_offspring_cost() && prob(20) && lastmate<=0)
 		behavior_state=ANIMAL_STATE_MATING
 		return FALSE
 	
@@ -319,6 +323,9 @@
 				
 					nutrition-=get_offspring_cost()
 					abort_target()
+					
+					M.lastmate=M.matingcooldown
+					src.lastmate=src.matingcooldown
 					return FALSE
 	return TRUE
 
@@ -624,6 +631,7 @@
 			localcount++
 	if(localcount>max_local_population)
 		return FALSE
+	if(mob_age>mob_max_age || mob_age<mob_max_age*0.1) //too young or too old? no can do.
 	if((src.gender=="male" && mate.gender=="female") || (mate.gender=="male" && src.gender=="female"))
 		return TRUE
 	return FALSE

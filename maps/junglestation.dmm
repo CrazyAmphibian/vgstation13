@@ -9,7 +9,7 @@
 /obj/structure/bed/chair/shuttle/blue{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "aar" = (
 /turf/simulated/wall,
@@ -147,7 +147,7 @@
 	one_way = 1;
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "adw" = (
 /obj/item/weapon/gun/energy/pulse_rifle/destroyer{
@@ -2114,7 +2114,7 @@
 	name = "reinforced one-way window";
 	one_way = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "aPp" = (
 /obj/structure/table/woodentable,
@@ -2404,6 +2404,9 @@
 	pixel_x = 24
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/simulated/floor{
 	icon_state = "whitegreen"
 	},
@@ -2528,7 +2531,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "aXp" = (
 /obj/structure/rack,
@@ -4245,7 +4248,7 @@
 /area/surface/jungle/fenced)
 "bDn" = (
 /obj/machinery/light/broken,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "bDx" = (
 /obj/machinery/atmospherics/miner/oxygen,
@@ -6347,7 +6350,11 @@
 /obj/structure/bed/chair/shuttle{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "vault";
+	tag = "icon-vault (NORTHEAST)"
+	},
 /area/surface/jungle)
 "cru" = (
 /obj/structure/table/glass,
@@ -8545,7 +8552,7 @@
 /obj/structure/shuttle/engine/propulsion{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "dhV" = (
 /obj/machinery/computer/smelting{
@@ -9288,7 +9295,7 @@
 /area/vox_trading_post/gardens)
 "dxb" = (
 /obj/structure/closet/wardrobe/black,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "dxe" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -12372,7 +12379,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "eFV" = (
 /obj/machinery/atmospherics/pipe/simple/supply/visible{
@@ -13040,7 +13047,7 @@
 /area/engineering/engine_storage)
 "eTw" = (
 /obj/machinery/light/built,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "eTK" = (
 /obj/structure/bed/chair/wood/pew/left{
@@ -13967,7 +13974,11 @@
 	})
 "fnU" = (
 /obj/structure/bed/chair/shuttle,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "vault";
+	tag = "icon-vault (NORTHEAST)"
+	},
 /area/surface/jungle)
 "fnW" = (
 /turf/unsimulated/wall,
@@ -20926,7 +20937,7 @@
 /obj/structure/shuttle/engine/propulsion/right{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "hZU" = (
 /obj/machinery/vending/hydroseeds,
@@ -22098,7 +22109,7 @@
 /obj/machinery/light/broken{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "iyU" = (
 /turf/simulated/wall/r_wall,
@@ -29329,7 +29340,7 @@
 	name = "reinforced one-way window";
 	one_way = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "ltb" = (
 /obj/structure/closet,
@@ -30753,14 +30764,8 @@
 	},
 /area/security/lobby)
 "lSC" = (
-/obj/structure/table/reinforced,
-/obj/item/weapon/folder/white,
-/obj/item/weapon/pen,
-/turf/simulated/floor{
-	dir = 1;
-	icon_state = "whitegreen"
-	},
-/area/medical/medbay)
+/turf/simulated/wall/shuttle/unsmoothed,
+/area/surface/jungle)
 "lSF" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -32218,11 +32223,11 @@
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/atmos)
 "mtY" = (
-/obj/machinery/computer{
-	icon_state = "computer_genericb"
+/obj/machinery/light_switch{
+	pixel_y = -25
 	},
-/turf/unsimulated/floor/jungle/concrete,
-/area/surface/jungle)
+/turf/simulated/floor/wood,
+/area/surface/jungle/underground/zoned/speakeasy)
 "mub" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /turf/simulated/floor{
@@ -33973,7 +33978,7 @@
 	name = "reinforced one-way window";
 	one_way = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "nfJ" = (
 /obj/structure/rack,
@@ -38784,6 +38789,9 @@
 	dir = 4
 	},
 /obj/machinery/disposal/compactor,
+/obj/machinery/light_switch{
+	pixel_x = 28
+	},
 /turf/simulated/floor{
 	dir = 6;
 	icon_state = "brown"
@@ -40979,9 +40987,6 @@
 	},
 /area/research_outpost/anomaly)
 "pVd" = (
-/obj/machinery/light_switch{
-	pixel_y = 28
-	},
 /turf/simulated/floor{
 	dir = 9;
 	icon_state = "whitepurple"
@@ -41361,6 +41366,10 @@
 	icon_state = "chapel"
 	},
 /area/chapel/main)
+"qcN" = (
+/obj/machinery/vending/dinnerware,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/zoned/outdoor_bar)
 "qcV" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -44666,7 +44675,7 @@
 /obj/machinery/light/built{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "rqh" = (
 /obj/structure/table/reinforced,
@@ -47926,7 +47935,10 @@
 /obj/item/clothing/mask/breath/vox,
 /obj/item/weapon/tank/nitrogen,
 /obj/item/weapon/tank/nitrogen,
-/turf/unsimulated/floor/jungle/underground/crate_loot,
+/turf/simulated/floor{
+	dir = 9;
+	icon_state = "whiteblue"
+	},
 /area/medical/storage)
 "sCA" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -47999,7 +48011,7 @@
 	name = "reinforced one-way window";
 	one_way = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "sEn" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -51300,8 +51312,8 @@
 	},
 /area/crew_quarters/kitchen)
 "tNb" = (
-/mob/living/complex_animal/bear/polar,
-/turf/unsimulated/floor/jungle/concrete,
+/obj/structure/bed/chair/shuttle,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "tNm" = (
 /obj/structure/bed/chair{
@@ -56486,6 +56498,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
+/obj/machinery/light,
 /turf/simulated/floor{
 	icon_state = "whitepurple"
 	},
@@ -56872,7 +56885,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/cooking/deepfryer,
+/obj/machinery/vending/dinnerware,
 /turf/unsimulated/floor/jungle/path_plated,
 /area/crew_quarters/bar)
 "vUM" = (
@@ -57814,7 +57827,11 @@
 /obj/structure/bed/chair/shuttle{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "vault";
+	tag = "icon-vault (NORTHEAST)"
+	},
 /area/surface/jungle)
 "woG" = (
 /obj/machinery/pda_multicaster/prebuilt,
@@ -59898,7 +59915,7 @@
 /obj/machinery/light/broken{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "xcc" = (
 /obj/machinery/power/am_control_unit,
@@ -62459,6 +62476,9 @@
 	},
 /area/medical/sleeper)
 "ycm" = (
+/obj/machinery/light_switch{
+	pixel_y = -23
+	},
 /turf/simulated/floor{
 	icon_state = "whitepurple"
 	},
@@ -62544,7 +62564,7 @@
 	one_way = 1;
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/simulated/floor/plating,
 /area/surface/jungle)
 "yen" = (
 /obj/machinery/alarm/vox{
@@ -117548,11 +117568,11 @@ lIK
 pWq
 bRe
 iww
-bRe
-mtY
-mtY
-mtY
-bRe
+lSC
+fQX
+fQX
+fQX
+lSC
 qIH
 bRe
 wlz
@@ -117900,11 +117920,11 @@ lIK
 wlz
 lpV
 kIa
-bRe
+lSC
 rqe
 aaq
 eTw
-bRe
+lSC
 mqz
 bRe
 pWq
@@ -118251,13 +118271,13 @@ uXL
 uXL
 wlz
 lpV
-bRe
-bRe
-bRe
-bRe
-bRe
-bRe
-bRe
+lSC
+hkY
+xgw
+hkY
+hkY
+hkY
+lSC
 acE
 pWq
 lIK
@@ -118604,11 +118624,11 @@ uXL
 bRe
 bRe
 uXC
-bRe
-fnU
+hkY
+tNb
 wos
-bRe
-bRe
+xgw
+hkY
 uXC
 acE
 pWq
@@ -118955,13 +118975,13 @@ uXL
 uXL
 pWq
 bRe
-bRe
+lSC
 xbQ
-bRe
-vfF
-bRe
+hkY
+olm
+hkY
 bDn
-bRe
+lSC
 acE
 wlz
 lIK
@@ -119307,13 +119327,13 @@ lIK
 lIK
 wlz
 lpV
-bRe
+lSC
 dxb
 crp
-hlL
-bRe
-bRe
-bRe
+cTq
+xgw
+hkY
+lSC
 bRe
 wlz
 lIK
@@ -119660,11 +119680,11 @@ lIK
 wlz
 bRe
 adi
-bRe
-bRe
-tNb
-bRe
-bRe
+hkY
+xgw
+hul
+xgw
+hkY
 ydT
 acE
 wlz
@@ -120012,11 +120032,11 @@ lIK
 pWq
 lpV
 sEg
-bRe
-bRe
+hkY
+xgw
 fnU
-bRe
-bRe
+hkY
+hkY
 ydT
 acE
 wlz
@@ -120363,13 +120383,13 @@ lIK
 lIK
 wlz
 lpV
-bRe
+lSC
 iyK
-bRe
-bRe
-bRe
+hkY
+xgw
+hkY
 bDn
-bRe
+lSC
 acE
 wlz
 lIK
@@ -120715,13 +120735,13 @@ lIK
 lIK
 wlz
 bRe
-bRe
-bRe
+lSC
+hkY
 aXo
 aXo
 eFF
-bRe
-bRe
+xgw
+lSC
 acE
 wlz
 lIK
@@ -121069,10 +121089,10 @@ xYO
 bRe
 hvx
 hZJ
-bRe
+hkY
 dhO
-bRe
-bRe
+hkY
+hkY
 qVx
 bRe
 wlz
@@ -124727,7 +124747,7 @@ edD
 edD
 edD
 edD
-edD
+qcN
 edD
 edD
 hjm
@@ -125451,7 +125471,7 @@ xMH
 gIE
 xVe
 lxA
-lSC
+iie
 cuO
 iiW
 evJ
@@ -228586,7 +228606,7 @@ tWM
 bfb
 erp
 tWM
-tWM
+mtY
 kze
 kze
 xJG
