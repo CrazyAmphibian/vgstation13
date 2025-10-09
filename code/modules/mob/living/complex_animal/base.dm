@@ -97,12 +97,12 @@
 	if(stat == DEAD)
 		ticks_dead++
 		if(ticks_dead==15)
-			visible_message("bugs start flying around <b>\the [src]</b>'s corpse")
+			visible_message("Bugs start flying around <b>\the [src]</b>'s corpse")
 		if(ticks_dead==30)
-			visible_message("<b>\the [src]</b>'s corpse starts to smell...")	
+			visible_message("<b>\The [src]</b>'s corpse starts to smell...")	
 		if(ticks_dead>30) //1 minute delay
 			if(prob(5))
-				visible_message("<b>\the [src]</b>'s corpse rots away into nothing...")
+				visible_message("<b>\The [src]</b>'s corpse rots away into nothing...")
 				qdel(src)
 		return 0
 	ticks_dead=0
