@@ -632,6 +632,9 @@
 	if(localcount>max_local_population)
 		return FALSE
 	if(mob_age>mob_max_age || mob_age<mob_max_age*0.1) //too young or too old? no can do.
+		return FALSE
+	if(lastmate>0)
+		return FALSE
 	if((src.gender=="male" && mate.gender=="female") || (mate.gender=="male" && src.gender=="female"))
 		return TRUE
 	return FALSE
