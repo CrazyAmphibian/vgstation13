@@ -2064,6 +2064,9 @@ var/global/list/adminbusteleportlocs = list()
 
 /area/surface/jungle/underground/zoned/ghetto_morgue
 	name = "\improper Crypt"
+	
+/area/surface/jungle/underground/zoned/tcomms
+	name = "\proper Underground Relay"	
 
 /area/surface/jungle/zoned
 	forbid_apc=FALSE
