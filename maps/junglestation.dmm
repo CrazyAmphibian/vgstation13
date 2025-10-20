@@ -11908,7 +11908,7 @@
 "esC" = (
 /obj/machinery/door/airlock/glass_security{
 	name = "Prison Wing";
-	req_access_txt = "2"
+	req_access_txt = "1"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -42969,7 +42969,7 @@
 "qwX" = (
 /obj/machinery/door/airlock/glass_security{
 	name = "Prison Wing";
-	req_access_txt = "2"
+	req_access_txt = "1"
 	},
 /turf/simulated/floor{
 	icon_state = "red"
@@ -50564,7 +50564,7 @@
 	},
 /obj/machinery/door/airlock/glass_security{
 	name = "Prison Wing";
-	req_access_txt = "2"
+	req_access_txt = "1"
 	},
 /obj/structure/cable/yellow{
 	d1 = 1;

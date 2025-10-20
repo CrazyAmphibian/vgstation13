@@ -14,6 +14,7 @@
 	behavior_flags = ANIMAL_BEHAVIOR_AVOID_PRED | ANIMAL_BEHAVIOR_RETALIATE
 	movespeed=3
 	petable=TRUE
+	flying=TRUE
 	pass_flags = PASSTABLE | PASSRAILING | PASSMACHINE | PASSMOB
 	flags = HEAR | PROXMOVE | HEAR_ALWAYS
 	var/obj/cur_perch=null

@@ -473,6 +473,11 @@
 	return out
 
 
+/mob/living/complex_animal/UnarmedAttack(var/atom/A, var/proximity_flag, var/params)
+	if(attack_delayer.next_allowed<=world.time)
+		..()
+		delayNextAttack(2 SECONDS) //fixes hitting same object multiple times rapidly
+
 /mob/living/complex_animal/proc/aggro_drawn(var/victim,var/state=ANIMAL_STATE_ATTACKING,var/skipsmg=FALSE)
 	if(!victim)
 		return
@@ -578,7 +583,8 @@
 				 /obj/item/tape,
 				 /obj/item/toy/balloon/inflated/decoy,
 				 /obj/machinery/door/airlock,
-				 /obj/machinery/door/firedoor)
+				 /obj/machinery/door/firedoor,
+				 /obj/item/weapon/beartrap,)
 			if(is_type_in_list(A, destructible_objects) && Adjacent(A))
 				if(istype(A, /obj/machinery/door/airlock))
 					var/obj/machinery/door/airlock/AIR = A
