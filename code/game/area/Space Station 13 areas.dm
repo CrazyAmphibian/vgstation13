@@ -2038,6 +2038,8 @@ var/global/list/adminbusteleportlocs = list()
 /area/surface/jungle/fenced
 	name = "\improper Outdoors"
 	icon_state="jungle_fenced"
+	holomap_draw_override = HOLOMAP_DRAW_PATH
+	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
 	
 /area/surface/jungle/underground
 	name = "\improper Underground"
@@ -2067,6 +2069,8 @@ var/global/list/adminbusteleportlocs = list()
 	forbid_apc=FALSE
 	construction_zone=FALSE
 	icon_state="jungle_zone"
+	holomap_draw_override = HOLOMAP_DRAW_FULL
+	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
 
 /area/surface/jungle/zoned/prison_yard
 	name = "\improper Prison Yard"
@@ -2076,12 +2080,15 @@ var/global/list/adminbusteleportlocs = list()
 
 /area/surface/jungle/zoned/atmos_outside
 	name = "\improper Exterior Atmospherics"
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
 /area/surface/jungle/zoned/sme_outside
 	name = "\improper Supermatter Cooling Zone"
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
 /area/surface/jungle/zoned/reactor_outside
 	name = "\improper Reactor Cooling Zone"
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
 /area/surface/jungle/zoned/botanty_outside
 	name = "\improper Outdoor Botany Area"
@@ -2097,23 +2104,28 @@ var/global/list/adminbusteleportlocs = list()
 
 /area/surface/jungle/zoned/dump
 	name = "\improper Dump"
+	holomap_color = HOLOMAP_AREACOLOR_CARGO
 
 /area/surface/jungle/zoned/aifenced
 	name = "\improper AI Restricted Fenced Zone"
+	holomap_color = HOLOMAP_AREACOLOR_COMMAND
 
 /area/surface/jungle/zoned/dorms_patio
 	name = "\improper Dormitory Patio"
 
 /area/surface/jungle/zoned/medbay_patio
 	name = "\improper Medbay Break Patio"
+	holomap_color = HOLOMAP_AREACOLOR_MEDICAL
 
 /area/surface/jungle/zoned/solars
 	name = "\improper Solar Array"
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
 /area/surface/jungle/landing
 	name = "\improper Landing Area"
 	icon_state="jungle_landing"
 	base_turf_type=/turf/unsimulated/floor/jungle/concrete
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 //DJSTATION
 

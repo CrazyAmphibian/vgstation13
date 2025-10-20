@@ -36,8 +36,8 @@
 	skip_hobo_shack=TRUE
 	can_enlarge=FALSE
 
-	holomap_offset_x = list(0,0,0,86,4,0,0,)
-	holomap_offset_y = list(0,0,0,94,10,0,0,)
+	holomap_offset_x = list(80,0,0,86,4,0,0,)
+	holomap_offset_y = list(50,0,0,94,10,0,0,)
 
 	center_x = 182
 	center_y = 163

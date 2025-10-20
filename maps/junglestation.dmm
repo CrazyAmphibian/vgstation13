@@ -2693,12 +2693,6 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
-"baw" = (
-/obj/machinery/station_map{
-	dir = 8
-	},
-/turf/unsimulated/floor/jungle/path,
-/area/surface/jungle/fenced)
 "baO" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/machinery/door/poddoor{
@@ -2785,9 +2779,8 @@
 	},
 /area/surface/jungle/underground/zoned/ghettosurgery)
 "bbX" = (
-/obj/effect/glowshroom/single,
-/obj/machinery/light/small,
-/turf/simulated/floor/vox,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/simulated/wall,
 /area/vox_trading_post/docking)
 "bbY" = (
 /obj/structure/cable/yellow{
@@ -3192,25 +3185,6 @@
 	},
 /turf/simulated/floor,
 /area/supply/sorting)
-"bkJ" = (
-/obj/structure/table,
-/obj/item/tool/hemostat{
-	pixel_y = 4
-	},
-/obj/item/tool/cautery{
-	pixel_y = 4
-	},
-/obj/item/tool/surgicaldrill,
-/obj/item/weapon/reagent_containers/spray/cleaner{
-	desc = "Someone has crossed out the Space from Space Cleaner and written in Surgery. 'Do not remove under punishment of death!!!' is scrawled on the back.";
-	name = "Surgery Cleaner";
-	pixel_x = 7;
-	pixel_y = -6
-	},
-/turf/simulated/floor{
-	icon_state = "freezerfloor"
-	},
-/area/medical/surgery)
 "ble" = (
 /turf/space/transit/south,
 /area)
@@ -3253,6 +3227,25 @@
 	icon_state = "floor3"
 	},
 /area/shuttle/escape/centcom)
+"blz" = (
+/obj/structure/table,
+/obj/item/tool/hemostat{
+	pixel_y = 4
+	},
+/obj/item/tool/cautery{
+	pixel_y = 4
+	},
+/obj/item/tool/surgicaldrill,
+/obj/item/weapon/reagent_containers/spray/cleaner{
+	desc = "Someone has crossed out the Space from Space Cleaner and written in Surgery. 'Do not remove under punishment of death!!!' is scrawled on the back.";
+	name = "Surgery Cleaner";
+	pixel_x = 7;
+	pixel_y = -6
+	},
+/turf/simulated/floor{
+	icon_state = "freezerfloor"
+	},
+/area/medical/surgery)
 "blE" = (
 /obj/structure/table,
 /obj/item/trash/emptybowl,
@@ -3770,6 +3763,12 @@
 	},
 /turf/simulated/floor/carpet,
 /area/security/detectives_office)
+"buZ" = (
+/obj/machinery/station_map{
+	dir = 2
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle/fenced)
 "bve" = (
 /obj/machinery/r_n_d/fabricator/mechanic_fab/flatpacker,
 /turf/unsimulated/floor{
@@ -4005,16 +4004,8 @@
 	},
 /area/engineering/atmos)
 "bzC" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/vox,
+/obj/structure/grille/window_spawner/reinforced,
+/turf/simulated/floor/plating/vox,
 /area/vox_trading_post/docking)
 "bzK" = (
 /obj/machinery/photobooth,
@@ -5409,9 +5400,14 @@
 /turf/simulated/floor/engine,
 /area/science/xenobiology/specimen_5)
 "cbi" = (
-/obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated/floor/plating/vox,
-/area/mine/unexplored)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/station_map{
+	dir = 2
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "cbl" = (
 /obj/machinery/light{
 	dir = 4
@@ -6193,11 +6189,14 @@
 /turf/simulated/floor/shuttle,
 /area/centcom/evac)
 "cow" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/simulated/floor/server,
-/area/tcomms/chamber)
+/obj/machinery/newscaster{
+	pixel_y = 31
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "coD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
@@ -6273,14 +6272,6 @@
 	icon_state = "white"
 	},
 /area/medical/virology)
-"cpw" = (
-/obj/machinery/newscaster{
-	pixel_y = 31
-	},
-/turf/simulated/floor{
-	icon_state = "cult"
-	},
-/area/lawoffice)
 "cpB" = (
 /turf/simulated/floor/carpet{
 	icon_state = "carpet11-12"
@@ -8894,6 +8885,12 @@
 	dir = 9
 	},
 /area/engineering/ce)
+"doH" = (
+/obj/effect/glowshroom/single,
+/obj/machinery/light/small,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/simulated/floor/vox,
+/area/vox_trading_post/docking)
 "doQ" = (
 /obj/machinery/door/poddoor{
 	density = 0;
@@ -9853,6 +9850,15 @@
 /obj/machinery/computer/pda_terminal,
 /turf/simulated/floor,
 /area/supply/lobby)
+"dHr" = (
+/obj/machinery/door/airlock/external{
+	name = "Dock"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/vox,
+/area/vox_trading_post/docking)
 "dHt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -10702,6 +10708,19 @@
 "dYI" = (
 /turf/simulated/wall,
 /area/crew_quarters/courtroom)
+"dYP" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/medical/medbay)
 "dZe" = (
 /obj/structure/table,
 /obj/item/weapon/book/manual/security_space_law{
@@ -11023,15 +11042,6 @@
 	},
 /turf/simulated/floor,
 /area/mine/production)
-"eeL" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/station_map{
-	dir = 2
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
 "eeS" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/engine,
@@ -11863,7 +11873,10 @@
 	},
 /area/medical/chemistry)
 "esm" = (
-/turf/space,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/simulated/floor/vox{
+	icon_state = "asteroidplating"
+	},
 /area/vox_trading_post/docking)
 "esr" = (
 /obj/structure/table/woodentable,
@@ -12618,6 +12631,17 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/outdoor_bar)
+"eJw" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/vox,
+/area/vox_trading_post/docking)
 "eJI" = (
 /turf/unsimulated/floor{
 	icon_state = "dark neutral stripe"
@@ -15362,7 +15386,7 @@
 	},
 /area/alien)
 "fNB" = (
-/obj/structure/grille/window_spawner/reinforced,
+/obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated/floor/plating,
 /area/vox_trading_post/trade_processing)
 "fOb" = (
@@ -17725,9 +17749,9 @@
 /turf/simulated/floor/vox,
 /area/vox_trading_post/hallway)
 "gJb" = (
-/obj/structure/closet/emcloset/vox,
-/turf/simulated/floor/vox,
-/area/mine/unexplored)
+/obj/structure/grille/window_spawner/reinforced,
+/turf/simulated/floor/plating/vox,
+/area/vox_trading_post/gardens)
 "gJt" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "AI Upload Access";
@@ -18565,6 +18589,14 @@
 	icon_state = "carpet6-2"
 	},
 /area/bridge/meeting_room)
+"gZy" = (
+/obj/machinery/station_map{
+	dir = 2
+	},
+/turf/simulated/floor{
+	icon_state = "red"
+	},
+/area/security/brig)
 "gZE" = (
 /turf/simulated/floor{
 	icon_state = "yellow"
@@ -19107,8 +19139,12 @@
 	},
 /area/centcom/control)
 "hml" = (
-/turf/simulated/wall,
-/area/mine/unexplored)
+/obj/structure/closet/emcloset/vox,
+/obj/machinery/atmospherics/unary/vent_pump{
+	on = 1
+	},
+/turf/simulated/floor/vox,
+/area/vox_trading_post/docking)
 "hmv" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -20692,16 +20728,8 @@
 /obj/machinery/alarm/vox{
 	pixel_y = 24
 	},
-/obj/machinery/power/apc{
-	dir = 8;
-	locked = 0;
-	name = "Outpost APC";
-	pixel_x = -24;
-	req_access = null
-	},
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
@@ -21418,13 +21446,6 @@
 	icon_state = "whitegreen"
 	},
 /area/medical/medbay)
-"iij" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/station_map{
-	dir = 4
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
 "iim" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -23115,9 +23136,9 @@
 /turf/simulated/floor/shuttle,
 /area/centcom/evac)
 "iRZ" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 4;
-	on = 1
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 8;
+	initialize_directions = 11
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
@@ -23455,6 +23476,14 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle/zoned/outdoor_bar)
+"iXO" = (
+/obj/machinery/newscaster{
+	pixel_y = 31
+	},
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
+/area/lawoffice)
 "iXV" = (
 /turf/simulated/wall/r_wall,
 /area/tcomms/chamber)
@@ -26220,8 +26249,10 @@
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle)
 "jZs" = (
-/turf/simulated/floor/server/bluegrid,
-/area/tcomms/chamber)
+/turf/simulated/floor/vox{
+	icon_state = "asteroidplating"
+	},
+/area/vox_trading_post/docking)
 "jZC" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
@@ -27121,11 +27152,9 @@
 /turf/simulated/wall/r_wall,
 /area/lawoffice)
 "kuE" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 5
-	},
-/turf/simulated/floor/server/bluegrid,
-/area/tcomms/chamber)
+/obj/structure/grille/window_spawner/reinforced,
+/obj/structure/grille/window_spawner/reinforced/full,
+/area/vox_trading_post/trade_processing)
 "kuI" = (
 /obj/structure/catwalk{
 	icon_state = "catwalk3"
@@ -28454,6 +28483,10 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
+"kWb" = (
+/obj/structure/grille/window_spawner/reinforced/full,
+/turf/simulated/floor/plating/vox,
+/area)
 "kWj" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -31020,6 +31053,18 @@
 	name = "plating"
 	},
 /area/centcom/control)
+"lTs" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/cable/orange{
+	icon_state = "1-2";
+	d1 = 1;
+	d2 = 2
+	},
+/obj/machinery/newscaster{
+	pixel_x = 27
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "lTG" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/structure/cable/yellow{
@@ -32580,12 +32625,6 @@
 /obj/structure/ore_box,
 /turf/simulated/floor/plating,
 /area/mine/explored)
-"mxM" = (
-/obj/machinery/station_map{
-	dir = 2
-	},
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle/fenced)
 "mxR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
@@ -33287,14 +33326,6 @@
 	icon_state = "brown"
 	},
 /area/supply/office)
-"mME" = (
-/obj/machinery/station_map{
-	dir = 2
-	},
-/turf/simulated/floor{
-	icon_state = "red"
-	},
-/area/security/brig)
 "mML" = (
 /obj/machinery/door/window,
 /turf/unsimulated/floor{
@@ -33689,6 +33720,14 @@
 	icon_state = "white"
 	},
 /area/centcom/test)
+"mUT" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/vox{
+	dir = 1
+	},
+/turf/simulated/floor/vox{
+	icon_state = "asteroidplating"
+	},
+/area/vox_trading_post/docking)
 "mUU" = (
 /mob/living/simple_animal/hostile/asteroid/basilisk,
 /turf/simulated/floor/asteroid,
@@ -34948,6 +34987,13 @@
 	icon_state = "cult"
 	},
 /area/surface/jungle/zoned/storage_shed)
+"nwc" = (
+/obj/machinery/door/airlock/external,
+/obj/docking_port/destination/salvage/trading_post{
+	dir = 2
+	},
+/turf/simulated/floor/vox,
+/area/vox_trading_post/docking)
 "nwd" = (
 /obj/structure/skele_stand/mrbones,
 /turf/unsimulated/floor{
@@ -35005,11 +35051,12 @@
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/atmos)
 "nyu" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/vox{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber/vox,
 /turf/simulated/floor/vox,
-/area/mine/unexplored)
+/area/vox_trading_post/docking)
 "nyC" = (
 /obj/effect/decal/warning_stripes{
 	icon_state = "bot"
@@ -37426,7 +37473,7 @@
 	},
 /area/medical/storage)
 "otC" = (
-/obj/structure/grille/window_spawner/reinforced/full,
+/obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/vault)
@@ -40819,6 +40866,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/machinery/station_map,
 /turf/simulated/floor{
 	icon_state = "yellow";
 	dir = 1
@@ -41221,10 +41269,13 @@
 	},
 /area/medical/sleeper)
 "pST" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
+/obj/machinery/door/airlock/external{
+	name = "Auxiliary Dock"
 	},
-/turf/simulated/floor/vox,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/simulated/floor/vox{
+	icon_state = "asteroidplating"
+	},
 /area/vox_trading_post/docking)
 "pTf" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -41319,12 +41370,6 @@
 	icon_state = "floor"
 	},
 /area/centcom/striketeam)
-"pVD" = (
-/obj/machinery/newscaster{
-	pixel_x = -28
-	},
-/turf/simulated/floor,
-/area/security/perma)
 "pVG" = (
 /obj/machinery/camera{
 	dir = 1;
@@ -41753,7 +41798,7 @@
 	},
 /area/medical/sleeper)
 "qet" = (
-/obj/structure/grille/window_spawner/reinforced/full,
+/obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/medbay)
@@ -41768,7 +41813,7 @@
 /turf/simulated/wall/r_wall,
 /area/bridge)
 "qeF" = (
-/obj/structure/grille/window_spawner/reinforced/full,
+/obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/vault)
@@ -43491,7 +43536,7 @@
 /turf/unsimulated/floor/jungle/bedrock,
 /area/surface/jungle/underground)
 "qJF" = (
-/obj/structure/grille/window_spawner/reinforced/full,
+/obj/structure/grille/window_spawner/reinforced,
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/vault)
 "qJY" = (
@@ -44592,15 +44637,6 @@
 	icon_state = "dark"
 	},
 /area/janitor)
-"rhh" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/newscaster{
-	pixel_y = 31
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
 "rhk" = (
 /obj/machinery/atmospherics/unary/heat_reservoir/heater{
 	dir = 8
@@ -44849,8 +44885,8 @@
 	},
 /area/security/brig)
 "rmU" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 9
+/obj/machinery/atmospherics/unary/vent_scrubber/vox{
+	dir = 1
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
@@ -45742,7 +45778,7 @@
 	},
 /area/chapel/main)
 "rAB" = (
-/obj/structure/grille/window_spawner/reinforced/full,
+/obj/structure/grille/window_spawner/reinforced,
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/medbay)
 "rAC" = (
@@ -46641,12 +46677,12 @@
 /turf/simulated/floor,
 /area/research_outpost/dorm1)
 "rTL" = (
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/simulated/floor/vox,
-/area/vox_trading_post/docking)
+/obj/machinery/station_map,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "rTN" = (
 /obj/structure/closet/secure_closet/hop2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -48047,6 +48083,16 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/aifenced)
+"sxb" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/simulated/floor/vox,
+/area/vox_trading_post/docking)
 "sxu" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/structure/cable/yellow{
@@ -49055,8 +49101,10 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "sRR" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
 	},
 /turf/simulated/floor/vox,
@@ -50140,6 +50188,9 @@
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -24
+	},
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 5
 	},
 /turf/simulated/floor/server/bluegrid,
 /area/tcomms/chamber)
@@ -51249,13 +51300,13 @@
 /turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
 "tES" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/vox{
-	dir = 4
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 1;
+	on = 1
 	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
+/turf/simulated/floor/vox{
+	icon_state = "asteroidplating"
 	},
-/turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
 "tET" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
@@ -51749,6 +51800,12 @@
 	},
 /turf/simulated/floor/greengrid,
 /area/turret_protected/ai_upload)
+"tOF" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/simulated/floor/vox{
+	icon_state = "asteroidplating"
+	},
+/area/vox_trading_post/docking)
 "tOR" = (
 /obj/machinery/suit_storage_unit/excavation,
 /turf/simulated/floor,
@@ -52546,6 +52603,12 @@
 /obj/machinery/floodlight,
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/zoned/solars)
+"ujn" = (
+/obj/machinery/station_map{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/fenced)
 "uju" = (
 /turf/simulated/floor{
 	icon_state = "freezerfloor"
@@ -53048,6 +53111,13 @@
 	icon_state = "red"
 	},
 /area/security/main)
+"urn" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/station_map{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "urp" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated/floor/plating,
@@ -55988,6 +56058,17 @@
 "vwp" = (
 /turf/simulated/floor/carpet,
 /area/chapel/main)
+"vwx" = (
+/obj/machinery/power/apc{
+	dir = 8;
+	locked = 0;
+	name = "Outpost APC";
+	req_access = null;
+	pixel_y = -29
+	},
+/obj/structure/cable/yellow,
+/turf/simulated/floor/vox,
+/area/vox_trading_post/docking)
 "vwE" = (
 /obj/machinery/light{
 	dir = 8
@@ -56037,10 +56118,10 @@
 /turf/simulated/floor/plating,
 /area/research_outpost/atmos)
 "vxO" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+/obj/effect/glowshroom/single,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/glowshroom/single,
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
 "vxT" = (
@@ -56435,6 +56516,12 @@
 "vEO" = (
 /turf/simulated/floor/wood,
 /area/bridge/meeting_room)
+"vEW" = (
+/obj/machinery/newscaster{
+	pixel_x = -28
+	},
+/turf/simulated/floor,
+/area/security/perma)
 "vFj" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor{
@@ -58537,13 +58624,6 @@
 	icon_state = "floor"
 	},
 /area/centcom/ert)
-"wux" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/station_map,
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
 "wuN" = (
 /obj/machinery/power/solar/panel,
 /obj/structure/cable/orange,
@@ -59114,7 +59194,7 @@
 /turf/simulated/floor/plating,
 /area/centcom/suppy)
 "wED" = (
-/obj/structure/grille/window_spawner/reinforced/full,
+/obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/gardens)
@@ -60350,19 +60430,6 @@
 	dir = 1
 	},
 /area/engineering/antimatter_room)
-"xcd" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor{
-	icon_state = "white"
-	},
-/area/medical/medbay)
 "xcj" = (
 /obj/machinery/door_control{
 	id_tag = "medsuits";
@@ -62706,18 +62773,6 @@
 	icon_state = "white"
 	},
 /area/medical/sleeper)
-"xXm" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/cable/orange{
-	icon_state = "1-2";
-	d1 = 1;
-	d2 = 2
-	},
-/obj/machinery/newscaster{
-	pixel_x = 27
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
 "xXD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -108325,7 +108380,7 @@ lQc
 lQc
 lmL
 iPs
-mME
+gZy
 mfl
 vwi
 tBg
@@ -109753,7 +109808,7 @@ mfl
 mfl
 mfl
 mfl
-pVD
+vEW
 bVg
 clK
 cGq
@@ -117850,7 +117905,7 @@ vjz
 vjz
 vjz
 guc
-wux
+rTL
 dKf
 wld
 wld
@@ -118185,7 +118240,7 @@ xMH
 wld
 wld
 cIm
-cpw
+iXO
 kbS
 nMK
 jxI
@@ -118887,7 +118942,7 @@ owz
 iMQ
 xMH
 wld
-mxM
+buZ
 cIm
 eGz
 aBs
@@ -121723,7 +121778,7 @@ eMs
 aBB
 ajG
 uTu
-bkJ
+blz
 eMs
 dmB
 fFT
@@ -123827,7 +123882,7 @@ sLX
 vJm
 vmJ
 iWz
-xcd
+dYP
 sgw
 xTZ
 vcf
@@ -126637,7 +126692,7 @@ rSu
 rSu
 ooS
 jUy
-rhh
+cow
 oZf
 sLX
 jSz
@@ -130511,7 +130566,7 @@ oaO
 gnA
 maR
 iMQ
-eeL
+cbi
 pIX
 sWL
 jQW
@@ -134049,7 +134104,7 @@ gPP
 vfL
 vfL
 vfL
-kuE
+vfL
 tks
 iXV
 wld
@@ -134401,8 +134456,8 @@ noz
 ttK
 ttK
 jxh
-cow
-jZs
+ttK
+eAj
 iXV
 pXV
 pXV
@@ -134753,8 +134808,8 @@ ttK
 ttK
 ofF
 woG
-cow
-jZs
+ttK
+eAj
 iXV
 eRq
 dwG
@@ -135105,8 +135160,8 @@ wsB
 vfL
 vfL
 vfL
+vfL
 lQe
-jZs
 iXV
 rRA
 wmK
@@ -135429,14 +135484,14 @@ rOD
 rOD
 cwJ
 xvN
-iij
+urn
 rOD
 ubk
 rOD
 dAF
 nju
 mKQ
-xXm
+lTs
 mKQ
 mKQ
 qHH
@@ -139284,7 +139339,7 @@ kaQ
 xor
 xor
 xor
-baw
+ujn
 xor
 xor
 xor
@@ -497306,7 +497361,6 @@ esa
 esa
 esa
 esa
-esa
 efe
 esa
 esa
@@ -497320,6 +497374,7 @@ esa
 esa
 esa
 efe
+ocC
 ocC
 ocC
 ocC
@@ -497658,7 +497713,6 @@ esa
 esa
 ocC
 ocC
-ocC
 esa
 ocC
 eRd
@@ -497673,6 +497727,7 @@ kaT
 bGE
 esa
 esa
+ocC
 ocC
 ocC
 ocC
@@ -498010,7 +498065,6 @@ ocC
 esa
 ocC
 ocC
-ocC
 esa
 rrK
 dxI
@@ -498025,6 +498079,7 @@ rTU
 kaT
 bGE
 esa
+ocC
 ocC
 ocC
 ocC
@@ -498362,7 +498417,6 @@ ocC
 esa
 ocC
 ocC
-ocC
 esa
 ocC
 sCJ
@@ -498377,6 +498431,7 @@ tkJ
 saL
 wyO
 esa
+ocC
 ocC
 ocC
 ocC
@@ -498714,7 +498769,6 @@ ocC
 esa
 ocC
 ocC
-ocC
 esa
 ocC
 sCJ
@@ -498729,6 +498783,7 @@ cUk
 xmy
 wyO
 esa
+ocC
 ocC
 ocC
 ocC
@@ -499066,7 +499121,6 @@ ocC
 esa
 ocC
 ocC
-ocC
 esa
 ocC
 sCJ
@@ -499081,6 +499135,7 @@ tkJ
 xJv
 wyO
 esa
+ocC
 ocC
 ocC
 ocC
@@ -499418,7 +499473,6 @@ esa
 esa
 ocC
 ocC
-ocC
 esa
 rrK
 dxI
@@ -499433,6 +499487,7 @@ mty
 kaT
 bhC
 esa
+ocC
 ocC
 ocC
 ocC
@@ -499770,7 +499825,6 @@ esa
 esa
 ocC
 ocC
-ocC
 efe
 ocC
 heL
@@ -499785,6 +499839,7 @@ kaT
 bhC
 esa
 esa
+ocC
 ocC
 ocC
 ocC
@@ -500123,21 +500178,21 @@ kDa
 ocC
 xoc
 hLp
-hLp
-oAb
-hml
-cbi
+tFd
+kdL
+tAL
 cxZ
 tAL
 kdL
-esm
-esm
-rIh
-rIh
-esa
-esa
-ocC
-ocC
+kdL
+kdL
+kdL
+tAL
+tAL
+tAL
+kdL
+kdL
+aul
 ocC
 ocC
 ocC
@@ -500476,20 +500531,20 @@ ocC
 nCk
 tFd
 oAb
-oAb
-hml
-gJb
-lVd
-bbX
 kdL
+hml
+sgB
+doH
+bbX
 esm
 esm
-rIh
-rIh
-rIh
-ocC
-ocC
-ocC
+tES
+jZs
+jZs
+jZs
+jZs
+jZs
+nwc
 ocC
 ocC
 ocC
@@ -500828,20 +500883,20 @@ tFd
 tFd
 oAb
 oAb
-oAb
-hml
+kdL
+vti
 nyu
 iRZ
-vti
-kdL
-esm
-esm
-rIh
-rIh
-rIh
-rIh
-rIh
-ocC
+pST
+tOF
+tOF
+mUT
+jZs
+jZs
+jZs
+jZs
+jZs
+kWb
 ocC
 ocC
 ocC
@@ -501181,19 +501236,19 @@ dLL
 dLL
 kdL
 kdL
-kdL
 wNq
-rTL
+dHr
 wNq
 kdL
-tAL
+bzC
+bzC
 kdL
 glE
 glE
 glE
 glE
-rIh
-rIh
+aul
+aul
 ocC
 ocC
 ocC
@@ -501534,19 +501589,19 @@ sEn
 kdL
 kdL
 hSM
-mKd
 lxl
 mKd
 lVd
+lVd
 qgw
-tAL
+bzC
 ggC
 iqJ
 snp
 glE
-rIh
-rIh
-rIh
+ocC
+ocC
+ocC
 ocC
 ocC
 ocC
@@ -501885,13 +501940,13 @@ pip
 ufn
 kdL
 mEV
-pST
+mKd
+lxl
 dQv
-sRR
 rmU
 lVd
 uTG
-tAL
+bzC
 jNG
 jNG
 cwe
@@ -502235,12 +502290,12 @@ cKh
 qdJ
 dRZ
 ccn
-tAL
+bzC
 lVd
-tES
+mKd
 vxO
-lxl
-lVd
+eJw
+vwx
 glE
 glE
 glE
@@ -502589,8 +502644,8 @@ sab
 xnu
 yfx
 bUO
-bzC
 nCE
+sxb
 sRR
 xKq
 wED
@@ -502942,8 +502997,8 @@ gIS
 aqI
 bFD
 sgB
-bFD
 iIt
+bFD
 bFD
 qJY
 hLl
@@ -503291,13 +503346,13 @@ cKh
 dUt
 dRZ
 ccn
-tAL
+bzC
 woJ
 jKk
 qgw
 uTG
 qgw
-kjW
+gJb
 jNG
 jNG
 dwQ
@@ -503645,10 +503700,10 @@ dRZ
 uah
 glE
 glE
-kjW
-kjW
-kjW
-kjW
+gJb
+gJb
+gJb
+gJb
 glE
 lgb
 glE
@@ -503995,7 +504050,7 @@ cKh
 dUt
 dRZ
 ccn
-kjW
+gJb
 ecI
 qip
 iSm
@@ -504699,7 +504754,7 @@ cKh
 dUt
 dRZ
 lbC
-kjW
+gJb
 llg
 szI
 szI
@@ -505403,7 +505458,7 @@ mhX
 fhh
 jTs
 ccn
-kjW
+gJb
 eMg
 pli
 iSm
@@ -506796,7 +506851,7 @@ mbC
 mbC
 tFd
 tFd
-fNB
+kuE
 lPD
 lPD
 fNB

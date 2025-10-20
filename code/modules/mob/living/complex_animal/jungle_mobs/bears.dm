@@ -8,7 +8,7 @@
 	size=SIZE_BIG
 	health=60
 	maxHealth=60
-	armor=list(melee=20,bullet=20,laser=20,energy=0,bomb=0,bio=0,rad=0)
+	armor=list(melee=10,bullet=20,laser=20,energy=0,bomb=0,bio=0,rad=0)
 	max_food=100
 	food_flags = ANIMAL_CARNIVORE | ANIMAL_HERBIVORE
 	base_damage = 25
@@ -16,6 +16,7 @@
 	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	movespeed=5
 	kin_check_type_path=/mob/living/complex_animal/bear
+	max_local_population=5
 	var/sea_bear=TRUE
 
 /mob/living/complex_animal/bear/get_idle_sounds()

@@ -36,7 +36,7 @@
 	var/behavior_flags=0
 	nutrition = 50
 	var/max_food = 50
-	var/food_per_tick = 0.001 //how much of max_food should be deducted from food per tick. This number gives us about 2000 seconds until we starve
+	var/food_per_tick = 0.0005 //how much of max_food should be deducted from food per tick. This number gives us about 4000 seconds until we starve
 	var/food_flags = 0
 	var/behavior_state = ANIMAL_STATE_IDLE
 	var/last_state = -1
@@ -53,7 +53,7 @@
 	var/kin_check_type_path=null //for mobs with many subtypes. set to the parent mob type. leave null if not needed
 	var/petable=FALSE
 	var/lastmate=0
-	var/matingcooldown=30 //1 minute
+	var/matingcooldown=60 //2 minutes
 	var/max_local_population=6 //to prevent total overpopulation
 	var/icon_living = ""
 	var/icon_dead = ""
@@ -84,6 +84,23 @@
 	melee_damage_upper=base_damage+damage_variance
 	melee_damage_lower=base_damage-damage_variance
 
+
+/mob/living/complex_animal/proc/allow_msg()
+	for(var/mob/m in range(src,11)) //only do emotes/say things if a player is nearby. this is to reduce log spam and make obsgang not want to die, even though they should just play the game.
+		if(m.ckey)
+			return TRUE
+	return FALSE
+
+/mob/living/complex_animal/emote(act, m_type = null, message = null, ignore_status = FALSE, var/arguments)
+	if(allow_msg())
+		return ..()
+	return null
+	
+/mob/living/complex_animal/say(message, var/datum/language/speaking, var/atom/movable/radio=src, var/class)
+	if(allow_msg())
+		return ..()
+	return null
+
 /mob/living/complex_animal/update_icon()
 	..()
 	icon_state=icon_living
@@ -96,12 +113,12 @@
 		return 0
 	if(stat == DEAD)
 		ticks_dead++
-		if(ticks_dead==15)
+		if(ticks_dead==75)
 			visible_message("Bugs start flying around <b>\the [src]</b>'s corpse")
-		if(ticks_dead==30)
+		if(ticks_dead==150)
 			visible_message("<b>\The [src]</b>'s corpse starts to smell...")	
-		if(ticks_dead>30) //1 minute delay
-			if(prob(5))
+		if(ticks_dead>150) //5 minute delay
+			if(prob(10))
 				visible_message("<b>\The [src]</b>'s corpse rots away into nothing...")
 				qdel(src)
 		return 0
@@ -635,7 +652,7 @@
 
 
 /mob/living/complex_animal/proc/get_offspring_cost()
-	return size*5
+	return size*7.5
 
 // if you don't want offspring, then return FALSE here.
 /mob/living/complex_animal/proc/can_offspring(var/mob/living/complex_animal/mate)

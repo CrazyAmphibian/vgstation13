@@ -5,9 +5,9 @@
 	icon_living = "dino"
 	icon_dead = "dino_dead"
 	size=SIZE_BIG
-	health=80
-	maxHealth=80
-	armor=list(melee=20,bullet=30,laser=5,energy=0,bomb=0,bio=0,rad=0)
+	health=100
+	maxHealth=100
+	armor=list(melee=35,bullet=30,laser=5,energy=0,bomb=0,bio=0,rad=0)
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/oogabooga
 	max_food=100
 	food_flags = ANIMAL_CARNIVORE

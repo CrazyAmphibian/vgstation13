@@ -7,10 +7,10 @@
 	size=SIZE_BIG
 	health=40
 	maxHealth=40
-	armor=list(melee=15,bullet=10,laser=0,energy=0,bomb=0,bio=0,rad=0)
+	armor=list(melee=20,bullet=10,laser=0,energy=0,bomb=0,bio=0,rad=0)
 	max_food=100
 	food_flags = ANIMAL_CARNIVORE
-	base_damage = 30
+	base_damage = 35
 	damage_variance = 8
 	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_TERRITORIAL | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	movespeed=2

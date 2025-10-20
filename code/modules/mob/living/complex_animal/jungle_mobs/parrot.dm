@@ -5,8 +5,8 @@
 	icon_living = "parrot_fly"
 	icon_dead = "parrot_dead"
 	size=SIZE_TINY
-	health=25
-	maxHealth=25
+	health=30
+	maxHealth=30
 	max_food=20
 	food_flags = ANIMAL_HERBIVORE
 	base_damage = 10
