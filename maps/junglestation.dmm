@@ -4301,6 +4301,19 @@
 	icon_state = "dark"
 	},
 /area/tdome)
+"bEm" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/medical/medbay)
 "bEw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
@@ -6564,7 +6577,8 @@
 	normaldoorcontrol = 1;
 	pixel_x = 32;
 	pixel_y = -6;
-	range = 4
+	range = 4;
+	req_access_txt = "5"
 	},
 /turf/simulated/floor{
 	icon_state = "white"
@@ -24337,6 +24351,7 @@
 /obj/machinery/light_switch{
 	pixel_x = -24
 	},
+/obj/item/weapon/storage/briefcase,
 /turf/simulated/floor{
 	icon_state = "grimy"
 	},
@@ -27030,7 +27045,7 @@
 /area/shuttle/administration/centcom)
 "ktJ" = (
 /obj/machinery/door/airlock/glass_medical{
-	id_tag = "MedbayFoyerL";
+	id_tag = "MedbayFoyerR";
 	name = "Medbay";
 	req_access_dir = 1;
 	req_access_txt = "5"
@@ -41382,7 +41397,16 @@
 	dir = 8
 	},
 /obj/machinery/media/receiver/boombox/wallmount/muzak{
-	pixel_x = -26
+	pixel_x = -26;
+	pixel_y = -11
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	pixel_x = -24
+	},
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor{
 	icon_state = "white"
@@ -43124,7 +43148,7 @@
 /area/centcom/holding)
 "qEJ" = (
 /obj/machinery/door/airlock/glass_medical{
-	id_tag = "MedbayFoyerL";
+	id_tag = "MedbayFoyerR";
 	name = "Medbay";
 	req_access_dir = 1;
 	req_access_txt = "5"
@@ -43601,6 +43625,11 @@
 /obj/structure/cable/orange{
 	icon_state = "4-8";
 	d1 = 4;
+	d2 = 8
+	},
+/obj/structure/cable/orange{
+	icon_state = "2-8";
+	d1 = 2;
 	d2 = 8
 	},
 /turf/simulated/floor,
@@ -47144,6 +47173,25 @@
 	},
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/atmos)
+"seb" = (
+/obj/structure/table,
+/obj/item/tool/hemostat{
+	pixel_y = 4
+	},
+/obj/item/tool/cautery{
+	pixel_y = 4
+	},
+/obj/item/tool/surgicaldrill,
+/obj/item/weapon/reagent_containers/spray/cleaner{
+	desc = "Someone has crossed out the Space from Space Cleaner and written in Surgery. 'Do not remove under punishment of death!!!' is scrawled on the back.";
+	name = "Surgery Cleaner";
+	pixel_x = 7;
+	pixel_y = -6
+	},
+/turf/simulated/floor{
+	icon_state = "freezerfloor"
+	},
+/area/medical/surgery)
 "sed" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -54142,6 +54190,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
+/obj/structure/closet/crate/freezer/surgery,
 /turf/simulated/floor{
 	icon_state = "freezerfloor"
 	},
@@ -54671,7 +54720,9 @@
 	},
 /area/bridge)
 "vcH" = (
-/obj/machinery/mech_bay_recharge_port,
+/obj/machinery/mech_bay_recharge_port{
+	dir = 4
+	},
 /obj/machinery/light{
 	dir = 8
 	},
@@ -55715,7 +55766,9 @@
 	},
 /area/centcom/control)
 "vuB" = (
-/obj/machinery/mech_bay_recharge_port,
+/obj/machinery/mech_bay_recharge_port{
+	dir = 4
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -121527,7 +121580,7 @@ eMs
 aBB
 ajG
 uTu
-rYy
+seb
 eMs
 dmB
 fFT
@@ -123631,7 +123684,7 @@ sLX
 vJm
 vmJ
 iWz
-muf
+bEm
 sgw
 xTZ
 vcf
