@@ -2693,6 +2693,12 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
+"baw" = (
+/obj/machinery/station_map{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/fenced)
 "baO" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/machinery/door/poddoor{
@@ -3186,6 +3192,25 @@
 	},
 /turf/simulated/floor,
 /area/supply/sorting)
+"bkJ" = (
+/obj/structure/table,
+/obj/item/tool/hemostat{
+	pixel_y = 4
+	},
+/obj/item/tool/cautery{
+	pixel_y = 4
+	},
+/obj/item/tool/surgicaldrill,
+/obj/item/weapon/reagent_containers/spray/cleaner{
+	desc = "Someone has crossed out the Space from Space Cleaner and written in Surgery. 'Do not remove under punishment of death!!!' is scrawled on the back.";
+	name = "Surgery Cleaner";
+	pixel_x = 7;
+	pixel_y = -6
+	},
+/turf/simulated/floor{
+	icon_state = "freezerfloor"
+	},
+/area/medical/surgery)
 "ble" = (
 /turf/space/transit/south,
 /area)
@@ -4301,19 +4326,6 @@
 	icon_state = "dark"
 	},
 /area/tdome)
-"bEm" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor{
-	icon_state = "white"
-	},
-/area/medical/medbay)
 "bEw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
@@ -5145,7 +5157,7 @@
 	pixel_x = 28
 	},
 /obj/machinery/atmospherics/unary/portables_connector{
-	dir = 4
+	dir = 8
 	},
 /obj/machinery/portable_atmospherics/canister,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -5336,6 +5348,9 @@
 	pixel_x = 13
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/newscaster{
+	pixel_x = -27
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "bZP" = (
@@ -6258,6 +6273,14 @@
 	icon_state = "white"
 	},
 /area/medical/virology)
+"cpw" = (
+/obj/machinery/newscaster{
+	pixel_y = 31
+	},
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
+/area/lawoffice)
 "cpB" = (
 /turf/simulated/floor/carpet{
 	icon_state = "carpet11-12"
@@ -9263,6 +9286,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/newscaster{
+	pixel_y = 29
+	},
 /turf/simulated/floor,
 /area/crew_quarters/hop)
 "dvM" = (
@@ -10997,6 +11023,15 @@
 	},
 /turf/simulated/floor,
 /area/mine/production)
+"eeL" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/station_map{
+	dir = 2
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "eeS" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/engine,
@@ -12831,6 +12866,9 @@
 	},
 /obj/machinery/camera{
 	dir = 4
+	},
+/obj/machinery/station_map{
+	dir = 8
 	},
 /turf/simulated/floor,
 /area/engineering/engine)
@@ -16316,6 +16354,9 @@
 /area/vox_trading_post/gardens)
 "ggP" = (
 /obj/machinery/vending/snack,
+/obj/machinery/station_map{
+	dir = 4
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters)
 "ggU" = (
@@ -18827,6 +18868,9 @@
 "hgr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
+	},
+/obj/machinery/newscaster{
+	pixel_y = 31
 	},
 /turf/unsimulated/floor/jungle/path_plated{
 	icon_state = "junglestation8";
@@ -21374,6 +21418,13 @@
 	icon_state = "whitegreen"
 	},
 /area/medical/medbay)
+"iij" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/station_map{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "iim" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -23749,6 +23800,7 @@
 	dir = 4
 	},
 /obj/machinery/camera,
+/obj/machinery/station_map,
 /turf/unsimulated/floor/jungle/path_plated{
 	icon_state = "junglestation4";
 	plated_icon_override = "junglestation4"
@@ -27100,6 +27152,9 @@
 /obj/machinery/camera{
 	dir = 8
 	},
+/obj/machinery/newscaster{
+	pixel_x = 27
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters)
 "kuS" = (
@@ -28619,6 +28674,9 @@
 /obj/machinery/disposal/compactor,
 /obj/machinery/camera{
 	dir = 8
+	},
+/obj/machinery/newscaster{
+	pixel_x = -28
 	},
 /turf/simulated/floor{
 	dir = 8;
@@ -30284,6 +30342,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/station_map{
+	dir = 8
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "brown";
@@ -31903,6 +31964,9 @@
 /obj/machinery/camera{
 	dir = 1
 	},
+/obj/machinery/station_map{
+	dir = 2
+	},
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/fenced)
 "mma" = (
@@ -31953,6 +32017,9 @@
 	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/machinery/newscaster{
+	pixel_x = 29
 	},
 /turf/simulated/floor{
 	dir = 8;
@@ -32513,6 +32580,12 @@
 /obj/structure/ore_box,
 /turf/simulated/floor/plating,
 /area/mine/explored)
+"mxM" = (
+/obj/machinery/station_map{
+	dir = 2
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle/fenced)
 "mxR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
@@ -33214,6 +33287,14 @@
 	icon_state = "brown"
 	},
 /area/supply/office)
+"mME" = (
+/obj/machinery/station_map{
+	dir = 2
+	},
+/turf/simulated/floor{
+	icon_state = "red"
+	},
+/area/security/brig)
 "mML" = (
 /obj/machinery/door/window,
 /turf/unsimulated/floor{
@@ -35003,6 +35084,9 @@
 /area/engineering/supermatter_room)
 "nAK" = (
 /obj/machinery/photocopier,
+/obj/machinery/newscaster{
+	pixel_x = 29
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "barber"
@@ -36032,6 +36116,9 @@
 	},
 /area/bridge)
 "nTD" = (
+/obj/machinery/newscaster{
+	pixel_x = -29
+	},
 /turf/simulated/floor{
 	dir = 9;
 	icon_state = "red"
@@ -37988,6 +38075,9 @@
 /turf/simulated/floor/engine,
 /area/science/xenobiology/specimen_3)
 "oGu" = (
+/obj/machinery/newscaster{
+	pixel_x = -29
+	},
 /turf/simulated/floor{
 	icon_state = "darkpurple";
 	tag = "icon-dark floor stripe (NORTH)";
@@ -41229,6 +41319,12 @@
 	icon_state = "floor"
 	},
 /area/centcom/striketeam)
+"pVD" = (
+/obj/machinery/newscaster{
+	pixel_x = -28
+	},
+/turf/simulated/floor,
+/area/security/perma)
 "pVG" = (
 /obj/machinery/camera{
 	dir = 1;
@@ -44443,6 +44539,9 @@
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/machinery/station_map{
+	dir = 4
+	},
 /turf/simulated/floor{
 	dir = 6;
 	icon_state = "whiteblue"
@@ -44493,6 +44592,15 @@
 	icon_state = "dark"
 	},
 /area/janitor)
+"rhh" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/newscaster{
+	pixel_y = 31
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "rhk" = (
 /obj/machinery/atmospherics/unary/heat_reservoir/heater{
 	dir = 8
@@ -47173,25 +47281,6 @@
 	},
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/atmos)
-"seb" = (
-/obj/structure/table,
-/obj/item/tool/hemostat{
-	pixel_y = 4
-	},
-/obj/item/tool/cautery{
-	pixel_y = 4
-	},
-/obj/item/tool/surgicaldrill,
-/obj/item/weapon/reagent_containers/spray/cleaner{
-	desc = "Someone has crossed out the Space from Space Cleaner and written in Surgery. 'Do not remove under punishment of death!!!' is scrawled on the back.";
-	name = "Surgery Cleaner";
-	pixel_x = 7;
-	pixel_y = -6
-	},
-/turf/simulated/floor{
-	icon_state = "freezerfloor"
-	},
-/area/medical/surgery)
 "sed" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -50442,6 +50531,9 @@
 	dir = 4
 	},
 /obj/machinery/bioprinter/prosthetics,
+/obj/machinery/newscaster{
+	pixel_x = -28
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -51926,6 +52018,9 @@
 	},
 /area/centcom/ert)
 "tUY" = (
+/obj/machinery/newscaster{
+	pixel_x = -28
+	},
 /turf/simulated/floor{
 	icon_state = "yellow";
 	dir = 8
@@ -55779,6 +55874,10 @@
 	dir = 1;
 	on = 1
 	},
+/obj/machinery/newscaster{
+	pixel_x = -29;
+	pixel_y = -9
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -58438,6 +58537,13 @@
 	icon_state = "floor"
 	},
 /area/centcom/ert)
+"wux" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/station_map,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "wuN" = (
 /obj/machinery/power/solar/panel,
 /obj/structure/cable/orange,
@@ -58518,6 +58624,9 @@
 /area/surface/jungle/zoned/botanty_outside)
 "wxh" = (
 /obj/machinery/computer/supplycomp,
+/obj/machinery/newscaster{
+	pixel_x = 29
+	},
 /turf/simulated/floor{
 	dir = 4;
 	icon_state = "brown";
@@ -59363,6 +59472,9 @@
 "wLx" = (
 /obj/structure/table,
 /obj/item/weapon/planning_frame,
+/obj/machinery/newscaster{
+	pixel_x = 29
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "checker";
@@ -60238,6 +60350,19 @@
 	dir = 1
 	},
 /area/engineering/antimatter_room)
+"xcd" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/medical/medbay)
 "xcj" = (
 /obj/machinery/door_control{
 	id_tag = "medsuits";
@@ -60973,6 +61098,9 @@
 /area/centcom/control)
 "xpA" = (
 /obj/machinery/light,
+/obj/machinery/newscaster{
+	pixel_y = -30
+	},
 /turf/simulated/floor{
 	icon_state = "yellow"
 	},
@@ -61926,6 +62054,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/newscaster{
+	pixel_y = 31
+	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/medbay_patio)
 "xLp" = (
@@ -62575,6 +62706,18 @@
 	icon_state = "white"
 	},
 /area/medical/sleeper)
+"xXm" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/cable/orange{
+	icon_state = "1-2";
+	d1 = 1;
+	d2 = 2
+	},
+/obj/machinery/newscaster{
+	pixel_x = 27
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "xXD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -108182,7 +108325,7 @@ lQc
 lQc
 lmL
 iPs
-wlL
+mME
 mfl
 vwi
 tBg
@@ -109610,7 +109753,7 @@ mfl
 mfl
 mfl
 mfl
-bVg
+pVD
 bVg
 clK
 cGq
@@ -117707,7 +117850,7 @@ vjz
 vjz
 vjz
 guc
-maR
+wux
 dKf
 wld
 wld
@@ -118042,7 +118185,7 @@ xMH
 wld
 wld
 cIm
-dbd
+cpw
 kbS
 nMK
 jxI
@@ -118744,7 +118887,7 @@ owz
 iMQ
 xMH
 wld
-wld
+mxM
 cIm
 eGz
 aBs
@@ -121580,7 +121723,7 @@ eMs
 aBB
 ajG
 uTu
-seb
+bkJ
 eMs
 dmB
 fFT
@@ -123684,7 +123827,7 @@ sLX
 vJm
 vmJ
 iWz
-bEm
+xcd
 sgw
 xTZ
 vcf
@@ -126494,7 +126637,7 @@ rSu
 rSu
 ooS
 jUy
-maR
+rhh
 oZf
 sLX
 jSz
@@ -130368,7 +130511,7 @@ oaO
 gnA
 maR
 iMQ
-xMH
+eeL
 pIX
 sWL
 jQW
@@ -135286,14 +135429,14 @@ rOD
 rOD
 cwJ
 xvN
-rOD
+iij
 rOD
 ubk
 rOD
 dAF
 nju
 mKQ
-mKQ
+xXm
 mKQ
 mKQ
 qHH
@@ -139141,7 +139284,7 @@ kaQ
 xor
 xor
 xor
-xor
+baw
 xor
 xor
 xor
