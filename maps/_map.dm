@@ -109,8 +109,6 @@
 /datum/map/New()
 	. = ..()
 
-	var/zDeepSpace = 6
-
 	highest_z_level = max(
 		zMainStation,
 		zCentcomm,
