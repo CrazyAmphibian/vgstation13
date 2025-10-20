@@ -423,21 +423,17 @@ var/list/foliage_replacments=list(
 	desc="Solid dirt as far as the eye can see."
 	icon='icons/turf/walls.dmi'
 	icon_state = "j_dirtwall"	
-	var/loosened=FALSE // you dig with a pickaxe, too, dumbass.
 
 
 /turf/unsimulated/floor/jungle/underground/ex_act(severity)
 	switch(severity)
 		if(1)
+			generate_loot()
 			ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
 		if(2)
 			if(prob(50))
+				generate_loot()
 				ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
-			else
-				loosened=TRUE
-		if(3)
-			if(prob(75))
-				loosened=TRUE
 
 
 /turf/unsimulated/floor/jungle/underground/attackby(obj/item/C as obj, mob/user as mob)
@@ -446,20 +442,15 @@ var/list/foliage_replacments=list(
 	var/s=0.0
 	s=item_terraforming_ispickaxe(C)
 	if(s>0.0)
-		if (loosened)
-			to_chat(user,"<span class='notice'>You begin to break apart the soil...</span>")
-			if(do_after(user, src, 30/s ))
-				generate_loot(C,user)
-				ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
-				return
-		else
-			to_chat(user, "<span class='notice'>You start to loosen the soil...</span>")
-			if(do_after(user, src, 15/s ))
-				loosened=TRUE
+		to_chat(user,"<span class='notice'>You begin to break apart the soil...</span>")
+		if(do_after(user, src, 30/s ))
+			generate_loot(C,user)
+			ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
+			return
 	s=item_terraforming_isshovel(C)
 	if(s>0.0)
-		to_chat(user, loosened ? "<span class='notice'>You begin to break apart the soil...</span>" : "<span class='notice'>You struggle to break up the soil...</span>")
-		if(do_after(user, src, (loosened ? 15 : 45)/s ))
+		to_chat(user, "<span class='notice'>You begin to break apart the soil...</span>")
+		if(do_after(user, src, 30/s ))
 			generate_loot(C,user)
 			ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
 			return
@@ -483,6 +474,15 @@ var/list/foliage_replacments=list(
 			new/obj/item/stack/ore/uranium(src,user.lucky_prob_rand_range(1,3))
 	return
 
+
+/turf/unsimulated/floor/jungle/underground/Bumped(AM)
+	. = ..()
+	if(istype(AM,/mob/living/carbon/human))
+		var/mob/living/carbon/human/H = AM
+		if(item_terraforming_isshovel(H.get_active_hand()) || item_terraforming_ispickaxe(H.get_active_hand()))
+			attackby(H.get_active_hand(), H)
+		else if(item_terraforming_isshovel(H.get_inactive_hand()) || item_terraforming_ispickaxe(H.get_inactive_hand()))
+			attackby(H.get_inactive_hand(), H)
 
 
 /turf/unsimulated/floor/jungle/underground/crate_loot
