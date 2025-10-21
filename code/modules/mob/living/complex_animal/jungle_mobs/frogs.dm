@@ -27,9 +27,9 @@
 		var/i=rand(1,2)
 		switch(i)
 			if(1)
-				emote("me", MESSAGE_HEAR, "ribbits")
+				emote("me", MESSAGE_HEAR, "ribbits.")
 			if(2)
-				emote("me", MESSAGE_HEAR, "croaks")
+				emote("me", MESSAGE_HEAR, "croaks.")
 
 
 /mob/living/complex_animal/frog/trypet(mob/living/carbon/human/M)

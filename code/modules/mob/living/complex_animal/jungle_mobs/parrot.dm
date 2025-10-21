@@ -18,7 +18,7 @@
 	pass_flags = PASSTABLE | PASSRAILING | PASSMACHINE | PASSMOB
 	flags = HEAR | PROXMOVE | HEAR_ALWAYS
 	var/obj/cur_perch=null
-	var/list/builtin_phrases=list("Hi","Hello!","Cracker?","BAWWWWK george mellons griffing me")
+	var/list/builtin_phrases=list("Hi.","Hello!","Cracker?","BAWWWWK george mellons griffing me!")
 	var/list/heard_phrases=list()
 	var/list/valid_perches=list(/obj/structure/computerframe, 		/obj/structure/displaycase, \
 									/obj/structure/filingcabinet,		/obj/machinery/teleport, \
@@ -42,7 +42,7 @@
 	if(prob(50))
 		var/obj/perch=find_pearch()
 		if(perch)
-			visible_message("\the [src] flies to a comfortable spot")
+			visible_message("\The [src] flies to a comfortable spot.")
 			behavior_state=ANIMAL_STATE_SPECIAL
 			walk_to(src,perch,1,movespeed)
 			cur_perch=perch
@@ -59,7 +59,7 @@
 		cur_perch=null
 		icon_state="parrot_fly"
 		behavior_state=ANIMAL_STATE_IDLE
-		visible_message("\the [src] flies away")
+		visible_message("\The [src] flies away.")
 	return TRUE
 
 

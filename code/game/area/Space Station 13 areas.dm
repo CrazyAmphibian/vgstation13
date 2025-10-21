@@ -2033,7 +2033,17 @@ var/global/list/adminbusteleportlocs = list()
 //JUNGLE STATION
 /area/surface/jungle
 	name = "\improper Untamed Wilderness"
+	holomap_draw_override = HOLOMAP_DRAW_EMPTY
 	icon_state="jungle_wild"
+
+//to hide vaults on the main station z-level
+/area/surface/jungle/vault
+	icon_state="jungle_landing"
+
+//vault spawning on Z4
+/area/random_vault/jungle
+	name = "\improper Untamed Wilderness"
+	icon_state="jungle_landing"
 
 /area/surface/jungle/fenced
 	name = "\improper Outdoors"

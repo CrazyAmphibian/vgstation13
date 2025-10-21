@@ -9,6 +9,7 @@
 
 #define ANIMAL_HERBIVORE	(1<<0)	//we can eat plants
 #define ANIMAL_CARNIVORE	(1<<1)	//we can eat meat. combine with ANIMAL_HERBIVORE for an omnivore. you also need ANIMAL_BEHAVIOR_PREDATORY if you want it to hunt, otherwise it's just an opportunistic carnivore.
+#define ANIMAL_FRUGIVORE	(1<<2 ) //fruits (jungle berry bushes). implied with HERBIVORE, but can be used on its own.
 
 #define ANIMAL_FOODPRIORITY_CANNIBAL -5	//she rips out my bones just like i'm an animal
 #define ANIMAL_FOODPRIORITY_PRECOOKED 5	//why would you eat a plant when you could eat a tasty donut or burger?
@@ -114,7 +115,7 @@
 	if(stat == DEAD)
 		ticks_dead++
 		if(ticks_dead==75)
-			visible_message("Bugs start flying around <b>\the [src]</b>'s corpse")
+			visible_message("Bugs start flying around <b>\the [src]</b>'s corpse.")
 		if(ticks_dead==150)
 			visible_message("<b>\The [src]</b>'s corpse starts to smell...")	
 		if(ticks_dead>150) //5 minute delay
@@ -192,7 +193,7 @@
 	if(behavior_state==ANIMAL_STATE_HUNTING || behavior_state==ANIMAL_STATE_ATTACKING || behavior_state==ANIMAL_STATE_DEFENDING)
 		return FALSE
 	if(nutrition<max_food*0.5)
-		visible_message("<b>\the [src]</b> looks hungry")
+		visible_message("<b>\the [src]</b> looks hungry...")
 		abort_target()
 		behavior_state=ANIMAL_STATE_HUNTING
 		return TRUE
@@ -336,9 +337,9 @@
 			if(istype(A,/mob/living/complex_animal))
 				var/mob/living/complex_animal/CA=A
 				if(can_offspring(CA) && CA.can_offspring(src) && CA.behavior_state==ANIMAL_STATE_MATING && !CA.target) //you better believe we're going to enforce the communicative property.
-					visible_message("<b>\the [src]</b> looks lovingly at \the [CA]")
+					visible_message("<b>\the [src]</b> looks lovingly at \the [CA].")
 					target=CA
-					CA.visible_message("<b>\the [CA]</b> looks lovingly at \the [src]")
+					CA.visible_message("<b>\the [CA]</b> looks lovingly at \the [src].")
 					CA.target=src
 		if(!target) //if we can't find one, exit back to idle
 			abort_target()
@@ -417,6 +418,12 @@
 			if(istype(A,/turf/unsimulated/floor/jungle/grass))
 				foodsources+=A
 				continue
+		if(food_flags & ANIMAL_FRUGIVORE)
+			if(istype(A,/obj/structure/flora/jungle_berries))
+				var/obj/structure/flora/jungle_berries/bush=A
+				if(bush.hasberries)
+					foodsources+=A
+					continue
 		if(food_flags & ANIMAL_CARNIVORE)
 			if(istype(A,/mob/living/carbon) || istype(A,/mob/living/simple_animal) || istype(A,/mob/living/complex_animal))
 				var/mob/living/M=A
@@ -436,7 +443,7 @@
 			foodsources+=A
 			continue
 	for(var/atom/A in foodsources)
-		if(!verify_target(A))
+		if(!verify_target(A,-1,TRUE))
 			foodsources-=A
 	return foodsources
 
@@ -520,7 +527,7 @@
 		else
 			if(unarmed_attack_mob(victim))
 				nutrition+=M.size*5
-				emote("me",MESSAGE_SEE,"chomps on \the [target], tearing them apart.")
+				emote("me",MESSAGE_SEE,"chomps on \the [target], tearing them apart!")
 				if(M.butchering_drops && M.butchering_drops.len)
 					for(var/datum/butchering_product/product in M.butchering_drops)
 						while(product.spawn_result(M.loc,M))
@@ -532,21 +539,31 @@
 				return TRUE
 	else if(istype(target,/obj/item/organ))
 		var/obj/item/organ/O=target
-		emote("me",MESSAGE_SEE,"scarfs down \the [O]")
+		emote("me",MESSAGE_SEE,"scarfs down \the [O].")
 		nutrition+=O.w_class*4
 		qdel(O)
 		target=null
 	else if(istype(target,/obj/structure/flora))
+		if(istype(target,/obj/structure/flora/jungle_berries))
+			var/obj/structure/flora/jungle_berries/bush=target
+			if(bush.hasberries)
+				visible_message("<b>\The [src]</b> shakes \the [target].")
+				bush.attack_hand(src)
+				target=null //loose target so it doesn't destroy the bush by then eating it.
+				return TRUE
 		if(prob(20))
+			visible_message("<b>\The [src]</b> nibbles at what's left of \the [target] into nothing...")
 			qdel(target)
+		else
+			visible_message("<b>\The [src]</b> nibbles at \the [target].")
 		nutrition+=5
-		visible_message("<b>\the [src]</b> nibbles at \the [target]")
+		
 	else if (istype(target,/turf))
 		nutrition+=1
-		visible_message("<b>\the [src]</b> nibbles at \the [target]")
+		visible_message("<b>\The [src]</b> nibbles at \the [target].")
 	else if(istype(target,/obj/item/weapon/reagent_containers/food/snacks))
 		var/obj/item/weapon/reagent_containers/food/snacks/F=target
-		visible_message("<b>\the [src]</b> takes a bite out of <b>\the [F]</b>")
+		visible_message("<b>\The [src]</b> takes a bite out of <b>\the [F]</b>.")
 		F.consume(src)
 	return TRUE
 
@@ -647,10 +664,10 @@
 	if(istype(individual,/mob))
 		emote("me",MESSAGE_SEE,"stares hungrily at \the [individual].")
 	else
-		visible_message("<b>\the [src]</b> stares hungrily at <b>\the [individual]</b>.")
+		visible_message("<b>\The [src]</b> stares hungrily at <b>\the [individual]</b>.")
 
 /mob/living/complex_animal/proc/get_attack_msg(var/individual)
-	emote("me",MESSAGE_SEE,"attacks \the [individual].")
+	emote("me",MESSAGE_SEE,"attacks \the [individual]!")
 
 /mob/living/complex_animal/proc/get_idle_sounds()
 	if(prob(10))
@@ -672,7 +689,7 @@
 			localcount++
 	if(localcount>max_local_population)
 		return FALSE
-	if(mob_age>mob_max_age || mob_age<mob_max_age*0.1) //too young or too old? no can do.
+	if(mob_age>mob_max_age*1.5 || mob_age<mob_max_age*0.1) //too young or too old? no can do.
 		return FALSE
 	if(lastmate>0)
 		return FALSE
@@ -746,19 +763,19 @@
 
 /mob/living/complex_animal/proc/trypet(var/mob/living/carbon/human/H)
 	if(petable)
-		H.emote("me",MESSAGE_SEE,"pets \the [src]")
+		H.emote("me",MESSAGE_SEE,"pets \the [src].")
 		var/image/heart = image('icons/mob/animal.dmi',src,"heart-ani2")
 		heart.plane = ABOVE_HUMAN_PLANE
 		flick_overlay(heart, list(H.client), 20)
 		
 /mob/living/complex_animal/attackby(var/obj/item/I, var/mob/user, var/no_delay = 0, var/originator = null, var/def_zone = null)
 	if(user.a_intent == I_HELP)
-		user.visible_message("<span class='notice'>[user] [pick(list("pokes","prods","taps"))] \the [src] with \the [I]</span>")
-		to_chat(user, "<span class='notice'>You [pick(list("poke","prod","tap"))] \the [src] with \the [I]</span>")
+		user.visible_message("<span class='notice'>[user] [pick(list("pokes","prods","taps"))] \the [src] with \the [I].</span>")
+		to_chat(user, "<span class='notice'>You [pick(list("poke","prod","tap"))] \the [src] with \the [I].</span>")
 	else
 		..()
-		user.visible_message("<span class='danger'>[user] hits \the [src] with \the [I]</span>")
-		to_chat(user, "<span class='danger'>You hit \the [src] with \the [I]</span>")
+		user.visible_message("<span class='danger'>[user] hits \the [src] with \the [I]!</span>")
+		to_chat(user, "<span class='danger'>You hit \the [src] with \the [I]!</span>")
 		if(health<=0)
 			death()
 		if(behavior_flags & ANIMAL_BEHAVIOR_RETALIATE)
