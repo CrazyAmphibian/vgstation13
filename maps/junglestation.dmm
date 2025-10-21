@@ -7993,8 +7993,8 @@
 	},
 /area/science/rd)
 "cVR" = (
-/turf/unsimulated/floor/jungle/underground,
-/turf/unsimulated/floor/jungle/underground,
+/turf/unsimulated/mineral/jungle_underground,
+/turf/unsimulated/mineral/jungle_underground,
 /area/surface/jungle/underground)
 "cWF" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -17322,7 +17322,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/unsimulated/floor/jungle/underground/crate_loot,
+/turf/unsimulated/mineral/jungle_underground/crate_loot,
 /area/construction/mommi_nest)
 "gwy" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -28402,7 +28402,7 @@
 /area/tdome/tdomeobserve)
 "kRi" = (
 /turf/unsimulated/floor/jungle/bedrock,
-/turf/unsimulated/floor/jungle/underground,
+/turf/unsimulated/mineral/jungle_underground,
 /area/surface/jungle/underground)
 "kRj" = (
 /obj/machinery/light/small{
@@ -43030,7 +43030,7 @@
 /obj/machinery/door/airlock{
 	name = "Dorms"
 	},
-/turf/unsimulated/floor/jungle/underground/crate_loot,
+/turf/unsimulated/mineral/jungle_underground/crate_loot,
 /area/surface/jungle/vault)
 "qvG" = (
 /turf/simulated/floor,
@@ -46278,7 +46278,7 @@
 /turf/unsimulated/floor/snow,
 /area/centcom/holding)
 "rDI" = (
-/turf/unsimulated/floor/jungle/underground,
+/turf/unsimulated/mineral/jungle_underground,
 /area/surface/jungle/underground)
 "rDJ" = (
 /obj/machinery/bodyscanner,
@@ -62433,7 +62433,7 @@
 	},
 /area/security/processing)
 "xJG" = (
-/turf/unsimulated/floor/jungle/underground/crate_loot,
+/turf/unsimulated/mineral/jungle_underground/crate_loot,
 /area/surface/jungle/underground)
 "xJI" = (
 /obj/structure/fence,

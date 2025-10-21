@@ -292,7 +292,7 @@ var/list/foliage_replacments=list(
 			if(T.use(25))
 				to_chat(usr,"you fill the hole back with soil.")
 				var/turf/T2=hashole.down.loc
-				T2?.ChangeTurf(/turf/unsimulated/floor/jungle/underground)
+				T2?.ChangeTurf(/turf/unsimulated/mineral/jungle_underground)
 				qdel(hashole.down)
 				qdel(hashole)
 				hashole=null
@@ -416,16 +416,32 @@ var/list/foliage_replacments=list(
 	construction_allowed=TRUE
 
 
-/turf/unsimulated/floor/jungle/underground
+/turf/unsimulated/mineral/jungle_underground
 	name="Packed Soil"
-	density=1
-	opacity=1
 	desc="Solid dirt as far as the eye can see."
 	icon='icons/turf/walls.dmi'
-	icon_state = "j_dirtwall"	
+	icon_state = "j_dirtwall"
+	temperature = T_JUNGLE
+	oxygen = MOLES_JUNGLE_O2_STD
+	nitrogen = MOLES_JUNGLE_N2_STD
+	carbon_dioxide = MOLES_JUNGLE_CO2_STD
+	mineral=null
+
+/turf/unsimulated/mineral/jungle_underground/New()
+	..()
+	mineral_turfs-=src
+
+/turf/unsimulated/mineral/jungle_underground/update_icon()
+	icon_state="j_dirtwall"
+	overlays=list()
+	var/image/img = image('icons/turf/rock_overlay.dmi', "dirt_overlay",layer = SIDE_LAYER)
+	img.pixel_x = -4*PIXEL_MULTIPLIER
+	img.pixel_y = -4*PIXEL_MULTIPLIER
+	img.plane = BELOW_TURF_PLANE
+	overlays += img
 
 
-/turf/unsimulated/floor/jungle/underground/ex_act(severity)
+/turf/unsimulated/mineral/jungle_underground/ex_act(severity)
 	switch(severity)
 		if(1)
 			generate_loot()
@@ -436,7 +452,7 @@ var/list/foliage_replacments=list(
 				ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
 
 
-/turf/unsimulated/floor/jungle/underground/attackby(obj/item/C as obj, mob/user as mob)
+/turf/unsimulated/mineral/jungle_underground/attackby(obj/item/C as obj, mob/user as mob)
 	if(!C || !user)
 		return 0
 	var/s=0.0
@@ -456,7 +472,7 @@ var/list/foliage_replacments=list(
 			return
 
 
-/turf/unsimulated/floor/jungle/underground/generate_loot(var/obj/item/C, var/mob/user)
+/turf/unsimulated/mineral/jungle_underground/proc/generate_loot(var/obj/item/C, var/mob/user)
 	new/obj/item/stack/ore/glass(src,25) //theres no dirt, so we use sand instead.
 	if(!user)
 		return
@@ -474,25 +490,44 @@ var/list/foliage_replacments=list(
 			new/obj/item/stack/ore/uranium(src,user.lucky_prob_rand_range(1,3))
 	return
 
+/turf/unsimulated/mineral/jungle_underground/proc/item_terraforming_ispickaxe(obj/item/C)
+	if(istype(C,/obj/item/weapon/pickaxe) && !istype(C,/obj/item/weapon/pickaxe/shovel))
+		return (1/C.toolspeed)/2.5 //default toolspeed is 0.4. do this math because lower=faster, but we want higher=faster.
+	if(istype(C,/obj/item/tool/crowbar))
+		if(istype(C,/obj/item/tool/crowbar/halligan)) //halligans have a pick end.
+			return 0.75
+		return 0.5
+	if(istype(C,/obj/item/weapon/kitchen/utensil/knife))  //for those daring prison escapes, also because it's funny.
+		return 0.1
+	return 0.0
 
-/turf/unsimulated/floor/jungle/underground/Bumped(AM)
+/turf/unsimulated/mineral/jungle_underground/proc/item_terraforming_isshovel(obj/item/C)
+	if(istype(C,/obj/item/weapon/pickaxe/shovel))
+		return (1/C.toolspeed)/2.5
+	if(istype(C,/obj/item/weapon/kitchen/utensil/spoon) || istype(C,/obj/item/weapon/kitchen/utensil/spork))  //see above
+		return 0.1
+	return 0.0
+
+/turf/unsimulated/mineral/jungle_underground/Bumped(AM)
 	. = ..()
+	
 	if(istype(AM,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = AM
+		if(istype(H.get_active_hand(),/obj/item/weapon/pickaxe) || istype(H.get_inactive_hand(),/obj/item/weapon/pickaxe)) //prevents double attacking the same turf because parent proc covers this
+			return
+
 		if(item_terraforming_isshovel(H.get_active_hand()) || item_terraforming_ispickaxe(H.get_active_hand()))
 			attackby(H.get_active_hand(), H)
 		else if(item_terraforming_isshovel(H.get_inactive_hand()) || item_terraforming_ispickaxe(H.get_inactive_hand()))
 			attackby(H.get_inactive_hand(), H)
+			
+/turf/unsimulated/mineral/jungle_underground/MineralSpread() //do nothing
+	return
 
-
-/turf/unsimulated/floor/jungle/underground/crate_loot
+/turf/unsimulated/mineral/jungle_underground/crate_loot
 	icon_state="rock(high)"
-	
-/turf/unsimulated/floor/jungle/underground/crate_loot/New()
-	..()
-	icon_state="j_dirtwall" //use the normal icon. initial icon is different so you can see it in the map editor.
 
-/turf/unsimulated/floor/jungle/underground/crate_loot/generate_loot(var/obj/item/C, var/mob/user)
+/turf/unsimulated/mineral/jungle_underground/crate_loot/generate_loot(var/obj/item/C, var/mob/user)
 	..()
 	if(user.lucky_prob_rand()>0.996) //0.4% chance (1 in 250). affected by luck, naturally.
 		visible_message("<span class='notice'>An old dusty crate was buried within!</span>")
