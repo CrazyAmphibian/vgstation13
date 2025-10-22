@@ -2040,10 +2040,19 @@ var/global/list/adminbusteleportlocs = list()
 /area/surface/jungle/vault
 	icon_state="jungle_landing"
 
+
+/area/surface/jungle/roid //i have no idea if using the same zone for 2 z-levels will cause technical issues, but i don't want to take the chance.
+
 //vault spawning on Z4
-/area/random_vault/jungle
-	name = "\improper Untamed Wilderness"
+/area/surface/jungle/roid/vaults
 	icon_state="jungle_landing"
+
+/area/surface/jungle/mining
+	name = "\proper Meteor Impact"
+	icon_state="jungle_fenced"	
+
+/area/surface/jungle/mining/unexplored
+	icon_state="jungle_zone"
 
 /area/surface/jungle/fenced
 	name = "\improper Outdoors"

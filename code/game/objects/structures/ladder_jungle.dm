@@ -41,7 +41,7 @@
 	if(T.type==/turf/unsimulated/floor/jungle/bedrock)
 		var/turf/unsimulated/floor/jungle/bedrock/TT=T
 		TT.hashole=null
-		TT.icon_state="mariahive_noanimation"
+		TT.update_icon()
 	if(T.type==/turf/unsimulated/floor/jungle/dirt)
 		var/turf/unsimulated/floor/jungle/dirt/TT=T
 		TT.hashole=null
@@ -54,7 +54,7 @@
 	if(istype(loc,/turf/unsimulated/floor/jungle/dirt))
 		var/turf/unsimulated/floor/jungle/dirt/TT=loc
 		TT.hashole=src
-		var/turf/T=locate(x,y,2)
+		var/turf/T=locate(x,y,z==1 ? 2 : 6)
 		var/obj/structure/ladder/jungle_tunnel/mapped/MJT = (locate(/obj/structure/ladder/jungle_tunnel/mapped) in T.contents)
 		if(MJT)
 			MJT.up=src
@@ -63,7 +63,7 @@
 	if(istype(loc,/turf/unsimulated/floor/jungle/bedrock))
 		var/turf/unsimulated/floor/jungle/bedrock/TT=loc
 		TT.hashole=src
-		var/turf/T=locate(x,y,1)
+		var/turf/T=locate(x,y,z==2 ? 1 : 4)
 		var/obj/structure/ladder/jungle_tunnel/mapped/MJT = (locate(/obj/structure/ladder/jungle_tunnel/mapped) in T.contents)
 		if(MJT)
 			MJT.down=src

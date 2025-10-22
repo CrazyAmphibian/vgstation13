@@ -201,6 +201,7 @@ var/global/list/accessable_z_levels = list()
 	var/z //Number of the z-level (the z coordinate)
 	var/z_above //The linked zLevel Z above, for multiZ
 	var/z_below //Same, with below
+	var/list/transition_crosswrap_z=null // list(z_north,z_south,z_east,z_west). when you hit the edge, instead of drifting to a random zlevel or looping on the current one, teleports you to the corresponding edge on the z-level in the list.
 
 /datum/zLevel/proc/post_mapload()
 	return
@@ -269,6 +270,9 @@ var/global/list/accessable_z_levels = list()
 	base_turf = /turf/unsimulated/floor/jungle/bedrock
 	base_area = /area/surface/jungle/underground
 	movementJammed = TRUE
+
+/datum/zLevel/junglesurface/mining
+	name = "Jungle Fallen Meteor"
 
 //for Horizon
 /datum/zLevel/hyperspace

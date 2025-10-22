@@ -13,6 +13,7 @@
 	zCentcomm = 3
 	zAsteroid = 4
 	zDerelict = 5
+	var/zSecondunderground=6
 
 	zDeepSpace = -1
 	zTCommSat = -1
@@ -21,10 +22,11 @@
 		/datum/zLevel/junglesurface,
 		/datum/zLevel/jungleunderground,
 		/datum/zLevel/centcomm,
-		/datum/zLevel/mining,
+		/datum/zLevel/junglesurface/mining,
 		/datum/zLevel/space{
 			name = "derelict" ;
 			},
+		/datum/zLevel/jungleunderground,	
 		)
 	enabled_jobs = list(/datum/job/trader)
 	event_blacklist = list(/datum/event/radiation_storm,/datum/event/carp_migration,/datum/event/rogue_drone,/datum/event/immovable_rod,
@@ -43,10 +45,16 @@
 	center_y = 163
 
 /datum/map/active/New()
-	..()
+	..()	
+	//linking roid and station
+	zLevels[zMainStation].transition_crosswrap_z=list(zAsteroid,zAsteroid,zAsteroid,zAsteroid)
+	zLevels[zAsteroid].transition_crosswrap_z=list(zMainStation,zMainStation,zMainStation,zMainStation)	
+	//linking roid underground layer and station
+	zLevels[zAdditionalStationZlevel].transition_crosswrap_z=list(zSecondunderground,zSecondunderground,zSecondunderground,zSecondunderground)
+	zLevels[zSecondunderground].transition_crosswrap_z=list(zAdditionalStationZlevel,zAdditionalStationZlevel,zAdditionalStationZlevel,zAdditionalStationZlevel)
 	world.name = "NT Colony Gamma-8"
 	station_name="NT Colony Gamma-8"
-	daynight_z_lvls=list(1)
+	daynight_z_lvls=list(1,4)
 	turfs_to_regrow=list()
 
 /****************************
@@ -56,8 +64,36 @@
 
 /datum/subsystem/daynightcycle
 	overwrite_solars=TRUE
-	solar_orbit_period=130.6359
+	solar_orbit_period=163.2948
+	wait = 30 SECONDS
 	var/solartime=0 //start at 0. set not like that for debugging. or manually set next_firetime with varedit.
+
+/datum/subsystem/daynightcycle/fire(resumed = FALSE)
+	if(world.time >= next_firetime)
+		if(lighting_update_lights_lowpriority.len) //prevent overwriting current lighting changes by not updating lighting until we're done.
+			message_admins("day/night subsystem was fired, when there are still [lighting_update_lights_lowpriority.len] unprocessed lighting updates remaining. Is the server lagging, or was it force-fired? Delaying fire for 15 seconds...")
+			next_firetime=world.time + 15 SECONDS
+			return
+			
+		process_lighting()
+		if(!resumed)
+			currentrun = daynight_turfs.Copy()
+
+	while(currentrun.len)
+		var/turf/T = currentrun[currentrun.len]
+		currentrun.len--
+
+		if(!T || T.gcDestroyed)
+			continue
+
+		T.set_light(next_light_range,next_light_power,current_timeOfDay,TRUE)
+
+		if(MC_TICK_CHECK)
+			return
+
+		if(!resumed)
+			currentrun = daynight_turfs.Copy()
+
 
 /datum/subsystem/daynightcycle/process_lighting()
 	flags&=(0^SS_FIRE_IN_LOBBY) //we don't want this one firing in lobby constantly, as we've tweaked the lighting to be just right on startup. we still want it to fire once though.
@@ -176,7 +212,7 @@
 	nearest_star_power=bestpower
 	
 	
-	next_firetime=world.time + 4 MINUTES //station is too big to tick at 2 minutes. not without severe sever raep, at least.
+	next_firetime=world.time + 5 MINUTES
 	solartime++
 
 /datum/subsystem/daynightcycle/play_globalsound()

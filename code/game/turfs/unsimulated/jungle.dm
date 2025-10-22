@@ -19,6 +19,7 @@
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
 	plane = PLATING_PLANE
 	intact=0
+	can_border_transition=TRUE
 	var/DIGGING_BLOCKED = null // null = you can dig upwards when underground. otherwise, it's a string which is displayed to the user when they try to.
 	var/plated_icon_override=null //used for the name plaque. NT COLONY Γ 8. in case you were wondering what font it uses: Liberation Sans Regular, 24pt. use two layers. one is #343434 and is above another that is #767676, offset by 1 pixel x and y.
 	var/construction_allowed=FALSE //if we can add lattices and turn this into plating
@@ -212,7 +213,7 @@ var/list/foliage_replacments=list(
 	name="Mud"
 	desc="A viscous mixture of water and soil."
 	turf_speed_multiplier=2 //mud is difficult to travel over
-	icon='icons/turf/walls.dmi'
+	icon='icons/turf/floors.dmi'
 	icon_state = "rock(high)"
 
 /turf/unsimulated/floor/jungle/mud/New()
@@ -267,17 +268,17 @@ var/list/foliage_replacments=list(
 		if(do_after(user, src, 20/s ))
 			ChangeTurf(/turf/unsimulated/floor/jungle/path)
 	s=item_terraforming_ispickaxe(C)
-	if(s>0.0 && !hashole)
+	if(s>0.0 && !hashole && can_dig_down(user) )
 		to_chat(usr,"you start digging downwards...")
 		if(do_after(user, src, 80/s ))
 			if(!hashole)
 				to_chat(usr,"you finish making a hole.")
 				var/obj/structure/ladder/jungle_tunnel/l_surf=new(src)
-				var/obj/structure/ladder/jungle_tunnel/l_tunnel=new(locate(x,y,2))
+				var/obj/structure/ladder/jungle_tunnel/l_tunnel=new(locate(x,y, z==1 ? 2 : 6))
 				l_tunnel.up=l_surf
 				l_surf.down=l_tunnel
 				hashole=l_surf
-				var/turf/T2=locate(x,y,2)
+				var/turf/T2=locate(x,y,z==1 ? 2 : 6)
 				T2?.ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
 				var/turf/unsimulated/floor/jungle/bedrock/TT=T2
 				TT?.hashole=l_tunnel
@@ -297,6 +298,15 @@ var/list/foliage_replacments=list(
 				qdel(hashole)
 				hashole=null
 
+/turf/unsimulated/floor/jungle/dirt/proc/can_dig_down(var/mob/user=null)
+	var/turf/T=locate(x,y,z==1 ? 2 : 6)
+	if(istype(T,/turf/unsimulated/floor/jungle))
+		return TRUE	
+	if(istype(T,/turf/unsimulated/mineral))
+		return TRUE		
+	if(user)
+		to_chat(user,"<span class='warning'>Something hard blocks you from digging downwards.</span>")
+	return FALSE
 
 /turf/unsimulated/floor/jungle/path
 	name="Compressed Dirt"
@@ -568,15 +578,16 @@ var/list/foliage_replacments=list(
 			if(do_after(user, src, 80/s ))
 				if(!hashole && !cannot_dig_up() )
 					to_chat(usr,"you finish making a hole.")
-					update_icon()
 					
 					var/obj/structure/ladder/jungle_tunnel/l_tunnel=new(src)
-					var/obj/structure/ladder/jungle_tunnel/l_surf=new(locate(x,y,1))
+					var/obj/structure/ladder/jungle_tunnel/l_surf=new(locate(x,y,z==2 ? 1 : 4))
+
+					update_icon()
 
 					l_tunnel.up=l_surf
 					l_surf.down=l_tunnel
 
-					var/turf/T2=locate(x,y,1)
+					var/turf/T2=locate(x,y,z==2 ? 1 : 4)
 					T2?.ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
 					var/turf/unsimulated/floor/jungle/dirt/TT=T2
 					TT?.hashole=l_surf
@@ -631,7 +642,7 @@ var/list/foliage_replacments=list(
 		T2.update_icon()
 
 /turf/unsimulated/floor/jungle/bedrock/proc/cannot_dig_up()
-	var/turf/T=locate(x,y,1)
+	var/turf/T=locate(x,y,z==2 ? 1 : 4)
 	if(!istype(T,/turf/unsimulated/floor/jungle))
 		return "something hard blocks the way."
 	var/turf/unsimulated/floor/jungle/JT = T
@@ -659,6 +670,22 @@ var/list/foliage_replacments=list(
 	return
 /turf/unsimulated/floor/jungle/worldborder/attackby(obj/item/C as obj, mob/user as mob)
 	return
+
+
+//so mining the planetside roid doesn't cause ZAS hell
+/turf/unsimulated/mineral/random/jungle
+	temperature = T_JUNGLE
+	oxygen = MOLES_JUNGLE_O2_STD
+	nitrogen = MOLES_JUNGLE_N2_STD
+	carbon_dioxide = MOLES_JUNGLE_CO2_STD
+	mined_type = /turf/unsimulated/floor/jungle/path
+
+/turf/unsimulated/mineral/random/high_chance/jungle
+	temperature = T_JUNGLE
+	oxygen = MOLES_JUNGLE_O2_STD
+	nitrogen = MOLES_JUNGLE_N2_STD
+	carbon_dioxide = MOLES_JUNGLE_CO2_STD
+	mined_type = /turf/unsimulated/floor/jungle/path
 
 #undef T_JUNGLE
 #undef JUNGLE_PRESSURE
