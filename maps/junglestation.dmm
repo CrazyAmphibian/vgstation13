@@ -2226,6 +2226,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor,
 /area/security/armory)
+"aRf" = (
+/obj/docking_port/destination/vox/south_station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "aRn" = (
 /turf/simulated/wall/r_wall,
 /area/science/chargebay)
@@ -6315,10 +6319,6 @@
 	icon_state = "white"
 	},
 /area/medical/virology)
-"cpx" = (
-/obj/docking_port/destination/vox/south_station,
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
 "cpB" = (
 /turf/simulated/floor/carpet{
 	icon_state = "carpet11-12"
@@ -6734,6 +6734,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/camera{
 	dir = 8
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 27
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
@@ -7342,6 +7345,9 @@
 "cJc" = (
 /obj/machinery/camera{
 	dir = 1
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30
 	},
 /turf/simulated/floor{
 	icon_state = "red"
@@ -11133,14 +11139,21 @@
 	},
 /turf/space,
 /area)
+"efk" = (
+/obj/machinery/portable_atmospherics/hydroponics,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27
+	},
+/turf/unsimulated/floor/jungle/dirt,
+/area/surface/jungle/zoned/botanty_outside)
 "efp" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor,
 /area/engineering/engine)
 "efu" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 25
-	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -17752,6 +17765,12 @@
 /obj/structure/grille/window_spawner/reinforced,
 /turf/simulated/floor/plating,
 /area/mine/production)
+"gGx" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 27
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/fenced)
 "gGy" = (
 /obj/machinery/door/airlock/glass_mining{
 	name = "Supply Dock Airlock";
@@ -18015,6 +18034,15 @@
 	},
 /turf/simulated/floor,
 /area/medical/virology)
+"gMi" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -5;
+	pixel_y = 30
+	},
+/turf/simulated/floor{
+	icon_state = "brown"
+	},
+/area/supply/miningdock)
 "gMk" = (
 /turf/simulated/floor/carpet{
 	icon_state = "carpet10-8"
@@ -21940,6 +21968,17 @@
 	tag = "icon-brown (NORTH)"
 	},
 /area/supply/qm)
+"iph" = (
+/obj/machinery/power/apc{
+	dir = 4;
+	pixel_y = -24
+	},
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters)
 "ipn" = (
 /obj/machinery/keycard_auth{
 	pixel_x = -24
@@ -22081,6 +22120,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27
+	},
 /turf/simulated/floor{
 	icon_state = "yellow";
 	dir = 8
@@ -25447,6 +25489,12 @@
 	tag = "icon-vault (NORTHEAST)"
 	},
 /area/bridge)
+"jGP" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/turf/simulated/floor/carpet,
+/area/crew_quarters/courtroom)
 "jGU" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -26115,6 +26163,14 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle/vault)
+"jTh" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30
+	},
+/turf/simulated/floor{
+	icon_state = "red"
+	},
+/area/security/range)
 "jTi" = (
 /obj/item/clothing/shoes/black,
 /turf/simulated/floor/wood,
@@ -27314,6 +27370,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/wall/r_wall,
 /area/lawoffice)
+"kut" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30
+	},
+/turf/simulated/floor/wood,
+/area/bridge/meeting_room)
 "kuE" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/structure/grille/window_spawner/reinforced/full,
@@ -29246,6 +29308,9 @@
 /obj/machinery/camera{
 	dir = 6
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
 "liU" = (
@@ -29852,10 +29917,6 @@
 "lvt" = (
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/zoned/tradearea)
-"lvy" = (
-/obj/docking_port/destination/vox/east_station,
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
 "lvW" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window{
@@ -30502,6 +30563,15 @@
 	},
 /turf/simulated/floor,
 /area/security/perma)
+"lHe" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30
+	},
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
+/area/maintenance/disposal)
 "lHg" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -30687,6 +30757,13 @@
 	},
 /turf/simulated/floor,
 /area/supply/sorting)
+"lJH" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -5;
+	pixel_y = 30
+	},
+/turf/unsimulated/floor/jungle/grass/no_flora,
+/area/surface/jungle/fenced)
 "lKb" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/unsimulated/floor/snow,
@@ -31101,6 +31178,17 @@
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/vault)
+"lRz" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30
+	},
+/turf/simulated/floor{
+	icon_state = "red"
+	},
+/area/security/prison)
 "lRA" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -31136,6 +31224,9 @@
 "lSb" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 1
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 27
 	},
 /turf/simulated/floor{
 	dir = 4;
@@ -31817,6 +31908,9 @@
 "mdM" = (
 /obj/machinery/camera{
 	dir = 4
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27
 	},
 /turf/simulated/floor,
 /area/science/chargebay)
@@ -33582,6 +33676,9 @@
 /obj/machinery/keycard_auth{
 	pixel_y = -24
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30
+	},
 /turf/simulated/floor,
 /area/crew_quarters/hop)
 "mOd" = (
@@ -33969,12 +34066,6 @@
 	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
-"mVn" = (
-/obj/docking_port/destination/syndicate/southwest{
-	dir = 8
-	},
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
 "mVo" = (
 /obj/machinery/navbeacon{
 	codes_txt = "delivery;dir=2";
@@ -36502,6 +36593,10 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
+"nVo" = (
+/obj/docking_port/destination/vox/tradepost,
+/turf/space,
+/area)
 "nVu" = (
 /obj/machinery/shield_capacitor,
 /obj/machinery/firealarm{
@@ -36901,10 +36996,6 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
-"oaZ" = (
-/obj/docking_port/destination/transport/station,
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
 "obd" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 10
@@ -39298,6 +39389,9 @@
 	pixel_x = -24;
 	pixel_y = -9
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
 /turf/simulated/floor{
 	dir = 9;
 	icon_state = "brown";
@@ -40528,10 +40622,6 @@
 	icon_state = "white"
 	},
 /area/centcom/test)
-"pAl" = (
-/obj/docking_port/destination/vox/tradepost,
-/turf/space,
-/area)
 "pAx" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -40865,6 +40955,20 @@
 	icon_state = "yellow"
 	},
 /area/engineering/engine)
+"pHg" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30
+	},
+/turf/simulated/floor{
+	icon_state = "whitepurple"
+	},
+/area/science/hallway)
 "pHk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -40947,6 +41051,9 @@
 	codes_txt = "delivery;dir=2";
 	freq = 1400;
 	location = "Chapel"
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 27
 	},
 /turf/simulated/floor/carpet{
 	icon_state = "carpet9-4"
@@ -41644,6 +41751,9 @@
 	},
 /area/research_outpost/anomaly)
 "pVd" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
 /turf/simulated/floor{
 	dir = 9;
 	icon_state = "whitepurple"
@@ -42004,6 +42114,9 @@
 /area/research_outpost/harvesting)
 "qbp" = (
 /obj/structure/flora/pottedplant/random,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -27
+	},
 /turf/simulated/floor{
 	icon_state = "darkpurple";
 	tag = "icon-dark floor stripe (NORTH)";
@@ -44024,6 +44137,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -44343,6 +44459,10 @@
 	icon_state = "brown"
 	},
 /area/supply/storage)
+"qVw" = (
+/obj/docking_port/destination/transport/station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "qVx" = (
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 4
@@ -46141,6 +46261,12 @@
 	name = "plating"
 	},
 /area/centcom/ert)
+"rBf" = (
+/obj/docking_port/destination/syndicate/southwest{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "rBi" = (
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/plating,
@@ -51929,6 +52055,9 @@
 	freq = 1400;
 	location = "Engineering Lobby"
 	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 27
+	},
 /turf/simulated/floor{
 	icon_state = "yellow";
 	dir = 6
@@ -53692,6 +53821,12 @@
 	},
 /turf/unsimulated/floor/jungle/grass/no_flora,
 /area/surface/jungle/fenced)
+"uwk" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/fenced)
 "uwt" = (
 /obj/machinery/door/airlock/glass_command{
 	name = "Research Director's Office";
@@ -54516,10 +54651,6 @@
 	},
 /turf/simulated/floor,
 /area/surface/jungle/vault)
-"uPO" = (
-/obj/docking_port/destination/vox/northeast_station,
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
 "uPR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -57358,6 +57489,15 @@
 	icon_state = "red"
 	},
 /area/security/prison)
+"vME" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "vMQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
@@ -58229,6 +58369,12 @@
 	icon_state = "fakewindows2"
 	},
 /area/syndicate_mothership)
+"weS" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle/fenced)
 "weV" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -58460,6 +58606,10 @@
 	},
 /turf/simulated/floor/shuttle,
 /area/centcom/evac)
+"wiM" = (
+/obj/docking_port/destination/vox/northeast_station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "wjr" = (
 /obj/structure/closet/secure_closet/quartermaster,
 /obj/item/key/tractor{
@@ -59969,9 +60119,15 @@
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
 "wMf" = (
-/obj/docking_port/destination/vox/mining_north,
-/turf/space,
-/area)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -5;
+	pixel_y = 30
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "wMj" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -60216,17 +60372,6 @@
 	icon_state = "freezerfloor"
 	},
 /area/medical/virology)
-"wRJ" = (
-/obj/machinery/power/apc{
-	dir = 4;
-	pixel_y = -24
-	},
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/wood,
-/area/crew_quarters)
 "wRK" = (
 /obj/machinery/bot/farmbot/duey,
 /obj/structure/sink{
@@ -61029,6 +61174,10 @@
 	},
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/atmos)
+"xgL" = (
+/obj/docking_port/destination/vox/mining_north,
+/turf/space,
+/area)
 "xgT" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -63318,6 +63467,10 @@
 	dir = 8
 	},
 /area/engineering/ce)
+"xZT" = (
+/obj/docking_port/destination/vox/east_station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "xZU" = (
 /obj/structure/closet{
 	desc = "Everything a reporter needs to look the part.";
@@ -63856,6 +64009,9 @@
 	},
 /area/centcom/suppy)
 "ykF" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30
+	},
 /turf/simulated/floor/carpet{
 	icon_state = "carpet13-5"
 	},
@@ -93700,7 +93856,7 @@ lIK
 lIK
 lIK
 lIK
-lvy
+xZT
 lIK
 lIK
 lIK
@@ -96539,7 +96695,7 @@ lIK
 lIK
 lIK
 lIK
-mVn
+rBf
 lIK
 lIK
 lIK
@@ -103174,7 +103330,7 @@ lIK
 lIK
 lIK
 lIK
-oaZ
+qVw
 uXL
 uXL
 uXL
@@ -105663,7 +105819,7 @@ xYb
 bxX
 qBr
 dnJ
-qvt
+jTh
 xYb
 lIK
 lIK
@@ -106697,7 +106853,7 @@ tnZ
 tnZ
 xor
 xor
-xor
+uwk
 lQc
 mOg
 qzF
@@ -114118,7 +114274,7 @@ wPv
 eyf
 dnI
 vYU
-ehX
+lRz
 gaI
 mag
 aSq
@@ -116222,7 +116378,7 @@ qpg
 qpg
 qpg
 dYI
-dij
+jGP
 dij
 dij
 jCD
@@ -116625,7 +116781,7 @@ lIK
 lIK
 lIK
 lIK
-cpx
+aRf
 lIK
 lIK
 lIK
@@ -120446,7 +120602,7 @@ cIm
 kMy
 kMy
 cIm
-xMH
+vME
 maR
 psY
 wld
@@ -121830,7 +121986,7 @@ fgq
 eNl
 eNl
 rWK
-nre
+lJH
 upa
 eJs
 edD
@@ -123225,7 +123381,7 @@ iVe
 wgd
 vtu
 eoQ
-oYQ
+gMi
 idZ
 xor
 xor
@@ -129243,7 +129399,7 @@ cFY
 why
 jUy
 jUy
-maR
+wMf
 iMQ
 xMH
 fYZ
@@ -129548,7 +129704,7 @@ gOF
 uSS
 uSS
 tVE
-uSS
+lHe
 sJg
 hSj
 riz
@@ -131346,7 +131502,7 @@ maR
 nTf
 xTn
 aCN
-buf
+efk
 xTn
 xTn
 xTn
@@ -133055,7 +133211,7 @@ lIc
 saC
 xvk
 fgx
-wRJ
+iph
 saC
 bnQ
 saC
@@ -133413,7 +133569,7 @@ cLt
 saC
 azy
 saC
-wld
+weS
 wld
 wld
 wld
@@ -133442,7 +133598,7 @@ vEO
 vEO
 vEO
 vEO
-vEO
+kut
 tCm
 dvJ
 peY
@@ -136899,7 +137055,7 @@ lIK
 lIK
 lIK
 lIK
-uPO
+wiM
 lIK
 lIK
 lIK
@@ -139046,7 +139202,7 @@ uGs
 hez
 ruL
 iRG
-oUa
+pHg
 rly
 ffm
 wKJ
@@ -140134,7 +140290,7 @@ xor
 xor
 xor
 xor
-xor
+gGx
 xor
 kaQ
 dCE
@@ -465330,7 +465486,7 @@ ocC
 ocC
 ocC
 ocC
-wMf
+xgL
 ocC
 ocC
 ocC
@@ -489721,7 +489877,7 @@ ocC
 ocC
 ocC
 ocC
-pAl
+nVo
 ocC
 ocC
 ocC
