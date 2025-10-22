@@ -5449,13 +5449,8 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/power/apc{
-	dir = 4;
-	pixel_x = 24
-	},
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
+/obj/machinery/station_map{
+	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters)
@@ -6320,6 +6315,10 @@
 	icon_state = "white"
 	},
 /area/medical/virology)
+"cpx" = (
+/obj/docking_port/destination/vox/south_station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "cpB" = (
 /turf/simulated/floor/carpet{
 	icon_state = "carpet11-12"
@@ -9086,10 +9085,6 @@
 /obj/item/weapon/storage/fancy/beer_box,
 /turf/simulated/floor,
 /area/research_outpost/hallway)
-"drZ" = (
-/obj/docking_port/destination/vox/east_station,
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
 "dsc" = (
 /obj/structure/grille,
 /obj/structure/shuttle/window{
@@ -11095,9 +11090,6 @@
 /area/prison/solitary)
 "eea" = (
 /obj/structure/table/woodentable,
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -14831,6 +14823,9 @@
 /obj/machinery/camera{
 	dir = 1
 	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters)
 "fAB" = (
@@ -16498,9 +16493,6 @@
 /area/vox_trading_post/gardens)
 "ggP" = (
 /obj/machinery/vending/snack,
-/obj/machinery/station_map{
-	dir = 4
-	},
 /turf/simulated/floor/wood,
 /area/crew_quarters)
 "ggU" = (
@@ -21024,6 +21016,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters)
 "hVD" = (
@@ -24185,10 +24180,6 @@
 "jgU" = (
 /turf/simulated/wall/r_wall,
 /area/engineering/break_room)
-"jgZ" = (
-/obj/docking_port/destination/vox/tradepost,
-/turf/space,
-/area)
 "jhf" = (
 /turf/simulated/wall/r_wall,
 /area/science/xenobiology/specimen_4)
@@ -26423,6 +26414,9 @@
 "jZK" = (
 /obj/structure/bed/chair/wood/normal,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters)
 "jZW" = (
@@ -28079,10 +28073,6 @@
 	icon_state = "cafeteria"
 	},
 /area/syndicate_mothership)
-"kIT" = (
-/obj/docking_port/destination/vox/northeast_station,
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
 "kIX" = (
 /obj/machinery/iv_drip,
 /obj/item/weapon/reagent_containers/blood/OMinus,
@@ -29862,6 +29852,10 @@
 "lvt" = (
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/zoned/tradearea)
+"lvy" = (
+/obj/docking_port/destination/vox/east_station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "lvW" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window{
@@ -29952,10 +29946,6 @@
 	tag = "icon-brown (NORTH)"
 	},
 /area/supply/qm)
-"lwQ" = (
-/obj/docking_port/destination/vox/south_station,
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
 "lxl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -33979,6 +33969,12 @@
 	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
+"mVn" = (
+/obj/docking_port/destination/syndicate/southwest{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "mVo" = (
 /obj/machinery/navbeacon{
 	codes_txt = "delivery;dir=2";
@@ -36905,6 +36901,10 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
+"oaZ" = (
+/obj/docking_port/destination/transport/station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "obd" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 10
@@ -40528,6 +40528,10 @@
 	icon_state = "white"
 	},
 /area/centcom/test)
+"pAl" = (
+/obj/docking_port/destination/vox/tradepost,
+/turf/space,
+/area)
 "pAx" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -54512,6 +54516,10 @@
 	},
 /turf/simulated/floor,
 /area/surface/jungle/vault)
+"uPO" = (
+/obj/docking_port/destination/vox/northeast_station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "uPR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -55377,10 +55385,6 @@
 	},
 /turf/simulated/floor,
 /area/security/perma)
-"vfC" = (
-/obj/docking_port/destination/vox/mining_north,
-/turf/space,
-/area)
 "vfF" = (
 /mob/living/complex_animal/bear,
 /turf/unsimulated/floor/jungle/concrete,
@@ -56200,10 +56204,6 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
-"vsG" = (
-/obj/docking_port/destination/transport/station,
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
 "vsO" = (
 /obj/machinery/r_n_d/server/centcom,
 /turf/unsimulated/floor{
@@ -59969,11 +59969,9 @@
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
 "wMf" = (
-/obj/docking_port/destination/syndicate/southwest{
-	dir = 8
-	},
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
+/obj/docking_port/destination/vox/mining_north,
+/turf/space,
+/area)
 "wMj" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -60218,6 +60216,17 @@
 	icon_state = "freezerfloor"
 	},
 /area/medical/virology)
+"wRJ" = (
+/obj/machinery/power/apc{
+	dir = 4;
+	pixel_y = -24
+	},
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters)
 "wRK" = (
 /obj/machinery/bot/farmbot/duey,
 /obj/structure/sink{
@@ -93691,7 +93700,7 @@ lIK
 lIK
 lIK
 lIK
-drZ
+lvy
 lIK
 lIK
 lIK
@@ -96530,7 +96539,7 @@ lIK
 lIK
 lIK
 lIK
-wMf
+mVn
 lIK
 lIK
 lIK
@@ -103165,7 +103174,7 @@ lIK
 lIK
 lIK
 lIK
-vsG
+oaZ
 uXL
 uXL
 uXL
@@ -116616,7 +116625,7 @@ lIK
 lIK
 lIK
 lIK
-lwQ
+cpx
 lIK
 lIK
 lIK
@@ -133046,7 +133055,7 @@ lIc
 saC
 xvk
 fgx
-anh
+wRJ
 saC
 bnQ
 saC
@@ -133750,7 +133759,7 @@ qxY
 aPt
 dfc
 fgx
-anh
+cDH
 gnK
 anh
 smj
@@ -134102,7 +134111,7 @@ qxY
 aPt
 anh
 fgx
-anh
+cDH
 anh
 rMs
 anh
@@ -135159,7 +135168,7 @@ aPt
 anh
 fgx
 nVJ
-cDH
+anh
 anh
 anh
 anh
@@ -136890,7 +136899,7 @@ lIK
 lIK
 lIK
 lIK
-kIT
+uPO
 lIK
 lIK
 lIK
@@ -465321,7 +465330,7 @@ ocC
 ocC
 ocC
 ocC
-vfC
+wMf
 ocC
 ocC
 ocC
@@ -489712,7 +489721,7 @@ ocC
 ocC
 ocC
 ocC
-jgZ
+pAl
 ocC
 ocC
 ocC
