@@ -544,11 +544,17 @@ var/list/foliage_replacments=list(
 
 
 /turf/unsimulated/floor/jungle/bedrock/New(var/loc)
-	if(locate(/obj/structure/ladder/jungle_tunnel) in contents)
-		icon_state="j_rockfloor_l"
+	..()
+	update_icon()
 
-	if(cannot_dig_up())
-		icon_state="j_rockfloor_d"
+/turf/unsimulated/floor/jungle/bedrock/update_icon()
+	icon_state = "j_rockfloor"
+	overlays=list()
+	if(locate(/obj/structure/ladder/jungle_tunnel) in contents)
+		overlays+=image('icons/turf/walls.dmi', "j_rfloor_overlay_l")
+	else if(cannot_dig_up())
+		overlays+=image('icons/turf/walls.dmi', "j_rfloor_overlay_d")
+		
 
 /turf/unsimulated/floor/jungle/bedrock/attackby(obj/item/C as obj, mob/user as mob)
 	..()
@@ -562,7 +568,7 @@ var/list/foliage_replacments=list(
 			if(do_after(user, src, 80/s ))
 				if(!hashole && !cannot_dig_up() )
 					to_chat(usr,"you finish making a hole.")
-					icon_state="j_rockfloor_l"
+					update_icon()
 					
 					var/obj/structure/ladder/jungle_tunnel/l_tunnel=new(src)
 					var/obj/structure/ladder/jungle_tunnel/l_surf=new(locate(x,y,1))
@@ -576,58 +582,53 @@ var/list/foliage_replacments=list(
 					TT?.hashole=l_surf
 					hashole=l_tunnel
 				else
+					update_icon()
 					to_chat(usr,"something gets in your way.")
 				return
 		else
-			to_chat(usr,cannot_dig_up() || "something solid prevents you from tunneling upwards.")
+			to_chat(usr,cannot_dig_up())
+			update_icon()
 
 
 /turf/unsimulated/floor/jungle/bedrock/examine()
 	..()
-	if(icon_state=="j_rockfloor_d")
-		to_chat(usr,cannot_dig_up() || "it seems that there's something solid above you that you won't be able to dig through.")
+	if(cannot_dig_up())
+		to_chat(usr,cannot_dig_up())
 		return
-	if(icon_state=="j_rockfloor_l")
+	if(locate(/obj/structure/ladder/jungle_tunnel) in contents)
 		to_chat(usr,"there's a hole leading to the surface.")
 
 
 //we also use enter to reveal tiles, since the tile above could change.
-/turf/unsimulated/floor/jungle/bedrock/Entered(var/atom/movable/Obj,var/recursive=TRUE)
-	if(recursive)
-		..()
-	icon_state="j_rockfloor"
-	
-	if(locate(/obj/structure/ladder/jungle_tunnel) in contents)
-		icon_state="j_rockfloor_l"
-	
-	if(cannot_dig_up())
-		icon_state="j_rockfloor_d"
+/turf/unsimulated/floor/jungle/bedrock/Entered(var/atom/movable/Obj)
+	..()
+	update_icon()
 
-	if(recursive) //we reveal the state of surrounding bedrock. there's probably a better way to do this.
-		var/turf/T2=get_step(src,NORTH)
-		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
-			T2.Entered(Obj,FALSE)
-		T2=get_step(src,SOUTH)
-		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
-			T2.Entered(Obj,FALSE)
-		T2=get_step(src,EAST)
-		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
-			T2.Entered(Obj,FALSE)
-		T2=get_step(src,WEST)
-		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
-			T2.Entered(Obj,FALSE)
-		T2=get_step(src,NORTHEAST)
-		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
-			T2.Entered(Obj,FALSE)
-		T2=get_step(src,SOUTHEAST)
-		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
-			T2.Entered(Obj,FALSE)
-		T2=get_step(src,NORTHWEST)
-		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
-			T2.Entered(Obj,FALSE)
-		T2=get_step(src,SOUTHWEST)
-		if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
-			T2.Entered(Obj,FALSE)
+	//we reveal the state of surrounding bedrock. there's probably a better way to do this.
+	var/turf/T2=get_step(src,NORTH)
+	if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+		T2.update_icon()
+	T2=get_step(src,SOUTH)
+	if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+		T2.update_icon()
+	T2=get_step(src,EAST)
+	if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+		T2.update_icon()
+	T2=get_step(src,WEST)
+	if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+		T2.update_icon()
+	T2=get_step(src,NORTHEAST)
+	if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+		T2.update_icon()
+	T2=get_step(src,SOUTHEAST)
+	if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+		T2.update_icon()
+	T2=get_step(src,NORTHWEST)
+	if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+		T2.update_icon()
+	T2=get_step(src,SOUTHWEST)
+	if(T2 && T2.type==/turf/unsimulated/floor/jungle/bedrock)
+		T2.update_icon()
 
 /turf/unsimulated/floor/jungle/bedrock/proc/cannot_dig_up()
 	var/turf/T=locate(x,y,1)
