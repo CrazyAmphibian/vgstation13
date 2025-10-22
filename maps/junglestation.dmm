@@ -11070,6 +11070,10 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/wood,
 /area/surface/jungle/vault)
+"ecT" = (
+/obj/docking_port/destination/vox/east_station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "edr" = (
 /turf/space{
 	icon_state = "black"
@@ -11590,7 +11594,10 @@
 /obj/docking_port/shuttle{
 	dir = 2
 	},
-/turf/space,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/snow.dmi';
+	icon_state = "snow"
+	},
 /area/shuttle/nuclearops)
 "emC" = (
 /obj/structure/grille,
@@ -17262,6 +17269,12 @@
 	icon_state = "dark-markings"
 	},
 /area/security/armory)
+"guS" = (
+/obj/docking_port/destination/syndicate/southwest{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "gvk" = (
 /obj/structure/table,
 /obj/item/weapon/storage/box/holobadge,
@@ -21044,6 +21057,10 @@
 	icon_state = "floor"
 	},
 /area/centcom/ferry)
+"hVW" = (
+/obj/docking_port/destination/vox/northeast_station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "hVX" = (
 /turf/simulated/wall,
 /area/crew_quarters/theatre)
@@ -22454,7 +22471,10 @@
 /area/security/perma)
 "iAJ" = (
 /obj/structure/shuttle/engine/propulsion/left,
-/turf/space,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/snow.dmi';
+	icon_state = "snow"
+	},
 /area/shuttle/nuclearops)
 "iAQ" = (
 /obj/effect/landmark{
@@ -23064,6 +23084,10 @@
 	},
 /turf/simulated/floor/wood,
 /area/bridge/meeting_room)
+"iPb" = (
+/obj/docking_port/destination/vox/south_station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "iPj" = (
 /obj/machinery/biogenerator,
 /turf/simulated/floor{
@@ -33078,6 +33102,10 @@
 	tag = "icon-checker (NORTHEAST)"
 	},
 /area/science/rd)
+"mCQ" = (
+/obj/docking_port/destination/vox/tradepost,
+/turf/space,
+/area)
 "mDj" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -42726,6 +42754,10 @@
 	icon_state = "dark orange stripe"
 	},
 /area/centcom/ert)
+"qok" = (
+/obj/docking_port/destination/vox/mining_north,
+/turf/space,
+/area)
 "qoE" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -48421,7 +48453,10 @@
 /area/engineering/engine)
 "sxI" = (
 /obj/structure/shuttle/engine/propulsion/right,
-/turf/space,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/snow.dmi';
+	icon_state = "snow"
+	},
 /area/shuttle/nuclearops)
 "sxZ" = (
 /turf/simulated/floor/carpet{
@@ -48666,7 +48701,10 @@
 /area/engineering/supermatter_room)
 "sCY" = (
 /obj/structure/shuttle/engine/propulsion,
-/turf/space,
+/turf/unsimulated/floor{
+	icon = 'icons/turf/snow.dmi';
+	icon_state = "snow"
+	},
 /area/shuttle/nuclearops)
 "sDg" = (
 /obj/structure/grille/window_spawner/reinforced/full,
@@ -93649,7 +93687,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+ecT
 lIK
 lIK
 lIK
@@ -96488,7 +96526,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+guS
 lIK
 lIK
 lIK
@@ -101058,7 +101096,7 @@ lIK
 lIK
 lIK
 lIK
-tPe
+lIK
 lIK
 lIK
 lIK
@@ -116574,7 +116612,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+iPb
 lIK
 lIK
 lIK
@@ -136848,7 +136886,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+hVW
 lIK
 lIK
 lIK
@@ -154586,7 +154624,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+tPe
 lIK
 lIK
 lIK
@@ -448742,7 +448780,7 @@ ocC
 ocC
 ocC
 ocC
-ocC
+qwy
 ocC
 ocC
 ocC
@@ -452682,7 +452720,7 @@ ocC
 ocC
 ocC
 ocC
-qwy
+ocC
 ocC
 ocC
 ocC
@@ -462555,7 +462593,7 @@ ocC
 ocC
 ocC
 ocC
-ocC
+tct
 ocC
 ocC
 ocC
@@ -465279,7 +465317,7 @@ ocC
 ocC
 ocC
 ocC
-ocC
+qok
 ocC
 ocC
 ocC
@@ -470227,7 +470265,7 @@ ocC
 ocC
 ocC
 ocC
-tct
+ocC
 ocC
 ocC
 ocC
@@ -489670,7 +489708,7 @@ ocC
 ocC
 ocC
 ocC
-ocC
+mCQ
 ocC
 ocC
 ocC
