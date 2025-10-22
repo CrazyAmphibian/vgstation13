@@ -4550,10 +4550,6 @@
 	dir = 8
 	},
 /area/engineering/antimatter_room)
-"bJn" = (
-/obj/docking_port/destination/vox/tradepost,
-/turf/space,
-/area)
 "bJs" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
@@ -4988,10 +4984,6 @@
 	},
 /turf/simulated/floor,
 /area/engineering/engine_storage)
-"bSt" = (
-/obj/docking_port/destination/transport/station,
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
 "bSz" = (
 /obj/structure/table/woodentable,
 /turf/unsimulated/floor{
@@ -9094,6 +9086,10 @@
 /obj/item/weapon/storage/fancy/beer_box,
 /turf/simulated/floor,
 /area/research_outpost/hallway)
+"drZ" = (
+/obj/docking_port/destination/vox/east_station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "dsc" = (
 /obj/structure/grille,
 /obj/structure/shuttle/window{
@@ -21890,10 +21886,6 @@
 	},
 /turf/simulated/floor,
 /area/mine/eva)
-"inN" = (
-/obj/docking_port/destination/vox/east_station,
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
 "inX" = (
 /turf/unsimulated/floor{
 	icon_state = "freezerfloor"
@@ -22689,10 +22681,6 @@
 	icon_state = "floor3"
 	},
 /area/shuttle/escape/centcom)
-"iEW" = (
-/obj/docking_port/destination/vox/mining_north,
-/turf/space,
-/area)
 "iFk" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
@@ -24197,6 +24185,10 @@
 "jgU" = (
 /turf/simulated/wall/r_wall,
 /area/engineering/break_room)
+"jgZ" = (
+/obj/docking_port/destination/vox/tradepost,
+/turf/space,
+/area)
 "jhf" = (
 /turf/simulated/wall/r_wall,
 /area/science/xenobiology/specimen_4)
@@ -25026,10 +25018,6 @@
 	},
 /turf/simulated/floor,
 /area/research_outpost/hallway)
-"jAj" = (
-/obj/docking_port/destination/vox/northeast_station,
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
 "jAq" = (
 /obj/structure/bed/chair/wood/normal{
 	dir = 4
@@ -28091,6 +28079,10 @@
 	icon_state = "cafeteria"
 	},
 /area/syndicate_mothership)
+"kIT" = (
+/obj/docking_port/destination/vox/northeast_station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "kIX" = (
 /obj/machinery/iv_drip,
 /obj/item/weapon/reagent_containers/blood/OMinus,
@@ -29227,7 +29219,9 @@
 	},
 /area/centcom/ert)
 "lip" = (
-/obj/machinery/door/airlock/glass,
+/obj/machinery/door/airlock/glass{
+	normalspeed = 0
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor/wood,
 /area/crew_quarters)
@@ -29958,6 +29952,10 @@
 	tag = "icon-brown (NORTH)"
 	},
 /area/supply/qm)
+"lwQ" = (
+/obj/docking_port/destination/vox/south_station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "lxl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -33688,12 +33686,6 @@
 	},
 /turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
-"mPd" = (
-/obj/docking_port/destination/syndicate/southwest{
-	dir = 8
-	},
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
 "mPm" = (
 /obj/structure/closet/emcloset,
 /turf/simulated/floor/shuttle,
@@ -55385,6 +55377,10 @@
 	},
 /turf/simulated/floor,
 /area/security/perma)
+"vfC" = (
+/obj/docking_port/destination/vox/mining_north,
+/turf/space,
+/area)
 "vfF" = (
 /mob/living/complex_animal/bear,
 /turf/unsimulated/floor/jungle/concrete,
@@ -56204,6 +56200,10 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
+"vsG" = (
+/obj/docking_port/destination/transport/station,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "vsO" = (
 /obj/machinery/r_n_d/server/centcom,
 /turf/unsimulated/floor{
@@ -59969,7 +59969,9 @@
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
 "wMf" = (
-/obj/docking_port/destination/vox/south_station,
+/obj/docking_port/destination/syndicate/southwest{
+	dir = 8
+	},
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "wMj" = (
@@ -59982,7 +59984,9 @@
 	},
 /area/engineering/reactor_room)
 "wMK" = (
-/obj/machinery/door/airlock/glass,
+/obj/machinery/door/airlock/glass{
+	normalspeed = 0
+	},
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -93687,7 +93691,7 @@ lIK
 lIK
 lIK
 lIK
-inN
+drZ
 lIK
 lIK
 lIK
@@ -96526,7 +96530,7 @@ lIK
 lIK
 lIK
 lIK
-mPd
+wMf
 lIK
 lIK
 lIK
@@ -103161,7 +103165,7 @@ lIK
 lIK
 lIK
 lIK
-bSt
+vsG
 uXL
 uXL
 uXL
@@ -116612,7 +116616,7 @@ lIK
 lIK
 lIK
 lIK
-wMf
+lwQ
 lIK
 lIK
 lIK
@@ -136886,7 +136890,7 @@ lIK
 lIK
 lIK
 lIK
-jAj
+kIT
 lIK
 lIK
 lIK
@@ -465317,7 +465321,7 @@ ocC
 ocC
 ocC
 ocC
-iEW
+vfC
 ocC
 ocC
 ocC
@@ -489708,7 +489712,7 @@ ocC
 ocC
 ocC
 ocC
-bJn
+jgZ
 ocC
 ocC
 ocC
