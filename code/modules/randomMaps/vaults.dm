@@ -101,7 +101,14 @@
 
 	var/result = populate_area_with_vaults(/area/mine/unexplored, list_of_surprises, surprise_number, filter_function=/proc/asteroid_can_be_placed, overwrites=TRUE)
 	
-	result += populate_area_with_vaults(/area/surface/jungle/mining/unexplored, list_of_surprises, surprise_number, filter_function=/proc/asteroid_can_be_placed, overwrites=TRUE)
+	/* for some reason this still makes astroid turfs when we do not want those. ugh. fix later.
+	
+	if(locate(/area/surface/jungle/mining/unexplored))
+		result += populate_area_with_vaults(/area/surface/jungle/mining/unexplored, list_of_surprises, surprise_number, filter_function=/proc/asteroid_can_be_placed, overwrites=TRUE)
+		for(var/area/surface/jungle/mining/unexplored/A in areas)
+			for(var/turf/unsimulated/floor/asteroid/T in A.contents )
+				T.ChangeTurf(/turf/unsimulated/floor/jungle/path)
+	*/			
 
 	message_admins("<span class='info'>Loaded [result] out of [surprise_number] mining surprises.</span>")
 

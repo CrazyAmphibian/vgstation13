@@ -4654,12 +4654,6 @@
 	},
 /turf/simulated/floor/engine,
 /area/science/telescience)
-"bLF" = (
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
-	pixel_x = 28
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced/trader)
 "bLH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
@@ -5825,12 +5819,6 @@
 "cig" = (
 /turf/unsimulated/wall/blastdoor,
 /area/centcom/striketeam)
-"cii" = (
-/obj/structure/fence/corner{
-	dir = 8
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced/trader)
 "cis" = (
 /obj/structure/cable/orange{
 	icon_state = "2-4";
@@ -11682,6 +11670,10 @@
 	},
 /turf/simulated/floor,
 /area/engineering/engine)
+"enh" = (
+/obj/abstract/map/spawner/jungle_any,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle/roid)
 "enr" = (
 /obj/machinery/computer/communications,
 /turf/simulated/floor/shuttle,
@@ -14222,6 +14214,12 @@
 	dir = 4
 	},
 /area/engineering/supermatter_room)
+"foC" = (
+/obj/structure/bed/chair/folding{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/fenced/trader)
 "foS" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1;
@@ -18970,12 +18968,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle/vault)
-"heZ" = (
-/obj/structure/bed/chair/folding{
-	dir = 4
-	},
-/turf/unsimulated/floor/jungle/path,
-/area/surface/jungle/fenced/trader)
 "hfl" = (
 /obj/machinery/light{
 	dir = 1
@@ -20559,6 +20551,17 @@
 	},
 /turf/simulated/wall,
 /area/vox_trading_post/docking)
+"hNj" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/paper_bin/red{
+	pixel_y = 6
+	},
+/obj/item/weapon/pen{
+	pixel_x = -7;
+	pixel_y = 8
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/fenced/trader)
 "hNl" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -28202,6 +28205,12 @@
 	icon_state = "dark-markings"
 	},
 /area/research_outpost/longtermstorage)
+"kNl" = (
+/obj/structure/fence/corner{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced/trader)
 "kNn" = (
 /obj/structure/table/woodentable,
 /obj/item/device/radio/intercom{
@@ -34951,10 +34960,6 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
-"nng" = (
-/obj/structure/fence/corner,
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced/trader)
 "nnL" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -36360,17 +36365,6 @@
 	icon_state = "red"
 	},
 /area/security/armory)
-"nRV" = (
-/obj/structure/table/woodentable,
-/obj/item/weapon/paper_bin/red{
-	pixel_y = 6
-	},
-/obj/item/weapon/pen{
-	pixel_x = -7;
-	pixel_y = 8
-	},
-/turf/unsimulated/floor/jungle/path,
-/area/surface/jungle/fenced/trader)
 "nRZ" = (
 /obj/machinery/space_heater/air_conditioner,
 /turf/simulated/floor{
@@ -37409,6 +37403,10 @@
 "old" = (
 /turf/simulated/floor/engine,
 /area/science/xenobiology/specimen_2)
+"oli" = (
+/obj/abstract/map/spawner/jungle_any,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle/roid/vaults)
 "olk" = (
 /obj/structure/closet/secure_closet/courtroom,
 /turf/unsimulated/floor{
@@ -40468,6 +40466,10 @@
 	},
 /turf/simulated/floor,
 /area/mine/production)
+"pxD" = (
+/obj/structure/fence/corner,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced/trader)
 "pxG" = (
 /turf/simulated/wall,
 /area/science/shuttlebay)
@@ -46307,12 +46309,6 @@
 	icon_state = "dark"
 	},
 /area/security/prison)
-"rDo" = (
-/obj/machinery/alarm/vox{
-	pixel_y = 24
-	},
-/turf/simulated/floor/vox,
-/area/vox_trading_post/docking)
 "rDw" = (
 /obj/structure/cable/orange{
 	icon_state = "4-8";
@@ -56660,6 +56656,12 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/zoned/atmos_outside)
+"vzE" = (
+/obj/machinery/alarm/vox{
+	pixel_y = 24
+	},
+/turf/simulated/floor/vox,
+/area/vox_trading_post/docking)
 "vzX" = (
 /obj/structure/safe,
 /obj/abstract/map/spawner/safe/weapon,
@@ -61949,6 +61951,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor/plating,
 /area/medical/genetics)
+"xxP" = (
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_x = 28
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced/trader)
 "xxV" = (
 /obj/structure/table,
 /obj/item/stack/sheet/metal{
@@ -96598,11 +96606,11 @@ lIK
 lIK
 lIK
 lIK
-cii
+kNl
 oHF
 oHF
 oHF
-cii
+kNl
 lIK
 ryP
 nJC
@@ -96950,11 +96958,11 @@ lIK
 pPP
 oHF
 oHF
-nng
-heZ
-nRV
-heZ
-nng
+pxD
+foC
+hNj
+foC
+pxD
 oHF
 hIf
 lRt
@@ -97659,7 +97667,7 @@ iBL
 iBL
 iBL
 iBL
-bLF
+xxP
 bNn
 iBL
 iBL
@@ -100471,7 +100479,7 @@ wWk
 tyO
 oLI
 cKh
-rDo
+vzE
 ncH
 lxl
 cEy
@@ -437310,7 +437318,7 @@ fvU
 fvU
 fvU
 gJc
-gJc
+oli
 gJc
 gJc
 gJc
@@ -440359,7 +440367,7 @@ gJc
 gJc
 gJc
 gJc
-gJc
+oli
 gJc
 gJc
 gJc
@@ -442733,7 +442741,7 @@ gJc
 gJc
 gJc
 gJc
-gJc
+oli
 gJc
 gJc
 gJc
@@ -445830,7 +445838,7 @@ gJc
 gJc
 gJc
 gJc
-gJc
+oli
 gJc
 gJc
 gJc
@@ -464668,7 +464676,7 @@ fvU
 fvU
 fvU
 fvU
-fvU
+enh
 fvU
 fvU
 fvU
@@ -474415,7 +474423,7 @@ gJc
 gJc
 gJc
 gJc
-gJc
+oli
 gJc
 gJc
 gJc
@@ -487029,7 +487037,7 @@ gJc
 gJc
 gJc
 gJc
-gJc
+oli
 gJc
 gJc
 gJc
@@ -489621,7 +489629,7 @@ fvU
 fvU
 fvU
 fvU
-fvU
+enh
 fvU
 fvU
 fvU
@@ -494315,7 +494323,7 @@ fvU
 fvU
 fvU
 fvU
-fvU
+enh
 fvU
 fvU
 fvU
@@ -496475,7 +496483,7 @@ fvU
 fvU
 fvU
 fvU
-fvU
+enh
 fvU
 fvU
 fvU
@@ -516721,7 +516729,7 @@ fvU
 fvU
 fvU
 fvU
-fvU
+enh
 fvU
 fvU
 fvU
@@ -520401,7 +520409,7 @@ fvU
 fvU
 fvU
 fvU
-fvU
+enh
 fvU
 fvU
 fvU
@@ -520527,7 +520535,7 @@ gJc
 gJc
 gJc
 gJc
-gJc
+oli
 gJc
 gJc
 gJc
@@ -525618,7 +525626,7 @@ fvU
 fvU
 fvU
 fvU
-fvU
+enh
 fvU
 fvU
 fvU
@@ -534372,7 +534380,7 @@ fvU
 fvU
 fvU
 fvU
-fvU
+enh
 fvU
 fvU
 fvU
@@ -539825,7 +539833,7 @@ gJc
 gJc
 gJc
 gJc
-gJc
+oli
 gJc
 gJc
 gJc
@@ -548046,7 +548054,7 @@ gJc
 gJc
 gJc
 gJc
-gJc
+oli
 gJc
 gJc
 gJc
@@ -548859,7 +548867,7 @@ gJc
 gJc
 gJc
 gJc
-gJc
+oli
 gJc
 gJc
 gJc
@@ -549044,7 +549052,7 @@ gJc
 gJc
 gJc
 gJc
-gJc
+oli
 gJc
 gJc
 gJc
@@ -743105,13 +743113,13 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -743457,13 +743465,13 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -743809,13 +743817,13 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -744161,13 +744169,13 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -744512,15 +744520,15 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -744862,19 +744870,19 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -745214,19 +745222,19 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -745566,19 +745574,19 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -745918,19 +745926,19 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -746270,19 +746278,19 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -746622,19 +746630,19 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -746974,19 +746982,19 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -747326,19 +747334,19 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -747678,19 +747686,19 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -748030,19 +748038,19 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -748382,19 +748390,19 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -748734,19 +748742,19 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -749086,19 +749094,19 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -749439,17 +749447,17 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -749792,15 +749800,15 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -750144,15 +750152,15 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -750496,15 +750504,15 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -750848,15 +750856,15 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -751200,15 +751208,15 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -751552,15 +751560,15 @@ rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -751904,15 +751912,15 @@ rDI
 rDI
 rDI
 rDI
+xJG
+xJG
 rDI
+xJG
 rDI
+xJG
 rDI
-rDI
-rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
 rDI
 rDI
 rDI
@@ -752256,15 +752264,15 @@ rDI
 rDI
 rDI
 rDI
+xJG
+xJG
 rDI
 rDI
 rDI
 rDI
 rDI
-rDI
-rDI
-rDI
-rDI
+xJG
+xJG
 rDI
 rDI
 rDI
