@@ -545,6 +545,11 @@
 	dir = 1
 	},
 /area/engineering/mechanics)
+"aly" = (
+/obj/structure/rack/crate_shelf/centcomm_provided,
+/obj/effect/glowshroom/single,
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
 "alz" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor{
@@ -1081,6 +1086,9 @@
 	icon_state = "yellow"
 	},
 /area/engineering/engine)
+"avE" = (
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "avL" = (
 /mob/living/simple_animal/hostile/giant_spider{
 	faction = "jungle"
@@ -2589,6 +2597,12 @@
 	tag = "icon-brown (NORTH)"
 	},
 /area/supply/miningdock)
+"aYY" = (
+/obj/structure/bed/chair/comfy/lime{
+	dir = 4
+	},
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "aZc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -2776,6 +2790,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/research_outpost/atmos)
+"bcp" = (
+/obj/structure/shuttle/diag_wall/smooth{
+	color = null;
+	dir = 8;
+	icon = 'icons/turf/voxprobe.dmi';
+	icon_state = "voxcorner1"
+	},
+/turf/space,
+/area/centcom/holding)
 "bcw" = (
 /turf/space,
 /turf/unsimulated/mineral/random/high_chance/jungle,
@@ -3227,6 +3250,11 @@
 	icon_state = "freezerfloor"
 	},
 /area/medical/surgery)
+"blB" = (
+/obj/structure/table/woodentable,
+/obj/item/toy/cards/une,
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "blE" = (
 /obj/structure/table,
 /obj/item/trash/emptybowl,
@@ -3388,6 +3416,10 @@
 	icon_state = "freezerfloor"
 	},
 /area/crew_quarters)
+"bnV" = (
+/obj/structure/window/full/reinforced/plasma/vox,
+/turf/space,
+/area/centcom/holding)
 "bnY" = (
 /obj/structure/table/woodentable/poker,
 /obj/item/toy/cards,
@@ -4020,6 +4052,19 @@
 	icon_state = "rockvault"
 	},
 /area/vox_trading_post/atmos)
+"bzE" = (
+/obj/structure/table,
+/obj/item/ammo_storage/box/c38,
+/obj/item/ammo_storage/box/c38{
+	pixel_y = 5
+	},
+/obj/item/ammo_storage/box/c38{
+	pixel_y = 12
+	},
+/turf/simulated/floor/vox{
+	icon_state = "rockvault"
+	},
+/area/centcom/holding)
 "bzK" = (
 /obj/machinery/photobooth,
 /turf/unsimulated/floor/jungle/path,
@@ -4372,6 +4417,10 @@
 /mob/living/simple_animal/hostile/asteroid/hivelord,
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/mining/unexplored)
+"bFn" = (
+/obj/structure/window/full/reinforced/plasma/vox,
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
 "bFq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/hanging_lantern/dim{
@@ -4382,6 +4431,11 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
+"bFC" = (
+/obj/structure/table/woodentable/poker,
+/obj/item/toy/cards,
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "bFD" = (
 /obj/structure/fence,
 /turf/unsimulated/floor/jungle/path_plated,
@@ -4507,6 +4561,12 @@
 	icon_state = "dark"
 	},
 /area/science/rd)
+"bIy" = (
+/obj/machinery/door/airlock/external,
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "cult"
+	},
+/area/centcom/holding)
 "bIA" = (
 /obj/structure/closet/crate/secure/weapon/experimental/stickybomb{
 	name = "Stickybomb Launcher Crate"
@@ -4724,6 +4784,15 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
+"bMg" = (
+/obj/machinery/podcomputer{
+	dir = 4;
+	pixel_x = -12
+	},
+/obj/structure/table,
+/obj/effect/glowshroom/single,
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
 "bMz" = (
 /obj/machinery/computer/mecha,
 /obj/structure/window/reinforced{
@@ -9269,6 +9338,14 @@
 	},
 /turf/simulated/floor,
 /area/research_outpost/entry)
+"dvl" = (
+/obj/machinery/door/airlock{
+	name = "bedroom"
+	},
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "carpet"
+	},
+/area/centcom/holding)
 "dvq" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
@@ -9819,6 +9896,9 @@
 	tag = "icon-vault (NORTHEAST)"
 	},
 /area/bridge)
+"dFu" = (
+/turf/unsimulated/wall/blastdoor,
+/area/centcom/holding)
 "dFy" = (
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
@@ -10300,6 +10380,13 @@
 	},
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/eva)
+"dQy" = (
+/obj/structure/shuttle/engine/propulsion{
+	color = "#b89a73";
+	dir = 4
+	},
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
 "dQC" = (
 /turf/unsimulated/floor{
 	dir = 4;
@@ -14038,6 +14125,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/wall/r_wall,
 /area/crew_quarters/hop)
+"fkH" = (
+/obj/machinery/vending/boozeomat{
+	req_access = null
+	},
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "fkR" = (
 /obj/structure/closet/secure_closet/miner,
 /turf/simulated/floor{
@@ -14308,6 +14401,14 @@
 	},
 /turf/simulated/floor/carpet,
 /area/bridge/meeting_room)
+"fqS" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/storage/box/donkpockets{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "frb" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 8
@@ -14846,6 +14947,12 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
+"fBl" = (
+/obj/structure/bed/chair/comfy/teal{
+	dir = 8
+	},
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "fBs" = (
 /obj/machinery/vending/mining,
 /obj/machinery/light_switch{
@@ -14922,6 +15029,12 @@
 	},
 /turf/space,
 /area/centcom/evac)
+"fCf" = (
+/obj/structure/bed/chair/folding{
+	dir = 1
+	},
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
 "fCn" = (
 /obj/effect/step_trigger/thrower{
 	affect_ghosts = 1;
@@ -15364,6 +15477,11 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/shuttle/arrival/station)
+"fLH" = (
+/obj/structure/table,
+/obj/machinery/status_display,
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
 "fMb" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -17817,6 +17935,14 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/zoned/atmos_outside)
+"gIk" = (
+/obj/machinery/door/airlock/glass{
+	name = "Dorms"
+	},
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "carpet"
+	},
+/area/centcom/holding)
 "gIn" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -17907,6 +18033,9 @@
 /obj/structure/bed/chair,
 /turf/simulated/floor,
 /area/surface/jungle/vault)
+"gKh" = (
+/turf/space,
+/area/centcom/holding)
 "gKl" = (
 /obj/structure/hanging_lantern/dim{
 	dir = 4
@@ -20125,6 +20254,14 @@
 	icon_state = "carpet14-10"
 	},
 /area/chapel/main)
+"hEG" = (
+/obj/structure/bed/chair/comfy/black{
+	dir = 4
+	},
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "grimy"
+	},
+/area/centcom/holding)
 "hER" = (
 /obj/machinery/camera,
 /turf/simulated/floor{
@@ -20497,6 +20634,12 @@
 /obj/structure/reagent_dispensers/beerkeg,
 /turf/simulated/floor/wood,
 /area/surface/jungle/underground/zoned/speakeasy)
+"hMk" = (
+/obj/structure/trade_window,
+/turf/simulated/floor/vox{
+	icon_state = "rockvault"
+	},
+/area/centcom/holding)
 "hMp" = (
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -21206,6 +21349,16 @@
 	},
 /turf/space,
 /area/shuttle/administration/centcom)
+"hZb" = (
+/obj/structure/table/woodentable,
+/obj/item/device/flashlight/lamp{
+	pixel_y = 14;
+	pixel_x = 4
+	},
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "carpet"
+	},
+/area/centcom/holding)
 "hZd" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2";
@@ -21237,6 +21390,12 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
+"hZu" = (
+/obj/structure/flora/pottedplant/random,
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "grimy"
+	},
+/area/centcom/holding)
 "hZB" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -21557,6 +21716,10 @@
 	icon_state = "cult"
 	},
 /area/surface/jungle/zoned/storage_shed)
+"iht" = (
+/obj/structure/bed/chair/folding,
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
 "ihY" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated/floor,
@@ -21837,6 +22000,13 @@
 	tag = "icon-brown (NORTH)"
 	},
 /area/maintenance/disposal)
+"imY" = (
+/obj/structure/rack/crate_shelf/centcomm_provided,
+/obj/structure/closet/crate/engi/blob_supplies,
+/turf/simulated/floor/vox{
+	icon_state = "rockvault"
+	},
+/area/centcom/holding)
 "inf" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -21914,6 +22084,10 @@
 	icon_state = "cult"
 	},
 /area/surface/jungle/zoned/storage_shed)
+"iou" = (
+/obj/structure/table/woodentable/poker,
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "ioB" = (
 /obj/item/tool/weldingtool,
 /obj/structure/window/reinforced{
@@ -22301,6 +22475,11 @@
 	icon_state = "white"
 	},
 /area/medical/paramedics)
+"iwZ" = (
+/turf/simulated/floor/vox{
+	icon_state = "rockvault"
+	},
+/area/centcom/holding)
 "ixg" = (
 /obj/machinery/door/table/reinforced{
 	dir = 1;
@@ -22627,6 +22806,14 @@
 	name = "grass"
 	},
 /area/centcom/living)
+"iDk" = (
+/obj/machinery/door/airlock/glass{
+	name = "Arrivals Access"
+	},
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "cult"
+	},
+/area/centcom/holding)
 "iDO" = (
 /obj/structure/filingcabinet/chestdrawer/hop,
 /turf/simulated/floor,
@@ -24457,6 +24644,14 @@
 	icon_state = "dark"
 	},
 /area/centcom/ert)
+"jlw" = (
+/obj/structure/table,
+/obj/abstract/map/spawner/assistant/tools,
+/obj/abstract/map/spawner/assistant/tools,
+/turf/simulated/floor/vox{
+	icon_state = "rockvault"
+	},
+/area/centcom/holding)
 "jlC" = (
 /turf/unsimulated/floor{
 	dir = 8;
@@ -24464,6 +24659,15 @@
 	tag = "icon-dark neutral stripe (WEST)"
 	},
 /area/centcom/suppy)
+"jlH" = (
+/obj/structure/table,
+/obj/abstract/map/spawner/assistant/materials,
+/obj/abstract/map/spawner/assistant/materials,
+/obj/abstract/map/spawner/assistant/materials,
+/turf/simulated/floor/vox{
+	icon_state = "rockvault"
+	},
+/area/centcom/holding)
 "jlK" = (
 /obj/structure/cable/orange{
 	icon_state = "4-8";
@@ -24685,6 +24889,13 @@
 	icon_state = "white"
 	},
 /area/research_outpost/med)
+"jrQ" = (
+/obj/structure/rack/crate_shelf/centcomm_provided,
+/obj/structure/closet/crate/chest/alcatraz,
+/turf/simulated/floor/vox{
+	icon_state = "rockvault"
+	},
+/area/centcom/holding)
 "jse" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -24767,6 +24978,12 @@
 	icon_state = "freezerfloor"
 	},
 /area/medical/virology)
+"jtT" = (
+/obj/structure/bed/chair/comfy/teal{
+	dir = 4
+	},
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "jue" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -26656,6 +26873,14 @@
 	icon_state = "yellow"
 	},
 /area/engineering/atmos)
+"kfn" = (
+/obj/machinery/door/airlock/glass{
+	name = "Recreation"
+	},
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "dark"
+	},
+/area/centcom/holding)
 "kfo" = (
 /obj/machinery/door_control{
 	id_tag = "tradergate";
@@ -26931,6 +27156,10 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
 /turf/simulated/floor,
 /area/security/prison)
+"kkS" = (
+/obj/structure/bed/chair/comfy/red,
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "klf" = (
 /obj/machinery/camera/arena{
 	name = "Arena";
@@ -28258,6 +28487,11 @@
 	icon_state = "white"
 	},
 /area/medical/sleeper)
+"kOB" = (
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "grimy"
+	},
+/area/centcom/holding)
 "kOK" = (
 /obj/structure/table,
 /turf/simulated/floor{
@@ -30644,6 +30878,22 @@
 "lIK" = (
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
+"lIS" = (
+/obj/structure/table,
+/obj/machinery/media/receiver/boombox/wallmount/shuttle{
+	pixel_y = -3
+	},
+/obj/item/device/radio/intercom{
+	dir = 4;
+	name = "Station Intercom (General)";
+	pixel_y = 4
+	},
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
+"lJg" = (
+/obj/structure/rack/crate_shelf/centcomm_provided,
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
 "lJi" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
@@ -31669,6 +31919,14 @@
 	icon_state = "white"
 	},
 /area/surface/jungle/mining)
+"maC" = (
+/obj/structure/table/woodentable,
+/obj/machinery/microwave{
+	pixel_x = -3;
+	pixel_y = 6
+	},
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "maD" = (
 /turf/simulated/wall/r_wall,
 /area/turret_protected/tcomms_control_room)
@@ -32730,6 +32988,12 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
+"mvd" = (
+/obj/structure/grille/window_spawner/reinforced/full,
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "plating"
+	},
+/area/centcom/holding)
 "mvv" = (
 /obj/structure/table/glass,
 /obj/item/weapon/paper_bin,
@@ -33488,6 +33752,12 @@
 /obj/structure/table/reinforced,
 /turf/unsimulated/floor{
 	icon_state = "freezerfloor"
+	},
+/area/centcom/holding)
+"mKo" = (
+/obj/structure/closet,
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "carpet"
 	},
 /area/centcom/holding)
 "mKv" = (
@@ -34259,6 +34529,14 @@
 /area/server{
 	name = "AI Integrity Restoration Room"
 	})
+"mZk" = (
+/obj/machinery/door/airlock/glass{
+	name = "Storeroom"
+	},
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "grimy"
+	},
+/area/centcom/holding)
 "mZo" = (
 /obj/machinery/camera{
 	dir = 1;
@@ -34411,6 +34689,11 @@
 	},
 /turf/simulated/floor/engine/vacuum,
 /area/science/test_area)
+"ncY" = (
+/obj/structure/bed/chair/folding,
+/obj/effect/glowshroom/single,
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
 "ndk" = (
 /mob/living/simple_animal/cow,
 /turf/unsimulated/floor/jungle/grass/no_flora,
@@ -35668,6 +35951,19 @@
 	name = "plating"
 	},
 /area/centcom/striketeam)
+"nFW" = (
+/obj/structure/table,
+/obj/item/weapon/storage/toolbox/electrical,
+/obj/item/weapon/storage/toolbox/emergency{
+	pixel_y = 7
+	},
+/obj/item/weapon/storage/toolbox/mechanical{
+	pixel_y = 14
+	},
+/turf/simulated/floor/vox{
+	icon_state = "rockvault"
+	},
+/area/centcom/holding)
 "nFZ" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/reagent_containers/food/condiment/saltshaker{
@@ -37355,6 +37651,20 @@
 	},
 /turf/simulated/floor,
 /area/security/interrogation)
+"ojW" = (
+/obj/structure/table,
+/obj/item/weapon/spacecash/c1000,
+/obj/item/weapon/spacecash/c1000,
+/obj/item/weapon/spacecash/c1000,
+/obj/item/weapon/spacecash/c100,
+/obj/item/weapon/spacecash/c100,
+/obj/item/weapon/spacecash/c100,
+/obj/item/weapon/spacecash/c100,
+/obj/item/weapon/spacecash/c100,
+/turf/simulated/floor/vox{
+	icon_state = "rockvault"
+	},
+/area/centcom/holding)
 "oko" = (
 /obj/machinery/door/window{
 	base_state = "right";
@@ -37585,6 +37895,11 @@
 	},
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle/roid)
+"opq" = (
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "cult"
+	},
+/area/centcom/holding)
 "opE" = (
 /obj/structure/bed/roller/surgery,
 /turf/simulated/floor{
@@ -38233,6 +38548,12 @@
 	icon_state = "white"
 	},
 /area/centcom/test)
+"oBO" = (
+/obj/structure/bed/chair/comfy/teal{
+	dir = 1
+	},
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "oBS" = (
 /obj/structure/curtain/open/privacy,
 /obj/machinery/door/window,
@@ -39545,6 +39866,12 @@
 	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
+"pek" = (
+/obj/docking_port/destination/pod1/centcom{
+	dir = 4
+	},
+/turf/space,
+/area/centcom/holding)
 "pes" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
@@ -39945,6 +40272,9 @@
 	},
 /turf/simulated/floor/engine/vacuum,
 /area/science/test_area)
+"poa" = (
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
 "pop" = (
 /turf/simulated/floor{
 	icon_state = "dark yellow corner";
@@ -41948,6 +42278,15 @@
 	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
+"pZB" = (
+/obj/structure/grille/window_spawner/reinforced/full,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id_tag = "poxareblocks"
+	},
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "plating"
+	},
+/area/centcom/holding)
 "pZK" = (
 /turf/unsimulated/floor{
 	dir = 8;
@@ -42101,6 +42440,10 @@
 /obj/structure/fence,
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced/trader/solars)
+"qdw" = (
+/obj/machinery/media/jukebox,
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "qdJ" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -42833,6 +43176,19 @@
 	},
 /turf/simulated/floor,
 /area/research_outpost/entry)
+"qqz" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/storage/fancy/cigarettes/shoalsticks{
+	pixel_x = -5;
+	pixel_y = -3
+	},
+/obj/item/weapon/lighter/vox{
+	pixel_x = 5
+	},
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "grimy"
+	},
+/area/centcom/holding)
 "qqG" = (
 /turf/simulated/wall/shuttle,
 /area/centcom/evac)
@@ -43992,6 +44348,14 @@
 	icon_state = "red"
 	},
 /area/security/main)
+"qLH" = (
+/obj/machinery/door/airlock/external{
+	req_access_txt = "9999"
+	},
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "cult"
+	},
+/area/centcom/holding)
 "qLP" = (
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -44247,6 +44611,13 @@
 	icon_state = "yellow"
 	},
 /area/engineering/mechanics)
+"qSI" = (
+/obj/structure/rack/crate_shelf/centcomm_provided,
+/obj/structure/closet/crate/sci,
+/turf/simulated/floor/vox{
+	icon_state = "rockvault"
+	},
+/area/centcom/holding)
 "qSO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
@@ -46377,6 +46748,11 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
+"rEr" = (
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "carpet"
+	},
+/area/centcom/holding)
 "rEA" = (
 /obj/structure/window/reinforced{
 	dir = 4;
@@ -46654,6 +47030,21 @@
 "rLG" = (
 /obj/structure/punching_bag/clown,
 /turf/unsimulated/floor/snow,
+/area/centcom/holding)
+"rLI" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/storage/fancy/cigarettes/shoalsticks{
+	pixel_x = -5;
+	pixel_y = -3
+	},
+/obj/item/weapon/storage/fancy/cigarettes/shoalsticks{
+	pixel_x = 2;
+	pixel_y = 5
+	},
+/obj/item/weapon/lighter/vox{
+	pixel_x = 5
+	},
+/turf/simulated/floor/vox/wood,
 /area/centcom/holding)
 "rLM" = (
 /obj/machinery/sparker{
@@ -47163,6 +47554,13 @@
 /obj/structure/falsewall/rwall,
 /turf/simulated/floor,
 /area/security/perma)
+"rVx" = (
+/obj/structure/rack/crate_shelf/centcomm_provided,
+/obj/structure/closet/crate/ayy,
+/turf/simulated/floor/vox{
+	icon_state = "rockvault"
+	},
+/area/centcom/holding)
 "rVE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -47466,6 +47864,13 @@
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/courtroom)
+"rZV" = (
+/obj/structure/bed,
+/obj/item/weapon/bedsheet/orange/plaid,
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "carpet"
+	},
+/area/centcom/holding)
 "sab" = (
 /obj/machinery/door/airlock/silver{
 	name = "Garage";
@@ -48144,6 +48549,12 @@
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction,
 /turf/simulated/wall,
 /area/tcomms/chamber)
+"spS" = (
+/obj/machinery/door/table/wood{
+	dir = 1
+	},
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "spZ" = (
 /obj/structure/table/woodentable,
 /obj/machinery/computer/accounting,
@@ -48599,6 +49010,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/science/server)
+"sAg" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	req_access_txt = "9999"
+	},
+/turf/simulated/floor/vox{
+	icon_state = "rockvault"
+	},
+/area/centcom/holding)
 "sAk" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -49443,6 +49862,11 @@
 	icon_state = "red"
 	},
 /area/security/lobby)
+"sQE" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/reagent_containers/food/drinks/shaker,
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "sQR" = (
 /obj/machinery/conveyor{
 	id_tag = "ghetto_ore_proc_conv";
@@ -50125,6 +50549,12 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
+"tdA" = (
+/obj/structure/closet/secure_closet/bar{
+	req_access = null
+	},
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "tdB" = (
 /turf/simulated/wall/r_wall,
 /area/surface/jungle/vault)
@@ -50614,18 +51044,8 @@
 /turf/simulated/floor/vox,
 /area/vox_trading_post/vault)
 "tkP" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/docking_port/destination/pod3/shuttle{
-	dir = 8
-	},
-/turf/simulated/floor/shuttle/plating,
-/area/shuttle/escape/centcom)
+/turf/unsimulated/wall/other,
+/area)
 "tkW" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/structure/window/barricade/full,
@@ -51975,6 +52395,9 @@
 	dir = 1
 	},
 /area/engineering/mechanics)
+"tKp" = (
+/turf/simulated/wall/shuttle/unsmoothed/vox,
+/area/centcom/holding)
 "tKN" = (
 /obj/machinery/navbeacon{
 	codes_txt = "delivery;dir=2";
@@ -52343,6 +52766,19 @@
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
+"tRw" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass,
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = -9;
+	pixel_y = 8
+	},
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass{
+	pixel_x = 9;
+	pixel_y = 8
+	},
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "tRF" = (
 /obj/structure/fence/corner,
 /obj/structure/cable/yellow,
@@ -53247,6 +53683,17 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/landing)
+"unn" = (
+/obj/machinery/door_control{
+	id_tag = "poxareblocks";
+	pixel_x = -6;
+	pixel_y = -24;
+	req_access_txt = "9999"
+	},
+/turf/simulated/floor/vox{
+	icon_state = "rockvault"
+	},
+/area/centcom/holding)
 "unq" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/paper,
@@ -54247,6 +54694,17 @@
 /obj/machinery/telecomms/server/presets/supply,
 /turf/simulated/floor/server,
 /area/tcomms/chamber)
+"uHJ" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/newspaper,
+/obj/item/weapon/newspaper{
+	pixel_y = 3;
+	pixel_x = -5
+	},
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "grimy"
+	},
+/area/centcom/holding)
 "uHS" = (
 /obj/structure/lattice,
 /obj/machinery/kinetic_accelerator{
@@ -56014,6 +56472,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/science/lab)
+"voy" = (
+/obj/structure/bed/chair/shuttle/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
 "voF" = (
 /turf/simulated/wall,
 /area/medical/chemistry)
@@ -56662,6 +57126,12 @@
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
+"vzI" = (
+/obj/structure/bed/chair/comfy/lime{
+	dir = 8
+	},
+/turf/simulated/floor/vox/wood,
+/area/centcom/holding)
 "vzX" = (
 /obj/structure/safe,
 /obj/abstract/map/spawner/safe/weapon,
@@ -56701,6 +57171,9 @@
 	icon_state = "redfull"
 	},
 /area/security/prison)
+"vAr" = (
+/turf/unsimulated/wall/other,
+/area/centcom/holding)
 "vAv" = (
 /obj/structure/table,
 /obj/item/weapon/stamp/denied{
@@ -61585,6 +62058,11 @@
 	icon_state = "carpet"
 	},
 /area/centcom/control)
+"xpx" = (
+/turf/simulated/floor/shuttle/vox{
+	icon_state = "dark"
+	},
+/area/centcom/holding)
 "xpA" = (
 /obj/machinery/light,
 /obj/machinery/newscaster{
@@ -62276,6 +62754,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/security/prison)
+"xFu" = (
+/obj/machinery/door/airlock/glass{
+	name = "Cawkpit";
+	normalspeed = 0;
+	req_access_txt = "140"
+	},
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
 "xFL" = (
 /obj/structure/table,
 /obj/item/weapon/book/manual/medical_cloning,
@@ -62405,6 +62891,14 @@
 "xHm" = (
 /turf/simulated/wall,
 /area/surface/jungle/zoned/prison_yard)
+"xHp" = (
+/obj/structure/shuttle/diag_wall/smooth{
+	dir = 8;
+	icon = 'icons/turf/voxprobe.dmi';
+	icon_state = "voxcorner4"
+	},
+/turf/space,
+/area/centcom/holding)
 "xHQ" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -318716,14 +319210,14 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
 ocC
 ocC
 ocC
@@ -319068,14 +319562,14 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+fkH
+tdA
+avE
+maC
+avE
+avE
+vAr
 ocC
 ocC
 ocC
@@ -319420,14 +319914,14 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+avE
+avE
+avE
+spS
+avE
+avE
+vAr
 ocC
 ocC
 ocC
@@ -319772,14 +320266,14 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+sQE
+fqS
+tRw
+rLI
+avE
+avE
+vAr
 ocC
 ocC
 ocC
@@ -320124,15 +320618,15 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+avE
+avE
+avE
+avE
+avE
+avE
+vAr
+vAr
 ocC
 ocC
 ocC
@@ -320476,15 +320970,15 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+mvd
+avE
+jtT
+jtT
+avE
+avE
+avE
+avE
+vAr
 ocC
 ocC
 ocC
@@ -320828,15 +321322,15 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+mvd
+avE
+iou
+iou
+oBO
+avE
+avE
+aYY
+vAr
 ocC
 ocC
 ocC
@@ -321180,15 +321674,15 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+mvd
+avE
+kkS
+bFC
+oBO
+avE
+avE
+blB
+vAr
 ocC
 ocC
 ocC
@@ -321532,15 +322026,15 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+mvd
+avE
+iou
+iou
+oBO
+avE
+avE
+vzI
+vAr
 ocC
 ocC
 ocC
@@ -321884,15 +322378,15 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+avE
+fBl
+fBl
+avE
+avE
+avE
+qdw
+vAr
 ocC
 ocC
 ocC
@@ -322236,26 +322730,26 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+avE
+avE
+avE
+avE
+avE
+avE
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
 ocC
 ocC
 ocC
@@ -322588,26 +323082,26 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+vAr
+vAr
+vAr
+vAr
+kfn
+kfn
+vAr
+gKh
+gKh
+vAr
+hZb
+rZV
+vAr
+hZb
+rZV
+vAr
+hZb
+rZV
+vAr
 ocC
 ocC
 ocC
@@ -322933,33 +323427,33 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+gKh
+gKh
+vAr
+xpx
+xpx
+vAr
+gKh
+gKh
+vAr
+rEr
+rEr
+vAr
+rEr
+rEr
+vAr
+rEr
+rEr
+vAr
 ocC
 ocC
 ocC
@@ -323285,33 +323779,33 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+hEG
+qqz
+hEG
+kOB
+hEG
+uHJ
+hEG
+vAr
+gKh
+gKh
+vAr
+xpx
+xpx
+vAr
+gKh
+gKh
+vAr
+mKo
+rEr
+vAr
+mKo
+rEr
+vAr
+mKo
+rEr
+vAr
 ocC
 ocC
 ocC
@@ -323637,33 +324131,33 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+kOB
+kOB
+kOB
+kOB
+kOB
+kOB
+kOB
+vAr
+vAr
+vAr
+vAr
+xpx
+xpx
+vAr
+vAr
+vAr
+vAr
+vAr
+dvl
+vAr
+vAr
+dvl
+vAr
+vAr
+dvl
+vAr
 ocC
 ocC
 ocC
@@ -323989,33 +324483,33 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+kOB
+kOB
+kOB
+kOB
+kOB
+kOB
+kOB
+mZk
+xpx
+xpx
+xpx
+xpx
+xpx
+xpx
+xpx
+xpx
+gIk
+rEr
+rEr
+rEr
+rEr
+rEr
+rEr
+rEr
+rEr
+vAr
 ocC
 ocC
 ocC
@@ -324341,33 +324835,33 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+hZu
+kOB
+kOB
+kOB
+kOB
+kOB
+kOB
+mZk
+xpx
+xpx
+xpx
+xpx
+xpx
+xpx
+xpx
+xpx
+gIk
+rEr
+rEr
+rEr
+rEr
+rEr
+rEr
+rEr
+rEr
+vAr
 ocC
 ocC
 ocC
@@ -324693,33 +325187,33 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+vAr
+sAg
+pZB
+pZB
+hMk
+pZB
+pZB
+vAr
+vAr
+vAr
+vAr
+xpx
+xpx
+vAr
+vAr
+vAr
+vAr
+vAr
+dvl
+vAr
+vAr
+dvl
+vAr
+vAr
+dvl
+vAr
 ocC
 ocC
 ocC
@@ -325045,33 +325539,33 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+vAr
+iwZ
+jrQ
+rVx
+unn
+jlw
+jlH
+vAr
+gKh
+gKh
+vAr
+xpx
+xpx
+vAr
+gKh
+gKh
+vAr
+mKo
+rEr
+vAr
+mKo
+rEr
+vAr
+mKo
+rEr
+vAr
 ocC
 ocC
 ocC
@@ -325397,33 +325891,33 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+sAg
+iwZ
+iwZ
+iwZ
+iwZ
+iwZ
+iwZ
+vAr
+gKh
+gKh
+vAr
+xpx
+xpx
+vAr
+gKh
+gKh
+vAr
+rEr
+rEr
+vAr
+rEr
+rEr
+vAr
+rEr
+rEr
+vAr
 ocC
 ocC
 ocC
@@ -325749,33 +326243,33 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+vAr
+nFW
+bzE
+nFW
+ojW
+qSI
+imY
+vAr
+gKh
+gKh
+vAr
+xpx
+xpx
+vAr
+gKh
+gKh
+vAr
+hZb
+rZV
+vAr
+hZb
+rZV
+vAr
+hZb
+rZV
+vAr
 ocC
 ocC
 ocC
@@ -326102,32 +326596,32 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+tkP
+tkP
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+iDk
+iDk
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
+vAr
 ocC
 ocC
 ocC
@@ -326456,26 +326950,26 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+vAr
+opq
+opq
+vAr
+gKh
+gKh
+gKh
+pek
+gKh
+gKh
+gKh
+vAr
 ocC
 ocC
 ocC
@@ -326808,26 +327302,26 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+gKh
+bcp
+bFn
+bFn
+bFn
+xHp
+gKh
+vAr
+opq
+opq
+vAr
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+vAr
 ocC
 ocC
 ocC
@@ -327160,26 +327654,26 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+gKh
+tKp
+lIS
+bMg
+fLH
+tKp
+gKh
+vAr
+opq
+opq
+vAr
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+vAr
 ocC
 ocC
 ocC
@@ -327512,26 +328006,26 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+gKh
+bFn
+poa
+voy
+poa
+bFn
+gKh
+mvd
+opq
+opq
+mvd
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+vAr
 ocC
 ocC
 ocC
@@ -327864,26 +328358,26 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+gKh
+tKp
+tKp
+xFu
+tKp
+tKp
+gKh
+mvd
+opq
+opq
+mvd
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+vAr
 ocC
 ocC
 ocC
@@ -328216,26 +328710,26 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+gKh
+tKp
+ncY
+poa
+fCf
+tKp
+gKh
+mvd
+opq
+opq
+mvd
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+vAr
 ocC
 ocC
 ocC
@@ -328568,26 +329062,26 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+gKh
+tKp
+iht
+poa
+fCf
+tKp
+vAr
+vAr
+opq
+opq
+vAr
+vAr
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+vAr
 ocC
 ocC
 ocC
@@ -328920,26 +329414,26 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+gKh
+tKp
+poa
+poa
+poa
+tKp
+qLH
+opq
+opq
+opq
+opq
+bIy
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+vAr
 ocC
 ocC
 ocC
@@ -329272,26 +329766,26 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+gKh
+tKp
+lJg
+lJg
+aly
+tKp
+vAr
+vAr
+opq
+opq
+vAr
+vAr
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+vAr
 ocC
 ocC
 ocC
@@ -329624,26 +330118,26 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+gKh
+tKp
+bnV
+bnV
+bnV
+tKp
+gKh
+mvd
+opq
+opq
+mvd
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+vAr
 ocC
 ocC
 ocC
@@ -329976,26 +330470,26 @@ ocC
 ocC
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+gKh
+tKp
+dQy
+dQy
+dQy
+tKp
+gKh
+vAr
+vAr
+vAr
+vAr
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+vAr
 ocC
 ocC
 ocC
@@ -330328,26 +330822,26 @@ ocC
 ocC
 ocC
 ocC
+vAr
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+vAr
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+gKh
+vAr
 ocC
 ocC
 ocC
@@ -330680,26 +331174,26 @@ ocC
 ocC
 ocC
 ocC
+vAr
+dFu
+dFu
+dFu
+dFu
+dFu
+dFu
+dFu
+vAr
 ocC
 ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
-ocC
+vAr
+dFu
+dFu
+dFu
+dFu
+dFu
+dFu
+dFu
+vAr
 ocC
 ocC
 ocC
@@ -342580,7 +343074,7 @@ sRu
 qDJ
 sRu
 jzG
-tkP
+sZN
 mYv
 sRu
 qDJ
