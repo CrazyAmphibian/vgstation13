@@ -2035,6 +2035,7 @@ var/global/list/adminbusteleportlocs = list()
 	name = "\improper Untamed Wilderness"
 	holomap_draw_override = HOLOMAP_DRAW_EMPTY
 	icon_state="jungle_wild"
+	always_unpowered=TRUE
 
 //to hide vaults on the main station z-level
 /area/surface/jungle/vault
@@ -2049,7 +2050,8 @@ var/global/list/adminbusteleportlocs = list()
 
 /area/surface/jungle/mining
 	name = "\proper Meteor Impact"
-	icon_state="jungle_fenced"	
+	icon_state="jungle_fenced"
+	always_unpowered=FALSE	
 
 /area/surface/jungle/mining/unexplored
 	icon_state="jungle_zone"
@@ -2059,14 +2061,23 @@ var/global/list/adminbusteleportlocs = list()
 	icon_state="jungle_fenced"
 	holomap_draw_override = HOLOMAP_DRAW_PATH
 	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
+	always_unpowered=FALSE
+
+/area/surface/jungle/fenced/trader
+	name= "\improper Vox Outpost"
+
+/area/surface/jungle/fenced/trader/solars
+	name= "\improper Vox Outpost Solar Array"
 	
 /area/surface/jungle/underground
 	name = "\improper Underground"
 	icon_state="jungle_wild"	
+	always_unpowered=TRUE
 
 /area/surface/jungle/underground/zoned
 	forbid_apc=FALSE
 	construction_zone=FALSE
+	always_unpowered=FALSE
 	icon_state="jungle_zone"
 
 /area/surface/jungle/underground/zoned/speakeasy
