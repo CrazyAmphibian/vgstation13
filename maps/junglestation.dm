@@ -57,6 +57,61 @@
 	daynight_z_lvls=list(1,4)
 	turfs_to_regrow=list()
 
+
+/datum/map/active/map_specific_init()
+	generate_mapvaults()
+	//replace all the asteroid turfs that are generated randomly with the tunnel generation (i don't even know where) with the proper tiles.
+	var/num_ass_replacments=0
+	for(var/area/surface/jungle/mining/unexplored/A in areas)
+		for(var/turf/unsimulated/floor/asteroid/T in A.contents)
+			new /turf/unsimulated/floor/jungle/path(T)
+			num_ass_replacments++
+	world.log << "replaced [num_ass_replacments] asteroid tiles to be jungle."
+	
+//stolen from snaxi
+/datum/map/active/generate_mapvaults()
+	var/list/list_of_vaults = list()
+	for(var/datum/map_element/junglevault/V in get_map_element_objects(/datum/map_element/junglevault))
+		for (var/i=0,i<V.count,i++)
+			list_of_vaults+=V
+		
+	var/list/areas_to_vault = list()
+	for(var/area/surface/jungle/roid/vaults/O in areas)
+		areas_to_vault += O //first, collect all the outer reaches
+	var/result
+	for(var/area/A in areas_to_vault)
+		var/size=0
+		for(var/turf/T in A.contents)
+			size++
+		
+		var/amount = ceil(size* 0.0004 )
+		message_admins("<span class='info'>[A] is [size] tiles large, meaning we generate [amount] vaults there.</span>")
+		world.log << "[A] is [size] tiles large, meaning we generate [amount] vaults there."
+		result = populate_area_with_vaults(A, list_of_vaults, amount, 1, filter_function=/proc/jungle_filter, overwrites=TRUE)
+		message_admins("<span class='info'>Loaded [result] vaults in [A].</span>")
+		world.log << "Loaded [result] vaults in [A]."
+	return TRUE
+
+/proc/jungle_filter(var/datum/map_element/E, var/turf/start_turf)
+	var/list/dimensions = E.get_dimensions()
+	var/result = check_surface_placement(start_turf,dimensions[1], dimensions[2])
+	return result
+
+/proc/check_surface_placement(var/turf/T,var/size_x,var/size_y,var/ignore_walls=0)
+	var/list/surroundings = list()
+
+	surroundings |= range(2, locate(T.x,T.y,T.z))
+	surroundings |= range(2, locate(T.x+size_x,T.y,T.z))
+	surroundings |= range(2, locate(T.x,T.y+size_y,T.z))
+	surroundings |= range(2, locate(T.x+size_x,T.y+size_y,T.z))
+
+	for(var/area/A in surroundings)
+		if(!istype(A,/area/surface/jungle/roid/vaults))
+			return 0
+
+	return 1
+
+
 /****************************
 **	Day and Night Lighting **
 **	See: daynightcycle.dm  **

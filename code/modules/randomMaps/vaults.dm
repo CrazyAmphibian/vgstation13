@@ -86,8 +86,6 @@
 
 	var/area/A = locate(/area/random_vault)
 	var/result = populate_area_with_vaults(A, amount = vault_number, population_density = POPULATION_SCARCE, filter_function=/proc/stay_in_vault_area)
-	
-	//result += populate_area_with_vaults(/area/surface/jungle/roid/vaults, amount = vault_number, population_density = POPULATION_SCARCE, filter_function=/proc/stay_in_jungle_vault_area, clear_area=TRUE)
 
 	for(var/turf/TURF in A) //Replace all of the temporary areas with space
 		TURF.set_area(space)
@@ -100,15 +98,6 @@
 	var/surprise_number = rand(1, min(list_of_surprises.len, max_secret_rooms))
 
 	var/result = populate_area_with_vaults(/area/mine/unexplored, list_of_surprises, surprise_number, filter_function=/proc/asteroid_can_be_placed, overwrites=TRUE)
-	
-	/* for some reason this still makes astroid turfs when we do not want those. ugh. fix later.
-	
-	if(locate(/area/surface/jungle/mining/unexplored))
-		result += populate_area_with_vaults(/area/surface/jungle/mining/unexplored, list_of_surprises, surprise_number, filter_function=/proc/asteroid_can_be_placed, overwrites=TRUE)
-		for(var/area/surface/jungle/mining/unexplored/A in areas)
-			for(var/turf/unsimulated/floor/asteroid/T in A.contents )
-				T.ChangeTurf(/turf/unsimulated/floor/jungle/path)
-	*/			
 
 	message_admins("<span class='info'>Loaded [result] out of [surprise_number] mining surprises.</span>")
 
