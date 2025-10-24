@@ -2098,6 +2098,9 @@ var/global/list/adminbusteleportlocs = list()
 /area/surface/jungle/underground/zoned/tcomms
 	name = "\proper Underground Relay"	
 
+/area/surface/jungle/underground/zoned/roid_tcomms
+	name = "\proper Underground Relay"	
+
 /area/surface/jungle/zoned
 	forbid_apc=FALSE
 	construction_zone=FALSE
@@ -2153,6 +2156,12 @@ var/global/list/adminbusteleportlocs = list()
 /area/surface/jungle/zoned/solars
 	name = "\improper Solar Array"
 	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
+
+/area/surface/jungle/zoned/bombrange
+	name = "\improper Bomb Range"
+	
+/area/surface/jungle/zoned/roid_prep
+	name = "\improper Mine Solar Array"	
 
 /area/surface/jungle/landing
 	name = "\improper Landing Area"
