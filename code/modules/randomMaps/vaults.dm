@@ -332,17 +332,8 @@
 		if(!istype(A, /area/random_vault))
 			return 0
 
-	return TRUE
+	return start_turf && (start_turf.z <= map.zDeepSpace)
 
-/proc/stay_in_jungle_vault_area(var/datum/map_element/E, var/turf/start_turf)
-	if(!E.width || !E.height) //If the map element doesn't have its width/height calculated yet, do it now
-		E.assign_dimensions()
-
-	for(var/area/A in block(locate(start_turf.x, start_turf.y, start_turf.z), locate(start_turf.x+E.width, start_turf.y+E.height, start_turf.z)))
-		if(!istype(A, /area/surface/jungle/roid/vaults))
-			return 0
-
-	return TRUE
 	
 //Proc that populates a single area with many vaults, randomly
 //A is the area OR a list of turfs where the placement happens
@@ -352,7 +343,7 @@
 //POPULATION_SCARCE is cheaper but may not do the job as well
 //NOTE: Vaults may be placed partially outside of the area. Only the lower left corner is guaranteed to be in the area
 
-/proc/populate_area_with_vaults(area/A, list/map_element_objects, var/amount = -1, population_density = POPULATION_DENSE, filter_function, var/overwrites = FALSE, var/clear_area=FALSE)
+/proc/populate_area_with_vaults(area/A, list/map_element_objects, var/amount = -1, population_density = POPULATION_DENSE, filter_function, var/overwrites = FALSE)
 	var/list/area_turfs
 
 	if(ispath(A, /area))
@@ -451,8 +442,7 @@
 			invalid_bounds[t1] = t2
 
 		var/timestart = world.timeofday
-		var/list/loaded_objects=ME.load(vault_x, vault_y, vault_z, vault_rotate, overwrites)
-		if(loaded_objects)
+		if(ME.load(vault_x, vault_y, vault_z, vault_rotate, overwrites))
 			var/timetook2load = world.timeofday - timestart
 			spawned.Add(ME)
 			log_debug("Loaded [ME.file_path] in [timetook2load / 10] seconds at ([vault_x],[vault_y],[vault_z])[(config.disable_vault_rotation || !ME.can_rotate) ? "" : ", rotated by [vault_rotate] degrees"].",FALSE)
@@ -461,16 +451,6 @@
 				message_admins("<span class='info'>[ME.file_path] was not rotated, can_rotate was set to FALSE.</span>")
 			else if(config.disable_vault_rotation)
 				message_admins("<span class='info'>[ME.file_path] was not rotated, DISABLE_VAULT_ROTATION enabled in config.</span>")
-			
-			if(clear_area && istype(loaded_objects,/list))
-				for(var/atom/E in loaded_objects)
-					for(var/obj/C in E.contents)
-						if(!(C in loaded_objects))
-							qdel(C)
-					for(var/mob/C in E.contents)
-						if(!(C in loaded_objects))
-							qdel(C)		
-			
 			successes++
 			if(amount > 0)	//Allowing overflow is intentional, ie: 1 point left and the last picked vault costs 4 points
 				if(istype(ME, /datum/map_element/vault))

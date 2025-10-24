@@ -37,16 +37,35 @@
 
 /datum/map_element/junglevault/campfire
 	file_path = "maps/randomvaults/jungle/campfire_s.dmm"
-	count=10
+	count=8
 
 /datum/map_element/junglevault/campfire_corpse
 	file_path = "maps/randomvaults/jungle/campfire_s_deadguy.dmm"
-	count=10
+	count=8
 
 /datum/map_element/junglevault/abandoned_hut
 	file_path = "maps/randomvaults/jungle/abandoned_hut.dmm"
-	count=5
+	count=4
 
 /datum/map_element/junglevault/logging
 	file_path = "maps/randomvaults/jungle/logging.dmm"
-	count=4
+	count=3
+
+/datum/map_element/junglevault/crashed_tractor
+	file_path = "maps/randomvaults/jungle/crashed_tractor.dmm"
+	count=3
+
+/datum/map_element/junglevault/bar
+	file_path = "maps/randomvaults/jungle/bar.dmm"
+	count=3
+
+/datum/map_element/junglevault/sunbath
+	file_path = "maps/randomvaults/jungle/sunbath.dmm"
+	can_rotate = FALSE
+	count=3
+	
+/datum/map_element/junglevault/deadhunter
+	file_path = "maps/randomvaults/jungle/slain_hunter.dmm"
+	count=3	
+	
+	

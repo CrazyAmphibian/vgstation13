@@ -4,10 +4,6 @@
 /area/surface/jungle)
 "b" = (
 /obj/effect/decal/warning_stripes{
-	icon_state = "warning";
-	tag = "icon-warning"
-	},
-/obj/effect/decal/warning_stripes{
 	icon_state = "loading_area";
 	tag = "icon-loading_area"
 	},
@@ -20,6 +16,23 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle)
+"f" = (
+/obj/structure/fence/cut/medium{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
+"g" = (
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
+"h" = (
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
+"k" = (
+/obj/structure/fence,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "l" = (
 /obj/structure/rack,
 /obj/item/weapon/grown/log/tree,
@@ -28,6 +41,10 @@
 /obj/item/weapon/grown/log/tree,
 /obj/item/weapon/grown/log/tree,
 /turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
+"m" = (
+/obj/structure/fence/cut/medium,
+/turf/unsimulated/floor/jungle/path,
 /area/surface/jungle)
 "o" = (
 /obj/effect/decal/warning_stripes{
@@ -38,22 +55,25 @@
 /area/surface/jungle)
 "s" = (
 /obj/structure/fence/corner,
-/obj/structure/sign/securearea{
-	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
-	name = "KEEP CLEAR: DOCKING AREA";
-	icon_state = "shuttle2"
-	},
 /turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
+"t" = (
+/obj/structure/fence/cut/large{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path,
 /area/surface/jungle)
 "w" = (
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
-"z" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "warning_corner";
-	tag = "icon-warning_corner"
+"x" = (
+/obj/structure/fence/cut/large{
+	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
+"z" = (
+/turf/unsimulated/floor/jungle/dirt,
 /area/surface/jungle)
 "B" = (
 /obj/item/ammo_casing/c38,
@@ -69,6 +89,10 @@
 	pixel_x = 6;
 	pixel_y = 7
 	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
+"C" = (
+/obj/structure/flora/ausbushes/reedbush,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "D" = (
@@ -108,11 +132,6 @@
 /obj/structure/fence/corner{
 	dir = 8
 	},
-/obj/structure/sign/securearea{
-	desc = "A warning sign which reads 'KEEP CLEAR OF DOCKING AREA'.";
-	name = "KEEP CLEAR: DOCKING AREA";
-	icon_state = "shuttle2"
-	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle)
 "I" = (
@@ -132,6 +151,10 @@
 	},
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle)
+"L" = (
+/obj/structure/flora/ausbushes/genericbush,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "M" = (
 /obj/structure/fence,
 /turf/unsimulated/floor/jungle/path_plated,
@@ -145,6 +168,14 @@
 	},
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
+"O" = (
+/obj/structure/fence/cut/medium,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
+"P" = (
+/obj/structure/flora/ausbushes/leafybush,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "R" = (
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle)
@@ -155,6 +186,12 @@
 	tag = "icon-warning_corner (NORTH)"
 	},
 /turf/unsimulated/floor/jungle/concrete,
+/area/surface/jungle)
+"T" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/unsimulated/floor/jungle/path,
 /area/surface/jungle)
 "U" = (
 /obj/effect/decal/warning_stripes{
@@ -190,35 +227,35 @@
 
 (1,1,1) = {"
 w
+P
 w
 w
-w
-w
-w
+P
+g
 H
+m
 M
+k
 M
-M
-M
-M
-M
+O
+k
 M
 H
 "}
 (2,1,1) = {"
-w
+P
 w
 I
 w
 w
-w
+g
 J
 z
+a
 X
 X
 X
-X
-X
+a
 U
 J
 "}
@@ -226,7 +263,7 @@ J
 w
 w
 w
-w
+C
 w
 l
 J
@@ -234,21 +271,21 @@ Z
 a
 a
 a
+z
 a
-a
-o
-J
+z
+x
 "}
 (4,1,1) = {"
 w
 w
-w
+g
 w
 w
 l
-J
-Z
+t
 a
+z
 a
 a
 a
@@ -257,7 +294,7 @@ o
 J
 "}
 (5,1,1) = {"
-w
+g
 w
 w
 Y
@@ -267,11 +304,11 @@ J
 Z
 a
 a
-a
+z
 a
 a
 o
-J
+T
 "}
 (6,1,1) = {"
 w
@@ -281,14 +318,14 @@ w
 w
 w
 J
-Z
+a
+z
 a
 a
 a
 a
 a
-o
-J
+x
 "}
 (7,1,1) = {"
 w
@@ -297,7 +334,7 @@ w
 I
 w
 B
-R
+h
 Z
 a
 a
@@ -310,14 +347,14 @@ J
 (8,1,1) = {"
 w
 w
-w
+C
 w
 w
 w
 R
 b
 a
-a
+z
 a
 a
 a
@@ -328,34 +365,34 @@ J
 w
 Y
 w
-w
+C
 w
 w
 D
-Z
+z
 a
 a
 a
 a
 a
 o
-J
+T
 "}
 (10,1,1) = {"
 w
+g
 w
 w
 w
-w
-w
-J
+L
+T
 Z
 a
 a
 a
 a
+z
 a
-o
 J
 "}
 (11,1,1) = {"
@@ -365,30 +402,30 @@ w
 w
 I
 G
-J
-Z
+f
+a
 a
 a
 a
 a
 a
 o
-J
+f
 "}
 (12,1,1) = {"
 w
 I
 w
-w
+g
 w
 N
 J
 d
+a
+z
+a
 K
-K
-K
-K
-K
+a
 S
 J
 "}
@@ -401,11 +438,11 @@ w
 w
 s
 M
+O
+k
 M
 M
-M
-M
-M
-M
+m
+k
 s
 "}

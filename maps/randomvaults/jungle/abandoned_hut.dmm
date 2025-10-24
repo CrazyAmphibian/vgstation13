@@ -2,6 +2,10 @@
 "a" = (
 /turf/simulated/wall/mineral/wood,
 /area/surface/jungle)
+"b" = (
+/obj/structure/flora/ausbushes/grassybush,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "c" = (
 /obj/structure/grille,
 /obj/structure/window{
@@ -13,7 +17,7 @@
 /obj/structure/window{
 	dir = 1
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/plating/deck,
 /area/surface/jungle)
 "d" = (
 /obj/structure/grille,
@@ -24,7 +28,7 @@
 	dir = 8
 	},
 /obj/structure/window,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/plating/deck,
 /area/surface/jungle)
 "f" = (
 /obj/structure/table/woodentable,
@@ -37,6 +41,10 @@
 	pixel_y = -1
 	},
 /turf/simulated/floor/wood,
+/area/surface/jungle)
+"i" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "j" = (
 /obj/structure/bed/chair/wood/normal,
@@ -54,7 +62,7 @@
 /obj/structure/window{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/plating/deck,
 /area/surface/jungle)
 "n" = (
 /obj/structure/grille,
@@ -65,7 +73,7 @@
 /obj/structure/window{
 	dir = 8
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/plating/deck,
 /area/surface/jungle)
 "o" = (
 /obj/structure/table/woodentable,
@@ -84,6 +92,10 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle)
+"q" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "r" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/under/color/prisoner,
@@ -98,6 +110,10 @@
 /obj/item/weapon/bedsheet/green,
 /obj/structure/curtain/open/bed,
 /turf/simulated/floor/wood,
+/area/surface/jungle)
+"w" = (
+/obj/structure/flora/ausbushes/genericbush,
+/turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "z" = (
 /obj/machinery/space_heater/campfire,
@@ -131,7 +147,7 @@
 /obj/structure/window{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/plating/deck,
 /area/surface/jungle)
 "P" = (
 /obj/structure/grille,
@@ -139,7 +155,7 @@
 /obj/structure/window{
 	dir = 1
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/plating/deck,
 /area/surface/jungle)
 "R" = (
 /obj/structure/table/woodentable,
@@ -172,17 +188,17 @@
 /obj/structure/window{
 	dir = 1
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/plating/deck,
 /area/surface/jungle)
 
 (1,1,1) = {"
-B
-B
+w
+w
 u
 B
-B
-B
-B
+b
+b
+b
 "}
 (2,1,1) = {"
 a
@@ -243,9 +259,9 @@ P
 F
 F
 a
+i
 B
-B
-B
+i
 "}
 (9,1,1) = {"
 O
@@ -261,7 +277,7 @@ a
 c
 d
 a
-B
+q
 B
 B
 "}
