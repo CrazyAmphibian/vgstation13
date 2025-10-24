@@ -5,8 +5,9 @@
 */
 /datum/map_element/junglevault
 	type_abbreviation = "JV"
+	can_rotate=TRUE
 	var/base_turf_type = /turf/unsimulated/floor/jungle/grass
-	var/count=0 //how many are added to the list to pick from.
+	var/count=0 //how many are added to the list to pick from. spawn weights, also how many are allowed to be spawned.
 
 /datum/map_element/junglevault/initialize(list/objects)
 	..(objects)
@@ -27,13 +28,25 @@
 /datum/map_element/junglevault/test
 	file_path = "maps/randomvaults/jungle/test.dmm"
 	can_rotate=FALSE
-	count=10
+	count=0
 /datum/map_element/junglevault/test/load(var/vault_x, var/vault_y, var/vault_z, var/vault_rotate, var/overwrites)
 	world.log << "test vault loaded at [vault_x], [vault_y], [vault_z]."
 	message_admins("test vault loaded at [vault_x], [vault_y], [vault_z].")
 	return ..()
 
 
+/datum/map_element/junglevault/campfire
+	file_path = "maps/randomvaults/jungle/campfire_s.dmm"
+	count=10
 
+/datum/map_element/junglevault/campfire_corpse
+	file_path = "maps/randomvaults/jungle/campfire_s_deadguy.dmm"
+	count=10
 
-	
+/datum/map_element/junglevault/abandoned_hut
+	file_path = "maps/randomvaults/jungle/abandoned_hut.dmm"
+	count=5
+
+/datum/map_element/junglevault/logging
+	file_path = "maps/randomvaults/jungle/logging.dmm"
+	count=4

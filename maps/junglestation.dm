@@ -76,20 +76,25 @@
 			list_of_vaults+=V
 		
 	var/list/areas_to_vault = list()
+	var/total_vault_slots=0
+	var/vaults_avalible=list_of_vaults.len
 	for(var/area/surface/jungle/roid/vaults/O in areas)
-		areas_to_vault += O //first, collect all the outer reaches
-	var/result
-	for(var/area/A in areas_to_vault)
 		var/size=0
-		for(var/turf/T in A.contents)
+		for(var/turf/T in O.contents)
 			size++
-		
 		var/amount = ceil(size* 0.0004 )
-		message_admins("<span class='info'>[A] is [size] tiles large, meaning we generate [amount] vaults there.</span>")
-		world.log << "[A] is [size] tiles large, meaning we generate [amount] vaults there."
-		result = populate_area_with_vaults(A, list_of_vaults, amount, 1, filter_function=/proc/jungle_filter, overwrites=TRUE)
-		message_admins("<span class='info'>Loaded [result] vaults in [A].</span>")
-		world.log << "Loaded [result] vaults in [A]."
+		areas_to_vault.len++ //because byond lists are retarded
+		areas_to_vault[areas_to_vault.len]=list(O,amount) //group list with amounts.
+		total_vault_slots+=amount
+		message_admins("<span class='info'>[O] is [size] tiles large, meaning we generate [amount] vaults there.</span>")
+		world.log << "[O] is [size] tiles large, meaning we generate [amount] vaults there."
+	
+	for(var/list/G in areas_to_vault)
+		var/area/A=G[1]
+		var/amount=ceil(G[2]*min(1.0,vaults_avalible/total_vault_slots)) //give vaults proportionally to the size of the zone compared to other zones.
+		var/placed = populate_area_with_vaults(A, list_of_vaults, amount, 1, filter_function=/proc/jungle_filter, overwrites=TRUE)
+		message_admins("<span class='info'>placed [placed] vaults (requested [G[2]]->[amount]) in [A]</span>")
+			
 	return TRUE
 
 /proc/jungle_filter(var/datum/map_element/E, var/turf/start_turf)
