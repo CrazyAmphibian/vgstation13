@@ -1,32 +1,109 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/simulated/wall/mineral/wood,
+/turf/unsimulated/floor/jungle/dirt,
 /area/surface/jungle)
-"b" = (
+"e" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/head/wizard/clown,
+/obj/item/clothing/suit/wizrobe/marisa,
+/turf/simulated/floor/wood,
+/area/surface/jungle)
+"f" = (
+/obj/structure/bed/chair/wood/normal{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle)
+"h" = (
+/turf/simulated/floor/wood,
+/area/surface/jungle)
+"j" = (
 /obj/structure/flora/tree/shitty,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
-"e" = (
-/mob/living/complex_animal/frog,
-/obj/structure/flora/ausbushes/lavendergrass,
+"k" = (
+/obj/structure/grille,
+/obj/structure/window{
+	dir = 4
+	},
+/obj/structure/window{
+	dir = 8
+	},
+/turf/simulated/floor/plating/deck,
+/area/surface/jungle)
+"l" = (
+/obj/effect/decal/cleanable/campfire,
+/obj/structure/reagent_dispensers/cauldron{
+	name = "Witch's cauldron"
+	},
+/turf/unsimulated/floor/jungle/dirt,
+/area/surface/jungle)
+"m" = (
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
-"f" = (
+"p" = (
 /mob/living/complex_animal/frog/poison,
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
-"g" = (
-/mob/living/complex_animal/frog/poison,
-/obj/structure/flora/ausbushes/sparsegrass,
+"q" = (
+/obj/structure/grille,
+/obj/structure/window{
+	dir = 4
+	},
+/obj/structure/window{
+	dir = 8
+	},
+/obj/structure/window,
+/turf/simulated/floor/plating/deck,
+/area/surface/jungle)
+"s" = (
+/obj/structure/flora/ausbushes/lavendergrass,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
-"h" = (
+"t" = (
+/turf/simulated/wall/mineral/wood,
+/area/surface/jungle)
+"y" = (
 /obj/structure/bed,
 /obj/item/weapon/bedsheet/purple,
 /turf/simulated/floor/wood,
 /area/surface/jungle)
-"j" = (
+"z" = (
+/obj/structure/grille,
+/obj/structure/window{
+	dir = 4
+	},
+/obj/structure/window{
+	dir = 8
+	},
+/obj/structure/window{
+	dir = 1
+	},
+/turf/simulated/floor/plating/deck,
+/area/surface/jungle)
+"B" = (
+/obj/structure/flora/ausbushes/sunnybush,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
+"D" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/reagent_containers/glass/mortar,
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass{
+	pixel_y = 7;
+	pixel_x = 2
+	},
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass{
+	pixel_y = 4;
+	pixel_x = -8
+	},
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass{
+	pixel_y = 8;
+	pixel_x = 11
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle)
+"J" = (
 /obj/structure/table/woodentable,
 /obj/item/potion/fullness,
 /obj/item/potion/paralysis{
@@ -39,39 +116,31 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle)
-"n" = (
+"L" = (
+/mob/living/complex_animal/frog,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
-"o" = (
+"M" = (
+/mob/living/complex_animal/frog,
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
+"N" = (
+/mob/living/complex_animal/frog/poison,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
+"O" = (
 /obj/machinery/door/mineral/wood{
 	name = "Wooden Door"
 	},
 /turf/simulated/floor/plating/deck,
 /area/surface/jungle)
-"t" = (
-/obj/structure/closet/cabinet,
-/turf/simulated/floor/wood,
-/area/surface/jungle)
-"y" = (
-/obj/structure/flora/ausbushes/sunnybush,
+"R" = (
+/obj/structure/flora/ausbushes/sparsegrass,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
-"E" = (
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
-"F" = (
-/obj/structure/grille,
-/obj/structure/window{
-	dir = 4
-	},
-/obj/structure/window{
-	dir = 8
-	},
-/obj/structure/window,
-/turf/simulated/floor/plating/deck,
-/area/surface/jungle)
-"H" = (
+"U" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/reagent_containers/food/snacks/grown/berries/jungle,
 /obj/item/weapon/reagent_containers/food/snacks/grown/berries/jungle{
@@ -90,216 +159,149 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle)
-"I" = (
+"V" = (
 /obj/structure/flora/jungle_berries,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
-"J" = (
-/obj/structure/table/woodentable,
-/obj/item/weapon/reagent_containers/glass/mortar,
-/obj/item/weapon/reagent_containers/food/drinks/drinkingglass{
-	pixel_y = 7;
-	pixel_x = 2
-	},
-/obj/item/weapon/reagent_containers/food/drinks/drinkingglass{
-	pixel_y = 4;
-	pixel_x = -8
-	},
-/obj/item/weapon/reagent_containers/food/drinks/drinkingglass{
-	pixel_y = 8;
-	pixel_x = 11
-	},
-/turf/simulated/floor/wood,
+"W" = (
+/mob/living/complex_animal/frog,
+/turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
-"K" = (
+"X" = (
 /mob/living/complex_animal/frog/poison,
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
-"L" = (
-/turf/simulated/floor/wood,
-/area/surface/jungle)
-"M" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
-"N" = (
-/obj/structure/grille,
-/obj/structure/window{
-	dir = 4
-	},
-/obj/structure/window{
-	dir = 8
-	},
-/turf/simulated/floor/plating/deck,
-/area/surface/jungle)
-"O" = (
-/mob/living/complex_animal/frog,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/floor/jungle/grass,
-/area/surface/jungle)
-"Q" = (
-/turf/unsimulated/floor/jungle/dirt,
-/area/surface/jungle)
-"R" = (
-/obj/structure/grille,
-/obj/structure/window{
-	dir = 4
-	},
-/obj/structure/window{
-	dir = 8
-	},
-/obj/structure/window{
-	dir = 1
-	},
-/turf/simulated/floor/plating/deck,
-/area/surface/jungle)
-"U" = (
-/obj/structure/bed/chair/wood/normal{
-	dir = 4
-	},
-/turf/simulated/floor/wood,
-/area/surface/jungle)
-"V" = (
-/obj/effect/decal/cleanable/campfire,
-/obj/structure/reagent_dispensers/cauldron{
-	name = "Witch's cauldron"
-	},
-/turf/unsimulated/floor/jungle/dirt,
-/area/surface/jungle)
-"Z" = (
-/mob/living/complex_animal/frog,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 
 (1,1,1) = {"
-n
-E
-n
-Z
-E
-g
-n
-E
-g
-E
+R
+m
+R
+W
+m
+X
+R
+m
+X
+m
 "}
 (2,1,1) = {"
-K
-I
-a
-a
-a
-a
-a
-O
-b
-K
+N
+V
+t
+t
+t
+t
+t
+L
+j
+N
 "}
 (3,1,1) = {"
-n
-I
-a
-h
-L
+R
+V
 t
-a
-E
-E
-n
+y
+h
+e
+t
+m
+m
+R
 "}
 (4,1,1) = {"
-M
-I
+s
+V
+t
+f
+h
+h
+O
 a
-U
-L
-L
-o
-Q
-M
-E
+s
+m
 "}
 (5,1,1) = {"
-M
-I
-a
+s
+V
+t
+D
+U
 J
-H
-j
+t
 a
-Q
-E
-Z
+m
+W
 "}
 (6,1,1) = {"
-Z
-I
+W
+V
+t
+z
+k
+q
+t
 a
-R
-N
-F
-a
-Q
-M
-E
+s
+m
 "}
 (7,1,1) = {"
-E
-b
-M
-M
-Q
-Q
-Q
-Q
-M
-E
+m
+j
+s
+s
+a
+a
+a
+a
+s
+m
 "}
 (8,1,1) = {"
-y
-E
-M
-Q
-V
-Q
-Q
-Q
-E
-y
+B
+m
+s
+a
+l
+a
+a
+a
+m
+B
 "}
 (9,1,1) = {"
-y
-E
-e
-E
-Q
-E
-Z
+B
+m
 M
-E
-Z
+m
+a
+m
+W
+s
+m
+W
 "}
 (10,1,1) = {"
-E
-f
-M
-M
-E
-M
-b
-E
-K
-y
+m
+p
+s
+s
+m
+s
+j
+m
+N
+B
 "}
 (11,1,1) = {"
-E
-M
-E
-y
-E
-E
-M
-E
-y
-y
+m
+s
+m
+B
+m
+m
+s
+m
+B
+B
 "}
