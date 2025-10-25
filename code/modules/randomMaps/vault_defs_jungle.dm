@@ -37,11 +37,11 @@
 
 /datum/map_element/junglevault/campfire
 	file_path = "maps/randomvaults/jungle/campfire_s.dmm"
-	count=8
+	count=6
 
 /datum/map_element/junglevault/campfire_corpse
 	file_path = "maps/randomvaults/jungle/campfire_s_deadguy.dmm"
-	count=8
+	count=6
 
 /datum/map_element/junglevault/abandoned_hut
 	file_path = "maps/randomvaults/jungle/abandoned_hut.dmm"

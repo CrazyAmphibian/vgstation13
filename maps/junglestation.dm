@@ -82,7 +82,7 @@
 		var/size=0
 		for(var/turf/T in O.contents)
 			size++
-		var/amount = ceil(size* 0.0004 )
+		var/amount = ceil(size* 0.0003 )
 		areas_to_vault.len++ //because byond lists are retarded
 		areas_to_vault[areas_to_vault.len]=list(O,amount) //group list with amounts.
 		total_vault_slots+=amount
@@ -105,15 +105,17 @@
 /proc/check_surface_placement(var/turf/T,var/size_x,var/size_y,var/ignore_walls=0)
 	var/list/surroundings = list()
 
-	surroundings |= range(2, locate(T.x,T.y,T.z))
-	surroundings |= range(2, locate(T.x+size_x,T.y,T.z))
-	surroundings |= range(2, locate(T.x,T.y+size_y,T.z))
-	surroundings |= range(2, locate(T.x+size_x,T.y+size_y,T.z))
+	surroundings |= range(7, locate(T.x,T.y,T.z))
+	surroundings |= range(7, locate(T.x+size_x,T.y,T.z))
+	surroundings |= range(7, locate(T.x,T.y+size_y,T.z))
+	surroundings |= range(7, locate(T.x+size_x,T.y+size_y,T.z))
 
 	for(var/area/A in surroundings)
 		if(!istype(A,/area/surface/jungle/roid/vaults))
 			return 0
-
+	for(var/turf/S in surroundings) //avoid nearby locations.
+		if(S.type!=/turf/unsimulated/floor/jungle/grass)
+			return 0
 	return 1
 
 
