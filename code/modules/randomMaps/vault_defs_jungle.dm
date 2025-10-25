@@ -85,4 +85,7 @@
 /datum/map_element/junglevault/witch
 	file_path = "maps/randomvaults/jungle/alchemistwitch.dmm"
 	count=1	
-	
+
+/datum/map_element/junglevault/taxidermy
+	file_path = "maps/randomvaults/jungle/taxi.dmm"
+	count=2	
