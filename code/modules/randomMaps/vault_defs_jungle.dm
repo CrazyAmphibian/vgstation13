@@ -81,3 +81,8 @@
 	file_path = "maps/randomvaults/jungle/pond.dmm"
 	can_rotate = FALSE
 	count=4		
+	
+/datum/map_element/junglevault/witch
+	file_path = "maps/randomvaults/jungle/alchemistwitch.dmm"
+	count=1	
+	

@@ -70,7 +70,7 @@
 	
 //partially stolen from snaxi
 /datum/map/active/generate_mapvaults()
-	var/list/list_unique_vaults = list() //we do this to gaurentee that all vaults will try to spawn at least once
+	var/list/list_unique_vaults = list() //we do this to guarantee that all vaults will try to spawn at least once
 	for(var/datum/map_element/junglevault/V in get_map_element_objects(/datum/map_element/junglevault))
 		if(V.count)
 			list_unique_vaults+=V
@@ -82,6 +82,7 @@
 	
 	var/area/surface/jungle/roid/vaults/VAULT_AREA=locate(/area/surface/jungle/roid/vaults)
 	if(!VAULT_AREA)
+		message_admins("<span class='info'>Unable to find a suitable area to spawn vaults in, skipping surface vault generation!</span>")
 		return 0
 	
 	var/size=0
