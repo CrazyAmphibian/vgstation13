@@ -68,4 +68,13 @@
 	file_path = "maps/randomvaults/jungle/slain_hunter.dmm"
 	count=3	
 	
+/datum/map_element/junglevault/zoo
+	file_path = "maps/randomvaults/jungle/zoo.dmm"
+	can_rotate = FALSE
+	count=1		
+	
+/datum/map_element/junglevault/druid
+	file_path = "maps/randomvaults/jungle/druids_shack.dmm"
+	count=1		
+
 	
