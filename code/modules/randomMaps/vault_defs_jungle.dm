@@ -77,4 +77,7 @@
 	file_path = "maps/randomvaults/jungle/druids_shack.dmm"
 	count=1		
 
-	
+/datum/map_element/junglevault/pond
+	file_path = "maps/randomvaults/jungle/pond.dmm"
+	can_rotate = FALSE
+	count=4		

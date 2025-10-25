@@ -68,34 +68,40 @@
 			num_ass_replacments++
 	world.log << "replaced [num_ass_replacments] asteroid tiles to be jungle."
 	
-//stolen from snaxi
+//partially stolen from snaxi
 /datum/map/active/generate_mapvaults()
-	var/list/list_of_vaults = list()
+	var/list/list_unique_vaults = list() //we do this to gaurentee that all vaults will try to spawn at least once
 	for(var/datum/map_element/junglevault/V in get_map_element_objects(/datum/map_element/junglevault))
-		for (var/i=0,i<V.count,i++)
-			list_of_vaults+=V
-		
-	var/list/areas_to_vault = list()
-	var/total_vault_slots=0
-	var/vaults_avalible=list_of_vaults.len
-	for(var/area/surface/jungle/roid/vaults/O in areas)
-		var/size=0
-		for(var/turf/T in O.contents)
-			size++
-		var/amount = ceil(size* 0.0003 )
-		areas_to_vault.len++ //because byond lists are retarded
-		areas_to_vault[areas_to_vault.len]=list(O,amount) //group list with amounts.
-		total_vault_slots+=amount
-		message_admins("<span class='info'>[O] is [size] tiles large, meaning we generate [amount] vaults there.</span>")
-		world.log << "[O] is [size] tiles large, meaning we generate [amount] vaults there."
+		if(V.count)
+			list_unique_vaults+=V
 	
-	for(var/list/G in areas_to_vault)
-		var/area/A=G[1]
-		var/amount=ceil(G[2]*min(1.0,vaults_avalible/total_vault_slots)) //give vaults proportionally to the size of the zone compared to other zones.
-		var/placed = populate_area_with_vaults(A, list_of_vaults, amount, 1, filter_function=/proc/jungle_filter, overwrites=TRUE)
-		message_admins("<span class='info'>placed [placed] vaults (requested [G[2]]->[amount]) in [A]</span>")
+	var/list/list_of_vaults = list() //then we fill in any remaining space with additional random vaults.
+	for(var/datum/map_element/junglevault/V in get_map_element_objects(/datum/map_element/junglevault))
+		for (var/i=1,i<V.count,i++)
+			list_of_vaults+=V
+	
+	var/area/surface/jungle/roid/vaults/VAULT_AREA=locate(/area/surface/jungle/roid/vaults)
+	if(!VAULT_AREA)
+		return 0
+	
+	var/size=0
+	for(var/turf/T in VAULT_AREA.contents)
+		size++
+	var/total_vault_slots = ceil(size* 0.00035 )
+	var/vaults_avalible=list_of_vaults.len
+	var/vaults_unique=list_unique_vaults.len
+	
+	message_admins("<span class='info'>[VAULT_AREA] is [size] tiles large, meaning we generate [total_vault_slots] vaults there.</span>")
+	world.log << "[VAULT_AREA] is [size] tiles large, meaning we generate [total_vault_slots] vaults there."
+	
+	var/adjusted_amount=min(total_vault_slots,vaults_unique)
+	var/placed_fixed = populate_area_with_vaults(VAULT_AREA, list_unique_vaults, adjusted_amount, 1, filter_function=/proc/jungle_filter, overwrites=TRUE)
+	
+	var/adjusted_amount_rng=min(total_vault_slots-placed_fixed,vaults_avalible)
+	var/placed_rand = populate_area_with_vaults(VAULT_AREA, list_of_vaults, adjusted_amount_rng, 1, filter_function=/proc/jungle_filter, overwrites=TRUE)
+	message_admins("<span class='info'>placed [placed_fixed+placed_rand] vaults (requested [total_vault_slots]->[adjusted_amount_rng+adjusted_amount]) in [VAULT_AREA]</span>")
 			
-	return TRUE
+	return placed_fixed+placed_rand
 
 /proc/jungle_filter(var/datum/map_element/E, var/turf/start_turf)
 	var/list/dimensions = E.get_dimensions()
