@@ -7,7 +7,9 @@
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "h" = (
-/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood{
+	color = "#772222"
+	},
 /obj/item/weapon/gun/projectile/hecate/hunting,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
@@ -28,16 +30,22 @@
 /obj/item/clothing/head/bearpelt/brown/real{
 	pixel_y = 14
 	},
-/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood{
+	color = "#772222"
+	},
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "j" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood{
+	color = "#772222"
+	},
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "l" = (
-/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood{
+	color = "#772222"
+	},
 /obj/item/ammo_casing/c38,
 /obj/item/ammo_casing/c38{
 	pixel_x = 6;
@@ -55,7 +63,9 @@
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "t" = (
-/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood{
+	color = "#772222"
+	},
 /obj/item/ammo_casing/c38{
 	pixel_x = 7;
 	pixel_y = -5
@@ -79,13 +89,21 @@
 /obj/effect/decal/cleanable/blood,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
+"C" = (
+/obj/effect/decal/cleanable/blood{
+	color = "#772222"
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "P" = (
 /obj/structure/flora/ausbushes/palebush,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "R" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood{
+	color = "#772222"
+	},
 /obj/item/ammo_casing/c38{
 	pixel_x = -10;
 	pixel_y = 6
@@ -121,7 +139,7 @@ P
 a
 "}
 (3,1,1) = {"
-x
+C
 i
 t
 h

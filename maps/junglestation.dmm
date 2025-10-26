@@ -30557,7 +30557,7 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "lFE" = (
-/obj/item/weapon/storage/box/fissionsupply_controller,
+/obj/machinery/fissioncontroller,
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "darkpurplefull";
@@ -57776,7 +57776,9 @@
 /area/research_outpost/gearstore)
 "vPj" = (
 /obj/effect/landmark/corpse/assistant,
-/obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/decal/cleanable/blood/gibs{
+	color = "#772222"
+	},
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "vPt" = (

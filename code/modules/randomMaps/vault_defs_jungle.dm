@@ -89,3 +89,11 @@
 /datum/map_element/junglevault/taxidermy
 	file_path = "maps/randomvaults/jungle/taxi.dmm"
 	count=2	
+	
+/datum/map_element/junglevault/drunkard
+	file_path = "maps/randomvaults/jungle/wasted.dmm"
+	count=4
+	
+/datum/map_element/junglevault/podbaby
+	file_path = "maps/randomvaults/jungle/podbaby.dmm"
+	count=3
