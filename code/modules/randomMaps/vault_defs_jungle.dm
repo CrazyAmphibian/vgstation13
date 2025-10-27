@@ -100,4 +100,5 @@
 
 /datum/map_element/junglevault/j5a
 	file_path = "maps/randomvaults/jungle/cheater.dmm"
+	can_rotate = FALSE
 	count=2
