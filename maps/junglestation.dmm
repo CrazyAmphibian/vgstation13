@@ -7688,6 +7688,15 @@
 	icon_state = "red"
 	},
 /area/security/range)
+"cNF" = (
+/obj/structure/bed/chair/folding{
+	dir = 8
+	},
+/obj/effect/landmark/start{
+	name = "Assistant"
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/zoned/outdoor_bar)
 "cNG" = (
 /obj/item/weapon/reagent_containers/pan{
 	pixel_y = -10
@@ -12832,6 +12841,12 @@
 /obj/item/device/multitool,
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/zoned/solars)
+"eIj" = (
+/obj/structure/sign/poster{
+	icon_state = "vgposter2"
+	},
+/turf/unsimulated/mineral/jungle_underground/crate_loot,
+/area/surface/jungle/underground/zoned/ghetto_research)
 "eIn" = (
 /obj/structure/closet/secure_closet/RD,
 /obj/item/clothing/accessory/medal/nobel_science,
@@ -21784,9 +21799,7 @@
 	},
 /area/surface/jungle/zoned/storage_shed)
 "iht" = (
-/obj/structure/bed/chair/folding{
-	dir = 4
-	},
+/obj/structure/bed/chair/folding,
 /turf/simulated/floor/shuttle/vox,
 /area/centcom/holding)
 "ihY" = (
@@ -26693,8 +26706,11 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters)
 "jZP" = (
-/turf/unsimulated/floor/jungle/grass,
-/area/shuttle/escape_pod2)
+/obj/structure/bed/chair/folding{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/zoned/outdoor_bar)
 "jZS" = (
 /obj/structure/table,
 /obj/item/tool/weldingtool,
@@ -34840,9 +34856,7 @@
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
 "ncY" = (
-/obj/structure/bed/chair/folding{
-	dir = 4
-	},
+/obj/structure/bed/chair/folding,
 /obj/effect/glowshroom/single,
 /turf/simulated/floor/shuttle/vox,
 /area/centcom/holding)
@@ -49278,6 +49292,10 @@
 	icon_state = "cult"
 	},
 /area/lawoffice)
+"sBd" = (
+/obj/structure/bed/chair/folding,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/fenced)
 "sBf" = (
 /obj/structure/closet/secure_closet{
 	anchored = 1;
@@ -109654,7 +109672,7 @@ rki
 sfK
 mUo
 xor
-fPZ
+sBd
 jgK
 xor
 xor
@@ -110328,7 +110346,7 @@ lIK
 lIK
 lIK
 lIK
-jZP
+lIK
 lIK
 lIK
 iRw
@@ -119153,10 +119171,10 @@ xor
 xor
 xor
 xor
-fPZ
+sBd
 sTG
 hcu
-fPZ
+sBd
 sTG
 hcu
 xor
@@ -119505,10 +119523,10 @@ xor
 xor
 xor
 xor
-fPZ
+sBd
 sTG
 hcu
-fPZ
+sBd
 sTG
 hcu
 xor
@@ -119857,10 +119875,10 @@ xor
 xor
 xor
 xor
-fPZ
+sBd
 sTG
 hcu
-fPZ
+sBd
 sTG
 hcu
 xor
@@ -124093,13 +124111,13 @@ wld
 upa
 eJs
 edD
-bpp
-bpp
-gZQ
-gZQ
-gZQ
-bpp
-bpp
+jZP
+jZP
+cNF
+cNF
+cNF
+jZP
+jZP
 edD
 edD
 edD
@@ -124445,13 +124463,13 @@ jaT
 upa
 eJs
 edD
-bpp
-bpp
-gZQ
-gZQ
-gZQ
-bpp
-bpp
+jZP
+jZP
+cNF
+cNF
+cNF
+jZP
+jZP
 edD
 edD
 edD
@@ -127965,9 +127983,9 @@ wDw
 mmb
 eJs
 edD
-bpp
-bpp
-bpp
+jZP
+jZP
+jZP
 edD
 hrq
 ocg
@@ -130077,9 +130095,9 @@ ppa
 mQa
 fHE
 edD
-gZQ
-gZQ
-gZQ
+cNF
+cNF
+cNF
 edD
 edD
 nFZ
@@ -271905,7 +271923,7 @@ xJG
 xJG
 xJG
 xJG
-jWN
+eIj
 bxo
 fSp
 lvC
