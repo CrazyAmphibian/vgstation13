@@ -97,3 +97,7 @@
 /datum/map_element/junglevault/podbaby
 	file_path = "maps/randomvaults/jungle/podbaby.dmm"
 	count=3
+
+/datum/map_element/junglevault/j5a
+	file_path = "maps/randomvaults/jungle/cheater.dmm"
+	count=2
