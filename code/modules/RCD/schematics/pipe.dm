@@ -42,8 +42,7 @@
 
 
 /datum/rcd_schematic/decon_pipes/send_list_assets(var/client/client)
-	register_asset("RPD_ICON_[name].png", new/icon('icons/effects/condecon.dmi', "decon" ))
-	send_asset(client, "RPD_ICON_[name].png")
+	client << browse_rsc(icon('icons/effects/condecon.dmi', "decon" ),"RPD_ICON_[name].png")
 	list_icon="RPD_ICON_[name].png"
 
 /datum/rcd_schematic/paint_pipes
@@ -175,8 +174,7 @@
 	return 1
 
 /datum/rcd_schematic/paint_pipes/send_list_assets(var/client/client)
-	register_asset("RPD_ICON_[name].png", new/icon('icons/obj/painting_items.dmi', "paint_roller" ))
-	send_asset(client, "RPD_ICON_[name].png")
+	client << browse_rsc(icon('icons/obj/painting_items.dmi', "paint_roller" ),"RPD_ICON_[name].png")
 	list_icon="RPD_ICON_[name].png"
 
 //METERS AND SENSORS.
@@ -200,8 +198,7 @@
 
 
 /datum/rcd_schematic/gsensor/send_list_assets(var/client/client)
-	register_asset("RPD_ICON_[name].png", new/icon('icons/obj/stationobjs.dmi', "gsensor0" ))
-	send_asset(client, "RPD_ICON_[name].png")
+	client << browse_rsc(icon('icons/obj/stationobjs.dmi', "gsensor0" ),"RPD_ICON_[name].png")
 	list_icon="RPD_ICON_[name].png"
 
 
@@ -224,8 +221,7 @@
 
 
 /datum/rcd_schematic/pmeter/send_list_assets(var/client/client)
-	register_asset("RPD_ICON_[name].png", new/icon('icons/obj/pipe-item.dmi', "meter" ))
-	send_asset(client, "RPD_ICON_[name].png")
+	client << browse_rsc(icon('icons/obj/pipe-item.dmi', "meter" ),"RPD_ICON_[name].png")
 	list_icon="RPD_ICON_[name].png"
 
 //ACTUAL PIPES.
@@ -253,12 +249,6 @@
 		return NORTHEAST
 
 	return NORTH
-
-/datum/rcd_schematic/pipe/register_assets()
-	var/list/dir_list = get_dirs()
-
-	for(var/dir in dir_list)
-		register_icon(dir)
 
 /datum/rcd_schematic/pipe/send_assets(var/client/client)
 	var/list/dir_list = get_dirs()
@@ -295,11 +285,8 @@
 		else
 			. = list()
 
-/datum/rcd_schematic/pipe/proc/register_icon(var/dir)
-	register_asset("RPD_[pipe_id]_[dir].png", new/icon('icons/obj/pipe-item.dmi', pipeID2State[pipe_id + 1], dir))
-
 /datum/rcd_schematic/pipe/proc/send_icon(var/client/client, var/dir)
-	send_asset(client, "RPD_[pipe_id]_[dir].png")
+	client << browse_rsc(icon('icons/obj/pipe-item.dmi', pipeID2State[pipe_id + 1], dir) ,"RPD_[pipe_id]_[dir].png")
 
 /datum/rcd_schematic/pipe/get_HTML()
 	. += "<h4>Directions & layers</h4>"
@@ -513,8 +500,7 @@
 	var/list/dirs=get_dirs()
 	if(!dirs || dirs.len==0)
 		return ..() //if there's no dirs, we can't really display that, now can we?
-	register_asset("RPD_ICON_[pipe_id].png", new/icon('icons/obj/pipe-item.dmi', pipeID2State[pipe_id + 1], dirs[2]))
-	send_asset(client, "RPD_ICON_[pipe_id].png") // [pipe_id]
+	client << browse_rsc(icon('icons/obj/pipe-item.dmi', pipeID2State[pipe_id + 1], dirs[2]),"RPD_ICON_[pipe_id].png")
 	list_icon="RPD_ICON_[pipe_id].png"
 
 //Disposal piping.
@@ -530,16 +516,11 @@
 	var/list/dirs=get_dirs()
 	if(!dirs || dirs.len==0)
 		return ..()
-	register_asset("RPD_ICON_D_[pipe_id].png", new/icon('icons/obj/pipes/disposal.dmi', disposalpipeID2State[pipe_id + 1], dirs[2]))
-	send_asset(client, "RPD_ICON_D_[pipe_id].png")
+	client << browse_rsc(icon('icons/obj/pipes/disposal.dmi', disposalpipeID2State[pipe_id + 1], dirs[2]),"RPD_ICON_D_[pipe_id].png")
 	list_icon="RPD_ICON_D_[pipe_id].png"
 
-
-/datum/rcd_schematic/pipe/disposal/register_icon(var/dir)
-	register_asset("RPD_D_[pipe_id]_[dir].png", new/icon('icons/obj/pipes/disposal.dmi', disposalpipeID2State[pipe_id + 1], dir))
-
 /datum/rcd_schematic/pipe/disposal/send_icon(var/client/client, var/dir)
-	send_asset(client, "RPD_D_[pipe_id]_[dir].png")
+	client << browse_rsc(icon('icons/obj/pipes/disposal.dmi', disposalpipeID2State[pipe_id + 1], dir), "RPD_D_[pipe_id]_[dir].png")
 
 /datum/rcd_schematic/pipe/disposal/render_dir_image(var/dir, var/title)
 	var/selected = ""
@@ -686,18 +667,14 @@ var/global/list/disposalpipeID2State = list(
 	var/list/dirs=get_dirs()
 	if(!dirs || dirs.len==0)
 		return ..()
-	register_asset("RPD_ICON_[pipe_id].png", new/icon('icons/obj/atmospherics/pipe_adapter.dmi', "adapter_5", dirs[2]))
-	send_asset(client, "RPD_ICON_[pipe_id].png")
+	client << browse_rsc(icon('icons/obj/atmospherics/pipe_adapter.dmi', "adapter_5", dirs[2]),"RPD_ICON_[pipe_id].png")
 	list_icon="RPD_ICON_[pipe_id].png"
 
-/datum/rcd_schematic/pipe/layer_adapter/register_icon(var/dir)
+/datum/rcd_schematic/pipe/layer_adapter/send_icon(var/client/client, var/dir)
 	for(var/layer = PIPING_LAYER_MIN to PIPING_LAYER_MAX)
 		var/icon/I = new/icon('icons/obj/atmospherics/pipe_adapter.dmi', "adapter_[layer]", dir)
 		I.Blend(PIPE_COLOR_GREY, ICON_MULTIPLY)
-		register_asset("RPD_[pipe_id]_[dir]_[layer].png", I)
-
-/datum/rcd_schematic/pipe/layer_adapter/send_icon(var/client/client, var/dir)
-	send_asset(client, "RPD_[pipe_id]_[dir]_[layer].png")
+		client << browse_rsc(I, "RPD_[pipe_id]_[dir]_[layer].png")
 
 
 /datum/rcd_schematic/pipe/layer_adapter/render_dir_image(var/dir, var/title)
@@ -920,8 +897,7 @@ var/global/list/disposalpipeID2State = list(
 	pipe_type	= PIPE_NONE //Will disable the icon.
 
 /datum/rcd_schematic/pipe/disposal/bin/send_list_assets(var/client/client)
-	register_asset("RPD_ICON_D_[pipe_id].png", new/icon('icons/obj/pipes/disposal.dmi', "condisposal"))
-	send_asset(client, "RPD_ICON_D_[pipe_id].png")
+	client << browse_rsc(icon('icons/obj/pipes/disposal.dmi', "condisposal"),"RPD_ICON_D_[pipe_id].png")
 	list_icon="RPD_ICON_D_[pipe_id].png"
 
 /datum/rcd_schematic/pipe/disposal/outlet

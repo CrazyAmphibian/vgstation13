@@ -104,13 +104,13 @@
 	modifiers -= list("alt", "shift", "ctrl")
 
 /obj/item/device/rcd/rpd/attack_self(var/mob/user)
-	..()
 	for(var/cat in schematics)
 		var/list/L = schematics[cat]
 		for(var/datum/rcd_schematic/C in L)
 			for(var/client/client in interface.clients)
+				C.send_assets(client)
 				C.send_list_assets(client)
-	
+	..()
 
 /obj/item/device/rcd/rpd/rebuild_ui()
 	var/dat = ""
