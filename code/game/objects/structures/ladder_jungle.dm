@@ -14,6 +14,10 @@
 		return
 	if(!up && !down)
 		return
+	if(!(user.Adjacent(over_object) && over_object.Adjacent(user) && src.Adjacent(user) && user.Adjacent(src) ))
+		return
+	if(!(istype(user,/mob/living/carbon) || istype(user,/mob/living/silicon/robot) ))
+		return
 	var/obj/structure/ladder/jungle_tunnel/destination = up || down
 	var/timetodragin = 0
 	if(istype(over_object,/mob))
@@ -21,6 +25,9 @@
 	if(istype(over_object,/obj))
 		timetodragin = 0.5 SECONDS
 		var/obj/O = over_object
+		if(O.anchored)
+			to_chat(user, "<span class='warning'>You're unable to move \The [O]!</span>")
+			return
 		if(O.density)
 			timetodragin = 3 SECONDS	
 	if(!timetodragin)
