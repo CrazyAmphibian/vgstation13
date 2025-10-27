@@ -2051,7 +2051,7 @@ var/global/list/adminbusteleportlocs = list()
 /area/surface/jungle/mining
 	name = "\proper Meteor Impact"
 	icon_state="jungle_fenced"
-	always_unpowered=FALSE	
+	always_unpowered=FALSE
 
 /area/surface/jungle/mining/unexplored
 	icon_state="jungle_zone"
@@ -2068,10 +2068,10 @@ var/global/list/adminbusteleportlocs = list()
 
 /area/surface/jungle/fenced/trader/solars
 	name= "\improper Vox Outpost Solar Array"
-	
+
 /area/surface/jungle/underground
 	name = "\improper Underground"
-	icon_state="jungle_wild"	
+	icon_state="jungle_wild"
 	always_unpowered=TRUE
 
 /area/surface/jungle/underground/zoned
@@ -2087,19 +2087,22 @@ var/global/list/adminbusteleportlocs = list()
 	name = "\improper Ghetto Surgery"
 
 /area/surface/jungle/underground/zoned/ghettomining
-	name = "\improper Refinery"	
+	name = "\improper Refinery"
 
 /area/surface/jungle/underground/zoned/casino
-	name = "\improper Casino"	
+	name = "\improper Casino"
 
 /area/surface/jungle/underground/zoned/ghetto_morgue
 	name = "\improper Crypt"
-	
+
 /area/surface/jungle/underground/zoned/tcomms
-	name = "\proper Underground Relay"	
+	name = "\proper Underground Relay"
 
 /area/surface/jungle/underground/zoned/roid_tcomms
-	name = "\proper Underground Relay"	
+	name = "\proper Underground Relay"
+
+/area/surface/jungle/underground/zoned/ghetto_research
+	name = "\improper Ghetto Research"
 
 /area/surface/jungle/zoned
 	forbid_apc=FALSE
@@ -2136,7 +2139,7 @@ var/global/list/adminbusteleportlocs = list()
 	name = "\improper Bazaar"
 
 /area/surface/jungle/zoned/art_zone
-	name = "\improper Portrait Zone"	
+	name = "\improper Portrait Zone"
 
 /area/surface/jungle/zoned/dump
 	name = "\improper Dump"
@@ -2159,9 +2162,9 @@ var/global/list/adminbusteleportlocs = list()
 
 /area/surface/jungle/zoned/bombrange
 	name = "\improper Bomb Range"
-	
+
 /area/surface/jungle/zoned/roid_prep
-	name = "\improper Mine Solar Array"	
+	name = "\improper Mine Solar Array"
 
 /area/surface/jungle/landing
 	name = "\improper Landing Area"
