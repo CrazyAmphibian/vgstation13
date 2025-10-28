@@ -620,7 +620,6 @@
 /area/surface/jungle/mining)
 "amU" = (
 /obj/structure/table,
-/obj/item/weapon/reagent_containers/food/snacks/snackbar/nutriment,
 /obj/item/weapon/soap,
 /obj/item/weapon/reagent_containers/glass/beaker{
 	pixel_x = 5
@@ -1872,6 +1871,15 @@
 	icon_state = "whitepurple"
 	},
 /area/science/hallway)
+"aKE" = (
+/obj/effect/landmark/start{
+	name = "Bartender"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "aLm" = (
 /turf/unsimulated/floor{
 	dir = 8;
@@ -2390,16 +2398,9 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/landing)
 "aUB" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/obj/item/weapon/stool/bar,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "aUE" = (
 /obj/structure/fence{
 	dir = 4
@@ -2548,16 +2549,9 @@
 	},
 /area/medical/genetics)
 "aYx" = (
-/obj/structure/table,
-/obj/machinery/reagentgrinder{
-	pixel_x = 3;
-	pixel_y = 4
-	},
-/obj/item/weapon/kitchen/utensil/knife/large{
-	pixel_x = -8
-	},
+/obj/machinery/disposal/compactor,
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "aYH" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -3555,6 +3549,14 @@
 /obj/machinery/status_display,
 /turf/unsimulated/wall,
 /area/centcom/suppy)
+"brn" = (
+/obj/machinery/door/window{
+	base_state = "right";
+	name = "Bar";
+	req_one_access_txt = "25;28"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/crew_quarters/bar)
 "brs" = (
 /obj/effect/decal/warning_stripes{
 	dir = 8;
@@ -5539,7 +5541,7 @@
 	},
 /obj/machinery/cooking/icemachine,
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "cbp" = (
 /obj/machinery/computer/secure_data/detective_computer,
 /turf/simulated/floor/engine,
@@ -5614,6 +5616,13 @@
 	name = "plating"
 	},
 /area/centcom/suppy)
+"ccj" = (
+/obj/machinery/door/airlock{
+	req_one_access_txt = "25;28";
+	name = "Bar Storage"
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "ccn" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -5835,13 +5844,11 @@
 /area/surface/jungle/zoned/sme_outside)
 "chk" = (
 /obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
+/obj/structure/table,
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "chl" = (
 /obj/machinery/light{
 	dir = 4
@@ -7688,15 +7695,6 @@
 	icon_state = "red"
 	},
 /area/security/range)
-"cNF" = (
-/obj/structure/bed/chair/folding{
-	dir = 8
-	},
-/obj/effect/landmark/start{
-	name = "Assistant"
-	},
-/turf/unsimulated/floor/jungle/path,
-/area/surface/jungle/zoned/outdoor_bar)
 "cNG" = (
 /obj/item/weapon/reagent_containers/pan{
 	pixel_y = -10
@@ -8501,6 +8499,15 @@
 	},
 /turf/simulated/floor/shuttle,
 /area/shuttle/ert/centcom)
+"ddY" = (
+/obj/machinery/door/window{
+	base_state = "right";
+	name = "Bar";
+	req_one_access_txt = "25;28";
+	dir = 1
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "ded" = (
 /obj/structure/table/plastic,
 /turf/unsimulated/floor/jungle/path_plated,
@@ -9114,13 +9121,9 @@
 	},
 /area/hydroponics)
 "dqa" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/chem_dispenser/booze_dispenser/mapping,
-/obj/structure/table,
+/obj/machinery/cooking/foodpress,
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "dqd" = (
 /turf/simulated/wall,
 /area/research_outpost/harvesting)
@@ -11375,12 +11378,9 @@
 /turf/simulated/floor,
 /area/security/interrogation)
 "egq" = (
-/obj/machinery/door/airlock{
-	req_one_access_txt = "25;28";
-	name = "Bar Storage"
-	},
-/turf/simulated/floor/wood,
-/area/crew_quarters/bar_backroom)
+/obj/structure/grille/window_spawner/reinforced,
+/turf/simulated/floor/plating,
+/area/crew_quarters/bar)
 "egA" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -11503,19 +11503,31 @@
 	},
 /area/syndicate_mothership/elite_squad)
 "ehO" = (
-/obj/machinery/power/apc{
-	dir = 4;
-	pixel_x = 24
+/obj/structure/table,
+/obj/item/weapon/kitchen/utensil/knife{
+	pixel_x = -16;
+	pixel_y = 2
 	},
-/obj/machinery/light{
-	dir = 4
+/obj/item/weapon/reagent_containers/food/snacks/grown/lime{
+	pixel_x = 10;
+	icon = 'icons/obj/hydroponics/lime.dmi'
 	},
-/obj/structure/cable/yellow,
-/obj/machinery/camera{
-	dir = 8
+/obj/item/weapon/reagent_containers/food/snacks/grown/lime{
+	pixel_x = 4;
+	icon = 'icons/obj/hydroponics/lime.dmi';
+	pixel_y = 9
+	},
+/obj/item/weapon/reagent_containers/food/snacks/grown/lemon{
+	icon = 'icons/obj/hydroponics/lemon.dmi';
+	pixel_y = -5;
+	pixel_x = 3
+	},
+/obj/machinery/reagentgrinder{
+	pixel_x = -4;
+	pixel_y = 4
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/outdoor_bar)
+/area/crew_quarters/bar)
 "ehX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -12167,13 +12179,14 @@
 /turf/simulated/wall,
 /area/security/interrogation)
 "esU" = (
-/obj/structure/table/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
+/obj/structure/hanging_lantern/dim{
+	dir = 1
 	},
-/obj/machinery/pos,
-/turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/obj/machinery/camera{
+	dir = 6
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle)
 "esV" = (
 /obj/structure/table,
 /obj/item/weapon/reagent_containers/food/drinks/beer,
@@ -12841,12 +12854,6 @@
 /obj/item/device/multitool,
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/zoned/solars)
-"eIj" = (
-/obj/structure/sign/poster{
-	icon_state = "vgposter2"
-	},
-/turf/unsimulated/mineral/jungle_underground/crate_loot,
-/area/surface/jungle/underground/zoned/ghetto_research)
 "eIn" = (
 /obj/structure/closet/secure_closet/RD,
 /obj/item/clothing/accessory/medal/nobel_science,
@@ -12857,6 +12864,22 @@
 "eIt" = (
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/vault)
+"eIL" = (
+/obj/structure/closet/secure_closet/bar{
+	req_access_txt = "25"
+	},
+/obj/machinery/camera{
+	dir = 8
+	},
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "eIS" = (
 /obj/effect/decal/warning_stripes{
 	dir = 6;
@@ -12962,6 +12985,13 @@
 	},
 /turf/simulated/floor/carpet,
 /area/bridge/meeting_room)
+"eLl" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/media/jukebox/bar,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "eLx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/door/poddoor{
@@ -13397,6 +13427,9 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
+"eTk" = (
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "eTs" = (
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -14686,6 +14719,10 @@
 	icon_state = "dark"
 	},
 /area/vox_trading_post/trade_processing)
+"fuU" = (
+/obj/structure/table/reinforced,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/crew_quarters/kitchen)
 "fvo" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/structure/cable/yellow{
@@ -14927,12 +14964,10 @@
 /turf/unsimulated/floor/jungle/sand,
 /area/surface/jungle/vault)
 "fzw" = (
-/obj/structure/railing/wood{
-	dir = 4
-	},
-/obj/structure/railing/wood,
-/turf/simulated/floor/wood,
-/area/surface/jungle/fenced)
+/obj/structure/table,
+/obj/machinery/chem_dispenser/brewer/mapping,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/crew_quarters/bar)
 "fzM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/burnt{
@@ -15691,20 +15726,13 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "fOA" = (
-/obj/structure/table/woodentable,
-/obj/item/clothing/accessory/storage/bandolier,
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel,
-/obj/machinery/reagentgrinder,
-/obj/item/stack/sheet/metal{
-	amount = 50
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/item/stack/rcd_ammo,
-/obj/item/stack/rcd_ammo,
-/obj/item/device/rcd/matter/rsf,
-/obj/item/device/breathalyzer,
-/obj/item/tool/wrench,
-/turf/simulated/floor/wood,
-/area/crew_quarters/bar_backroom)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/outdoor_bar)
 "fOE" = (
 /obj/machinery/light{
 	dir = 1
@@ -16072,6 +16100,13 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle)
+"fVI" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "fVS" = (
 /obj/machinery/light_switch{
 	pixel_y = 27
@@ -18227,12 +18262,10 @@
 	},
 /area/engineering/atmos)
 "gNi" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/machinery/media/jukebox/bar,
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/outdoor_bar)
+/obj/structure/reagent_dispensers/beerkeg,
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "gNm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
@@ -18375,9 +18408,6 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
 /turf/simulated/floor{
 	icon_state = "showroomfloor"
 	},
@@ -18391,6 +18421,12 @@
 	icon_state = "dark"
 	},
 /area/centcom/specops)
+"gQF" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/simulated/wall,
+/area/surface/jungle)
 "gQI" = (
 /obj/machinery/computer/scan_consolenew,
 /turf/unsimulated/floor{
@@ -19205,6 +19241,9 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
+"hfX" = (
+/turf/simulated/wall,
+/area/crew_quarters/bar)
 "hgr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -19566,11 +19605,20 @@
 	},
 /area/security/lobby)
 "hnD" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
 	},
-/turf/simulated/wall,
-/area/crew_quarters/bar_backroom)
+/obj/machinery/power/apc{
+	dir = 1;
+	pixel_y = 24
+	},
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "hnN" = (
 /obj/effect/landmark/start{
 	name = "Shaft Miner"
@@ -19796,6 +19844,12 @@
 	icon_state = "dark loading"
 	},
 /area/centcom/ert)
+"hrR" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "hsh" = (
 /turf/simulated/wall/r_wall,
 /area/science/server)
@@ -20239,6 +20293,30 @@
 	icon_state = "dark-markings"
 	},
 /area/security/armory)
+"hDg" = (
+/obj/structure/closet/crate/freezer{
+	name = "Ice"
+	},
+/obj/item/ice_crystal,
+/obj/item/ice_crystal,
+/obj/item/ice_crystal,
+/obj/item/ice_crystal,
+/obj/item/ice_crystal,
+/obj/item/ice_crystal,
+/obj/item/ice_crystal,
+/obj/item/ice_crystal,
+/obj/item/ice_crystal,
+/obj/item/ice_crystal,
+/obj/machinery/power/apc{
+	dir = 8;
+	pixel_x = -24
+	},
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_y = -22
+	},
+/obj/structure/cable/yellow,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/crew_quarters/bar)
 "hDm" = (
 /obj/structure/rack,
 /obj/item/device/pda/security{
@@ -20666,11 +20744,9 @@
 	},
 /area/vox_trading_post/atmos)
 "hLE" = (
-/obj/structure/railing/wood{
-	dir = 4
-	},
-/turf/simulated/floor/wood,
-/area/surface/jungle/fenced)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/simulated/wall,
+/area/crew_quarters/bar_backroom)
 "hLG" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -22493,6 +22569,21 @@
 	icon_state = "hydrofloor"
 	},
 /area/security/perma)
+"ivH" = (
+/obj/structure/table/woodentable,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/weapon/gun/projectile/shotgun/doublebarrel,
+/obj/machinery/reagentgrinder,
+/obj/item/stack/sheet/metal{
+	amount = 50
+	},
+/obj/item/stack/rcd_ammo,
+/obj/item/stack/rcd_ammo,
+/obj/item/device/rcd/matter/rsf,
+/obj/item/device/breathalyzer,
+/obj/item/tool/wrench,
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "ivN" = (
 /obj/structure/table,
 /obj/item/device/radio/off,
@@ -23269,6 +23360,12 @@
 	icon_state = "brown"
 	},
 /area/maintenance/disposal)
+"iNe" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "iNj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/burnt{
@@ -24230,9 +24327,11 @@
 	},
 /area/turret_protected/tcomms_control_room)
 "jdg" = (
-/obj/machinery/cooking/foodpress,
+/obj/effect/landmark/start{
+	name = "Chef"
+	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "jdr" = (
 /obj/machinery/door/unpowered/shuttle,
 /obj/docking_port/shuttle{
@@ -24278,12 +24377,23 @@
 	},
 /area/centcom/evac)
 "jdY" = (
-/obj/structure/railing/wood{
-	dir = 8
+/obj/structure/table/woodentable,
+/obj/item/clothing/accessory/storage/bandolier,
+/obj/item/weapon/gun/projectile/shotgun/doublebarrel,
+/obj/machinery/reagentgrinder,
+/obj/item/stack/sheet/metal{
+	amount = 50
 	},
-/obj/structure/railing/wood,
+/obj/item/stack/rcd_ammo,
+/obj/item/stack/rcd_ammo,
+/obj/item/device/rcd/matter/rsf,
+/obj/item/device/breathalyzer,
+/obj/item/tool/wrench,
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
 /turf/simulated/floor/wood,
-/area/surface/jungle/fenced)
+/area/crew_quarters/bar_backroom)
 "jer" = (
 /obj/structure/window/barricade{
 	dir = 1
@@ -25463,17 +25573,28 @@
 /turf/simulated/wall,
 /area/medical/genetics)
 "jBX" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+/obj/structure/closet/gmcloset{
+	name = "formal wardrobe"
 	},
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 4;
-	on = 1
+/obj/item/device/eftpos{
+	eftpos_name = "Bar EFTPOS scanner"
+	},
+/obj/item/weapon/table_parts/wood/poker,
+/obj/item/weapon/table_parts/wood/poker,
+/obj/item/weapon/table_parts/wood/poker,
+/obj/item/weapon/table_parts/wood/poker,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_x = -28
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
 	},
 /turf/simulated/floor/wood,
-/area/crew_quarters/bar_backroom)
+/area/surface/jungle)
 "jCi" = (
 /obj/structure/fence/corner{
 	dir = 8
@@ -26179,15 +26300,13 @@
 	},
 /area/medical/chemistry)
 "jQq" = (
-/turf/simulated/floor{
-	icon_state = "stage_stairs";
-	carbon_dioxide = 6.13137;
-	nitrogen = 253.273;
-	oxygen = 47.1644;
-	temperature = 323;
-	dir = 1
+/obj/structure/reagent_dispensers/beerkeg,
+/obj/structure/table/woodentable,
+/obj/machinery/light/small{
+	dir = 4
 	},
-/area/surface/jungle/fenced)
+/turf/simulated/floor/wood,
+/area/crew_quarters/bar_backroom)
 "jQz" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -26358,7 +26477,7 @@
 	},
 /obj/machinery/cooking/grill,
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "jSw" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 5
@@ -26709,6 +26828,9 @@
 /obj/structure/bed/chair/folding{
 	dir = 8
 	},
+/obj/effect/landmark/start{
+	name = "Assistant"
+	},
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/zoned/outdoor_bar)
 "jZS" = (
@@ -27047,9 +27169,6 @@
 	},
 /area/security/prison)
 "kgk" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
 /obj/structure/sign/directions/medical{
 	pixel_y = -21
 	},
@@ -27062,6 +27181,7 @@
 	dir = 1
 	},
 /obj/structure/hanging_lantern/dim,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "kgv" = (
@@ -27610,6 +27730,14 @@
 	icon_state = "dark"
 	},
 /area/security/prison)
+"kts" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/chem_dispenser/booze_dispenser/mapping,
+/obj/structure/table,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "ktC" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
@@ -28516,13 +28644,9 @@
 /turf/simulated/floor,
 /area/security/prison)
 "kMn" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/outdoor_bar)
+/obj/machinery/vending/boozeomat,
+/turf/simulated/wall,
+/area/surface/jungle)
 "kMp" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -29033,14 +29157,21 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
-"kWj" = (
+"kVP" = (
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/surface/jungle)
+"kWj" = (
+/obj/machinery/cooking/deepfryer,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/crew_quarters/kitchen)
 "kXk" = (
 /obj/structure/table,
 /obj/item/weapon/storage/firstaid/internalbleed{
@@ -30556,6 +30687,18 @@
 	icon_state = "white"
 	},
 /area/medical/virology)
+"lAX" = (
+/obj/machinery/door/airlock{
+	req_one_access_txt = "25;28";
+	name = "Kitchen"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor{
+	icon_state = "showroomfloor"
+	},
+/area/surface/jungle)
 "lBd" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated/floor/plating,
@@ -30626,6 +30769,9 @@
 	icon_state = "floor4"
 	},
 /area/shuttle/striketeam/centcom)
+"lBN" = (
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "lBW" = (
 /obj/machinery/atmospherics/binary/volume_pump{
 	dir = 1;
@@ -30760,8 +30906,8 @@
 /obj/machinery/alarm{
 	pixel_y = 23
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
 	},
 /turf/simulated/floor{
 	icon_state = "showroomfloor"
@@ -30780,6 +30926,17 @@
 	icon_state = "showroomfloor"
 	},
 /area/surface/jungle/mining)
+"lFb" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/chem_dispenser/soda_dispenser/mapping,
+/obj/structure/table,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "lFf" = (
 /obj/structure/flora/tree/pine,
 /turf/unsimulated/floor{
@@ -31467,6 +31624,11 @@
 /obj/structure/window/full/reinforced,
 /turf/unsimulated/floor,
 /area/centcom/control)
+"lRd" = (
+/obj/structure/table,
+/obj/machinery/chem_dispenser/soda_dispenser/mapping,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/crew_quarters/bar)
 "lRl" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -34160,15 +34322,13 @@
 /turf/simulated/floor/shuttle,
 /area/centcom/evac)
 "mPI" = (
-/obj/machinery/door/airlock{
-	req_one_access_txt = "25;28";
-	name = "Bar Storage"
+/obj/structure/table/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood,
-/area/crew_quarters/bar_backroom)
+/obj/machinery/pos,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "mPT" = (
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
@@ -34740,11 +34900,12 @@
 /turf/simulated/floor,
 /area/engineering/atmos)
 "mZR" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
+/obj/structure/table/reinforced,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
-/turf/simulated/wall,
-/area/crew_quarters/bar_backroom)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "nac" = (
 /obj/structure/table,
 /obj/item/critter_cage/with_mouse{
@@ -35457,6 +35618,17 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/atmos_outside)
+"noi" = (
+/obj/machinery/power/apc{
+	dir = 8;
+	pixel_x = -24
+	},
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/bar_backroom)
 "noz" = (
 /obj/machinery/telecomms/relay/preset/telecomms,
 /turf/simulated/floor/server,
@@ -35636,6 +35808,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
+/obj/item/weapon/reagent_containers/food/snacks/snackbar/nutriment,
 /turf/simulated/floor{
 	icon_state = "showroomfloor"
 	},
@@ -35821,16 +35994,27 @@
 	},
 /area/vox_trading_post/atmos)
 "nyC" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "bot"
+/obj/machinery/door/airlock{
+	req_one_access_txt = "25;28";
+	name = "Bar Storage"
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor/wood,
-/area/surface/jungle/fenced)
+/area/crew_quarters/bar_backroom)
 "nyP" = (
 /obj/structure/table,
 /obj/item/weapon/hand_labeler,
 /turf/simulated/floor,
 /area/supply/storage)
+"nzu" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/simulated/wall,
+/area/surface/jungle)
 "nzF" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
@@ -35875,6 +36059,11 @@
 	icon_state = "dark-markings"
 	},
 /area/centcom/test)
+"nAg" = (
+/obj/structure/table,
+/obj/machinery/chem_dispenser/booze_dispenser/mapping,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/crew_quarters/bar)
 "nAi" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/unsimulated/floor{
@@ -35944,9 +36133,11 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "nBG" = (
-/obj/structure/railing/wood,
-/turf/simulated/floor/wood,
-/area/surface/jungle/fenced)
+/obj/structure/bed/chair/folding{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/zoned/outdoor_bar)
 "nBI" = (
 /obj/structure/bed/chair/wood/normal{
 	dir = 8
@@ -36163,7 +36354,7 @@
 	pixel_y = 12
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "nGC" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/simulated/floor/plating,
@@ -36328,7 +36519,7 @@
 	icon_state = "0-8"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "nJC" = (
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/fenced/trader)
@@ -37102,12 +37293,11 @@
 /turf/simulated/floor/wood,
 /area/surface/jungle/vault)
 "nWJ" = (
-/obj/machinery/cooking/deepfryer,
-/obj/machinery/camera{
-	dir = 1
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_y = -22
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "nWM" = (
 /obj/machinery/door/airlock/glass{
 	name = "Hallway";
@@ -37477,12 +37667,9 @@
 	},
 /area/engineering/engine)
 "ocg" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/machinery/disposal/compactor,
+/obj/structure/grille/window_spawner/reinforced,
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "oct" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -38063,6 +38250,14 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
+"ooz" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/crew_quarters/bar)
 "ooS" = (
 /obj/machinery/door/airlock{
 	req_one_access_txt = "25;28";
@@ -39395,14 +39590,9 @@
 /turf/simulated/floor,
 /area/surface/jungle/vault)
 "oRx" = (
-/obj/effect/landmark/start{
-	name = "Bartender"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/obj/structure/grille/window_spawner/reinforced,
+/turf/simulated/floor/plating,
+/area/crew_quarters/kitchen)
 "oRM" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
@@ -40649,7 +40839,7 @@
 	dir = 1
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "psB" = (
 /obj/machinery/atmospherics/pipe/manifold/yellow/visible{
 	dir = 8
@@ -40890,8 +41080,8 @@
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/landing)
 "pwL" = (
-/turf/simulated/floor/wood,
-/area/crew_quarters/bar_backroom)
+/turf/simulated/wall,
+/area/surface/jungle)
 "pwT" = (
 /obj/structure/table,
 /obj/item/stack/medical/bruise_pack,
@@ -40995,17 +41185,12 @@
 /turf/simulated/floor,
 /area/research_outpost/dorm1)
 "pyb" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/chem_dispenser/brewer/mapping,
-/obj/structure/table,
-/obj/machinery/light,
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
-	pixel_y = -22
+/obj/machinery/cooking/deepfryer,
+/obj/machinery/camera{
+	dir = 1
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "pyc" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/book/manual/security_space_law,
@@ -42267,9 +42452,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 1;
-	initialize_directions = 11
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 6
 	},
 /turf/simulated/floor{
 	icon_state = "showroomfloor"
@@ -43556,11 +43740,13 @@
 	},
 /area/maintenance/disposal)
 "quO" = (
-/obj/structure/railing/wood{
-	dir = 8
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
 	},
+/obj/machinery/cooking/still,
 /turf/simulated/floor/wood,
-/area/surface/jungle/fenced)
+/area/crew_quarters/bar_backroom)
 "quQ" = (
 /obj/machinery/door/window{
 	base_state = "right";
@@ -43901,6 +44087,14 @@
 	icon_state = "dark-markings"
 	},
 /area/security/armory)
+"qAO" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "qAP" = (
 /turf/simulated/floor{
 	dir = 10;
@@ -44106,8 +44300,12 @@
 	},
 /area/centcom/holding)
 "qDw" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor/wood,
-/area/surface/jungle/fenced)
+/area/crew_quarters/bar_backroom)
 "qDz" = (
 /obj/machinery/hologram/holopad,
 /obj/structure/cable/yellow{
@@ -44199,6 +44397,20 @@
 /obj/structure/kitchenspike,
 /turf/simulated/floor/wood,
 /area/surface/jungle/vault)
+"qFG" = (
+/obj/machinery/power/apc{
+	dir = 4;
+	pixel_x = 24
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/cable/yellow,
+/obj/machinery/camera{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "qFO" = (
 /obj/machinery/chem_master/snackbar_machine,
 /turf/simulated/floor{
@@ -45360,6 +45572,12 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
+"rdd" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/crew_quarters/bar)
 "rdi" = (
 /obj/structure/table,
 /obj/item/weapon/storage/firstaid/adv{
@@ -45824,6 +46042,16 @@
 	icon_state = "redfull"
 	},
 /area/security/brig)
+"rmV" = (
+/obj/structure/closet/secure_closet/bar{
+	req_access_txt = "25"
+	},
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_y = -22
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/turf/simulated/floor/wood,
+/area/crew_quarters/bar_backroom)
 "rnh" = (
 /obj/docking_port/destination/striketeam/destination1{
 	dir = 8
@@ -46712,7 +46940,7 @@
 "rAF" = (
 /obj/machinery/light,
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "rAN" = (
 /obj/machinery/chem_dispenser/scp_294,
 /turf/simulated/floor/shuttle/plating,
@@ -47596,11 +47824,16 @@
 	},
 /area/tdome)
 "rTa" = (
-/obj/effect/landmark/start{
-	name = "Chef"
+/obj/structure/table,
+/obj/machinery/reagentgrinder{
+	pixel_x = 3;
+	pixel_y = 4
+	},
+/obj/item/weapon/kitchen/utensil/knife/large{
+	pixel_x = -8
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "rTj" = (
 /obj/machinery/door/mineral/wood{
 	name = "Speakeasy"
@@ -47814,15 +48047,9 @@
 	},
 /area/centcom/ert)
 "rWg" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/cooking/still,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/simulated/floor/wood,
-/area/crew_quarters/bar_backroom)
+/obj/structure/bed/chair/folding,
+/turf/unsimulated/floor/jungle/path,
+/area/surface/jungle/fenced)
 "rWn" = (
 /obj/machinery/door/airlock{
 	name = "???";
@@ -48283,7 +48510,7 @@
 	icon_state = "4-8"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "sdQ" = (
 /obj/effect/decal/warning_stripes{
 	dir = 8;
@@ -48487,16 +48714,27 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/shuttle/plating,
 /area/shuttle/escape_pod2)
+"sgJ" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/bar_backroom)
 "sgL" = (
 /turf/simulated/floor{
 	icon_state = "brown"
 	},
 /area/maintenance/disposal)
 "sgR" = (
-/obj/structure/reagent_dispensers/beerkeg,
-/obj/structure/table/woodentable,
-/turf/simulated/floor/wood,
-/area/crew_quarters/bar_backroom)
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/outdoor_bar)
 "sgU" = (
 /obj/structure/table,
 /turf/unsimulated/floor{
@@ -48824,7 +49062,7 @@
 	icon_state = "1-2"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "sqP" = (
 /obj/machinery/door_control{
 	id_tag = "Armoury Entrance";
@@ -48918,6 +49156,22 @@
 	icon_state = "dark purple stripe"
 	},
 /area/centcom/ert)
+"ssw" = (
+/obj/structure/closet/gmcloset{
+	name = "formal wardrobe"
+	},
+/obj/item/device/eftpos{
+	eftpos_name = "Bar EFTPOS scanner"
+	},
+/obj/item/weapon/table_parts/wood/poker,
+/obj/item/weapon/table_parts/wood/poker,
+/obj/item/weapon/table_parts/wood/poker,
+/obj/item/weapon/table_parts/wood/poker,
+/obj/machinery/light_switch{
+	pixel_x = -28
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/bar_backroom)
 "ssC" = (
 /obj/structure/table,
 /obj/item/stack/rods{
@@ -48937,6 +49191,18 @@
 	dir = 4
 	},
 /area/engineering/engine)
+"ssE" = (
+/obj/machinery/door/airlock{
+	req_one_access_txt = "25;28";
+	name = "Bar Storage"
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/bar_backroom)
 "stc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/camera{
@@ -49292,10 +49558,6 @@
 	icon_state = "cult"
 	},
 /area/lawoffice)
-"sBd" = (
-/obj/structure/bed/chair/folding,
-/turf/unsimulated/floor/jungle/path,
-/area/surface/jungle/fenced)
 "sBf" = (
 /obj/structure/closet/secure_closet{
 	anchored = 1;
@@ -49337,6 +49599,16 @@
 	icon_state = "floor4"
 	},
 /area/shuttle/nuclearops)
+"sCd" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/cooking/still,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "sCf" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -49647,7 +49919,7 @@
 /obj/structure/table,
 /obj/item/weapon/kitchen/rollingpin,
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "sIE" = (
 /obj/machinery/conveyor/centcom_auto{
 	dir = 5;
@@ -49777,12 +50049,16 @@
 	},
 /area/construction/mommi_nest)
 "sKQ" = (
-/obj/structure/table/reinforced,
 /obj/structure/cable/yellow{
-	icon_state = "4-8"
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/surface/jungle/fenced)
 "sKT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 1
@@ -50913,6 +51189,13 @@
 	icon_state = "dark"
 	},
 /area/engineering/supermatter_room)
+"tgr" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/disposal/compactor,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "tgB" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/structure/cable/yellow{
@@ -52171,7 +52454,7 @@
 	},
 /obj/machinery/cooking/grill,
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "tCk" = (
 /obj/effect/decal/warning_stripes{
 	dir = 8;
@@ -52676,6 +52959,16 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/docking)
+"tLY" = (
+/obj/machinery/door/airlock{
+	req_one_access_txt = "25;28";
+	name = "Bar Storage"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "tMe" = (
 /obj/structure/sign/directions/carg{
 	dir = 1;
@@ -54834,14 +55127,17 @@
 	},
 /area/centcom/control)
 "uEE" = (
-/obj/machinery/door/window{
-	base_state = "right";
-	name = "Bar";
-	req_one_access_txt = "25;28";
-	dir = 1
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 4;
+	on = 1
+	},
+/turf/simulated/floor/wood,
+/area/surface/jungle)
 "uEF" = (
 /obj/structure/bed/chair/folding{
 	dir = 4
@@ -55704,6 +56000,10 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle)
+"uXq" = (
+/obj/structure/table/reinforced,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "uXt" = (
 /obj/machinery/disposal/compactor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -56153,6 +56453,21 @@
 	},
 /turf/simulated/floor,
 /area/security/perma)
+"veM" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/unary/vent_pump{
+	canSpawnMice = 0;
+	on = 1
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/bar_backroom)
 "vfF" = (
 /mob/living/complex_animal/bear,
 /turf/unsimulated/floor/jungle/concrete,
@@ -57434,6 +57749,18 @@
 	icon_state = "redfull"
 	},
 /area/security/prison)
+"vAo" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/chem_dispenser/brewer/mapping,
+/obj/structure/table,
+/obj/machinery/light,
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
+	pixel_y = -22
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "vAv" = (
 /obj/structure/table,
 /obj/item/weapon/stamp/denied{
@@ -58523,7 +58850,7 @@
 	icon_state = "4-8"
 	},
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "vUA" = (
 /obj/structure/closet/crate,
 /obj/item/weapon/storage/toolbox,
@@ -58538,12 +58865,8 @@
 	},
 /area/shuttle/nuclearops)
 "vUL" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/machinery/vending/dinnerware,
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "vUM" = (
 /obj/structure/closet/secure_closet/bar{
 	req_access_txt = "25"
@@ -59116,20 +59439,10 @@
 	},
 /area/surface/jungle/zoned/storage_shed)
 "wgM" = (
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = -24
-	},
-/obj/machinery/power/apc{
-	dir = 1;
-	pixel_y = 24
-	},
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/wood,
-/area/crew_quarters/bar_backroom)
+/obj/structure/table/reinforced,
+/obj/machinery/pos,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/crew_quarters/kitchen)
 "wgN" = (
 /obj/item/weapon/lighter{
 	pixel_y = 6;
@@ -59313,6 +59626,12 @@
 	icon_state = "white"
 	},
 /area/centcom/test)
+"wkC" = (
+/obj/effect/landmark/start{
+	name = "Bartender"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/crew_quarters/bar)
 "wkT" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -60401,6 +60720,10 @@
 	icon_state = "wood"
 	},
 /area/centcom/test)
+"wGu" = (
+/mob/living/carbon/monkey/punpun,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle)
 "wGB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -61430,16 +61753,9 @@
 	},
 /area/engineering/antimatter_room)
 "wYg" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/chem_dispenser/soda_dispenser/mapping,
-/obj/structure/table,
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
+/obj/machinery/vending/dinnerware,
 /turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/area/crew_quarters/kitchen)
 "wYm" = (
 /obj/machinery/door/airlock/glass_medical{
 	name = "Monkey Pen";
@@ -61538,28 +61854,16 @@
 	name = "Toxins Storage"
 	})
 "xay" = (
-/obj/structure/closet/gmcloset{
-	name = "formal wardrobe"
+/obj/machinery/power/apc{
+	dir = 8;
+	pixel_x = -24
 	},
-/obj/item/device/eftpos{
-	eftpos_name = "Bar EFTPOS scanner"
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
 	},
-/obj/item/weapon/table_parts/wood/poker,
-/obj/item/weapon/table_parts/wood/poker,
-/obj/item/weapon/table_parts/wood/poker,
-/obj/item/weapon/table_parts/wood/poker,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/machinery/light_switch{
-	pixel_x = -28
-	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -24
-	},
-/turf/simulated/floor/wood,
-/area/crew_quarters/bar_backroom)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/outdoor_bar)
 "xaQ" = (
 /turf/unsimulated/floor{
 	dir = 10;
@@ -62172,6 +62476,12 @@
 	icon_state = "dark"
 	},
 /area/engineering/antimatter_room)
+"xnC" = (
+/obj/structure/sign/poster{
+	icon_state = "vgposter2"
+	},
+/turf/unsimulated/mineral/jungle_underground/crate_loot,
+/area/surface/jungle/underground/zoned/ghetto_research)
 "xnS" = (
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -63555,11 +63865,16 @@
 	},
 /area/centcom/control)
 "xON" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 4
+/obj/structure/table,
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass,
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass,
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass,
+/obj/item/weapon/reagent_containers/food/drinks/shaker{
+	pixel_x = -7;
+	pixel_y = 9
 	},
-/turf/simulated/floor/wood,
-/area/crew_quarters/bar_backroom)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/crew_quarters/bar)
 "xOV" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
@@ -64486,21 +64801,9 @@
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/fenced/trader/solars)
 "yfz" = (
-/obj/structure/closet/secure_closet/bar{
-	req_access_txt = "25"
-	},
-/obj/machinery/camera{
-	dir = 8
-	},
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 24
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/simulated/floor/wood,
-/area/crew_quarters/bar_backroom)
+/obj/machinery/media/jukebox/bar,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/zoned/outdoor_bar)
 "yfX" = (
 /turf/unsimulated/mineral/random/jungle,
 /turf/unsimulated/mineral/random/high_chance/jungle,
@@ -109672,7 +109975,7 @@ rki
 sfK
 mUo
 xor
-sBd
+rWg
 jgK
 xor
 xor
@@ -119171,10 +119474,10 @@ xor
 xor
 xor
 xor
-sBd
+rWg
 sTG
 hcu
-sBd
+rWg
 sTG
 hcu
 xor
@@ -119523,10 +119826,10 @@ xor
 xor
 xor
 xor
-sBd
+rWg
 sTG
 hcu
-sBd
+rWg
 sTG
 hcu
 xor
@@ -119875,10 +120178,10 @@ xor
 xor
 xor
 xor
-sBd
+rWg
 sTG
 hcu
-sBd
+rWg
 sTG
 hcu
 xor
@@ -123416,11 +123719,11 @@ edD
 edD
 edD
 edD
-edD
-wld
-wld
-wld
-wld
+rSu
+rSu
+rSu
+rSu
+rSu
 wld
 wld
 wld
@@ -123768,12 +124071,12 @@ edD
 edD
 edD
 edD
-edD
-jQq
+rSu
+ssw
+noi
 quO
-quO
-quO
-jdY
+rSu
+wld
 wld
 wld
 maR
@@ -124111,25 +124414,25 @@ wld
 upa
 eJs
 edD
+nBG
+nBG
 jZP
 jZP
-cNF
-cNF
-cNF
 jZP
-jZP
+nBG
+nBG
 edD
 edD
-edD
-jQq
-qDw
+rSu
+jdY
+veM
 qDw
 nyC
-nBG
-wld
-wld
-maR
-iMQ
+vDC
+vDC
+vDC
+fVI
+nPS
 xMH
 tWQ
 khn
@@ -124463,25 +124766,25 @@ jaT
 upa
 eJs
 edD
+nBG
+nBG
 jZP
 jZP
-cNF
-cNF
-cNF
 jZP
-jZP
+nBG
+nBG
 edD
 edD
-edD
+rSu
 jQq
+sgJ
+rmV
 hLE
-hLE
-hLE
-fzw
-wld
-wld
-maR
-iMQ
+rOD
+rOD
+rOD
+xXD
+rcu
 kgk
 ijr
 tWQ
@@ -124823,12 +125126,12 @@ edD
 edD
 edD
 edD
-edD
-edD
-wld
-wld
-wld
-wld
+hfX
+rSu
+qlc
+ssE
+rSu
+rSu
 wld
 wld
 wld
@@ -125174,13 +125477,13 @@ edD
 edD
 edD
 edD
-edD
-edD
-edD
-wld
-wld
-wld
-wld
+hjm
+fMh
+rdd
+nkN
+ooz
+hDg
+hfX
 wld
 wld
 wld
@@ -125526,13 +125829,13 @@ edD
 edD
 edD
 edD
-edD
-edD
-edD
-wld
-wld
-wld
-wld
+hjm
+fMh
+wkC
+xON
+nkN
+fzw
+hfX
 wld
 wld
 wld
@@ -125878,16 +126181,16 @@ edD
 edD
 edD
 edD
-edD
-edD
-edD
-edD
-xor
-xor
-xor
-xor
-xor
-xor
+hjm
+fMh
+nkN
+ehO
+nkN
+nAg
+hfX
+wld
+wld
+wld
 maR
 iMQ
 xMH
@@ -126230,16 +126533,16 @@ edD
 edD
 edD
 edD
-edD
-edD
-kMn
-ehO
-xor
-xor
-xor
-xor
-xor
-xor
+hjm
+aHF
+nkN
+kmF
+nkN
+lRd
+hfX
+wld
+wld
+wld
 maR
 iMQ
 xMH
@@ -126581,17 +126884,17 @@ edD
 edD
 edD
 edD
-hjm
-hjm
-hjm
-gNi
-rSu
-rSu
+edD
+edD
+hfX
 egq
-rSu
-rSu
-hnd
-xor
+egq
+brn
+egq
+hfX
+wld
+wld
+wld
 maR
 iMQ
 xMH
@@ -126932,16 +127235,16 @@ bpp
 bpp
 edD
 edD
-fMh
-fMh
-fMh
-fMh
-sKQ
-rSu
-wgM
-pwL
+edD
+edD
+edD
+edD
+edD
+edD
+edD
+edD
 xay
-rSu
+edD
 xor
 xor
 maR
@@ -127284,18 +127587,18 @@ sXU
 sXU
 edD
 edD
-esU
-nkN
-nkN
-kWj
-aUB
-mPI
-jBX
-xON
+edD
+edD
+edD
+edD
+edD
+edD
+edD
+edD
 fOA
-rSu
-snf
-snf
+edD
+xor
+xor
 maR
 iMQ
 xMH
@@ -127636,17 +127939,17 @@ sXU
 sXU
 edD
 edD
-uEE
-nkN
-kmF
+jUy
 oRx
-nkN
-qlc
+oRx
+oRx
+oRx
+jUy
 yfz
-rWg
+edD
 sgR
-rSu
-kyt
+fJG
+sKQ
 jUa
 pOS
 nPS
@@ -127983,21 +128286,21 @@ wDw
 mmb
 eJs
 edD
-jZP
-jZP
-jZP
+nBG
+nBG
+nBG
 edD
 hrq
 ocg
-nkN
+kWj
 dqa
 wYg
 pyb
-rSu
-mZR
-hnD
-rSu
-rSu
+jUy
+jUy
+jUy
+jUy
+jUy
 ooS
 jUy
 cow
@@ -128341,7 +128644,7 @@ edD
 edD
 edD
 psu
-nkN
+vUL
 jdg
 vUL
 nWJ
@@ -128693,7 +128996,7 @@ edD
 edD
 edD
 tBX
-nkN
+vUL
 rTa
 chk
 sqD
@@ -129044,8 +129347,8 @@ gZQ
 gZQ
 edD
 edD
-fMh
-nkN
+fuU
+vUL
 aYx
 sdE
 rAF
@@ -129396,11 +129699,11 @@ sXU
 sXU
 edD
 edD
-fMh
-nkN
+fuU
+vUL
 sIe
 vUu
-nkN
+vUL
 riH
 uHU
 ans
@@ -129748,11 +130051,11 @@ sXU
 sXU
 edD
 edD
-aHF
-nkN
-nkN
+wgM
+vUL
+vUL
 nJu
-nkN
+vUL
 riH
 jKS
 mFD
@@ -130095,9 +130398,9 @@ ppa
 mQa
 fHE
 edD
-cNF
-cNF
-cNF
+jZP
+jZP
+jZP
 edD
 edD
 nFZ
@@ -152568,7 +152871,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+uXL
 lIK
 lIK
 lIK
@@ -154388,17 +154691,17 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+uXL
+uXL
+uXL
+uXL
+qAO
+qFG
+uXL
+uXL
+uXL
+uXL
+uXL
 lIK
 lIK
 lIK
@@ -154740,17 +155043,17 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+uXL
+aUB
+aUB
+aUB
+eLl
+pwL
+pwL
+ccj
+pwL
+pwL
+esU
 lIK
 lIK
 lIK
@@ -155092,17 +155395,17 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+uXq
+uXq
+uXq
+uXq
+mZR
+pwL
+hnD
+eTk
+jBX
+pwL
+uXL
 lIK
 lIK
 lIK
@@ -155444,17 +155747,17 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+mPI
+lBN
+lBN
+qAO
+kVP
+tLY
+uEE
+iNe
+ivH
+pwL
+lBN
 lIK
 lIK
 lIK
@@ -155796,17 +156099,17 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+ddY
+lBN
+wGu
+aKE
+lBN
+kMn
+eIL
+sCd
+gNi
+pwL
+hrR
 lIK
 lIK
 lIK
@@ -156148,17 +156451,17 @@ lIK
 lIK
 lIK
 lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
-lIK
+tgr
+lBN
+kts
+lFb
+vAo
+pwL
+gQF
+nzu
+pwL
+pwL
+lAX
 lIK
 lIK
 lIK
@@ -271923,7 +272226,7 @@ xJG
 xJG
 xJG
 xJG
-eIj
+xnC
 bxo
 fSp
 lvC

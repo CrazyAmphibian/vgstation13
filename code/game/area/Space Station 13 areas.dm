@@ -2107,6 +2107,7 @@ var/global/list/adminbusteleportlocs = list()
 /area/surface/jungle/zoned
 	forbid_apc=FALSE
 	construction_zone=FALSE
+	always_unpowered=FALSE
 	icon_state="jungle_zone"
 	holomap_draw_override = HOLOMAP_DRAW_FULL
 	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
