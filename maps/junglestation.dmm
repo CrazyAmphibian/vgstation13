@@ -11505,22 +11505,8 @@
 "ehO" = (
 /obj/structure/table,
 /obj/item/weapon/kitchen/utensil/knife{
-	pixel_x = -16;
+	pixel_x = 7;
 	pixel_y = 2
-	},
-/obj/item/weapon/reagent_containers/food/snacks/grown/lime{
-	pixel_x = 10;
-	icon = 'icons/obj/hydroponics/lime.dmi'
-	},
-/obj/item/weapon/reagent_containers/food/snacks/grown/lime{
-	pixel_x = 4;
-	icon = 'icons/obj/hydroponics/lime.dmi';
-	pixel_y = 9
-	},
-/obj/item/weapon/reagent_containers/food/snacks/grown/lemon{
-	icon = 'icons/obj/hydroponics/lemon.dmi';
-	pixel_y = -5;
-	pixel_x = 3
 	},
 /obj/machinery/reagentgrinder{
 	pixel_x = -4;
@@ -20315,6 +20301,33 @@
 	pixel_y = -22
 	},
 /obj/structure/cable/yellow,
+/obj/item/weapon/reagent_containers/food/snacks/grown/lime{
+	pixel_x = 4;
+	icon = 'icons/obj/hydroponics/lime.dmi';
+	pixel_y = 9
+	},
+/obj/item/weapon/reagent_containers/food/snacks/grown/lime{
+	pixel_x = -4;
+	icon = 'icons/obj/hydroponics/lime.dmi'
+	},
+/obj/item/weapon/reagent_containers/food/snacks/grown/lemon{
+	icon = 'icons/obj/hydroponics/lemon.dmi';
+	pixel_y = -5;
+	pixel_x = 3
+	},
+/obj/item/weapon/reagent_containers/food/snacks/grown/lemon{
+	icon = 'icons/obj/hydroponics/lemon.dmi';
+	pixel_y = -5;
+	pixel_x = -6
+	},
+/obj/item/weapon/reagent_containers/food/snacks/grown/orange{
+	icon = 'icons/obj/hydroponics/orange.dmi'
+	},
+/obj/item/weapon/reagent_containers/food/snacks/grown/orange{
+	icon = 'icons/obj/hydroponics/orange.dmi';
+	pixel_y = 5;
+	pixel_x = -9
+	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/crew_quarters/bar)
 "hDm" = (
