@@ -256,12 +256,6 @@
 	for(var/dir in dir_list)
 		send_icon(client, dir)
 
-	send_asset(client, "RPD-layer-blended-1.png")
-	send_asset(client, "RPD-layer-blended-4.png")
-
-	send_asset(client, "RPD_0_4.png")
-	send_asset(client, "RPD_0_1.png")
-
 // NOTE: these define the order in which scrolling with alt+mousewheel occur too!
 // These have been made the same as the directions used in get_HTML() because of that.
 // Rule of thumb: scrolling is clockwise.

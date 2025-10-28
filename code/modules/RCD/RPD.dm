@@ -83,9 +83,22 @@
 	if(has_slimes & SLIME_YELLOW)
 		to_chat(user, "<span class='notice'>The automatic wrenching mode is currently [autowrench ? "enabled" : "disabled"].</span>")
 
+
+/obj/item/device/rcd/rpd/proc/send_all_assets(var/client/client)
+	set waitfor = 0
+	if(!client)
+		return
+	for(var/cat in schematics)
+		var/list/S = schematics[cat]
+		for(var/datum/rcd_schematic/C in S)
+			C.send_assets(client)
+			C.send_list_assets(client)
+			sleep(1)
+
 /obj/item/device/rcd/rpd/pickup(var/mob/living/L)
 	..()
 	L.register_event(/event/clickon, src, nameof(src::mob_onclickon()))
+	send_all_assets(L.client)
 
 /obj/item/device/rcd/rpd/dropped(var/mob/living/L)
 	..()
@@ -104,12 +117,8 @@
 	modifiers -= list("alt", "shift", "ctrl")
 
 /obj/item/device/rcd/rpd/attack_self(var/mob/user)
-	for(var/cat in schematics)
-		var/list/L = schematics[cat]
-		for(var/datum/rcd_schematic/C in L)
-			for(var/client/client in interface.clients)
-				C.send_assets(client)
-				C.send_list_assets(client)
+	for(var/client/client in interface.clients)
+		send_all_assets(client)
 	..()
 
 /obj/item/device/rcd/rpd/rebuild_ui()
