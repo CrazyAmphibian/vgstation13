@@ -93,7 +93,7 @@
 		for(var/datum/rcd_schematic/C in S)
 			C.send_assets(client)
 			C.send_list_assets(client)
-			sleep(1)
+			sleep(2)
 
 /obj/item/device/rcd/rpd/pickup(var/mob/living/L)
 	..()
