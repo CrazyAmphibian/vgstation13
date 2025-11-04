@@ -6,8 +6,7 @@
 	return ..()
 
 /datum/rcd_scematic_grouping/destroy/send_assets(var/client/client)
-	register_asset("RCD_HEADER_DESTROY.png", new/icon('icons/effects/condecon.dmi', "decon" ))
-	send_asset(client, "RCD_HEADER_DESTROY.png")	
+	client << browse_rsc(icon('icons/effects/condecon.dmi', "decon" ) , "RCD_HEADER_DESTROY.png")
 
 /datum/rcd_scematic_grouping/destroy/New(var/obj/item/device/rcd/rcdtouse=null)
 	..(rcdtouse)
@@ -138,24 +137,14 @@
 	linked_rcd.selected_schem = schematics[1]
 
 /datum/rcd_scematic_grouping/build_wall/send_assets(var/client/client)
-	register_asset("floor_RCD.png", new/icon('icons/turf/floors.dmi', "floor" ))
-	send_asset(client, "floor_RCD.png")	
+	client << browse_rsc(icon('icons/turf/floors.dmi', "floor" ) , "floor_RCD.png")	
 	
-	register_asset("wall_RCD.png", new/icon('icons/turf/walls.dmi', "metal0" ))
-	send_asset(client, "wall_RCD.png")	
+	client << browse_rsc(icon('icons/turf/walls.dmi', "metal0" ), "wall_RCD.png")	
+	client << browse_rsc(icon('icons/turf/walls.dmi', "rwall0" ), "rwall_RCD.png")	
+	client << browse_rsc(icon('icons/turf/walls.dmi', "wood0" ), "woodwall_RCD.png")	
+	client << browse_rsc(icon('icons/obj/structures.dmi', "girder" ), "girder_RCD.png")		
 	
-	register_asset("rwall_RCD.png", new/icon('icons/turf/walls.dmi', "rwall0" ))
-	send_asset(client, "rwall_RCD.png")	
-	
-	register_asset("woodwall_RCD.png", new/icon('icons/turf/walls.dmi', "wood0" ))
-	send_asset(client, "woodwall_RCD.png")	
-	
-	register_asset("girder_RCD.png", new/icon('icons/obj/structures.dmi', "girder" ))
-	send_asset(client, "girder_RCD.png")		
-	
-	
-	register_asset("RCD_HEADER_WALLS.png", new/icon('icons/turf/walls.dmi', "metal0" ))
-	send_asset(client, "RCD_HEADER_WALLS.png")	
+	client << browse_rsc(icon('icons/turf/walls.dmi', "metal0" ), "RCD_HEADER_WALLS.png")	
 	
 	
 /datum/rcd_grouped_schematic/normalwall
@@ -351,30 +340,15 @@
 	linked_rcd.selected_schem = schematics[1]	
 
 /datum/rcd_scematic_grouping/build_floors/send_assets(var/client/client)
-	register_asset("floor_RCD.png", new/icon('icons/turf/floors.dmi', "floor" ))
-	send_asset(client, "floor_RCD.png")	
+	client << browse_rsc(icon('icons/turf/floors.dmi', "floor" ), "floor_RCD.png")
+	client << browse_rsc(icon('icons/turf/floors.dmi', "plating" ), "plating_RCD.png")
+	client << browse_rsc(icon('icons/turf/floors.dmi', "engine" ), "rfloor_RCD.png")
+	client << browse_rsc(icon('icons/turf/overlays.dmi', "glass_floor" ), "glassfloor_RCD.png")
+	client << browse_rsc(icon('icons/turf/overlays.dmi', "plasma_glass_floor" ), "plasglassfloor_RCD.png")
+	client << browse_rsc(icon('icons/obj/smoothlattice.dmi', "lattice15" ), "lattice_RCD.png")
+	client << browse_rsc(icon('icons/turf/catwalks.dmi', "catwalk0" ), "catwalk_RCD.png")
 	
-	register_asset("plating_RCD.png", new/icon('icons/turf/floors.dmi', "plating" ))
-	send_asset(client, "plating_RCD.png")	
-
-	register_asset("rfloor_RCD.png", new/icon('icons/turf/floors.dmi', "engine" ))
-	send_asset(client, "rfloor_RCD.png")	
-	
-	register_asset("glassfloor_RCD.png", new/icon('icons/turf/overlays.dmi', "glass_floor" ))
-	send_asset(client, "glassfloor_RCD.png")	
-	
-	register_asset("plasglassfloor_RCD.png", new/icon('icons/turf/overlays.dmi', "plasma_glass_floor" ))
-	send_asset(client, "plasglassfloor_RCD.png")	
-	
-	register_asset("lattice_RCD.png", new/icon('icons/obj/smoothlattice.dmi', "lattice15" ))
-	send_asset(client, "lattice_RCD.png")	
-	
-	register_asset("catwalk_RCD.png", new/icon('icons/turf/catwalks.dmi', "catwalk0" ))
-	send_asset(client, "catwalk_RCD.png")	
-	
-	register_asset("RCD_HEADER_FLOORS.png", new/icon('icons/turf/floors.dmi', "floor" ))
-	send_asset(client, "RCD_HEADER_FLOORS.png")	
-	
+	client << browse_rsc(icon('icons/turf/floors.dmi', "floor" ), "RCD_HEADER_FLOORS.png")	
 	
 /datum/rcd_grouped_schematic/floor
 	name="floor"
@@ -585,24 +559,13 @@
 
 
 /datum/rcd_scematic_grouping/build_windows/send_assets(var/client/client)
-	register_asset("floor_RCD.png", new/icon('icons/turf/floors.dmi', "floor" ))
-	send_asset(client, "floor_RCD.png")	
+	client << browse_rsc(icon('icons/turf/floors.dmi', "floor" ), "floor_RCD.png")	
+	client << browse_rsc(icon('icons/obj/stacks_sheets.dmi', "sheet-glass" ), "glass_RCD.png")	
+	client << browse_rsc(icon('icons/obj/stacks_sheets.dmi', "sheet-rglass" ), "rglass_RCD.png")	
+	client << browse_rsc(icon('icons/obj/stacks_sheets.dmi', "sheet-plasmaglass" ), "pglass_RCD.png")	
+	client << browse_rsc(icon('icons/obj/stacks_sheets.dmi', "sheet-plasmarglass" ), "rpglass_RCD.png")	
 	
-	register_asset("glass_RCD.png", new/icon('icons/obj/stacks_sheets.dmi', "sheet-glass" ))
-	send_asset(client, "glass_RCD.png")	
-	
-	register_asset("rglass_RCD.png", new/icon('icons/obj/stacks_sheets.dmi', "sheet-rglass" ))
-	send_asset(client, "rglass_RCD.png")	
-	
-	register_asset("pglass_RCD.png", new/icon('icons/obj/stacks_sheets.dmi', "sheet-plasmaglass" ))
-	send_asset(client, "pglass_RCD.png")	
-	
-	register_asset("rpglass_RCD.png", new/icon('icons/obj/stacks_sheets.dmi', "sheet-plasmarglass" ))
-	send_asset(client, "rpglass_RCD.png")	
-	
-	register_asset("RCD_HEADER_WINDOWS.png", new/icon('icons/obj/window_grille_spawner.dmi', "rwindowgrille" ))
-	send_asset(client, "RCD_HEADER_WINDOWS.png")	
-	
+	client << browse_rsc(icon('icons/obj/window_grille_spawner.dmi', "rwindowgrille" ), "RCD_HEADER_WINDOWS.png")	
 	
 
 /datum/rcd_grouped_schematic/glass
@@ -815,8 +778,7 @@
 		linked_rcd.selected_schem = schematics[1]
 
 /datum/rcd_scematic_grouping/build_airlock/send_assets(var/client/client)
-	register_asset("RCD_HEADER_AIRLOCKS.png", new/icon('icons/obj/doors/door.dmi', "door_closed" ))
-	send_asset(client, "RCD_HEADER_AIRLOCKS.png")	
+	client << browse_rsc(icon('icons/obj/doors/door.dmi', "door_closed" ), "RCD_HEADER_AIRLOCKS.png")	
 
 
 /datum/rcd_scematic_grouping/build_airlock/generate_html()
@@ -896,8 +858,7 @@
 	var/has_direction=FALSE
 		
 /datum/rcd_grouped_schematic/airlock/send_assets(var/client/client)
-	register_asset("airlock_[name]_RCD.png", new/icon(icon, "door_closed" ))
-	send_asset(client, "airlock_[name]_RCD.png")	
+	client << browse_rsc(icon(icon, "door_closed" ), "airlock_[name]_RCD.png")	
 
 /datum/rcd_grouped_schematic/airlock/generate_html()
 	return "<span style='display:inline-block;padding:0px;' class='schem[linked_rcd.selected_schem==src ? "_selected" : "" ]'><a style='display:block;background:none;border:none;' href='?src=\ref[linked_rcd.interface];set_schematic=[name]'><img src='airlock_[name]_RCD.png' style='padding:4px;border:none;background:none;'></a></span>"
@@ -1086,8 +1047,7 @@
 	path=/obj/machinery/door/window
 	
 /datum/rcd_grouped_schematic/airlock/windoor/send_assets(var/client/client)
-	register_asset("airlock_[name]_RCD.png", new/icon(icon, "left" ))
-	send_asset(client, "airlock_[name]_RCD.png")	
+	client << browse_rsc(icon(icon, "left" ), "airlock_[name]_RCD.png")	
 
 /datum/rcd_grouped_schematic/airlock/windoor/build(var/atom/A, var/mob/user)
 	var/turf/T=get_turf(A)
@@ -1144,8 +1104,7 @@
 	var/ticon="metaldoor_closed"
 
 /datum/rcd_grouped_schematic/airlock/tabledoor/send_assets(var/client/client)
-	register_asset("airlock_[name]_RCD.png", new/icon('icons/obj/doors/tabledoor.dmi', ticon ))
-	send_asset(client, "airlock_[name]_RCD.png")	
+	client << browse_rsc(icon('icons/obj/doors/tabledoor.dmi', ticon ), "airlock_[name]_RCD.png")	
 
 /datum/rcd_grouped_schematic/airlock/tabledoor/wood
 	name="wooden table door"
@@ -1192,11 +1151,11 @@
 	linked_rcd.selected_schem = schematics[1]	
 
 /datum/rcd_scematic_grouping/misc_objects/send_assets(var/client/client)
-	register_asset("RCD_HEADER_MISC.png", new/icon('icons/obj/computer.dmi', "computer_generic" ))
-	send_asset(client, "RCD_HEADER_MISC.png")	
+	client << browse_rsc(icon('icons/obj/computer.dmi', "computer_generic" ), "RCD_HEADER_MISC.png")	
 
 	for(var/datum/rcd_grouped_schematic/schem in schematics)
 		schem.send_assets(client)
+		sleep(2)
 		
 	
 /datum/rcd_grouped_schematic/table
@@ -1210,8 +1169,7 @@
 	return "<span style='display:inline-block;padding:0px;' class='schem[linked_rcd.selected_schem==src ? "_selected" : "" ]'><a style='display:block;background:none;border:none;' href='?src=\ref[linked_rcd.interface];set_schematic=[name]'><img src='table_[html_icon]_RCD.png' style='padding:4px;border:none;background:none;'></a></span>"
 	
 /datum/rcd_grouped_schematic/table/send_assets(var/client/client)
-	register_asset("table_std_RCD.png", new/icon('icons/obj/structures.dmi', "table" ))
-	send_asset(client, "table_std_RCD.png")	
+	client << browse_rsc(icon('icons/obj/structures.dmi', "table" ), "table_std_RCD.png")	
 
 
 /datum/rcd_grouped_schematic/table/build(var/atom/A, var/mob/user)
@@ -1257,8 +1215,7 @@
 	path = /obj/structure/table/woodentable
 
 /datum/rcd_grouped_schematic/table/wood/send_assets(var/client/client)
-	register_asset("table_wood_RCD.png", new/icon('icons/obj/structures.dmi', "woodtable" ))
-	send_asset(client, "table_wood_RCD.png")	
+	client << browse_rsc(icon('icons/obj/structures.dmi', "woodtable" ), "table_wood_RCD.png")	
 
 /datum/rcd_grouped_schematic/table/poker
 	name = "poker table"
@@ -1266,8 +1223,7 @@
 	path = /obj/structure/table/woodentable/poker
 
 /datum/rcd_grouped_schematic/table/poker/send_assets(var/client/client)
-	register_asset("table_poker_RCD.png", new/icon('icons/obj/structures.dmi', "pokertable" ))
-	send_asset(client, "table_poker_RCD.png")	
+	client << browse_rsc(icon('icons/obj/structures.dmi', "pokertable" ), "table_poker_RCD.png")	
 
 
 /datum/rcd_grouped_schematic/table/plastic
@@ -1276,8 +1232,7 @@
 	path = /obj/structure/table/plastic
 
 /datum/rcd_grouped_schematic/table/plastic/send_assets(var/client/client)
-	register_asset("table_plastic_RCD.png", new/icon('icons/obj/structures.dmi', "plastictable" ))
-	send_asset(client, "table_plastic_RCD.png")	
+	client << browse_rsc(icon('icons/obj/structures.dmi', "plastictable" ), "table_plastic_RCD.png")	
 
 
 /datum/rcd_grouped_schematic/table/glass
@@ -1286,8 +1241,7 @@
 	path = /obj/structure/table/glass
 
 /datum/rcd_grouped_schematic/table/glass/send_assets(var/client/client)
-	register_asset("table_glass_RCD.png", new/icon('icons/obj/structures.dmi', "glass_table" ))
-	send_asset(client, "table_glass_RCD.png")	
+	client << browse_rsc(icon('icons/obj/structures.dmi', "glass_table" ), "table_glass_RCD.png")	
 
 
 /datum/rcd_grouped_schematic/table/pglass
@@ -1297,8 +1251,7 @@
 	path = /obj/structure/table/glass/plasma
 
 /datum/rcd_grouped_schematic/table/pglass/send_assets(var/client/client)
-	register_asset("table_pglass_RCD.png", new/icon('icons/obj/structures.dmi', "plasma_table" ))
-	send_asset(client, "table_pglass_RCD.png")	
+	client << browse_rsc(icon('icons/obj/structures.dmi', "plasma_table" ), "table_pglass_RCD.png")	
 
 
 /datum/rcd_grouped_schematic/table/reinforced
@@ -1308,8 +1261,7 @@
 	path = /obj/structure/table/reinforced
 
 /datum/rcd_grouped_schematic/table/reinforced/send_assets(var/client/client)
-	register_asset("table_r_RCD.png", new/icon('icons/obj/structures.dmi', "reinftable" ))
-	send_asset(client, "table_r_RCD.png")	
+	client << browse_rsc(icon('icons/obj/structures.dmi', "reinftable" ), "table_r_RCD.png")	
 
 
 
@@ -1321,8 +1273,7 @@
 	return "<span style='display:inline-block;padding:0px;' class='schem[linked_rcd.selected_schem==src ? "_selected" : "" ]'><a style='display:block;background:none;border:none;' href='?src=\ref[linked_rcd.interface];set_schematic=[name]'><img src='rack_RCD.png' style='padding:4px;border:none;background:none;'></a></span>"
 	
 /datum/rcd_grouped_schematic/rack/send_assets(var/client/client)
-	register_asset("rack_RCD.png", new/icon('icons/obj/objects.dmi', "rack" ))
-	send_asset(client, "rack_RCD.png")	
+	client << browse_rsc(icon('icons/obj/objects.dmi', "rack" ), "rack_RCD.png")	
 
 
 /datum/rcd_grouped_schematic/rack/build(var/atom/A, var/mob/user)

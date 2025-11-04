@@ -54,6 +54,7 @@
 		schemgroup.send_assets(user.client)
 		for(var/datum/rcd_grouped_schematic/sch)
 			sch.send_assets(user.client)
+			sleep(2)
 	interface.hide(user) //have to do this since loading so many images takes a lot of time. and no images is better than no UI
 	interface.show(user)
 	loaded_clients+=user.client
@@ -245,6 +246,7 @@
 		schemgroup.send_assets(user.client)
 		for(var/datum/rcd_grouped_schematic/sch)
 			sch.send_assets(user.client)
+			sleep(2)
 	interface.hide(user) //have to do this since loading so many images takes a lot of time. and no images is better than no UI
 	interface.show(user)
 	loaded_clients+=user.client
