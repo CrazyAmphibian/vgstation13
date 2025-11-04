@@ -141,21 +141,26 @@ var/list/foliage_replacments=list(
 	desc="A thick and lush carpet of various plant species, sustained by a regular supply to water."
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "grass_jungle1"
+	base_icon_state = "grass_jungle"
+	variance = 100
+	min_icon_states = 1
+	max_icon_states = 4
+	edge_flags = ALL_EDGES
+	edge_priority = GRASS_EDGE_PRIORITY
 	turf_speed_multiplier=1.0 // tall grass.
 	construction_allowed=TRUE
 	var/regrowticks=0 //world.time
-	
+
 /turf/unsimulated/floor/jungle/grass/New(var/loc)
 	..()
-	icon_state="grass_jungle[rand(1,4)]"
 	footstep_sound = sounds_grass
 	footstep_sound_barefoot = sounds_grass
 	footstep_sound_claw = sounds_grass
-	
+
 	if(SSFoliageRegrow && !generate_foliage())
 		turfs_to_regrow +=src
 		regrowticks=0
-	
+
 /turf/unsimulated/floor/jungle/grass/proc/generate_foliage()
 	if (prob(50))
 		if(prob(10)) //10% chance to replace with rocks or some shit. 5% over all
@@ -518,6 +523,7 @@ var/list/foliage_replacments=list(
 		return 0.1
 	return 0.0
 
+
 /turf/unsimulated/mineral/jungle_underground/Bumped(AM)
 	. = ..()
 	
@@ -525,7 +531,6 @@ var/list/foliage_replacments=list(
 		var/mob/living/carbon/human/H = AM
 		if(istype(H.get_active_hand(),/obj/item/weapon/pickaxe) || istype(H.get_inactive_hand(),/obj/item/weapon/pickaxe)) //prevents double attacking the same turf because parent proc covers this
 			return
-
 		if(item_terraforming_isshovel(H.get_active_hand()) || item_terraforming_ispickaxe(H.get_active_hand()))
 			attackby(H.get_active_hand(), H)
 		else if(item_terraforming_isshovel(H.get_inactive_hand()) || item_terraforming_ispickaxe(H.get_inactive_hand()))
@@ -548,7 +553,7 @@ var/list/foliage_replacments=list(
 	name="Bedrock"
 	desc="A very dense rock. Nothing seems to be able to dig through it."
 	icon='icons/turf/walls.dmi'
-	icon_state = "j_rockfloor"	
+	icon_state = "j_rockfloor"
 	var/obj/structure/ladder/jungle_tunnel/hashole=null
 	construction_allowed=TRUE
 
@@ -578,7 +583,7 @@ var/list/foliage_replacments=list(
 			if(do_after(user, src, 80/s ))
 				if(!hashole && !cannot_dig_up() )
 					to_chat(usr,"you finish making a hole.")
-					
+
 					var/obj/structure/ladder/jungle_tunnel/l_tunnel=new(src)
 					var/obj/structure/ladder/jungle_tunnel/l_surf=new(locate(x,y,z==2 ? 1 : 4))
 
