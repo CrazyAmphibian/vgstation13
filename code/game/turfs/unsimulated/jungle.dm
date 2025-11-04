@@ -218,13 +218,10 @@ var/list/foliage_replacments=list(
 	name="Mud"
 	desc="A viscous mixture of water and soil."
 	turf_speed_multiplier=2 //mud is difficult to travel over
-	icon='icons/turf/floors.dmi'
+	icon='icons/turf/walls.dmi'
 	icon_state = "rock(high)"
-
-/turf/unsimulated/floor/jungle/mud/New()
-	..()
-	icon_state="ironsand[rand(1,15)]"
-
+	edge_flags = 0
+	edge_priority = 1
 
 /turf/unsimulated/floor/jungle/concrete
 	name="Concrete"
@@ -409,6 +406,9 @@ var/list/foliage_replacments=list(
 	turf_reagents = list(WATER=1.0)
 	reagent_interaction_flags = TURF_REAGENT_ENTER | TURF_REAGENT_FILLS_CONTAINERS
 	turf_reagent_amount = 5
+	edge_flags = ALL_EDGES
+	edge_priority = WATER_EDGE_PRIORITY
+	edge_overlay_type = /obj/effect/edge_overlay/water
 
 /turf/unsimulated/floor/jungle/water_deep
 	name="Deep Water"
@@ -445,15 +445,6 @@ var/list/foliage_replacments=list(
 /turf/unsimulated/mineral/jungle_underground/New()
 	..()
 	mineral_turfs-=src
-
-/turf/unsimulated/mineral/jungle_underground/update_icon()
-	icon_state="j_dirtwall"
-	overlays=list()
-	var/image/img = image('icons/turf/rock_overlay.dmi', "dirt_overlay",layer = SIDE_LAYER)
-	img.pixel_x = -4*PIXEL_MULTIPLIER
-	img.pixel_y = -4*PIXEL_MULTIPLIER
-	img.plane = BELOW_TURF_PLANE
-	overlays += img
 
 
 /turf/unsimulated/mineral/jungle_underground/ex_act(severity)
@@ -541,6 +532,10 @@ var/list/foliage_replacments=list(
 
 /turf/unsimulated/mineral/jungle_underground/crate_loot
 	icon_state="rock(high)"
+
+/turf/unsimulated/mineral/jungle_underground/crate_loot/New()
+	icon_state="j_dirtwall"
+	..()
 
 /turf/unsimulated/mineral/jungle_underground/crate_loot/generate_loot(var/obj/item/C, var/mob/user)
 	..()

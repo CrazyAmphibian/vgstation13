@@ -276,6 +276,7 @@ var/MAX_EXPLOSION_RANGE = 32
 #define SAND_EDGE_PRIORITY			1
 #define GRASS_EDGE_PRIORITY			2
 #define ROCK_EDGE_PRIORITY			3
+#define WATER_EDGE_PRIORITY			3
 
 //slots
 #define slot_back 			1

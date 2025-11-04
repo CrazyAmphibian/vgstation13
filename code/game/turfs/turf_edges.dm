@@ -161,3 +161,7 @@
 	I.plane = olay_plane
 	I.layer = olay_layer + priority
 	overlays += I
+
+
+/obj/effect/edge_overlay/water
+	plane = ABOVE_OBJ_PLANE
