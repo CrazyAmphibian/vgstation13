@@ -43,9 +43,17 @@
 /turf/proc/edge_check()
 	var/turf/adj
 	var/list/edges = list()
-	for(var/direction in alldirs)
+	var/cardinal_matches = 0
+	for(var/direction in cardinal)
 		adj = get_step(src, direction)
-		if(!istype(adj, src) && adj.edge_priority < edge_priority)
+		if(adj && !istype(adj, src) && adj.edge_priority < edge_priority)
+			edges += direction
+			cardinal_matches |= direction
+	for(var/direction in diagonal)
+		if((direction & cardinal_matches) != direction)
+			continue
+		adj = get_step(src, direction)
+		if(adj && !istype(adj, src) && adj.edge_priority < edge_priority)
 			edges += direction
 	return edges
 
@@ -64,7 +72,6 @@
 			edge = E
 			if(edge.turf_type != src.type)
 				edge = null //create another one
-				break
 		if(!edge)
 			edge = new edge_overlay_type(T)
 			edge.turf_type = src.type
