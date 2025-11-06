@@ -43,8 +43,7 @@
 /turf/proc/edge_check()
 	var/turf/adj
 	var/list/edges = list()
-	var/cardinal_matches = 0
-	for(var/direction in cardinal)
+	for(var/direction in alldirs)
 		adj = get_step(src, direction)
 		if(!adj)
 			continue // Skip null turfs at map boundaries
@@ -64,6 +63,8 @@
 		for(var/datum/weakref/EO in edge_overlays)
 			var/obj/effect/edge_overlay/E = EO.get()
 			if(!E)
+				continue
+			if(E.turf_type!=src.type)
 				continue
 			var/turf/T = E.loc
 			if(!T)
@@ -97,7 +98,7 @@
 					continue
 				if(E.turf_type != src.type)
 					if(E.priority < edge_priority)
-						qdel(E)
+						//qdel(E)
 					continue
 				edge = E
 				break
