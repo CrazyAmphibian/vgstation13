@@ -97,7 +97,7 @@
 				if(!istype(E))
 					continue
 				if(E.turf_type != src.type)
-					if(E.priority < edge_priority)
+					//if(E.priority < edge_priority)
 						//qdel(E)
 					continue
 				edge = E
@@ -294,3 +294,13 @@
 
 /obj/effect/edge_overlay/water
 	plane = ABOVE_OBJ_PLANE
+
+/obj/effect/edge_overlay/water/deep/New()
+	..()
+	var/icon/I=icon(olay_icon)
+	var/const/sat=0.28
+	var/isat=1.0-sat
+	// 0.2627 0.6780 0.0593 ----- ITU-R BT.2020 constants
+	I.MapColors(sat+isat*0.2627,isat*0.2627,isat*0.2627, isat*0.6780,sat+isat*0.6780,isat*0.6780, isat*0.0593,isat*0.0593,sat+isat*0.0593 ,0,0,0)
+	I.MapColors(0.34,0,0, 0,0.34,0, 0,0,0.34, 0,0,0) //darken image
+	olay_icon=I

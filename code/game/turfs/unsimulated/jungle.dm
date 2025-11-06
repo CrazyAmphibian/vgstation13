@@ -401,7 +401,7 @@ var/list/foliage_replacments=list(
 	icon = 'icons/misc/beach.dmi'
 	icon_state = "water5"
 	turf_speed_multiplier=1.75
-	plane = ABOVE_OBJ_PLANE
+	//plane = ABOVE_OBJ_PLANE
 	DIGGING_BLOCKED = "Something tells you that this is a really bad idea."
 	turf_reagents = list(WATER=1.0)
 	reagent_interaction_flags = TURF_REAGENT_ENTER | TURF_REAGENT_FILLS_CONTAINERS
@@ -409,6 +409,17 @@ var/list/foliage_replacments=list(
 	edge_flags = ALL_EDGES
 	edge_priority = WATER_EDGE_PRIORITY
 	edge_overlay_type = /obj/effect/edge_overlay/water
+	
+/turf/unsimulated/floor/jungle/water/New()
+	..()
+	update_icon()
+	
+/turf/unsimulated/floor/jungle/water/update_icon()
+	icon_state = "rock(high)"
+	icon = 'icons/turf/walls.dmi'
+	overlays=list()
+	..()
+	overlays+=image('icons/misc/beach.dmi', "water5",layer=ABOVE_OBJ_PLANE)
 
 /turf/unsimulated/floor/jungle/water_deep
 	name="Deep Water"
@@ -416,12 +427,26 @@ var/list/foliage_replacments=list(
 	icon = 'icons/misc/beach.dmi'
 	icon_state = "water2"
 	turf_speed_multiplier=2.5
-	plane = MOB_PLANE
+	//plane = MOB_PLANE
 	DIGGING_BLOCKED = "Something tells you that this is a really bad idea."
 	turf_reagents = list(WATER=1.0)
 	reagent_interaction_flags = TURF_REAGENT_ENTER | TURF_REAGENT_FILLS_CONTAINERS
 	turf_reagent_amount = 10
-
+	edge_flags = ALL_EDGES
+	base_icon_state = "water5"
+	edge_priority = DEEPWATER_EDGE_PRIORITY
+	edge_overlay_type = /obj/effect/edge_overlay/water/deep
+	
+/turf/unsimulated/floor/jungle/water_deep/New()
+	..()
+	update_icon()
+	
+/turf/unsimulated/floor/jungle/water_deep/update_icon()
+	icon_state = "rock(high)"
+	icon = 'icons/turf/walls.dmi'
+	overlays=list()
+	..()
+	overlays+=image('icons/misc/beach.dmi', "water2",layer=MOB_PLANE)
 
 /turf/unsimulated/floor/jungle/sand
 	name="Sand"
