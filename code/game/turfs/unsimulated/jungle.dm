@@ -470,7 +470,13 @@ var/list/foliage_replacments=list(
 /turf/unsimulated/mineral/jungle_underground/New()
 	..()
 	mineral_turfs-=src
-
+	icon_state = "j_dirtwall"
+	overlays=list()
+	var/image/img = image('icons/turf/rock_overlay.dmi', "dirt_overlay",layer = SIDE_LAYER)
+	img.pixel_x = -4*PIXEL_MULTIPLIER
+	img.pixel_y = -4*PIXEL_MULTIPLIER
+	img.plane = BELOW_TURF_PLANE
+	overlays += img
 
 /turf/unsimulated/mineral/jungle_underground/ex_act(severity)
 	switch(severity)
