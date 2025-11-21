@@ -25,7 +25,7 @@
 	var/construction_allowed=FALSE //if we can add lattices and turn this into plating
 
 
-/turf/unsimulated/floor/jungle/ChangeTurf(var/turf/N, var/tell_universe=1, var/force_lighting_update = 0, var/allow = 1)
+/turf/unsimulated/floor/jungle/ChangeTurf(var/turf/N, var/tell_universe=1, var/force_lighting_update = 0, var/allow = 1, var/defer_edges = FALSE)
 	var/former_icoover=plated_icon_override
 	.=..()
 	if(.)
@@ -218,10 +218,11 @@ var/list/foliage_replacments=list(
 	name="Mud"
 	desc="A viscous mixture of water and soil."
 	turf_speed_multiplier=2 //mud is difficult to travel over
-	icon='icons/turf/walls.dmi'
-	icon_state = "rock(high)"
+	icon='icons/turf/planetary/jungle.dmi'
+	icon_state = "wateryrock"
 	edge_flags = 0
 	edge_priority = 1
+
 
 /turf/unsimulated/floor/jungle/concrete
 	name="Concrete"
@@ -246,7 +247,8 @@ var/list/foliage_replacments=list(
 /turf/unsimulated/floor/jungle/dirt
 	name="Soil"
 	desc="A mixture of sediments, clays, and decomposed matter."
-	icon_state = "ironsand1"
+	icon =  'icons/turf/planetary/jungle.dmi'
+	icon_state = "greendirt"
 	var/obj/structure/ladder/jungle_tunnel/hashole=null
 	construction_allowed=TRUE
 
@@ -406,6 +408,7 @@ var/list/foliage_replacments=list(
 	turf_reagents = list(WATER=1.0)
 	reagent_interaction_flags = TURF_REAGENT_ENTER | TURF_REAGENT_FILLS_CONTAINERS
 	turf_reagent_amount = 5
+	turf_flags = NO_FLORA
 	edge_flags = ALL_EDGES
 	edge_priority = WATER_EDGE_PRIORITY
 	edge_overlay_type = /obj/effect/edge_overlay/water
@@ -420,6 +423,7 @@ var/list/foliage_replacments=list(
 	overlays=list()
 	..()
 	overlays+=image('icons/misc/beach.dmi', "water5",layer=ABOVE_OBJ_PLANE)
+
 
 /turf/unsimulated/floor/jungle/water_deep
 	name="Deep Water"
@@ -717,6 +721,17 @@ var/list/foliage_replacments=list(
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
 	mined_type = /turf/unsimulated/floor/jungle/path
+
+/turf/unsimulated/floor/jungle/wasteland
+	name="wasteland"
+	desc="A dry, cracked surface with little vegetation."
+	icon = 'icons/turf/planetary/jungle.dmi'
+	icon_state = "wasteland"
+
+/turf/unsimulated/floor/jungle/wasteland/New()
+	..()
+	icon_state="wasteland[rand(0,12)]"
+
 
 #undef T_JUNGLE
 #undef JUNGLE_PRESSURE

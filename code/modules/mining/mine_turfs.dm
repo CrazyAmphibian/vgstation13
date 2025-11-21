@@ -78,7 +78,6 @@ var/global/list/mineralSpawnChance[]
 	var/mining_difficulty = MINE_DIFFICULTY_NORM
 	var/fortune_multiplier = 1 //how much extra mineral comes from a pyrite slime enhancement
 
-
 /turf/unsimulated/mineral/snow
 	icon_state = "snow_rock"
 	base_icon_state = "snow_rock"
@@ -181,7 +180,7 @@ var/list/icon_state_to_appearance = list()
 	img.plane = BELOW_TURF_PLANE
 	overlays += img
 
-/turf/unsimulated/mineral/ChangeTurf(var/turf/N, var/tell_universe=1, var/force_lighting_update = 0, var/allow = 1, var/digsite_depressed = 0)
+/turf/unsimulated/mineral/ChangeTurf(var/turf/N, var/tell_universe=1, var/force_lighting_update = 0, var/allow = 1, var/digsite_depressed = 0, var/defer_edges = FALSE)
 	mineral_turfs -= src
 	var/datum/finds/old_finds = finddatum
 	. = ..(N, tell_universe, 1, allow)
@@ -760,11 +759,27 @@ var/list/icon_state_to_appearance = list()
 	mined_type = /turf/unsimulated/floor/snow/permafrost
 	overlay_state = "snow_rock_overlay"
 	mineralPool = "snow"
+	turf_flags = NO_RUINS
 
 
 /turf/unsimulated/mineral/random/snow/New()
 	base_icon_state = pick("snow_rock","snow_rock1","snow_rock2","snow_rock3","snow_rock4")
 	..()
+
+/turf/unsimulated/mineral/random/cave
+	name = "cave wall"
+	icon_state = "cave_wall"
+	base_icon_state = "cave_wall"
+	mined_type = /turf/unsimulated/floor/planetary/cave
+	edge_priority = ROCK_EDGE_PRIORITY
+	edge_flags = ALL_EDGES
+
+/turf/unsimulated/mineral/random/xeno
+	name = "strange wall"
+	icon_state = "rock(clown)"
+	base_icon_state = "rock(clown)"
+	overlay_state = "xeno_overlay"
+	mined_type = /turf/unsimulated/floor/grey_sand
 
 /turf/unsimulated/mineral/random/high_chance
 	icon_state = "rock(high)"
@@ -777,6 +792,20 @@ var/list/icon_state_to_appearance = list()
 	mined_type = /turf/unsimulated/floor/snow/permafrost
 	overlay_state = "snow_rock_overlay"
 
+/turf/unsimulated/mineral/random/high_chance/cave
+	name = "cave wall"
+	icon_state = "cave_wall"
+	base_icon_state = "cave_wall"
+	mined_type = /turf/unsimulated/floor/planetary/cave
+	edge_priority = ROCK_EDGE_PRIORITY
+	edge_flags = ALL_EDGES
+
+/turf/unsimulated/mineral/random/high_chance/xeno
+	name = "strange wall"
+	icon_state = "rock(clown)"
+	base_icon_state = "rock(clown)"
+	mined_type = /turf/unsimulated/floor/grey_sand
+	overlay_state = "xeno_overlay"
 
 /turf/unsimulated/mineral/random/high_chance_clown
 	icon_state = "rock(clown)"
@@ -1056,6 +1085,8 @@ var/list/icon_state_to_appearance = list()
 
 	icon = 'icons/turf/new_snow.dmi'
 	icon_state = "permafrost_full"
+	base_icon_state = "permafrost_full"
+	max_icon_states = 0
 	temperature = T_ARCTIC
 	oxygen = MOLES_O2STANDARD_ARCTIC
 	nitrogen = MOLES_N2STANDARD_ARCTIC
