@@ -219,9 +219,14 @@ var/list/foliage_replacments=list(
 	desc="A viscous mixture of water and soil."
 	turf_speed_multiplier=2 //mud is difficult to travel over
 	icon='icons/turf/planetary/jungle.dmi'
-	icon_state = "wateryrock"
+	icon_state = "mud"
 	edge_flags = 0
 	edge_priority = 1
+
+/turf/unsimulated/floor/jungle/mud/New()	
+	footstep_sound = sounds_water
+	footstep_sound_barefoot = sounds_water
+	footstep_sound_claw = sounds_water
 
 
 /turf/unsimulated/floor/jungle/concrete
@@ -247,8 +252,7 @@ var/list/foliage_replacments=list(
 /turf/unsimulated/floor/jungle/dirt
 	name="Soil"
 	desc="A mixture of sediments, clays, and decomposed matter."
-	icon =  'icons/turf/planetary/jungle.dmi'
-	icon_state = "greendirt"
+	icon_state = "ironsand1"
 	var/obj/structure/ladder/jungle_tunnel/hashole=null
 	construction_allowed=TRUE
 
@@ -416,13 +420,16 @@ var/list/foliage_replacments=list(
 /turf/unsimulated/floor/jungle/water/New()
 	..()
 	update_icon()
+	footstep_sound = sounds_water
+	footstep_sound_barefoot = sounds_water
+	footstep_sound_claw = sounds_water
 	
 /turf/unsimulated/floor/jungle/water/update_icon()
-	icon_state = "rock(high)"
-	icon = 'icons/turf/walls.dmi'
+	icon='icons/turf/planetary/jungle.dmi'
+	icon_state = "mud"
 	overlays=list()
 	..()
-	overlays+=image('icons/misc/beach.dmi', "water5",layer=ABOVE_OBJ_PLANE)
+	overlays+=image('icons/misc/beach.dmi', "water5",layer=ABOVE_OBJ_PLANE+1)
 
 
 /turf/unsimulated/floor/jungle/water_deep
@@ -444,13 +451,16 @@ var/list/foliage_replacments=list(
 /turf/unsimulated/floor/jungle/water_deep/New()
 	..()
 	update_icon()
+	footstep_sound = sounds_water
+	footstep_sound_barefoot = sounds_water
+	footstep_sound_claw = sounds_water
 	
 /turf/unsimulated/floor/jungle/water_deep/update_icon()
-	icon_state = "rock(high)"
-	icon = 'icons/turf/walls.dmi'
+	icon='icons/turf/planetary/jungle.dmi'
+	icon_state = "mud"
 	overlays=list()
 	..()
-	overlays+=image('icons/misc/beach.dmi', "water2",layer=MOB_PLANE)
+	overlays+=image('icons/misc/beach.dmi', "water2",layer=MOB_PLANE+1)
 
 /turf/unsimulated/floor/jungle/sand
 	name="Sand"
@@ -458,6 +468,12 @@ var/list/foliage_replacments=list(
 	icon = 'icons/misc/beach.dmi'
 	icon_state = "sand"
 	construction_allowed=TRUE
+
+/turf/unsimulated/floor/jungle/sand/New()
+	..()
+	footstep_sound = sounds_sand
+	footstep_sound_barefoot = sounds_sand
+	footstep_sound_claw = sounds_sand
 
 
 /turf/unsimulated/mineral/jungle_underground
