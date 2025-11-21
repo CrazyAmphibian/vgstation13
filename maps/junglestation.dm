@@ -166,7 +166,7 @@
 
 
 /datum/subsystem/daynightcycle/advance_time()
-	flags&=(0^SS_FIRE_IN_LOBBY) //we don't want this one firing in lobby constantly, as we've tweaked the lighting to be just right on startup. we still want it to fire once though.
+	flags&= ~SS_FIRE_IN_LOBBY //we don't want this one firing in lobby constantly, as we've tweaked the lighting to be just right on startup. we still want it to fire once though.
 	// YCbCr is a superior colorspace. fight me.
 	var/luma=0.0
 	var/chroma_b=0.0
