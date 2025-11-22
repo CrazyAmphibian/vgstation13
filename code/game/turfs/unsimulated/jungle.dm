@@ -217,7 +217,7 @@ var/list/foliage_replacments=list(
 /turf/unsimulated/floor/jungle/mud
 	name="Mud"
 	desc="A viscous mixture of water and soil."
-	turf_speed_multiplier=2 //mud is difficult to travel over
+	turf_speed_multiplier=1.75 //mud is difficult to travel over
 	icon='icons/turf/planetary/jungle.dmi'
 	icon_state = "mud"
 	edge_flags = 0
@@ -401,13 +401,43 @@ var/list/foliage_replacments=list(
 
 
 
+/atom/movable/junglewateroverlay
+	icon = 'icons/misc/beach.dmi'
+	icon_state = "water5"
+	anchored      = TRUE
+	name=""
+	plane            = ABOVE_OBJ_PLANE
+	mouse_opacity    = 0
+	invisibility     = INVISIBILITY_LIGHTING
+
+/atom/movable/junglewateroverlay/forceMove(atom/destination, step_x = 0, step_y = 0, no_tp = FALSE, harderforce = FALSE, glide_size_override = 0)
+	if(harderforce)
+		. = ..()
+/atom/movable/junglewateroverlay/ex_act(severity)
+	return 0
+/atom/movable/junglewateroverlay/shuttle_act()
+	return 0
+/atom/movable/junglewateroverlay/can_shuttle_move()
+	return 0
+/atom/movable/junglewateroverlay/singularity_act()
+	return
+/atom/movable/junglewateroverlay/singularity_pull()
+	return
+/atom/movable/junglewateroverlay/blob_act()
+	return
+/atom/movable/junglewateroverlay/send_to_future(var/duration)
+	return
+/atom/movable/junglewateroverlay/send_to_past(var/duration)
+	return
+/atom/movable/junglewateroverlay/clean_act(var/cleanliness)
+	return
+	
 /turf/unsimulated/floor/jungle/water
 	name="Water"
 	desc="It's about knee-height. Probably not safe to drink from."
 	icon = 'icons/misc/beach.dmi'
 	icon_state = "water5"
-	turf_speed_multiplier=1.75
-	//plane = ABOVE_OBJ_PLANE
+	turf_speed_multiplier=2.0
 	DIGGING_BLOCKED = "Something tells you that this is a really bad idea."
 	turf_reagents = list(WATER=1.0)
 	reagent_interaction_flags = TURF_REAGENT_ENTER | TURF_REAGENT_FILLS_CONTAINERS
@@ -416,6 +446,7 @@ var/list/foliage_replacments=list(
 	edge_flags = ALL_EDGES
 	edge_priority = WATER_EDGE_PRIORITY
 	edge_overlay_type = /obj/effect/edge_overlay/water
+	var/atom/movable/junglewateroverlay/wateroverlay=null
 	
 /turf/unsimulated/floor/jungle/water/New()
 	..()
@@ -423,14 +454,13 @@ var/list/foliage_replacments=list(
 	footstep_sound = sounds_water
 	footstep_sound_barefoot = sounds_water
 	footstep_sound_claw = sounds_water
-	
-/turf/unsimulated/floor/jungle/water/update_icon()
 	icon='icons/turf/planetary/jungle.dmi'
 	icon_state = "mud"
-	overlays=list()
-	..()
-	overlays+=image('icons/misc/beach.dmi', "water5",layer=ABOVE_OBJ_PLANE+1)
+	wateroverlay=new(src)
 
+/turf/unsimulated/floor/jungle/water/Destroy()
+	qdel(wateroverlay)
+	..()
 
 /turf/unsimulated/floor/jungle/water_deep
 	name="Deep Water"
@@ -438,7 +468,6 @@ var/list/foliage_replacments=list(
 	icon = 'icons/misc/beach.dmi'
 	icon_state = "water2"
 	turf_speed_multiplier=2.5
-	//plane = MOB_PLANE
 	DIGGING_BLOCKED = "Something tells you that this is a really bad idea."
 	turf_reagents = list(WATER=1.0)
 	reagent_interaction_flags = TURF_REAGENT_ENTER | TURF_REAGENT_FILLS_CONTAINERS
@@ -447,6 +476,7 @@ var/list/foliage_replacments=list(
 	base_icon_state = "water5"
 	edge_priority = DEEPWATER_EDGE_PRIORITY
 	edge_overlay_type = /obj/effect/edge_overlay/water/deep
+	var/atom/movable/junglewateroverlay/wateroverlay=null
 	
 /turf/unsimulated/floor/jungle/water_deep/New()
 	..()
@@ -454,13 +484,15 @@ var/list/foliage_replacments=list(
 	footstep_sound = sounds_water
 	footstep_sound_barefoot = sounds_water
 	footstep_sound_claw = sounds_water
-	
-/turf/unsimulated/floor/jungle/water_deep/update_icon()
+	wateroverlay=new(src)
+	wateroverlay.icon_state="water2"
+	wateroverlay.plane=MOB_PLANE
 	icon='icons/turf/planetary/jungle.dmi'
 	icon_state = "mud"
-	overlays=list()
+
+/turf/unsimulated/floor/jungle/water_deep/Destroy()
+	qdel(wateroverlay)
 	..()
-	overlays+=image('icons/misc/beach.dmi', "water2",layer=MOB_PLANE+1)
 
 /turf/unsimulated/floor/jungle/sand
 	name="Sand"
