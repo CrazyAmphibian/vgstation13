@@ -9,9 +9,6 @@
 
 /obj/structure/closet/jungle_first_aid/atoms_to_spawn()
 	var/list/tospawn = list(
-		/obj/item/weapon/storage/firstaid/regular = 1,
-		/obj/item/weapon/storage/firstaid/toxin = 1,
+		/obj/item/weapon/storage/firstaid/jungle = 2,
 	)
-	if(prob(50))
-		tospawn[/obj/item/weapon/storage/firstaid/regular]=2
 	return tospawn

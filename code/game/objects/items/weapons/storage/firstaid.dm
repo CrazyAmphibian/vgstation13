@@ -126,6 +126,20 @@
 	new support(src)
 
 
+/obj/item/weapon/storage/firstaid/jungle
+	name = "Planetary First-Aid Kit"
+	desc = "Used to treat injuries from various flora and fauna."
+	icon_state = "purplefirstaid"
+	item_state = "firstaid-purple"
+	items_to_spawn = list(
+		/obj/item/device/healthanalyzer,
+		/obj/item/weapon/reagent_containers/pill/antitox = 2,
+		/obj/item/stack/medical/bruise_pack = 2,
+		/obj/item/stack/medical/ointment = 1,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector,
+		/obj/item/weapon/reagent_containers/syringe/inaprovaline,
+	)
+
 /*
  * Pill Bottles
  */
