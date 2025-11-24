@@ -14,7 +14,7 @@
 		return
 	if(!up && !down)
 		return
-	if(!(user.Adjacent(over_object) && over_object.Adjacent(user) && src.Adjacent(user) && user.Adjacent(src) ))
+	if(!(user.Adjacent(over_object) && src.Adjacent(user) ))
 		return
 	if(!(istype(user,/mob/living/carbon) || istype(user,/mob/living/silicon/robot) ))
 		return

@@ -33,8 +33,7 @@
 	var/zDeepSpace = 6
 	var/zProcGen = 7 //temporary until dynamic z levels are implemented
 
-	var/zAdditionalStationZlevel = -1 // -1 because surely nothing will ever go to Z -1, right? why not null? because nullspace
-	var/highest_z_level = 6
+	var/zAdditionalStationZlevel = 0 // 0 because surely nothing will ever go to Z 0, right? why not null? because nullspace
 
 	var/skip_hobo_shack = FALSE // if true, skips hobo shack generation. set to TRUE if you want to map your own custom one for the map.
 
@@ -109,15 +108,6 @@
 
 /datum/map/New()
 	. = ..()
-
-	highest_z_level = max(
-		zMainStation,
-		zCentcomm,
-		zTCommSat,
-		zDerelict,
-		zAsteroid,
-		zDeepSpace,
-		zAdditionalStationZlevel)
 
 	src.loadZLevels(src.zLevels)
 

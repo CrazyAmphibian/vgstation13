@@ -88,7 +88,7 @@
 
 /mob/living/complex_animal/proc/allow_msg()
 	for(var/mob/m in range(src,11)) //only do emotes/say things if a player is nearby. this is to reduce log spam and make obsgang not want to die, even though they should just play the game.
-		if(m.ckey)
+		if(m.client)
 			return TRUE
 	return FALSE
 
