@@ -489,9 +489,7 @@
 	pixel_x = -5
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "floorgrime"
 	},
 /area/security/processing)
 "akL" = (
@@ -1875,9 +1873,7 @@
 	dir = 1
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "floorgrime"
 	},
 /area/security/processing)
 "aKp" = (
@@ -7385,7 +7381,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/light,
 /obj/structure/flora/pottedplant/random,
-/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/cargolobby)
 "cHD" = (
 /obj/item/weapon/reagent_containers/syringe,
@@ -11848,7 +11844,6 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "elL" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -13971,9 +13966,7 @@
 /area/vox_trading_post/hallway)
 "fcx" = (
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "floorgrime"
 	},
 /area/security/processing)
 "fcF" = (
@@ -23495,9 +23488,7 @@
 	pixel_y = 5
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "floorgrime"
 	},
 /area/security/processing)
 "iIt" = (
@@ -25293,14 +25284,6 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
-"joj" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/zoned/cargolobby)
 "jop" = (
 /obj/machinery/light{
 	dir = 1
@@ -29216,9 +29199,7 @@
 	dir = 8
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "floorgrime"
 	},
 /area/security/processing)
 "kQa" = (
@@ -33252,7 +33233,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/cargolobby)
 "mmv" = (
 /obj/structure/cable/yellow{
@@ -45246,9 +45227,7 @@
 "qLm" = (
 /obj/structure/bed/chair,
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "floorgrime"
 	},
 /area/security/processing)
 "qLq" = (
@@ -47004,9 +46983,7 @@
 	on = 1
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "floorgrime"
 	},
 /area/security/processing)
 "rsc" = (
@@ -52424,9 +52401,7 @@
 	},
 /obj/item/device/flashlight/lamp,
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "floorgrime"
 	},
 /area/security/processing)
 "toQ" = (
@@ -56251,9 +56226,7 @@
 	pixel_y = -22
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "floorgrime"
 	},
 /area/security/processing)
 "uOT" = (
@@ -59899,9 +59872,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "floorgrime"
 	},
 /area/security/processing)
 "wbM" = (
@@ -60194,7 +60165,7 @@
 /obj/machinery/media/receiver/boombox/wallmount/muzak{
 	pixel_x = 28
 	},
-/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/cargolobby)
 "wgW" = (
 /obj/item/weapon/storage/box/donkpockets{
@@ -63400,7 +63371,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/vending/snack,
-/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/cargolobby)
 "xqP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -64316,9 +64287,7 @@
 	pixel_y = -24
 	},
 /turf/simulated/floor{
-	dir = 5;
-	icon_state = "vault";
-	tag = "icon-vault (NORTHEAST)"
+	icon_state = "floorgrime"
 	},
 /area/security/processing)
 "xJG" = (
@@ -130769,7 +130738,7 @@ ail
 mDL
 mDL
 nuc
-joj
+elL
 elL
 tsV
 eTN

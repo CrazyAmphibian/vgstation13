@@ -2274,5 +2274,8 @@ Use this proc preferably at the end of an equipment loadout
 /mob/proc/isUnholy()
 	return (isanycultist(src) || isvampire(src))
 
+/mob/proc/beartrap_act(var/obj/item/weapon/beartrap/trap)
+	return FALSE
+
 #undef MOB_SPACEDRUGS_HALLUCINATING
 #undef MOB_MINDBREAKER_HALLUCINATING

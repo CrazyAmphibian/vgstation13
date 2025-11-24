@@ -769,8 +769,7 @@ var/list/available_redphone_names3 = list("1","2","3","4","5","6","7","8","9")
 			else if (istype(AM,/mob/living/simple_animal/hostile/bear))
 				trap(AM)
 			else if (istype(AM,/mob/living/complex_animal))
-				if(L.size>SIZE_TINY) //really small animals don't trigger it
-					trap(AM)
+				trap(AM)
 			else if(isanimal(AM))
 				armed = 0
 				anchored = FALSE
@@ -788,58 +787,8 @@ var/list/available_redphone_names3 = list("1","2","3","4","5","6","7","8","9")
 
 
 /obj/item/weapon/beartrap/proc/trap(var/mob/living/L)
-	if (ishuman(L))
-		var/mob/living/carbon/human/H = L
-		trappedorgan = H.pick_usable_organ(LIMB_LEFT_LEG, LIMB_RIGHT_LEG)
-		if(!trappedorgan)//no leg to snap to
-			return
-		trapped = 1
-		trappeduser = H
-		armed = 0
-
-		playsound(src, 'sound/effects/snap.ogg', 60, 1)
-		H.audible_scream()
-		lock_atom(H, /datum/locking_category/beartrap)
-		H.register_event(/event/moved, src, nameof(src::forcefully_remove()))
-
-		if(trappedorgan.take_damage(15, 0, 25, SERRATED_BLADE & SHARP_BLADE))
-			H.UpdateDamageIcon()
-			H.updatehealth()
-
-		if(!H.pick_usable_organ(trappedorgan)) //check if they lost their leg, and get them out of the trap
-			to_chat(H, "<span class='warning'>With your leg missing, you slip out of the bear trap!</span>")
-			trapped = 0
-			trappeduser.unregister_event(/event/moved, src, nameof(src::forcefully_remove()))
-			trappeduser = null
-			unlock_atom(H)
-			anchored = FALSE
-
-		H.update_canmove()
-	else if (istype(L,/mob/living/simple_animal/hostile/bear) || istype(L,/mob/living/simple_animal/hostile/spacehog))
-		trapped = 1
-		trappedbear = L
-		trappedbear.LostTarget()
-		trappedbear.dir = SOUTH
-		armed = 0
-		playsound(src, 'sound/effects/snap.ogg', 60, 1)
-		lock_atom(trappedbear, /datum/locking_category/beartrap)
-		trappedbear.adjustBruteLoss(20)
-		trappedbear.update_canmove()
-		trappedbear.update_icon()
-	else if (istype(L,/mob/living/complex_animal))
-		trapped = 1
-		trappedcanimal = L
-		armed = 0
-		playsound(src, 'sound/effects/snap.ogg', 60, 1)
-		lock_atom(trappedcanimal, /datum/locking_category/beartrap)
-		trappedcanimal.adjustBruteLoss(20)
-		trappedcanimal.update_canmove()
-		trappedcanimal.update_icon()
-		trappedcanimal.emote("me", EMOTE_AUDIBLE, "cries out in pain")
-		if(trappedcanimal.behavior_flags & (1<<6) ) //ANIMAL_BEHAVIOR_AVOID_CAPTURE is not defined in this file
-			trappedcanimal.behavior_state = 3 //ANIMAL_STATE_ATTACKING. see above
-			trappedcanimal.target = src
-	if (IED)
+	.=L.beartrap_act(src)
+	if (. && IED)
 		IED_det(L)
 
 /obj/item/weapon/beartrap/proc/IED_det(var/mob/living/L)

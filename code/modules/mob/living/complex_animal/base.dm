@@ -810,3 +810,21 @@
 /mob/living/complex_animal/getarmor(var/def_zone, var/type)
 	return armor[type] || 0
 
+/mob/living/complex_animal/beartrap_act(var/obj/item/weapon/beartrap/trap)
+	if(flying)
+		return FALSE
+	if(size>SIZE_TINY)
+		return FALSE
+	trap.trapped = 1
+	trap.trappedcanimal = src
+	trap.armed = 0
+	playsound(trap, 'sound/effects/snap.ogg', 60, 1)
+	trap.lock_atom(src, /datum/locking_category/beartrap)
+	adjustBruteLoss(20)
+	update_canmove()
+	update_icon()
+	emote("me", EMOTE_AUDIBLE, "cries out in pain")
+	if(behavior_flags & ANIMAL_BEHAVIOR_AVOID_CAPTURE )
+		behavior_state = ANIMAL_STATE_ATTACKING
+		target = src
+	return TRUE
