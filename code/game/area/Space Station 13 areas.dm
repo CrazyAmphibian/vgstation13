@@ -2161,6 +2161,14 @@ var/global/list/adminbusteleportlocs = list()
 	name = "\improper Solar Array"
 	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
+/area/surface/jungle/zoned/cargogarage
+	name = "\improper Cargo Parking"
+	holomap_color = HOLOMAP_AREACOLOR_CARGO
+
+/area/surface/jungle/zoned/cargolobby
+	name = "\improper Cargo Lobby"
+	holomap_color = HOLOMAP_AREACOLOR_CARGO
+
 /area/surface/jungle/zoned/bombrange
 	name = "\improper Bomb Range"
 
