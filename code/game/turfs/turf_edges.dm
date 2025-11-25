@@ -297,9 +297,3 @@
 
 /obj/effect/edge_overlay/water/deep
 	plane = MOB_PLANE
-
-/obj/effect/edge_overlay/water/deep/New()
-	..()
-	var/icon/I=icon(olay_icon)
-	I.MapColors(0.15950896,0.06430896,0.06430896,  0.1659744,0.2611744,0.1659744,  0.01451664,0.01451664,0.10971664, 0,0,0) //saturation multiplication by 0.28 times via YCbCr, then all RGB components multiplied by 0.34.
-	olay_icon=I
