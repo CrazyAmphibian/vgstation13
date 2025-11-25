@@ -19035,8 +19035,7 @@
 /obj/item/mounted/frame/painting/custom/portrait,
 /obj/item/mounted/frame/painting/custom/portrait,
 /obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
 /turf/simulated/floor/wood{
 	icon_state = "wood_26"
@@ -21130,12 +21129,9 @@
 	pixel_y = 4
 	},
 /obj/item/painting_brush,
+/obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
-	one_way = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
 /turf/simulated/floor/wood{
 	icon_state = "wood_26"
@@ -36060,15 +36056,9 @@
 /turf/simulated/floor/shuttle/plating,
 /area/shuttle/escape/centcom)
 "noW" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "warning";
-	tag = "icon-warning"
-	},
-/obj/docking_port/destination/vox/tradepost{
-	dir = 2
-	},
-/turf/unsimulated/floor/jungle/path,
-/area/surface/jungle/fenced/trader)
+/obj/docking_port/destination/vox/tradepost,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "noZ" = (
 /obj/structure/table/woodentable,
 /turf/unsimulated/floor{
@@ -36088,9 +36078,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/structure/window/reinforced{
-	one_way = 1
-	},
+/obj/structure/window/reinforced,
 /turf/simulated/floor/wood{
 	icon_state = "wood_26"
 	},
@@ -41239,9 +41227,7 @@
 /obj/item/weapon/storage/fancy/crayons,
 /obj/item/device/rcd/tile_painter,
 /obj/item/palette,
-/obj/structure/window/reinforced{
-	one_way = 1
-	},
+/obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -45500,9 +45486,7 @@
 /obj/item/mounted/frame/painting/custom/large,
 /obj/item/mounted/frame/painting/custom/large,
 /obj/item/mounted/frame/painting/custom/large,
-/obj/structure/window/reinforced{
-	one_way = 1
-	},
+/obj/structure/window/reinforced,
 /turf/simulated/floor/wood{
 	icon_state = "wood_26"
 	},
@@ -52614,12 +52598,9 @@
 /obj/structure/table,
 /obj/item/paint_roller,
 /obj/item/device/rcd/tile_painter,
+/obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
-	one_way = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
 /turf/simulated/floor/wood{
 	icon_state = "wood_26"
@@ -58663,9 +58644,7 @@
 /obj/item/mounted/frame/painting/custom/landscape,
 /obj/item/mounted/frame/painting/custom/landscape,
 /obj/item/mounted/frame/painting/custom/landscape,
-/obj/structure/window/reinforced{
-	one_way = 1
-	},
+/obj/structure/window/reinforced,
 /turf/simulated/floor/wood{
 	icon_state = "wood_26"
 	},
@@ -62350,6 +62329,12 @@
 /obj/structure/grille,
 /turf/simulated/floor/plating,
 /area/security/processing)
+"wWY" = (
+/obj/docking_port/destination/vox/southeast_station{
+	dir = 2
+	},
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "wXa" = (
 /obj/structure/shuttle/engine/propulsion{
 	dir = 1
@@ -102327,7 +102312,7 @@ rXk
 tFc
 nJC
 nJC
-noW
+mGh
 lIK
 lIK
 lIK
@@ -103407,7 +103392,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+noW
 lIK
 lIK
 lIK
@@ -144554,7 +144539,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+wWY
 lIK
 lIK
 lIK
