@@ -514,6 +514,9 @@ datums for the fission reactor, which includes the fuel and reactor
 		return
 	if(fuel.life<=0)
 		return
+	if (fuel.lifetime<=0)
+		fuel.life=0
+		return
 	if(fuel.wattage<=0)
 		return
 		
