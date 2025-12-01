@@ -399,7 +399,7 @@ CRITICAL<br>
 		else if(!associated_reactor.fuel)
 			status="<span class='status_nofuel'>No Fuel</span>"
 		else if(associated_reactor.fuel.life<=0)
-			status="<span class='status_done'>Depleated</span>"
+			status="<span class='status_done'>Depleted</span>"
 		else if (!associated_reactor.considered_on())
 			status="<span class='status_halt'>Standby</span>"
 	
