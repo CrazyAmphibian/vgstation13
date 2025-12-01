@@ -378,8 +378,10 @@ CRITICAL<br>
 				estimatedtimeleft="Expired"
 			else if(associated_reactor.fuel_rods_affected_by_rods==associated_reactor.fuel_rods.len && associated_reactor.control_rod_insertion>=1.0)
 				estimatedtimeleft="Halted" //avoids a div by 0
+			else if(associated_reactor.fuel.wattage<=0)
+				estimatedtimeleft="None"
 			else
-				var/secs=associated_reactor.fuel.lifetime
+				var/secs=associated_reactor.fuel.lifetime/associated_reactor.fuel.get_fuel_life_factor()
 				secs/=associated_reactor.fuel_rods.len - (associated_reactor.fuel_rods_affected_by_rods*associated_reactor.control_rod_insertion)
 				secs *= associated_reactor.fuel.life
 				secs=floor(secs)
