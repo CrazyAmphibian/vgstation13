@@ -84,7 +84,7 @@ the machine which makes fuel reservoirs have things in them.
 				heldrod.forceMove(loc)
 			qdel(src)
 		return TRUE	
-	if( istype(I,/obj/item/weapon/reagent_containers) )
+	if( istype(I,/obj/item/weapon/reagent_containers/glass) )
 		var/obj/item/weapon/reagent_containers/C=I
 		if(container)
 			to_chat(user,"There's already a container inside of \the [src].")
