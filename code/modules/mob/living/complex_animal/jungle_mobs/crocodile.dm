@@ -1,0 +1,48 @@
+/mob/living/complex_animal/crocodile
+	name = "\improper Crocodile"
+	desc = "Not to be confused with an alligator, or even a gharial."
+	icon_state="otherthing"
+	icon_living="otherthing"
+	icon_dead="otherthing-dead"
+	size=SIZE_BIG
+	
+	health=100
+	maxHealth=100
+	armor=list(melee=35,bullet=10,laser=15,energy=0,bomb=0,bio=0,rad=0)
+	max_food=100
+	food_flags = ANIMAL_CARNIVORE
+	base_damage = 20
+	damage_variance = 5
+	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_TERRITORIAL
+	movespeed=6
+	max_local_population = 3
+	mob_max_age = 900 // 30 minutes
+	food_per_tick = 0.0001
+	
+/mob/living/complex_animal/crocodile/tick_state_idle() //we like water.
+	.=..()
+	if(prob(50))
+		return
+	var/list/watertiles=list()
+	for(var/turf/unsimulated/floor/jungle/water/W in range(6))
+		watertiles+=W
+	if(!watertiles.len)
+		return
+	var/turf/unsimulated/floor/jungle/water/waterspot = pick(watertiles)
+	walk_to(src,waterspot)
+
+/mob/living/complex_animal/crocodile/schnapps
+	name = "\improper Schnapps"
+	desc = "Whose idea was it to keep this thing as a pet?"
+	behavior_flags = ANIMAL_BEHAVIOR_RETALIATE
+	animal_flags = ANIMAL_FLAG_IMMORTAL
+	movespeed=7
+	health=120
+	maxHealth=120
+	armor=list(melee=35,bullet=15,laser=20,energy=0,bomb=10,bio=0,rad=0)
+	petable=TRUE
+
+/mob/living/complex_animal/crocodile/schnapps/get_offspring_cost()
+	return 0 //no infinite schnapps.	
+/mob/living/complex_animal/crocodile/schnapps/can_offspring()
+	return FALSE
