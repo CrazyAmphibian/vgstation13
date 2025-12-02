@@ -14,10 +14,11 @@
 	base_damage = 20
 	damage_variance = 5
 	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_TERRITORIAL
-	movespeed=6
+	movespeed=5
 	max_local_population = 3
 	mob_max_age = 900 // 30 minutes
 	food_per_tick = 0.0001
+	var/stuntracker=FALSE //prevents being stunlocked
 	
 /mob/living/complex_animal/crocodile/tick_state_idle() //we like water.
 	.=..()
@@ -31,12 +32,45 @@
 	var/turf/unsimulated/floor/jungle/water/waterspot = pick(watertiles)
 	walk_to(src,waterspot)
 
+/mob/living/complex_animal/crocodile/attack(var/victim)
+	.=..()
+	if(. && istype(victim,/mob/living/carbon) )
+		var/mob/living/carbon/C=victim
+		if(!stuntracker)
+			if (!C.knockdown)
+				visible_message("<b>\The [src]</b> knocks \the [target] off their feet!")
+				C.stop_pulling()
+				C.Knockdown(1)
+				stuntracker=TRUE
+		else
+			stuntracker=FALSE
+/mob/living/complex_animal/crocodile/get_attack_msg(var/individual)
+	var/i=rand(1,2)
+	switch(i)
+		if(1)
+			emote("me", MESSAGE_SEE, "bites \the [individual]!")
+		if(2)
+			emote("me", MESSAGE_SEE, "chomps on \the [individual]!")
+
+/mob/living/complex_animal/crocodile/get_idle_sounds()
+	if(prob(10))
+		var/i=rand(1,2)
+		switch(i)
+			if(1)
+				emote("me", MESSAGE_HEAR, "growls.")
+			if(2)
+				if(loc.type==/turf/unsimulated/floor/jungle/water)
+					emote("me", MESSAGE_HEAR, "splashes.")
+				else
+					emote("me", MESSAGE_HEAR, "growls.")
+
+
 /mob/living/complex_animal/crocodile/schnapps
-	name = "\improper Schnapps"
+	name = "Schnapps"
 	desc = "Whose idea was it to keep this thing as a pet?"
 	behavior_flags = ANIMAL_BEHAVIOR_RETALIATE
 	animal_flags = ANIMAL_FLAG_IMMORTAL
-	movespeed=7
+	movespeed=6
 	health=120
 	maxHealth=120
 	armor=list(melee=35,bullet=15,laser=20,energy=0,bomb=10,bio=0,rad=0)

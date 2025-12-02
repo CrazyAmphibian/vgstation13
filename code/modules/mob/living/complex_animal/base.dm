@@ -794,14 +794,15 @@
 			target=user
 
 
-/mob/living/complex_animal/assaulted_by(var/mob/M,var/weak_assault=FALSE)	
-	if(behavior_flags & ANIMAL_BEHAVIOR_RETALIATE)
-		behavior_state=behavior_state=ANIMAL_STATE_ATTACKING
-		aggro_drawn(M,ANIMAL_STATE_ATTACKING)
-	else
-		get_flee_msg(M)
-		behavior_state = ANIMAL_STATE_FLEEING
-		target=M
+/mob/living/complex_animal/assaulted_by(var/mob/M,var/weak_assault=FALSE)
+	if(!weak_assault)
+		if(behavior_flags & ANIMAL_BEHAVIOR_RETALIATE)
+			behavior_state=behavior_state=ANIMAL_STATE_ATTACKING
+			aggro_drawn(M,ANIMAL_STATE_ATTACKING)
+		else
+			get_flee_msg(M)
+			behavior_state = ANIMAL_STATE_FLEEING
+			target=M
 	return ..()
 
 /mob/living/complex_animal/unarmed_attacked(mob/living/attacker, damage, damage_type, zone)

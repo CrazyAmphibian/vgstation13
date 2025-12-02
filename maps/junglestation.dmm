@@ -18573,6 +18573,10 @@
 	},
 /turf/unsimulated/floor/jungle/bedrock,
 /area/surface/jungle/underground)
+"gOu" = (
+/mob/living/complex_animal/panther,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "gOE" = (
 /obj/structure/closet/vox_raiders/trader,
 /turf/simulated/floor/vox/wood,
@@ -22532,6 +22536,10 @@
 	icon_state = "carpet14-10"
 	},
 /area/chapel/main)
+"iny" = (
+/mob/living/complex_animal/crocodile/schnapps,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/crew_quarters/bar)
 "inM" = (
 /obj/structure/table,
 /obj/item/weapon/storage/toolbox/mechanical{
@@ -27825,9 +27833,9 @@
 	},
 /area/security/prison)
 "kmF" = (
-/mob/living/carbon/monkey/punpun,
-/turf/unsimulated/floor/jungle/path_plated,
-/area/crew_quarters/bar)
+/mob/living/complex_animal/crocodile,
+/turf/unsimulated/floor/jungle/water,
+/area/surface/jungle)
 "kmN" = (
 /obj/structure/rack,
 /obj/item/toy/sword,
@@ -41534,6 +41542,10 @@
 /obj/item/device/gps,
 /turf/simulated/floor,
 /area/research_outpost/hallway)
+"pvc" = (
+/mob/living/complex_animal/crocodile,
+/turf/unsimulated/floor/jungle/water,
+/area/surface/jungle/roid)
 "pvf" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -58060,6 +58072,10 @@
 	icon_state = "dark"
 	},
 /area/security/warden)
+"vut" = (
+/mob/living/complex_animal/crocodile,
+/turf/unsimulated/floor/jungle/grass,
+/area/surface/jungle)
 "vuA" = (
 /obj/machinery/door/poddoor{
 	density = 0;
@@ -63058,6 +63074,10 @@
 	icon_state = "white"
 	},
 /area/science/hallway)
+"xmG" = (
+/mob/living/complex_animal/crocodile,
+/turf/unsimulated/floor/jungle/water,
+/area/surface/jungle/roid/vaults)
 "xmN" = (
 /obj/structure/window/full/reinforced,
 /turf/unsimulated/wall/fakeglass{
@@ -78502,7 +78522,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+vut
 lIK
 lIK
 lIK
@@ -79741,10 +79761,10 @@ nYD
 nYD
 nYD
 nYD
+kmF
 nYD
 nYD
-nYD
-nYD
+kmF
 nYD
 nYD
 nYD
@@ -80454,7 +80474,7 @@ nYD
 nYD
 nYD
 nYD
-nYD
+kmF
 nYD
 nYD
 nYD
@@ -81595,7 +81615,7 @@ nYD
 nYD
 nYD
 nYD
-nYD
+kmF
 nYD
 nYD
 nYD
@@ -81939,11 +81959,11 @@ nYD
 nYD
 nYD
 nYD
+kmF
 nYD
 nYD
 nYD
-nYD
-nYD
+kmF
 nYD
 nYD
 nYD
@@ -106478,11 +106498,11 @@ xYb
 lIK
 lIK
 lIK
-ngi
 lIK
 lIK
 lIK
 lIK
+gOu
 lIK
 lIK
 lIK
@@ -107902,7 +107922,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+gOu
 lIK
 lIK
 lIK
@@ -110722,7 +110742,7 @@ lIK
 lIK
 lIK
 lIK
-lIK
+gOu
 lIK
 lIK
 lIK
@@ -113423,7 +113443,7 @@ nDz
 nDz
 nDz
 nDz
-nYD
+kmF
 nYD
 nYD
 deH
@@ -113539,8 +113559,8 @@ lIK
 lIK
 lIK
 lIK
-ngi
 lIK
+gOu
 lIK
 lIK
 lIK
@@ -114477,7 +114497,7 @@ nDz
 nDz
 nDz
 nYD
-nYD
+kmF
 nYD
 nYD
 deH
@@ -115524,14 +115544,14 @@ nYD
 nYD
 nYD
 nYD
-nYD
+kmF
 nDz
 nDz
 nDz
 nDz
 nDz
 nYD
-nYD
+kmF
 nYD
 nYD
 deH
@@ -127229,9 +127249,9 @@ edD
 edD
 hjm
 aHF
-kmF
 nkN
 nkN
+iny
 kqL
 hfX
 wld
@@ -439816,15 +439836,15 @@ xiJ
 xiJ
 xiJ
 xiJ
+pvc
 xiJ
 xiJ
 xiJ
+pvc
 xiJ
 xiJ
 xiJ
-xiJ
-xiJ
-xiJ
+pvc
 xiJ
 xiJ
 xiJ
@@ -441509,7 +441529,7 @@ xiJ
 xiJ
 xiJ
 xiJ
-xiJ
+pvc
 xiJ
 xiJ
 xiJ
@@ -441858,7 +441878,7 @@ xiJ
 xiJ
 xiJ
 xiJ
-xiJ
+pvc
 xiJ
 xiJ
 xiJ
@@ -442206,7 +442226,7 @@ uad
 uad
 uad
 xiJ
-xiJ
+pvc
 xiJ
 xiJ
 xiJ
@@ -459012,10 +459032,10 @@ uad
 uad
 uad
 uad
+xmG
 uad
 uad
-uad
-uad
+xmG
 uad
 uad
 uad
@@ -459713,7 +459733,7 @@ uad
 uad
 uad
 uad
-uad
+xmG
 uad
 uad
 uad
@@ -474048,7 +474068,7 @@ way
 xiJ
 xiJ
 xiJ
-xiJ
+pvc
 xiJ
 rWI
 rWI
@@ -476164,7 +476184,7 @@ fvU
 fvU
 way
 xiJ
-xiJ
+pvc
 rWI
 rWI
 rWI
@@ -477221,7 +477241,7 @@ fvU
 fvU
 way
 xiJ
-xiJ
+pvc
 rWI
 rWI
 rWI
@@ -478981,7 +479001,7 @@ fvU
 fvU
 way
 xiJ
-xiJ
+pvc
 rWI
 rWI
 rWI
@@ -480389,7 +480409,7 @@ fvU
 fvU
 way
 xiJ
-xiJ
+pvc
 rWI
 rWI
 rWI
@@ -515261,7 +515281,7 @@ fvU
 way
 way
 xiJ
-xiJ
+pvc
 xiJ
 rWI
 rWI
@@ -517023,7 +517043,7 @@ fvU
 fvU
 way
 xiJ
-xiJ
+pvc
 xiJ
 rWI
 rWI
