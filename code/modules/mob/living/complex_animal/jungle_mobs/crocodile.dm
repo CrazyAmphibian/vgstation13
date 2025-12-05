@@ -1,9 +1,9 @@
 /mob/living/complex_animal/crocodile
 	name = "\improper Crocodile"
 	desc = "Not to be confused with an alligator, or even a gharial."
-	icon_state="otherthing"
-	icon_living="otherthing"
-	icon_dead="otherthing-dead"
+	icon_state="crocodile"
+	icon_living="crocodile"
+	icon_dead="crocodile-dead"
 	size=SIZE_BIG
 	
 	health=100
@@ -67,7 +67,10 @@
 
 /mob/living/complex_animal/crocodile/schnapps
 	name = "Schnapps"
-	desc = "Whose idea was it to keep this thing as a pet?"
+	desc = "Definitely the coolest croc on the planet."
+	icon_state="schnapps"
+	icon_living="schnapps"
+	icon_dead="schnapps-dead"
 	behavior_flags = ANIMAL_BEHAVIOR_RETALIATE
 	animal_flags = ANIMAL_FLAG_IMMORTAL
 	movespeed=6
