@@ -83,3 +83,12 @@
 	return 0 //no infinite schnapps.	
 /mob/living/complex_animal/crocodile/schnapps/can_offspring()
 	return FALSE
+
+
+/mob/living/complex_animal/crocodile/schnapps/tick_state_attacking
+	.=..()
+	if(. && ticks_this_state>4) //forgives you after 10 seconds
+		emote("me",MESSAGE_SEE,"looks more calm.")
+		abort_target()
+		return FALSE
+	
