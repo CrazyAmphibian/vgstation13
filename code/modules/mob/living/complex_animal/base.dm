@@ -149,13 +149,13 @@
 		nutrition-=max_food*food_per_tick*0.25 //use extra food when regaining health
 	lasthealth=health
 	
-	if(nutrition<0 && prob(20) && animal_flags&ANIMAL_FLAG_NEVER_STARVE)
+	if(nutrition<0 && prob(20) && !(animal_flags&ANIMAL_FLAG_NEVER_STARVE) )
 		emote("deathgasp")
 		health=0
 	if(health<=0 && stat != DEAD)
 		death()
 		return 0
-	if(mob_max_age && mob_age > mob_max_age && animal_flags&ANIMAL_FLAG_NEVER_AGE)
+	if(mob_max_age && mob_age > mob_max_age && !(animal_flags&ANIMAL_FLAG_NEVER_AGE) )
 		var/chancetokeelover = (mob_age-mob_max_age)/mob_max_age
 		chancetokeelover = 1-(1/(chancetokeelover+1))
 		// math formula: 1-\frac{1}{\frac{\left(x-m\right)}{m}+1}
