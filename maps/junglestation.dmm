@@ -531,14 +531,16 @@
 /obj/machinery/door/poddoor{
 	density = 0;
 	icon_state = "pdoor0";
-	id_tag = "bridge blast";
-	name = "Bridge Blast Doors";
+	id_tag = "oncpriv";
+	name = "Privacy Shutters";
 	opacity = 0
 	},
-/turf/simulated/floor{
-	icon_state = "dark"
+/obj/structure/grille/window_spawner/reinforced/full,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
-/area/surface/jungle/fenced)
+/turf/simulated/floor/plating,
+/area/medical/cmo)
 "alz" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor{
@@ -3057,9 +3059,11 @@
 	},
 /area/science/hallway)
 "bif" = (
-/mob/living/simple_animal/chicken,
-/turf/unsimulated/floor/jungle/grass/no_flora,
-/area/surface/jungle/zoned/botanty_outside)
+/obj/structure/bed/chair/folding,
+/obj/effect/glowshroom/single,
+/obj/effect/landmark/start/trader_also_latejoin,
+/turf/simulated/floor/shuttle/vox,
+/area/shuttle/escape_pod1)
 "big" = (
 /obj/item/weapon/beach_ball,
 /obj/structure/bed/chair/wood/normal,
@@ -4816,12 +4820,6 @@
 /obj/effect/glowshroom/single,
 /turf/simulated/floor/shuttle/vox,
 /area/centcom/holding)
-"bMn" = (
-/obj/machinery/podcomputer{
-	pixel_y = 31
-	},
-/turf/simulated/floor/shuttle/vox,
-/area/shuttle/escape_pod1)
 "bMz" = (
 /obj/machinery/computer/mecha,
 /obj/structure/window/reinforced{
@@ -5228,6 +5226,10 @@
 "bVo" = (
 /turf/simulated/wall/shuttle,
 /area/shuttle/striketeam/centcom)
+"bVx" = (
+/obj/machinery/atm,
+/turf/simulated/wall,
+/area/vox_trading_post/trade_processing)
 "bVP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/wall,
@@ -6239,14 +6241,11 @@
 /turf/simulated/floor/plating,
 /area/research_outpost/atmos)
 "cmb" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "bridge blast";
-	name = "Bridge Blast Doors";
-	opacity = 0
+/obj/machinery/door/airlock/glass_command{
+	name = "Bridge";
+	req_access_txt = "19";
+	normalspeed = 0
 	},
-/obj/machinery/light/small,
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -8955,6 +8954,12 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/solars)
+"djU" = (
+/obj/docking_port/destination/ert/station{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "dkG" = (
 /obj/item/weapon/stool{
 	pixel_y = 8
@@ -9474,6 +9479,11 @@
 	dir = 8
 	},
 /area/engineering/atmos)
+"duT" = (
+/obj/machinery/hologram/holopad,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
+/turf/unsimulated/floor/jungle/concrete,
+/area/surface/jungle/zoned/atmos_outside)
 "dva" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -10081,8 +10091,7 @@
 	icon_state = "0-8"
 	},
 /obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -10615,20 +10624,6 @@
 	icon_state = "darkred"
 	},
 /area/centcom/suppy)
-"dQF" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "oncpriv";
-	name = "Privacy Shutters";
-	opacity = 0
-	},
-/obj/structure/grille/window_spawner/reinforced/full,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/medical/cmo)
 "dQO" = (
 /obj/effect/decal/warning_stripes{
 	icon_state = "nitrous_oxide"
@@ -11184,6 +11179,7 @@
 	pixel_x = -6;
 	pixel_y = -6
 	},
+/obj/effect/glowshroom/single,
 /turf/simulated/floor/vox,
 /area/vox_trading_post/vault)
 "dZL" = (
@@ -13467,10 +13463,6 @@
 	icon_state = "hydrofloor"
 	},
 /area/crew_quarters/courtroom)
-"ePn" = (
-/obj/machinery/atm,
-/turf/simulated/wall,
-/area/vox_trading_post/trade_processing)
 "ePq" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated/floor/plating,
@@ -14026,10 +14018,18 @@
 /turf/simulated/floor/wood,
 /area/surface/jungle/underground/zoned/casino)
 "fdG" = (
-/obj/effect/glowshroom/single,
-/obj/structure/closet/emcloset/vox,
-/turf/simulated/floor/shuttle/vox,
-/area/shuttle/escape_pod1)
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "bridge blast";
+	name = "Bridge Blast Doors";
+	opacity = 0
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/surface/jungle/fenced)
 "fdH" = (
 /obj/abstract/map/spawner/jungle_fren,
 /turf/unsimulated/floor/jungle/grass,
@@ -15671,15 +15671,12 @@
 	},
 /obj/structure/window/full/reinforced,
 /obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/structure/window/reinforced{
-	one_way = 1
-	},
+/obj/structure/window/reinforced,
 /obj/structure/grille,
 /turf/simulated/floor/plating,
 /area/crew_quarters/courtroom)
@@ -16318,8 +16315,14 @@
 	},
 /area/centcom/evac)
 "fUz" = (
-/obj/structure/table,
-/obj/item/clothing/gloves/fyellow,
+/obj/structure/fence{
+	dir = 4
+	},
+/obj/structure/sign/pox{
+	icon_state = "voxcross";
+	name = "Vox Crossing - Beware";
+	pixel_y = -4
+	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "fUK" = (
@@ -20081,9 +20084,9 @@
 	},
 /area/chapel/main)
 "hqV" = (
-/obj/machinery/door/airlock/external,
-/turf/simulated/floor/plating/vox,
-/area/surface/jungle/landing)
+/mob/living/simple_animal/chicken,
+/turf/unsimulated/floor/jungle/grass/no_flora,
+/area/surface/jungle/zoned/botanty_outside)
 "hqY" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -27127,10 +27130,13 @@
 	},
 /area/supply/storage)
 "jXF" = (
-/obj/machinery/hologram/holopad,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/turf/unsimulated/floor/jungle/concrete,
-/area/surface/jungle/zoned/atmos_outside)
+/obj/structure/table,
+/obj/item/weapon/pickaxe/hand,
+/obj/item/weapon/pickaxe/shovel/spade,
+/turf/simulated/floor{
+	icon_state = "hydrofloor"
+	},
+/area/hydroponics)
 "jXL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
@@ -27974,10 +27980,6 @@
 	},
 /turf/simulated/floor/carpet,
 /area/chapel/main)
-"kpG" = (
-/obj/machinery/atm,
-/turf/simulated/wall/r_wall,
-/area/security/main)
 "kpJ" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/plasma{
@@ -31595,11 +31597,20 @@
 /turf/simulated/floor/shuttle/vox,
 /area/centcom/holding)
 "lJg" = (
-/obj/structure/bed/chair/folding,
-/obj/effect/glowshroom/single,
-/obj/effect/landmark/start/trader_also_latejoin,
-/turf/simulated/floor/shuttle/vox,
-/area/shuttle/escape_pod1)
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "bridge blast";
+	name = "Bridge Blast Doors";
+	opacity = 0
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/surface/jungle/fenced)
 "lJi" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
@@ -33629,8 +33640,17 @@
 	},
 /area/engineering/ce)
 "mty" = (
-/turf/simulated/wall,
-/area/surface/jungle/landing)
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "bridge blast";
+	name = "Bridge Blast Doors";
+	opacity = 0
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/surface/jungle/fenced)
 "mtC" = (
 /obj/structure/table/woodentable,
 /obj/item/toy/cards{
@@ -33643,17 +33663,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle/underground/zoned/casino)
-"mtP" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/obj/structure/sign/pox{
-	icon_state = "voxcross";
-	name = "Vox Crossing - Beware";
-	pixel_y = -4
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
 "mtQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -34561,6 +34570,7 @@
 	pixel_y = 7;
 	pixel_x = 8
 	},
+/obj/effect/glowshroom/single,
 /turf/simulated/floor/vox,
 /area/vox_trading_post/vault)
 "mLk" = (
@@ -36533,6 +36543,10 @@
 	icon_state = "floor4"
 	},
 /area/shuttle/nuclearops)
+"nAe" = (
+/obj/machinery/door/airlock/external,
+/turf/simulated/floor/plating/vox,
+/area/surface/jungle/landing)
 "nAf" = (
 /obj/item/clothing/mask/joy,
 /turf/unsimulated/floor{
@@ -36801,6 +36815,10 @@
 	name = "plating"
 	},
 /area/centcom/control)
+"nFG" = (
+/obj/machinery/atm,
+/turf/simulated/wall/r_wall,
+/area/security/main)
 "nFM" = (
 /obj/structure/shuttle/diag_wall/smooth,
 /turf/unsimulated/floor/jungle/concrete,
@@ -44276,6 +44294,12 @@
 	icon_state = "dark"
 	},
 /area/surface/jungle/underground/zoned/tcomms)
+"qto" = (
+/obj/machinery/disposal/compactor,
+/turf/simulated/floor{
+	icon_state = "hydrofloor"
+	},
+/area/hydroponics)
 "qtz" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -45503,15 +45527,17 @@
 	},
 /area/engineering/atmos)
 "qPP" = (
-/obj/machinery/door/airlock/glass_command{
-	name = "Bridge";
-	req_access_txt = "19";
-	normalspeed = 0
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
 /turf/simulated/floor{
-	icon_state = "dark"
+	dir = 4;
+	icon_state = "whiteblue"
 	},
-/area/surface/jungle/fenced)
+/area/medical/sleeper)
 "qQa" = (
 /obj/effect/decal/warning_stripes{
 	dir = 1;
@@ -47076,12 +47102,9 @@
 /area/surface/jungle/vault)
 "rsW" = (
 /obj/structure/table,
-/obj/item/weapon/pickaxe/hand,
-/obj/item/weapon/pickaxe/shovel/spade,
-/turf/simulated/floor{
-	icon_state = "hydrofloor"
-	},
-/area/hydroponics)
+/obj/item/clothing/gloves/fyellow,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "rtl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -48148,6 +48171,12 @@
 	},
 /turf/simulated/floor/engine,
 /area/science/telescience)
+"rMh" = (
+/obj/machinery/podcomputer{
+	pixel_y = 31
+	},
+/turf/simulated/floor/shuttle/vox,
+/area/shuttle/escape_pod1)
 "rMl" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 9
@@ -51095,9 +51124,8 @@
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/zoned/outdoor_bar)
 "sRR" = (
-/obj/effect/glowshroom/single,
-/turf/simulated/floor/shuttle/vox,
-/area/centcom/holding)
+/turf/simulated/wall,
+/area/surface/jungle/landing)
 "sRS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -52195,6 +52223,7 @@
 /area/science/robotics)
 "tkJ" = (
 /obj/structure/cage,
+/obj/effect/glowshroom/single,
 /turf/simulated/floor/vox,
 /area/vox_trading_post/vault)
 "tkP" = (
@@ -52389,9 +52418,9 @@
 /turf/simulated/floor,
 /area/security/prison)
 "tnZ" = (
-/obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated/floor/plating,
-/area/surface/jungle/fenced)
+/obj/effect/glowshroom/single,
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
 "tof" = (
 /turf/simulated/wall/r_wall,
 /area/medical/genetics)
@@ -54332,21 +54361,6 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
-"tYJ" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "bridge blast";
-	name = "Bridge Blast Doors";
-	opacity = 0
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/surface/jungle/fenced)
 "tYW" = (
 /obj/structure/closet/firecloset/full,
 /turf/unsimulated/floor/jungle/bedrock,
@@ -57494,12 +57508,9 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
-	one_way = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -59984,11 +59995,9 @@
 	},
 /area/security/detectives_office)
 "wdA" = (
-/obj/machinery/disposal/compactor,
-/turf/simulated/floor{
-	icon_state = "hydrofloor"
-	},
-/area/hydroponics)
+/obj/structure/grille/window_spawner/reinforced/full,
+/turf/simulated/floor/plating,
+/area/surface/jungle/fenced)
 "wdW" = (
 /obj/machinery/chem_dispenser/mapping,
 /turf/simulated/floor,
@@ -63848,12 +63857,6 @@
 	icon_state = "wood"
 	},
 /area/centcom/test)
-"xyY" = (
-/obj/docking_port/destination/ert/station{
-	dir = 8
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
 "xzI" = (
 /turf/simulated/wall/shuttle/unsmoothed{
 	dir = 1;
@@ -64078,17 +64081,10 @@
 /turf/simulated/floor/plating,
 /area/security/prison)
 "xFu" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/simulated/floor{
-	dir = 4;
-	icon_state = "whiteblue"
-	},
-/area/medical/sleeper)
+/obj/effect/glowshroom/single,
+/obj/structure/closet/emcloset/vox,
+/turf/simulated/floor/shuttle/vox,
+/area/shuttle/escape_pod1)
 "xFL" = (
 /obj/structure/closet/secure_closet/personal/patient,
 /turf/simulated/floor{
@@ -64654,8 +64650,7 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -99912,7 +99907,7 @@ lIK
 nCZ
 nJC
 nJC
-ePn
+bVx
 uKR
 yfo
 mEV
@@ -107664,7 +107659,7 @@ mhX
 aTu
 cGe
 uJn
-bMn
+rMh
 iIt
 oUl
 uJn
@@ -108014,9 +108009,9 @@ gJb
 kuI
 qaT
 aTu
-mty
+sRR
 uJn
-lJg
+bif
 oUl
 tES
 uJn
@@ -108366,7 +108361,7 @@ wED
 cFn
 tNu
 xnu
-hqV
+nAe
 kaT
 oUl
 oUl
@@ -108722,7 +108717,7 @@ aTu
 uJn
 mEl
 oUl
-fdG
+xFu
 uJn
 die
 aUs
@@ -108993,7 +108988,7 @@ xor
 xor
 xor
 xor
-kpG
+nFG
 mkg
 pea
 uZI
@@ -110392,7 +110387,7 @@ rki
 rki
 rki
 sfK
-mtP
+fUz
 qgq
 snf
 snf
@@ -111450,7 +111445,7 @@ rki
 sfK
 mUo
 unH
-fUz
+rsW
 jgK
 jgK
 xor
@@ -112852,7 +112847,7 @@ bEw
 eOA
 snf
 snf
-xyY
+djU
 snf
 snf
 eOA
@@ -117133,7 +117128,7 @@ eqb
 dKf
 snf
 mUo
-wld
+nre
 vti
 mUo
 snf
@@ -117485,8 +117480,8 @@ efC
 hRA
 eOA
 wfz
-wld
-wld
+nre
+nre
 mUo
 snf
 iRw
@@ -126634,7 +126629,7 @@ otc
 qZg
 jmF
 lfq
-xFu
+qPP
 cWF
 jFN
 vFZ
@@ -126986,7 +126981,7 @@ iSj
 bzp
 jyu
 vkY
-dQF
+aly
 wKB
 wKB
 vkY
@@ -132587,8 +132582,8 @@ edD
 edD
 why
 aot
-rsW
-wdA
+jXF
+qto
 aot
 gOI
 why
@@ -135402,7 +135397,7 @@ nTf
 xbO
 xbO
 xbO
-bif
+hqV
 xbO
 xbO
 xbO
@@ -136108,7 +136103,7 @@ jwM
 xbO
 ndk
 xbO
-bif
+hqV
 xbO
 xbO
 xbO
@@ -140657,9 +140652,9 @@ hhQ
 jGJ
 ldM
 gts
-tYJ
-aly
-cmb
+lJg
+mty
+fdG
 mSW
 bLU
 pBW
@@ -141009,9 +141004,9 @@ ltk
 ltk
 ltk
 gts
-tnZ
-qPP
-tnZ
+wdA
+cmb
+wdA
 mSW
 mSW
 mSW
@@ -147744,7 +147739,7 @@ xfk
 xPQ
 xfk
 xfk
-jXF
+duT
 xfk
 olB
 auf
@@ -330471,7 +330466,7 @@ sGy
 tKp
 poa
 poa
-sRR
+tnZ
 tKp
 ctD
 ctD
