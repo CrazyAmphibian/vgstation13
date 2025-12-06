@@ -8180,9 +8180,6 @@
 /turf/unsimulated/mineral/jungle_underground,
 /area/surface/jungle/underground)
 "cWF" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
 	},
@@ -16294,19 +16291,17 @@
 	},
 /area/centcom/evac)
 "fUz" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "oncpriv";
-	name = "Privacy Shutters";
-	opacity = 0
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated/floor/plating,
-/area/medical/cmo)
+/turf/simulated/floor{
+	dir = 4;
+	icon_state = "whiteblue"
+	},
+/area/medical/sleeper)
 "fUK" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -18407,6 +18402,10 @@
 /area/security/perma)
 "gKJ" = (
 /obj/structure/bed/chair,
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 8;
+	on = 1
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "barber"
@@ -23371,6 +23370,20 @@
 	icon_state = "floor4"
 	},
 /area/shuttle/nuclearops)
+"iFo" = (
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "oncpriv";
+	name = "Privacy Shutters";
+	opacity = 0
+	},
+/obj/structure/grille/window_spawner/reinforced/full,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/medical/cmo)
 "iFE" = (
 /obj/structure/table,
 /obj/item/stack/cable_coil{
@@ -27978,10 +27991,6 @@
 "kqj" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/med_data/laptop,
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 8;
-	on = 1
-	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "barber"
@@ -53994,9 +54003,7 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/prison_yard)
 "tRL" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -64434,9 +64441,7 @@
 	},
 /area/centcom/control)
 "xNn" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -126577,7 +126582,7 @@ otc
 qZg
 jmF
 lfq
-jFN
+fUz
 cWF
 jFN
 vFZ
@@ -126929,8 +126934,8 @@ iSj
 bzp
 jyu
 vkY
+iFo
 wKB
-fUz
 wKB
 vkY
 eXo
