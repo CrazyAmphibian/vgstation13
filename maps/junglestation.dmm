@@ -528,19 +528,13 @@
 /turf/simulated/floor,
 /area/engineering/mechanics)
 "aly" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "oncpriv";
-	name = "Privacy Shutters";
-	opacity = 0
+/obj/structure/table,
+/obj/item/weapon/pickaxe/hand,
+/obj/item/weapon/pickaxe/shovel/spade,
+/turf/simulated/floor{
+	icon_state = "hydrofloor"
 	},
-/obj/structure/grille/window_spawner/reinforced/full,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/medical/cmo)
+/area/hydroponics)
 "alz" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor{
@@ -2645,6 +2639,13 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
+"baB" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	on = 1;
+	dir = 1
+	},
+/turf/simulated/floor/vox,
+/area/vox_trading_post/hallway)
 "baO" = (
 /obj/machinery/light,
 /turf/simulated/floor{
@@ -3059,11 +3060,20 @@
 	},
 /area/science/hallway)
 "bif" = (
-/obj/structure/bed/chair/folding,
-/obj/effect/glowshroom/single,
-/obj/effect/landmark/start/trader_also_latejoin,
-/turf/simulated/floor/shuttle/vox,
-/area/shuttle/escape_pod1)
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "bridge blast";
+	name = "Bridge Blast Doors";
+	opacity = 0
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/surface/jungle/fenced)
 "big" = (
 /obj/item/weapon/beach_ball,
 /obj/structure/bed/chair/wood/normal,
@@ -5226,10 +5236,6 @@
 "bVo" = (
 /turf/simulated/wall/shuttle,
 /area/shuttle/striketeam/centcom)
-"bVx" = (
-/obj/machinery/atm,
-/turf/simulated/wall,
-/area/vox_trading_post/trade_processing)
 "bVP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/wall,
@@ -6241,15 +6247,12 @@
 /turf/simulated/floor/plating,
 /area/research_outpost/atmos)
 "cmb" = (
-/obj/machinery/door/airlock/glass_command{
-	name = "Bridge";
-	req_access_txt = "19";
-	normalspeed = 0
+/obj/machinery/atmospherics/unary/vent_scrubber/on/vox{
+	dir = 1
 	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/surface/jungle/fenced)
+/obj/item/weapon/handcuffs,
+/turf/simulated/floor/vox,
+/area/vox_trading_post/hallway)
 "cmp" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/pickaxe,
@@ -8090,10 +8093,9 @@
 /turf/simulated/floor,
 /area/research_outpost/entry)
 "cUk" = (
-/obj/item/weapon/handcuffs,
-/obj/machinery/atmospherics/unary/vent_scrubber/on/vox,
-/turf/simulated/floor/vox,
-/area/vox_trading_post/hallway)
+/obj/machinery/door/airlock/external,
+/turf/simulated/floor/plating/vox,
+/area/surface/jungle/landing)
 "cUB" = (
 /obj/machinery/vending/medical{
 	req_access = null
@@ -8954,12 +8956,6 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/solars)
-"djU" = (
-/obj/docking_port/destination/ert/station{
-	dir = 8
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
 "dkG" = (
 /obj/item/weapon/stool{
 	pixel_y = 8
@@ -9479,11 +9475,6 @@
 	dir = 8
 	},
 /area/engineering/atmos)
-"duT" = (
-/obj/machinery/hologram/holopad,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/turf/unsimulated/floor/jungle/concrete,
-/area/surface/jungle/zoned/atmos_outside)
 "dva" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -9670,7 +9661,6 @@
 "dxI" = (
 /obj/machinery/light,
 /obj/structure/table/woodentable,
-/obj/item/weapon/spacecash/c100,
 /obj/item/weapon/spacecash/c100,
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
@@ -14018,18 +14008,17 @@
 /turf/simulated/floor/wood,
 /area/surface/jungle/underground/zoned/casino)
 "fdG" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "bridge blast";
-	name = "Bridge Blast Doors";
-	opacity = 0
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 1
 	},
-/obj/machinery/light/small,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/simulated/floor{
-	icon_state = "dark"
+	dir = 4;
+	icon_state = "whiteblue"
 	},
-/area/surface/jungle/fenced)
+/area/medical/sleeper)
 "fdH" = (
 /obj/abstract/map/spawner/jungle_fren,
 /turf/unsimulated/floor/jungle/grass,
@@ -16315,16 +16304,9 @@
 	},
 /area/centcom/evac)
 "fUz" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/obj/structure/sign/pox{
-	icon_state = "voxcross";
-	name = "Vox Crossing - Beware";
-	pixel_y = -4
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/simulated/floor/vox,
+/area/vox_trading_post/hallway)
 "fUK" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -19379,6 +19361,9 @@
 /area/science/rd)
 "hcT" = (
 /obj/effect/glowshroom/single,
+/obj/machinery/vending/medical{
+	req_access = null
+	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/medbay)
 "hcZ" = (
@@ -20084,16 +20069,13 @@
 	},
 /area/chapel/main)
 "hqV" = (
+/obj/machinery/atm,
+/turf/simulated/wall,
+/area/crew_quarters/kitchen)
+"hqY" = (
 /mob/living/simple_animal/chicken,
 /turf/unsimulated/floor/jungle/grass/no_flora,
 /area/surface/jungle/zoned/botanty_outside)
-"hqY" = (
-/obj/structure/grille/window_spawner/reinforced/full,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/simulated/floor/plating/vox,
-/area/vox_trading_post/hallway)
 "hre" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -21815,6 +21797,10 @@
 /obj/structure/curtain/open/bed,
 /turf/simulated/floor,
 /area/research_outpost/dorm1)
+"hYg" = (
+/obj/machinery/atm,
+/turf/simulated/wall,
+/area/vox_trading_post/trade_processing)
 "hYn" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -23681,10 +23667,27 @@
 "iMc" = (
 /obj/structure/table/woodentable,
 /obj/effect/glowshroom/single,
-/obj/item/weapon/spacecash/c100,
-/obj/item/weapon/spacecash/c100,
 /obj/machinery/media/receiver/boombox/wallmount/muzak{
 	pixel_y = -22
+	},
+/obj/item/weapon/circuitboard/airlock{
+	name = "\proper trader access electronics";
+	pixel_y = -4;
+	pixel_x = 4;
+	req_access = list(140);
+	conf_access = list(140)
+	},
+/obj/item/weapon/circuitboard/airlock{
+	name = "\proper trader access electronics";
+	req_access = list(140);
+	conf_access = list(140)
+	},
+/obj/item/weapon/circuitboard/airlock{
+	name = "\proper trader access electronics";
+	pixel_y = 6;
+	pixel_x = -4;
+	req_access = list(140);
+	conf_access = list(140)
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
@@ -23938,13 +23941,11 @@
 	},
 /area/engineering/engine)
 "iQA" = (
-/obj/machinery/vending/medical{
-	req_access = null
-	},
 /obj/machinery/alarm/vox{
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/machinery/vending/assist,
 /turf/simulated/floor/vox,
 /area/vox_trading_post/vault)
 "iQI" = (
@@ -26173,6 +26174,12 @@
 	icon_state = "dark"
 	},
 /area/surface/jungle/underground/zoned/tcomms)
+"jEZ" = (
+/obj/structure/bed/chair/wood/normal{
+	dir = 8
+	},
+/turf/simulated/floor/vox,
+/area/vox_trading_post/hallway)
 "jFm" = (
 /obj/structure/bed/chair/wood/normal{
 	dir = 1
@@ -27130,13 +27137,11 @@
 	},
 /area/supply/storage)
 "jXF" = (
-/obj/structure/table,
-/obj/item/weapon/pickaxe/hand,
-/obj/item/weapon/pickaxe/shovel/spade,
-/turf/simulated/floor{
-	icon_state = "hydrofloor"
-	},
-/area/hydroponics)
+/obj/structure/bed/chair/folding,
+/obj/effect/glowshroom/single,
+/obj/effect/landmark/start/trader_also_latejoin,
+/turf/simulated/floor/shuttle/vox,
+/area/shuttle/escape_pod1)
 "jXL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
@@ -28688,12 +28693,11 @@
 	},
 /area/security/armory)
 "kDt" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "warning";
-	tag = "icon-warning"
+/obj/machinery/podcomputer{
+	pixel_y = 31
 	},
-/turf/unsimulated/floor/jungle/concrete,
-/area/vox_trading_post/hallway)
+/turf/simulated/floor/shuttle/vox,
+/area/shuttle/escape_pod1)
 "kDx" = (
 /obj/machinery/suit_dispenser/ert,
 /turf/unsimulated/floor{
@@ -29735,6 +29739,20 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
+"lbB" = (
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "oncpriv";
+	name = "Privacy Shutters";
+	opacity = 0
+	},
+/obj/structure/grille/window_spawner/reinforced/full,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/medical/cmo)
 "lbC" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on/vox{
 	dir = 1
@@ -31404,6 +31422,10 @@
 	},
 /turf/simulated/floor,
 /area/surface/jungle/vault)
+"lGm" = (
+/obj/structure/grille/window_spawner/reinforced/full,
+/turf/simulated/floor/plating,
+/area/surface/jungle/fenced)
 "lGo" = (
 /obj/item/device/radio/intercom/medbay{
 	pixel_y = -30
@@ -31597,20 +31619,10 @@
 /turf/simulated/floor/shuttle/vox,
 /area/centcom/holding)
 "lJg" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "bridge blast";
-	name = "Bridge Blast Doors";
-	opacity = 0
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/surface/jungle/fenced)
+/obj/structure/grille/window_spawner/reinforced/full,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/simulated/floor/plating/vox,
+/area/vox_trading_post/hallway)
 "lJi" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
@@ -33640,17 +33652,10 @@
 	},
 /area/engineering/ce)
 "mty" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "bridge blast";
-	name = "Bridge Blast Doors";
-	opacity = 0
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/surface/jungle/fenced)
+/obj/machinery/hologram/holopad,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
+/turf/unsimulated/floor/jungle/concrete,
+/area/surface/jungle/zoned/atmos_outside)
 "mtC" = (
 /obj/structure/table/woodentable,
 /obj/item/toy/cards{
@@ -35069,6 +35074,11 @@
 	icon_state = "dark"
 	},
 /area/engineering/reactor_room)
+"mVg" = (
+/obj/structure/table,
+/obj/item/clothing/gloves/fyellow,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "mVo" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor/vox,
@@ -36543,10 +36553,6 @@
 	icon_state = "floor4"
 	},
 /area/shuttle/nuclearops)
-"nAe" = (
-/obj/machinery/door/airlock/external,
-/turf/simulated/floor/plating/vox,
-/area/surface/jungle/landing)
 "nAf" = (
 /obj/item/clothing/mask/joy,
 /turf/unsimulated/floor{
@@ -36815,10 +36821,6 @@
 	name = "plating"
 	},
 /area/centcom/control)
-"nFG" = (
-/obj/machinery/atm,
-/turf/simulated/wall/r_wall,
-/area/security/main)
 "nFM" = (
 /obj/structure/shuttle/diag_wall/smooth,
 /turf/unsimulated/floor/jungle/concrete,
@@ -37913,6 +37915,12 @@
 /area/comms{
 	name = "\improper Cyborg Station"
 	})
+"nXV" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/vox,
+/area/vox_trading_post/hallway)
 "nYj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
@@ -38901,7 +38909,7 @@
 "ors" = (
 /obj/effect/glowshroom/single,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
+	dir = 10
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/hallway)
@@ -39633,9 +39641,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor{
-	icon_state = "cult"
-	},
+/turf/simulated/floor,
 /area/surface/jungle/zoned/storage_shed)
 "oEW" = (
 /obj/structure/rack{
@@ -41891,9 +41897,10 @@
 	},
 /area/supply/sorting)
 "pBm" = (
-/obj/structure/bed/chair/wood/normal,
-/turf/simulated/floor/vox,
-/area/vox_trading_post/hallway)
+/obj/effect/glowshroom/single,
+/obj/structure/closet/emcloset/vox,
+/turf/simulated/floor/shuttle/vox,
+/area/shuttle/escape_pod1)
 "pBu" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -42960,6 +42967,10 @@
 	icon_state = "whitepurple"
 	},
 /area/research_outpost/anomaly)
+"pUM" = (
+/obj/effect/glowshroom/single,
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
 "pUV" = (
 /obj/structure/table,
 /obj/item/stack/sheet/metal/bigstack{
@@ -43410,6 +43421,16 @@
 	icon_state = "dark"
 	},
 /area/centcom/ert)
+"qdn" = (
+/obj/docking_port/destination/ert/station{
+	dir = 8
+	},
+/obj/effect/decal/warning_stripes{
+	dir = 8;
+	icon_state = "warning"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "qdq" = (
 /obj/structure/fence,
 /turf/unsimulated/floor/jungle/path_plated,
@@ -43547,6 +43568,7 @@
 /obj/machinery/atmospherics/unary/vent_pump{
 	on = 1
 	},
+/obj/structure/rack/crate_shelf/centcomm_provided,
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
 "qgn" = (
@@ -44294,12 +44316,6 @@
 	icon_state = "dark"
 	},
 /area/surface/jungle/underground/zoned/tcomms)
-"qto" = (
-/obj/machinery/disposal/compactor,
-/turf/simulated/floor{
-	icon_state = "hydrofloor"
-	},
-/area/hydroponics)
 "qtz" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -45527,17 +45543,11 @@
 	},
 /area/engineering/atmos)
 "qPP" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
+/obj/machinery/disposal/compactor,
 /turf/simulated/floor{
-	dir = 4;
-	icon_state = "whiteblue"
+	icon_state = "hydrofloor"
 	},
-/area/medical/sleeper)
+/area/hydroponics)
 "qQa" = (
 /obj/effect/decal/warning_stripes{
 	dir = 1;
@@ -45721,18 +45731,7 @@
 	},
 /area/centcom/test)
 "qUn" = (
-/obj/structure/table/woodentable,
-/obj/item/weapon/paper{
-	pixel_x = 7
-	},
-/obj/item/weapon/pen{
-	pixel_x = -5;
-	pixel_y = 8
-	},
-/obj/machinery/light/small{
-	dir = 4;
-	flickering = 1
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor/vox,
 /area/vox_trading_post/hallway)
 "qUE" = (
@@ -46064,6 +46063,18 @@
 /obj/structure/shuttle/diag_wall/smooth,
 /turf/unsimulated/floor/jungle/concrete,
 /area/shuttle/research/station)
+"raD" = (
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "bridge blast";
+	name = "Bridge Blast Doors";
+	opacity = 0
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/surface/jungle/fenced)
 "raU" = (
 /obj/structure/clock,
 /turf/unsimulated/floor/jungle/bedrock,
@@ -47101,9 +47112,14 @@
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/vault)
 "rsW" = (
-/obj/structure/table,
-/obj/item/clothing/gloves/fyellow,
-/turf/unsimulated/floor/jungle/path_plated,
+/obj/machinery/door/airlock/glass_command{
+	name = "Bridge";
+	req_access_txt = "19";
+	normalspeed = 0
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
 /area/surface/jungle/fenced)
 "rtl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -48171,12 +48187,6 @@
 	},
 /turf/simulated/floor/engine,
 /area/science/telescience)
-"rMh" = (
-/obj/machinery/podcomputer{
-	pixel_y = 31
-	},
-/turf/simulated/floor/shuttle/vox,
-/area/shuttle/escape_pod1)
 "rMl" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 9
@@ -48674,6 +48684,9 @@
 /obj/structure/falsewall/rwall,
 /turf/simulated/floor,
 /area/security/perma)
+"rVu" = (
+/turf/simulated/wall,
+/area/surface/jungle/landing)
 "rVx" = (
 /obj/structure/rack/crate_shelf/centcomm_provided,
 /obj/structure/closet/crate/ayy,
@@ -51124,8 +51137,14 @@
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/zoned/outdoor_bar)
 "sRR" = (
-/turf/simulated/wall,
-/area/surface/jungle/landing)
+/obj/structure/fence,
+/obj/effect/decal/warning_stripes{
+	dir = 1;
+	icon_state = "warning_corner";
+	tag = "icon-warning_corner (NORTH)"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "sRS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -52418,9 +52437,9 @@
 /turf/simulated/floor,
 /area/security/prison)
 "tnZ" = (
-/obj/effect/glowshroom/single,
-/turf/simulated/floor/shuttle/vox,
-/area/centcom/holding)
+/obj/machinery/atm,
+/turf/simulated/wall/r_wall,
+/area/security/main)
 "tof" = (
 /turf/simulated/wall/r_wall,
 /area/medical/genetics)
@@ -53092,12 +53111,16 @@
 	},
 /area/centcom/test)
 "tAL" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	on = 1;
-	dir = 8
+/obj/structure/fence{
+	dir = 4
 	},
-/turf/simulated/floor/vox,
-/area/vox_trading_post/hallway)
+/obj/structure/sign/pox{
+	icon_state = "voxcross";
+	name = "Vox Crossing - Beware";
+	pixel_y = -4
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "tAY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -56573,6 +56596,12 @@
 	},
 /turf/simulated/floor,
 /area/supply/storage)
+"uUl" = (
+/obj/structure/bed/chair/folding{
+	dir = 1
+	},
+/turf/simulated/floor/shuttle/vox,
+/area/shuttle/escape_pod1)
 "uUo" = (
 /obj/machinery/camera{
 	dir = 8;
@@ -59995,8 +60024,11 @@
 	},
 /area/security/detectives_office)
 "wdA" = (
-/obj/structure/grille/window_spawner/reinforced/full,
-/turf/simulated/floor/plating,
+/obj/effect/decal/warning_stripes{
+	dir = 8;
+	icon_state = "warning"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
 "wdW" = (
 /obj/machinery/chem_dispenser/mapping,
@@ -61822,15 +61854,18 @@
 	},
 /area/bridge)
 "wNq" = (
-/obj/machinery/door/airlock/silver{
-	name = "Cell";
-	req_access_txt = "140"
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "bridge blast";
+	name = "Bridge Blast Doors";
+	opacity = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
+/obj/machinery/light/small,
+/turf/simulated/floor{
+	icon_state = "dark"
 	},
-/turf/simulated/floor/vox,
-/area/vox_trading_post/hallway)
+/area/surface/jungle/fenced)
 "wNH" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -62693,6 +62728,21 @@
 	icon_state = "carpet6-2"
 	},
 /area/crew_quarters/courtroom)
+"xde" = (
+/obj/structure/table/woodentable,
+/obj/item/weapon/paper{
+	pixel_x = 7
+	},
+/obj/item/weapon/pen{
+	pixel_x = -5;
+	pixel_y = 8
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	flickering = 1
+	},
+/turf/simulated/floor/vox,
+/area/vox_trading_post/hallway)
 "xdy" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -62830,6 +62880,14 @@
 /obj/machinery/telecomms/relay/preset/mining,
 /turf/simulated/floor,
 /area/surface/jungle/underground/zoned/roid_tcomms)
+"xhH" = (
+/obj/machinery/door/airlock/silver{
+	name = "Cell";
+	req_access_txt = "140"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/simulated/floor/vox,
+/area/vox_trading_post/hallway)
 "xhY" = (
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight,
@@ -64081,10 +64139,13 @@
 /turf/simulated/floor/plating,
 /area/security/prison)
 "xFu" = (
-/obj/effect/glowshroom/single,
-/obj/structure/closet/emcloset/vox,
-/turf/simulated/floor/shuttle/vox,
-/area/shuttle/escape_pod1)
+/obj/structure/fence,
+/obj/effect/decal/warning_stripes{
+	dir = 8;
+	icon_state = "warning_corner"
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "xFL" = (
 /obj/structure/closet/secure_closet/personal/patient,
 /turf/simulated/floor{
@@ -99907,7 +99968,7 @@ lIK
 nCZ
 nJC
 nJC
-bVx
+hYg
 uKR
 yfo
 mEV
@@ -103432,8 +103493,8 @@ lVd
 lVd
 tQW
 kRB
-reb
-reb
+lVd
+lVd
 lVd
 dxI
 kdL
@@ -103780,7 +103841,7 @@ jTs
 iul
 rrK
 cKh
-lVd
+reb
 qgi
 fOo
 bbX
@@ -107659,7 +107720,7 @@ mhX
 aTu
 cGe
 uJn
-rMh
+kDt
 iIt
 oUl
 uJn
@@ -108009,9 +108070,9 @@ gJb
 kuI
 qaT
 aTu
-sRR
+rVu
 uJn
-bif
+jXF
 oUl
 tES
 uJn
@@ -108361,11 +108422,11 @@ wED
 cFn
 tNu
 xnu
-nAe
+cUk
 kaT
 oUl
 oUl
-tES
+uUl
 uJn
 die
 aUs
@@ -108717,7 +108778,7 @@ aTu
 uJn
 mEl
 oUl
-xFu
+pBm
 uJn
 die
 aUs
@@ -108988,7 +109049,7 @@ xor
 xor
 xor
 xor
-nFG
+tnZ
 mkg
 pea
 uZI
@@ -109065,7 +109126,7 @@ gJb
 kuI
 ccn
 dLL
-kDt
+cGe
 uJn
 sav
 sav
@@ -109417,7 +109478,7 @@ glE
 kuI
 ccn
 dLL
-kDt
+cGe
 uJn
 fjX
 fjX
@@ -110121,11 +110182,11 @@ sPk
 fAr
 ccn
 aTu
-bFD
-bFD
-bFD
-bFD
-bFD
+aTu
+aTu
+aTu
+aTu
+aTu
 bFD
 bFD
 ung
@@ -110387,7 +110448,7 @@ rki
 rki
 rki
 sfK
-fUz
+tAL
 qgq
 snf
 snf
@@ -110471,13 +110532,13 @@ gic
 asj
 qet
 bGE
-tsw
+nXV
+xhH
+fUz
+cmb
+pex
+xde
 aTu
-lIK
-lIK
-lIK
-lIK
-lIK
 lIK
 lIK
 lIK
@@ -110823,13 +110884,13 @@ hcT
 kIX
 rAB
 ors
-ccn
+qUn
+lJg
+baB
+pex
+pex
+jEZ
 aTu
-lIK
-lIK
-lIK
-lIK
-lIK
 lIK
 lIK
 lIK
@@ -111174,14 +111235,14 @@ wyb
 wyb
 wyb
 wyb
-hqY
-wNq
 aTu
-lIK
-lIK
-lIK
-lIK
-lIK
+aTu
+aTu
+fcm
+pex
+pex
+kXO
+aTu
 lIK
 lIK
 lIK
@@ -111445,7 +111506,7 @@ rki
 sfK
 mUo
 unH
-rsW
+mVg
 jgK
 jgK
 xor
@@ -111524,16 +111585,16 @@ lIK
 lIK
 lIK
 lIK
+lIK
+lIK
+lIK
+lIK
 aTu
-fcm
-tAL
-ccn
 aTu
-lIK
-lIK
-lIK
-lIK
-lIK
+aTu
+aTu
+aTu
+aTu
 lIK
 lIK
 lIK
@@ -111876,11 +111937,11 @@ lIK
 lIK
 lIK
 lIK
-aTu
-pex
-pex
-cUk
-aTu
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -112228,11 +112289,11 @@ lIK
 lIK
 lIK
 lIK
-aTu
-pex
-pex
-pex
-aTu
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -112492,13 +112553,13 @@ hUZ
 hUZ
 iSF
 mUo
-rgd
-hUZ
-hUZ
-hUZ
-hUZ
-hUZ
-iSF
+cGe
+rki
+rki
+rki
+rki
+rki
+sfK
 mUo
 xor
 xor
@@ -112580,11 +112641,11 @@ lIK
 lIK
 lIK
 lIK
-aTu
-kXO
-pBm
-qUn
-aTu
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -112844,13 +112905,13 @@ snf
 snf
 eOA
 bEw
-eOA
-snf
-snf
-djU
-snf
-snf
-eOA
+xFu
+wdA
+wdA
+qdn
+wdA
+wdA
+sRR
 mXM
 xor
 xor
@@ -112932,11 +112993,11 @@ lIK
 lIK
 lIK
 lIK
-aTu
-aTu
-aTu
-aTu
-aTu
+lIK
+lIK
+lIK
+lIK
+lIK
 lIK
 lIK
 lIK
@@ -126629,7 +126690,7 @@ otc
 qZg
 jmF
 lfq
-qPP
+fdG
 cWF
 jFN
 vFZ
@@ -126981,7 +127042,7 @@ iSj
 bzp
 jyu
 vkY
-aly
+lbB
 wKB
 wKB
 vkY
@@ -128705,7 +128766,7 @@ aQw
 sXU
 edD
 edD
-jUy
+hqV
 jUy
 jUy
 jUy
@@ -132582,8 +132643,8 @@ edD
 edD
 why
 aot
-jXF
-qto
+aly
+qPP
 aot
 gOI
 why
@@ -135397,7 +135458,7 @@ nTf
 xbO
 xbO
 xbO
-hqV
+hqY
 xbO
 xbO
 xbO
@@ -136103,7 +136164,7 @@ jwM
 xbO
 ndk
 xbO
-hqV
+hqY
 xbO
 xbO
 xbO
@@ -140652,9 +140713,9 @@ hhQ
 jGJ
 ldM
 gts
-lJg
-mty
-fdG
+bif
+raD
+wNq
 mSW
 bLU
 pBW
@@ -141004,9 +141065,9 @@ ltk
 ltk
 ltk
 gts
-wdA
-cmb
-wdA
+lGm
+rsW
+lGm
 mSW
 mSW
 mSW
@@ -147739,7 +147800,7 @@ xfk
 xPQ
 xfk
 xfk
-duT
+mty
 xfk
 olB
 auf
@@ -330466,7 +330527,7 @@ sGy
 tKp
 poa
 poa
-tnZ
+pUM
 tKp
 ctD
 ctD
