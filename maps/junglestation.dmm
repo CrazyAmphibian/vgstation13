@@ -528,9 +528,17 @@
 /turf/simulated/floor,
 /area/engineering/mechanics)
 "aly" = (
-/obj/machinery/atm,
-/turf/simulated/wall,
-/area/vox_trading_post/trade_processing)
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "bridge blast";
+	name = "Bridge Blast Doors";
+	opacity = 0
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/surface/jungle/fenced)
 "alz" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor{
@@ -1032,9 +1040,6 @@
 	icon_state = "dark"
 	},
 /area/engineering/supermatter_room)
-"atW" = (
-/turf/simulated/wall,
-/area/surface/jungle/landing)
 "auc" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/structure/cable/yellow{
@@ -3052,10 +3057,9 @@
 	},
 /area/science/hallway)
 "bif" = (
-/obj/structure/table,
-/obj/item/clothing/gloves/fyellow,
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/mob/living/simple_animal/chicken,
+/turf/unsimulated/floor/jungle/grass/no_flora,
+/area/surface/jungle/zoned/botanty_outside)
 "big" = (
 /obj/item/weapon/beach_ball,
 /obj/structure/bed/chair/wood/normal,
@@ -4812,6 +4816,12 @@
 /obj/effect/glowshroom/single,
 /turf/simulated/floor/shuttle/vox,
 /area/centcom/holding)
+"bMn" = (
+/obj/machinery/podcomputer{
+	pixel_y = 31
+	},
+/turf/simulated/floor/shuttle/vox,
+/area/shuttle/escape_pod1)
 "bMz" = (
 /obj/machinery/computer/mecha,
 /obj/structure/window/reinforced{
@@ -6229,11 +6239,18 @@
 /turf/simulated/floor/plating,
 /area/research_outpost/atmos)
 "cmb" = (
-/obj/structure/bed/chair/folding,
-/obj/effect/glowshroom/single,
-/obj/effect/landmark/start/trader_also_latejoin,
-/turf/simulated/floor/shuttle/vox,
-/area/shuttle/escape_pod1)
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "bridge blast";
+	name = "Bridge Blast Doors";
+	opacity = 0
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/surface/jungle/fenced)
 "cmp" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/pickaxe,
@@ -9989,11 +10006,11 @@
 /turf/simulated/floor/engine,
 /area/storage/nuke_storage)
 "dCv" = (
-/obj/docking_port/destination/ert/station{
-	dir = 8
+/obj/machinery/atmospherics/unary/portables_connector{
+	dir = 4
 	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/turf/unsimulated/floor/jungle/concrete,
+/area/surface/jungle/zoned/atmos_outside)
 "dCE" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
@@ -10598,6 +10615,20 @@
 	icon_state = "darkred"
 	},
 /area/centcom/suppy)
+"dQF" = (
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "oncpriv";
+	name = "Privacy Shutters";
+	opacity = 0
+	},
+/obj/structure/grille/window_spawner/reinforced/full,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/medical/cmo)
 "dQO" = (
 /obj/effect/decal/warning_stripes{
 	icon_state = "nitrous_oxide"
@@ -13436,6 +13467,10 @@
 	icon_state = "hydrofloor"
 	},
 /area/crew_quarters/courtroom)
+"ePn" = (
+/obj/machinery/atm,
+/turf/simulated/wall,
+/area/vox_trading_post/trade_processing)
 "ePq" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated/floor/plating,
@@ -13991,9 +14026,10 @@
 /turf/simulated/floor/wood,
 /area/surface/jungle/underground/zoned/casino)
 "fdG" = (
-/mob/living/simple_animal/chicken,
-/turf/unsimulated/floor/jungle/grass/no_flora,
-/area/surface/jungle/zoned/botanty_outside)
+/obj/effect/glowshroom/single,
+/obj/structure/closet/emcloset/vox,
+/turf/simulated/floor/shuttle/vox,
+/area/shuttle/escape_pod1)
 "fdH" = (
 /obj/abstract/map/spawner/jungle_fren,
 /turf/unsimulated/floor/jungle/grass,
@@ -16282,9 +16318,10 @@
 	},
 /area/centcom/evac)
 "fUz" = (
-/obj/machinery/atm,
-/turf/simulated/wall/r_wall,
-/area/security/main)
+/obj/structure/table,
+/obj/item/clothing/gloves/fyellow,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "fUK" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -21775,10 +21812,6 @@
 /obj/structure/curtain/open/bed,
 /turf/simulated/floor,
 /area/research_outpost/dorm1)
-"hYh" = (
-/obj/effect/glowshroom/single,
-/turf/simulated/floor/shuttle/vox,
-/area/centcom/holding)
 "hYn" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -27094,19 +27127,10 @@
 	},
 /area/supply/storage)
 "jXF" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "oncpriv";
-	name = "Privacy Shutters";
-	opacity = 0
-	},
-/obj/structure/grille/window_spawner/reinforced/full,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/medical/cmo)
+/obj/machinery/hologram/holopad,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
+/turf/unsimulated/floor/jungle/concrete,
+/area/surface/jungle/zoned/atmos_outside)
 "jXL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
@@ -27950,6 +27974,10 @@
 	},
 /turf/simulated/floor/carpet,
 /area/chapel/main)
+"kpG" = (
+/obj/machinery/atm,
+/turf/simulated/wall/r_wall,
+/area/security/main)
 "kpJ" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/plasma{
@@ -29813,18 +29841,6 @@
 	icon_state = "dark"
 	},
 /area/bridge)
-"ley" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "bridge blast";
-	name = "Bridge Blast Doors";
-	opacity = 0
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/surface/jungle/fenced)
 "leM" = (
 /turf/simulated/wall/r_rock,
 /area/research_outpost/anomaly)
@@ -30120,19 +30136,6 @@
 /obj/machinery/vending/games,
 /turf/simulated/floor/wood,
 /area/library)
-"liI" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "bridge blast";
-	name = "Bridge Blast Doors";
-	opacity = 0
-	},
-/obj/machinery/light/small,
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/surface/jungle/fenced)
 "liN" = (
 /obj/structure/cable/orange{
 	icon_state = "1-4";
@@ -31592,17 +31595,11 @@
 /turf/simulated/floor/shuttle/vox,
 /area/centcom/holding)
 "lJg" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/simulated/floor{
-	dir = 4;
-	icon_state = "whiteblue"
-	},
-/area/medical/sleeper)
+/obj/structure/bed/chair/folding,
+/obj/effect/glowshroom/single,
+/obj/effect/landmark/start/trader_also_latejoin,
+/turf/simulated/floor/shuttle/vox,
+/area/shuttle/escape_pod1)
 "lJi" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
@@ -33632,15 +33629,8 @@
 	},
 /area/engineering/ce)
 "mty" = (
-/obj/machinery/door/airlock/glass_command{
-	name = "Bridge";
-	req_access_txt = "19";
-	normalspeed = 0
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/surface/jungle/fenced)
+/turf/simulated/wall,
+/area/surface/jungle/landing)
 "mtC" = (
 /obj/structure/table/woodentable,
 /obj/item/toy/cards{
@@ -33653,6 +33643,17 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/jungle/underground/zoned/casino)
+"mtP" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/obj/structure/sign/pox{
+	icon_state = "voxcross";
+	name = "Vox Crossing - Beware";
+	pixel_y = -4
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "mtQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -45502,15 +45503,10 @@
 	},
 /area/engineering/atmos)
 "qPP" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "bridge blast";
-	name = "Bridge Blast Doors";
-	opacity = 0
-	},
-/obj/machinery/light/small{
-	dir = 1
+/obj/machinery/door/airlock/glass_command{
+	name = "Bridge";
+	req_access_txt = "19";
+	normalspeed = 0
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -47079,10 +47075,13 @@
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/vault)
 "rsW" = (
-/obj/effect/glowshroom/single,
-/obj/structure/closet/emcloset/vox,
-/turf/simulated/floor/shuttle/vox,
-/area/shuttle/escape_pod1)
+/obj/structure/table,
+/obj/item/weapon/pickaxe/hand,
+/obj/item/weapon/pickaxe/shovel/spade,
+/turf/simulated/floor{
+	icon_state = "hydrofloor"
+	},
+/area/hydroponics)
 "rtl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -51096,11 +51095,9 @@
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/zoned/outdoor_bar)
 "sRR" = (
-/obj/machinery/podcomputer{
-	pixel_y = 31
-	},
+/obj/effect/glowshroom/single,
 /turf/simulated/floor/shuttle/vox,
-/area/shuttle/escape_pod1)
+/area/centcom/holding)
 "sRS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -52026,17 +52023,6 @@
 	tag = "icon-brown (NORTH)"
 	},
 /area/supply/storage)
-"thZ" = (
-/obj/structure/fence{
-	dir = 4
-	},
-/obj/structure/sign/pox{
-	icon_state = "voxcross";
-	name = "Vox Crossing - Beware";
-	pixel_y = -4
-	},
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
 "tif" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -54346,6 +54332,21 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
+"tYJ" = (
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "bridge blast";
+	name = "Bridge Blast Doors";
+	opacity = 0
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/surface/jungle/fenced)
 "tYW" = (
 /obj/structure/closet/firecloset/full,
 /turf/unsimulated/floor/jungle/bedrock,
@@ -59983,11 +59984,11 @@
 	},
 /area/security/detectives_office)
 "wdA" = (
-/obj/machinery/atmospherics/unary/portables_connector{
-	dir = 4
+/obj/machinery/disposal/compactor,
+/turf/simulated/floor{
+	icon_state = "hydrofloor"
 	},
-/turf/unsimulated/floor/jungle/concrete,
-/area/surface/jungle/zoned/atmos_outside)
+/area/hydroponics)
 "wdW" = (
 /obj/machinery/chem_dispenser/mapping,
 /turf/simulated/floor,
@@ -63847,6 +63848,12 @@
 	icon_state = "wood"
 	},
 /area/centcom/test)
+"xyY" = (
+/obj/docking_port/destination/ert/station{
+	dir = 8
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "xzI" = (
 /turf/simulated/wall/shuttle/unsmoothed{
 	dir = 1;
@@ -64071,10 +64078,17 @@
 /turf/simulated/floor/plating,
 /area/security/prison)
 "xFu" = (
-/obj/machinery/hologram/holopad,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/turf/unsimulated/floor/jungle/concrete,
-/area/surface/jungle/zoned/atmos_outside)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/simulated/floor{
+	dir = 4;
+	icon_state = "whiteblue"
+	},
+/area/medical/sleeper)
 "xFL" = (
 /obj/structure/closet/secure_closet/personal/patient,
 /turf/simulated/floor{
@@ -99898,7 +99912,7 @@ lIK
 nCZ
 nJC
 nJC
-aly
+ePn
 uKR
 yfo
 mEV
@@ -107650,7 +107664,7 @@ mhX
 aTu
 cGe
 uJn
-sRR
+bMn
 iIt
 oUl
 uJn
@@ -108000,9 +108014,9 @@ gJb
 kuI
 qaT
 aTu
-atW
+mty
 uJn
-cmb
+lJg
 oUl
 tES
 uJn
@@ -108708,7 +108722,7 @@ aTu
 uJn
 mEl
 oUl
-rsW
+fdG
 uJn
 die
 aUs
@@ -108979,7 +108993,7 @@ xor
 xor
 xor
 xor
-fUz
+kpG
 mkg
 pea
 uZI
@@ -110378,7 +110392,7 @@ rki
 rki
 rki
 sfK
-thZ
+mtP
 qgq
 snf
 snf
@@ -111436,7 +111450,7 @@ rki
 sfK
 mUo
 unH
-bif
+fUz
 jgK
 jgK
 xor
@@ -112838,7 +112852,7 @@ bEw
 eOA
 snf
 snf
-dCv
+xyY
 snf
 snf
 eOA
@@ -126620,7 +126634,7 @@ otc
 qZg
 jmF
 lfq
-lJg
+xFu
 cWF
 jFN
 vFZ
@@ -126972,7 +126986,7 @@ iSj
 bzp
 jyu
 vkY
-jXF
+dQF
 wKB
 wKB
 vkY
@@ -132226,7 +132240,7 @@ feH
 aot
 uom
 why
-wZY
+xor
 xor
 maR
 iMQ
@@ -132573,12 +132587,12 @@ edD
 edD
 why
 aot
-aot
-aot
+rsW
+wdA
 aot
 gOI
 why
-jnw
+wZY
 xor
 maR
 iMQ
@@ -132920,18 +132934,18 @@ mEG
 mEG
 mEG
 qtJ
-gnA
-bWM
-fpx
+edD
+edD
+edD
 why
-cEL
-bsb
-bYw
-vDH
-cFY
+aot
+aot
+aot
+aot
+aot
 why
-oaO
-ifV
+jnw
+xor
 maR
 iMQ
 cbi
@@ -133272,18 +133286,18 @@ tsV
 tsV
 xYa
 maR
-nTf
-xTn
-aCN
-sOW
-xTn
-xTn
-xTn
-aCN
-xTn
-buf
-xTn
-nTf
+gnA
+bWM
+fpx
+why
+cEL
+bsb
+bYw
+vDH
+cFY
+why
+oaO
+ifV
 maR
 iMQ
 xMH
@@ -133627,14 +133641,14 @@ maR
 nTf
 xTn
 aCN
-wwO
-wwO
-wwO
-wwO
+sOW
+xTn
+xTn
+xTn
 aCN
-wwO
-wwO
-wwO
+xTn
+buf
+xTn
 nTf
 maR
 iMQ
@@ -133979,14 +133993,14 @@ maR
 nTf
 xTn
 aCN
-xTn
-xTn
-xTn
-xTn
+wwO
+wwO
+wwO
+wwO
 aCN
-xTn
-xTn
-xTn
+wwO
+wwO
+wwO
 nTf
 maR
 iMQ
@@ -134331,14 +134345,14 @@ maR
 nTf
 xTn
 aCN
-aCN
-aCN
-aCN
-aCN
-vZt
 xTn
-xbO
-xbO
+xTn
+xTn
+xTn
+aCN
+xTn
+xTn
+xTn
 nTf
 maR
 iMQ
@@ -134681,14 +134695,14 @@ xMH
 psY
 maR
 nTf
-xbO
-xbO
-xbO
-xbO
-xbO
-xbO
-xbO
-xbO
+xTn
+aCN
+aCN
+aCN
+aCN
+aCN
+vZt
+xTn
 xbO
 xbO
 nTf
@@ -135388,7 +135402,7 @@ nTf
 xbO
 xbO
 xbO
-fdG
+bif
 xbO
 xbO
 xbO
@@ -136094,7 +136108,7 @@ jwM
 xbO
 ndk
 xbO
-fdG
+bif
 xbO
 xbO
 xbO
@@ -140643,9 +140657,9 @@ hhQ
 jGJ
 ldM
 gts
-qPP
-ley
-liI
+tYJ
+aly
+cmb
 mSW
 bLU
 pBW
@@ -140996,7 +141010,7 @@ ltk
 ltk
 gts
 tnZ
-mty
+qPP
 tnZ
 mSW
 mSW
@@ -147730,7 +147744,7 @@ xfk
 xPQ
 xfk
 xfk
-xFu
+jXF
 xfk
 olB
 auf
@@ -148784,11 +148798,11 @@ auf
 auf
 fJA
 auf
-wdA
+dCv
 auf
 ien
 auf
-wdA
+dCv
 auf
 tCN
 hML
@@ -330457,7 +330471,7 @@ sGy
 tKp
 poa
 poa
-hYh
+sRR
 tKp
 ctD
 ctD
