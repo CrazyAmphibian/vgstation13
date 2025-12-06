@@ -528,18 +528,9 @@
 /turf/simulated/floor,
 /area/engineering/mechanics)
 "aly" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "bridge blast";
-	name = "Bridge Blast Doors";
-	opacity = 0
-	},
-/obj/machinery/light/small,
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/surface/jungle/fenced)
+/obj/machinery/door/airlock/external,
+/turf/simulated/floor/plating/vox,
+/area/surface/jungle/landing)
 "alz" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor{
@@ -627,21 +618,6 @@
 	icon_state = "showroomfloor"
 	},
 /area/crew_quarters/kitchen)
-"ang" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "bridge blast";
-	name = "Bridge Blast Doors";
-	opacity = 0
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/surface/jungle/fenced)
 "anh" = (
 /turf/simulated/floor/wood,
 /area/crew_quarters)
@@ -3073,9 +3049,17 @@
 	},
 /area/science/hallway)
 "bif" = (
-/obj/machinery/door/airlock/external,
-/turf/simulated/floor/plating/vox,
-/area/surface/jungle/landing)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/simulated/floor{
+	dir = 4;
+	icon_state = "whiteblue"
+	},
+/area/medical/sleeper)
 "big" = (
 /obj/item/weapon/beach_ball,
 /obj/structure/bed/chair/wood/normal,
@@ -6249,9 +6233,8 @@
 /turf/simulated/floor/plating,
 /area/research_outpost/atmos)
 "cmb" = (
-/obj/machinery/atm,
-/turf/simulated/wall/r_wall,
-/area/security/main)
+/turf/simulated/wall,
+/area/surface/jungle/landing)
 "cmp" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/pickaxe,
@@ -14009,9 +13992,9 @@
 /turf/simulated/floor/wood,
 /area/surface/jungle/underground/zoned/casino)
 "fdG" = (
-/obj/machinery/atm,
-/turf/simulated/wall,
-/area/vox_trading_post/trade_processing)
+/mob/living/simple_animal/chicken,
+/turf/unsimulated/floor/jungle/grass/no_flora,
+/area/surface/jungle/zoned/botanty_outside)
 "fdH" = (
 /obj/abstract/map/spawner/jungle_fren,
 /turf/unsimulated/floor/jungle/grass,
@@ -20062,11 +20045,19 @@
 	},
 /area/chapel/main)
 "hqV" = (
-/obj/structure/bed/chair/folding,
-/obj/effect/glowshroom/single,
-/obj/effect/landmark/start/trader_also_latejoin,
-/turf/simulated/floor/shuttle/vox,
-/area/shuttle/escape_pod1)
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "oncpriv";
+	name = "Privacy Shutters";
+	opacity = 0
+	},
+/obj/structure/grille/window_spawner/reinforced/full,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/medical/cmo)
 "hqY" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -27110,17 +27101,9 @@
 	},
 /area/supply/storage)
 "jXF" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "bridge blast";
-	name = "Bridge Blast Doors";
-	opacity = 0
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/surface/jungle/fenced)
+/obj/machinery/atm,
+/turf/simulated/wall,
+/area/vox_trading_post/trade_processing)
 "jXL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
@@ -29427,11 +29410,6 @@
 	name = "plating"
 	},
 /area/centcom/evac)
-"kTx" = (
-/obj/machinery/hologram/holopad,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/turf/unsimulated/floor/jungle/concrete,
-/area/surface/jungle/zoned/atmos_outside)
 "kTB" = (
 /obj/structure/cable/orange{
 	icon_state = "4-8";
@@ -30210,20 +30188,6 @@
 /obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated/floor/plating,
 /area/bridge)
-"ljU" = (
-/obj/machinery/door/poddoor{
-	density = 0;
-	icon_state = "pdoor0";
-	id_tag = "oncpriv";
-	name = "Privacy Shutters";
-	opacity = 0
-	},
-/obj/structure/grille/window_spawner/reinforced/full,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/medical/cmo)
 "ljY" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -31600,9 +31564,18 @@
 /turf/simulated/floor/shuttle/vox,
 /area/centcom/holding)
 "lJg" = (
-/mob/living/simple_animal/chicken,
-/turf/unsimulated/floor/jungle/grass/no_flora,
-/area/surface/jungle/zoned/botanty_outside)
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "bridge blast";
+	name = "Bridge Blast Doors";
+	opacity = 0
+	},
+/obj/machinery/light/small,
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/surface/jungle/fenced)
 "lJi" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
@@ -33555,9 +33528,6 @@
 	icon_state = "floor4"
 	},
 /area/shuttle/administration/centcom)
-"mrU" = (
-/turf/simulated/wall,
-/area/surface/jungle/landing)
 "msh" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1;
@@ -33635,15 +33605,19 @@
 	},
 /area/engineering/ce)
 "mty" = (
-/obj/structure/fence{
-	dir = 4
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "bridge blast";
+	name = "Bridge Blast Doors";
+	opacity = 0
 	},
-/obj/structure/sign/pox{
-	icon_state = "voxcross";
-	name = "Vox Crossing - Beware";
-	pixel_y = -4
+/obj/machinery/light/small{
+	dir = 1
 	},
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
 /area/surface/jungle/fenced)
 "mtC" = (
 /obj/structure/table/woodentable,
@@ -38906,6 +38880,18 @@
 	icon_state = "whiteblue"
 	},
 /area/medical/storage)
+"orV" = (
+/obj/machinery/door/poddoor{
+	density = 0;
+	icon_state = "pdoor0";
+	id_tag = "bridge blast";
+	name = "Bridge Blast Doors";
+	opacity = 0
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/surface/jungle/fenced)
 "orY" = (
 /obj/machinery/computer/general_air_control/large_tank_control{
 	frequency = 1443;
@@ -45509,10 +45495,11 @@
 	},
 /area/engineering/atmos)
 "qPP" = (
-/obj/structure/table,
-/obj/item/clothing/gloves/fyellow,
-/turf/unsimulated/floor/jungle/path_plated,
-/area/surface/jungle/fenced)
+/obj/machinery/podcomputer{
+	pixel_y = 31
+	},
+/turf/simulated/floor/shuttle/vox,
+/area/shuttle/escape_pod1)
 "qQa" = (
 /obj/effect/decal/warning_stripes{
 	dir = 1;
@@ -47076,11 +47063,11 @@
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/vault)
 "rsW" = (
-/obj/machinery/podcomputer{
-	pixel_y = 31
+/obj/docking_port/destination/ert/station{
+	dir = 8
 	},
-/turf/simulated/floor/shuttle/vox,
-/area/shuttle/escape_pod1)
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "rtl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -51094,9 +51081,9 @@
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/zoned/outdoor_bar)
 "sRR" = (
-/obj/effect/glowshroom/single,
-/turf/simulated/floor/shuttle/vox,
-/area/centcom/holding)
+/obj/machinery/atm,
+/turf/simulated/wall/r_wall,
+/area/security/main)
 "sRS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -52388,10 +52375,14 @@
 /turf/simulated/floor,
 /area/security/prison)
 "tnZ" = (
-/obj/docking_port/destination/ert/station{
-	dir = 8
+/obj/machinery/door/airlock/glass_command{
+	name = "Bridge";
+	req_access_txt = "19";
+	normalspeed = 0
 	},
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
 /area/surface/jungle/fenced)
 "tof" = (
 /turf/simulated/wall/r_wall,
@@ -55078,11 +55069,6 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/zoned/outdoor_bar)
-"upb" = (
-/obj/effect/glowshroom/single,
-/obj/structure/closet/emcloset/vox,
-/turf/simulated/floor/shuttle/vox,
-/area/shuttle/escape_pod1)
 "upA" = (
 /obj/effect/decal/warning_stripes{
 	dir = 8;
@@ -55227,6 +55213,11 @@
 	},
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle/fenced)
+"uro" = (
+/obj/effect/glowshroom/single,
+/obj/structure/closet/emcloset/vox,
+/turf/simulated/floor/shuttle/vox,
+/area/shuttle/escape_pod1)
 "urp" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated/floor/plating,
@@ -59975,15 +59966,11 @@
 	},
 /area/security/detectives_office)
 "wdA" = (
-/obj/machinery/door/airlock/glass_command{
-	name = "Bridge";
-	req_access_txt = "19";
-	normalspeed = 0
-	},
-/turf/simulated/floor{
-	icon_state = "dark"
-	},
-/area/surface/jungle/fenced)
+/obj/structure/bed/chair/folding,
+/obj/effect/glowshroom/single,
+/obj/effect/landmark/start/trader_also_latejoin,
+/turf/simulated/floor/shuttle/vox,
+/area/shuttle/escape_pod1)
 "wdW" = (
 /obj/machinery/chem_dispenser/mapping,
 /turf/simulated/floor,
@@ -60054,6 +60041,11 @@
 	icon_state = "dark"
 	},
 /area/security/prison)
+"wex" = (
+/obj/structure/table,
+/obj/item/clothing/gloves/fyellow,
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "weL" = (
 /obj/structure/window/full/reinforced,
 /turf/unsimulated/wall/fakeglass{
@@ -60079,6 +60071,9 @@
 /area/science/xenobiology)
 "wfc" = (
 /obj/machinery/r_n_d/fabricator/circuit_imprinter,
+/obj/item/weapon/reagent_containers/glass/beaker/acid{
+	pixel_y = 6
+	},
 /turf/simulated/floor{
 	dir = 6;
 	icon_state = "dark"
@@ -60817,6 +60812,17 @@
 	icon_state = "grimy"
 	},
 /area/chapel/office)
+"wvh" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/obj/structure/sign/pox{
+	icon_state = "voxcross";
+	name = "Vox Crossing - Beware";
+	pixel_y = -4
+	},
+/turf/unsimulated/floor/jungle/path_plated,
+/area/surface/jungle/fenced)
 "wvr" = (
 /obj/item/weapon/stool/bar,
 /turf/unsimulated/floor{
@@ -63948,6 +63954,10 @@
 	},
 /turf/simulated/floor/shuttle,
 /area/centcom/evac)
+"xCE" = (
+/obj/effect/glowshroom/single,
+/turf/simulated/floor/shuttle/vox,
+/area/centcom/holding)
 "xCG" = (
 /obj/machinery/sleeper,
 /turf/simulated/floor/shuttle{
@@ -64064,17 +64074,10 @@
 /turf/simulated/floor/plating,
 /area/security/prison)
 "xFu" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/turf/simulated/floor{
-	dir = 4;
-	icon_state = "whiteblue"
-	},
-/area/medical/sleeper)
+/obj/machinery/hologram/holopad,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
+/turf/unsimulated/floor/jungle/concrete,
+/area/surface/jungle/zoned/atmos_outside)
 "xFL" = (
 /obj/structure/closet/secure_closet/personal/patient,
 /turf/simulated/floor{
@@ -99898,7 +99901,7 @@ lIK
 nCZ
 nJC
 nJC
-fdG
+jXF
 uKR
 yfo
 mEV
@@ -107650,7 +107653,7 @@ mhX
 aTu
 cGe
 uJn
-rsW
+qPP
 iIt
 oUl
 uJn
@@ -108000,9 +108003,9 @@ gJb
 kuI
 qaT
 aTu
-mrU
+cmb
 uJn
-hqV
+wdA
 oUl
 tES
 uJn
@@ -108352,7 +108355,7 @@ wED
 cFn
 tNu
 xnu
-bif
+aly
 kaT
 oUl
 oUl
@@ -108708,7 +108711,7 @@ aTu
 uJn
 mEl
 oUl
-upb
+uro
 uJn
 die
 aUs
@@ -108979,7 +108982,7 @@ xor
 xor
 xor
 xor
-cmb
+sRR
 mkg
 pea
 uZI
@@ -110378,7 +110381,7 @@ rki
 rki
 rki
 sfK
-mty
+wvh
 qgq
 snf
 snf
@@ -111436,7 +111439,7 @@ rki
 sfK
 mUo
 unH
-qPP
+wex
 jgK
 jgK
 xor
@@ -112838,7 +112841,7 @@ bEw
 eOA
 snf
 snf
-tnZ
+rsW
 snf
 snf
 eOA
@@ -126620,7 +126623,7 @@ otc
 qZg
 jmF
 lfq
-xFu
+bif
 cWF
 jFN
 vFZ
@@ -126972,7 +126975,7 @@ iSj
 bzp
 jyu
 vkY
-ljU
+hqV
 wKB
 wKB
 vkY
@@ -135388,7 +135391,7 @@ nTf
 xbO
 xbO
 xbO
-lJg
+fdG
 xbO
 xbO
 xbO
@@ -136094,7 +136097,7 @@ jwM
 xbO
 ndk
 xbO
-lJg
+fdG
 xbO
 xbO
 xbO
@@ -140643,9 +140646,9 @@ hhQ
 jGJ
 ldM
 gts
-ang
-jXF
-aly
+mty
+orV
+lJg
 mSW
 bLU
 pBW
@@ -140996,7 +140999,7 @@ ltk
 ltk
 gts
 fUz
-wdA
+tnZ
 fUz
 mSW
 mSW
@@ -147730,7 +147733,7 @@ xfk
 xPQ
 xfk
 xfk
-kTx
+xFu
 xfk
 olB
 auf
@@ -330457,7 +330460,7 @@ sGy
 tKp
 poa
 poa
-sRR
+xCE
 tKp
 ctD
 ctD
