@@ -21053,7 +21053,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/machinery/meter,
 /obj/machinery/vending/engivend,
 /turf/simulated/floor/vox{
 	icon_state = "rockvault"
@@ -28268,6 +28267,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/machinery/meter,
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/atmos)
 "kws" = (
