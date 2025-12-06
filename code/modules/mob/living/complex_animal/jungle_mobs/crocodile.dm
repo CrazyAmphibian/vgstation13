@@ -5,7 +5,6 @@
 	icon_living="crocodile"
 	icon_dead="crocodile-dead"
 	size=SIZE_BIG
-	
 	health=100
 	maxHealth=100
 	armor=list(melee=35,bullet=10,laser=15,energy=0,bomb=0,bio=0,rad=0)
@@ -25,7 +24,7 @@
 	if(prob(50))
 		return
 	var/list/watertiles=list()
-	for(var/turf/unsimulated/floor/jungle/water/W in range(6))
+	for(var/turf/unsimulated/floor/jungle/water/W in cache_objects_in_view)
 		watertiles+=W
 	if(!watertiles.len)
 		return
