@@ -6488,6 +6488,14 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	master_tag = "virology_airlock_control";
+	name = "Virology Access Button";
+	pixel_x = -7;
+	pixel_y = 22;
+	req_access_txt = "39"
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -32695,8 +32703,7 @@
 "mbf" = (
 /obj/structure/window/reinforced{
 	dir = 8;
-	name = "reinforced one-way window";
-	one_way = 1
+	name = "reinforced one-way window"
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/simulated/floor{
@@ -35359,6 +35366,25 @@
 	name = "plating"
 	},
 /area/tdome)
+"mZA" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	master_tag = "virology_airlock_control";
+	name = "Virology Access Button";
+	pixel_x = -24;
+	req_access_txt = "39";
+	pixel_y = 8
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/medical/genetics)
 "mZK" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/effect/decal/warning_stripes{
@@ -44660,8 +44686,7 @@
 /area/engineering/engine)
 "qza" = (
 /obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
 /obj/structure/wc/sink{
 	dir = 4;
@@ -59503,8 +59528,7 @@
 "vSp" = (
 /obj/machinery/washing_machine,
 /obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -62048,8 +62072,7 @@
 "wRF" = (
 /obj/structure/window/reinforced{
 	dir = 8;
-	name = "reinforced one-way window";
-	one_way = 1
+	name = "reinforced one-way window"
 	},
 /obj/structure/closet/l3closet/virology,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -133373,7 +133396,7 @@ pte
 kex
 iYt
 qDh
-hbm
+mZA
 hbm
 euh
 eve
