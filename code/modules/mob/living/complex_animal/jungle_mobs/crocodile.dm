@@ -44,12 +44,7 @@
 		else
 			stuntracker=FALSE
 /mob/living/complex_animal/crocodile/get_attack_msg(var/individual)
-	var/i=rand(1,2)
-	switch(i)
-		if(1)
-			emote("me", MESSAGE_SEE, "bites \the [individual]!")
-		if(2)
-			emote("me", MESSAGE_SEE, "chomps on \the [individual]!")
+	emote("me", MESSAGE_SEE, "[prob(50) ? "bites" : "chomps"] \the [individual]!")
 
 /mob/living/complex_animal/crocodile/get_idle_sounds()
 	if(prob(10))
