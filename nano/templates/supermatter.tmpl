@@ -81,8 +81,8 @@
 					Composition:
 				</div>
 				<div class="statusValue">
-					{{:helper.displayBar(data.oxygen, 0, 100, data.oxygen > 80 ? "good" : "neutral")}}
-					{{:helper.round(data.oxygen)}}% Oxygen
+					{{:helper.displayBarMultiComponent([data.oxygen],["class='good'"] )}}
+					{{:helper.round(data.oxygen*100)}}% Oxygen
 				</div>
 			</div>
 			<div class="line">

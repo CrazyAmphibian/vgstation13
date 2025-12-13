@@ -168,6 +168,27 @@ NanoBaseHelpers = function ()
 
 				return '<div class="displayBar ' + styleClass + '"><div class="displayBarFill ' + styleClass + '" style="width: ' + percentage + '%;"></div><div class="displayBarText ' + styleClass + '">' + showText + '</div></div>';
 			},
+			//similar to displayBar, but takes multiple values and displays them in the same block. also it displays the bar as normalized components, a la a pie chart.
+			displayBarMultiComponent: function(values, styleClasses, showTexts) {
+				if(!showTexts){
+					showTexts=[]
+				}
+				var sum = 0;
+				for(let i=0;i<value.len;i++){
+					sum+=values[i];
+				}
+				var out = '<div class="displayBar">';
+				for(let i=0;i<value.len;i++){
+					var val=values[i] || 0;
+					var stl=styleClass[i] || '';
+					var txt=showText[i] || '';
+					if(val>0){
+						out+='<span ' + stl + ' style="width:' + Math.ceil(100*val/sum) + '%">' + txt + '</span>'
+					}
+				}
+				out+='</div>'
+				return out;
+			},
 			// Convert explosion range to thing.
 			explosionToClass: function(range, cap) {
 				if(range >= cap) return 'bad';
