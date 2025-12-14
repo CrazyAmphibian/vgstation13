@@ -170,22 +170,24 @@ NanoBaseHelpers = function ()
 			},
 			//similar to displayBar, but takes multiple values and displays them in the same block. also it displays the bar as normalized components, a la a pie chart.
 			displayBarMultiComponent: function(values, styleClasses, showTexts) {
-				if(!showTexts){
+				if(showTexts == undefined){
 					showTexts=[]
 				}
 				var sum = 0;
-				for(let i=0;i<value.len;i++){
+				for(let i=0;i<values.length;i++){
 					sum+=values[i];
 				}
-				var out = '<div class="displayBar">';
-				for(let i=0;i<value.len;i++){
+				var out = '<div class="displayBar" style="display:flex;">';
+				
+				for(let i=0;i<values.length;i++){
 					var val=values[i] || 0;
-					var stl=styleClass[i] || '';
-					var txt=showText[i] || '';
+					var stl=styleClasses[i] || '';
+					var txt=showTexts[i] || '';
 					if(val>0){
-						out+='<span ' + stl + ' style="width:' + Math.ceil(100*val/sum) + '%">' + txt + '</span>'
+						out+='<span class="displayBarFill ' + stl + '" style="width:' + Math.ceil(100*val/sum) + '%">' + txt + '</span>'
 					}
 				}
+				
 				out+='</div>'
 				return out;
 			},

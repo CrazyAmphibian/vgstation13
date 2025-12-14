@@ -81,8 +81,8 @@
 					Composition:
 				</div>
 				<div class="statusValue">
-					{{:helper.displayBarMultiComponent([data.oxygen],["class='good'"] )}}
-					{{:helper.round(data.oxygen*100)}}% Oxygen
+					{{:helper.displayBarMultiComponent([data.oxygen,data.nitrogen,data.cryotheum,data.radon,data.OTHER_GASSES],["good'","bad'","neutral","bad","neutral"] )}}
+					{{:helper.round(data.oxygen_factor*100)}}% Oxygen
 				</div>
 			</div>
 			<div class="line">

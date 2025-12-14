@@ -53,7 +53,7 @@
 	var/power_loss_modifier = 2500 // Higher == less power lost every process(). Was 500. With three emitters and no O2, power should tend towards 13935.5 J.
 	var/max_power = 2000 // Used for lighting scaling.
 
-	var/list/last_data = list("temperature" = 293, "oxygen" = 0.2, "nitrogen"=0.0, "radon"=0.0,"cryotheum"=0.0,"OTHER GASSES"=0.0,)
+	var/list/last_data = list("temperature" = 293, "oxygen_factor" = 0.2, "oxygen" = 0.0, "nitrogen"=0.0, "radon"=0.0,"cryotheum"=0.0,"OTHER_GASSES"=0.0,)
 	var/oxygen = 0				  // Moving this up here for easier debugging.
 
 	//Temporary values so that we can optimize this
@@ -340,11 +340,12 @@
 	//We've generated power, now let's transfer it to the collectors for storing/usage
 	transfer_energy()
 	last_data["temperature"] = removed.temperature
-	last_data["oxygen"] = oxygen
+	last_data["oxygen_factor"] = oxygen
+	last_data["oxygen"] = removed[GAS_OXYGEN]
 	last_data["nitrogen"] = removed[GAS_NITROGEN]
 	last_data["cryotheum"] = removed[GAS_CRYOTHEUM]
 	last_data["radon"] = removed[GAS_RADON]
-	last_data["OTHER GASSES"] = removed.total_moles - last_data["oxygen"] - last_data["nitrogen"] - last_data["cryotheum"] - last_data["radon"]
+	last_data["OTHER_GASSES"] = removed.total_moles - last_data["oxygen"] - last_data["nitrogen"] - last_data["cryotheum"] - last_data["radon"]
 
 	var/device_energy = power * REACTION_POWER_MODIFIER
 
@@ -673,18 +674,20 @@
 		data["stability"] = linked.stability()
 		if(!istype(linked.loc, /turf)||istype(linked.loc, /turf/space))
 			data["dps"] = 0 //If crated or in space, damage is exactly 0
-			data["oxygen"] = 0 //This doesn't really matter because power isn't generated in this state
-			data["nitrogen"] = 0 //ditto
+			data["oxygen factor"] = 0 //This doesn't really matter because power isn't generated in this state
+			data["oxygen"] = 0 
+			data["nitrogen"] = 0 
 			data["cryotheum"] = 0
 			data["radon"] = 0
-			data["OTHER GASSES"] = 0
+			data["OTHER_GASSES"] = 0
 		else
 			data["dps"] = (linked.last_data["temperature"]-800)/150
+			data["oxygen_factor"] = linked.last_data["oxygen_factor"]
 			data["oxygen"] = linked.last_data["oxygen"]
 			data["nitrogen"] = linked.last_data["nitrogen"]
 			data["cryotheum"] = linked.last_data["cryotheum"]
 			data["radon"] = linked.last_data["radon"]
-			data["OTHER GASSES"] = linked.last_data["OTHER GASSES"]
+			data["OTHER_GASSES"] = linked.last_data["OTHER_GASSES"]
 		var/area/SME_loc = get_area(linked)
 		data["location"] = SME_loc.name
 	else
