@@ -449,9 +449,15 @@
 			update_icon()
 		if("set_device_mode" in href_list)
 			scrubbing=!scrubbing
+			if(panic && scrubbing)
+				panic=FALSE
 			update_icon()
 		if("set_device_panic" in href_list)
 			panic=!panic
+			if(panic)
+				scrubbing=0 //panic should enable siphoning, too. that's how it's handled in the air alarm, at least.
+			else
+				scrubbing=1
 			update_icon()
 		if("set_device_pressure_check_external" in href_list)
 			pressure_checks^=1
