@@ -191,7 +191,7 @@
 	return 1
 
 
-/obj/machinery/atmospherics/unary/vent_pump/multitool_topic(var/mob/user, var/list/href_list, var/obj/O)
+/obj/machinery/atmospherics/unary/outlet_injector/multitool_topic(var/mob/user, var/list/href_list, var/obj/O)
 	if(can_user_modify_via_alarm(user))
 		if("set_device_on" in href_list)
 			on=!on
