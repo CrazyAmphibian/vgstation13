@@ -412,7 +412,7 @@
 		&emsp;Gas Scrubbing:
 		<ul>"}
 		
-		for(var/gas_ID in XGM.gases)
+		for(var/gas_ID in XGM.noteworthy_gases)
 			var/datum/gas/gas_datum = XGM.gases[gas_ID]
 			ret_str+="<li>[gas_datum.short_name]: <a href='?src=\ref[src];set_device_scrubgas_!_[gas_ID]=1'>[scrubbed_gases[gas_ID]?"enabled":"disabled"]</a></li>"
 		ret_str+={"</ul></b></p>"}
