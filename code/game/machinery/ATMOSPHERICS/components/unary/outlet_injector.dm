@@ -167,7 +167,6 @@
 	if(can_user_modify_via_alarm(user))
 		ret_str+={"<p><b>Settings modification:<br>
 		&emsp;Device Power: <a href="?src=\ref[src];set_device_on=1">[on?"on":"off"]</a><br>
-		&emsp;Device Mode: <a href="?src=\ref[src];set_device_mode=1">[injecting?"injecting":"not injecting"]</a><br>
 		&emsp;External Pressure Checking: <a href="?src=\ref[src];set_device_flow_rate=1">[volume_rate]L/s</a><br>
 		"}
 	else
@@ -196,14 +195,11 @@
 		if("set_device_on" in href_list)
 			on=!on
 			update_icon()
-		if("set_device_mode" in href_list)
-			injecting=!injecting
-			update_icon()
 		if("set_device_flow_rate" in href_list)
 			var/newp=input(usr,"Specify the new target flow rate (in L/s)",src,CELL_VOLUME) as null|num
 			if(newp==null)
 				return
-			external_pressure_bound=min(max(0,newp),max_rate)
+			volume_rate=min(max(0,newp),max_rate)
 		broadcast_status()
 		return MT_UPDATE
 	return ..()

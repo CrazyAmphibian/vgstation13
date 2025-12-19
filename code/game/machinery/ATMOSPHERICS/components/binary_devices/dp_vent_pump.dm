@@ -72,8 +72,10 @@
 		&emsp;Device Mode: <a href="?src=\ref[src];set_device_mode=1">[pump_direction?"blowing":"siphoning"]</a><br>
 		&emsp;External Pressure Checking: <a href="?src=\ref[src];set_device_pressure_check_external=1">[pressure_checks&1?"disabled":"enabled"]</a><br>
 		&emsp;External Pressure Limit: <a href="?src=\ref[src];set_device_external_pressure=1">[external_pressure_bound]kPa</a><br>
-		&emsp;Internal Pressure Checking: <a href="?src=\ref[src];set_device_pressure_check_internal=1">[pressure_checks&2?"disabled":"enabled"]</a><br>
-		&emsp;Internal Pressure Limit: <a href="?src=\ref[src];set_device_internal_pressure=1">[internal_pressure_bound]kPa</a><br>
+		&emsp;Minimum Input Pressure Checking: <a href="?src=\ref[src];set_device_pressure_check_input=1">[pressure_checks&2?"disabled":"enabled"]</a><br>
+		&emsp;Minimum Input Pressure Limit: <a href="?src=\ref[src];set_device_input_pressure=1">[input_pressure_min]kPa</a><br>
+		&emsp;Maximum Output Pressure Checking: <a href="?src=\ref[src];set_device_pressure_check_output=1">[pressure_checks&4?"disabled":"enabled"]</a><br>
+		&emsp;Maximum Output Pressure Limit: <a href="?src=\ref[src];set_device_output_pressure=1">[output_pressure_max]kPa</a><br>
 		"}
 	else
 		ret_str+="<p><b>Unable to authenticate settings modification.</b></p>"
@@ -229,18 +231,25 @@
 			update_icon()
 		if("set_device_pressure_check_external" in href_list)
 			pressure_checks^=1
-		if("set_device_pressure_check_internal" in href_list)
+		if("set_device_pressure_check_input" in href_list)
 			pressure_checks^=2
+		if("set_device_pressure_check_output" in href_list)
+			pressure_checks^=4
 		if("set_device_external_pressure" in href_list)
 			var/newp=input(usr,"Specify the new pressure for external pressure checks (in kPa)",src,ONE_ATMOSPHERE) as null|num
 			if(newp==null)
 				return
 			external_pressure_bound=max(0,newp)
-		if("set_device_internal_pressure" in href_list)
-			var/newp=input(usr,"Specify the new pressure for internal pressure checks (in kPa)",src,0.0) as null|num
+		if("set_device_input_pressure" in href_list)
+			var/newp=input(usr,"Specify the new pressure for input pressure checks (in kPa)",src,0.0) as null|num
 			if(newp==null)
 				return
-			internal_pressure_bound=max(0,newp)
+			input_pressure_min=max(0,newp)
+		if("set_device_output_pressure" in href_list)
+			var/newp=input(usr,"Specify the new maximum output pressure (in kPa)",src,0.0) as null|num
+			if(newp==null)
+				return
+			output_pressure_max=max(0,newp)
 		broadcast_status()
 		return MT_UPDATE
 	return ..()
