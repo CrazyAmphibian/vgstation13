@@ -824,7 +824,7 @@
 	if(size>SIZE_TINY)
 		return FALSE
 	trap.trapped = 1
-	trap.trappedcanimal = src
+	trap.trappedbear = src
 	trap.armed = 0
 	playsound(trap, 'sound/effects/snap.ogg', 60, 1)
 	trap.lock_atom(src, /datum/locking_category/beartrap)
