@@ -881,7 +881,7 @@
 			user.do_attack_animation(src, user)
 			visible_message("<span class='danger'>[user] smashes [src] apart!</span>")
 			destroy()
-	else if(istype(user,/mob/living/complex_animal))
+	else if(istype(user,/mob/living/simple_animal/complex))
 		user.do_attack_animation(src, user)
 		visible_message("<span class='danger'>[user] smashes [src] apart!</span>")
 		destroy()

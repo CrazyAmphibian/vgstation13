@@ -17,7 +17,7 @@
 /turf/simulated/floor/plating/deck,
 /area/surface/jungle)
 "c" = (
-/mob/living/complex_animal/frog,
+/mob/living/simple_animal/complex/frog,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "d" = (
@@ -73,7 +73,7 @@
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "t" = (
-/mob/living/complex_animal/parrot{
+/mob/living/simple_animal/complex/parrot{
 	builtin_phrases = list("Hi.","Hello!","Cracker?","BAWWWWK george mellons griffing me!","Give me a drink, bartender.","Another round!","What the hell am I drinking?","And stay out!","No tabs - cash up front!");
 	name = "Mallory";
 	mob_max_age = 45000;
@@ -130,7 +130,7 @@
 /area/surface/jungle)
 "J" = (
 /obj/structure/flora/ausbushes/grassybush,
-/mob/living/complex_animal/frog,
+/mob/living/simple_animal/complex/frog,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "L" = (
@@ -138,7 +138,7 @@
 /area/surface/jungle)
 "M" = (
 /obj/structure/flora/ausbushes/leafybush,
-/mob/living/complex_animal/frog,
+/mob/living/simple_animal/complex/frog,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "Q" = (

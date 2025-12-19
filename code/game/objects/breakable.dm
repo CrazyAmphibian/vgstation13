@@ -249,8 +249,8 @@
 			try_break()
 		else
 			. = ..()
-	else if(istype(L,/mob/living/complex_animal))
-		var/mob/living/complex_animal/M=L
+	else if(istype(L,/mob/living/simple_animal/complex))
+		var/mob/living/simple_animal/complex/M=L
 		M.do_attack_animation(src, M)
 		M.delayNextAttack(1 SECONDS)
 		var/glanced=!take_damage(M.base_damage +rand(-M.damage_variance,M.damage_variance), skip_break = TRUE)

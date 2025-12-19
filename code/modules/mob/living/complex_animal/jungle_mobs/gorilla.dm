@@ -1,4 +1,4 @@
-/mob/living/complex_animal/gorilla
+/mob/living/simple_animal/complex/gorilla
 	name="\improper Gorilla"
 	desc="Gorillas are some of the largest primates. Strong, intelligent, and loyal; they should be treated with care."
 	icon_state="spacegorilla"
@@ -15,7 +15,7 @@
 	damage_variance=4
 
 
-/mob/living/complex_animal/gorilla/get_idle_sounds()
+/mob/living/simple_animal/complex/gorilla/get_idle_sounds()
 	if(prob(10))
 		var/i=rand(1,3)
 		switch(i)
@@ -27,7 +27,7 @@
 				say("Ook.")
 
 
-/mob/living/complex_animal/bear/get_attack_msg(var/individual)
+/mob/living/simple_animal/complex/bear/get_attack_msg(var/individual)
 	var/i=rand(1,3)
 	switch(i)
 		if(1)

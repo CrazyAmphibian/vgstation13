@@ -209,7 +209,7 @@
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle)
 "Y" = (
-/mob/living/complex_animal/panther{
+/mob/living/simple_animal/complex/panther{
 	health = 0;
 	ticks_dead = -1800;
 	stat = 2;

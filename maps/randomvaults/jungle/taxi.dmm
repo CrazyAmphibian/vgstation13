@@ -16,7 +16,7 @@
 /area/surface/jungle)
 "h" = (
 /obj/structure/table/woodentable,
-/mob/living/complex_animal/dinosaur{
+/mob/living/simple_animal/complex/dinosaur{
 	icon_state = "dino_dead";
 	pixel_y = 8;
 	stat = 2;

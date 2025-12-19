@@ -59,7 +59,7 @@
 	pixel_x = -10;
 	pixel_y = 6
 	},
-/mob/living/complex_animal/panther,
+/mob/living/simple_animal/complex/panther,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "t" = (
@@ -120,7 +120,7 @@
 /area/surface/jungle)
 "U" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/mob/living/complex_animal/panther,
+/mob/living/simple_animal/complex/panther,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 

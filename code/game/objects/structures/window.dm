@@ -352,8 +352,8 @@ var/list/one_way_windows
 		if(M.melee_damage_upper <= 0)
 			return
 		attack_generic(M, M.melee_damage_upper)
-	else if(istype(user,/mob/living/complex_animal))
-		var/mob/living/complex_animal/M = user
+	else if(istype(user,/mob/living/simple_animal/complex))
+		var/mob/living/simple_animal/complex/M = user
 		attack_generic(M, M.base_damage+rand(-M.damage_variance ,M.damage_variance ))
 
 /obj/structure/window/attack_slime(mob/user as mob)

@@ -454,7 +454,7 @@ var/list/available_redphone_names3 = list("1","2","3","4","5","6","7","8","9")
 	var/datum/organ/external/trappedorgan //The limb currently trapped, it must be a leg
 	var/mob/living/carbon/human/trappeduser
 	var/mob/living/simple_animal/hostile/bear/trappedbear
-	var/mob/living/complex_animal/trappedcanimal
+	var/mob/living/simple_animal/complex/trappedcanimal
 	var/obj/item/weapon/grenade/iedcasing/IED = null
 	var/image/ied_overlay
 	health=60 //so animals don't break it in 1 hit if they attack it.
@@ -768,7 +768,7 @@ var/list/available_redphone_names3 = list("1","2","3","4","5","6","7","8","9")
 
 			else if (istype(AM,/mob/living/simple_animal/hostile/bear))
 				trap(AM)
-			else if (istype(AM,/mob/living/complex_animal))
+			else if (istype(AM,/mob/living/simple_animal/complex))
 				trap(AM)
 			else if(isanimal(AM))
 				armed = 0

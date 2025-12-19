@@ -432,7 +432,7 @@
 				dump_electronics()
 			dump_contents()
 			qdel(src)
-	else if(istype(user,/mob/living/complex_animal))
+	else if(istype(user,/mob/living/simple_animal/complex))
 		visible_message("<span class='warning'>[user] destroys the [src]. </span>")
 		broken = 1
 		if(has_electronics)

@@ -6368,7 +6368,7 @@
 /turf/simulated/floor,
 /area/research_outpost/hallway)
 "cnU" = (
-/mob/living/complex_animal/bear,
+/mob/living/simple_animal/complex/bear,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "coc" = (
@@ -6862,7 +6862,7 @@
 	},
 /area/shuttle/nuclearops)
 "cvW" = (
-/mob/living/complex_animal/capybara_wild,
+/mob/living/simple_animal/complex/capybara_wild,
 /turf/unsimulated/floor/jungle/dirt,
 /area/surface/jungle/vault)
 "cwa" = (
@@ -8073,7 +8073,7 @@
 	},
 /area/security/armory)
 "cTq" = (
-/mob/living/complex_animal/bear/panda,
+/mob/living/simple_animal/complex/bear/panda,
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -14467,7 +14467,7 @@
 	},
 /area/bridge)
 "flr" = (
-/mob/living/complex_animal/bear,
+/mob/living/simple_animal/complex/bear,
 /turf/simulated/floor/wood,
 /area/surface/jungle/vault)
 "flM" = (
@@ -16136,7 +16136,7 @@
 	},
 /area/centcom/control)
 "fRP" = (
-/mob/living/complex_animal/gorilla,
+/mob/living/simple_animal/complex/gorilla,
 /turf/unsimulated/floor/jungle/dirt,
 /area/surface/jungle/vault)
 "fRS" = (
@@ -18586,7 +18586,7 @@
 /turf/unsimulated/floor/jungle/bedrock,
 /area/surface/jungle/underground)
 "gOu" = (
-/mob/living/complex_animal/panther,
+/mob/living/simple_animal/complex/panther,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "gOE" = (
@@ -19767,7 +19767,7 @@
 /turf/simulated/floor,
 /area/security/perma)
 "hlL" = (
-/mob/living/complex_animal/bear/panda,
+/mob/living/simple_animal/complex/bear/panda,
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/vault)
 "hlP" = (
@@ -20199,7 +20199,7 @@
 /turf/simulated/floor,
 /area/security/perma)
 "hul" = (
-/mob/living/complex_animal/bear/polar,
+/mob/living/simple_animal/complex/bear/polar,
 /turf/simulated/floor/plating,
 /area/surface/jungle/vault)
 "hus" = (
@@ -22549,7 +22549,7 @@
 	},
 /area/chapel/main)
 "iny" = (
-/mob/living/complex_animal/crocodile/schnapps,
+/mob/living/simple_animal/complex/crocodile/schnapps,
 /turf/unsimulated/floor/jungle/path_plated,
 /area/crew_quarters/bar)
 "inM" = (
@@ -26905,7 +26905,7 @@
 /turf/simulated/floor,
 /area/medical/medbay)
 "jSA" = (
-/mob/living/complex_animal/bear/polar/chef,
+/mob/living/simple_animal/complex/bear/polar/chef,
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/vault)
 "jSP" = (
@@ -27758,7 +27758,7 @@
 	},
 /area/centcom/ert)
 "kkn" = (
-/mob/living/complex_animal/bear/panda,
+/mob/living/simple_animal/complex/bear/panda,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle/vault)
 "kkr" = (
@@ -27869,7 +27869,7 @@
 	},
 /area/security/prison)
 "kmF" = (
-/mob/living/complex_animal/crocodile,
+/mob/living/simple_animal/complex/crocodile,
 /turf/unsimulated/floor/jungle/water,
 /area/surface/jungle)
 "kmN" = (
@@ -29061,7 +29061,7 @@
 /area/shuttle/striketeam/centcom)
 "kLi" = (
 /obj/structure/bed/chair/comfy/teal,
-/mob/living/complex_animal/bear,
+/mob/living/simple_animal/complex/bear,
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -34127,7 +34127,7 @@
 	name = "Toxins"
 	})
 "mCs" = (
-/mob/living/complex_animal/bear/panda,
+/mob/living/simple_animal/complex/bear/panda,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "mCB" = (
@@ -36491,7 +36491,7 @@
 /obj/structure/bed/chair/wood/normal{
 	dir = 4
 	},
-/mob/living/complex_animal/gorilla,
+/mob/living/simple_animal/complex/gorilla,
 /turf/unsimulated/floor/jungle/dirt,
 /area/surface/jungle/vault)
 "nxM" = (
@@ -36669,7 +36669,7 @@
 /obj/structure/bed/chair/wood/normal{
 	dir = 8
 	},
-/mob/living/complex_animal/gorilla,
+/mob/living/simple_animal/complex/gorilla,
 /turf/unsimulated/floor/jungle/dirt,
 /area/surface/jungle/vault)
 "nBR" = (
@@ -38717,7 +38717,7 @@
 	},
 /area/centcom/control)
 "olm" = (
-/mob/living/complex_animal/bear,
+/mob/living/simple_animal/complex/bear,
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -39634,7 +39634,7 @@
 /turf/simulated/floor/greengrid,
 /area/turret_protected/ai_upload)
 "oDr" = (
-/mob/living/complex_animal/bear,
+/mob/living/simple_animal/complex/bear,
 /turf/simulated/floor/plating,
 /area/surface/jungle/vault)
 "oDN" = (
@@ -41628,7 +41628,7 @@
 /turf/simulated/floor,
 /area/research_outpost/hallway)
 "pvc" = (
-/mob/living/complex_animal/crocodile,
+/mob/living/simple_animal/complex/crocodile,
 /turf/unsimulated/floor/jungle/water,
 /area/surface/jungle/roid)
 "pvf" = (
@@ -47133,7 +47133,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (WEST)"
 	},
-/mob/living/complex_animal/bear,
+/mob/living/simple_animal/complex/bear,
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/vault)
 "rsW" = (
@@ -49186,7 +49186,7 @@
 	},
 /area/crew_quarters/courtroom)
 "scy" = (
-/mob/living/complex_animal/bear,
+/mob/living/simple_animal/complex/bear,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle/vault)
 "scK" = (
@@ -54722,7 +54722,7 @@
 /obj/structure/bed/chair/comfy/teal{
 	dir = 1
 	},
-/mob/living/complex_animal/bear/polar,
+/mob/living/simple_animal/complex/bear/polar,
 /turf/simulated/floor/plating,
 /area/surface/jungle/vault)
 "uhL" = (
@@ -57254,7 +57254,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar_backroom)
 "vfF" = (
-/mob/living/complex_animal/bear,
+/mob/living/simple_animal/complex/bear,
 /turf/unsimulated/floor/jungle/concrete,
 /area/surface/jungle/vault)
 "vfK" = (
@@ -57755,7 +57755,7 @@
 /area/shuttle/ert/centcom)
 "vnq" = (
 /obj/structure/bed/chair/wood/normal,
-/mob/living/complex_animal/capybara_wild,
+/mob/living/simple_animal/complex/capybara_wild,
 /turf/unsimulated/floor/jungle/sand,
 /area/surface/jungle/vault)
 "vnz" = (
@@ -58183,7 +58183,7 @@
 	},
 /area/security/warden)
 "vut" = (
-/mob/living/complex_animal/crocodile,
+/mob/living/simple_animal/complex/crocodile,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "vuA" = (
@@ -58833,7 +58833,7 @@
 /obj/structure/bed/chair/comfy/teal{
 	dir = 4
 	},
-/mob/living/complex_animal/bear/panda,
+/mob/living/simple_animal/complex/bear/panda,
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -61619,7 +61619,7 @@
 /obj/structure/bed/chair/comfy/teal{
 	dir = 1
 	},
-/mob/living/complex_animal/bear/panda,
+/mob/living/simple_animal/complex/bear/panda,
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -63212,7 +63212,7 @@
 	},
 /area/science/hallway)
 "xmG" = (
-/mob/living/complex_animal/crocodile,
+/mob/living/simple_animal/complex/crocodile,
 /turf/unsimulated/floor/jungle/water,
 /area/surface/jungle/roid/vaults)
 "xmN" = (
@@ -63661,7 +63661,7 @@
 	},
 /area/engineering/reactor_room)
 "xtQ" = (
-/mob/living/complex_animal/capybara_wild,
+/mob/living/simple_animal/complex/capybara_wild,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle/vault)
 "xuh" = (
@@ -64037,7 +64037,7 @@
 /area/prison/solitary)
 "xBU" = (
 /obj/structure/bed/chair,
-/mob/living/complex_animal/bear/panda,
+/mob/living/simple_animal/complex/bear/panda,
 /turf/simulated/floor/wood,
 /area/surface/jungle/vault)
 "xCz" = (
@@ -65928,7 +65928,7 @@
 /obj/structure/bed/chair/comfy/brown{
 	dir = 1
 	},
-/mob/living/complex_animal/bear/spare,
+/mob/living/simple_animal/complex/bear/spare,
 /turf/simulated/floor/plating,
 /area/surface/jungle/vault)
 "ylX" = (

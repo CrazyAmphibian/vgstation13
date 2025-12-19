@@ -132,7 +132,7 @@
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "O" = (
-/mob/living/complex_animal/dinosaur,
+/mob/living/simple_animal/complex/dinosaur,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "R" = (

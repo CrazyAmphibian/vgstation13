@@ -42,7 +42,7 @@
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "p" = (
-/mob/living/complex_animal/frog/poison,
+/mob/living/simple_animal/complex/frog/poison,
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
@@ -117,17 +117,17 @@
 /turf/simulated/floor/wood,
 /area/surface/jungle)
 "L" = (
-/mob/living/complex_animal/frog,
+/mob/living/simple_animal/complex/frog,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "M" = (
-/mob/living/complex_animal/frog,
+/mob/living/simple_animal/complex/frog,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "N" = (
-/mob/living/complex_animal/frog/poison,
+/mob/living/simple_animal/complex/frog/poison,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "O" = (
@@ -164,11 +164,11 @@
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "W" = (
-/mob/living/complex_animal/frog,
+/mob/living/simple_animal/complex/frog,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
 "X" = (
-/mob/living/complex_animal/frog/poison,
+/mob/living/simple_animal/complex/frog/poison,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/unsimulated/floor/jungle/grass,
 /area/surface/jungle)
