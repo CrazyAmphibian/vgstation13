@@ -702,8 +702,8 @@ var/list/available_redphone_names3 = list("1","2","3","4","5","6","7","8","9")
 				trappedbear.update_icon()
 				trappedbear = null
 				if(istype(trappedbear,/mob/living/simple_animal/complex))
-						var/mob/living/simple_animal/complex/CA=trappedbear
-						CA.family+=user
+					var/mob/living/simple_animal/complex/CA=trappedbear
+					CA.family+=user
 					to_chat(user,"<span class='notice'>\The [trappedbear] seems appreciative.</span>")
 	else
 		to_chat(user, "<span class='notice'>You carefully set the bear trap off with \the [I.name].</span>")
