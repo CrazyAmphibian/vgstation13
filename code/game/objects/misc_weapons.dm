@@ -700,21 +700,9 @@ var/list/available_redphone_names3 = list("1","2","3","4","5","6","7","8","9")
 				unlock_atom(trappedbear)
 				trappedbear.update_icon()
 				trappedbear = null
-		else if (trappedcanimal)
-			user.visible_message("<span class='notice'>[user] tries to pry \the [src] off of \the [trappedcanimal]!</span>", \
-			"<span class='notice'>You try to pry open \the [src] with \the [I.name].</span>")
-			if(do_after(user, src, 30))
-				user.visible_message("<span class='notice'>\The [user] managed to pry \the [src] off of \the [trappedcanimal]!</span>", \
-				"<span class='notice'>You pry open the bear trap with \the [I.name].</span>")
-				playsound(user.loc, 'sound/weapons/handcuffs.ogg', 30, 1, -3)
-				trapped = 0
-				unlock_atom(trappedcanimal)
-				trappedcanimal.update_icon()
-				trappedcanimal = null
-				anchored = FALSE
-				trappedcanimal.family+=user
-				to_chat(user,"<span class='notice'>\The [trappedcanimal] seems appreciative.</span>")
-				return
+				if(istype(trappedbear,/mob/living/simple_animal/complex))
+					trappedbear.family+=user
+					to_chat(user,"<span class='notice'>\The [trappedbear] seems appreciative.</span>")
 	else
 		to_chat(user, "<span class='notice'>You carefully set the bear trap off with \the [I.name].</span>")
 		playsound(src, 'sound/effects/snap.ogg', 60, 1)
@@ -796,13 +784,6 @@ var/list/available_redphone_names3 = list("1","2","3","4","5","6","7","8","9")
 			trappedbear.gib()
 			trapped = 0
 			trappedbear = null
-			anchored = FALSE
-		
-		if(trappedcanimal)
-			unlock_atom(trappedcanimal)
-			trappedcanimal.gib()
-			trapped = 0
-			trappedcanimal = null
 			anchored = FALSE
 
 // Called when the dude is moved from the trap on way or the other.
