@@ -157,10 +157,6 @@ var/list/foliage_replacments=list(
 	footstep_sound_barefoot = sounds_grass
 	footstep_sound_claw = sounds_grass
 
-	if(SSFoliageRegrow && !generate_foliage())
-		turfs_to_regrow +=src
-		regrowticks=0
-
 /turf/unsimulated/floor/jungle/grass/proc/generate_foliage()
 	if (prob(50))
 		if(prob(10)) //10% chance to replace with rocks or some shit. 5% over all

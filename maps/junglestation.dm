@@ -55,7 +55,6 @@
 	world.name = "NT Colony Gamma-8"
 	station_name="NT Colony Gamma-8"
 	daynight_z_lvls=list(1,4)
-	turfs_to_regrow=list()
 
 
 /datum/map/active/map_specific_init()
@@ -286,28 +285,6 @@
 
 /datum/subsystem/daynightcycle/play_globalsound()
 	return
-
-
-/datum/subsystem/foliage_regrow
-	growth_chance=95
-	var/growth_delay=5 MINUTES
-	
-	
-/datum/subsystem/foliage_regrow/regrow_turf(var/turf/T)
-	if(!T)
-		return null
-	if (T.type!=/turf/unsimulated/floor/jungle/grass)
-		return null
-	if(/obj/structure/flora in T.contents)
-		return null
-	var/turf/unsimulated/floor/jungle/grass/G=T
-	if(G.regrowticks <= world.time-growth_delay)
-		var/created=G.generate_foliage()
-		if(!created)
-			turfs_to_regrow+=G
-		return created
-	else
-		turfs_to_regrow+=G
 
 
 ////////////////////////////////////////////////////////////////
