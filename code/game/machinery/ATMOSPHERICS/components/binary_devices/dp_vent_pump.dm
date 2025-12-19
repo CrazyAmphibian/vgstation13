@@ -70,11 +70,11 @@
 		ret_str+={"<p><b>Settings modification:<br>
 		&emsp;Device Power: <a href="?src=\ref[src];set_device_on=1">[on?"on":"off"]</a><br>
 		&emsp;Device Mode: <a href="?src=\ref[src];set_device_mode=1">[pump_direction?"blowing":"siphoning"]</a><br>
-		&emsp;External Pressure Checking: <a href="?src=\ref[src];set_device_pressure_check_external=1">[pressure_checks&1?"disabled":"enabled"]</a><br>
+		&emsp;External Pressure Checking: <a href="?src=\ref[src];set_device_pressure_check_external=1">[pressure_checks&1?"enabled":"disabled"]</a><br>
 		&emsp;External Pressure Limit: <a href="?src=\ref[src];set_device_external_pressure=1">[external_pressure_bound]kPa</a><br>
-		&emsp;Minimum Input Pressure Checking: <a href="?src=\ref[src];set_device_pressure_check_input=1">[pressure_checks&2?"disabled":"enabled"]</a><br>
+		&emsp;Minimum Input Pressure Checking: <a href="?src=\ref[src];set_device_pressure_check_input=1">[pressure_checks&2?"enabled":"disabled"]</a><br>
 		&emsp;Minimum Input Pressure Limit: <a href="?src=\ref[src];set_device_input_pressure=1">[input_pressure_min]kPa</a><br>
-		&emsp;Maximum Output Pressure Checking: <a href="?src=\ref[src];set_device_pressure_check_output=1">[pressure_checks&4?"disabled":"enabled"]</a><br>
+		&emsp;Maximum Output Pressure Checking: <a href="?src=\ref[src];set_device_pressure_check_output=1">[pressure_checks&4?"enabled":"disabled"]</a><br>
 		&emsp;Maximum Output Pressure Limit: <a href="?src=\ref[src];set_device_output_pressure=1">[output_pressure_max]kPa</a><br>
 		"}
 	else

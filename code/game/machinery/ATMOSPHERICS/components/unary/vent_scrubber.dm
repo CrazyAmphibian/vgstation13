@@ -405,9 +405,9 @@
 		&emsp;Device Power: <a href="?src=\ref[src];set_device_on=1">[on?"on":"off"]</a><br>
 		&emsp;Device Mode: <a href="?src=\ref[src];set_device_mode=1">[scrubbing?"scrubbing":"siphoning"]</a><br>
 		&emsp;Device Panic: <a href="?src=\ref[src];set_device_panic=1">[panic?"active":"inactive"]</a><br>
-		&emsp;External Pressure Checking: <a href="?src=\ref[src];set_device_pressure_check_external=1">[pressure_checks&1?"disabled":"enabled"]</a><br>
+		&emsp;External Pressure Checking: <a href="?src=\ref[src];set_device_pressure_check_external=1">[pressure_checks&1?"enabled":"disabled"]</a><br>
 		&emsp;External Pressure Limit: <a href="?src=\ref[src];set_device_external_pressure=1">[external_pressure_bound]kPa</a><br>
-		&emsp;Internal Pressure Checking: <a href="?src=\ref[src];set_device_pressure_check_internal=1">[pressure_checks&2?"disabled":"enabled"]</a><br>
+		&emsp;Internal Pressure Checking: <a href="?src=\ref[src];set_device_pressure_check_internal=1">[pressure_checks&2?"enabled":"disabled"]</a><br>
 		&emsp;Internal Pressure Limit: <a href="?src=\ref[src];set_device_internal_pressure=1">[internal_pressure_bound]kPa</a><br>
 		&emsp;Gas Scrubbing:
 		<ul>"}
