@@ -147,15 +147,14 @@ var/list/foliage_replacments=list(
 	max_icon_states = 4
 	edge_flags = ALL_EDGES
 	edge_priority = GRASS_EDGE_PRIORITY
-	turf_speed_multiplier=1.0 // tall grass.
 	construction_allowed=TRUE
-	var/regrowticks=0 //world.time
 
 /turf/unsimulated/floor/jungle/grass/New(var/loc)
 	..()
 	footstep_sound = sounds_grass
 	footstep_sound_barefoot = sounds_grass
 	footstep_sound_claw = sounds_grass
+	generate_foliage()
 
 /turf/unsimulated/floor/jungle/grass/proc/generate_foliage()
 	if (prob(50))
