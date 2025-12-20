@@ -36,11 +36,10 @@
 	if(. && istype(victim,/mob/living/carbon) )
 		var/mob/living/carbon/C=victim
 		if(!stuntracker)
-			if (!C.knockdown)
-				visible_message("<b>\The [src]</b> knocks \the [target] off their feet!")
-				C.stop_pulling()
-				C.Knockdown(1)
-				stuntracker=TRUE
+			C.Knockdown(2)
+			C.stop_pulling()
+			visible_message("<b>\The [src]</b> knocks <b>\the [target]</b> off their feet!")
+			stuntracker=TRUE
 		else
 			stuntracker=FALSE
 /mob/living/simple_animal/complex/crocodile/get_attack_msg(var/individual)

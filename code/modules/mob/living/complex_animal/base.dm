@@ -69,7 +69,6 @@
 
 /mob/living/simple_animal/complex/New(var/loc)
 	..()
-	create_reagents(100)
 	nutrition = rand(ceil(max_food*0.75),max_food)
 	gender="female"
 	if(prob(50))
@@ -475,8 +474,9 @@
 
 /mob/living/simple_animal/complex/UnarmedAttack(var/atom/A, var/proximity_flag, var/params)
 	if(attack_delayer.next_allowed<=world.time)
-		..()
+		.=..()
 		delayNextAttack(2 SECONDS) //fixes hitting same object multiple times rapidly
+			
 
 /mob/living/simple_animal/complex/proc/aggro_drawn(var/victim,var/state=ANIMAL_STATE_ATTACKING,var/skipsmg=FALSE)
 	if(!victim)
@@ -505,8 +505,11 @@
 	if(!victim)
 		return FALSE
 	if(istype(victim,/mob))
-		return unarmed_attack_mob(victim)
-	return UnarmedAttack(victim,Adjacent(victim))
+		.= unarmed_attack_mob(victim)
+	else
+		.= UnarmedAttack(victim,Adjacent(victim))
+	if(.)
+		get_attack_msg(victim)
 
 /mob/living/simple_animal/complex/proc/tryeat(var/victim)
 	if(!victim)
@@ -518,7 +521,7 @@
 		if(M.stat!=DEAD)
 			return attack(victim)
 		else
-			if(unarmed_attack_mob(victim))
+			if(UnarmedAttack(victim))
 				nutrition+=M.size*5
 				emote("me",MESSAGE_SEE,"chomps on \the [target], tearing them apart!")
 				if(M.butchering_drops && M.butchering_drops.len)
@@ -703,32 +706,6 @@
 	child.family+=father
 	return child
 	
-	
-
-
-/mob/living/simple_animal/complex/init_butchering_list()
-	if(butchering_drops && butchering_drops.len) //Already initialized
-		return
-
-	butchering_drops = list()
-	var/list/animal_butchering_products = get_butchering_products()
-	if(animal_butchering_products.len > 0)
-		for(var/butchering_type in animal_butchering_products)
-			butchering_drops += new butchering_type()
-
-/mob/living/simple_animal/complex/death(gibbed) //stolen from simple_animal
-	..()
-	init_butchering_list()
-	if((status_flags & BUDDHAMODE) || stat == DEAD)
-		return
-
-	if(!gibbed)
-		emote("deathgasp", message = TRUE)
-	health = 0 
-	stat = DEAD
-	update_icon()
-	walk(src,0)
-	setDensity(FALSE)
 
 /mob/living/simple_animal/complex/attack_hand(var/mob/living/carbon/human/H)
 	H.delayNextAttack(2 SECONDS)
@@ -757,25 +734,6 @@
 		var/image/heart = image('icons/mob/animal.dmi',src,"heart-ani2")
 		heart.plane = ABOVE_HUMAN_PLANE
 		flick_overlay(heart, list(H.client), 20)
-		
-/mob/living/simple_animal/complex/attackby(var/obj/item/I, var/mob/user, var/no_delay = 0, var/originator = null, var/def_zone = null)
-	if(user.a_intent == I_HELP)
-		user.visible_message("<span class='notice'>[user] [pick(list("pokes","prods","taps"))] \the [src] with \the [I].</span>")
-		to_chat(user, "<span class='notice'>You [pick(list("poke","prod","tap"))] \the [src] with \the [I].</span>")
-	else
-		..()
-		user.visible_message("<span class='danger'>[user] hits \the [src] with \the [I]!</span>")
-		to_chat(user, "<span class='danger'>You hit \the [src] with \the [I]!</span>")
-		if(health<=0)
-			death()
-		if(behavior_flags & ANIMAL_BEHAVIOR_RETALIATE)
-			behavior_state=behavior_state=ANIMAL_STATE_ATTACKING
-			aggro_drawn(user,ANIMAL_STATE_ATTACKING)
-		else
-			get_flee_msg(user)
-			behavior_state = ANIMAL_STATE_FLEEING
-			target=user
-
 
 /mob/living/simple_animal/complex/assaulted_by(var/mob/M,var/weak_assault=FALSE)
 	if(!weak_assault)
@@ -800,6 +758,10 @@
 
 /mob/living/simple_animal/complex/getarmor(var/def_zone, var/type)
 	return armor[type] || 0
+
+/mob/living/simple_animal/complex/death()
+	..()
+	walk(src,0)
 
 /mob/living/simple_animal/complex/beartrap_act(var/obj/item/weapon/beartrap/trap)
 	if(flying)
