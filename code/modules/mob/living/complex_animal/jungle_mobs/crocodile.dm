@@ -10,8 +10,8 @@
 	armor=list(melee=35,bullet=10,laser=15,energy=0,bomb=0,bio=0,rad=0)
 	max_food=100
 	food_flags = ANIMAL_CARNIVORE
-	base_damage = 20
-	damage_variance = 5
+	melee_damage_upper=25
+	melee_damage_lower=15
 	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_TERRITORIAL
 	movespeed=5
 	max_local_population = 3

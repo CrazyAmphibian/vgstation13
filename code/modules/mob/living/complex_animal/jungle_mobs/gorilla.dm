@@ -11,8 +11,8 @@
 	food_flags = ANIMAL_HERBIVORE
 	behavior_flags = ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_DESTRUCTIVE
 	movespeed=5
-	base_damage=20 //gorilla grip strong as shit
-	damage_variance=4
+	melee_damage_upper=24 //gorilla grip strong as shit
+	melee_damage_lower=16 
 
 
 /mob/living/simple_animal/complex/gorilla/get_idle_sounds()

@@ -52,27 +52,16 @@
 	var/atom/target = null
 	var/turf/territory=null //turf location
 	var/list/family = list() //list of mobs. avoid attacking them and whatnot. also can be used for taming.
-	var/base_damage=2
-	var/damage_variance=1
+	environment_smash_flags = 0xFFFFFF
 	var/movespeed=5 //lower=faster.
-	var/pacify_aura=FALSE
 	var/kin_check_type_path=null //for mobs with many subtypes. set to the parent mob type. leave null if not needed
 	var/petable=FALSE
 	var/lastmate=0
 	var/matingcooldown=60 //2 minutes
 	var/max_local_population=6 //to prevent total overpopulation
-	var/icon_living = ""
-	var/icon_dead = ""
 	var/healthregen=0.01
 	var/lasthealth=0.0
 	var/ticks_dead=0
-	
-	//these are here because we, for some reason that i don't know, call attack_animal. that sounds good, until you realize that attack_animal wants a simple_animal. this causes a lot of runtimes, and i can't find where attack_animal is actually called, or why it's called when we're not even a simple_animal, so instead, we define some of the important variables here so it doesn't totally break. it's still a good practice to revise the code, as was done with most of the common objects that will be broken, like windows and lockers.
-	var/environment_smash_flags = 0xFFFFFF
-	var/melee_damage_upper=0
-	var/melee_damage_lower=0
-	
-
 	
 	//cache vars. we use this for extra SPEEEEEED. so you can ignore it for vving stuff.
 	var/list/cache_objects_in_view=list()
@@ -86,9 +75,6 @@
 	if(prob(50))
 		gender="male"
 	territory=locate(x,y,z) //store turf where we were born/created
-	
-	melee_damage_upper=base_damage+damage_variance
-	melee_damage_lower=base_damage-damage_variance
 
 
 /mob/living/simple_animal/complex/proc/allow_msg()
@@ -718,9 +704,6 @@
 	return child
 	
 	
-/mob/living/simple_animal/complex/get_unarmed_damage(var/atom/victim)
-	return base_damage+ (damage_variance ? rand(-damage_variance,damage_variance) : 0)
-
 
 
 /mob/living/simple_animal/complex/init_butchering_list()
@@ -821,7 +804,7 @@
 /mob/living/simple_animal/complex/beartrap_act(var/obj/item/weapon/beartrap/trap)
 	if(flying)
 		return FALSE
-	if(size>SIZE_TINY)
+	if(size<=SIZE_TINY)
 		return FALSE
 	trap.trapped = 1
 	trap.trappedbear = src

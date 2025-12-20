@@ -10,8 +10,8 @@
 	max_food=20
 	food_per_tick = -0.001 //there's no bugs to eat so uh...
 	food_flags = 0
-	base_damage = 5
-	damage_variance = 1
+	melee_damage_upper=6
+	melee_damage_lower=4
 	behavior_flags = ANIMAL_BEHAVIOR_AVOID_PRED
 	movespeed=4
 	kin_check_type_path=/mob/living/simple_animal/complex/frog

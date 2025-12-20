@@ -13,8 +13,8 @@
 	behavior_flags = ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	movespeed=1
 	pacify_aura = TRUE
-	base_damage=5
-	damage_variance=2
+	melee_damage_upper=7
+	melee_damage_lower=3
 	petable=TRUE
 
 /mob/living/simple_animal/complex/capybara_wild/tick_state_idle()

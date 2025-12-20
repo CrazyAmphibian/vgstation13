@@ -9,8 +9,8 @@
 	maxHealth=30
 	max_food=20
 	food_flags = ANIMAL_HERBIVORE
-	base_damage = 10
-	damage_variance = 4
+	melee_damage_upper=14
+	melee_damage_lower=6 
 	behavior_flags = ANIMAL_BEHAVIOR_AVOID_PRED | ANIMAL_BEHAVIOR_RETALIATE
 	movespeed=3
 	petable=TRUE

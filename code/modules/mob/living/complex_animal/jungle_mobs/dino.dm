@@ -11,8 +11,8 @@
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/oogabooga
 	max_food=100
 	food_flags = ANIMAL_CARNIVORE | ANIMAL_FRUGIVORE
-	base_damage = 20
-	damage_variance = 5
+	melee_damage_upper=25
+	melee_damage_lower=15
 	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE | ANIMAL_BEHAVIOR_TERRITORIAL
 	movespeed=7
 	

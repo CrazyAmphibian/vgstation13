@@ -11,8 +11,8 @@
 	armor=list(melee=10,bullet=20,laser=20,energy=0,bomb=0,bio=0,rad=0)
 	max_food=100
 	food_flags = ANIMAL_CARNIVORE | ANIMAL_HERBIVORE
-	base_damage = 25
-	damage_variance = 5
+	melee_damage_upper=30
+	melee_damage_lower=20
 	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	movespeed=5
 	kin_check_type_path=/mob/living/simple_animal/complex/bear
@@ -63,8 +63,8 @@
 	mob_max_age=9999999
 	healthregen=0.02
 	food_per_tick = 0.0005
-	base_damage = 35
-	damage_variance = 5
+	melee_damage_upper=40
+	melee_damage_lower=30
 	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_TERRITORIAL | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	animal_flags = ANIMAL_FLAG_IMMORTAL
 	movespeed=4
@@ -123,8 +123,8 @@
 	icon_living = "polarbear"
 	icon_dead = "polarbear_dead"
 	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_TERRITORIAL | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
-	base_damage=35
-	damage_variance=10
+	melee_damage_upper=45
+	melee_damage_lower=25
 	health=70
 	maxHealth=70
 	
@@ -141,8 +141,8 @@
 	movespeed=4
 	health=100
 	mob_max_age=9999999
-	base_damage=35
-	damage_variance=15
+	melee_damage_upper=50
+	melee_damage_lower=20
 	maxHealth=100
 	food_per_tick=0.0
 	healthregen=0.015
