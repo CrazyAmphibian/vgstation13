@@ -521,7 +521,7 @@
 		if(M.stat!=DEAD)
 			return attack(victim)
 		else
-			if(UnarmedAttack(victim))
+			if(unarmed_attack_mob(victim))
 				nutrition+=M.size*5
 				emote("me",MESSAGE_SEE,"chomps on \the [target], tearing them apart!")
 				if(M.butchering_drops && M.butchering_drops.len)
