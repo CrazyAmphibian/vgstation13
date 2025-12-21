@@ -21,6 +21,10 @@
 	nitrogen = MOLES_N2STANDARD
 	temperature = T20C
 	can_border_transition=TRUE //allows zlevel transitions. you must also enable it in the zlevel.
+	var/pickaxe_conversion_turf=null
+	var/pickaxe_conversion_time=0
+	var/shovel_conversion_turf=null
+	var/shovel_conversion_time=0
 
 
 /turf/unsimulated/floor/planetary/proc/item_shovel_ability(var/obj/item/I,var/mob/user) // returns a number in the form of a divisor applied to turf manipulation duration. this means that lower numbers are worse. 0 means it just can't do it, and should be ignored, also because div 0.
@@ -45,6 +49,33 @@
 		return 0.1
 	return 0.0
 
+/turf/unsimulated/floor/planetary/proc/shovel_modify(var/obj/item/I,var/mob/user,var/speedfactor=1.0)
+	to_chat(user, "<span class='notice'>You start digging into \the [src]</span>")
+	if(do_after(user, src, shovel_conversion_time/shovel_factor ))
+		ChangeTurf(shovel_conversion_turf)
+		return TRUE
+	else
+		return FALSE
+
+/turf/unsimulated/floor/planetary/proc/pickaxe_modify(var/obj/item/I,var/mob/user,var/speedfactor=1.0)
+	to_chat(user, "<span class='notice'>You start breaking up \the [src]</span>")
+	if(do_after(user, src, pickaxe_conversion_time/pickaxe_factor ))
+		ChangeTurf(pickaxe_conversion_turf)
+		return TRUE
+	else
+		return FALSE
+	
+
+/turf/unsimulated/floor/planetary/attackby(var/obj/item/I, var/mob/user)
+	if(pickaxe_conversion_turf)
+		var/pickaxe_factor=item_pickaxe_ability(I,user)
+		if(pickaxe_factor)
+			return pickaxe_modify(I,user,pickaxe_factor)
+	if(shovel_conversion_turf)
+		var/shovel_factor=item_shovel_ability(I,user)
+		if(shovel_factor)
+			return shovel_modify(I,user,shovel_factor)
+	return ..()
 
 //Caves
 /turf/unsimulated/floor/planetary/cave
@@ -90,8 +121,6 @@
 	variance = 40
 	edge_priority = GRASS_EDGE_PRIORITY
 	edge_flags = ALL_EDGES
-	var/soil_turf_type=null //when you remove the grass it turns into this. set to null if you don't want this to happen.
-	var/grass_removal_time=0
 
 /turf/unsimulated/floor/planetary/grass/New()
 	..()
@@ -99,33 +128,22 @@
 	footstep_sound_barefoot = sounds_grass
 	footstep_sound_claw = sounds_grass
 
-/turf/unsimulated/floor/planetary/grass/attackby(var/obj/item/I, var/mob/user)
-	if(soil_turf_type)
-		var/uprooting_speed=item_pickaxe_ability(I,user)
-		if(uprooting_speed)
-			to_chat(user, "<span class='notice'>You start breaking up the soil</span>")
-			if(do_after(user, src, grass_removal_time/uprooting_speed ))
-				return uproot()
-			else
-			return FALSE
-	return ..()
-
-/turf/unsimulated/floor/planetary/grass/proc/uproot(var/obj/item/I,var/mob/user)
-	ChangeTurf(soil_turf_type)
-	new /obj/item/stack/tile/grass(src,1)
-	return TRUE
+/turf/unsimulated/floor/planetary/grass/pickaxe_modify(var/obj/item/I,var/mob/user)
+	.=..()
+	if(.)
+		new /obj/item/stack/tile/grass(src,1)
 
 /turf/unsimulated/floor/planetary/grass/ex_act(severity)
-	if(soil_turf_type)
+	if(shovel_conversion_turf)
 		switch(severity)
 			if(1.0)
-				ChangeTurf(soil_turf_type)
+				ChangeTurf(shovel_conversion_turf)
 			if(2.0)
 				if(prob(65))
-					ChangeTurf(soil_turf_type)
+					ChangeTurf(shovel_conversion_turf)
 			if(3.0)
 				if(prob(20))
-					ChangeTurf(soil_turf_type)
+					ChangeTurf(shovel_conversion_turf)
 		..()
 
 
