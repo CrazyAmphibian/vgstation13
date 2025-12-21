@@ -14,12 +14,12 @@
 /area/surface/jungle)
 "d" = (
 /obj/structure/flora/tree/shitty,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "e" = (
 /mob/living/simple_animal/cow/chocolate,
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "f" = (
 /turf/unsimulated/floor/jungle/path_plated,
@@ -35,7 +35,7 @@
 /area/surface/jungle)
 "h" = (
 /obj/structure/flora/ausbushes/sunnybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "i" = (
 /obj/structure/fence/corner,
@@ -46,23 +46,23 @@
 /area/surface/jungle)
 "j" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "l" = (
 /obj/structure/flora/jungle_berries,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "m" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "n" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "o" = (
 /obj/structure/flora/rock,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "p" = (
 /obj/structure/bed/chair/office{
@@ -75,12 +75,12 @@
 /area/surface/jungle)
 "x" = (
 /obj/structure/flora/ausbushes/leafybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "y" = (
 /mob/living/simple_animal/cow/chocolate,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "z" = (
 /obj/structure/fence{
@@ -99,7 +99,7 @@
 "F" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "G" = (
 /obj/effect/decal/warning_stripes{
@@ -129,11 +129,11 @@
 /turf/unsimulated/floor/jungle/path_plated,
 /area/surface/jungle)
 "N" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "O" = (
 /mob/living/simple_animal/complex/dinosaur,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "R" = (
 /obj/structure/table,
@@ -154,7 +154,7 @@
 /area/surface/jungle)
 "U" = (
 /mob/living/simple_animal/cow/chocolate,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "V" = (
 /mob/living/simple_animal/hostile/asteroid/basilisk,
@@ -171,7 +171,7 @@
 /area/surface/jungle)
 "Z" = (
 /obj/structure/flora/ausbushes/reedbush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 
 (1,1,1) = {"

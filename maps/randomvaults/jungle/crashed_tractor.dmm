@@ -11,7 +11,7 @@
 /area/surface/jungle)
 "f" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "i" = (
 /obj/machinery/cart/cargo{
@@ -25,11 +25,11 @@
 /area/surface/jungle)
 "q" = (
 /obj/effect/landmark/corpse/assistant,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "D" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "M" = (
 /obj/structure/flora/tree/shitty,
@@ -37,14 +37,14 @@
 /area/surface/jungle)
 "O" = (
 /obj/structure/flora/ausbushes/sunnybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "S" = (
 /obj/structure/flora/ausbushes/genericbush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "V" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 
 (1,1,1) = {"

@@ -44,7 +44,7 @@
 /area/surface/jungle)
 "s" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "x" = (
 /mob/living/simple_animal/cat/snek{
@@ -71,7 +71,7 @@
 /turf/simulated/floor/wood,
 /area/surface/jungle)
 "P" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "S" = (
 /obj/structure/grille,

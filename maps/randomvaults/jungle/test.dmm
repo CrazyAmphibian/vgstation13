@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "r" = (
 /turf/unsimulated/floor/jungle/water,

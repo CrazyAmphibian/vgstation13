@@ -24,7 +24,7 @@
 /area/surface/jungle)
 "g" = (
 /obj/structure/flora/ausbushes/stalkybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "h" = (
 /turf/unsimulated/floor/jungle/path,
@@ -40,7 +40,7 @@
 /obj/item/weapon/grown/log/tree,
 /obj/item/weapon/grown/log/tree,
 /obj/item/weapon/grown/log/tree,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "m" = (
 /obj/structure/fence/cut/medium,
@@ -64,7 +64,7 @@
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle)
 "w" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "x" = (
 /obj/structure/fence/cut/large{
@@ -89,11 +89,11 @@
 	pixel_x = 6;
 	pixel_y = 7
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "C" = (
 /obj/structure/flora/ausbushes/reedbush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "D" = (
 /obj/item/ammo_casing/c38,
@@ -126,7 +126,7 @@
 	pixel_x = -3;
 	pixel_y = -4
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "H" = (
 /obj/structure/fence/corner{
@@ -136,7 +136,7 @@
 /area/surface/jungle)
 "I" = (
 /obj/structure/flora/tree_stump,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "J" = (
 /obj/structure/fence{
@@ -153,7 +153,7 @@
 /area/surface/jungle)
 "L" = (
 /obj/structure/flora/ausbushes/genericbush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "M" = (
 /obj/structure/fence,
@@ -166,7 +166,7 @@
 	pixel_x = -5;
 	pixel_y = -3
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "O" = (
 /obj/structure/fence/cut/medium,
@@ -174,7 +174,7 @@
 /area/surface/jungle)
 "P" = (
 /obj/structure/flora/ausbushes/leafybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "R" = (
 /turf/unsimulated/floor/jungle/path_plated,
@@ -215,7 +215,7 @@
 	stat = 2;
 	icon_state = "panther_dead"
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "Z" = (
 /obj/effect/decal/warning_stripes{

@@ -136,10 +136,9 @@ var/list/foliage_replacments=list(
 /obj/structure/flora/rock/pile,
 )
 
-/turf/unsimulated/floor/jungle/grass
+/turf/unsimulated/floor/planetary/grass/jungle
 	name="Dense Grass"
 	desc="A thick and lush carpet of various plant species, sustained by a regular supply to water."
-	icon = 'icons/turf/floors.dmi'
 	icon_state = "grass_jungle1"
 	base_icon_state = "grass_jungle"
 	variance = 100
@@ -147,16 +146,23 @@ var/list/foliage_replacments=list(
 	max_icon_states = 4
 	edge_flags = ALL_EDGES
 	edge_priority = GRASS_EDGE_PRIORITY
-	construction_allowed=TRUE
+	temperature = T_JUNGLE
+	oxygen = MOLES_JUNGLE_O2_STD
+	nitrogen = MOLES_JUNGLE_N2_STD
+	carbon_dioxide = MOLES_JUNGLE_CO2_STD
+	intact=0
+	can_border_transition=TRUE
+	grass_removal_time = 2 SECONDS
+	soil_turf_type = /turf/unsimulated/floor/jungle/dirt
 
-/turf/unsimulated/floor/jungle/grass/New(var/loc)
+/turf/unsimulated/floor/planetary/grass/jungle/New(var/loc)
 	..()
 	footstep_sound = sounds_grass
 	footstep_sound_barefoot = sounds_grass
 	footstep_sound_claw = sounds_grass
 	generate_foliage()
 
-/turf/unsimulated/floor/jungle/grass/proc/generate_foliage()
+/turf/unsimulated/floor/planetary/grass/jungle/proc/generate_foliage()
 	if (prob(50))
 		if(prob(10)) //10% chance to replace with rocks or some shit. 5% over all
 			var/rep=pick(foliage_replacments)
@@ -174,39 +180,25 @@ var/list/foliage_replacments=list(
 		if( !(locate(/obj/structure/flora/tree) in range(2,src)) )
 			return new/obj/structure/flora/tree/shitty(src)
 
-/turf/unsimulated/floor/jungle/grass/Destroy()
+/turf/unsimulated/floor/planetary/grass/jungle/Destroy()
 	..()
 	for(var/obj/structure/flora/F in contents)
 		qdel(F)
 
-/turf/unsimulated/floor/jungle/grass/attackby(obj/item/C as obj, mob/user as mob)
-	..()
-	if(!C || !user)
-		return 0
-	var/s=0.0
-	s=item_terraforming_ispickaxe(C)
-	if(s>0.0 && !(locate(/obj/structure/flora) in contents))
-		to_chat(user, "<span class='notice'>You start breaking up the soil</span>")
-		if(do_after(user, src, 20/s ))
-			ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
-			new /obj/item/stack/tile/grass(src,1)
+/turf/unsimulated/floor/planetary/grass/jungle/canBuildLattice()
+	for (var/obj/structure/flora/F in contents)
+		return FALSE
+	return TRUE
+/turf/unsimulated/floor/planetary/grass/jungle/canBuildPlating()
+	return canBuildLattice()
+/turf/unsimulated/floor/planetary/grass/jungle/canBuildCatwalk()
+	return canBuildLattice()
 
 
-/turf/unsimulated/floor/jungle/grass/ex_act(severity)
-	switch(severity)
-		if(1.0)
-			ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
-		if(2.0)
-			if(prob(70))
-				ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
-		if(3.0)
-			if(prob(40))
-				ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
-
-/turf/unsimulated/floor/jungle/grass/no_flora
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora
 	icon_state="grass_alt1" //uses an alt texture at first so that it appears different while mapping. this will correct itself when it spawns.
 
-/turf/unsimulated/floor/jungle/grass/no_flora/generate_foliage()
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora/generate_foliage()
 	return
 
 /turf/unsimulated/floor/jungle/mud
@@ -263,7 +255,8 @@ var/list/foliage_replacments=list(
 	if(C.type== /obj/item/stack/tile/grass && !hashole)
 		var/obj/item/stack/tile/T = C
 		if(T.use(1))
-			ChangeTurf(/turf/unsimulated/floor/jungle/grass/no_flora)
+			ChangeTurf(/turf/unsimulated/floor/planetary/grass/jungle/no_flora)
+			return TRUE
 	var/s=0.0
 	s=item_terraforming_isshovel(C)
 	if(s>0.0 && !hashole)

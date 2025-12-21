@@ -20,6 +20,31 @@
 	oxygen = MOLES_O2STANDARD
 	nitrogen = MOLES_N2STANDARD
 	temperature = T20C
+	can_border_transition=TRUE //allows zlevel transitions. you must also enable it in the zlevel.
+
+
+/turf/unsimulated/floor/planetary/proc/item_shovel_ability(var/obj/item/I,var/mob/user) // returns a number in the form of a divisor applied to turf manipulation duration. this means that lower numbers are worse. 0 means it just can't do it, and should be ignored, also because div 0.
+	if(!I || !user)
+		return 0.0
+	if(istype(C,/obj/item/weapon/pickaxe/shovel))
+		return (1/C.toolspeed)/2.5
+	if(istype(C,/obj/item/weapon/kitchen/utensil/spoon) || istype(C,/obj/item/weapon/kitchen/utensil/spork))  //because it's funny.
+		return 0.1
+	return 0.0
+	
+/turf/unsimulated/floor/planetary/proc/item_pickaxe_ability(var/obj/item/I,var/mob/user) //see above
+	if(!I || !user)
+		return 0.0
+	if(istype(I,/obj/item/weapon/pickaxe) && !istype(I,/obj/item/weapon/pickaxe/shovel))
+		return (1/I.toolspeed)/2.5 //default toolspeed is 0.4. do this math because lower=faster, but we want higher=faster.
+	if(istype(I,/obj/item/tool/crowbar))
+		if(istype(I,/obj/item/tool/crowbar/halligan)) //halligans have a pick end.
+			return 0.75
+		return 0.5
+	if(istype(I,/obj/item/weapon/kitchen/utensil/knife))
+		return 0.1
+	return 0.0
+
 
 //Caves
 /turf/unsimulated/floor/planetary/cave
@@ -65,6 +90,44 @@
 	variance = 40
 	edge_priority = GRASS_EDGE_PRIORITY
 	edge_flags = ALL_EDGES
+	var/soil_turf_type=null //when you remove the grass it turns into this. set to null if you don't want this to happen.
+	var/grass_removal_time=0
+
+/turf/unsimulated/floor/planetary/grass/New()
+	..()
+	footstep_sound = sounds_grass
+	footstep_sound_barefoot = sounds_grass
+	footstep_sound_claw = sounds_grass
+
+/turf/unsimulated/floor/planetary/grass/attackby(var/obj/item/I, var/mob/user)
+	if(soil_turf_type)
+		var/uprooting_speed=item_pickaxe_ability(I,user)
+		if(uprooting_speed)
+			to_chat(user, "<span class='notice'>You start breaking up the soil</span>")
+			if(do_after(user, src, grass_removal_time/uprooting_speed ))
+				return uproot()
+			else
+			return FALSE
+	return ..()
+
+/turf/unsimulated/floor/planetary/grass/proc/uproot(var/obj/item/I,var/mob/user)
+	ChangeTurf(soil_turf_type)
+	new /obj/item/stack/tile/grass(src,1)
+	return TRUE
+
+/turf/unsimulated/floor/planetary/grass/ex_act(severity)
+	if(soil_turf_type)
+		switch(severity)
+			if(1.0)
+				ChangeTurf(soil_turf_type)
+			if(2.0)
+				if(prob(65))
+					ChangeTurf(soil_turf_type)
+			if(3.0)
+				if(prob(20))
+					ChangeTurf(soil_turf_type)
+		..()
+
 
 /turf/unsimulated/floor/planetary/dirt
 	name = "dirt"

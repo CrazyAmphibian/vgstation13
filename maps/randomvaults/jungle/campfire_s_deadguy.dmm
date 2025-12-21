@@ -1,10 +1,10 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "e" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "i" = (
 /turf/unsimulated/floor/jungle/dirt,
@@ -18,7 +18,7 @@
 /area/surface/jungle)
 "k" = (
 /obj/structure/flora/ausbushes/brflowers,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "l" = (
 /obj/item/weapon/spear/wooden,
@@ -26,11 +26,11 @@
 /area/surface/jungle)
 "N" = (
 /obj/effect/landmark/corpse,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "Y" = (
 /obj/structure/flora/jungle_berries,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 
 (1,1,1) = {"

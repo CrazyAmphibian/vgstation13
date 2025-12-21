@@ -19,7 +19,7 @@
 /area/surface/jungle)
 "j" = (
 /obj/structure/flora/tree/shitty,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "k" = (
 /obj/structure/grille,
@@ -39,12 +39,12 @@
 /turf/unsimulated/floor/jungle/dirt,
 /area/surface/jungle)
 "m" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "p" = (
 /mob/living/simple_animal/complex/frog/poison,
 /obj/structure/flora/ausbushes/sunnybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "q" = (
 /obj/structure/grille,
@@ -59,7 +59,7 @@
 /area/surface/jungle)
 "s" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "t" = (
 /turf/simulated/wall/mineral/wood,
@@ -84,7 +84,7 @@
 /area/surface/jungle)
 "B" = (
 /obj/structure/flora/ausbushes/sunnybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "D" = (
 /obj/structure/table/woodentable,
@@ -119,16 +119,16 @@
 "L" = (
 /mob/living/simple_animal/complex/frog,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "M" = (
 /mob/living/simple_animal/complex/frog,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "N" = (
 /mob/living/simple_animal/complex/frog/poison,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "O" = (
 /obj/machinery/door/mineral/wood{
@@ -138,7 +138,7 @@
 /area/surface/jungle)
 "R" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "U" = (
 /obj/structure/table/woodentable,
@@ -161,16 +161,16 @@
 /area/surface/jungle)
 "V" = (
 /obj/structure/flora/jungle_berries,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "W" = (
 /mob/living/simple_animal/complex/frog,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "X" = (
 /mob/living/simple_animal/complex/frog/poison,
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 
 (1,1,1) = {"

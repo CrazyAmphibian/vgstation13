@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /obj/structure/flora/jungle_berries,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "c" = (
 /obj/structure/table/woodentable,
@@ -10,18 +10,18 @@
 /area/surface/jungle)
 "h" = (
 /obj/structure/flora/tree/shitty,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "p" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "t" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "u" = (
 /obj/structure/flora/ausbushes/stalkybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "y" = (
 /turf/unsimulated/floor/jungle/path,
@@ -48,7 +48,7 @@
 /area/surface/jungle)
 "R" = (
 /obj/structure/flora/ausbushes/reedbush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 
 (1,1,1) = {"

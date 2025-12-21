@@ -1,40 +1,40 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /obj/structure/flora/tree/shitty,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "b" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "h" = (
 /obj/structure/flora/ausbushes/stalkybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "n" = (
 /obj/item/weapon/storage/fancy/beer_box/empty{
 	pixel_y = 16;
 	pixel_x = -2
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "x" = (
 /obj/structure/flora/ausbushes/reedbush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "z" = (
 /obj/structure/flora/ausbushes/sunnybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "G" = (
 /turf/unsimulated/floor/jungle/water_deep,
 /area/surface/jungle)
 "I" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "O" = (
 /obj/structure/bed/chair/folding,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "P" = (
 /obj/structure/table/holotable/wood,
@@ -48,7 +48,7 @@
 	pixel_x = 5;
 	pixel_y = 3
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "R" = (
 /turf/unsimulated/floor/jungle/water,

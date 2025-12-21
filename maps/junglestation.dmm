@@ -379,7 +379,7 @@
 /obj/structure/hanging_lantern/dim{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/fenced)
 "aix" = (
 /obj/structure/rack,
@@ -919,7 +919,7 @@
 /obj/docking_port/destination/deathsquad/near_station{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "asu" = (
 /obj/effect/decal/warning_stripes{
@@ -1093,7 +1093,7 @@
 /mob/living/simple_animal/hostile/giant_spider{
 	faction = "jungle"
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/vault)
 "avQ" = (
 /obj/structure/rack{
@@ -1421,7 +1421,7 @@
 	},
 /area/lawoffice)
 "aBB" = (
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle)
 "aBG" = (
 /obj/structure/rack,
@@ -2237,7 +2237,7 @@
 /obj/docking_port/destination/syndicate/south{
 	dir = 2
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "aSF" = (
 /obj/structure/grille/window_spawner/reinforced,
@@ -2511,7 +2511,7 @@
 /turf/simulated/floor/plating,
 /area/centcom/suppy)
 "aXz" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/zoned/bombrange)
 "aXR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -3797,7 +3797,7 @@
 /obj/machinery/station_map{
 	dir = 2
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "bve" = (
 /obj/machinery/r_n_d/fabricator/mechanic_fab/flatpacker,
@@ -5150,7 +5150,7 @@
 /area/surface/jungle/zoned/aifenced)
 "bTg" = (
 /obj/docking_port/destination/vox/mining_north,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/roid)
 "bTo" = (
 /obj/structure/shuttle/diag_wall/black,
@@ -5465,7 +5465,7 @@
 	dir = 1
 	},
 /obj/structure/disposaloutlet,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "bZc" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
@@ -6369,7 +6369,7 @@
 /area/research_outpost/hallway)
 "cnU" = (
 /mob/living/simple_animal/complex/bear,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "coc" = (
 /obj/structure/bed/chair/comfy/brown,
@@ -8280,7 +8280,7 @@
 	dir = 1
 	},
 /obj/structure/closet/crate/bin,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/fenced)
 "cYg" = (
 /obj/machinery/light/small{
@@ -12019,7 +12019,7 @@
 /area/engineering/engine)
 "enh" = (
 /obj/abstract/map/spawner/jungle_any,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/roid)
 "enr" = (
 /obj/machinery/computer/communications,
@@ -12593,7 +12593,7 @@
 /obj/docking_port/destination/syndicate/northeast{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "ewO" = (
 /obj/structure/table/woodentable,
@@ -12926,7 +12926,7 @@
 /area/security/warden)
 "eEP" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle)
 "eFF" = (
 /obj/structure/window/reinforced{
@@ -12974,7 +12974,7 @@
 "eHa" = (
 /obj/item/stack/teeth,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle)
 "eHg" = (
 /obj/machinery/light,
@@ -14029,7 +14029,7 @@
 /area/medical/sleeper)
 "fdH" = (
 /obj/abstract/map/spawner/jungle_fren,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "fdL" = (
 /obj/machinery/door/window/brigdoor{
@@ -14350,7 +14350,7 @@
 /obj/structure/hanging_lantern/dim{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "fjX" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -14991,7 +14991,7 @@
 	},
 /area/shuttle/escape/centcom)
 "fvU" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/roid)
 "fvX" = (
 /obj/machinery/disposal/compactor,
@@ -15427,7 +15427,7 @@
 /mob/living/simple_animal/hostile/giant_spider/nurse/queen_spider{
 	faction = "jungle"
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/vault)
 "fEw" = (
 /obj/structure/sign/greencross,
@@ -18345,7 +18345,7 @@
 /turf/simulated/floor/plating/vox,
 /area/vox_trading_post/gardens)
 "gJc" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/roid/vaults)
 "gJt" = (
 /obj/machinery/door/airlock/highsecurity{
@@ -18391,7 +18391,7 @@
 	pixel_y = -8;
 	pixel_x = 33
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "gKy" = (
 /obj/structure/grille,
@@ -18587,7 +18587,7 @@
 /area/surface/jungle/underground)
 "gOu" = (
 /mob/living/simple_animal/complex/panther,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "gOE" = (
 /obj/structure/closet/vox_raiders/trader,
@@ -19226,7 +19226,7 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor4"
 	},
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle)
 "gZQ" = (
 /obj/structure/bed/chair/folding{
@@ -20082,7 +20082,7 @@
 /area/crew_quarters/kitchen)
 "hqY" = (
 /mob/living/simple_animal/chicken,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/zoned/botanty_outside)
 "hre" = (
 /obj/structure/bed/chair{
@@ -20413,7 +20413,7 @@
 /area/janitor)
 "hAr" = (
 /obj/structure/flora/pottedplant/random,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/fenced)
 "hAu" = (
 /obj/structure/grille,
@@ -21202,7 +21202,7 @@
 /area/bridge)
 "hNC" = (
 /obj/docking_port/destination/vox/east_station,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "hNK" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -23090,7 +23090,7 @@
 	pixel_x = 5;
 	pixel_y = -5
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "izu" = (
 /obj/structure/table,
@@ -24549,7 +24549,7 @@
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/vault)
 "iZK" = (
 /obj/structure/cable/yellow{
@@ -24602,7 +24602,7 @@
 /obj/machinery/camera{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "jaX" = (
 /obj/structure/cable/yellow{
@@ -25500,7 +25500,7 @@
 	dir = 4
 	},
 /obj/structure/closet/jungle_first_aid,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/fenced)
 "jsu" = (
 /obj/machinery/light{
@@ -25678,7 +25678,7 @@
 /area/crew_quarters/theatre)
 "jwM" = (
 /obj/structure/wc/sink/puddle,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/zoned/botanty_outside)
 "jxh" = (
 /obj/machinery/message_server,
@@ -26120,7 +26120,7 @@
 /obj/machinery/camera{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "jEt" = (
 /obj/structure/table/woodentable,
@@ -26442,7 +26442,7 @@
 /area/centcom/test)
 "jJY" = (
 /obj/structure/reagent_dispensers/watertank,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/zoned/botanty_outside)
 "jKk" = (
 /obj/structure/ladder/jungle_tunnel/mapped,
@@ -26930,7 +26930,7 @@
 /area/engineering/reactor_room)
 "jSV" = (
 /obj/effect/decal/cleanable/blood/drip,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/vault)
 "jTi" = (
 /obj/item/clothing/shoes/black,
@@ -27412,7 +27412,7 @@
 /area/shuttle/ert/centcom)
 "kdz" = (
 /obj/docking_port/destination/vox/northeast_station,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "kdG" = (
 /turf/unsimulated/wall,
@@ -27692,7 +27692,7 @@
 	dir = 1
 	},
 /obj/structure/hanging_lantern/dim,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "kjd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -27759,7 +27759,7 @@
 /area/centcom/ert)
 "kkn" = (
 /mob/living/simple_animal/complex/bear/panda,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/vault)
 "kkr" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -28498,7 +28498,7 @@
 /obj/effect/decal/cleanable/blood{
 	icon_state = "floor4"
 	},
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle)
 "kAu" = (
 /obj/machinery/atmospherics/unary/cold_sink/freezer{
@@ -30332,7 +30332,7 @@
 /area/surface/jungle/vault)
 "lmu" = (
 /obj/docking_port/destination/syndicate/north,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "lmw" = (
 /obj/effect/step_trigger/thrower/east{
@@ -31420,7 +31420,7 @@
 /area/syndicate_mothership)
 "lFR" = (
 /obj/structure/bed/chair/vehicle/mower,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/zoned/botanty_outside)
 "lGd" = (
 /mob/living/simple_animal/hostile/giant_spider{
@@ -31612,7 +31612,7 @@
 	},
 /area/science/hallway)
 "lIK" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "lIS" = (
 /obj/structure/table,
@@ -33827,7 +33827,7 @@
 	},
 /area/crew_quarters/courtroom)
 "mwM" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /turf/unsimulated/floor/jungle/path,
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/zoned/aifenced)
@@ -33942,7 +33942,7 @@
 	dir = 8
 	},
 /obj/machinery/vending/cigarette,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/crew_quarters/hop)
 "mzf" = (
 /obj/machinery/door/airlock/silver{
@@ -34128,7 +34128,7 @@
 	})
 "mCs" = (
 /mob/living/simple_animal/complex/bear/panda,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "mCB" = (
 /obj/structure/table,
@@ -34477,7 +34477,7 @@
 /obj/docking_port/destination/syndicate/southwest{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "mJE" = (
 /obj/structure/table,
@@ -35515,7 +35515,7 @@
 /area/centcom/holding)
 "ndk" = (
 /mob/living/simple_animal/cow,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/zoned/botanty_outside)
 "ndz" = (
 /obj/machinery/door_control{
@@ -35662,7 +35662,7 @@
 /area/security/range)
 "ngi" = (
 /obj/abstract/map/spawner/jungle_hostile,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "ngq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -36099,7 +36099,7 @@
 	pixel_x = -5;
 	pixel_y = 30
 	},
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/fenced)
 "nod" = (
 /obj/machinery/turret{
@@ -36141,7 +36141,7 @@
 /area/shuttle/escape/centcom)
 "noW" = (
 /obj/docking_port/destination/vox/tradepost,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "noZ" = (
 /obj/structure/table/woodentable,
@@ -36257,7 +36257,7 @@
 	},
 /area/turret_protected/tcomms_control_room)
 "nre" = (
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/fenced)
 "nrn" = (
 /obj/machinery/atmospherics/unary/cold_sink/freezer{
@@ -36398,7 +36398,7 @@
 /obj/machinery/space_heater/campfire,
 /obj/machinery/cooking/grill/spit,
 /obj/item/weapon/reagent_containers/pan,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/vault)
 "nuc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -36463,7 +36463,7 @@
 	dir = 1;
 	pixel_y = 23
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "nwK" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -37566,7 +37566,7 @@
 /area/centcom/ert)
 "nRK" = (
 /obj/structure/closet/crate/bin,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/fenced)
 "nRR" = (
 /obj/effect/decal/warning_stripes{
@@ -38018,7 +38018,7 @@
 /obj/machinery/camera{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "nZc" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -38524,7 +38524,7 @@
 /area/centcom/evac)
 "ohD" = (
 /obj/structure/hanging_lantern/dim,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "ohO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -38707,7 +38707,7 @@
 /area/science/xenobiology/specimen_2)
 "oli" = (
 /obj/abstract/map/spawner/jungle_any,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/roid/vaults)
 "olk" = (
 /obj/structure/closet/secure_closet/courtroom,
@@ -38915,7 +38915,7 @@
 /area/science/hallway)
 "oqo" = (
 /obj/structure/closet/jungle_first_aid,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/fenced)
 "oqz" = (
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
@@ -39144,7 +39144,7 @@
 /obj/machinery/camera{
 	dir = 6
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/zoned/aifenced)
 "ovC" = (
@@ -40659,7 +40659,7 @@
 	},
 /area/surface/jungle/zoned/art_zone)
 "pax" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /turf/unsimulated/floor/jungle/path,
 /area/surface/jungle/zoned/aifenced)
 "paF" = (
@@ -41202,7 +41202,7 @@
 /area/centcom/holding)
 "pmR" = (
 /obj/machinery/camera,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "pmU" = (
 /obj/machinery/iv_drip,
@@ -41302,7 +41302,7 @@
 /area/surface/jungle/fenced)
 "ppm" = (
 /obj/machinery/vending/discount,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/engineering/break_room)
 "pps" = (
 /obj/machinery/hologram/holopad,
@@ -41541,7 +41541,7 @@
 /area/security/perma)
 "ptW" = (
 /obj/item/weapon/shard,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "ptY" = (
 /obj/structure/disposalpipe/trunk{
@@ -42688,7 +42688,7 @@
 /obj/machinery/camera{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "pPM" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
@@ -43309,7 +43309,7 @@
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/item/clothing/shoes/jackboots,
 /obj/effect/decal/cleanable/blood/gibs/core,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle)
 "pZZ" = (
 /obj/machinery/computer/message_monitor,
@@ -44564,7 +44564,7 @@
 /obj/docking_port/destination/syndicate/researchoutpost{
 	dir = 2
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/roid)
 "qwF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -46728,7 +46728,7 @@
 /obj/docking_port/destination/striketeam/destination1{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "rno" = (
 /turf/unsimulated/floor{
@@ -46774,7 +46774,7 @@
 	},
 /area/syndicate_mothership/elite_squad)
 "rnF" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/vault)
 "rnL" = (
 /obj/structure/bookcase/manuals/xenoarchaeology,
@@ -47521,7 +47521,7 @@
 	pixel_y = 12;
 	req_access_txt = "140"
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "rzs" = (
 /obj/structure/rack,
@@ -48120,7 +48120,7 @@
 /area/centcom/suppy)
 "rJa" = (
 /obj/docking_port/destination/vox/mining_south,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/roid)
 "rJL" = (
 /obj/machinery/disposal/compactor,
@@ -48258,7 +48258,7 @@
 /obj/machinery/camera{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "rNK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -49187,7 +49187,7 @@
 /area/crew_quarters/courtroom)
 "scy" = (
 /mob/living/simple_animal/complex/bear,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/vault)
 "scK" = (
 /obj/structure/shuttle/engine/propulsion/left{
@@ -51737,7 +51737,7 @@
 /area/surface/jungle/vault)
 "tct" = (
 /obj/docking_port/destination/syndicate/miningoutpost,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/roid)
 "tcB" = (
 /turf/unsimulated/floor{
@@ -52150,7 +52150,7 @@
 /obj/machinery/camera{
 	dir = 5
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "tjl" = (
 /obj/machinery/atmospherics/binary/volume_pump{
@@ -53430,7 +53430,7 @@
 /area/surface/jungle/mining)
 "tFZ" = (
 /obj/structure/closet/emcloset/vox,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/fenced)
 "tGh" = (
 /obj/structure/grille,
@@ -53953,7 +53953,7 @@
 /obj/docking_port/destination/syndicate/southeast{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "tPg" = (
 /obj/structure/bed/chair{
@@ -54342,7 +54342,7 @@
 /obj/machinery/camera{
 	dir = 6
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "tXe" = (
 /obj/structure/disposalpipe/segment{
@@ -55507,7 +55507,7 @@
 /obj/structure/hanging_lantern/dim{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/fenced)
 "uwt" = (
 /obj/machinery/door/airlock/glass_command{
@@ -56468,7 +56468,7 @@
 /area/research_outpost/gearstore)
 "uRD" = (
 /obj/machinery/vending/cola,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/engineering/break_room)
 "uSl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -56889,7 +56889,7 @@
 /area/science/robotics)
 "uYZ" = (
 /obj/item/weapon/cell/crepe/mommi,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "uZq" = (
 /obj/docking_port/destination/research/station,
@@ -57123,7 +57123,7 @@
 	dir = 4
 	},
 /turf/unsimulated/floor/jungle/path,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "vcQ" = (
 /obj/structure/fence/corner{
@@ -58101,7 +58101,7 @@
 /obj/machinery/camera{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "vti" = (
 /obj/structure/ladder/jungle_tunnel/mapped,
@@ -58184,7 +58184,7 @@
 /area/security/warden)
 "vut" = (
 /mob/living/simple_animal/complex/crocodile,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "vuA" = (
 /obj/machinery/door/poddoor{
@@ -58615,10 +58615,10 @@
 /area/teleporter)
 "vCr" = (
 /obj/effect/decal/cleanable/blood/drip,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle)
 "vCv" = (
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/zoned/bombrange)
 "vCx" = (
 /obj/structure/grille/window_spawner/reinforced/full,
@@ -58638,7 +58638,7 @@
 /turf/simulated/floor/vox,
 /area/vox_trading_post/eva)
 "vCT" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/mining)
 "vCU" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -58889,7 +58889,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 30
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "vGj" = (
 /obj/structure/railing/wood,
@@ -59252,7 +59252,7 @@
 /area/security/lobby)
 "vNb" = (
 /turf/unsimulated/floor/jungle/path,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "vNg" = (
 /obj/structure/cable/yellow{
@@ -59354,7 +59354,7 @@
 /obj/effect/decal/cleanable/blood/gibs{
 	color = "#772222"
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "vPt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -60440,7 +60440,7 @@
 /turf/simulated/floor,
 /area/research_outpost/entry)
 "wld" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "wlz" = (
 /obj/structure/fence{
@@ -61441,7 +61441,7 @@
 	dir = 1;
 	pixel_y = 25
 	},
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/fenced)
 "wEY" = (
 /obj/structure/grille,
@@ -62463,7 +62463,7 @@
 /obj/docking_port/destination/vox/southeast_station{
 	dir = 2
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "wXa" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -62665,7 +62665,7 @@
 /turf/simulated/floor,
 /area/research_outpost/dorm1)
 "xbO" = (
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/zoned/botanty_outside)
 "xbQ" = (
 /obj/machinery/light/broken{
@@ -63467,7 +63467,7 @@
 /area/engineering/engine)
 "xpO" = (
 /obj/machinery/vending/coffee,
-/turf/unsimulated/floor/jungle/grass/no_flora,
+/turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/crew_quarters/hop)
 "xpU" = (
 /obj/structure/table/woodentable,
@@ -63626,7 +63626,7 @@
 /area/centcom/ert)
 "xtf" = (
 /obj/item/trash/cigbutt/cigarbutt,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "xth" = (
 /obj/structure/table,
@@ -63635,7 +63635,7 @@
 /area/centcom/evac)
 "xtL" = (
 /obj/abstract/map/spawner/jungle_any,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "xtN" = (
 /obj/machinery/atmospherics/pipe/simple/insulated/hidden/blue{
@@ -63662,7 +63662,7 @@
 /area/engineering/reactor_room)
 "xtQ" = (
 /mob/living/simple_animal/complex/capybara_wild,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/vault)
 "xuh" = (
 /turf/simulated/floor{
@@ -63979,7 +63979,7 @@
 /mob/living/simple_animal/hostile/giant_spider/hunter/dead{
 	faction = "jungle"
 	},
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/vault)
 "xAr" = (
 /obj/machinery/light{

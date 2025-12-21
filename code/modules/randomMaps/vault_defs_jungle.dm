@@ -6,7 +6,7 @@
 /datum/map_element/junglevault
 	type_abbreviation = "JV"
 	can_rotate=TRUE
-	var/base_turf_type = /turf/unsimulated/floor/jungle/grass
+	var/base_turf_type = /turf/unsimulated/floor/planetary/grass/jungle
 	var/count=0 //how many are added to the list to pick from. spawn weights, also how many are allowed to be spawned.
 
 /datum/map_element/junglevault/initialize(list/objects)

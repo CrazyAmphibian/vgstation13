@@ -120,7 +120,7 @@
 		if(!istype(A,/area/surface/jungle/roid/vaults))
 			return 0
 	for(var/turf/S in surroundings) //avoid nearby locations.
-		if(S.type!=/turf/unsimulated/floor/jungle/grass)
+		if(S.type!=/turf/unsimulated/floor/planetary/grass/jungle)
 			return 0
 	return 1
 

@@ -4,7 +4,7 @@
 /area/surface/jungle)
 "b" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "c" = (
 /obj/structure/grille,
@@ -44,7 +44,7 @@
 /area/surface/jungle)
 "i" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "j" = (
 /obj/structure/bed/chair/wood/normal,
@@ -94,7 +94,7 @@
 /area/surface/jungle)
 "q" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "r" = (
 /obj/structure/closet/cabinet,
@@ -113,7 +113,7 @@
 /area/surface/jungle)
 "w" = (
 /obj/structure/flora/ausbushes/genericbush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "z" = (
 /obj/machinery/space_heater/campfire,
@@ -121,7 +121,7 @@
 /turf/unsimulated/floor/jungle/dirt,
 /area/surface/jungle)
 "B" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "F" = (
 /turf/simulated/floor/wood,

@@ -39,7 +39,7 @@
 /area/surface/jungle)
 "s" = (
 /obj/structure/flora/ausbushes/pointybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "x" = (
 /obj/structure/table/woodentable,
@@ -55,7 +55,7 @@
 /area/surface/jungle)
 "K" = (
 /obj/structure/flora/ausbushes/sunnybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "L" = (
 /obj/structure/table/woodentable,
@@ -72,7 +72,7 @@
 /turf/simulated/floor/wood,
 /area/surface/jungle)
 "M" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "N" = (
 /obj/structure/hanging_lantern/dim{
@@ -96,7 +96,7 @@
 /area/surface/jungle)
 "Y" = (
 /obj/structure/flora/ausbushes/palebush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 
 (1,1,1) = {"

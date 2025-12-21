@@ -407,7 +407,7 @@
 			if(istype(A,/obj/structure/flora) && !istype(A,/obj/structure/flora/tree) && !istype(A,/obj/structure/flora/rock))
 				foodsources+=A
 				continue
-			if(istype(A,/turf/unsimulated/floor/jungle/grass))
+			if(istype(A,/turf/unsimulated/floor/planetary/grass/jungle))
 				foodsources+=A
 				continue
 		if(food_flags & ANIMAL_FRUGIVORE)

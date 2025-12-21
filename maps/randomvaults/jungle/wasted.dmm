@@ -3,53 +3,53 @@
 /obj/effect/landmark/corpse/assistant,
 /obj/item/weapon/reagent_containers/food/drinks/bottle,
 /obj/structure/flora/ausbushes,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "e" = (
 /obj/effect/decal/cleanable/vomit,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "i" = (
 /obj/item/weapon/reagent_containers/food/drinks/bottle,
 /obj/structure/flora/ausbushes,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "k" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "l" = (
 /obj/structure/flora/ausbushes,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "o" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "p" = (
 /obj/item/weapon/storage/fancy/beer_box/empty,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "x" = (
 /obj/structure/flora/tree/shitty,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "A" = (
 /obj/item/weapon/reagent_containers/food/drinks/bottle,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "O" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "U" = (
 /obj/structure/flora/ausbushes/grassybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 "X" = (
 /obj/item/weapon/reagent_containers/food/drinks/bottle,
 /obj/structure/flora/ausbushes,
 /obj/structure/flora/ausbushes,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle)
 
 (1,1,1) = {"

@@ -262,7 +262,7 @@
 	name = "jungle planet"
 	desc = "A hot, humid planet teeming with exotic flora and fauna."
 	mapgen = /datum/planetGenerator/jungle
-	default_baseturf = /turf/unsimulated/floor/jungle/grass
+	default_baseturf = /turf/unsimulated/floor/planetary/grass/jungle
 	loot_type = LOOT_TYPE_JUNGLE
 	climate_type = /datum/climate/tropical
 	loot_modifier = 10
