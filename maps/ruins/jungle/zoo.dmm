@@ -19,12 +19,12 @@
 /area/exposed_ruin)
 "d" = (
 /obj/structure/flora/tree/shitty,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/exposed_ruin)
 "e" = (
 /mob/living/simple_animal/cow/chocolate,
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/exposed_ruin)
 "f" = (
 /turf/unsimulated/floor/jungle/path_plated,
@@ -47,19 +47,19 @@
 /area/exposed_ruin)
 "j" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/exposed_ruin)
 "l" = (
 /obj/structure/flora/jungle_berries,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/exposed_ruin)
 "n" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/exposed_ruin)
 "o" = (
 /obj/structure/flora/rock,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/exposed_ruin)
 "p" = (
 /obj/structure/bed/chair/office{
@@ -71,16 +71,16 @@
 /turf/unsimulated/floor/jungle/water,
 /area/exposed_ruin)
 "w" = (
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/exposed_ruin)
 "x" = (
 /obj/structure/flora/ausbushes/leafybush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/exposed_ruin)
 "y" = (
 /mob/living/simple_animal/cow/chocolate,
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/exposed_ruin)
 "z" = (
 /obj/structure/fence{
@@ -104,7 +104,7 @@
 "F" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/exposed_ruin)
 "G" = (
 /obj/effect/decal/warning_stripes{
@@ -138,7 +138,7 @@
 /area/template_noop)
 "O" = (
 /mob/living/complex_animal/dinosaur,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/exposed_ruin)
 "R" = (
 /obj/structure/table,
@@ -159,7 +159,7 @@
 /area/exposed_ruin)
 "U" = (
 /mob/living/simple_animal/cow/chocolate,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/exposed_ruin)
 "V" = (
 /mob/living/simple_animal/hostile/asteroid/basilisk,
@@ -176,7 +176,7 @@
 /area/exposed_ruin)
 "Z" = (
 /obj/structure/flora/ausbushes/reedbush,
-/turf/unsimulated/floor/jungle/grass,
+/turf/unsimulated/floor/planetary/grass/jungle,
 /area/exposed_ruin)
 
 (1,1,1) = {"
