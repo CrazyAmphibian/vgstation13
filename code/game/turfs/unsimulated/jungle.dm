@@ -151,15 +151,11 @@ var/list/foliage_replacments=list(
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
 	intact=0
-	can_border_transition=TRUE
-	grass_removal_time = 2 SECONDS
-	soil_turf_type = /turf/unsimulated/floor/jungle/dirt
+	pickaxe_conversion_turf = /turf/unsimulated/floor/jungle/dirt
+	pickaxe_conversion_time = 2 SECONDS
 
 /turf/unsimulated/floor/planetary/grass/jungle/New(var/loc)
 	..()
-	footstep_sound = sounds_grass
-	footstep_sound_barefoot = sounds_grass
-	footstep_sound_claw = sounds_grass
 	generate_foliage()
 
 /turf/unsimulated/floor/planetary/grass/jungle/proc/generate_foliage()
