@@ -471,14 +471,19 @@ var/list/foliage_replacments=list(
 	qdel(wateroverlay)
 	..()
 
-/turf/unsimulated/floor/jungle/sand
+
+/turf/unsimulated/floor/planetary/sand/jungle
 	name="Sand"
 	desc="Rocks which have been eroded over countless centuries into a fine powder. A wonderful material for castles!"
 	icon = 'icons/misc/beach.dmi'
 	icon_state = "sand"
-	construction_allowed=TRUE
+	temperature = T_JUNGLE
+	oxygen = MOLES_JUNGLE_O2_STD
+	nitrogen = MOLES_JUNGLE_N2_STD
+	carbon_dioxide = MOLES_JUNGLE_CO2_STD
+	
 
-/turf/unsimulated/floor/jungle/sand/New()
+/turf/unsimulated/floor/planetary/sand/jungle/New()
 	..()
 	footstep_sound = sounds_sand
 	footstep_sound_barefoot = sounds_sand

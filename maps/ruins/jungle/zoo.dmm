@@ -118,10 +118,10 @@
 /area/exposed_ruin)
 "J" = (
 /mob/living/simple_animal/hostile/humanoid/tajaran,
-/turf/unsimulated/floor/jungle/sand,
+/turf/unsimulated/floor/planetary/sand/jungle,
 /area/exposed_ruin)
 "K" = (
-/turf/unsimulated/floor/jungle/sand,
+/turf/unsimulated/floor/planetary/sand/jungle,
 /area/exposed_ruin)
 "L" = (
 /obj/structure/fence,

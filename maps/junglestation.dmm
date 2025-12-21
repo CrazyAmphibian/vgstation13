@@ -3077,7 +3077,7 @@
 "big" = (
 /obj/item/weapon/beach_ball,
 /obj/structure/bed/chair/wood/normal,
-/turf/unsimulated/floor/jungle/sand,
+/turf/unsimulated/floor/planetary/sand/jungle,
 /area/surface/jungle/vault)
 "biy" = (
 /obj/item/weapon/folder,
@@ -4270,7 +4270,7 @@
 "bBU" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/reagent_containers/food/drinks/shaker,
-/turf/unsimulated/floor/jungle/sand,
+/turf/unsimulated/floor/planetary/sand/jungle,
 /area/surface/jungle/vault)
 "bCl" = (
 /obj/machinery/hologram/holopad,
@@ -15183,7 +15183,7 @@
 /area/engineering/engine)
 "fzt" = (
 /mob/living/carbon/monkey,
-/turf/unsimulated/floor/jungle/sand,
+/turf/unsimulated/floor/planetary/sand/jungle,
 /area/surface/jungle/vault)
 "fzw" = (
 /obj/structure/table,
@@ -19586,7 +19586,7 @@
 /area/centcom/specops)
 "hhk" = (
 /obj/item/clothing/head/collectable/petehat,
-/turf/unsimulated/floor/jungle/sand,
+/turf/unsimulated/floor/planetary/sand/jungle,
 /area/surface/jungle/vault)
 "hhu" = (
 /obj/item/tool/crowbar,
@@ -20739,7 +20739,7 @@
 	pixel_y = 6;
 	pixel_x = -8
 	},
-/turf/unsimulated/floor/jungle/sand,
+/turf/unsimulated/floor/planetary/sand/jungle,
 /area/surface/jungle/vault)
 "hFg" = (
 /obj/structure/table/woodentable,
@@ -30805,7 +30805,7 @@
 /area/shuttle/supply)
 "luW" = (
 /obj/abstract/map/spawner/jungle_fren,
-/turf/unsimulated/floor/jungle/sand,
+/turf/unsimulated/floor/planetary/sand/jungle,
 /area/surface/jungle/vault)
 "lvn" = (
 /turf/simulated/wall,
@@ -33100,7 +33100,7 @@
 "mjg" = (
 /obj/structure/table/woodentable,
 /obj/structure/reagent_dispensers/beerkeg,
-/turf/unsimulated/floor/jungle/sand,
+/turf/unsimulated/floor/planetary/sand/jungle,
 /area/surface/jungle/vault)
 "mjn" = (
 /obj/structure/table,
@@ -45302,7 +45302,7 @@
 "qKS" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/storage/fancy/beer_box,
-/turf/unsimulated/floor/jungle/sand,
+/turf/unsimulated/floor/planetary/sand/jungle,
 /area/surface/jungle/vault)
 "qLa" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
@@ -46141,7 +46141,7 @@
 /area/medical/sleeper)
 "rbL" = (
 /obj/item/device/maracas,
-/turf/unsimulated/floor/jungle/sand,
+/turf/unsimulated/floor/planetary/sand/jungle,
 /area/surface/jungle/vault)
 "rbO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -55057,7 +55057,7 @@
 	},
 /area/maintenance/disposal)
 "unv" = (
-/turf/unsimulated/floor/jungle/sand,
+/turf/unsimulated/floor/planetary/sand/jungle,
 /area/surface/jungle/vault)
 "unD" = (
 /obj/structure/cable/yellow{
@@ -56990,7 +56990,7 @@
 /area/security/perma)
 "vba" = (
 /obj/structure/flora/tree/palm,
-/turf/unsimulated/floor/jungle/sand,
+/turf/unsimulated/floor/planetary/sand/jungle,
 /area/surface/jungle/vault)
 "vbp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -57756,7 +57756,7 @@
 "vnq" = (
 /obj/structure/bed/chair/wood/normal,
 /mob/living/simple_animal/complex/capybara_wild,
-/turf/unsimulated/floor/jungle/sand,
+/turf/unsimulated/floor/planetary/sand/jungle,
 /area/surface/jungle/vault)
 "vnz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -59036,7 +59036,7 @@
 /area/engineering/reactor_room)
 "vIV" = (
 /obj/item/device/camera,
-/turf/unsimulated/floor/jungle/sand,
+/turf/unsimulated/floor/planetary/sand/jungle,
 /area/surface/jungle/vault)
 "vJe" = (
 /obj/structure/cable/yellow{
