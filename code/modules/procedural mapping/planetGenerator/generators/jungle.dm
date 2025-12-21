@@ -295,7 +295,7 @@
 	open_turf_types = list(
 		/turf/unsimulated/floor/planetary/grass = 7,
 		/turf/unsimulated/floor/jungle/mud = 2,
-		/turf/unsimulated/floor/jungle/water = 1
+		/turf/unsimulated/floor/planetary/water/jungle = 1
 	)
 	flora_spawn_list = list(
 		/obj/structure/flora/ausbushes/fullgrass = 25,
@@ -336,7 +336,7 @@
 // Cave biomes
 /datum/biome/cave/jungle
 	biome_temperature = T20C + 10
-	open_turf_types = list(/turf/unsimulated/floor/jungle/wasteland = 1)
+	open_turf_types = list(/turf/unsimulated/floor/planetary/wasteland/jungle = 1)
 	closed_turf_types = list(
 		/turf/unsimulated/mineral/random/cave = 5,
 		/turf/unsimulated/mineral/random/high_chance/cave = 1,
@@ -413,7 +413,7 @@
 /datum/biome/cave/jungle/wet
 	open_turf_types = list(
 		/turf/unsimulated/floor/jungle/mud = 8,
-		/turf/unsimulated/floor/jungle/water = 2
+		/turf/unsimulated/floor/planetary/water/jungle = 2
 	)
 	flora_spawn_chance = 35
 	flora_spawn_list = list(
@@ -446,8 +446,8 @@
 /datum/biome/cave/jungle/underground_river
 	open_turf_types = list(
 		/turf/unsimulated/floor/jungle/mud = 6,
-		/turf/unsimulated/floor/jungle/water = 3,
-		/turf/unsimulated/floor/jungle/water_deep = 1
+		/turf/unsimulated/floor/planetary/water/jungle = 3,
+		/turf/unsimulated/floor/planetary/water/jungle/deep = 1
 	)
 	flora_spawn_chance = 20
 	flora_spawn_list = list(

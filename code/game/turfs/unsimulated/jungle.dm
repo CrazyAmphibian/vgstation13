@@ -33,7 +33,7 @@
 		if(istype(T,/turf/unsimulated/floor/jungle))
 			var/turf/unsimulated/floor/jungle/JT=T
 			JT.plated_icon_override=former_icoover
-			if(former_icoover && istype(T,/turf/unsimulated/floor/jungle/path_plated))
+			if(former_icoover && istype(T,/turf/unsimulated/floor/planetary/path/jungle_plated))
 				JT.icon_state=former_icoover
 
 //gets drops when mined.
@@ -218,7 +218,7 @@ var/list/foliage_replacments=list(
 	oxygen = MOLES_JUNGLE_O2_STD
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
-	shovel_conversion_turf = /turf/unsimulated/floor/jungle/path
+	shovel_conversion_turf = /turf/unsimulated/floor/planetary/path/jungle
 	shovel_conversion_time = 2 SECONDS
 	var/obj/structure/ladder/jungle_tunnel/hashole=null
 
@@ -293,14 +293,19 @@ var/list/foliage_replacments=list(
 		to_chat(user,"<span class='warning'>Something hard blocks you from digging downwards.</span>")
 	return FALSE
 
-/turf/unsimulated/floor/jungle/path
+/turf/unsimulated/floor/planetary/dirt/no_dig
+
+/turf/unsimulated/floor/planetary/dirt/no_dig/can_dig_down(var/mob/user=null)
+	return FALSE
+
+/turf/unsimulated/floor/planetary/path/jungle
 	name="Compressed Dirt"
 	desc="Soil which has been pressed down into a hard, smooth surface."
 	icon='icons/turf/floors.dmi'
 	icon_state = "asteroid0"
 	construction_allowed=TRUE
 
-/turf/unsimulated/floor/jungle/path/attackby(obj/item/C as obj, mob/user as mob)
+/turf/unsimulated/floor/planetary/path/jungle/attackby(obj/item/C as obj, mob/user as mob)
 	.=..()
 	if(!C || !user)
 		return 0
@@ -308,7 +313,7 @@ var/list/foliage_replacments=list(
 		var/obj/item/stack/tile/T = C
 		if(T.use(1))
 			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
-			ChangeTurf(/turf/unsimulated/floor/jungle/path_plated)
+			ChangeTurf(/turf/unsimulated/floor/planetary/path/jungle_plated)
 			plane=TURF_PLANE
 			remove_paint_overlay()
 			update_icon()
@@ -323,10 +328,10 @@ var/list/foliage_replacments=list(
 			ChangeTurf(/turf/unsimulated/floor/planetary/dirt/jungle)
 
 
-/turf/unsimulated/floor/jungle/path/can_place_cables()
+/turf/unsimulated/floor/planetary/path/jungle/can_place_cables()
 	return TRUE
 
-/turf/unsimulated/floor/jungle/path/ex_act(severity)
+/turf/unsimulated/floor/planetary/path/jungle/ex_act(severity)
 	switch(severity)
 		if(1)
 			ChangeTurf(/turf/unsimulated/floor/planetary/dirt/jungle)
@@ -338,7 +343,7 @@ var/list/foliage_replacments=list(
 				ChangeTurf(/turf/unsimulated/floor/planetary/dirt/jungle)
 
 
-/turf/unsimulated/floor/jungle/path_plated
+/turf/unsimulated/floor/planetary/path/jungle_plated
 	name="Plated Soil"
 	desc="Compressed soil which has plated atop it to protect items underneath it."
 	icon='icons/turf/floors.dmi'
@@ -346,17 +351,17 @@ var/list/foliage_replacments=list(
 	plane = TURF_PLANE
 	DIGGING_BLOCKED = "Something hard blocks the way."
 
-/turf/unsimulated/floor/jungle/path_plated/New()
+/turf/unsimulated/floor/planetary/path/jungle_plated/New()
 	..()
 	if(plated_icon_override)
 		icon_state=plated_icon_override
 
-/turf/unsimulated/floor/jungle/path_plated/attackby(obj/item/C as obj, mob/user as mob)
+/turf/unsimulated/floor/planetary/path/jungle_plated/attackby(obj/item/C as obj, mob/user as mob)
 	..()
 	if(!C || !user)
 		return 0
 	if(iscrowbar(C))
-		ChangeTurf(/turf/unsimulated/floor/jungle/path)
+		ChangeTurf(/turf/unsimulated/floor/planetary/path/jungle)
 		new /obj/item/stack/tile/metal(src,1)
 		plane=PLATING_PLANE
 		remove_paint_overlay()
@@ -365,16 +370,16 @@ var/list/foliage_replacments=list(
 		levelupdate()
 		playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
 
-/turf/unsimulated/floor/jungle/path_plated/ex_act(severity)
+/turf/unsimulated/floor/planetary/path/jungle_plated/ex_act(severity)
 	switch(severity)
 		if(1)
-			ChangeTurf(/turf/unsimulated/floor/jungle/path)
+			ChangeTurf(/turf/unsimulated/floor/planetary/path/jungle)
 		if(2)
 			if(prob(50))
-				ChangeTurf(/turf/unsimulated/floor/jungle/path)
+				ChangeTurf(/turf/unsimulated/floor/planetary/path/jungle)
 		if(3)
 			if(prob(20))
-				ChangeTurf(/turf/unsimulated/floor/jungle/path)
+				ChangeTurf(/turf/unsimulated/floor/planetary/path/jungle)
 
 
 
@@ -409,7 +414,7 @@ var/list/foliage_replacments=list(
 /atom/movable/junglewateroverlay/clean_act(var/cleanliness)
 	return
 	
-/turf/unsimulated/floor/jungle/water
+/turf/unsimulated/floor/planetary/water/jungle
 	name="Water"
 	desc="It's about knee-height. Probably not safe to drink from."
 	icon = 'icons/misc/beach.dmi'
@@ -425,7 +430,7 @@ var/list/foliage_replacments=list(
 	edge_overlay_type = /obj/effect/edge_overlay/water
 	var/atom/movable/junglewateroverlay/wateroverlay=null
 	
-/turf/unsimulated/floor/jungle/water/New()
+/turf/unsimulated/floor/planetary/water/jungle/New()
 	..()
 	update_icon()
 	footstep_sound = sounds_water
@@ -435,11 +440,11 @@ var/list/foliage_replacments=list(
 	icon_state = "mud"
 	wateroverlay=new(src)
 
-/turf/unsimulated/floor/jungle/water/Destroy()
+/turf/unsimulated/floor/planetary/water/jungle/Destroy()
 	qdel(wateroverlay)
 	..()
 
-/turf/unsimulated/floor/jungle/water_deep
+/turf/unsimulated/floor/planetary/water/jungle/deep
 	name="Deep Water"
 	desc="It's nearly up to your shoulders. Probably not safe to drink from."
 	icon = 'icons/misc/beach.dmi'
@@ -455,7 +460,7 @@ var/list/foliage_replacments=list(
 	edge_overlay_type = /obj/effect/edge_overlay/water/deep
 	var/atom/movable/junglewateroverlay/wateroverlay=null
 	
-/turf/unsimulated/floor/jungle/water_deep/New()
+/turf/unsimulated/floor/planetary/water/jungle/deep/New()
 	..()
 	update_icon()
 	footstep_sound = sounds_water
@@ -467,7 +472,7 @@ var/list/foliage_replacments=list(
 	icon='icons/turf/planetary/jungle.dmi'
 	icon_state = "mud"
 
-/turf/unsimulated/floor/jungle/water_deep/Destroy()
+/turf/unsimulated/floor/planetary/water/jungle/deep/Destroy()
 	qdel(wateroverlay)
 	..()
 
@@ -702,19 +707,6 @@ var/list/foliage_replacments=list(
 /turf/unsimulated/floor/jungle/bedrock/can_place_cables()
 	return TRUE
 
-/turf/unsimulated/floor/jungle/worldborder
-	density=TRUE
-	opacity=TRUE
-	name="Strangely hard and tall rock"
-	desc="you cannot go this way..."
-	icon='icons/turf/walls.dmi'
-	icon_state="rock"
-
-/turf/unsimulated/floor/jungle/worldborder/ex_act(severity)
-	return
-/turf/unsimulated/floor/jungle/worldborder/attackby(obj/item/C as obj, mob/user as mob)
-	return
-
 
 //so mining the planetside roid doesn't cause ZAS hell
 /turf/unsimulated/mineral/random/jungle
@@ -722,22 +714,26 @@ var/list/foliage_replacments=list(
 	oxygen = MOLES_JUNGLE_O2_STD
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
-	mined_type = /turf/unsimulated/floor/jungle/path
+	mined_type = /turf/unsimulated/floor/planetary/path/jungle
 
 /turf/unsimulated/mineral/random/high_chance/jungle
 	temperature = T_JUNGLE
 	oxygen = MOLES_JUNGLE_O2_STD
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
-	mined_type = /turf/unsimulated/floor/jungle/path
+	mined_type = /turf/unsimulated/floor/planetary/path/jungle
 
-/turf/unsimulated/floor/jungle/wasteland
+/turf/unsimulated/floor/planetary/wasteland/jungle
 	name="wasteland"
 	desc="A dry, cracked surface with little vegetation."
 	icon = 'icons/turf/planetary/jungle.dmi'
 	icon_state = "wasteland"
+	temperature = T_JUNGLE
+	oxygen = MOLES_JUNGLE_O2_STD
+	nitrogen = MOLES_JUNGLE_N2_STD
+	carbon_dioxide = MOLES_JUNGLE_CO2_STD
 
-/turf/unsimulated/floor/jungle/wasteland/New()
+/turf/unsimulated/floor/planetary/wasteland/jungle/New()
 	..()
 	icon_state="wasteland[rand(0,12)]"
 

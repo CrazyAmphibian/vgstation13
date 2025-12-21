@@ -63,7 +63,7 @@
 	var/num_ass_replacments=0
 	for(var/area/surface/jungle/mining/unexplored/A in areas)
 		for(var/turf/unsimulated/floor/asteroid/T in A.contents)
-			new /turf/unsimulated/floor/jungle/path(T)
+			new /turf/unsimulated/floor/planetary/path/jungle(T)
 			num_ass_replacments++
 	world.log << "replaced [num_ass_replacments] asteroid tiles to be jungle."
 

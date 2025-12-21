@@ -11,11 +11,11 @@
 /obj/item/weapon/spacecash/c10,
 /obj/item/weapon/spacecash/c10,
 /obj/abstract/loot_spawner/entertainment,
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "c" = (
 /obj/abstract/loot_spawner/trash,
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "d" = (
 /obj/structure/flora/tree/shitty,
@@ -27,7 +27,7 @@
 /turf/unsimulated/floor/planetary/grass/jungle,
 /area/exposed_ruin)
 "f" = (
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "g" = (
 /obj/structure/fence/corner,
@@ -36,14 +36,14 @@
 	desc = "A warning sign which reads 'DANGER:SPIDERS'.";
 	icon_state = "fauna1"
 	},
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "i" = (
 /obj/structure/fence/corner,
 /obj/structure/fence/corner{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "j" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -65,10 +65,10 @@
 /obj/structure/bed/chair/office{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "q" = (
-/turf/unsimulated/floor/jungle/water,
+/turf/unsimulated/floor/planetary/water/jungle,
 /area/exposed_ruin)
 "w" = (
 /turf/unsimulated/floor/planetary/grass/jungle,
@@ -86,20 +86,20 @@
 /obj/structure/fence{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "A" = (
 /obj/structure/fence/corner,
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "B" = (
 /obj/structure/table,
 /obj/abstract/loot_spawner/food_or_drink,
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "D" = (
 /obj/abstract/loot_spawner/structure,
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "F" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -111,7 +111,7 @@
 	icon_state = "zoo";
 	name = "decal"
 	},
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "H" = (
 /turf/template_noop,
@@ -125,13 +125,13 @@
 /area/exposed_ruin)
 "L" = (
 /obj/structure/fence,
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "M" = (
 /obj/structure/fence/corner{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "N" = (
 /turf/template_noop,
@@ -147,11 +147,11 @@
 	pixel_x = -5;
 	pixel_y = 2
 	},
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "S" = (
 /obj/structure/fence/door,
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "T" = (
 /mob/living/simple_animal/hostile/asteroid/basilisk/gorgon,
@@ -172,7 +172,7 @@
 	desc = "A warning sign which reads 'DANGER:SPIDERS'.";
 	icon_state = "fauna3"
 	},
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "Z" = (
 /obj/structure/flora/ausbushes/reedbush,

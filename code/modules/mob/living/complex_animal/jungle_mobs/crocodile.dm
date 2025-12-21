@@ -24,11 +24,11 @@
 	if(prob(50))
 		return
 	var/list/watertiles=list()
-	for(var/turf/unsimulated/floor/jungle/water/W in cache_objects_in_view)
+	for(var/turf/unsimulated/floor/planetary/water/jungle/W in cache_objects_in_view)
 		watertiles+=W
 	if(!watertiles.len)
 		return
-	var/turf/unsimulated/floor/jungle/water/waterspot = pick(watertiles)
+	var/turf/unsimulated/floor/planetary/water/jungle/waterspot = pick(watertiles)
 	walk_to(src,waterspot)
 
 /mob/living/simple_animal/complex/crocodile/attack(var/victim)
@@ -52,7 +52,7 @@
 			if(1)
 				emote("me", MESSAGE_HEAR, "growls.")
 			if(2)
-				if(loc.type==/turf/unsimulated/floor/jungle/water)
+				if(loc.type==/turf/unsimulated/floor/planetary/water/jungle)
 					emote("me", MESSAGE_HEAR, "splashes.")
 				else
 					emote("me", MESSAGE_HEAR, "growls.")

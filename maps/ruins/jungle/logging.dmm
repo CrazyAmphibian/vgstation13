@@ -21,10 +21,10 @@
 /obj/structure/fence/cut/medium{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "h" = (
-/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/planetary/path/jungle,
 /area/exposed_ruin)
 "i" = (
 /obj/abstract/loot_spawner/medical,
@@ -32,7 +32,7 @@
 /area/exposed_ruin)
 "k" = (
 /obj/structure/fence,
-/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/planetary/path/jungle,
 /area/exposed_ruin)
 "l" = (
 /obj/structure/rack,
@@ -45,7 +45,7 @@
 /area/exposed_ruin)
 "m" = (
 /obj/structure/fence/cut/medium,
-/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/planetary/path/jungle,
 /area/exposed_ruin)
 "o" = (
 /obj/effect/decal/warning_stripes{
@@ -56,13 +56,13 @@
 /area/exposed_ruin)
 "s" = (
 /obj/structure/fence/corner,
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "t" = (
 /obj/structure/fence/cut/large{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/planetary/path/jungle,
 /area/exposed_ruin)
 "w" = (
 /turf/template_noop,
@@ -71,7 +71,7 @@
 /obj/structure/fence/cut/large{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "z" = (
 /turf/unsimulated/floor/planetary/dirt,
@@ -114,7 +114,7 @@
 	pixel_x = 12;
 	pixel_y = 8
 	},
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "G" = (
 /obj/structure/rack,
@@ -129,7 +129,7 @@
 /obj/structure/fence/corner{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "I" = (
 /obj/structure/flora/tree_stump,
@@ -139,7 +139,7 @@
 /obj/structure/fence{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "K" = (
 /obj/effect/decal/warning_stripes{
@@ -150,7 +150,7 @@
 /area/exposed_ruin)
 "M" = (
 /obj/structure/fence,
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "N" = (
 /obj/structure/rack,
@@ -163,10 +163,10 @@
 /area/exposed_ruin)
 "O" = (
 /obj/structure/fence/cut/medium,
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "R" = (
-/turf/unsimulated/floor/jungle/path_plated,
+/turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/exposed_ruin)
 "S" = (
 /obj/effect/decal/warning_stripes{
@@ -180,7 +180,7 @@
 /obj/structure/fence{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/path,
+/turf/unsimulated/floor/planetary/path/jungle,
 /area/exposed_ruin)
 "U" = (
 /obj/effect/decal/warning_stripes{
