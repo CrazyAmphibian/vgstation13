@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/unsimulated/floor/jungle/dirt,
+/turf/unsimulated/floor/planetary/dirt/jungle,
 /area/exposed_ruin)
 "b" = (
 /obj/structure/table,
@@ -155,7 +155,7 @@
 /area/exposed_ruin)
 "T" = (
 /mob/living/simple_animal/hostile/asteroid/basilisk/gorgon,
-/turf/unsimulated/floor/jungle/dirt,
+/turf/unsimulated/floor/planetary/dirt/jungle,
 /area/exposed_ruin)
 "U" = (
 /mob/living/simple_animal/cow/chocolate,
@@ -163,7 +163,7 @@
 /area/exposed_ruin)
 "V" = (
 /mob/living/simple_animal/hostile/asteroid/basilisk,
-/turf/unsimulated/floor/jungle/dirt,
+/turf/unsimulated/floor/planetary/dirt/jungle,
 /area/exposed_ruin)
 "Y" = (
 /obj/structure/fence/corner,

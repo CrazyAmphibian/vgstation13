@@ -151,7 +151,7 @@ var/list/foliage_replacments=list(
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
 	intact=0
-	pickaxe_conversion_turf = /turf/unsimulated/floor/jungle/dirt
+	pickaxe_conversion_turf = /turf/unsimulated/floor/planetary/dirt/jungle
 	pickaxe_conversion_time = 2 SECONDS
 
 /turf/unsimulated/floor/planetary/grass/jungle/New(var/loc)
@@ -181,16 +181,6 @@ var/list/foliage_replacments=list(
 	for(var/obj/structure/flora/F in contents)
 		qdel(F)
 
-/turf/unsimulated/floor/planetary/grass/jungle/canBuildLattice()
-	for (var/obj/structure/flora/F in contents)
-		return FALSE
-	return TRUE
-/turf/unsimulated/floor/planetary/grass/jungle/canBuildPlating()
-	return canBuildLattice()
-/turf/unsimulated/floor/planetary/grass/jungle/canBuildCatwalk()
-	return canBuildLattice()
-
-
 /turf/unsimulated/floor/planetary/grass/jungle/no_flora
 	icon_state="grass_alt1" //uses an alt texture at first so that it appears different while mapping. this will correct itself when it spawns.
 
@@ -219,33 +209,38 @@ var/list/foliage_replacments=list(
 	icon_state = "concrete"
 	DIGGING_BLOCKED = "Something hard blocks the way."
 
-/turf/unsimulated/floor/jungle/concrete/ex_act(severity)
-	switch(severity)
-		if(1)
-			if(prob(50))
-				ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
-		if(2)
-			if(prob(25))
-				ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
-		if(3)
-			if(prob(5))
-				ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
 
-
-/turf/unsimulated/floor/jungle/dirt
+/turf/unsimulated/floor/planetary/dirt/jungle
 	name="Soil"
 	desc="A mixture of sediments, clays, and decomposed matter."
 	icon_state = "ironsand1"
+	temperature = T_JUNGLE
+	oxygen = MOLES_JUNGLE_O2_STD
+	nitrogen = MOLES_JUNGLE_N2_STD
+	carbon_dioxide = MOLES_JUNGLE_CO2_STD
+	shovel_conversion_turf = /turf/unsimulated/floor/jungle/path
+	shovel_conversion_time = 2 SECONDS
 	var/obj/structure/ladder/jungle_tunnel/hashole=null
-	construction_allowed=TRUE
 
-/turf/unsimulated/floor/jungle/dirt/examine()
+/turf/unsimulated/floor/planetary/dirt/jungle/examine()
 	..()
 	if(hashole)
 		to_chat(usr,"there's a hole leading underground.")
 
-/turf/unsimulated/floor/jungle/dirt/attackby(obj/item/C as obj, mob/user as mob)
-	..()
+/turf/unsimulated/floor/planetary/dirt/jungle/item_shovel_ability(var/obj/item/I,/var/mob/user) //prevent turf conversion if there's a hole
+	if(hashole)
+		return 0.0
+	return ..()
+
+/turf/unsimulated/floor/planetary/dirt/jungle/shovel_modify(var/obj/item/I,var/mob/user,var/speedfactor=1.0)
+	to_chat(user, "<span class='notice'>You start packing down \the [src]</span>")
+	if(do_after(user, src, shovel_conversion_time/speedfactor ))
+		ChangeTurf(shovel_conversion_turf)
+		return TRUE
+	else
+		return FALSE
+
+/turf/unsimulated/floor/planetary/dirt/jungle/attackby(obj/item/C as obj, mob/user as mob)
 	if(!C || !user)
 		return 0
 	if(C.type== /obj/item/stack/tile/grass && !hashole)
@@ -253,13 +248,7 @@ var/list/foliage_replacments=list(
 		if(T.use(1))
 			ChangeTurf(/turf/unsimulated/floor/planetary/grass/jungle/no_flora)
 			return TRUE
-	var/s=0.0
-	s=item_terraforming_isshovel(C)
-	if(s>0.0 && !hashole)
-		to_chat(user, "<span class='notice'>You start packing down the soil</span>")
-		if(do_after(user, src, 20/s ))
-			ChangeTurf(/turf/unsimulated/floor/jungle/path)
-	s=item_terraforming_ispickaxe(C)
+	var/s=item_pickaxe_ability(C)
 	if(s>0.0 && !hashole && can_dig_down(user) )
 		to_chat(usr,"you start digging downwards...")
 		if(do_after(user, src, 80/s ))
@@ -274,7 +263,8 @@ var/list/foliage_replacments=list(
 				T2?.ChangeTurf(/turf/unsimulated/floor/jungle/bedrock)
 				var/turf/unsimulated/floor/jungle/bedrock/TT=T2
 				TT?.hashole=l_tunnel
-			return
+				return TRUE
+		return FALSE
 	if(C.type== /obj/item/stack/ore/glass && hashole)
 		var/obj/item/stack/ore/glass/T = C
 		if(T.amount<25)
@@ -289,8 +279,11 @@ var/list/foliage_replacments=list(
 				qdel(hashole.down)
 				qdel(hashole)
 				hashole=null
+				return TRUE
+		return FALSE
+	return ..()
 
-/turf/unsimulated/floor/jungle/dirt/proc/can_dig_down(var/mob/user=null)
+/turf/unsimulated/floor/planetary/dirt/jungle/proc/can_dig_down(var/mob/user=null)
 	var/turf/T=locate(x,y,z==1 ? 2 : 6)
 	if(istype(T,/turf/unsimulated/floor/jungle))
 		return TRUE	
@@ -327,7 +320,7 @@ var/list/foliage_replacments=list(
 	if(s>0.0)
 		to_chat(user, "<span class='notice'>You start breaking up the soil</span>")
 		if(do_after(user, src, 20/s ))
-			ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
+			ChangeTurf(/turf/unsimulated/floor/planetary/dirt/jungle)
 
 
 /turf/unsimulated/floor/jungle/path/can_place_cables()
@@ -336,13 +329,13 @@ var/list/foliage_replacments=list(
 /turf/unsimulated/floor/jungle/path/ex_act(severity)
 	switch(severity)
 		if(1)
-			ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
+			ChangeTurf(/turf/unsimulated/floor/planetary/dirt/jungle)
 		if(2)
 			if(prob(66))
-				ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
+				ChangeTurf(/turf/unsimulated/floor/planetary/dirt/jungle)
 		if(3)
 			if(prob(33))
-				ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
+				ChangeTurf(/turf/unsimulated/floor/planetary/dirt/jungle)
 
 
 /turf/unsimulated/floor/jungle/path_plated
@@ -655,8 +648,8 @@ var/list/foliage_replacments=list(
 					l_surf.down=l_tunnel
 
 					var/turf/T2=locate(x,y,z==2 ? 1 : 4)
-					T2?.ChangeTurf(/turf/unsimulated/floor/jungle/dirt)
-					var/turf/unsimulated/floor/jungle/dirt/TT=T2
+					T2?.ChangeTurf(/turf/unsimulated/floor/planetary/dirt/jungle)
+					var/turf/unsimulated/floor/planetary/dirt/jungle/TT=T2
 					TT?.hashole=l_surf
 					hashole=l_tunnel
 				else

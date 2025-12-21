@@ -52,8 +52,8 @@
 		var/turf/unsimulated/floor/jungle/bedrock/TT=T
 		TT.hashole=null
 		TT.update_icon()
-	if(T.type==/turf/unsimulated/floor/jungle/dirt)
-		var/turf/unsimulated/floor/jungle/dirt/TT=T
+	if(T.type==/turf/unsimulated/floor/planetary/dirt/jungle)
+		var/turf/unsimulated/floor/planetary/dirt/jungle/TT=T
 		TT.hashole=null
 	
 
@@ -61,8 +61,8 @@
 
 /obj/structure/ladder/jungle_tunnel/mapped/New(var/loc)
 	..()
-	if(istype(loc,/turf/unsimulated/floor/jungle/dirt))
-		var/turf/unsimulated/floor/jungle/dirt/TT=loc
+	if(istype(loc,/turf/unsimulated/floor/planetary/dirt/jungle))
+		var/turf/unsimulated/floor/planetary/dirt/jungle/TT=loc
 		TT.hashole=src
 		var/turf/T=locate(x,y,z==1 ? 2 : 6)
 		var/obj/structure/ladder/jungle_tunnel/mapped/MJT = (locate(/obj/structure/ladder/jungle_tunnel/mapped) in T.contents)

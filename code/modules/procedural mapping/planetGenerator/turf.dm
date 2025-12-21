@@ -26,6 +26,20 @@
 	var/shovel_conversion_turf=null
 	var/shovel_conversion_time=0
 
+/turf/unsimulated/floor/planetary/canBuildLattice()
+	if(!(locate(/obj/structure/lattice) in contents))
+		return BUILD_SUCCESS
+	return BUILD_FAILURE
+
+/turf/unsimulated/floor/planetary/canBuildPlating()
+	if(locate(/obj/structure/lattice) in contents)
+		return BUILD_SUCCESS
+	return BUILD_FAILURE
+
+/turf/unsimulated/floor/planetary/canBuildCatwalk()
+	if(locate(/obj/structure/lattice) in contents)
+		return BUILD_SUCCESS
+	return BUILD_FAILURE
 
 /turf/unsimulated/floor/planetary/proc/item_shovel_ability(var/obj/item/I,var/mob/user) // returns a number in the form of a divisor applied to turf manipulation duration. this means that lower numbers are worse. 0 means it just can't do it, and should be ignored, also because div 0.
 	if(!I || !user)
@@ -51,7 +65,7 @@
 
 /turf/unsimulated/floor/planetary/proc/shovel_modify(var/obj/item/I,var/mob/user,var/speedfactor=1.0)
 	to_chat(user, "<span class='notice'>You start digging into \the [src]</span>")
-	if(do_after(user, src, shovel_conversion_time/shovel_factor ))
+	if(do_after(user, src, shovel_conversion_time/speedfactor ))
 		ChangeTurf(shovel_conversion_turf)
 		return TRUE
 	else
@@ -59,7 +73,7 @@
 
 /turf/unsimulated/floor/planetary/proc/pickaxe_modify(var/obj/item/I,var/mob/user,var/speedfactor=1.0)
 	to_chat(user, "<span class='notice'>You start breaking up \the [src]</span>")
-	if(do_after(user, src, pickaxe_conversion_time/pickaxe_factor ))
+	if(do_after(user, src, pickaxe_conversion_time/speedfactor ))
 		ChangeTurf(pickaxe_conversion_turf)
 		return TRUE
 	else
