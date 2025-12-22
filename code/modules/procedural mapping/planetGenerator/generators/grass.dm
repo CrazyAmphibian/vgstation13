@@ -336,7 +336,7 @@
 
 /datum/biome/cave/grass/wet
 	open_turf_types = list(
-		/turf/unsimulated/floor/jungle/mud = 3,
+		/turf/unsimulated/floor/planetary/mud/jungle = 3,
 		/turf/unsimulated/floor/planetary/water/jungle = 2,
 		/turf/unsimulated/floor/planetary/dirt = 20,
 		)

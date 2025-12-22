@@ -21,6 +21,8 @@
 	nitrogen = MOLES_N2STANDARD
 	temperature = T20C
 	can_border_transition=TRUE //allows zlevel transitions. you must also enable it in the zlevel.
+	var/plated_icon_override_icon=null //set to an icon path to be used when you plate a tile
+	var/plated_icon_override_state=null //ditto.
 	var/pickaxe_conversion_turf=null
 	var/pickaxe_conversion_time=0
 	var/shovel_conversion_turf=null
@@ -44,9 +46,9 @@
 /turf/unsimulated/floor/planetary/proc/item_shovel_ability(var/obj/item/I,var/mob/user) // returns a number in the form of a divisor applied to turf manipulation duration. this means that lower numbers are worse. 0 means it just can't do it, and should be ignored, also because div 0.
 	if(!I || !user)
 		return 0.0
-	if(istype(C,/obj/item/weapon/pickaxe/shovel))
-		return (1/C.toolspeed)/2.5
-	if(istype(C,/obj/item/weapon/kitchen/utensil/spoon) || istype(C,/obj/item/weapon/kitchen/utensil/spork))  //because it's funny.
+	if(istype(I,/obj/item/weapon/pickaxe/shovel))
+		return (1/I.toolspeed)/2.5
+	if(istype(I,/obj/item/weapon/kitchen/utensil/spoon) || istype(I,/obj/item/weapon/kitchen/utensil/spork))  //because it's funny.
 		return 0.1
 	return 0.0
 	

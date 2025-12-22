@@ -294,7 +294,7 @@
 /datum/biome/jungle/swamp
 	open_turf_types = list(
 		/turf/unsimulated/floor/planetary/grass = 7,
-		/turf/unsimulated/floor/jungle/mud = 2,
+		/turf/unsimulated/floor/planetary/mud/jungle = 2,
 		/turf/unsimulated/floor/planetary/water/jungle = 1
 	)
 	flora_spawn_list = list(
@@ -412,7 +412,7 @@
 
 /datum/biome/cave/jungle/wet
 	open_turf_types = list(
-		/turf/unsimulated/floor/jungle/mud = 8,
+		/turf/unsimulated/floor/planetary/mud/jungle = 8,
 		/turf/unsimulated/floor/planetary/water/jungle = 2
 	)
 	flora_spawn_chance = 35
@@ -445,7 +445,7 @@
 
 /datum/biome/cave/jungle/underground_river
 	open_turf_types = list(
-		/turf/unsimulated/floor/jungle/mud = 6,
+		/turf/unsimulated/floor/planetary/mud/jungle = 6,
 		/turf/unsimulated/floor/planetary/water/jungle = 3,
 		/turf/unsimulated/floor/planetary/water/jungle/deep = 1
 	)

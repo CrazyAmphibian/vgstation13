@@ -122,7 +122,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (NORTH)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "acP" = (
 /obj/structure/cable/yellow{
@@ -158,7 +158,7 @@
 /area/centcom/evac)
 "ady" = (
 /obj/structure/hanging_lantern,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "adI" = (
 /obj/structure/cult_legacy/tome,
@@ -521,7 +521,7 @@
 /obj/machinery/camera{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/prison_yard)
 "alk" = (
 /obj/structure/closet/secure_closet/engineering_electrical,
@@ -927,7 +927,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (EAST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "asw" = (
 /obj/structure/table/glass,
@@ -1047,7 +1047,7 @@
 /turf/simulated/floor/plating,
 /area/prison/solitary)
 "auf" = (
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "auw" = (
 /obj/structure/cable/yellow{
@@ -1114,7 +1114,7 @@
 "avT" = (
 /obj/item/weapon/pickaxe,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "avW" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
@@ -1410,7 +1410,7 @@
 /area/surface/jungle/mining)
 "aBj" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/visible,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "aBs" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -2411,7 +2411,7 @@
 /obj/structure/sign/directions/carg{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/fenced)
 "aVa" = (
 /obj/machinery/light,
@@ -2916,7 +2916,7 @@
 "bfz" = (
 /obj/structure/table,
 /obj/abstract/map/spawner/maint,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "bfL" = (
 /obj/effect/decal/cleanable/cobweb2,
@@ -3319,7 +3319,7 @@
 /obj/machinery/atmospherics/pipe/simple/filtering/visible{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "bmS" = (
 /obj/structure/table,
@@ -3599,7 +3599,7 @@
 	dir = 8;
 	icon_state = "warning_corner"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/roid_prep)
 "brK" = (
 /obj/machinery/atmospherics/pipe/simple/filtering/hidden,
@@ -3728,7 +3728,7 @@
 /area/crew_quarters)
 "btP" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "btQ" = (
 /obj/machinery/door/window{
@@ -3809,7 +3809,7 @@
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 6
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/reactor_outside)
 "bvv" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -3942,7 +3942,7 @@
 /area/medical/storage)
 "bxo" = (
 /obj/machinery/computer/tetris,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground/zoned/ghetto_research)
 "bxu" = (
 /obj/machinery/requests_console{
@@ -4238,7 +4238,7 @@
 /area/engineering/atmos)
 "bBz" = (
 /obj/item/clothing/gloves/yellow,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "bBC" = (
 /obj/structure/grille/broken,
@@ -4333,7 +4333,7 @@
 /area/research_outpost/xenobot)
 "bCW" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "bDb" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
@@ -4441,7 +4441,7 @@
 	access_not_dir = 4
 	},
 /obj/item/stack/ore/glass,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "bFn" = (
 /obj/structure/window/full/reinforced/plasma/vox,
@@ -4581,7 +4581,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (SOUTHWEST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "bIv" = (
 /turf/simulated/floor{
@@ -4990,7 +4990,7 @@
 /obj/structure/hanging_lantern{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "bPO" = (
 /obj/item/device/assembly/signaler{
@@ -5063,7 +5063,7 @@
 	},
 /area/crew_quarters/courtroom)
 "bRe" = (
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "bRp" = (
 /obj/structure/bed/chair{
@@ -5074,7 +5074,7 @@
 	},
 /area/centcom/control)
 "bRI" = (
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "bRL" = (
 /obj/machinery/computer/secure_data,
@@ -5784,7 +5784,7 @@
 	icon_state = "warning"
 	},
 /obj/machinery/light,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "cej" = (
 /obj/structure/cable/yellow{
@@ -5903,7 +5903,7 @@
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 10
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/sme_outside)
 "chk" = (
 /obj/structure/cable/yellow{
@@ -6105,7 +6105,7 @@
 /area/lawoffice)
 "cjH" = (
 /obj/structure/fence,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/fenced)
 "cjI" = (
 /obj/machinery/door/unpowered/shuttle,
@@ -7350,7 +7350,7 @@
 	icon_state = "warning";
 	tag = "icon-warning"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "cGl" = (
 /obj/machinery/chem_dispenser/mapping,
@@ -7411,7 +7411,7 @@
 "cHD" = (
 /obj/item/weapon/reagent_containers/syringe,
 /obj/item/stack/cable_coil,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "cHO" = (
 /obj/machinery/door/airlock/glass_medical{
@@ -7446,7 +7446,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (WEST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "cIe" = (
 /obj/structure/cable/yellow{
@@ -7539,7 +7539,7 @@
 	dir = 1;
 	access_not_dir = 4
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "cJG" = (
 /obj/structure/shuttle/diag_wall/smooth/black{
@@ -8001,7 +8001,7 @@
 /area/security/brig)
 "cRm" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "cRp" = (
 /obj/item/weapon/boomerang/toy,
@@ -8411,7 +8411,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/arrival/station)
 "daH" = (
 /obj/structure/grille/window_spawner/reinforced,
@@ -8658,7 +8658,7 @@
 	},
 /area/bridge)
 "deH" = (
-/turf/unsimulated/floor/jungle/mud,
+/turf/unsimulated/floor/planetary/mud/jungle,
 /area/surface/jungle)
 "deR" = (
 /obj/machinery/door/window{
@@ -8746,7 +8746,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (NORTHEAST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "dgu" = (
 /obj/machinery/door/airlock/glass_research{
@@ -8928,7 +8928,7 @@
 	dir = 1;
 	icon_state = "warning"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "dij" = (
 /turf/simulated/floor/carpet,
@@ -9790,7 +9790,7 @@
 /obj/machinery/atmospherics/binary/pump/on{
 	name = "Air to Distro"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "dzr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -9842,7 +9842,7 @@
 /area/crew_quarters/courtroom)
 "dzZ" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/sme_outside)
 "dAb" = (
 /obj/structure/table/reinforced,
@@ -9991,7 +9991,7 @@
 /area/science/chargebay)
 "dBT" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "dCb" = (
 /obj/docking_port/destination/pod2/transit{
@@ -10017,7 +10017,7 @@
 /obj/machinery/atmospherics/unary/portables_connector{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "dCE" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -10135,7 +10135,7 @@
 /area/library)
 "dFK" = (
 /obj/structure/fence/corner,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "dFP" = (
 /obj/structure/bed/chair,
@@ -10145,7 +10145,7 @@
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/reactor_outside)
 "dGA" = (
 /obj/structure/table,
@@ -10417,7 +10417,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/research/station)
 "dMN" = (
 /turf/simulated/wall/r_wall,
@@ -10499,7 +10499,7 @@
 /obj/effect/decal/cleanable/blood/gibs{
 	color = "#772222"
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "dOC" = (
 /obj/structure/ore_box,
@@ -11311,7 +11311,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/research/station)
 "eaR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -11837,7 +11837,7 @@
 /area/shuttle/alien/base)
 "ell" = (
 /obj/effect/decal/cleanable/cobweb2,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "elI" = (
 /obj/structure/fence{
@@ -11929,7 +11929,7 @@
 	current_temperature = 288.15;
 	on = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "emq" = (
 /obj/structure/cable/yellow{
@@ -12506,7 +12506,7 @@
 /obj/structure/fence/corner{
 	dir = 2
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "euQ" = (
 /obj/item/ammo_storage/magazine/m380auto,
@@ -12685,7 +12685,7 @@
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 9
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/reactor_outside)
 "eyl" = (
 /obj/structure/grille,
@@ -12726,7 +12726,7 @@
 	dir = 8;
 	icon_state = "warning"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "ezJ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -12818,7 +12818,7 @@
 /obj/structure/holohoop{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/prison_yard)
 "eBx" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
@@ -13871,7 +13871,7 @@
 /area/surface/jungle/fenced)
 "eZL" = (
 /obj/effect/decal/cleanable/blood/stattrack,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "eZQ" = (
 /obj/structure/bed/chair{
@@ -13883,7 +13883,7 @@
 /area/centcom/evac)
 "faf" = (
 /obj/machinery/atmospherics/unary/tank,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "fau" = (
 /obj/structure/bed/chair/wood/pew/right{
@@ -13912,7 +13912,7 @@
 /obj/structure/hanging_lantern{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "faP" = (
 /turf/simulated/floor{
@@ -13967,7 +13967,7 @@
 "fbU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/head/hardhat/orange,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "fcl" = (
 /obj/structure/shuttle/engine/propulsion,
@@ -14257,7 +14257,7 @@
 /area/surface/jungle/underground/zoned/ghettomining)
 "fhT" = (
 /obj/machinery/hologram/holopad,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/prison_yard)
 "fil" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -14313,7 +14313,7 @@
 /area/science/robotics)
 "fjc" = (
 /obj/structure/holohoop,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/prison_yard)
 "fji" = (
 /turf/unsimulated/floor{
@@ -14630,7 +14630,7 @@
 /obj/structure/hanging_lantern/dim{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "fpN" = (
 /obj/machinery/light_switch{
@@ -15078,7 +15078,7 @@
 	},
 /area/engineering/supermatter_room)
 "fxA" = (
-/turf/unsimulated/floor/jungle/mud,
+/turf/unsimulated/floor/planetary/mud/jungle,
 /area/surface/jungle/roid/vaults)
 "fxF" = (
 /obj/effect/landmark/corpse/russian,
@@ -15605,7 +15605,7 @@
 	dir = 4;
 	req_access_txt = "2"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "fHE" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -15701,7 +15701,7 @@
 	dir = 4;
 	name = "N2O Outlet Valve"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "fJG" = (
 /obj/structure/cable/yellow{
@@ -15796,7 +15796,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/arrival/station)
 "fLH" = (
 /obj/structure/table,
@@ -15836,7 +15836,7 @@
 /obj/structure/fence{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/fenced)
 "fMy" = (
 /turf/simulated/floor{
@@ -15936,7 +15936,7 @@
 /obj/machinery/atmospherics/unary/heat_exchanger{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "fOo" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
@@ -15978,7 +15978,7 @@
 	color = "#111111";
 	name = "Batarang"
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "fOJ" = (
 /turf/unsimulated/floor{
@@ -16165,7 +16165,7 @@
 	pixel_x = 13;
 	pixel_y = -8
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground/zoned/ghetto_research)
 "fSx" = (
 /obj/machinery/atmospherics/unary/cold_sink/freezer,
@@ -16302,7 +16302,7 @@
 /area/security/armory)
 "fUv" = (
 /obj/machinery/hologram/holopad,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "fUw" = (
 /obj/machinery/vending/medical,
@@ -16431,7 +16431,7 @@
 	dir = 4;
 	icon_state = "warning"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/roid_prep)
 "fXH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -16564,7 +16564,7 @@
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 10
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/reactor_outside)
 "gab" = (
 /turf/simulated/floor/server,
@@ -16645,7 +16645,7 @@
 /turf/simulated/floor,
 /area/research_outpost/entry)
 "gaW" = (
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/reactor_outside)
 "gba" = (
 /obj/machinery/alarm{
@@ -16849,7 +16849,7 @@
 /obj/structure/shuttle/engine/propulsion/right{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/arrival/station)
 "gfH" = (
 /obj/machinery/power/apc{
@@ -17473,7 +17473,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "grk" = (
 /obj/machinery/firealarm{
@@ -17984,7 +17984,7 @@
 	pixel_y = -3;
 	pixel_x = -5
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "gBK" = (
 /obj/structure/window/reinforced{
@@ -18054,7 +18054,7 @@
 /area/security/brig)
 "gDf" = (
 /obj/machinery/floodlight,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "gDj" = (
 /obj/machinery/atmospherics/pipe/manifold/insulated/hidden/blue,
@@ -18294,7 +18294,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/visible{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "gIk" = (
 /obj/machinery/door/airlock/glass{
@@ -18507,7 +18507,7 @@
 	target_pressure = 506.625;
 	on = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "gMK" = (
 /obj/machinery/door/airlock/glass_security{
@@ -18583,7 +18583,7 @@
 /obj/structure/sign/directions/trader{
 	pixel_y = -26
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "gOu" = (
 /mob/living/simple_animal/complex/panther,
@@ -18932,7 +18932,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground/zoned/ghetto_research)
 "gUo" = (
 /obj/structure/bed/chair/wood/normal{
@@ -19108,7 +19108,7 @@
 "gXN" = (
 /obj/structure/table,
 /obj/item/weapon/storage/toolbox/mechanical,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "gXP" = (
 /turf/simulated/wall,
@@ -19548,7 +19548,7 @@
 	},
 /turf/unsimulated/floor/planetary/path/jungle_plated{
 	icon_state = "junglestation8";
-	plated_icon_override = "junglestation8"
+	plated_icon_override_state = "junglestation8"
 	},
 /area/surface/jungle/zoned/outdoor_bar)
 "hgt" = (
@@ -19579,7 +19579,7 @@
 "hgV" = (
 /obj/structure/table,
 /obj/item/weapon/storage/toolbox/electrical,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "hhe" = (
 /turf/space,
@@ -19768,7 +19768,7 @@
 /area/security/perma)
 "hlL" = (
 /mob/living/simple_animal/complex/bear/panda,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "hlP" = (
 /obj/structure/window/reinforced{
@@ -19819,7 +19819,7 @@
 /obj/docking_port/destination/transport/station{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "hmB" = (
 /obj/machinery/computer/rdconsole/core,
@@ -20252,7 +20252,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "hvG" = (
 /obj/machinery/door/airlock/glass_medical{
@@ -20767,7 +20767,7 @@
 	dir = 6
 	},
 /obj/machinery/camera,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/reactor_outside)
 "hFN" = (
 /obj/structure/bed/chair/shuttle/red{
@@ -21122,7 +21122,7 @@
 	},
 /area/research_outpost/harvesting)
 "hML" = (
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/sme_outside)
 "hMO" = (
 /obj/machinery/computer/scan_consolenew,
@@ -21132,7 +21132,7 @@
 /area/shuttle/administration/centcom)
 "hMT" = (
 /obj/structure/ladder/jungle_tunnel/mapped,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "hMX" = (
 /obj/structure/table,
@@ -21619,14 +21619,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 5
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "hUZ" = (
 /obj/effect/decal/warning_stripes{
 	dir = 8;
 	icon_state = "warning"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "hVc" = (
 /obj/structure/table,
@@ -21668,7 +21668,7 @@
 /obj/machinery/atmospherics/unary/heat_exchanger{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "hVP" = (
 /obj/effect/decal/warning_stripes{
@@ -22064,7 +22064,7 @@
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "idU" = (
 /obj/machinery/door/airlock/glass{
@@ -22090,7 +22090,7 @@
 	dir = 4;
 	name = "Plasma Outlet Valve"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "ieR" = (
 /obj/machinery/door/airlock/research{
@@ -22190,7 +22190,7 @@
 /obj/machinery/camera{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "igT" = (
 /obj/structure/table,
@@ -22732,7 +22732,7 @@
 /obj/machinery/camera{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "irr" = (
 /obj/structure/cable/orange{
@@ -22870,7 +22870,7 @@
 	},
 /area/security/brig)
 "iuN" = (
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/prison_yard)
 "iuS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -22938,7 +22938,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (SOUTHEAST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "iwK" = (
 /obj/structure/window/reinforced{
@@ -23320,7 +23320,7 @@
 	pixel_y = -6;
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/fenced)
 "iDZ" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -23796,7 +23796,7 @@
 /obj/structure/hanging_lantern{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "iOJ" = (
 /obj/machinery/camera{
@@ -24088,7 +24088,7 @@
 	icon_state = "warning_corner";
 	tag = "icon-warning_corner (NORTH)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "iSJ" = (
 /obj/machinery/atmospherics/pipe/manifold/insulated/hidden/blue,
@@ -24117,7 +24117,7 @@
 /area/shuttle/ert/centcom)
 "iTa" = (
 /obj/structure/shuttle/engine/propulsion,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/supply)
 "iTk" = (
 /obj/structure/cable/orange{
@@ -24266,7 +24266,7 @@
 /area/centcom/suppy)
 "iVZ" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "iWr" = (
 /obj/structure/cable/yellow{
@@ -24325,7 +24325,7 @@
 	icon_state = "loading_area";
 	tag = "icon-loading_area (WEST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "iWK" = (
 /obj/structure/grille/window_spawner/reinforced/full,
@@ -24732,7 +24732,7 @@
 /obj/machinery/station_map,
 /turf/unsimulated/floor/planetary/path/jungle_plated{
 	icon_state = "junglestation4";
-	plated_icon_override = "junglestation4"
+	plated_icon_override_state = "junglestation4"
 	},
 /area/surface/jungle/zoned/outdoor_bar)
 "jdC" = (
@@ -24921,7 +24921,7 @@
 	icon_state = "warning_corner";
 	tag = "icon-warning_corner (EAST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "jgs" = (
 /obj/machinery/light/small{
@@ -24988,7 +24988,7 @@
 	icon_state = "warning"
 	},
 /obj/structure/fence/corner,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "jhX" = (
 /obj/structure/table/reinforced,
@@ -25207,7 +25207,7 @@
 	icon_state = "warning_corner";
 	tag = "icon-warning_corner (WEST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "jlm" = (
 /obj/structure/fence/corner{
@@ -25479,7 +25479,7 @@
 /area/research_outpost/med)
 "jrJ" = (
 /obj/structure/shuttle/diag_wall/smooth,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/escape_pod2)
 "jrQ" = (
 /obj/structure/rack/crate_shelf/centcomm_provided,
@@ -26355,7 +26355,7 @@
 	name = "KEEP CLEAR: DOCKING AREA";
 	icon_state = "shuttle2"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/fenced)
 "jIh" = (
 /obj/structure/table/woodentable,
@@ -26413,7 +26413,7 @@
 /obj/structure/hanging_lantern{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "jJt" = (
 /obj/structure/cable/yellow{
@@ -26593,7 +26593,7 @@
 /area/science/xenobiology/specimen_6)
 "jOq" = (
 /obj/abstract/map/spawner/misc/seeds,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "jOE" = (
 /obj/machinery/alarm/vox{
@@ -26604,7 +26604,7 @@
 /area/vox_trading_post/dorms)
 "jOM" = (
 /obj/effect/landmark/corpse/batman,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "jOP" = (
 /obj/structure/shuttle/diag_wall/black,
@@ -26892,7 +26892,7 @@
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 5
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/reactor_outside)
 "jSz" = (
 /obj/structure/cable/yellow{
@@ -27202,7 +27202,7 @@
 /obj/machinery/door/mineral/wood{
 	name = "Refinery"
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground/zoned/ghettomining)
 "jZa" = (
 /obj/machinery/conveyor{
@@ -27219,7 +27219,7 @@
 /area/science/hallway)
 "jZn" = (
 /obj/structure/fence,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "jZs" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
@@ -27254,7 +27254,7 @@
 /obj/item/tool/weldingtool,
 /obj/item/tool/wirecutters,
 /obj/item/stack/cable_coil,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "jZW" = (
 /obj/structure/bed/chair/shuttle/yellow,
@@ -27906,7 +27906,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (WEST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/roid_prep)
 "knp" = (
 /obj/structure/fence,
@@ -27933,7 +27933,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (EAST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "kot" = (
 /obj/structure/rack/crate_shelf/centcomm_provided,
@@ -28924,7 +28924,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "kIe" = (
 /obj/machinery/power/apc{
@@ -29110,7 +29110,7 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "kNj" = (
 /obj/structure/anomaly_container,
@@ -29231,7 +29231,7 @@
 /obj/machinery/camera{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/reactor_outside)
 "kPL" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -29344,7 +29344,7 @@
 	},
 /area/tdome/tdomeobserve)
 "kRi" = (
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /turf/unsimulated/mineral/jungle_underground,
 /area/surface/jungle/underground)
 "kRj" = (
@@ -29807,7 +29807,7 @@
 	pixel_x = -3;
 	pixel_y = 6
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "lcs" = (
 /obj/machinery/atmospherics/pipe/manifold/insulated/hidden/blue{
@@ -30182,7 +30182,7 @@
 	pixel_y = 26;
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "liR" = (
 /obj/machinery/camera{
@@ -30392,7 +30392,7 @@
 /area/centcom/living)
 "lnq" = (
 /obj/structure/shuttle/diag_wall/smooth,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/supply)
 "lnu" = (
 /obj/structure/table,
@@ -30529,7 +30529,7 @@
 	icon_state = "warning";
 	tag = "icon-warning"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "lqd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -30605,7 +30605,7 @@
 	icon_state = "loading_area";
 	tag = "icon-loading_area"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "lrG" = (
 /obj/machinery/alarm{
@@ -30832,7 +30832,7 @@
 	pixel_y = 9;
 	pixel_x = -3
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground/zoned/ghetto_research)
 "lvW" = (
 /obj/structure/table/reinforced,
@@ -31976,7 +31976,7 @@
 /area)
 "lPv" = (
 /obj/item/clothing/gloves/boxing,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/prison_yard)
 "lPD" = (
 /turf/simulated/floor/vox{
@@ -32109,7 +32109,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/supply)
 "lRt" = (
 /obj/machinery/door/poddoor/shutters{
@@ -32395,7 +32395,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/mining/station)
 "lUZ" = (
 /obj/structure/table,
@@ -32949,7 +32949,7 @@
 /area/bridge/meeting_room)
 "mgo" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "mgz" = (
 /obj/structure/rack,
@@ -33001,7 +33001,7 @@
 /obj/machinery/door/mineral/wood{
 	name = "Auxiliary Tool Storage"
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "mhT" = (
 /obj/machinery/telecomms/processor/preset_four,
@@ -33265,7 +33265,7 @@
 	},
 /turf/unsimulated/floor/planetary/path/jungle_plated{
 	icon_state = "junglestation5";
-	plated_icon_override = "junglestation5"
+	plated_icon_override_state = "junglestation5"
 	},
 /area/surface/jungle/zoned/outdoor_bar)
 "mmg" = (
@@ -33510,7 +33510,7 @@
 /area/surface/jungle/fenced)
 "mqz" = (
 /obj/structure/shuttle/diag_wall/smooth,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "mqQ" = (
 /turf/simulated/floor{
@@ -33661,7 +33661,7 @@
 "mty" = (
 /obj/machinery/hologram/holopad,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "mtC" = (
 /obj/structure/table/woodentable,
@@ -33992,7 +33992,7 @@
 	},
 /turf/unsimulated/floor/planetary/path/jungle_plated{
 	icon_state = "junglestation1";
-	plated_icon_override = "junglestation1"
+	plated_icon_override_state = "junglestation1"
 	},
 /area/surface/jungle/zoned/outdoor_bar)
 "mzZ" = (
@@ -34566,7 +34566,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "mLc" = (
 /obj/structure/table,
@@ -34611,7 +34611,7 @@
 	},
 /turf/unsimulated/floor/planetary/path/jungle_plated{
 	icon_state = "junglestation6";
-	plated_icon_override = "junglestation6"
+	plated_icon_override_state = "junglestation6"
 	},
 /area/surface/jungle/zoned/outdoor_bar)
 "mLW" = (
@@ -34985,7 +34985,7 @@
 	icon_state = "warning_corner";
 	tag = "icon-warning_corner (NORTH)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/roid_prep)
 "mSW" = (
 /turf/simulated/wall/r_wall,
@@ -35222,7 +35222,7 @@
 /obj/structure/shuttle/engine/propulsion{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/arrival/station)
 "mXF" = (
 /obj/structure/grille/window_spawner/reinforced/full,
@@ -35804,7 +35804,7 @@
 /obj/machinery/atmospherics/unary/vent/high_volume{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "niw" = (
 /obj/structure/fence{
@@ -35900,7 +35900,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/arrival/station)
 "nkI" = (
 /obj/machinery/door/airlock{
@@ -36068,7 +36068,7 @@
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "nmH" = (
 /obj/machinery/door/airlock/external,
@@ -36427,7 +36427,7 @@
 	dir = 4;
 	icon_state = "warning"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "nve" = (
 /obj/structure/cable/yellow{
@@ -36498,7 +36498,7 @@
 /obj/structure/table/plastic,
 /obj/item/clothing/under/shorts/red,
 /obj/item/clothing/under/shorts/grey,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/prison_yard)
 "nyu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -36831,7 +36831,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/research/station)
 "nFp" = (
 /obj/structure/grille,
@@ -36849,7 +36849,7 @@
 /area/centcom/control)
 "nFM" = (
 /obj/structure/shuttle/diag_wall/smooth,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/mining/station)
 "nFU" = (
 /obj/machinery/door/airlock/external{
@@ -37432,7 +37432,7 @@
 	icon_state = "warning_corner";
 	tag = "icon-warning_corner"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "nPx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -37796,7 +37796,7 @@
 	pixel_x = -7;
 	pixel_y = 6
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "nWa" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -38132,7 +38132,7 @@
 	icon_state = "loading_area";
 	tag = "icon-loading_area (WEST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "oaH" = (
 /obj/effect/decal/cleanable/blood/gibs,
@@ -38546,7 +38546,7 @@
 /area/surface/jungle/fenced)
 "oiw" = (
 /obj/item/weapon/storage/fancy/beer_box,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "oiR" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -38733,7 +38733,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 9
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "olV" = (
 /obj/machinery/light/small{
@@ -39173,7 +39173,7 @@
 /area/science/rd)
 "owa" = (
 /obj/structure/fence/cut/large,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "owy" = (
 /obj/machinery/space_heater/campfire,
@@ -39251,7 +39251,7 @@
 /area/supply/qm)
 "oxJ" = (
 /obj/effect/glowshroom,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "oxL" = (
 /obj/effect/decal/warning_stripes{
@@ -39439,12 +39439,12 @@
 	},
 /turf/unsimulated/floor/planetary/path/jungle_plated{
 	icon_state = "junglestation3";
-	plated_icon_override = "junglestation3"
+	plated_icon_override_state = "junglestation3"
 	},
 /area/surface/jungle/zoned/outdoor_bar)
 "oAq" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/reactor_outside)
 "oAr" = (
 /obj/structure/table,
@@ -40128,7 +40128,7 @@
 	icon = 'icons/turf/voxprobe.dmi';
 	icon_state = "voxcorner1"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/escape_pod1)
 "oPJ" = (
 /obj/machinery/door/window{
@@ -40190,7 +40190,7 @@
 	name = "KEEP CLEAR: DOCKING AREA";
 	icon_state = "shuttle2"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "oRk" = (
 /obj/machinery/hologram/holopad,
@@ -40284,7 +40284,7 @@
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/sme_outside)
 "oUa" = (
 /obj/structure/cable/yellow{
@@ -40497,7 +40497,7 @@
 /area/science/hallway)
 "oYt" = (
 /mob/living/simple_animal/hostile/scarybat/cave,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "oYA" = (
 /obj/structure/cable/yellow{
@@ -41037,7 +41037,7 @@
 	tag = "icon-warning"
 	},
 /obj/machinery/light/small,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "pif" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -41313,7 +41313,7 @@
 	dir = 8;
 	name = "Distro to Waste"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "ppF" = (
 /obj/structure/table,
@@ -41718,7 +41718,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (NORTHWEST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "pwT" = (
 /obj/structure/table,
@@ -41746,7 +41746,7 @@
 /obj/structure/hanging_lantern{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "pxf" = (
 /obj/structure/window/reinforced{
@@ -42250,7 +42250,7 @@
 	},
 /turf/unsimulated/floor/planetary/path/jungle_plated{
 	icon_state = "junglestation7";
-	plated_icon_override = "junglestation7"
+	plated_icon_override_state = "junglestation7"
 	},
 /area/surface/jungle/zoned/outdoor_bar)
 "pIb" = (
@@ -42563,7 +42563,7 @@
 	},
 /turf/unsimulated/floor/planetary/path/jungle_plated{
 	icon_state = "junglestation2";
-	plated_icon_override = "junglestation2"
+	plated_icon_override_state = "junglestation2"
 	},
 /area/surface/jungle/zoned/outdoor_bar)
 "pNN" = (
@@ -42606,7 +42606,7 @@
 	name = "Waste In Total";
 	on = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "pOt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -42897,7 +42897,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/mining/station)
 "pSC" = (
 /obj/structure/cable/yellow{
@@ -43006,7 +43006,7 @@
 	pixel_x = -3;
 	pixel_y = 4
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "pVd" = (
 /obj/structure/extinguisher_cabinet{
@@ -43065,7 +43065,7 @@
 /obj/structure/fence/cut/large{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "pWt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -43774,7 +43774,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (EAST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "qjs" = (
 /obj/machinery/power/apc{
@@ -44144,7 +44144,7 @@
 /area/centcom/ert)
 "qon" = (
 /obj/effect/decal/remains/human,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "qoA" = (
 /obj/effect/decal/cleanable/dirt,
@@ -44154,7 +44154,7 @@
 	access_not_dir = 4
 	},
 /obj/item/stack/ore/glass,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "qoE" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -44280,7 +44280,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (WEST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "qrL" = (
 /obj/machinery/computer/shuttle_control/mining,
@@ -44317,7 +44317,7 @@
 /obj/structure/hanging_lantern{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "qtd" = (
 /obj/structure/cable/yellow{
@@ -45154,7 +45154,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/visible{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "qHF" = (
 /obj/machinery/anomaly/fourier_transform,
@@ -45189,7 +45189,7 @@
 /obj/abstract/map/spawner/maint,
 /obj/abstract/map/spawner/maint,
 /obj/structure/rack,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "qIH" = (
 /obj/effect/decal/warning_stripes{
@@ -45197,7 +45197,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (NORTHEAST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "qIK" = (
 /obj/machinery/door/poddoor{
@@ -45262,7 +45262,7 @@
 /area/medical/chemistry)
 "qJE" = (
 /obj/abstract/map/spawner/floorpill,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "qJF" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -45322,7 +45322,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 6
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "qLm" = (
 /obj/structure/bed/chair,
@@ -45442,7 +45442,7 @@
 /area/centcom/control)
 "qMf" = (
 /obj/structure/shuttle/diag_wall/smooth,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/arrival/station)
 "qMo" = (
 /turf/simulated/floor/engine,
@@ -45529,7 +45529,7 @@
 /area/centcom/holding)
 "qOk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/visible,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "qOl" = (
 /obj/structure/grille/window_spawner/reinforced,
@@ -45578,7 +45578,7 @@
 	dir = 1;
 	icon_state = "warning"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "qQq" = (
 /obj/machinery/door/airlock/external{
@@ -45740,7 +45740,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (NORTH)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/roid_prep)
 "qUf" = (
 /obj/structure/bed,
@@ -45766,11 +45766,11 @@
 	},
 /obj/structure/table,
 /obj/item/clothing/head/hardhat/dblue,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "qVc" = (
 /obj/structure/shuttle/engine/propulsion/right,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/supply)
 "qVj" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -45784,7 +45784,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "qVF" = (
 /obj/structure/cable/orange{
@@ -46009,7 +46009,7 @@
 /obj/docking_port/destination/pod2/station{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/roid_prep)
 "qZe" = (
 /obj/machinery/suit_storage_unit/engie,
@@ -46086,7 +46086,7 @@
 /area/engineering/supermatter_room)
 "raw" = (
 /obj/structure/shuttle/diag_wall/smooth,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/research/station)
 "raD" = (
 /obj/machinery/door/poddoor{
@@ -46102,7 +46102,7 @@
 /area/surface/jungle/fenced)
 "raU" = (
 /obj/structure/clock,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "rbo" = (
 /obj/machinery/vending/wallmed1{
@@ -46297,7 +46297,7 @@
 /area/medical/medbay)
 "rel" = (
 /obj/structure/table/woodentable,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "reo" = (
 /obj/effect/step_trigger/thrower/north{
@@ -46407,7 +46407,7 @@
 	dir = 8;
 	icon_state = "warning_corner"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "rgk" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -46618,7 +46618,7 @@
 /turf/simulated/floor/engine,
 /area/storage/nuke_storage)
 "rki" = (
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "rkv" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -46640,7 +46640,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/mining/station)
 "rlM" = (
 /obj/structure/grille/window_spawner/reinforced,
@@ -47134,7 +47134,7 @@
 	tag = "icon-warning (WEST)"
 	},
 /mob/living/simple_animal/complex/bear,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "rsW" = (
 /obj/machinery/door/airlock/glass_command{
@@ -47241,7 +47241,7 @@
 /area/medical/genetics)
 "rvr" = (
 /obj/machinery/atmospherics/unary/vent/high_volume,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "rvy" = (
 /obj/structure/closet/secure_closet/freezer/meat,
@@ -47381,7 +47381,7 @@
 	on = 1;
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "rxd" = (
 /obj/structure/bed/chair/wood/wings{
@@ -47469,7 +47469,7 @@
 /obj/machinery/atmospherics/binary/volume_pump{
 	name = "Air Supply Purge"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "ryq" = (
 /obj/structure/window/reinforced{
@@ -47527,14 +47527,14 @@
 /obj/structure/rack,
 /obj/abstract/map/spawner/maint,
 /obj/abstract/map/spawner/maint,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "rzv" = (
 /obj/structure/sign/directions/trader{
 	pixel_y = -26;
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "rzA" = (
 /obj/item/weapon/storage/box/beakers{
@@ -47741,7 +47741,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (WEST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "rCl" = (
 /obj/machinery/light_switch{
@@ -47798,7 +47798,7 @@
 /obj/item/trash/soda_cans{
 	pixel_x = 14
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground/zoned/ghetto_research)
 "rDf" = (
 /obj/machinery/door/window/brigdoor{
@@ -48216,7 +48216,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 9
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "rMs" = (
 /obj/machinery/hologram/holopad,
@@ -48287,7 +48287,7 @@
 /area/prison/solitary)
 "rOg" = (
 /obj/item/stack/ore/glass,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "rOp" = (
 /mob/living/simple_animal/cat/snek/corpus,
@@ -48447,7 +48447,7 @@
 /area/shuttle/escape/centcom)
 "rSe" = (
 /obj/structure/falsewall/closed,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "rSg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -48548,7 +48548,7 @@
 /obj/machinery/door/mineral/wood{
 	name = "Speakeasy"
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground/zoned/speakeasy)
 "rTm" = (
 /obj/machinery/shower{
@@ -48994,7 +48994,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/supply)
 "rZO" = (
 /obj/machinery/light{
@@ -49193,7 +49193,7 @@
 /obj/structure/shuttle/engine/propulsion/left{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/arrival/station)
 "sdg" = (
 /obj/structure/bed/chair/wood/pew/left{
@@ -49377,7 +49377,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (NORTH)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "sfX" = (
 /obj/structure/cable/yellow{
@@ -49618,7 +49618,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/escape_pod2)
 "slT" = (
 /turf/unsimulated/wall/blastdoor,
@@ -49685,7 +49685,7 @@
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/reactor_outside)
 "snV" = (
 /obj/structure/window/reinforced{
@@ -50310,7 +50310,7 @@
 /area/surface/jungle/zoned/storage_shed)
 "sBx" = (
 /obj/structure/closet/crate,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "sBR" = (
 /obj/structure/table,
@@ -50516,7 +50516,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/visible{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "sFI" = (
 /obj/machinery/door/airlock/external,
@@ -50636,7 +50636,7 @@
 /area/science/server)
 "sHt" = (
 /obj/structure/shuttle/engine/propulsion/left,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/supply)
 "sHu" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -50868,7 +50868,7 @@
 /obj/docking_port/destination/supply/station{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "sLT" = (
 /obj/machinery/light/small{
@@ -51147,7 +51147,7 @@
 "sRJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/ore/glass,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "sRK" = (
 /obj/structure/shuttle/diag_wall/smooth{
@@ -51155,7 +51155,7 @@
 	icon = 'icons/turf/voxprobe.dmi';
 	icon_state = "voxcorner4"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/escape_pod1)
 "sRO" = (
 /obj/machinery/vending/snack,
@@ -51332,7 +51332,7 @@
 /obj/machinery/door/mineral/wood{
 	name = "Underground Kitchen"
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "sUL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -51374,7 +51374,7 @@
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "sWa" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -51733,7 +51733,7 @@
 	name = "KEEP CLEAR: DOCKING AREA";
 	icon_state = "shuttle2"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "tct" = (
 /obj/docking_port/destination/syndicate/miningoutpost,
@@ -51935,7 +51935,7 @@
 	icon_state = "shuttle2";
 	pixel_y = -3
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "tfT" = (
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
@@ -52694,7 +52694,7 @@
 	pixel_y = -6;
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/fenced)
 "tto" = (
 /obj/machinery/power/apc{
@@ -52712,7 +52712,7 @@
 	},
 /area/science/lab)
 "ttx" = (
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/fenced)
 "ttE" = (
 /turf/unsimulated/floor{
@@ -53015,7 +53015,7 @@
 /turf/unsimulated/floor/planetary/path/jungle,
 /area/surface/jungle/zoned/aifenced)
 "tyg" = (
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground/zoned/ghetto_research)
 "tyv" = (
 /obj/machinery/light,
@@ -53238,7 +53238,7 @@
 /obj/machinery/camera{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "tCm" = (
 /turf/simulated/wall/r_wall,
@@ -53247,7 +53247,7 @@
 /obj/structure/shuttle/engine/propulsion{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/mining/station)
 "tCs" = (
 /obj/machinery/power/terminal{
@@ -53571,7 +53571,7 @@
 	dir = 1;
 	access_not_dir = 4
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "tIP" = (
 /obj/structure/closet/coffin,
@@ -53808,7 +53808,7 @@
 	name = "KEEP CLEAR: DOCKING AREA";
 	icon_state = "shuttle2"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/fenced)
 "tMP" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -54136,7 +54136,7 @@
 /area/bridge)
 "tSU" = (
 /obj/structure/closet/firecloset,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "tTf" = (
 /obj/structure/rack,
@@ -54150,7 +54150,7 @@
 /obj/item/weapon/reagent_containers/food/drinks/soda_cans/thirteenloko{
 	pixel_x = 6
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground/zoned/ghetto_research)
 "tTq" = (
 /obj/machinery/computer/mech_bay_power_console,
@@ -54411,7 +54411,7 @@
 	})
 "tYW" = (
 /obj/structure/closet/firecloset/full,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "tZh" = (
 /obj/structure/window/reinforced{
@@ -54732,7 +54732,7 @@
 "uiq" = (
 /obj/item/weapon/storage/box/donkpockets/random_amount,
 /obj/structure/table/glass,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground/zoned/ghetto_research)
 "uir" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -55485,7 +55485,7 @@
 	icon_state = "warning";
 	tag = "icon-warning"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/roid_prep)
 "uuX" = (
 /turf/simulated/floor/shuttle,
@@ -56110,7 +56110,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/supply)
 "uJn" = (
 /turf/simulated/wall/shuttle/unsmoothed/vox,
@@ -56141,7 +56141,7 @@
 /area/medical/surgery)
 "uJN" = (
 /obj/item/weapon/gun/hookshot,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "uKc" = (
 /obj/machinery/hologram/holopad,
@@ -56246,7 +56246,7 @@
 	icon_state = "warning_corner";
 	tag = "icon-warning_corner (EAST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/roid_prep)
 "uNl" = (
 /obj/machinery/telepad,
@@ -56279,7 +56279,7 @@
 "uNM" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/machinery/portable_atmospherics/canister/air,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "uNN" = (
 /obj/structure/table,
@@ -56799,7 +56799,7 @@
 /area/security/brig)
 "uXC" = (
 /obj/machinery/door/unpowered/shuttle,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "uXJ" = (
 /obj/machinery/camera{
@@ -56902,7 +56902,7 @@
 	tag = "icon-loading_area";
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "uZI" = (
 /obj/structure/window/reinforced{
@@ -57255,7 +57255,7 @@
 /area/crew_quarters/bar_backroom)
 "vfF" = (
 /mob/living/simple_animal/complex/bear,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "vfK" = (
 /obj/structure/bed/chair{
@@ -57629,7 +57629,7 @@
 /area/crew_quarters/captain)
 "vkL" = (
 /obj/item/weapon/beach_ball/holoball,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/prison_yard)
 "vkM" = (
 /turf/unsimulated/mineral/random/high_chance/jungle,
@@ -57813,7 +57813,7 @@
 /obj/structure/table,
 /obj/item/device/radio,
 /obj/abstract/map/spawner/maint,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "vol" = (
 /obj/machinery/researcharchive,
@@ -57952,7 +57952,7 @@
 	dir = 1
 	},
 /obj/structure/fence/corner,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/fenced)
 "vqh" = (
 /obj/machinery/computer/crew,
@@ -58085,7 +58085,7 @@
 /obj/structure/bed/chair/folding{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "vsF" = (
 /obj/abstract/map/spawner/jungle_any,
@@ -58369,7 +58369,7 @@
 /obj/machinery/door/airlock/research{
 	name = "Ghetto Research"
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground/zoned/ghetto_research)
 "vxH" = (
 /obj/machinery/computer/aifixer,
@@ -58495,7 +58495,7 @@
 	pressure_checks = 2;
 	pump_direction = 0
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "vzE" = (
 /obj/machinery/alarm/vox{
@@ -59231,7 +59231,7 @@
 /obj/item/tool/crowbar,
 /obj/item/tool/screwdriver,
 /obj/item/tool/wrench,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "vMC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -59309,7 +59309,7 @@
 	icon_state = "warning_corner";
 	tag = "icon-warning_corner"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/roid_prep)
 "vOj" = (
 /obj/machinery/conveyor/centcom_auto{
@@ -59690,7 +59690,7 @@
 /obj/item/tool/wirecutters{
 	pixel_x = 8
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "vVo" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -59910,7 +59910,7 @@
 /turf/simulated/wall/shuttle,
 /area/shuttle/mining/station)
 "way" = (
-/turf/unsimulated/floor/jungle/mud,
+/turf/unsimulated/floor/planetary/mud/jungle,
 /area/surface/jungle/roid)
 "waI" = (
 /obj/machinery/light/small{
@@ -60446,7 +60446,7 @@
 /obj/structure/fence{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "wlC" = (
 /turf/simulated/floor{
@@ -60539,7 +60539,7 @@
 /obj/structure/hanging_lantern{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "wnS" = (
 /obj/structure/shuttle/diag_wall/black{
@@ -60906,7 +60906,7 @@
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 9
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/sme_outside)
 "wwi" = (
 /obj/structure/railing/wood,
@@ -61209,7 +61209,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "wzS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -61230,7 +61230,7 @@
 	dir = 4;
 	icon_state = "warning"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "wAb" = (
 /obj/structure/bed/chair/wood/normal{
@@ -61283,13 +61283,13 @@
 	icon_state = "loading_area";
 	tag = "icon-loading_area (EAST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "wBV" = (
 /obj/structure/fence/corner{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "wCc" = (
 /obj/structure/window/reinforced{
@@ -61488,7 +61488,7 @@
 	})
 "wGE" = (
 /obj/structure/reagent_dispensers/cauldron/barrel,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "wHa" = (
 /obj/structure/grille,
@@ -62407,7 +62407,7 @@
 /obj/structure/shuttle/engine/propulsion{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/research/station)
 "wWG" = (
 /obj/structure/rack,
@@ -62829,7 +62829,7 @@
 	})
 "xfk" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "xfl" = (
 /obj/structure/AIcore,
@@ -63032,7 +63032,7 @@
 	dir = 1;
 	icon_state = "warning"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "xje" = (
 /obj/machinery/computer{
@@ -63913,7 +63913,7 @@
 	pressure_checks = 2;
 	pump_direction = 0
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "xyQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -64287,7 +64287,7 @@
 /obj/item/folding_chair,
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/cobweb,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "xHm" = (
 /turf/simulated/wall,
@@ -64403,7 +64403,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/escape_pod2)
 "xJv" = (
 /obj/machinery/atmospherics/trinary/filter/mirrored{
@@ -64460,7 +64460,7 @@
 /area/research_outpost/entry)
 "xKn" = (
 /obj/structure/closet/jungle_first_aid,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "xKq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -64589,7 +64589,7 @@
 "xNJ" = (
 /obj/structure/ladder/jungle_tunnel/mapped,
 /obj/effect/decal/cleanable/dirt,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "xNL" = (
 /obj/structure/closet/secure_closet/medical1{
@@ -64773,7 +64773,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/visible{
 	dir = 4
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "xPT" = (
 /obj/docking_port/destination/arrival/station,
@@ -64787,7 +64787,7 @@
 	tag = "icon-loading_area";
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "xQw" = (
 /turf/simulated/floor/carpet{
@@ -64944,7 +64944,7 @@
 	icon_state = "warning";
 	tag = "icon-warning (SOUTHEAST)"
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
 "xTB" = (
 /turf/unsimulated/wall,
@@ -65177,7 +65177,7 @@
 /obj/structure/shuttle/diag_wall/smooth{
 	dir = 8
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/escape_pod2)
 "xWU" = (
 /obj/effect/landmark{
@@ -65248,7 +65248,7 @@
 /obj/structure/table,
 /obj/item/weapon/pickaxe/shovel,
 /obj/item/weapon/pickaxe,
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "xYN" = (
 /obj/machinery/door/airlock/glass{
@@ -65275,13 +65275,13 @@
 	pixel_y = -3;
 	pixel_x = -5
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/vault)
 "xZa" = (
 /obj/machinery/atmospherics/pipe/simple/supply/visible{
 	dir = 9
 	},
-/turf/unsimulated/floor/jungle/concrete,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "xZl" = (
 /obj/machinery/door/airlock/glass_security{
@@ -65556,7 +65556,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground/zoned/ghetto_research)
 "yeO" = (
 /obj/machinery/door/airlock/external{
@@ -65698,7 +65698,7 @@
 /obj/structure/hanging_lantern{
 	dir = 1
 	},
-/turf/unsimulated/floor/jungle/bedrock,
+/turf/unsimulated/floor/planetary/cave/jungle,
 /area/surface/jungle/underground)
 "yhm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{

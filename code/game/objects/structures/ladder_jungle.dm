@@ -48,8 +48,8 @@
 	if(down)
 		qdel(down)
 	var/turf/T = loc
-	if(T.type==/turf/unsimulated/floor/jungle/bedrock)
-		var/turf/unsimulated/floor/jungle/bedrock/TT=T
+	if(T.type==/turf/unsimulated/floor/planetary/cave/jungle)
+		var/turf/unsimulated/floor/planetary/cave/jungle/TT=T
 		TT.hashole=null
 		TT.update_icon()
 	if(T.type==/turf/unsimulated/floor/planetary/dirt/jungle)
@@ -70,8 +70,8 @@
 			MJT.up=src
 			down=MJT
 			
-	if(istype(loc,/turf/unsimulated/floor/jungle/bedrock))
-		var/turf/unsimulated/floor/jungle/bedrock/TT=loc
+	if(istype(loc,/turf/unsimulated/floor/planetary/cave/jungle))
+		var/turf/unsimulated/floor/planetary/cave/jungle/TT=loc
 		TT.hashole=src
 		var/turf/T=locate(x,y,z==2 ? 1 : 4)
 		var/obj/structure/ladder/jungle_tunnel/mapped/MJT = (locate(/obj/structure/ladder/jungle_tunnel/mapped) in T.contents)
