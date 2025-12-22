@@ -326,3 +326,69 @@
 	max_icon_states = 0
 	edge_flags = EDGE_CARDINAL|EDGE_OUTER_DIAGONAL
 	edge_priority = SAND_EDGE_PRIORITY
+
+
+/atom/movable/water_turf_overlay
+	icon = 'icons/misc/beach.dmi'
+	icon_state = "water5"
+	anchored      = TRUE
+	name=""
+	plane            = ABOVE_OBJ_PLANE
+	mouse_opacity    = 0
+	invisibility     = INVISIBILITY_LIGHTING
+
+/atom/movable/water_turf_overlay/forceMove(atom/destination, step_x = 0, step_y = 0, no_tp = FALSE, harderforce = FALSE, glide_size_override = 0)
+	if(harderforce)
+		. = ..()
+/atom/movable/water_turf_overlay/ex_act(severity)
+	return 0
+/atom/movable/water_turf_overlay/shuttle_act()
+	return 0
+/atom/movable/water_turf_overlay/can_shuttle_move()
+	return 0
+/atom/movable/water_turf_overlay/singularity_act()
+	return
+/atom/movable/water_turf_overlay/singularity_pull()
+	return
+/atom/movable/water_turf_overlay/blob_act()
+	return
+/atom/movable/water_turf_overlay/send_to_future(var/duration)
+	return
+/atom/movable/water_turf_overlay/send_to_past(var/duration)
+	return
+/atom/movable/water_turf_overlay/clean_act(var/cleanliness)
+	return
+	
+/turf/unsimulated/floor/planetary/water
+	name = "water"
+	desc = "of course it's wet, are you stupid?"
+	icon = 'icons/misc/beach.dmi'
+	icon_state = "water5"
+	turf_reagents = list(WATER=1.0)
+	reagent_interaction_flags = TURF_REAGENT_ENTER | TURF_REAGENT_FILLS_CONTAINERS
+	turf_reagent_amount = 5
+	turf_flags = NO_FLORA
+	edge_flags = ALL_EDGES
+	edge_priority = WATER_EDGE_PRIORITY
+	edge_overlay_type = /obj/effect/edge_overlay/water
+	var/water_overlay_icon='icons/misc/beach.dmi' //water uses a 2 sprite system. 1 sprite lays on the turf layer as the "base"
+	var/water_overlay_state="water5" //the second sprite lays above the turf, and can layer over other objects
+	var/backing_trurf_icon=null //this gives the illusion that the water has depth, and looks quite nice
+	var/backing_trurf_state=null //it's also very flexible, since you can use any icon on either, as long as water_overlay_icon has trasparency.
+	var/atom/movable/water_turf_overlay/wateroverlay=null
+
+/turf/unsimulated/floor/planetary/water/New()
+	..()
+	update_icon()
+	footstep_sound = sounds_water
+	footstep_sound_barefoot = sounds_water
+	footstep_sound_claw = sounds_water
+	icon=backing_trurf_icon ? backing_trurf_icon : icon
+	icon_state = backing_trurf_state ? backing_trurf_state : icon_state
+	wateroverlay=new(src)
+	wateroverlay.icon = water_overlay_icon ? water_overlay_icon : icon
+	wateroverlay.icon_state = water_overlay_state ? water_overlay_state : icon_state
+
+/turf/unsimulated/floor/planetary/water/Destroy()
+	qdel(wateroverlay)
+	..()

@@ -35,6 +35,7 @@ var/list/foliage_replacments=list(
 /turf/unsimulated/floor/planetary/grass/jungle
 	name="Dense Grass"
 	desc="A thick and lush carpet of various plant species, sustained by a regular supply to water."
+	icon='icons/turf/floors.dmi'
 	icon_state = "grass_jungle1"
 	base_icon_state = "grass_jungle"
 	variance = 100
@@ -46,6 +47,7 @@ var/list/foliage_replacments=list(
 	oxygen = MOLES_JUNGLE_O2_STD
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
+	plane=PLATING_PLANE
 	intact=0
 	pickaxe_conversion_turf = /turf/unsimulated/floor/planetary/dirt/jungle
 	pickaxe_conversion_time = 2 SECONDS
@@ -95,6 +97,7 @@ var/list/foliage_replacments=list(
 	oxygen = MOLES_JUNGLE_O2_STD
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
+	plane=PLATING_PLANE
 
 /turf/unsimulated/floor/planetary/mud/jungle/New()	
 	footstep_sound = sounds_water
@@ -111,15 +114,18 @@ var/list/foliage_replacments=list(
 	oxygen = MOLES_JUNGLE_O2_STD
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
+	plane=PLATING_PLANE
 
 /turf/unsimulated/floor/planetary/dirt/jungle
 	name="Soil"
 	desc="A mixture of sediments, clays, and decomposed matter."
+	icon='icons/turf/floors.dmi'
 	icon_state = "ironsand1"
 	temperature = T_JUNGLE
 	oxygen = MOLES_JUNGLE_O2_STD
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
+	plane=PLATING_PLANE
 	shovel_conversion_turf = /turf/unsimulated/floor/planetary/path/jungle
 	shovel_conversion_time = 2 SECONDS
 	var/obj/structure/ladder/jungle_tunnel/hashole=null
@@ -129,7 +135,7 @@ var/list/foliage_replacments=list(
 	if(hashole)
 		to_chat(usr,"there's a hole leading underground.")
 
-/turf/unsimulated/floor/planetary/dirt/jungle/item_shovel_ability(var/obj/item/I,/var/mob/user) //prevent turf conversion if there's a hole
+/turf/unsimulated/floor/planetary/dirt/jungle/item_shovel_ability(var/obj/item/I,var/mob/user) //prevent turf conversion if there's a hole
 	if(hashole)
 		return 0.0
 	return ..()
@@ -150,7 +156,8 @@ var/list/foliage_replacments=list(
 		if(T.use(1))
 			ChangeTurf(/turf/unsimulated/floor/planetary/grass/jungle/no_flora)
 			return TRUE
-	var/s=item_pickaxe_ability(C)
+		return FALSE
+	var/s=item_pickaxe_ability(C,user)
 	if(s>0.0 && !hashole && can_dig_down(user) )
 		to_chat(usr,"you start digging downwards...")
 		if(do_after(user, src, 80/s ))
@@ -205,32 +212,36 @@ var/list/foliage_replacments=list(
 	desc="Soil which has been pressed down into a hard, smooth surface."
 	icon='icons/turf/floors.dmi'
 	icon_state = "asteroid0"
+	temperature = T_JUNGLE
+	oxygen = MOLES_JUNGLE_O2_STD
+	nitrogen = MOLES_JUNGLE_N2_STD
+	carbon_dioxide = MOLES_JUNGLE_CO2_STD
+	plane=PLATING_PLANE
+	intact=0 //allows cables to be placed
+	pickaxe_conversion_turf=/turf/unsimulated/floor/planetary/dirt/jungle
+	pickaxe_conversion_time=2 SECONDS
 
 /turf/unsimulated/floor/planetary/path/jungle/attackby(obj/item/C as obj, mob/user as mob)
-	.=..()
 	if(!C || !user)
 		return 0
-	if(C.type== /obj/item/stack/tile/metal && !.)
+	if(C.type== /obj/item/stack/tile/metal && !(locate(/obj/structure/lattice) in loc.contents ))
 		var/obj/item/stack/tile/T = C
 		if(T.use(1))
 			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
 			ChangeTurf(/turf/unsimulated/floor/planetary/path/jungle_plated)
-			plane=TURF_PLANE
+			plane=PLATING_PLANE
 			remove_paint_overlay()
 			update_icon()
 			update_paint_overlay()
 			levelupdate()
-			return
-	var/s=0.0
-	s=item_pickaxe_ability(C)
-	if(s>0.0)
-		to_chat(user, "<span class='notice'>You start breaking up the soil</span>")
-		if(do_after(user, src, 20/s ))
-			ChangeTurf(/turf/unsimulated/floor/planetary/dirt/jungle)
-
+			return TRUE
+		return FALSE
+	return ..()
 
 /turf/unsimulated/floor/planetary/path/jungle/can_place_cables()
 	return TRUE
+
+
 
 /turf/unsimulated/floor/planetary/path/jungle/ex_act(severity)
 	switch(severity)
@@ -250,6 +261,10 @@ var/list/foliage_replacments=list(
 	icon='icons/turf/floors.dmi'
 	icon_state = "asteroidfloor"
 	plane = TURF_PLANE
+	temperature = T_JUNGLE
+	oxygen = MOLES_JUNGLE_O2_STD
+	nitrogen = MOLES_JUNGLE_N2_STD
+	carbon_dioxide = MOLES_JUNGLE_CO2_STD
 
 /turf/unsimulated/floor/planetary/path/jungle_plated/New()
 	..()
@@ -284,88 +299,33 @@ var/list/foliage_replacments=list(
 				ChangeTurf(/turf/unsimulated/floor/planetary/path/jungle)
 
 
-
-/atom/movable/water_turf_overlay
-	icon = 'icons/misc/beach.dmi'
-	icon_state = "water5"
-	anchored      = TRUE
-	name=""
-	plane            = ABOVE_OBJ_PLANE
-	mouse_opacity    = 0
-	invisibility     = INVISIBILITY_LIGHTING
-
-/atom/movable/water_turf_overlay/forceMove(atom/destination, step_x = 0, step_y = 0, no_tp = FALSE, harderforce = FALSE, glide_size_override = 0)
-	if(harderforce)
-		. = ..()
-/atom/movable/water_turf_overlay/ex_act(severity)
-	return 0
-/atom/movable/water_turf_overlay/shuttle_act()
-	return 0
-/atom/movable/water_turf_overlay/can_shuttle_move()
-	return 0
-/atom/movable/water_turf_overlay/singularity_act()
-	return
-/atom/movable/water_turf_overlay/singularity_pull()
-	return
-/atom/movable/water_turf_overlay/blob_act()
-	return
-/atom/movable/water_turf_overlay/send_to_future(var/duration)
-	return
-/atom/movable/water_turf_overlay/send_to_past(var/duration)
-	return
-/atom/movable/water_turf_overlay/clean_act(var/cleanliness)
-	return
 	
 /turf/unsimulated/floor/planetary/water/jungle
 	name="Water"
 	desc="It's about knee-height. Probably not safe to drink from."
-	icon = 'icons/misc/beach.dmi'
-	icon_state = "water5"
 	turf_speed_multiplier=2.0
-	turf_reagents = list(WATER=1.0)
-	reagent_interaction_flags = TURF_REAGENT_ENTER | TURF_REAGENT_FILLS_CONTAINERS
-	turf_reagent_amount = 5
-	turf_flags = NO_FLORA
-	edge_flags = ALL_EDGES
-	edge_priority = WATER_EDGE_PRIORITY
-	edge_overlay_type = /obj/effect/edge_overlay/water
-	var/atom/movable/water_turf_overlay/wateroverlay=null
-	
-/turf/unsimulated/floor/planetary/water/jungle/New()
-	..()
-	update_icon()
-	footstep_sound = sounds_water
-	footstep_sound_barefoot = sounds_water
-	footstep_sound_claw = sounds_water
-	icon='icons/turf/planetary/jungle.dmi'
-	icon_state = "mud"
-	wateroverlay=new(src)
-
-/turf/unsimulated/floor/planetary/water/jungle/Destroy()
-	qdel(wateroverlay)
-	..()
+	backing_trurf_icon='icons/turf/planetary/jungle.dmi'
+	backing_trurf_state = "mud"
+	temperature = T_JUNGLE
+	oxygen = MOLES_JUNGLE_O2_STD
+	nitrogen = MOLES_JUNGLE_N2_STD
+	carbon_dioxide = MOLES_JUNGLE_CO2_STD
+	plane=PLATING_PLANE
 
 /turf/unsimulated/floor/planetary/water/jungle/deep
 	name="Deep Water"
 	desc="It's nearly up to your shoulders. Probably not safe to drink from."
-	icon = 'icons/misc/beach.dmi'
 	icon_state = "water2"
 	turf_speed_multiplier=2.5
-	turf_reagents = list(WATER=1.0)
-	reagent_interaction_flags = TURF_REAGENT_ENTER | TURF_REAGENT_FILLS_CONTAINERS
 	turf_reagent_amount = 10
-	edge_flags = ALL_EDGES
 	base_icon_state = "deepjunglewater" // to re-create the icon, take the water5 set, then adjust the alpha so that it has full opaque at the dark parts, THEN you need to run it through chroma and lightness, 0, -70, -68. THEN THEN you make the icon have 35% opacity AND THEN AND ONLY THEN do you have  your complete usable icon thank you byond very cool
 	edge_priority = DEEPWATER_EDGE_PRIORITY
 	edge_overlay_type = /obj/effect/edge_overlay/water/deep
+	water_overlay_state="water2"
 	
 /turf/unsimulated/floor/planetary/water/jungle/deep/New()
 	..()
-	update_icon()
-	wateroverlay.icon_state="water2"
 	wateroverlay.plane=MOB_PLANE
-	icon='icons/turf/planetary/jungle.dmi'
-	icon_state = "mud"
 
 
 /turf/unsimulated/floor/planetary/sand/jungle
@@ -377,6 +337,7 @@ var/list/foliage_replacments=list(
 	oxygen = MOLES_JUNGLE_O2_STD
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
+	plane=PLATING_PLANE
 	
 
 /turf/unsimulated/floor/planetary/sand/jungle/New()
@@ -405,7 +366,7 @@ var/list/foliage_replacments=list(
 	var/image/img = image('icons/turf/rock_overlay.dmi', "dirt_overlay",layer = SIDE_LAYER)
 	img.pixel_x = -4*PIXEL_MULTIPLIER
 	img.pixel_y = -4*PIXEL_MULTIPLIER
-	img.plane = BELOW_TURF_PLANE
+	img.plane = BELOW_PLATING_PLANE
 	overlays += img
 
 /turf/unsimulated/mineral/jungle_underground/ex_act(severity)
@@ -470,9 +431,9 @@ var/list/foliage_replacments=list(
 		var/mob/living/carbon/human/H = AM
 		if(istype(H.get_active_hand(),/obj/item/weapon/pickaxe) || istype(H.get_inactive_hand(),/obj/item/weapon/pickaxe)) //prevents double attacking the same turf because parent proc covers this
 			return
-		if(gettooleffectivness(H.get_active_hand()))
+		if(gettooleffectivness(H.get_active_hand(),H))
 			attackby(H.get_active_hand(), H)
-		else if(gettooleffectivness(H.get_inactive_hand()))
+		else if(gettooleffectivness(H.get_inactive_hand(),H))
 			attackby(H.get_inactive_hand(), H)
 			
 /turf/unsimulated/mineral/jungle_underground/MineralSpread() //do nothing
@@ -497,6 +458,8 @@ var/list/foliage_replacments=list(
 	desc="A very dense rock. Nothing seems to be able to dig through it."
 	icon='icons/turf/walls.dmi'
 	icon_state = "j_rockfloor"
+	plane=PLATING_PLANE
+	intact=0 //allows cables to be placed
 	var/obj/structure/ladder/jungle_tunnel/hashole=null
 
 
@@ -514,11 +477,9 @@ var/list/foliage_replacments=list(
 		
 
 /turf/unsimulated/floor/planetary/cave/jungle/attackby(obj/item/C as obj, mob/user as mob)
-	..()
 	if(!C || !user)
 		return 0
-	var/s=0.0
-	s=item_pickaxe_ability(C)
+	var/s=item_pickaxe_ability(C,user)
 	if(s>0.0 && !hashole)
 		if(!cannot_dig_up() )
 			to_chat(usr,"you start digging upwards...")
@@ -539,14 +500,15 @@ var/list/foliage_replacments=list(
 					var/turf/unsimulated/floor/planetary/dirt/jungle/TT=T2
 					TT?.hashole=l_surf
 					hashole=l_tunnel
+					return TRUE
 				else
 					update_icon()
 					to_chat(usr,"something gets in your way.")
-				return
 		else
 			to_chat(usr,cannot_dig_up())
 			update_icon()
-
+		return FALSE
+	return ..()
 
 /turf/unsimulated/floor/planetary/cave/jungle/examine()
 	..()
@@ -574,10 +536,15 @@ var/list/foliage_replacments=list(
 	var/turf/unsimulated/floor/planetary/JT = T
 	if(istype(JT,/turf/unsimulated/floor/planetary/water))
 		return "this feels like a really bad idea..."
+	if(istype(JT,/turf/unsimulated/floor/planetary/path/jungle_plated))
+		return "something hard blocks the way."
 	if(istype(JT,/turf/unsimulated/floor/planetary/concrete))
 		return "something hard blocks the way."	
 	if(locate(/obj/structure/flora/tree) in T.contents)
 		return "there's too many roots in the way."
+	for(var/obj/O in T.contents)
+		if(O.density && O.anchored)
+			return "something hard blocks the way."	
 	return null
 
 /turf/unsimulated/floor/planetary/cave/jungle/ex_act(severity)
@@ -591,7 +558,7 @@ var/list/foliage_replacments=list(
 
 /turf/unsimulated/floor/planetary/cave/jungle/no_dig/cannot_dig_up()
 	return TRUE
-/turf/unsimulated/floor/planetary/cave/jungle/update_icon()
+/turf/unsimulated/floor/planetary/cave/jungle/no_dig/update_icon()
 	..()
 	overlays=list()
 
@@ -619,6 +586,7 @@ var/list/foliage_replacments=list(
 	oxygen = MOLES_JUNGLE_O2_STD
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
+	plane=PLATING_PLANE
 
 /turf/unsimulated/floor/planetary/wasteland/jungle/New()
 	..()
