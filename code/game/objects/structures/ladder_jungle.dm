@@ -43,10 +43,6 @@
 	
 /obj/structure/ladder/jungle_tunnel/Destroy()
 	..()
-	if(up)
-		qdel(up)
-	if(down)
-		qdel(down)
 	var/turf/T = loc
 	if(T.type==/turf/unsimulated/floor/planetary/cave/jungle)
 		var/turf/unsimulated/floor/planetary/cave/jungle/TT=T
@@ -55,7 +51,10 @@
 	if(T.type==/turf/unsimulated/floor/planetary/dirt/jungle)
 		var/turf/unsimulated/floor/planetary/dirt/jungle/TT=T
 		TT.hashole=null
-	
+	if(up)
+		qdel(up)
+	if(down)
+		qdel(down)
 
 /obj/structure/ladder/jungle_tunnel/mapped
 
