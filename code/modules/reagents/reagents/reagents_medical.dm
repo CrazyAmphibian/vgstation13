@@ -1977,7 +1977,7 @@ var/global/list/charcoal_doesnt_remove=list(
 
 	var/brut=M.getBruteLoss(TRUE)
 	var/brn=M.getFireLoss(TRUE)
-	var/tox=M.getToxLoss(TRUE)
+	var/tox=M.getToxLoss()
 
 	var/totaldamage = brut+tox+brn
 	if(totaldamage>0.0) //no need to do anything if no damage.
