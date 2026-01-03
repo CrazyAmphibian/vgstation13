@@ -197,7 +197,7 @@ var/list/foliage_replacments=list(
 	if(istype(T,/turf/unsimulated/floor/planetary))
 		return TRUE	
 	if(istype(T,/turf/unsimulated/mineral))
-		return TRUE		
+		return TRUE
 	if(user)
 		to_chat(user,"<span class='warning'>Something hard blocks you from digging downwards.</span>")
 	return FALSE
@@ -426,7 +426,7 @@ var/list/foliage_replacments=list(
 
 /turf/unsimulated/mineral/jungle_underground/Bumped(AM)
 	. = ..()
-	
+
 	if(istype(AM,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = AM
 		if(istype(H.get_active_hand(),/obj/item/weapon/pickaxe) || istype(H.get_inactive_hand(),/obj/item/weapon/pickaxe)) //prevents double attacking the same turf because parent proc covers this
@@ -435,7 +435,7 @@ var/list/foliage_replacments=list(
 			attackby(H.get_active_hand(), H)
 		else if(gettooleffectivness(H.get_inactive_hand(),H))
 			attackby(H.get_inactive_hand(), H)
-			
+
 /turf/unsimulated/mineral/jungle_underground/MineralSpread() //do nothing
 	return
 
@@ -474,7 +474,7 @@ var/list/foliage_replacments=list(
 		overlays+=image('icons/turf/walls.dmi', "j_rfloor_overlay_l")
 	else if(cannot_dig_up())
 		overlays+=image('icons/turf/walls.dmi', "j_rfloor_overlay_d")
-		
+
 
 /turf/unsimulated/floor/planetary/cave/jungle/attackby(obj/item/C as obj, mob/user as mob)
 	if(!C || !user)
@@ -527,7 +527,7 @@ var/list/foliage_replacments=list(
 	//we reveal the state of surrounding bedrock. there was a better way to do this. how did i forget to use range?
 	for(var/turf/unsimulated/floor/planetary/cave/jungle/B in orange(1))
 		B.update_icon()
-	
+
 
 /turf/unsimulated/floor/planetary/cave/jungle/proc/cannot_dig_up()
 	var/turf/T=locate(x,y,z==2 ? 1 : 4)
