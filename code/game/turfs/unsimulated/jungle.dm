@@ -86,35 +86,18 @@ var/list/foliage_replacments=list(
 	return
 
 /turf/unsimulated/floor/planetary/mud/jungle
-	name="Mud"
-	desc="A viscous mixture of water and soil."
-	turf_speed_multiplier=1.75 //mud is difficult to travel over
-	icon='icons/turf/planetary/jungle.dmi'
-	icon_state = "mud"
-	edge_flags = 0
-	edge_priority = 1
 	temperature = T_JUNGLE
 	oxygen = MOLES_JUNGLE_O2_STD
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
-	plane=PLATING_PLANE
-
-/turf/unsimulated/floor/planetary/mud/jungle/New()	
-	footstep_sound = sounds_water
-	footstep_sound_barefoot = sounds_water
-	footstep_sound_claw = sounds_water
 
 
 /turf/unsimulated/floor/planetary/concrete/jungle
-	name="Concrete"
-	desc="Or is it asphalt?"
-	icon='icons/turf/new_snow.dmi'
-	icon_state = "concrete"
 	temperature = T_JUNGLE
 	oxygen = MOLES_JUNGLE_O2_STD
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
-	plane=PLATING_PLANE
+
 
 /turf/unsimulated/floor/planetary/dirt/jungle
 	name="Soil"
@@ -329,22 +312,11 @@ var/list/foliage_replacments=list(
 
 
 /turf/unsimulated/floor/planetary/sand/jungle
-	name="Sand"
-	desc="Rocks which have been eroded over countless centuries into a fine powder. A wonderful material for castles!"
-	icon = 'icons/misc/beach.dmi'
-	icon_state = "sand"
 	temperature = T_JUNGLE
 	oxygen = MOLES_JUNGLE_O2_STD
 	nitrogen = MOLES_JUNGLE_N2_STD
 	carbon_dioxide = MOLES_JUNGLE_CO2_STD
-	plane=PLATING_PLANE
-	
 
-/turf/unsimulated/floor/planetary/sand/jungle/New()
-	..()
-	footstep_sound = sounds_sand
-	footstep_sound_barefoot = sounds_sand
-	footstep_sound_claw = sounds_sand
 
 
 /turf/unsimulated/mineral/jungle_underground

@@ -394,6 +394,42 @@
 	..()
 
 
+/turf/unsimulated/floor/planetary/sand
+	name="Sand"
+	desc="Rocks which have been eroded over countless centuries into a fine powder. A wonderful material for castles!"
+	icon = 'icons/misc/beach.dmi'
+	icon_state = "sand"
+	
+/turf/unsimulated/floor/planetary/sand/New()
+	..()
+	footstep_sound = sounds_sand
+	footstep_sound_barefoot = sounds_sand
+	footstep_sound_claw = sounds_sand
+
+
+/turf/unsimulated/floor/planetary/mud
+	name="Mud"
+	desc="A viscous mixture of water and soil."
+	turf_speed_multiplier=1.75 //mud is difficult to travel over
+	icon='icons/turf/planetary/jungle.dmi'
+	icon_state = "mud"
+	edge_flags = 0
+	edge_priority = 1
+
+/turf/unsimulated/floor/planetary/mud/New()	
+	..()
+	footstep_sound = sounds_water
+	footstep_sound_barefoot = sounds_water
+	footstep_sound_claw = sounds_water
+
+
+/turf/unsimulated/floor/planetary/concrete
+	name="Concrete"
+	desc="Or is it asphalt?"
+	icon='icons/turf/new_snow.dmi'
+	icon_state = "concrete"
+
+
 ///////// Gas Vents /////////
 var/list/datum/vent/gas_vents = list() // Global list of all gas vents
 
