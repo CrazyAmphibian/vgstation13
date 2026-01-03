@@ -410,7 +410,6 @@
 /turf/unsimulated/floor/planetary/mud
 	name="Mud"
 	desc="A viscous mixture of water and soil."
-	turf_speed_multiplier=1.75 //mud is difficult to travel over
 	icon='icons/turf/planetary/jungle.dmi'
 	icon_state = "mud"
 	edge_flags = 0

@@ -86,6 +86,7 @@ var/list/foliage_replacments=list(
 	return
 
 /turf/unsimulated/floor/planetary/mud/jungle
+	turf_speed_multiplier=1.75 //mud is difficult to travel over
 	temperature = T_JUNGLE
 	oxygen = MOLES_JUNGLE_O2_STD
 	nitrogen = MOLES_JUNGLE_N2_STD
