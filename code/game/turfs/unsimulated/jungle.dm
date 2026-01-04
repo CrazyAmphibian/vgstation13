@@ -86,7 +86,6 @@ var/list/foliage_replacments=list(
 	return
 
 /turf/unsimulated/floor/planetary/mud/jungle
-	turf_speed_multiplier=1.75 //mud is difficult to travel over
 	temperature = T_JUNGLE
 	oxygen = MOLES_JUNGLE_O2_STD
 	nitrogen = MOLES_JUNGLE_N2_STD
@@ -287,7 +286,6 @@ var/list/foliage_replacments=list(
 /turf/unsimulated/floor/planetary/water/jungle
 	name="Water"
 	desc="It's about knee-height. Probably not safe to drink from."
-	turf_speed_multiplier=2.0
 	backing_trurf_icon='icons/turf/planetary/jungle.dmi'
 	backing_trurf_state = "mud"
 	temperature = T_JUNGLE

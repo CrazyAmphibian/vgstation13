@@ -371,6 +371,7 @@
 	edge_flags = ALL_EDGES
 	edge_priority = WATER_EDGE_PRIORITY
 	edge_overlay_type = /obj/effect/edge_overlay/water
+	turf_speed_multiplier=2.0
 	var/water_overlay_icon='icons/misc/beach.dmi' //water uses a 2 sprite system. 1 sprite lays on the turf layer as the "base"
 	var/water_overlay_state="water5" //the second sprite lays above the turf, and can layer over other objects
 	var/backing_trurf_icon=null //this gives the illusion that the water has depth, and looks quite nice
@@ -414,6 +415,7 @@
 	icon_state = "mud"
 	edge_flags = 0
 	edge_priority = 1
+	turf_speed_multiplier=1.75 //mud is difficult to travel over
 
 /turf/unsimulated/floor/planetary/mud/New()	
 	..()
