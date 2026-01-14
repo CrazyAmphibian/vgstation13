@@ -361,7 +361,7 @@
 	
 /turf/unsimulated/floor/planetary/water
 	name = "water"
-	desc = "of course it's wet, are you stupid?"
+	desc = "Of course it's wet, are you stupid?"
 	icon = 'icons/misc/beach.dmi'
 	icon_state = "water5"
 	turf_reagents = list(WATER=1.0)
