@@ -65,7 +65,7 @@
 	
 	//cache vars. we use this for extra SPEEEEEED. so you can ignore it for vving stuff.
 	var/list/cache_objects_in_view=list()
-	
+
 
 /mob/living/simple_animal/complex/New(var/loc)
 	..()
@@ -107,33 +107,33 @@
 		if(ticks_dead==75)
 			visible_message("Bugs start flying around <b>\the [src]</b>'s corpse.")
 		if(ticks_dead==150)
-			visible_message("<b>\The [src]</b>'s corpse starts to smell...")	
+			visible_message("<b>\The [src]</b>'s corpse starts to smell...")
 		if(ticks_dead>150) //5 minute delay
 			if(prob(10))
 				visible_message("<b>\The [src]</b>'s corpse rots away into nothing...")
 				qdel(src)
 		return 0
 	ticks_dead=0
-	
+
 	if(last_state!=behavior_state)
 		ticks_this_state=0
 		last_state=behavior_state
 	else
 		ticks_this_state++
-	
+
 	cache_objects_in_view = view(src,7) //refresh it every life tick.
-	
-	reagents?.metabolize(src)	
-	
+
+	reagents?.metabolize(src)
+
 	nutrition-=max_food*food_per_tick
-	
+
 	lastmate--
-	
+
 	if(lasthealth<=health && health<maxHealth)
 		health=min(maxHealth,health+maxHealth*healthregen)
 		nutrition-=max_food*food_per_tick*0.25 //use extra food when regaining health
 	lasthealth=health
-	
+
 	if(nutrition<0 && prob(20) && !(animal_flags&ANIMAL_FLAG_NEVER_STARVE) )
 		emote("deathgasp")
 		health=0
@@ -154,7 +154,7 @@
 			stat=DEAD
 			return 0
 	mob_age++
-	
+
 	escape()
 
 	interrupt_hunger() //prioritize eating over all other things
@@ -217,20 +217,20 @@
 //state functions return TRUE if the behavior_state is unchanged, and FALSE if not. basically just do if(..())
 /mob/living/simple_animal/complex/proc/tick_state_idle()
 	abort_target()
-	
+
 	//attempt reproduction only while full
 	if(nutrition >= (max_food- get_offspring_cost()*2) && get_offspring_cost() && prob(20) && lastmate<=0)
 		behavior_state=ANIMAL_STATE_MATING
 		return FALSE
-	
+
 	get_idle_sounds()
-	
+
 	if(prob(25))//move around randomly sometimes
 		if(territory && prob(50))
 			walk_to(src,locate(territory.x+rand(-3,3),territory.y+rand(-3,3),territory.z),0,movespeed)
 		else
 			walk_to(src,locate(x+rand(-3,3),y+rand(-3,3),z),0,movespeed)
-	
+
 	if(territory && prob(25)) //randomly move the territory
 		if(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) //move our territory closer to pack members
 			var/list/mob/living/simple_animal/complex/members=list()
@@ -246,7 +246,7 @@
 						territory =T
 		else //just random movment
 			territory=locate(territory.x+rand(-4,4),territory.y+rand(-4,4),territory.z)
-	
+
 	if(behavior_flags & ANIMAL_BEHAVIOR_TERRITORIAL && !territory) //if we can't find the territory, regenerate it
 		territory=locate(x,y,z)
 	return TRUE
@@ -348,10 +348,10 @@
 				if(generate_offspring(M))
 					M.nutrition-=M.get_offspring_cost()
 					M.abort_target()
-				
+
 					nutrition-=get_offspring_cost()
 					abort_target()
-					
+
 					M.lastmate=M.matingcooldown
 					src.lastmate=src.matingcooldown
 					return FALSE
@@ -429,7 +429,7 @@
 			else if(istype(A,/obj/item/organ) && !istype(A,/obj/item/organ/external/head) && !istype(A,/obj/item/organ/internal/brain)) //we don't want to round remove people
 				foodsources+=A
 				continue
-				
+
 		//no easy way to check if it's meat. oh well.
 		if(istype(A,/obj/item/weapon/reagent_containers/food/snacks))
 			foodsources+=A
@@ -495,7 +495,7 @@
 					if(is_kin(M) && !M.is_kin(target)) //rally the pack to us, if the target is not kin
 						if(M.behavior_state!=state) //if the pack member is not engaged in similar activity
 							M.aggro_drawn(victim,state) //do this recursively for each. don't kick the bee hive.
-	
+
 
 /mob/living/simple_animal/complex/proc/attack(var/victim)
 	if(!verify_target(victim,1,TRUE))
@@ -553,7 +553,7 @@
 		else
 			visible_message("<b>\The [src]</b> nibbles at \the [target].")
 		nutrition+=5
-		
+
 	else if (istype(target,/turf))
 		nutrition+=1
 		visible_message("<b>\The [src]</b> nibbles at \the [target].")
