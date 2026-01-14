@@ -328,35 +328,29 @@
 	edge_priority = SAND_EDGE_PRIORITY
 
 
-/atom/movable/water_turf_overlay
+/obj/effect/overlay/water_turf
 	icon = 'icons/misc/beach.dmi'
 	icon_state = "water5"
 	anchored      = TRUE
-	name=""
+	name=""	
 	plane            = ABOVE_OBJ_PLANE
 	mouse_opacity    = 0
 	invisibility     = INVISIBILITY_LIGHTING
 
-/atom/movable/water_turf_overlay/forceMove(atom/destination, step_x = 0, step_y = 0, no_tp = FALSE, harderforce = FALSE, glide_size_override = 0)
+/obj/effect/overlay/water_turf/forceMove(atom/destination, step_x = 0, step_y = 0, no_tp = FALSE, harderforce = FALSE, glide_size_override = 0)
 	if(harderforce)
 		. = ..()
-/atom/movable/water_turf_overlay/ex_act(severity)
+/obj/effect/overlay/water_turf/ex_act(severity)
 	return 0
-/atom/movable/water_turf_overlay/shuttle_act()
+/obj/effect/overlay/water_turf/shuttle_act()
 	return 0
-/atom/movable/water_turf_overlay/can_shuttle_move()
+/obj/effect/overlay/water_turf/can_shuttle_move()
 	return 0
-/atom/movable/water_turf_overlay/singularity_act()
+/obj/effect/overlay/water_turf/send_to_future(var/duration)
 	return
-/atom/movable/water_turf_overlay/singularity_pull()
+/obj/effect/overlay/water_turf/send_to_past(var/duration)
 	return
-/atom/movable/water_turf_overlay/blob_act()
-	return
-/atom/movable/water_turf_overlay/send_to_future(var/duration)
-	return
-/atom/movable/water_turf_overlay/send_to_past(var/duration)
-	return
-/atom/movable/water_turf_overlay/clean_act(var/cleanliness)
+/obj/effect/overlay/water_turf/clean_act(var/cleanliness)
 	return
 	
 /turf/unsimulated/floor/planetary/water
@@ -376,7 +370,7 @@
 	var/water_overlay_state="water5" //the second sprite lays above the turf, and can layer over other objects
 	var/backing_trurf_icon=null //this gives the illusion that the water has depth, and looks quite nice
 	var/backing_trurf_state=null //it's also very flexible, since you can use any icon on either, as long as water_overlay_icon has trasparency.
-	var/atom/movable/water_turf_overlay/wateroverlay=null
+	var/obj/effect/overlay/water_turf/wateroverlay=null
 
 /turf/unsimulated/floor/planetary/water/New()
 	..()
