@@ -237,7 +237,7 @@
 #define SODAWATER 			"sodawater"
 #define ICE 			"ice"
 #define COLA 			"cola"
-#define HINACOLA		"hinacola"
+#define CRYOCOLA		"cryocola"
 #define SPACEMOUNTAINWIND 			"spacemountainwind"
 #define LEMONADE 			"lemonade"
 #define KIRASPECIAL 			"kiraspecial"

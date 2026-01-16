@@ -689,9 +689,9 @@
 
 	M.Jitter(5)
 
-/datum/reagent/drink/cold/hina_cola
+/datum/reagent/drink/cold/cryo_cola
 	name = "Cola"
-	id = HINACOLA
+	id = CRYOCOLA
 	description = "Ice cold, no matter the day."
 	reagent_state = REAGENT_STATE_LIQUID
 	color = "#6e6450" //rgb: 110, 100, 80

@@ -381,9 +381,9 @@ var/list/discounted_items_of_the_round = list()
 	cost = 1
 
 /datum/uplink_item/stealthy_weapons/cola
-	name = "Hina-Cola"
+	name = "Cryo-Cola"
 	desc = "A sip of this discontinued classic will spark nostalgia in even the most hardened of individuals. The drink boasts a revolutionary self-cooling technology so you can enjoy a cryogenic beverage no matter the day."
-	item = /obj/item/weapon/reagent_containers/food/drinks/soda_cans/hinacola
+	item = /obj/item/weapon/reagent_containers/food/drinks/soda_cans/cryocola
 	cost = 4
 	discounted_cost = 3
 	jobs_with_discount = list("Bartender", "Botanist", "Chef")
