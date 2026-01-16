@@ -440,6 +440,16 @@ var/list/LOGGED_SPLASH_REAGENTS = list(FUEL, THERMITE)
 	..()
 	attempt_heating(I, user)
 	process_temperature()
+	if(istype(I,/obj/item/ice_crystal))
+		if(!is_open_container())
+			to_chat(user,"\The [src]'s lid gets in the way...")
+			return
+		if(reagents.total_volume>=volume)
+			to_chat(user,"There's no room in \the [src] to fit \the [I]!")
+			return
+		reagents.add_reagent(ICE, 10)
+		to_chat(user,"You add \the [I] into \the [src].")
+		qdel(I)
 
 /obj/item/weapon/reagent_containers/attempt_heating(atom/A, mob/user)
 	var/temperature = A.is_hot()
