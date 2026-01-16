@@ -382,7 +382,7 @@ var/list/discounted_items_of_the_round = list()
 
 /datum/uplink_item/stealthy_weapons/cola
 	name = "Cryo-Cola"
-	desc = "A sip of this discontinued classic will spark nostalgia in even the most hardened of individuals. The drink boasts a revolutionary self-cooling technology so you can enjoy a cryogenic beverage no matter the day."
+	desc = "A can containing soda that has been chemically engineered to react highly endothermically once ingested, causing the rapid onset of hypothermia. This results in whoever drank it to pass out from cold shock within seconds of consumption. Mixing drinks with the liquid is unadvised and can result in loss of efficacy. Disguised as an ordinary can of Space Cola."
 	item = /obj/item/weapon/reagent_containers/food/drinks/soda_cans/cryocola
 	cost = 4
 	discounted_cost = 3
