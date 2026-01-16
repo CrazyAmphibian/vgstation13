@@ -448,7 +448,7 @@ var/list/LOGGED_SPLASH_REAGENTS = list(FUEL, THERMITE)
 			to_chat(user,"There's no room in \the [src] to fit \the [I]!")
 			return
 		to_chat(user,"You add \the [I] into \the [src].")
-		reagents.add_reagent(ICE, 10)
+		reagents.add_reagent(ICE, 10, reagtemp = T0C)
 		qdel(I)
 
 /obj/item/weapon/reagent_containers/attempt_heating(atom/A, mob/user)
