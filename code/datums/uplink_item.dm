@@ -380,6 +380,12 @@ var/list/discounted_items_of_the_round = list()
 	item = /obj/item/weapon/soap/syndie
 	cost = 1
 
+/datum/uplink_item/stealthy_weapons/cola
+	name = "Hina-Cola"
+	desc = "A sip of this discontinued classic will spark nostalgia in even the most hardened of individuals. The drink boasts a revolutionary self-cooling technology so you can enjoy a cryogenic beverage no matter the day."
+	item = /obj/item/weapon/reagent_containers/food/drinks/soda_cans/hinacola
+	cost = 4
+
 // STEALTHY TOOLS
 // Any Syndicate item that helps with concealing one's identity, avoiding detection or fleeing if caught, without lethal or stun applications
 

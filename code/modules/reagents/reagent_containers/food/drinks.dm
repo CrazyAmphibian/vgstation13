@@ -901,6 +901,16 @@
 	src.pixel_x = rand(-10, 10) * PIXEL_MULTIPLIER
 	src.pixel_y = rand(-10, 10) * PIXEL_MULTIPLIER
 
+/obj/item/weapon/reagent_containers/food/drinks/soda_cans/hinacola //looks identical to space cola.
+	name = "Space Cola"
+	desc = "Cola. in space."
+	icon_state = "cola"
+/obj/item/weapon/reagent_containers/food/drinks/soda_cans/hinacola/New()
+	..()
+	reagents.add_reagent(HINACOLA, 30)
+	src.pixel_x = rand(-10, 10) * PIXEL_MULTIPLIER
+	src.pixel_y = rand(-10, 10) * PIXEL_MULTIPLIER
+
 /obj/item/weapon/reagent_containers/food/drinks/soda_cans/tonic
 	name = "T-Borg's Tonic Water"
 	desc = "Quinine tastes funny, but at least it'll keep that Space Malaria away."
