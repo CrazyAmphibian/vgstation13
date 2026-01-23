@@ -64,7 +64,7 @@
 /turf/simulated/floor{
 	icon_state = "white"
 	},
-/area/medical/sleeper)
+/area/medical/genetics)
 "abO" = (
 /obj/structure/fence/door{
 	dir = 4
@@ -746,6 +746,9 @@
 /area/engineering/engine)
 "apc" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/station_map{
 	dir = 8
 	},
 /turf/simulated/floor{
@@ -1782,9 +1785,6 @@
 	d2 = 2;
 	icon_state = "0-2";
 	pixel_y = 1
-	},
-/obj/structure/wc/sink{
-	pixel_y = 22
 	},
 /obj/structure/closet/secure_closet/medical2,
 /turf/simulated/floor{
@@ -6057,11 +6057,14 @@
 	},
 /area/centcom/ert)
 "cjb" = (
-/mob/living/carbon/monkey,
-/obj/structure/window/reinforced{
-	dir = 1
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 8;
+	on = 1
 	},
-/turf/simulated/floor,
+/obj/structure/window/reinforced,
+/turf/simulated/floor{
+	icon_state = "white"
+	},
 /area/medical/genetics)
 "cjd" = (
 /obj/structure/table,
@@ -8863,7 +8866,6 @@
 	dir = 8;
 	name = "Emergency Vacuum Pump"
 	},
-/obj/machinery/hologram/holopad,
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -11401,6 +11403,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	pixel_y = 28
+	},
 /turf/simulated/floor{
 	dir = 1;
 	icon_state = "whitegreen"
@@ -11775,10 +11780,6 @@
 /obj/structure/window/reinforced{
 	one_way = 1
 	},
-/obj/item/weapon/storage/box/masks{
-	pixel_x = -2;
-	pixel_y = -1
-	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "whitegreen"
@@ -11889,6 +11890,7 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet/medical1,
+/obj/structure/window/reinforced,
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -12395,9 +12397,6 @@
 	},
 /area/centcom/ert)
 "etc" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
 /turf/simulated/floor{
 	dir = 1;
 	icon_state = "whiteblue"
@@ -12471,7 +12470,7 @@
 /turf/simulated/floor{
 	icon_state = "white"
 	},
-/area/medical/genetics)
+/area/medical/virology)
 "euw" = (
 /obj/item/weapon/paper{
 	info = "Some stuff is missing...";
@@ -16378,7 +16377,7 @@
 	dir = 8;
 	icon_state = "whitegreen"
 	},
-/area/medical/genetics)
+/area/medical/sleeper)
 "fWA" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -19305,7 +19304,7 @@
 /turf/simulated/floor{
 	icon_state = "white"
 	},
-/area/medical/genetics)
+/area/medical/virology)
 "hbD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -24457,7 +24456,7 @@
 	dir = 10;
 	icon_state = "whitegreen"
 	},
-/area/medical/genetics)
+/area/medical/sleeper)
 "iYv" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2";
@@ -27504,7 +27503,7 @@
 	dir = 8;
 	icon_state = "whitegreen"
 	},
-/area/medical/genetics)
+/area/medical/sleeper)
 "keH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
@@ -27539,6 +27538,11 @@
 "kfr" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
+	},
+/obj/machinery/door/window{
+	dir = 2;
+	name = "Monkey Pen";
+	req_access_txt = "9"
 	},
 /turf/simulated/floor{
 	icon_state = "white"
@@ -28329,9 +28333,6 @@
 	dir = 8;
 	name = "Monkey Pen";
 	req_access_txt = "9"
-	},
-/obj/structure/window/reinforced{
-	dir = 1
 	},
 /mob/living/carbon/monkey,
 /turf/simulated/floor,
@@ -30096,9 +30097,7 @@
 /obj/structure/bed/chair/office/light{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "whiteblue"
@@ -32218,9 +32217,6 @@
 /turf/simulated/wall/shuttle/unsmoothed,
 /area/surface/jungle/vault)
 "lSF" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
-	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -35389,7 +35385,7 @@
 /turf/simulated/floor{
 	icon_state = "white"
 	},
-/area/medical/genetics)
+/area/medical/virology)
 "mZK" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/effect/decal/warning_stripes{
@@ -41497,7 +41493,7 @@
 	dir = 8;
 	icon_state = "whitegreen"
 	},
-/area/medical/genetics)
+/area/medical/sleeper)
 "ptw" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8;
@@ -42783,7 +42779,7 @@
 	},
 /obj/structure/wc/sink{
 	dir = 4;
-	pixel_x = 3
+	pixel_x = 14
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -44015,7 +44011,7 @@
 	dir = 4
 	},
 /turf/simulated/wall,
-/area/medical/sleeper)
+/area/medical/genetics)
 "qmz" = (
 /obj/structure/grille/window_spawner/reinforced,
 /obj/machinery/door/poddoor{
@@ -44949,7 +44945,7 @@
 /turf/simulated/floor{
 	icon_state = "white"
 	},
-/area/medical/genetics)
+/area/medical/virology)
 "qDn" = (
 /obj/machinery/vending/boozeomat{
 	req_access = null
@@ -46382,9 +46378,6 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/machinery/station_map{
-	dir = 4
-	},
 /turf/simulated/floor{
 	dir = 6;
 	icon_state = "whiteblue"
@@ -46653,7 +46646,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/medical/sleeper)
+/area/medical/genetics)
 "rlO" = (
 /obj/structure/table,
 /obj/machinery/power/apc{
@@ -46855,6 +46848,10 @@
 /obj/item/weapon/storage/box/gloves{
 	pixel_x = 4;
 	pixel_y = 3
+	},
+/obj/item/weapon/storage/box/masks{
+	pixel_x = -2;
+	pixel_y = -1
 	},
 /turf/simulated/floor{
 	icon_state = "white"
@@ -47058,9 +47055,7 @@
 /area/library)
 "rrW" = (
 /obj/machinery/computer/crew,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
 	dir = 9;
 	icon_state = "whiteblue"
@@ -48099,6 +48094,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -49987,6 +49983,7 @@
 	one_way = 1
 	},
 /obj/structure/bed/roller,
+/obj/structure/window/reinforced,
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -57004,9 +57001,6 @@
 /obj/machinery/camera{
 	dir = 8
 	},
-/obj/machinery/light_switch{
-	pixel_x = 28
-	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -59342,9 +59336,6 @@
 	},
 /area/syndicate_mothership)
 "vOu" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /turf/simulated/floor,
 /area/medical/genetics)
 "vPe" = (
@@ -62047,13 +62038,18 @@
 	},
 /area/engineering/engine)
 "wQK" = (
-/obj/machinery/door/window{
-	dir = 1;
-	name = "Monkey Pen";
-	req_access_txt = "9"
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
-/turf/simulated/floor,
-/area/medical/genetics)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/light_switch{
+	pixel_x = -21
+	},
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "whiteblue"
+	},
+/area/medical/sleeper)
 "wRa" = (
 /obj/structure/piano{
 	dir = 4
@@ -129174,7 +129170,7 @@ lSv
 emQ
 pbr
 rbw
-rbw
+wQK
 pSC
 xSa
 kOh
@@ -129878,13 +129874,13 @@ voF
 gWO
 eyr
 ohO
-eXo
+jBM
 abN
 rlM
 qmw
-fjo
-eXo
-oRx
+gNU
+jBM
+tof
 aeN
 qng
 qng
@@ -131994,7 +131990,7 @@ dgu
 nqQ
 nqQ
 nqQ
-tlU
+cjb
 vOu
 uTI
 tof
@@ -132347,7 +132343,7 @@ xyQ
 ckS
 rok
 kfr
-wQK
+vOu
 qTt
 tof
 wRF
@@ -132699,7 +132695,7 @@ dyx
 rvp
 wqd
 elU
-cjb
+qTt
 qTt
 tof
 vdB
