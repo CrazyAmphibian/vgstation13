@@ -6057,11 +6057,10 @@
 	},
 /area/centcom/ert)
 "cjb" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 8;
-	on = 1
+/obj/machinery/door/window{
+	name = "Monkey Pen";
+	req_access_txt = "9"
 	},
-/obj/structure/window/reinforced,
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -9830,6 +9829,10 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/structure/window/reinforced{
+	dir = 4;
+	name = "reinforced one-way window"
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -11777,9 +11780,7 @@
 	pixel_y = -5
 	},
 /obj/item/weapon/reagent_containers/spray/cleaner,
-/obj/structure/window/reinforced{
-	one_way = 1
-	},
+/obj/structure/window/reinforced,
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "whitegreen"
@@ -12637,8 +12638,7 @@
 	sensors = list("sme_sensor"="Engine")
 	},
 /obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/engineering/supermatter_room)
@@ -17995,8 +17995,7 @@
 "gCb" = (
 /obj/machinery/computer/supermatter,
 /obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -24156,13 +24155,18 @@
 	},
 /area/medical/medbay)
 "iTI" = (
-/obj/structure/window/reinforced{
-	dir = 8;
-	name = "reinforced one-way window";
-	one_way = 1
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
-/turf/simulated/floor,
-/area/medical/genetics)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/light_switch{
+	pixel_x = -21
+	},
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "whiteblue"
+	},
+/area/medical/sleeper)
 "iUi" = (
 /turf/unsimulated/floor{
 	icon_state = "bar"
@@ -26752,9 +26756,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
 	},
-/turf/simulated/floor{
-	icon_state = "white"
-	},
+/turf/simulated/floor/plating,
 /area/medical/medbay)
 "jRn" = (
 /obj/structure/cable/yellow{
@@ -27742,8 +27744,7 @@
 /area/vox_trading_post/eva)
 "kkk" = (
 /obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 1
@@ -28329,13 +28330,14 @@
 /turf/unsimulated/floor/planetary/path/jungle,
 /area/surface/jungle/zoned/bombrange)
 "kxX" = (
-/obj/machinery/door/window{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8;
-	name = "Monkey Pen";
-	req_access_txt = "9"
+	on = 1
 	},
-/mob/living/carbon/monkey,
-/turf/simulated/floor,
+/obj/structure/window/reinforced,
+/turf/simulated/floor{
+	icon_state = "white"
+	},
 /area/medical/genetics)
 "kye" = (
 /obj/structure/shuttle/engine/propulsion/right{
@@ -35286,12 +35288,9 @@
 /area/centcom/specops)
 "mYF" = (
 /obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
-/obj/structure/window/reinforced{
-	one_way = 1
-	},
+/obj/structure/window/reinforced,
 /obj/structure/table,
 /obj/item/device/radio,
 /obj/item/clothing/glasses/scanner/meson{
@@ -37331,9 +37330,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/grille/window_spawner/reinforced,
-/turf/simulated/floor{
-	icon_state = "white"
-	},
+/turf/simulated/floor/plating,
 /area/medical/chemistry)
 "nOe" = (
 /obj/machinery/door/window{
@@ -49977,11 +49974,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/structure/window/reinforced{
-	dir = 8;
-	name = "reinforced one-way window";
-	one_way = 1
-	},
 /obj/structure/bed/roller,
 /obj/structure/window/reinforced,
 /turf/simulated/floor{
@@ -54601,8 +54593,7 @@
 "ude" = (
 /obj/machinery/computer/general_air_control/atmos_automation,
 /obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -59335,9 +59326,6 @@
 	icon_state = "dark"
 	},
 /area/syndicate_mothership)
-"vOu" = (
-/turf/simulated/floor,
-/area/medical/genetics)
 "vPe" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
@@ -59775,8 +59763,7 @@
 "vXd" = (
 /obj/machinery/computer/powermonitor,
 /obj/structure/window/reinforced{
-	dir = 4;
-	one_way = 1
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/engineering/supermatter_room)
@@ -60674,9 +60661,7 @@
 	dir = 1;
 	initialize_directions = 11
 	},
-/turf/simulated/floor{
-	icon_state = "white"
-	},
+/turf/simulated/floor/plating,
 /area/medical/medbay)
 "wqd" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -62038,18 +62023,8 @@
 	},
 /area/engineering/engine)
 "wQK" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/light_switch{
-	pixel_x = -21
-	},
-/turf/simulated/floor{
-	dir = 8;
-	icon_state = "whiteblue"
-	},
-/area/medical/sleeper)
+/turf/simulated/floor,
+/area/medical/genetics)
 "wRa" = (
 /obj/structure/piano{
 	dir = 4
@@ -64174,6 +64149,10 @@
 /area/surface/jungle/fenced)
 "xFL" = (
 /obj/structure/closet/secure_closet/personal/patient,
+/obj/structure/window/reinforced{
+	dir = 4;
+	name = "reinforced one-way window"
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -123882,7 +123861,7 @@ sCJ
 ijr
 ijr
 tWQ
-tWQ
+ijr
 ijr
 ijr
 ijr
@@ -129170,7 +129149,7 @@ lSv
 emQ
 pbr
 rbw
-wQK
+iTI
 pSC
 xSa
 kOh
@@ -131287,7 +131266,7 @@ aTx
 aYg
 iYc
 dzR
-nqQ
+cjb
 xFL
 tof
 til
@@ -131639,8 +131618,8 @@ oIh
 nqQ
 iPE
 stH
-kxX
-iTI
+qTt
+wQK
 tof
 ecv
 rsE
@@ -131990,8 +131969,8 @@ dgu
 nqQ
 nqQ
 nqQ
-cjb
-vOu
+kxX
+wQK
 uTI
 tof
 pPX
@@ -132343,7 +132322,7 @@ xyQ
 ckS
 rok
 kfr
-vOu
+wQK
 qTt
 tof
 wRF
