@@ -27975,6 +27975,9 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 25
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
