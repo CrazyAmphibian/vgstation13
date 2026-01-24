@@ -442,7 +442,7 @@ var/list/LOGGED_SPLASH_REAGENTS = list(FUEL, THERMITE)
 	process_temperature()
 	if(istype(I,/obj/item/ice_crystal))
 		if(!is_open_container())
-			to_chat(user,"\The [src]'s lid gets in the way...")
+			to_chat(user,"\The [src]'s lid is in the way...")
 			return
 		if(reagents.total_volume>=volume)
 			to_chat(user,"There's no room in \the [src] to fit \the [I]!")
