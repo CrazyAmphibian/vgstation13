@@ -4,8 +4,8 @@
 
 //Fence smashing sound downloaded from http://freesound.org/people/hintringer/sounds/274768/
 
-#define CUT_TIME (20 SECONDS)
-#define CLIMB_TIME (20 SECONDS)
+#define CUT_TIME (10 SECONDS)
+#define CLIMB_TIME (5 SECONDS)
 
 #define NO_HOLE 0 //section is intact
 #define SMALL_HOLE 1 //small hole in the section - can pass small items through.
