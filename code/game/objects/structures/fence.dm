@@ -104,8 +104,6 @@
 				update_cut_status()
 		return
 
-	if(hole_size >= SMALL_HOLE)
-		user.drop_item(W, get_turf(src))
 
 	if(rodsadded && iswelder(W))
 		var/obj/item/tool/weldingtool/WT = W
@@ -115,6 +113,8 @@
 			hole_size=NO_HOLE
 			rodsadded=FALSE
 			update_cut_status()
+			return TRUE
+		return FALSE
 	if(!rodsadded && hole_size && istype(W, /obj/item/stack/rods))
 		var/obj/item/stack/rods/R = W
 		if(R.amount < hole_size)
@@ -123,6 +123,10 @@
 		user.visible_message("<span class='notice'>[user] inserts some rods into \the [src]'s structure.</span>", "<span class='notice'>You insert some rods into \the [src]'s structure.</span>")
 		R.use(hole_size)
 		rodsadded=TRUE
+		return TRUE
+
+	if(hole_size >= SMALL_HOLE)
+		user.drop_item(W, get_turf(src))
 
 /obj/structure/fence/attack_hand(mob/user)
 	if(user.a_intent == I_HURT)
