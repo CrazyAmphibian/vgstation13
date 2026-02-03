@@ -102,7 +102,7 @@
 
 				update_cut_status()
 		return
-	
+
 	if(hole_size >= SMALL_HOLE)
 		user.drop_item(W, get_turf(src))
 
