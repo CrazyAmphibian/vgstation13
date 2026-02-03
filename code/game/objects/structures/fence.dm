@@ -102,7 +102,9 @@
 
 				update_cut_status()
 		return
-
+	
+	if(hole_size >= SMALL_HOLE)
+		user.drop_item(W, get_turf(src))
 
 /obj/structure/fence/attack_hand(mob/user)
 	if(user.a_intent == I_HURT)
