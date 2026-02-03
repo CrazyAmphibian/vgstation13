@@ -25,7 +25,6 @@
 	var/cuttable = TRUE
 	var/hole_size= NO_HOLE
 	var/invulnerable = FALSE
-	var/rodsadded=FALSE
 
 /obj/structure/fence/New()
 	..()
@@ -104,29 +103,6 @@
 				update_cut_status()
 		return
 
-
-	if(rodsadded && iswelder(W))
-		var/obj/item/tool/weldingtool/WT = W
-		user.visible_message("<span class='notice'>[user] begins welding the rods in \the [src] to restore it.</span>", "<span class='notice'>You begin welding the rods in \the [src] to restore it.</span>")
-		if(WT.do_weld(user,src,3 SECONDS,0))
-			user.visible_message("<span class='notice'>[user] restores \the [src]'s structure.</span>", "<span class='notice'>You restore \the [src]'s structure.</span>")
-			hole_size=NO_HOLE
-			rodsadded=FALSE
-			update_cut_status()
-			return TRUE
-		return FALSE
-	if(!rodsadded && hole_size && istype(W, /obj/item/stack/rods))
-		var/obj/item/stack/rods/R = W
-		if(R.amount < hole_size)
-			to_chat(user, "<span class='info'>You'll need more rods to patch the hole!</span>")
-			return FALSE
-		user.visible_message("<span class='notice'>[user] inserts some rods into \the [src]'s structure.</span>", "<span class='notice'>You insert some rods into \the [src]'s structure.</span>")
-		R.use(hole_size)
-		rodsadded=TRUE
-		return TRUE
-
-	if(hole_size >= SMALL_HOLE)
-		user.drop_item(W, get_turf(src))
 
 /obj/structure/fence/attack_hand(mob/user)
 	if(user.a_intent == I_HURT)
