@@ -22,7 +22,7 @@
 	var/mob/body=null
 
 
-/datum/gene/New()
+/datum/gene/New(var/list/force_encode_mutations=list())
 	codons.len=size
 	
 	var/list/coded_mutations=list()
@@ -33,7 +33,9 @@
 		if(M.inverted_activation)
 			coded_mutations+=M
 			allocated_size+=M.amino_string+2 //+2 for the start and stop
-	
+		else if(M.type in force_encode_mutations)
+			coded_mutations+=M
+			allocated_size+=M.amino_string+2
 	var/remaining_space=(size/3)-allocated_size
 	if (remaining_space<0) //ah shit, you added too many spawned mutations. increase gene size, asshole!
 		size=remaining_space*3
