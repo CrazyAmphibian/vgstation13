@@ -232,6 +232,7 @@ MATCHBOXES ARE ALSO IN FANCY.DM
 	surgerysound = 'sound/items/cautery.ogg'
 	var/light_icon = "cig-light"
 	var/requires_oxygen = TRUE
+	var/dragon = 0.0 //world.time
 
 /obj/item/clothing/mask/cigarette/New()
 	base_name = name
@@ -506,7 +507,7 @@ MATCHBOXES ARE ALSO IN FANCY.DM
 		try_hotspot_expose(source_temperature, SMALL_FLAME, -1)
 	//Oddly specific and snowflakey reagent transfer system below
 	if(reagents && reagents.total_volume)	//Check if it has any reagents at all
-		if(iscarbon(M) && ((src == M.wear_mask) || (loc == M.wear_mask))) //If it's in the human/monkey mouth, transfer reagents to the mob
+		if(iscarbon(M) && ((src == M.wear_mask) || (loc == M.wear_mask || dragon))) //If it's in the human/monkey mouth, transfer reagents to the mob
 			if(M.reagents.has_any_reagents(LEXORINS) || (M_NO_BREATH in M.mutations) || istype(M.loc, /obj/machinery/atmospherics/unary/cryo_cell))
 				reagents.remove_any(REAGENTS_METABOLISM)
 			else
@@ -519,13 +520,24 @@ MATCHBOXES ARE ALSO IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/attack_self(mob/user as mob)
 	if(lit)
-		user.visible_message("<span class='notice'>[user] calmly drops and treads on the [name], putting it out.</span>")
-		var/turf/T = get_turf(src)
-		var/atom/new_butt = new type_butt(T)
-		transfer_fingerprints_to(new_butt)
-		lit = 0 //Needed for proper update
-		update_brightness()
-		qdel(src)
+		if(user.a_intent == I_DISARM || user.a_intent == I_HURT)
+			user.visible_message("<span class='notice'>[user] calmly drops and treads on the [name], putting it out.</span>")
+			var/turf/T = get_turf(src)
+			var/atom/new_butt = new type_butt(T)
+			transfer_fingerprints_to(new_butt)
+			lit = 0 //Needed for proper update
+			update_brightness()
+			qdel(src)
+		else if(dragon==0.0 && user.get_item_by_slot(slot_wear_mask)==null)
+			dragon=world.time //because the callback does not send how long do_after was being done for, so we have to do this instead. thanks, oldcoders
+			user.emote("me",MESSAGE_SEE,"begins to slowly inhale from \the [src].")
+			
+			var/callback/take_drag_do_after_callback/cb = new()
+			cb.cig=src
+			if(do_after(user,src,2 SECONDS,custom_checks=cb)) //failiure/partial messages are handled in the callback
+				user.emote("me",MESSAGE_SEE,"pulls \the [src] away and exhales a dense cloud of smoke.")
+			dragon=0.0
+			
 
 /obj/item/clothing/mask/cigarette/attack(mob/living/carbon/M, mob/living/carbon/user)
 	if(!istype(M))
@@ -549,6 +561,47 @@ MATCHBOXES ARE ALSO IN FANCY.DM
 
 	else
 		return ..()
+
+
+/callback/take_drag_do_after_callback
+	var/obj/item/clothing/mask/cigarette/cig=null
+
+/callback/take_drag_do_after_callback/invoke(var/mob/user, var/turf/use_user_turf, var/user_original_location, var/atom/target, var/target_original_location, var/needhand, var/obj/item/originally_held_item)
+	var/adjective
+	var/timesmoked=(world.time-cig.dragon)
+	if (timesmoked > 1 SECONDS)
+		adjective="a cloud of smoke"
+	else
+		adjective="a puff of smoke"
+	
+	if(!user)
+		return FALSE
+	if(user.isStunned())
+		user.emote("me",MESSAGE_SEE,"lets out [adjective] as \the [cig] falls to the ground.")
+		return FALSE
+	
+	var/itemonfloor=istype(originally_held_item.loc,/turf) ? "lets out [adjective] and drops \the [cig]." : "lets out [adjective] and puts the \the [cig] away."
+	if(target.loc != target_original_location)
+		user.emote("me",MESSAGE_SEE,itemonfloor)
+		return FALSE
+		
+	var/mask_slot=user.get_item_by_slot(slot_wear_mask)
+	if(mask_slot)
+		if(mask_slot!=cig) //moving it to mask slot is a silent failure
+			user.emote("me",MESSAGE_SEE,"quickly lets out [adjective] before putting on \the [mask_slot].")
+		return FALSE	
+		
+	if(originally_held_item)
+		if(!user.is_holding_item(originally_held_item))
+			user.emote("me",MESSAGE_SEE,itemonfloor)
+			return FALSE
+	else
+		if(user.get_active_hand())
+			user.emote("me",MESSAGE_SEE,itemonfloor)
+			return FALSE
+	if(!cig.lit)
+		user.emote("me",MESSAGE_SEE,"slowly lets out [adjective] as \the [cig] fizzles out.")
+	return TRUE
 
 //////////////
 //FANCY CIGS//
