@@ -535,8 +535,7 @@ MATCHBOXES ARE ALSO IN FANCY.DM
 			var/callback/take_drag_do_after_callback/cb = new()
 			cb.cig=src
 			
-			if(do_after(user,src,2 SECONDS,custom_checks=cb)) //failiure/partial messages are handled in the callback
-				user.emote("me",MESSAGE_SEE,"pulls \the [src] away and exhales a dense cloud of smoke.")
+			do_after(user,src,2 SECONDS,custom_checks=cb) //need callback for stuff like moving the item and mask covering, ect.
 			user.add_particles(PS_STEAM)	
 			user.adjust_particles(PVAR_SPAWNING,TRUE,PS_STEAM)
 			user.adjust_particles(PVAR_PIXEL_Y,10,PS_STEAM)
@@ -574,40 +573,25 @@ MATCHBOXES ARE ALSO IN FANCY.DM
 	var/obj/item/clothing/mask/cigarette/cig=null
 
 /callback/take_drag_do_after_callback/invoke(var/mob/user, var/turf/use_user_turf, var/user_original_location, var/atom/target, var/target_original_location, var/needhand, var/obj/item/originally_held_item)
-	var/adjective
-	var/timesmoked=(world.time-cig.dragon)
-	if (timesmoked > 1 SECONDS)
-		adjective="a cloud of smoke"
-	else
-		adjective="a puff of smoke"
-	
 	if(!user)
 		return FALSE
 	if(user.isStunned())
-		user.emote("me",MESSAGE_SEE,"lets out [adjective] as \the [cig] falls to the ground.")
 		return FALSE
-	
-	var/itemonfloor=istype(originally_held_item.loc,/turf) ? "lets out [adjective] and drops \the [cig]." : "lets out [adjective] and puts the \the [cig] away."
 	if(target.loc != target_original_location)
-		user.emote("me",MESSAGE_SEE,itemonfloor)
 		return FALSE
 		
 	var/mask_slot=user.get_item_by_slot(slot_wear_mask)
 	if(mask_slot)
-		if(mask_slot!=cig) //moving it to mask slot is a silent failure
-			user.emote("me",MESSAGE_SEE,"quickly lets out [adjective] before putting on \the [mask_slot].")
 		return FALSE	
 		
 	if(originally_held_item)
 		if(!user.is_holding_item(originally_held_item))
-			user.emote("me",MESSAGE_SEE,itemonfloor)
 			return FALSE
 	else
 		if(user.get_active_hand())
-			user.emote("me",MESSAGE_SEE,itemonfloor)
 			return FALSE
 	if(!cig.lit)
-		user.emote("me",MESSAGE_SEE,"slowly lets out [adjective] as \the [cig] fizzles out.")
+		return FALSE
 	return TRUE
 
 //////////////
