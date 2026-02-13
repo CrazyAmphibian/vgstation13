@@ -537,14 +537,11 @@ MATCHBOXES ARE ALSO IN FANCY.DM
 			cb.cig=src
 			
 			do_after(user,src,2 SECONDS,custom_checks=cb) //need callback for stuff like moving the item and mask covering, ect.
-			user.add_particles(PS_STEAM)	
-			user.adjust_particles(PVAR_SPAWNING,TRUE,PS_STEAM)
-			user.adjust_particles(PVAR_PIXEL_Y,10,PS_STEAM)
-			user.adjust_particles(PVAR_SCALE,list(0.3,0.3),PS_STEAM)
+			user.add_particles(PS_CIG_SMOKE)
 			spawn( 0.75*(world.time-dragon) )
-				user.adjust_particles(PVAR_SPAWNING,FALSE,PS_STEAM)
+				user.adjust_particles(PVAR_SPAWNING,FALSE,PS_CIG_SMOKE)
 				spawn(0.5 SECONDS) //do this so that the particle effect will naturally decay instead of abruptly stopping. it looks much better like this.
-					user.remove_particles(PS_STEAM)
+					user.remove_particles(PS_CIG_SMOKE)
 			dragon=0.0
 			
 
