@@ -530,7 +530,8 @@ MATCHBOXES ARE ALSO IN FANCY.DM
 			qdel(src)
 		else if(dragon==0.0 && user.get_item_by_slot(slot_wear_mask)==null)
 			dragon=world.time //because the callback does not send how long do_after was being done for, so we have to do this instead. thanks, oldcoders
-			user.emote("me",MESSAGE_SEE,"begins to slowly inhale from \the [src].")
+			var/list/pmsg=list("slowly inhales from \the [src].","takes a drag from \the [src].","gently draws from \the [src].")
+			user.emote("me",MESSAGE_SEE,pick(pmsg))
 			
 			var/callback/take_drag_do_after_callback/cb = new()
 			cb.cig=src
@@ -541,7 +542,9 @@ MATCHBOXES ARE ALSO IN FANCY.DM
 			user.adjust_particles(PVAR_PIXEL_Y,10,PS_STEAM)
 			user.adjust_particles(PVAR_SCALE,list(0.3,0.3),PS_STEAM)
 			spawn( 0.75*(world.time-dragon) )
-				user.remove_particles(PS_STEAM)
+				user.adjust_particles(PVAR_SPAWNING,FALSE,PS_STEAM)
+				spawn(0.5 SECONDS) //do this so that the particle effect will naturally decay instead of abruptly stopping. it looks much better like this.
+					user.remove_particles(PS_STEAM)
 			dragon=0.0
 			
 
