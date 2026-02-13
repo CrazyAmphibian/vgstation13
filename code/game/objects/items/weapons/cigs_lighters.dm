@@ -534,8 +534,15 @@ MATCHBOXES ARE ALSO IN FANCY.DM
 			
 			var/callback/take_drag_do_after_callback/cb = new()
 			cb.cig=src
+			
 			if(do_after(user,src,2 SECONDS,custom_checks=cb)) //failiure/partial messages are handled in the callback
 				user.emote("me",MESSAGE_SEE,"pulls \the [src] away and exhales a dense cloud of smoke.")
+			user.add_particles(PS_STEAM)	
+			user.adjust_particles(PVAR_SPAWNING,TRUE,PS_STEAM)
+			user.adjust_particles(PVAR_PIXEL_Y,10,PS_STEAM)
+			user.adjust_particles(PVAR_SCALE,list(0.3,0.3),PS_STEAM)
+			spawn( 0.75*(world.time-dragon) )
+				user.remove_particles(PS_STEAM)
 			dragon=0.0
 			
 
