@@ -15538,7 +15538,8 @@
 /area/shuttle/escape/centcom)
 "fHC" = (
 /obj/docking_port/destination/escape/shuttle/station{
-	dir = 4
+	dir = 4;
+	base_turf_type = /turf/unsimulated/floor/planetary/concrete/jungle
 	},
 /obj/effect/decal/warning_stripes{
 	dir = 4;
@@ -18659,7 +18660,8 @@
 	req_access_txt = "48"
 	},
 /obj/docking_port/destination/mining/outpost{
-	dir = 8
+	dir = 8;
+	base_turf_type = /turf/unsimulated/floor/planetary/path/jungle
 	},
 /turf/simulated/floor,
 /area/mine/production)
@@ -19763,7 +19765,8 @@
 	icon_state = "warning"
 	},
 /obj/docking_port/destination/transport/station{
-	dir = 8
+	dir = 8;
+	base_turf_type = /turf/unsimulated/floor/planetary/concrete/jungle
 	},
 /turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
@@ -38042,7 +38045,8 @@
 /area/chapel/main)
 "oaG" = (
 /obj/docking_port/destination/mining/station{
-	dir = 8
+	dir = 8;
+	base_turf_type = /turf/unsimulated/floor/planetary/concrete/jungle
 	},
 /obj/effect/decal/warning_stripes{
 	dir = 8;
@@ -43366,7 +43370,8 @@
 /area/centcom/ert)
 "qdn" = (
 /obj/docking_port/destination/ert/station{
-	dir = 8
+	dir = 8;
+	base_turf_type = /turf/unsimulated/floor/planetary/concrete/jungle
 	},
 /obj/effect/decal/warning_stripes{
 	dir = 8;
@@ -43684,7 +43689,8 @@
 /area/centcom/control)
 "qjp" = (
 /obj/docking_port/destination/pod1/station{
-	dir = 4
+	dir = 4;
+	base_turf_type = /turf/unsimulated/floor/planetary/concrete/jungle
 	},
 /obj/effect/decal/warning_stripes{
 	dir = 4;
@@ -45924,7 +45930,8 @@
 	icon_state = "warning"
 	},
 /obj/docking_port/destination/pod2/station{
-	dir = 4
+	dir = 4;
+	base_turf_type = /turf/unsimulated/floor/planetary/concrete/jungle
 	},
 /turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/roid_prep)
@@ -50785,7 +50792,8 @@
 	tag = "icon-warning (WEST)"
 	},
 /obj/docking_port/destination/supply/station{
-	dir = 8
+	dir = 8;
+	base_turf_type = /turf/unsimulated/floor/planetary/concrete/jungle
 	},
 /turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/landing)
@@ -64685,7 +64693,9 @@
 /turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "xPT" = (
-/obj/docking_port/destination/arrival/station,
+/obj/docking_port/destination/arrival/station{
+	base_turf_type = /turf/unsimulated/floor/planetary/concrete/jungle
+	},
 /obj/effect/decal/warning_stripes{
 	dir = 1;
 	icon_state = "warning";
