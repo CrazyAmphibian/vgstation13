@@ -283,11 +283,11 @@
 			if(v.transition_crosswrap_v && v.transition_crosswrap_v.len==4)
 				locked_to_current_v=TRUE //prevent shuffling z-level later in the code.
 				randomize_drift_position=FALSE
-				if(A.vy()>v.y_max - TRANSITIONEDGE) // NORTH
+				if(A.vy()>=v.y_max - TRANSITIONEDGE) // NORTH
 					move_to_v=v.transition_crosswrap_v[1]
 				else if(A.vy()<=TRANSITIONEDGE) // SOUTH
 					move_to_v=v.transition_crosswrap_v[2]
-				else if(A.vx()>v.x_max - TRANSITIONEDGE) // EAST
+				else if(A.vx()>=v.x_max - TRANSITIONEDGE) // EAST
 					move_to_v=v.transition_crosswrap_v[3]
 				else if(A.vx()<=TRANSITIONEDGE) // WEST
 					move_to_v=v.transition_crosswrap_v[4]
