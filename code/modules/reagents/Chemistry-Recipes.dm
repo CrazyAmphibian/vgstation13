@@ -3477,7 +3477,7 @@
 	name = "Sex on The Beach"
 	id = SEXONTHEBEACH
 	result = SEXONTHEBEACH
-	required_reagents = list(SCREWDRIVERCOCKTAIL = 1, SCHNAPPS = 1, BERRYJUICE = 1)
+	required_reagents = list(FAKEJUNGLEJUICE = 2, SCHNAPPS = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/americano
