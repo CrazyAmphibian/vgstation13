@@ -4434,21 +4434,21 @@
 	name = "Jungle Juice"
 	id = JUNGLEJUICE
 	result = JUNGLEJUICE
-	required_reagents = list(BERRYJUICEJUNGLE = 3, ORANGEJUICE=1, VODKA=2)
+	required_reagents = list(BERRYJUICEJUNGLE = 3, SCREWDRIVERCOCKTAIL=3)
 	result_amount = 6
 
 /datum/chemical_reaction/junglejuice_fake
 	name = "Jungle Juice"
 	id = FAKEJUNGLEJUICE
 	result = FAKEJUNGLEJUICE
-	required_reagents = list(BERRYJUICE = 3, ORANGEJUICE=1, VODKA=2)
+	required_reagents = list(BERRYJUICE = 3, SCREWDRIVERCOCKTAIL=3)
 	result_amount = 6
 
 /datum/chemical_reaction/junglejuice_frompoison
 	name = "Jungle Juice"
 	id = "junglejuicepoison"
 	result = JUNGLEJUICE
-	required_reagents = list(POISONBERRYJUICE = 3, ORANGEJUICE=1, VODKA=2)
+	required_reagents = list(POISONBERRYJUICE = 3, SCREWDRIVERCOCKTAIL=3)
 	result_amount = 6
 
 
