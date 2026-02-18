@@ -2020,3 +2020,27 @@
 	if(ishuman(M) && prob(5))
 		var/mob/living/carbon/human/H = M
 		H.vomit()
+
+
+/datum/reagent/ethanol/drink/junglejuice
+	name = "Jungle Juice"
+	id = FAKEJUNGLEJUICE
+	description = "Booze mixed with blended up wild berries."
+	reagent_state = REAGENT_STATE_LIQUID
+	color = "#660099"
+	alpha = 64
+	glass_desc = "It's quite tart, with earthy undertones."
+	nutriment_factor = 0.5 * REAGENTS_METABOLISM
+
+/datum/reagent/ethanol/drink/junglejuice/real
+	id = JUNGLEJUICE
+	glass_desc = "It's quite tart, with earthy undertones. Better hope the berries were safe."
+	nutriment_factor = 1.25 * REAGENTS_METABOLISM
+
+/datum/reagent/ethanol/drink/junglejuice/real/on_mob_life(var/mob/living/M)
+	if(..())
+		return 1
+	if(M.toxloss<15)
+		M.toxloss=min(M.toxloss+2.5,10)
+	else
+		M.toxloss = max(M.toxloss-1.5,10)

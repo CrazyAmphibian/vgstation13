@@ -4430,5 +4430,27 @@
 	required_temp = T0C + 100 //closest we can get to a vacuum distilation with our ghetto ass systems
 	result_amount = 1
 
+/datum/chemical_reaction/junglejuice
+	name = "Jungle Juice"
+	id = JUNGLEJUICE
+	result = JUNGLEJUICE
+	required_reagents = list(BERRYJUICEJUNGLE = 3, ORANGEJUICE=1, VODKA=2)
+	result_amount = 6
+
+/datum/chemical_reaction/junglejuice_fake
+	name = "Jungle Juice"
+	id = FAKEJUNGLEJUICE
+	result = FAKEJUNGLEJUICE
+	required_reagents = list(BERRYJUICE = 3, ORANGEJUICE=1, VODKA=2)
+	result_amount = 6
+
+/datum/chemical_reaction/junglejuice_frompoison
+	name = "Jungle Juice"
+	id = "junglejuicepoison"
+	result = JUNGLEJUICE
+	required_reagents = list(POISONBERRYJUICE = 3, ORANGEJUICE=1, VODKA=2)
+	result_amount = 6
+
+
 #undef ALERT_AMOUNT_ONLY
 #undef ALERT_ALL_REAGENTS
