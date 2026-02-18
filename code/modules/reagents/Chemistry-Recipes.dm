@@ -4434,22 +4434,22 @@
 	name = "Jungle Juice"
 	id = JUNGLEJUICE
 	result = JUNGLEJUICE
-	required_reagents = list(BERRYJUICEJUNGLE = 3, SCREWDRIVERCOCKTAIL=3)
-	result_amount = 6
+	required_reagents = list(BERRYJUICEJUNGLE = 1, SCREWDRIVERCOCKTAIL=1)
+	result_amount = 2
 
 /datum/chemical_reaction/junglejuice_fake
 	name = "Jungle Juice"
 	id = FAKEJUNGLEJUICE
 	result = FAKEJUNGLEJUICE
-	required_reagents = list(BERRYJUICE = 3, SCREWDRIVERCOCKTAIL=3)
-	result_amount = 6
+	required_reagents = list(BERRYJUICE = 1, SCREWDRIVERCOCKTAIL=1)
+	result_amount = 2
 
 /datum/chemical_reaction/junglejuice_frompoison
 	name = "Jungle Juice"
 	id = "junglejuicepoison"
 	result = JUNGLEJUICE
-	required_reagents = list(POISONBERRYJUICE = 3, SCREWDRIVERCOCKTAIL=3)
-	result_amount = 6
+	required_reagents = list(POISONBERRYJUICE = 1, SCREWDRIVERCOCKTAIL=1)
+	result_amount = 2
 
 
 #undef ALERT_AMOUNT_ONLY
