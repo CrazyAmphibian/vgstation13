@@ -2041,6 +2041,6 @@
 	if(..())
 		return 1
 	if(M.toxloss<15)
-		M.toxloss=min(M.toxloss+2.5,10)
+		M.toxloss=min(M.toxloss+2.5,15)
 	else
-		M.toxloss = max(M.toxloss-1.5,10)
+		M.toxloss = max(M.toxloss-1.5,15)
