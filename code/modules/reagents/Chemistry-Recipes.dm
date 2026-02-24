@@ -2696,7 +2696,7 @@
 	id = WATER
 	result = WATER
 	required_reagents = list(ICE = 0.1)
-	required_temp = T20C+5
+	required_temp = T0C+10
 	result_amount = 0.1
 	quiet = 1
 
