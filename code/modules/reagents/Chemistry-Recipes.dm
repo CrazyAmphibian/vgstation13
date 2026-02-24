@@ -2695,10 +2695,18 @@
 	name = "Melted ice"
 	id = WATER
 	result = WATER
-	required_reagents = list(ICE = 1)
+	required_reagents = list(ICE = 0.1)
 	required_temp = T20C+5
-	result_amount = 1
+	result_amount = 0.1
 	quiet = 1
+
+/datum/chemical_reaction/ice_to_water/on_reaction(var/datum/reagents/holder, var/created_volume)
+	var/allowed_consumption = ( holder.chem_temp - required_temp )/50 //.1 units used for every 5 degrees
+	allowed_consumption = ceil(allowed_consumption*10)/10 //clamp to every .1 units.
+	allowed_consumption = min(allowed_consumption,created_volume) //limit to how many units we have to work with.
+	holder.chem_temp = max(T0C,holder.chem_temp-allowed_consumption*10) //each .1 unit reduces the temp by 1 degree.
+	holder.remove_reagent(WATER, created_volume-allowed_consumption, safety = 1)
+	holder.add_reagent(ICE, created_volume-allowed_consumption, null, T0C)
 
 ////////////////////////////////////////// COCKTAILS //////////////////////////////////////
 
