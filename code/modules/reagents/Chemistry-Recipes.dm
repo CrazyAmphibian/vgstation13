@@ -4430,14 +4430,14 @@
 	required_temp = T0C + 100 //closest we can get to a vacuum distilation with our ghetto ass systems
 	result_amount = 1
 
-/datum/chemical_reaction/junglejuice
+/datum/chemical_reaction/junglejuice //the intended route for JJ, also from poison berries (see below).
 	name = "Jungle Juice"
 	id = JUNGLEJUICE
 	result = JUNGLEJUICE
 	required_reagents = list(BERRYJUICEJUNGLE = 1, SCREWDRIVERCOCKTAIL=1)
 	result_amount = 2
 
-/datum/chemical_reaction/junglejuice_fake
+/datum/chemical_reaction/junglejuice_fake //this exists to make JJ more accessible and reduce confusion about why some berries can't make it. that being said, this varient does not have the special effects, for better or worse.
 	name = "Jungle Juice"
 	id = FAKEJUNGLEJUICE
 	result = FAKEJUNGLEJUICE
