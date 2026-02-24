@@ -2701,6 +2701,10 @@
 	quiet = 1
 
 /datum/chemical_reaction/ice_to_water/on_reaction(var/datum/reagents/holder, var/created_volume)
+	if(istype(holder.my_atom,/obj/item/weapon/reagent_containers/food/drinks/shaker ) || istype(holder.my_atom.loc,/obj/machinery/chem_dispenser) ) //"halt" melting if we're in a shaker, or if we're in a booze/other dispenser to not mess with cocktail making that requires ice.
+		holder.remove_reagent(WATER, created_volume, safety = 1)
+		holder.add_reagent(ICE, created_volume, null, T0C)
+		return
 	var/allowed_consumption = ( holder.chem_temp - required_temp )/50 //.1 units used for every 5 degrees
 	allowed_consumption = ceil(allowed_consumption*10)/10 //clamp to every .1 units.
 	allowed_consumption = min(allowed_consumption,created_volume) //limit to how many units we have to work with.
