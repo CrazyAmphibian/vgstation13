@@ -2031,6 +2031,7 @@
 	alpha = 64
 	glass_desc = "It's quite tart, with earthy undertones."
 	nutriment_factor = 0.5 * REAGENTS_METABOLISM
+	glass_icon_state = "junglejuice"
 
 /datum/reagent/ethanol/drink/junglejuice/real //the intended variant of jungle juice which you make from poisounous berries (or the ones found on jungle). this one includes the special effects, as well as higher nutriment content.
 	id = JUNGLEJUICE
