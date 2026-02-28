@@ -2743,8 +2743,8 @@
 /area/crew_quarters/hop)
 "bci" = (
 /obj/structure/closet/secure_closet/warden,
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
-	pixel_x = 27
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_x = 28
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -3743,6 +3743,9 @@
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_x = -28
 	},
 /turf/unsimulated/floor/planetary/dirt/jungle,
 /area/surface/jungle/zoned/botanty_outside)
@@ -7120,6 +7123,9 @@
 	pixel_x = -3;
 	pixel_y = 3
 	},
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_y = -22
+	},
 /turf/simulated/floor{
 	icon_state = "grimy"
 	},
@@ -9390,6 +9396,9 @@
 "dtP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/camera,
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_y = 22
+	},
 /turf/simulated/floor/wood,
 /area/bridge/meeting_room)
 "dtV" = (
@@ -10544,8 +10553,8 @@
 /turf/simulated/floor/shuttle/plating,
 /area/centcom/evac)
 "dPZ" = (
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
-	pixel_x = -26
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_x = -28
 	},
 /turf/simulated/floor{
 	dir = 8;
@@ -11623,7 +11632,7 @@
 /area/security/perma)
 "ehl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
+/obj/machinery/media/receiver/boombox/wallmount{
 	pixel_x = 28
 	},
 /turf/simulated/floor{
@@ -13911,7 +13920,7 @@
 /turf/space,
 /area/centcom/specops)
 "fbo" = (
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
+/obj/machinery/media/receiver/boombox/wallmount{
 	pixel_y = -22
 	},
 /turf/simulated/floor{
@@ -15185,8 +15194,8 @@
 /turf/simulated/floor/vox,
 /area/vox_trading_post/hallway)
 "fAz" = (
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
-	pixel_y = -23
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_y = -22
 	},
 /obj/machinery/camera{
 	dir = 1
@@ -22292,8 +22301,8 @@
 /turf/simulated/wall,
 /area/medical/paramedics)
 "ijD" = (
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
-	pixel_y = -23
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_y = -22
 	},
 /turf/simulated/floor{
 	icon_state = "brown"
@@ -23617,7 +23626,7 @@
 "iMc" = (
 /obj/structure/table/woodentable,
 /obj/effect/glowshroom/single,
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
+/obj/machinery/media/receiver/boombox/wallmount{
 	pixel_y = -22
 	},
 /obj/item/weapon/circuitboard/airlock{
@@ -27986,7 +27995,7 @@
 	pixel_x = -7;
 	pixel_y = 9
 	},
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
+/obj/machinery/media/receiver/boombox/wallmount{
 	pixel_y = -22
 	},
 /turf/unsimulated/floor/planetary/path/jungle_plated,
@@ -32485,8 +32494,8 @@
 /turf/simulated/floor,
 /area/research_outpost/hallway)
 "lYm" = (
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
-	pixel_y = -26
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_y = -22
 	},
 /turf/simulated/floor{
 	icon_state = "cult"
@@ -36896,6 +36905,9 @@
 "nIM" = (
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_y = 22
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -43134,8 +43146,8 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
-	pixel_x = -26;
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_x = -28;
 	pixel_y = -11
 	},
 /obj/machinery/power/apc{
@@ -43918,7 +43930,7 @@
 	pixel_y = -10;
 	req_access_txt = "140"
 	},
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
+/obj/machinery/media/receiver/boombox/wallmount{
 	pixel_y = -22
 	},
 /obj/item/device/radio{
@@ -45614,7 +45626,7 @@
 	dir = 9
 	},
 /obj/machinery/disposal/compactor,
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
+/obj/machinery/media/receiver/boombox/wallmount{
 	pixel_y = -22
 	},
 /turf/simulated/floor{
@@ -45874,7 +45886,7 @@
 /area/security/armory)
 "qYz" = (
 /obj/machinery/r_n_d/fabricator/mechanic_fab/autolathe,
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
+/obj/machinery/media/receiver/boombox/wallmount{
 	pixel_x = -28
 	},
 /turf/simulated/floor{
@@ -46631,7 +46643,7 @@
 /obj/structure/closet/secure_closet/bar{
 	req_access_txt = "25"
 	},
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
+/obj/machinery/media/receiver/boombox/wallmount{
 	pixel_y = -22
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
@@ -48763,7 +48775,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/vox{
 	dir = 1
 	},
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
+/obj/machinery/media/receiver/boombox/wallmount{
 	pixel_x = 28
 	},
 /turf/simulated/floor/vox,
@@ -50289,6 +50301,12 @@
 	},
 /turf/simulated/floor/arcade,
 /area/science/rd)
+"sCB" = (
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_y = -22
+	},
+/turf/unsimulated/floor/planetary/path/jungle_plated,
+/area/crew_quarters/kitchen)
 "sCJ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -51141,7 +51159,7 @@
 	},
 /area/prison/solitary)
 "sSS" = (
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
+/obj/machinery/media/receiver/boombox/wallmount{
 	pixel_x = 28
 	},
 /obj/structure/flora/pottedplant/random{
@@ -53310,9 +53328,9 @@
 	pixel_y = 14;
 	req_access_txt = "16"
 	},
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
-	pixel_y = -12;
-	pixel_x = 26
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_x = 28;
+	pixel_y = -10
 	},
 /turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
@@ -55345,7 +55363,7 @@
 	},
 /area/tcomms/storage)
 "utO" = (
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
+/obj/machinery/media/receiver/boombox/wallmount{
 	pixel_x = 28
 	},
 /turf/unsimulated/floor/planetary/path/jungle,
@@ -55444,8 +55462,8 @@
 	},
 /area/science/rd)
 "uwu" = (
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
-	pixel_x = 29
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_x = 28
 	},
 /obj/machinery/camera{
 	dir = 9;
@@ -57838,7 +57856,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
+/obj/machinery/media/receiver/boombox/wallmount{
 	pixel_y = -22
 	},
 /turf/simulated/floor/wood,
@@ -60183,7 +60201,7 @@
 /obj/machinery/camera{
 	dir = 8
 	},
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
+/obj/machinery/media/receiver/boombox/wallmount{
 	pixel_x = 28
 	},
 /turf/unsimulated/floor/planetary/path/jungle_plated,
@@ -61133,8 +61151,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
-	pixel_y = -23
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_y = -22
 	},
 /turf/simulated/floor{
 	icon_state = "whitepurple"
@@ -63736,7 +63754,7 @@
 /turf/simulated/floor/plating,
 /area/medical/genetics)
 "xxP" = (
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
+/obj/machinery/media/receiver/boombox/wallmount{
 	pixel_x = 28
 	},
 /turf/unsimulated/floor/planetary/path/jungle_plated,
@@ -64627,8 +64645,8 @@
 	},
 /area/centcom/control)
 "xPh" = (
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
-	pixel_y = -24
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_y = -22
 	},
 /obj/machinery/camera{
 	dir = 1
@@ -65046,8 +65064,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/media/receiver/boombox/wallmount/muzak{
-	pixel_y = 25
+/obj/machinery/media/receiver/boombox/wallmount{
+	pixel_y = 22
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -129437,7 +129455,7 @@ psu
 vUL
 jdg
 vUL
-vUL
+sCB
 jUy
 lEP
 gPV
