@@ -3162,6 +3162,9 @@
 	icon_state = "dark"
 	},
 /area/science/chargebay)
+"bky" = (
+/turf/simulated/floor/wood,
+/area/djstation)
 "bkA" = (
 /obj/structure/fence/corner{
 	dir = 1
@@ -4748,7 +4751,10 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "bLH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -6800,6 +6806,10 @@
 	icon_state = "white"
 	},
 /area/medical/medbay)
+"cva" = (
+/obj/machinery/telecomms/relay/preset/ruskie,
+/turf/simulated/floor/engine,
+/area/djstation)
 "cvb" = (
 /obj/structure/window/reinforced,
 /obj/structure/shuttle/engine/heater{
@@ -15554,7 +15564,7 @@
 "fHq" = (
 /obj/structure/bed,
 /obj/item/weapon/bedsheet/brown,
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor/wood,
 /area/djstation)
 "fHw" = (
 /obj/machinery/light{
@@ -15743,7 +15753,7 @@
 /obj/machinery/door/mineral/iron{
 	name = "Transmitter"
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor/engine,
 /area/djstation)
 "fKB" = (
 /obj/structure/filingcabinet/filingcabinet,
@@ -16014,7 +16024,10 @@
 	dir = 1;
 	invisibility = 1
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "fPu" = (
 /obj/structure/table/glass,
@@ -20036,10 +20049,10 @@
 	icon_state = "0-2";
 	d2 = 2
 	},
-/obj/machinery/media/transmitter/broadcast{
-	autolink = list("???")
+/obj/machinery/media/transmitter/broadcast/dj{
+	media_frequency = 1234
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor/engine,
 /area/djstation)
 "hqw" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -23300,7 +23313,10 @@
 	},
 /area/centcom/living)
 "iCZ" = (
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "iDk" = (
 /obj/machinery/door/airlock/glass{
@@ -24384,7 +24400,7 @@
 /area/surface/jungle/zoned/outdoor_bar)
 "iXI" = (
 /obj/structure/curtain/open/bed,
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor/wood,
 /area/djstation)
 "iXO" = (
 /obj/machinery/newscaster{
@@ -24582,7 +24598,10 @@
 	},
 /obj/item/weapon/pickaxe,
 /obj/item/weapon/pickaxe/shovel,
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "iZK" = (
 /obj/structure/cable/yellow{
@@ -24798,7 +24817,10 @@
 	pixel_y = -8;
 	pixel_x = -4
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "jdY" = (
 /obj/structure/table/woodentable,
@@ -26775,7 +26797,10 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/light/small,
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "jQz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -31964,7 +31989,10 @@
 /area/security/brig)
 "lNH" = (
 /obj/machinery/door/mineral/rock_door,
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/surface/jungle/roid)
 "lNM" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -37721,7 +37749,7 @@
 "nTW" = (
 /obj/structure/table/woodentable,
 /obj/item/clothing/head/pajamahat/blue,
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor/wood,
 /area/djstation)
 "nUn" = (
 /obj/structure/table,
@@ -38880,7 +38908,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "onM" = (
 /obj/machinery/door/poddoor{
@@ -40541,7 +40572,10 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "oXZ" = (
 /obj/machinery/door/airlock/research{
@@ -42181,6 +42215,17 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
+"pEJ" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
+/area/djstation)
 "pEO" = (
 /obj/structure/grille/window_spawner/reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -42553,7 +42598,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor/engine,
 /area/djstation)
 "pMm" = (
 /obj/item/weapon/stool,
@@ -42749,7 +42794,10 @@
 	pixel_y = -24
 	},
 /obj/structure/cable/green,
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "pPh" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -44576,6 +44624,13 @@
 	},
 /turf/unsimulated/mineral/jungle_underground/crate_loot,
 /area/surface/jungle/vault)
+"qvD" = (
+/obj/machinery/media/jukebox/dj,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
+/area/djstation)
 "qvG" = (
 /turf/simulated/floor,
 /area/engineering/mechanics)
@@ -45244,7 +45299,10 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "qHw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/visible{
@@ -45723,7 +45781,10 @@
 /obj/item/weapon/paper_bin/black{
 	pixel_y = 8
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "qRt" = (
 /turf/simulated/wall,
@@ -48327,7 +48388,10 @@
 "rMe" = (
 /obj/structure/table/woodentable,
 /obj/item/device/radio/intercom,
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "rMl" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
@@ -50160,7 +50224,10 @@
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "swc" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -56926,10 +56993,13 @@
 	pixel_x = 16
 	},
 /obj/item/device/radio/headset/headset_earmuffs,
-/obj/machinery/media/receiver/boombox/wallmount{
+/obj/machinery/media/receiver/boombox/wallmount/muzak{
 	pixel_y = 22
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "uXJ" = (
 /obj/machinery/camera{
@@ -58291,7 +58361,10 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "vuh" = (
 /obj/structure/cable/orange{
@@ -60912,6 +60985,13 @@
 	dir = 8
 	},
 /area/engineering/antimatter_room)
+"wtl" = (
+/obj/structure/table/plastic,
+/obj/machinery/media/receiver/boombox{
+	pixel_x = 13
+	},
+/turf/unsimulated/floor/planetary/path/jungle,
+/area/surface/jungle/zoned/outdoor_bar)
 "wtp" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -61301,7 +61381,8 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
+/obj/machinery/space_heater/air_conditioner,
+/turf/simulated/floor/engine,
 /area/djstation)
 "wzx" = (
 /obj/structure/cable/orange{
@@ -63029,7 +63110,7 @@
 	amount = 10
 	},
 /obj/structure/table/woodentable,
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor/engine,
 /area/djstation)
 "xgw" = (
 /turf/simulated/floor{
@@ -63568,7 +63649,10 @@
 "xpg" = (
 /obj/machinery/power/battery/smes,
 /obj/structure/cable/green,
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor{
+	dir = 6;
+	icon_state = "dark"
+	},
 /area/djstation)
 "xpr" = (
 /obj/structure/table,
@@ -63824,7 +63908,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
+/turf/simulated/floor/engine,
 /area/djstation)
 "xuR" = (
 /obj/structure/closet/crate,
@@ -128615,7 +128699,7 @@ oAo
 eJs
 edD
 sXU
-sXU
+wtl
 uPk
 edD
 edD
@@ -476161,7 +476245,7 @@ xMO
 xMO
 hqu
 xuw
-iCZ
+cva
 xMO
 xMO
 rWI
@@ -477568,7 +477652,7 @@ xMO
 rrY
 uXI
 svP
-pMk
+pEJ
 iCZ
 iCZ
 jdU
@@ -478270,7 +478354,7 @@ rWI
 xMO
 xMO
 xMO
-xMO
+qvD
 iCZ
 iCZ
 iCZ
@@ -478627,7 +478711,7 @@ iXI
 gYp
 gYp
 iCZ
-pMk
+pEJ
 iZG
 xMO
 xiJ
@@ -478975,7 +479059,7 @@ rWI
 xMO
 xMO
 xMO
-iCZ
+bky
 fHq
 gYp
 iCZ
@@ -479327,7 +479411,7 @@ rWI
 xMO
 xMO
 xMO
-iCZ
+bky
 nTW
 gYp
 fPr
