@@ -34283,7 +34283,7 @@
 	base_state = "right";
 	req_access_txt = "140"
 	},
-/obj/item/device/deskbell{
+/obj/item/device/deskbell/signaler/trader{
 	pixel_x = -3;
 	pixel_y = -4
 	},
