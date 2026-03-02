@@ -34313,7 +34313,8 @@
 	},
 /obj/item/device/deskbell/signaler/trader{
 	pixel_x = -3;
-	pixel_y = -4
+	pixel_y = -4;
+	name = "Storefront Counter Bell"
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/trade_processing)
@@ -62338,7 +62339,7 @@
 "wSv" = (
 /obj/structure/trade_window,
 /obj/item/weapon/card/debit/trader{
-	pixel_y = -5
+	pixel_y = -16
 	},
 /turf/simulated/floor/vox,
 /area/vox_trading_post/docking)
