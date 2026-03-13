@@ -48703,6 +48703,9 @@
 	pixel_x = 3;
 	pixel_y = 4
 	},
+/obj/item/weapon/reagent_containers/food/condiment/sugar{
+	pixel_x = -8
+	},
 /turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/crew_quarters/kitchen)
 "rTj" = (
@@ -50827,7 +50830,12 @@
 /area/science/hallway)
 "sIe" = (
 /obj/structure/table,
-/obj/item/weapon/kitchen/rollingpin,
+/obj/item/weapon/kitchen/rollingpin{
+	pixel_y = 5
+	},
+/obj/item/weapon/reagent_containers/food/drinks/flour{
+	pixel_x = 3
+	},
 /turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/crew_quarters/kitchen)
 "sIE" = (
