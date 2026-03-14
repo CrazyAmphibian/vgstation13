@@ -34316,6 +34316,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/structure/closet/secure_closet/freezer/kitchen,
 /turf/simulated/floor{
 	icon_state = "showroomfloor"
 	},
@@ -48703,9 +48704,6 @@
 	pixel_x = 3;
 	pixel_y = 4
 	},
-/obj/item/weapon/reagent_containers/food/condiment/sugar{
-	pixel_x = -8
-	},
 /turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/crew_quarters/kitchen)
 "rTj" = (
@@ -50832,9 +50830,6 @@
 /obj/structure/table,
 /obj/item/weapon/kitchen/rollingpin{
 	pixel_y = 5
-	},
-/obj/item/weapon/reagent_containers/food/drinks/flour{
-	pixel_x = 3
 	},
 /turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/crew_quarters/kitchen)
