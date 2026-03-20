@@ -75666,6 +75666,11 @@
 	id_tag = "TSdisplay";
 	name = "Tradeship Display Shutters"
 	},
+/obj/item/device/deskbell/signaler/trader{
+	pixel_y = 5;
+	pixel_x = 10;
+	name = "Trade Ship Counter Bell"
+	},
 /turf/simulated/floor{
 	icon_state = "showroomfloor"
 	},

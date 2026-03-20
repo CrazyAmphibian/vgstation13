@@ -9134,6 +9134,11 @@
 	name = "Firelock South"
 	},
 /obj/item/device/instrument/glockenspiel,
+/obj/item/device/deskbell/signaler/trader{
+	pixel_y = -4;
+	pixel_x = -4;
+	name = "Trade Post Desk Bell"
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters)
 "atr" = (
@@ -112594,6 +112599,11 @@
 "eNC" = (
 /obj/machinery/light,
 /obj/structure/table/woodentable,
+/obj/item/device/deskbell/signaler/trader{
+	pixel_y = 9;
+	pixel_x = 10;
+	name = "Trade Ship Bell"
+	},
 /turf/simulated/floor/shuttle{
 	icon_state = "floor2"
 	},

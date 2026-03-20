@@ -85317,6 +85317,11 @@
 /obj/structure/window/reinforced/plasma{
 	dir = 8
 	},
+/obj/item/device/deskbell/signaler/trader{
+	pixel_x = 10;
+	pixel_y = -5;
+	name = "Trade Ship Counter Bell"
+	},
 /turf/simulated/floor{
 	icon_state = "darkyellowfull";
 	tag = "icon-darkyellowfull"

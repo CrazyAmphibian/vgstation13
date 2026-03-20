@@ -9880,6 +9880,11 @@
 	id_tag = "tradefloorstation";
 	name = "Trade Shutter"
 	},
+/obj/item/device/deskbell/signaler/trader{
+	pixel_x = 8;
+	pixel_y = 6;
+	name = "Trade Den Counter Bell"
+	},
 /turf/simulated/floor/plating,
 /area/vox_station/tradepost)
 "aAL" = (
@@ -43349,6 +43354,11 @@
 /obj/structure/sign/pox{
 	icon_state = "tradesign";
 	name = "Vox Tradepost"
+	},
+/obj/item/device/deskbell/signaler/trader{
+	pixel_x = 8;
+	pixel_y = -5;
+	name = "Trade Ship Bell"
 	},
 /turf/simulated/floor{
 	icon_state = "darkyellowfull";

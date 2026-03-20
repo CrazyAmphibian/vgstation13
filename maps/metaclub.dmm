@@ -100687,6 +100687,11 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/item/device/deskbell/signaler/trader{
+	pixel_x = 10;
+	pixel_y = -5;
+	name = "Trade Ship Counter Bell"
+	},
 /turf/simulated/floor/carpet,
 /area/shuttle/trade/start)
 "eac" = (

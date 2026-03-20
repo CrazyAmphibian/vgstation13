@@ -60940,6 +60940,11 @@
 	req_one_access_txt = "140"
 	},
 /obj/abstract/map/spawner/assistant/materials,
+/obj/item/device/deskbell/signaler/trader{
+	pixel_x = 10;
+	pixel_y = 5;
+	name = "Trade Ship Counter Bell"
+	},
 /turf/simulated/floor{
 	icon_state = "showroomfloor"
 	},
