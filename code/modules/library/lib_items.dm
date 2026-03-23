@@ -68,9 +68,14 @@
 		return
 	if(istype(O,/obj/item/weapon/storage/bag/bookbag))
 		var/obj/item/weapon/storage/S = O
-		for(var/obj/item/I in S.contents)
-			if(is_type_in_list(I, valid_types))
-				S.remove_from_storage(I, src)
+		if(!S.contents.len)
+			for(var/obj/item/I in contents)
+				if(S.can_be_inserted(I))
+					S.handle_item_insertion(I)
+		else
+			for(var/obj/item/I in S.contents)
+				if(is_type_in_list(I, valid_types))
+					S.remove_from_storage(I, src)
 		update_icon()
 	else if(is_type_in_list(O, valid_types))
 		user.drop_item(O, src)
@@ -168,6 +173,10 @@
 		var/image/bookoverlay = image(icon,loc,"bookoverlay",layer,dir,x_offset,y_offset)
 		bookoverlay.color = I:spine_color || "#840"
 		overlays += bookoverlay
+		if(I:spine_overlay)
+			var/image/bookoveroverlay = image(icon,loc,"bookoveroverlay",layer,dir,x_offset,y_offset)
+			bookoveroverlay.color = I:spine_overlay
+			overlays += bookoveroverlay
 		x_offset += 4
 		if(x_offset > 20)
 			x_offset = 0
@@ -235,6 +244,7 @@
 	var/book_width = 600
 	var/book_height = 800
 	var/spine_color = "#444"
+	var/spine_overlay //optional, adds another sprite if set to a color
 
 /obj/item/weapon/book/New()
 	..()
@@ -377,33 +387,23 @@
 	else if(istype(W, /obj/item/weapon/barcodescanner))
 		var/obj/item/weapon/barcodescanner/scanner = W
 		if(!scanner.computer)
-			to_chat(user, "[W]'s screen flashes: 'No associated computer found!'")
+			to_chat(user, "<span class='warning'>[W]'s screen flashes: 'No associated computer found!'</span>")
 		else
-			switch(scanner.mode)
-				if(0)
-					scanner.book = src
-					to_chat(user, "[W]'s screen flashes: 'Book stored in buffer.'")
-				if(1)
-					scanner.book = src
-					scanner.computer.buffer_book = src.name
-					to_chat(user, "[W]'s screen flashes: 'Book stored in buffer. Book title stored in associated computer buffer.'")
-				if(2)
-					scanner.book = src
-					for(var/datum/borrowbook/b in scanner.computer.checkouts)
-						if(b.bookname == src.name)
-							scanner.computer.checkouts.Remove(b)
-							to_chat(user, "[W]'s screen flashes: 'Book stored in buffer. Book has been checked in.'")
-							return
-					to_chat(user, "[W]'s screen flashes: 'Book stored in buffer. No active check-out record found for current title.'")
-				if(3)
-					scanner.book = src
-					for(var/obj/item/weapon/book in scanner.computer.inventory)
-						if(book == src)
-							to_chat(user, "[W]'s screen flashes: 'Book stored in buffer. Title already present in inventory, aborting to avoid duplicate entry.'")
-							return
-					scanner.computer.inventory.Add(src)
-					to_chat(user, "[W]'s screen flashes: 'Book stored in buffer. Title added to general inventory.'")
-
+			if(!(src in scanner.computer.inventory))
+				scanner.computer.inventory.Add(src)
+				to_chat(user, "<span class='notice'>[W]'s screen flashes: 'Title added to general inventory.'</span>")
+				return
+			for(var/datum/borrowbook/b in scanner.computer.checkouts)
+				if(b.bookname == src.name)
+					scanner.computer.checkouts.Remove(b)
+					to_chat(user, "<span class='notice'>[W]'s screen flashes: 'Book has been checked in.'</span>")
+					return
+			if(!scanner.book)
+				scanner.book = src
+				scanner.computer.buffer_book = src.name
+				scanner.computer.screenstate = CHECKOUT_BOOK
+				scanner.computer.updateUsrDialog()
+				to_chat(user, "<span class='notice'>[W]'s screen flashes: 'Book stored in buffer. Book title stored in associated computer buffer.'</span>")
 	else if(istype(W, /obj/item/weapon/paper/talisman))
 		var/obj/item/weapon/paper/talisman/talisman = W
 		if(runestun)
@@ -422,6 +422,27 @@
 			ignite()
 	else
 		..()
+
+/obj/item/weapon/book/update_icon()
+	switch(icon_state)
+		if("book1")
+			spine_color = "#888"
+		if("book2")
+			spine_color = "#800"
+		if("book3")
+			spine_color = "#880"
+		if("book4")
+			spine_color = "#088"
+		if("book5")
+			spine_color = "#080"
+		if("book6")
+			spine_color = "#808"
+		if("book7")
+			spine_color = "#fff"
+		if("book8")
+			spine_color = "#444"
+		if("book9")
+			spine_color = "#840"
 
 /*
  * Traitor Ooccult Books
@@ -487,25 +508,7 @@
 	else
 		var/picked_num = rand(1,9)
 		icon_state = "book[picked_num]"
-		switch(picked_num)
-			if(1)
-				spine_color = "#888"
-			if(2)
-				spine_color = "#800"
-			if(3)
-				spine_color = "#880"
-			if(4)
-				spine_color = "#088"
-			if(5)
-				spine_color = "#080"
-			if(6)
-				spine_color = "#808"
-			if(7)
-				spine_color = "#fff"
-			if(8)
-				spine_color = "#444"
-			if(9)
-				spine_color = "#840"
+		update_icon()
 	item_state = icon_state
 
 /*
@@ -521,31 +524,13 @@
 	flags = FPRINT
 	var/obj/machinery/computer/library/checkout/computer // Associated computer - Modes 1 to 3 use this
 	var/obj/item/weapon/book/book	 //  Currently scanned book
-	var/mode = 0 					// 0 - Scan only, 1 - Scan and Set Buffer, 2 - Scan and Attempt to Check In, 3 - Scan and Attempt to Add to Inventory
 
-/obj/item/weapon/barcodescanner/attack_self(mob/user as mob)
-	mode += 1
-	if(mode > 3)
-		mode = 0
-	to_chat(user, "[src] Status Display:")
-	var/modedesc
-	switch(mode)
-		if(0)
-			modedesc = "Scan book to local buffer."
-		if(1)
-			modedesc = "Scan book to local buffer and set associated computer buffer to match."
-		if(2)
-			modedesc = "Scan book to local buffer, attempt to check in scanned book."
-		if(3)
-			modedesc = "Scan book to local buffer, attempt to add book to general inventory."
-		else
-			modedesc = "ERROR"
-	to_chat(user, " - Mode [mode] : [modedesc]")
+/obj/item/weapon/barcodescanner/examine(mob/user, size, show_name)
+	. = ..()
 	if(src.computer)
 		to_chat(user, "<font color=green>Computer has been associated with this unit.</font>")
 	else
 		to_chat(user, "<font color=red>No associated computer found. Only local scans will function properly.</font>")
-	to_chat(user, "\n")
 
 /obj/item/weapon/barcodescanner/Destroy()
 	book = null

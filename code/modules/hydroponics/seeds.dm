@@ -312,6 +312,11 @@
 	seed_type = "sunflowers"
 	vending_cat = "flowers"
 
+/obj/item/seeds/roseseed
+	name = "packet of rose seeds"
+	seed_type = "roses"
+	vending_cat = "flowers"
+
 /obj/item/seeds/mustardplantseed
 	name = "packet of mustardplant seeds"
 	seed_type = "mustardplants"
@@ -544,6 +549,12 @@
 /obj/item/seeds/flaxseed
 	name = "packet of flax seeds"
 	seed_type = "flax"
+	vending_cat = "flowers"
+
+/obj/item/seeds/mintseed
+	name = "packet of mint seeds"
+	seed_type = "mint"
+	vending_cat = "weeds"
 
 // Chili plants/variants.
 /datum/seed/chili
@@ -1115,6 +1126,27 @@
 	fluid_consumption = 6
 	nutrient_consumption = 2
 	large = 0
+
+/datum/seed/flower/rose
+	name = "roses"
+	seed_name = "rose"
+	display_name = "roses"
+	plural = 1
+	plant_dmi = 'icons/obj/hydroponics/rose.dmi'
+	products = list(/obj/item/weapon/reagent_containers/food/snacks/grown/rose)
+	chems = list(NUTRIMENT = list(1,20))
+
+	lifespan = 60
+	potency = 20
+	maturation = 6
+	production = 6
+	yield = 6
+	growth_stages = 3
+	ideal_light = 8
+	fluid_consumption = 0.5
+	nutrient_consumption = 0.5
+	large = 0
+	thorny = 1
 
 /datum/seed/flower/sunflower/moonflower
 	name = "moonflowers"
@@ -2090,3 +2122,20 @@
 	ideal_light = 8
 	nutrient_consumption = 2
 	constrained = 1
+
+/datum/seed/mint //somewhat realistic mint stats
+	name = "mint"
+	seed_name = "mint"
+	display_name = "mint"
+	plant_dmi = 'icons/obj/hydroponics/mint.dmi'
+	products = list(/obj/item/weapon/reagent_containers/food/snacks/grown/mint)
+	chems = list(MINTESSENCE = list(2,4)) //TO DO: add a PROPER system that switches the produced chems based on potency so it makes mint essence when low potency and mint tox when high potency
+	lifespan = 150
+	maturation = 2
+	production = 8
+	yield = 6
+	potency = 5
+	fluid_consumption = 5
+	nutrient_consumption = 0.05
+	growth_stages = 2
+	voracious = 1
