@@ -10,6 +10,8 @@
 #define GENE_GROUP_METABOLISM 3 //affecting what you eat
 #define GENE_GROUP_TEMPERATURE 4 //affecting your body temp in some way
 
+var/global/list_all_geneblocks=list()
+
 /datum/geneblock
 	var/list/codons=list()
 	var/size=30 //remember that there are 3 codons in an amino, so this should be a multiple of 3. this number affects how many mutations are able to be active at once, since there won't always be space. try to keep it a reasonable number. to calculate a decent number, go through all eligible mutations, sum their maxlength plus 2. then take that number and multiply it by 1/2. then, multiply by 3 (since 3 codons per amino acid). of course, you should just use your noggin when setting these numbers.
@@ -58,11 +60,10 @@
 			pointer++
 		add_amino_at_position(AMINO_ANY_END,pointer) //force end codon
 		pointer++
-		if(M.type==/datum/mutation/filler)
-			qdel(M)
 
 	recompile_basedata()
 
+//used when you update the codon (CATG) array. implied with most geneblock procs that modify genetic data.
 /datum/geneblock/proc/recompile_basedata()
 	aminos=list()
 	aminoposdata=list()
@@ -134,9 +135,9 @@
 
 
 /datum/geneblock/proc/mutate_rand(var/n=1)
-	while(bases)
+	while(n)
 		codons[rand(1,size)]=pick(CODON_LIST) //randomize a random codon
-		bases--
+		n--
 	recompile_basedata()
 
 
@@ -148,4 +149,5 @@
 	codons[truepos]=encoding[1]
 	codons[truepos+1]=encoding[2]
 	codons[truepos+2]=encoding[3]
+	recompile_basedata()
 	

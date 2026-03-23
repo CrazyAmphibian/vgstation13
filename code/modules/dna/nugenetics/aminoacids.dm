@@ -40,9 +40,6 @@
 
 var/global/amino_encodings=list() //associative amino_id=[encoding1,encoding2,...]
 
-
-
-
 var/global/all_amino_acids=list() //stores all amino acids in form of AMINO_ defines
 var/global/standard_amino_acids=list() //as above, but excludes stop codons
 var/global/all_amino_encodings=list() //stores all encodings (GCAT) for all aminmo acids
