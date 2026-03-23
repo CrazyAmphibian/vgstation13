@@ -1,4 +1,3 @@
-//set up so that you can do bitwise not to get the mirror image base (A<->G, C<->T)
 #define CODON_A "A"
 #define CODON_C "C"
 #define CODON_T "T"
@@ -11,7 +10,7 @@
 #define GENE_GROUP_METABOLISM 3 //affecting what you eat
 #define GENE_GROUP_TEMPERATURE 4 //affecting your body temp in some way
 
-/datum/gene
+/datum/geneblock
 	var/list/codons=list()
 	var/size=30 //remember that there are 3 codons in an amino, so this should be a multiple of 3. this number affects how many mutations are able to be active at once, since there won't always be space. try to keep it a reasonable number. to calculate a decent number, go through all eligible mutations, sum their maxlength plus 2. then take that number and multiply it by 1/2. then, multiply by 3 (since 3 codons per amino acid). of course, you should just use your noggin when setting these numbers.
 	var/name=""
@@ -22,7 +21,7 @@
 	var/mob/body=null
 
 
-/datum/gene/New(var/list/force_encode_mutations=list())
+/datum/geneblock/New(var/list/force_encode_mutations=list())
 	codons.len=size
 	
 	var/list/coded_mutations=list()
@@ -64,7 +63,7 @@
 
 	recompile_basedata()
 
-/datum/gene/proc/recompile_basedata()
+/datum/geneblock/proc/recompile_basedata()
 	aminos=list()
 	aminoposdata=list()
 	
@@ -88,7 +87,7 @@
 			M.on_deactivation(src,body)
 			
 
-/datum/gene/proc/get_active_amino_strings() //returns a list of lists of amino acid ids. includes the start and stop codons.
+/datum/geneblock/proc/get_active_amino_strings() //returns a list of lists of amino acid ids. includes the start and stop codons.
 	var/reading=FALSE
 	var/list/returndata=list()
 	var/list/buffer=list()
@@ -108,7 +107,7 @@
 	return returndata
 
 
-/datum/gene/proc/get_active_base_strings() //more or less the same as get_active_amino_strings, but instead of amino acid ids, it's the base codons.
+/datum/geneblock/proc/get_active_base_strings() //more or less the same as get_active_amino_strings, but instead of amino acid ids, it's the base codons.
 	var/reading=FALSE
 	var/list/returndata=list()
 	var/list/buffer=list()
@@ -134,14 +133,14 @@
 	return returndata
 
 
-/datum/gene/proc/mutate_rand(var/n=1)
+/datum/geneblock/proc/mutate_rand(var/n=1)
 	while(bases)
 		codons[rand(1,size)]=pick(CODON_LIST) //randomize a random codon
 		bases--
 	recompile_basedata()
 
 
-/datum/gene/proc/add_amino_at_position(var/amino_id,var/amino_position=1)
+/datum/geneblock/proc/add_amino_at_position(var/amino_id,var/amino_position=1)
 	if(amino_position*3>size-2) //don't add out of bounds
 		return
 	var/encoding=pick(amino_encodings[amino_id])

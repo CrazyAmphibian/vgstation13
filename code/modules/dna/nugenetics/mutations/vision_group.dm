@@ -1,4 +1,4 @@
-/datum/gene/vision
+/datum/geneblock/vision
 	name="Ocular Functions"
 	size=60
 	group=GENE_GROUP_VISION
@@ -44,11 +44,11 @@
 	msg_deactivate="<span class='warning'>Your eyes no longer feel weird.</span>"
 	disability=NEARSIGHTED
 
-/datum/mutation/nearsightedness/on_activation(var/datum/gene/G,var/mob/M)
+/datum/mutation/nearsightedness/on_activation(var/datum/geneblock/G,var/mob/M)
 	..()
 	M.nearsightedness += 3
 
-/datum/mutation/nearsightedness/on_deactivation(var/datum/gene/G,var/mob/M)
+/datum/mutation/nearsightedness/on_deactivation(var/datum/geneblock/G,var/mob/M)
 	..()
 	M.nearsightedness -= 3
 
@@ -64,13 +64,13 @@
 	msg_deactivate="<span class='warning'>You now feel soft-boiled.</span>"
 	mutation=M_NOIR
 
-/datum/mutation/noir/on_activation(var/datum/gene/G,var/mob/M)
+/datum/mutation/noir/on_activation(var/datum/geneblock/G,var/mob/M)
 	..()
 	M.update_colour(NOIR_ANIM_TIME)
 	if(M.client) // wow it's almost like non-client mobs can get mutations!
 		M << sound('sound/misc/noirdarkcoffee.ogg')
 
-/datum/mutation/noir/on_deactivation(var/datum/gene/G,var/mob/M)
+/datum/mutation/noir/on_deactivation(var/datum/geneblock/G,var/mob/M)
 	..()
 	M.update_colour(NOIR_ANIM_TIME)
 	if(M.client)
