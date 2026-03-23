@@ -2856,8 +2856,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 2
+	dir = 1
 	},
 /obj/machinery/door/poddoor{
 	density = 0;
@@ -4647,8 +4646,7 @@
 	tag = "icon-warning (NORTHWEST)"
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 1
+	dir = 1
 	},
 /obj/machinery/door/window{
 	base_state = "right";
@@ -8821,8 +8819,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 1
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -9236,8 +9233,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 1
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -16385,8 +16381,7 @@
 /area/maintenance/asmaint2)
 "aCB" = (
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 1
+	dir = 1
 	},
 /obj/structure/bed/chair/comfy/couch/mid/red,
 /turf/simulated/floor/carpet,
@@ -16416,8 +16411,7 @@
 /area/hallway/primary/starboard)
 "aCE" = (
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 1
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -16910,8 +16904,7 @@
 /obj/item/weapon/paper_bin,
 /obj/item/weapon/pen,
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 2
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -17243,8 +17236,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 1
+	dir = 1
 	},
 /turf/simulated/floor{
 	dir = 8;
@@ -17788,8 +17780,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 2
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/apmaint2)
@@ -18317,8 +18308,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 2
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/asmaint2)
@@ -19477,8 +19467,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 2
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/fpmaint)
@@ -21738,8 +21727,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 2
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/science/robotics)
@@ -23754,8 +23742,7 @@
 	},
 /obj/structure/window/full/reinforced,
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 1
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area)
@@ -26567,8 +26554,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 1
+	dir = 1
 	},
 /obj/machinery/door/poddoor{
 	density = 0;
@@ -26592,8 +26578,7 @@
 	},
 /obj/item/weapon/gun/projectile/automatic/vector,
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 1
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -29186,8 +29171,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 1
+	dir = 1
 	},
 /obj/structure/window/full/reinforced,
 /turf/simulated/floor/plating,
@@ -41937,8 +41921,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 1
+	dir = 1
 	},
 /obj/structure/window/full/reinforced,
 /turf/simulated/floor/plating,
@@ -42013,8 +41996,7 @@
 "bCE" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 1
+	dir = 1
 	},
 /obj/structure/window/reinforced,
 /obj/structure/window/full/reinforced,
@@ -43972,10 +43954,6 @@
 	},
 /turf/space/transit/west,
 /area)
-"bKr" = (
-/obj/effect/landmark/dungeon_area,
-/turf/space,
-/area)
 "bKs" = (
 /obj/docking_port/destination/syndicate/transit,
 /turf/space/transit/north,
@@ -45471,16 +45449,10 @@
 	name = "plating"
 	},
 /area/centcom/striketeam)
-"bOz" = (
-/obj/structure/bed,
-/turf/unsimulated/floor{
-	icon_state = "floorscorched1"
-	},
-/area/prison/solitary)
 "bOA" = (
 /obj/effect/decal/cleanable/cobweb2,
-/turf/unsimulated/floor{
-	icon_state = "platingdmg1"
+/turf/unsimulated/floor/broken{
+	icon_state = "plating"
 	},
 /area/prison/solitary)
 "bOB" = (
@@ -45490,8 +45462,8 @@
 	},
 /area/prison/solitary)
 "bOC" = (
-/turf/unsimulated/floor{
-	icon_state = "panelscorched"
+/turf/unsimulated/floor/scorched{
+	icon_state = "plating"
 	},
 /area/prison/solitary)
 "bOD" = (
@@ -45499,8 +45471,8 @@
 /turf/unsimulated/wall,
 /area/prison/solitary)
 "bOE" = (
-/turf/unsimulated/floor{
-	icon_state = "platingdmg3"
+/turf/unsimulated/floor/broken{
+	icon_state = "plating"
 	},
 /area/prison/solitary)
 "bOF" = (
@@ -45516,9 +45488,7 @@
 /area/prison/solitary)
 "bOH" = (
 /obj/structure/bed,
-/turf/unsimulated/floor{
-	icon_state = "floorscorched2"
-	},
+/turf/unsimulated/floor/scorched,
 /area/prison/solitary)
 "bOI" = (
 /obj/effect/decal/cleanable/blood,
@@ -45928,19 +45898,14 @@
 /area/centcom/striketeam)
 "bPN" = (
 /obj/structure/bed,
-/turf/unsimulated/floor{
-	icon_state = "platingdmg3"
-	},
-/area/prison/solitary)
-"bPO" = (
-/turf/unsimulated/floor{
-	icon_state = "platingdmg1"
+/turf/unsimulated/floor/broken{
+	icon_state = "plating"
 	},
 /area/prison/solitary)
 "bPP" = (
 /obj/structure/bed,
-/turf/unsimulated/floor{
-	icon_state = "panelscorched"
+/turf/unsimulated/floor/scorched{
+	icon_state = "plating"
 	},
 /area/prison/solitary)
 "bPQ" = (
@@ -45986,15 +45951,8 @@
 	icon_state = "floor"
 	},
 /area/centcom/striketeam)
-"bPW" = (
-/turf/unsimulated/floor{
-	icon_state = "floorscorched1"
-	},
-/area/prison/solitary)
 "bPX" = (
-/turf/unsimulated/floor{
-	icon_state = "floorscorched2"
-	},
+/turf/unsimulated/floor/scorched,
 /area/prison/solitary)
 "bPY" = (
 /obj/machinery/dna_scannernew,
@@ -74992,8 +74950,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 2
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -78378,8 +78335,7 @@
 /area/medical/chemistry)
 "wPo" = (
 /obj/structure/window/reinforced{
-	dir = 1;
-	pixel_y = 1
+	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -331022,7 +330978,7 @@ aaa
 aaa
 aaa
 aaa
-bKr
+aaa
 aaa
 aaa
 aaa
@@ -366799,7 +366755,7 @@ aaa
 aaa
 aaa
 bOj
-bOz
+bOH
 bPc
 bOj
 bPN
@@ -367305,7 +367261,7 @@ bOA
 bPd
 bOj
 bOI
-bPW
+bPX
 bOj
 aaa
 aaa
@@ -368810,7 +368766,7 @@ bOj
 bOC
 bOF
 bOj
-bPO
+bOE
 bOF
 bOj
 aaa
@@ -374835,7 +374791,7 @@ bOI
 bOF
 bOj
 bOF
-bPO
+bOE
 bOj
 aaa
 aaa

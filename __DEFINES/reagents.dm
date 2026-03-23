@@ -12,7 +12,7 @@
 #define CHEMFLAG_NOTREMOVABLE	8 //cannot be rid of by charcoal (or other reagent tomfoolery means).
 
 #define EXPLICITLY_INVALID_REAGENT_ID "Use this ID if the reagent is not supposed to be used, like for the base type of other reagents."
-
+#define EVEN_MORE_EXPLICITLY_INVALID_REAGENT_ID "Use this ID if you need to have a nested invalid ID."
 //Reagents
 
 #define VAPORSALT			"vaporsalt"
@@ -215,6 +215,7 @@
 #define LIMEJUICE 			"limejuice"
 #define CARROTJUICE 			"carrotjuice"
 #define BERRYJUICE 			"berryjuice"
+#define BERRYJUICEJUNGLE 			"berryjuicejungle"
 #define POISONBERRYJUICE 			"poisonberryjuice"
 #define WATERMELONJUICE 			"watermelonjuice"
 #define APPLEJUICE 			"applejuice"
@@ -237,6 +238,7 @@
 #define SODAWATER 			"sodawater"
 #define ICE 			"ice"
 #define COLA 			"cola"
+#define CRYOCOLA		"cryocola"
 #define SPACEMOUNTAINWIND 			"spacemountainwind"
 #define LEMONADE 			"lemonade"
 #define KIRASPECIAL 			"kiraspecial"
@@ -495,6 +497,13 @@
 #define BLOB_ESSENCE	"blob_essence"
 #define METHAMPHETAMINE "methamphetamine"
 #define GRUGZONE		"grugzone"
+#define JUNGLEJUICE		"junglejuice"
+#define FAKEJUNGLEJUICE		"fakejunglejuice"
+#define FROSTBITE 		"frostbite"
+#define MINTYMULE		"mintymule"
+#define OLDCUBAN		"oldcuban"
+#define CAIPIRINHA		"caipirinha"
+#define ENGLISHGARDEN	"englishgarden"
 
 #define TUNGSTEN 			"tungsten"
 #define LITHIUMSODIUMTUNGSTATE 			"lithiumsodiumtungstate"
@@ -623,7 +632,7 @@ var/list/cheartstopper = list(/*"potassium_chloride",*/ CHEESYGLOOP) //this stop
 #define ALLNANITES list(NANITES, AUTISTNANITES)
 #define SUGARS list(SUGAR, CORNSYRUP)
 #define GUNKS list(CHEMICAL_WASTE, TOXICWASTE, VOMIT, TOXIN, SOLANINE, RADIUM, MUTAGEN, UNTABLE_MUTAGEN, SPIDERS)
-#define COLDDRINKS list(ICECOFFEE, ICETEA, ICED_BEER, ARNOLDPALMER, TONIC, SODAWATER, ICE, COLA, NUKA_COLA, GEOMETER, SPACEMOUNTAINWIND, DR_GIBB, SPACE_UP, LEMON_LIME, LEMONADE, KIRASPECIAL, MILKSHAKE, BROWNSTAR, REWRITER, DIY_SODA)
+#define COLDDRINKS list(ICECOFFEE, ICETEA, ICED_BEER, ARNOLDPALMER, TONIC, SODAWATER, ICE, COLA, NUKA_COLA, GEOMETER, SPACEMOUNTAINWIND, DR_GIBB, SPACE_UP, LEMON_LIME, LEMONADE, KIRASPECIAL, MILKSHAKE, BROWNSTAR, REWRITER, DIY_SODA, CRYOCOLA)
 #define HOTDRINKS list(COFFEE, SOY_LATTE, TEA, GATORMIX, HOT_COCO, HOT_COCO_SUBHUMAN, CREAMY_HOT_COCO) //Blisterol not included as that's medicine, not a warm drink
 //HOT and COLD drinks defines used for the mint toxin/mint essence checks for tooth pain and shit, maybe you can find another use for it
 //Useful reagents for looting
@@ -632,6 +641,7 @@ var/list/cheartstopper = list(/*"potassium_chloride",*/ CHEESYGLOOP) //this stop
 #define INCENSE_HAREBELLS	"harebells"
 #define INCENSE_POPPIES		"poppies"
 #define INCENSE_SUNFLOWERS	"sunflowers"
+#define INCENSE_ROSES		"roses"
 #define INCENSE_MOONFLOWERS	"moonflowers"
 #define INCENSE_NOVAFLOWERS	"novaflowers"
 #define INCENSE_BANANA		"bananas"
