@@ -341,8 +341,8 @@
 	return TRUE
 
 /mob/living/simple_animal/complex/proc/tick_state_mating()
-	if(!verify_target(target,8))
-		for(var/atom/A in cache_objects_in_view)
+	if(!verify_target(target,16)) //ignores line of sight and has increased range to help sparse populations not die out.
+		for(var/atom/A in range(src,16) )
 			if(istype(A,/mob/living/simple_animal/complex))
 				var/mob/living/simple_animal/complex/CA=A
 				if(can_offspring(CA) && CA.can_offspring(src) && CA.behavior_state==ANIMAL_STATE_MATING && !CA.target) //you better believe we're going to enforce the communicative property.
