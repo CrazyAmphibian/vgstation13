@@ -278,7 +278,7 @@
 		/obj/item/stack/sheet/glass/glass)
 	result = /obj/item/weapon/reagent_containers/food/snacks/glassburger
 
-/datum/recipe/plainburger
+/datum/recipe/dinonugget
 	reagents = list(FLOUR = 5)
 	items = list(/obj/item/weapon/reagent_containers/food/snacks/meat/oogabooga)
 	result = /obj/item/weapon/reagent_containers/food/snacks/dinonuggies
