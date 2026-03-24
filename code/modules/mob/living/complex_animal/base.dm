@@ -350,6 +350,8 @@
 					target=CA
 					CA.visible_message("<b>\the [CA]</b> looks lovingly at \the [src].")
 					CA.target=src
+					walk_to(src,CA,0,src.movespeed)
+					walk_to(CA,src,0,CA.movespeed)
 		if(!target) //if we can't find one, exit back to idle
 			abort_target()
 			return FALSE
