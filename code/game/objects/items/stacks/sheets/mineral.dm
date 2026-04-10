@@ -216,6 +216,7 @@ var/list/datum/stack_recipe/plastic_recipes = list ( \
 		new/datum/stack_recipe("security shower curtains", /obj/structure/curtain/open/shower/security, 4, one_per_turf = 1, on_floor = 1), \
 		new/datum/stack_recipe("medical shower curtains", /obj/structure/curtain/open/shower/medical, 4, one_per_turf = 1, on_floor = 1), \
 		), 4),
+	new/datum/stack_recipe("gold pan", /obj/item/weapon/reagent_containers/glass/goldpan/plastic, 5, time = 3 SECONDS, one_per_turf = 0, on_floor = 0),
 	)
 
 /obj/item/stack/sheet/mineral/plastic/New(var/loc, var/amount=null)
