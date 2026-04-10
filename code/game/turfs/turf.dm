@@ -118,7 +118,6 @@
 	footstep_sound = list()
 	footstep_sound_barefoot = list()
 	footstep_sound_claw = list()
-	turf_reagents = list()
 
 	if(skip_turf_init)
 		return

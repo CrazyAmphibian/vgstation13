@@ -10,10 +10,10 @@
 	icon_state = "goldpan"
 	health=null
 	breakable_flags=0
-	var/pantime=4 SECONDS
+	var/pantime=4.0 SECONDS
 	var/panning=FALSE
 	var/heldsand=0
-	var/maxsand=5
+	var/maxsand=10
 
 /obj/item/weapon/reagent_containers/glass/goldpan/New()
 	..()
@@ -58,24 +58,24 @@
 		if(!heldsand)
 			to_chat(user,"<span class='notice'>There's no sand to pan with!</span>")
 			return FALSE
-		if(reagents.total_volume<5)
+		if(reagents.total_volume<2)
 			to_chat(user,"<span class='notice'>There's no water to pan with!</span>")
 			return FALSE
 		panning=TRUE
 		to_chat(user,"<span class='notice'>You sift \the [src] around.</span>")
+		var/foundstuff=FALSE
 		if(do_after(user,src,pantime))
-			var/foundstuff=FALSE
-			while(heldsand && reagents.total_volume>=5)
-				if(0.87055<user.lucky_prob_rand()) //12.9% chance at base, made it so there's a roughly 50% change of a full batch dropping a single ore.
+			while(heldsand && reagents.total_volume>=2)
+				if(0.87055<user.lucky_prob_rand()) //12.9% chance at base, made it so there's a roughly 50% chance of 5 sand dropping a single ore.
 					var/path=pickweight(drops)
 					new path(src.loc.loc,1)
 					foundstuff=TRUE
 				heldsand--
-				reagents.remove_any(5)
-			if(foundstuff)
-				to_chat(user,"<span class='notice'>Some minerals fall out of suspension...</span>")
-			else
-				to_chat(user,"<span class='notice'>The sand leaves nothing behind...</span>")
+				reagents.remove_any(2)
+		if(foundstuff)
+			to_chat(user,"<span class='notice'>Some minerals fall out of suspension...</span>")
+		else
+			to_chat(user,"<span class='notice'>The sand leaves nothing behind...</span>")
 		panning=FALSE
 		return TRUE
 
