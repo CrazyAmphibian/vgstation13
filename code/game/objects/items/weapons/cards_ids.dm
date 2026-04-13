@@ -70,30 +70,37 @@
 	 * (Note: Some devices can use more than 1 use, so this is just called "energy")
 	 * @since 10-28-2014
 	 */
-	var/energy = -1
+	var/energy = 3
 
 	/**
 	 * Max energy per emag.  -1 = infinite
 	 * @since 10-28-2014
 	 */
-	var/max_energy = -1
+	var/max_energy = 3
 
 	/**
 	 * Every X ticks, add [recharge_rate] energy.
 	 * @since 10-28-2014
 	 */
-	var/recharge_ticks = 0
+	var/recharge_ticks = 1
 
 	/**
 	 * Every [recharge_ticks] ticks, add X energy.
 	 * @since 10-28-2014
 	 */
-	var/recharge_rate = 0
-
+	var/recharge_rate = 1
+	//emags use a two-phase energy system. the secondary bank generates the energy, then the primary takes it. the primary can take much faster than the secondary can produce, but the secondary stores more charge. this makes it so that emags are still useful for quick in-and out operations or emergency escapes, but become less effective for immediate mass sabotage.
+	var/secondary_energy = 4
+	var/secondary_energy_max = 4
+	var/secondary_recharge_rate = 1
+	var/secondary_recharge_ticks = 5
+	
+	
 	var/nticks=0
+	var/nticks_secondary=0
 	var/disable_config_sync = FALSE
 
-/obj/item/weapon/card/emag/New(var/loc, var/disable_tuning=1)
+/obj/item/weapon/card/emag/New(var/loc, var/disable_tuning=0)
 	..(loc)
 
 	// For standardized subtypes, once they're established.
@@ -107,29 +114,50 @@
 /obj/item/weapon/card/emag/initialize()
 	// Tuning tools.
 	//////////////////
+	secondary_energy_max=config.emag_second_energy
+	
 	if(config.emag_energy != -1)
 		max_energy = config.emag_energy
 
 		if(config.emag_starts_charged)
 			energy = max_energy
+			secondary_energy=secondary_energy_max
 
 	if(config.emag_recharge_rate != 0)
 		recharge_rate = config.emag_recharge_rate
 
 	if(config.emag_recharge_ticks > 0)
 		recharge_ticks = config.emag_recharge_ticks
+	
+	if(config.emag_second_recharge_rate != 0)
+		secondary_recharge_rate = config.emag_second_recharge_rate
+
+	if(config.emag_second_recharge_ticks > 0)
+		secondary_recharge_ticks = config.emag_second_recharge_ticks
 
 /obj/item/weapon/card/emag/process()
 	if(loc && loc:timestopped)
 		return
-	if(energy < max_energy)
+	if(energy < max_energy && secondary_energy)
 		// Specified number of ticks has passed?  Add charge.
 		if(nticks >= recharge_ticks)
 			nticks = 0
+			secondary_energy--
 			energy = min(energy + recharge_rate, max_energy)
 		nticks ++
 	else
 		nticks = 0
+	
+	if(secondary_energy < secondary_energy_max)
+		// Specified number of ticks has passed?  Add charge.
+		if(nticks_secondary >= secondary_recharge_ticks)
+			nticks_secondary = 0
+			secondary_energy = min(secondary_energy + secondary_recharge_rate, secondary_energy_max)
+		nticks_secondary ++
+	else
+		nticks_secondary = 0
+	
+	if(secondary_energy>=secondary_energy_max && energy >= max_energy)
 		processing_objects.Remove(src)
 
 /obj/item/weapon/card/emag/proc/canUse(var/mob/user, var/atom/A)
@@ -166,8 +194,12 @@
 		if(energy/max_energy < 0.1 /* 10% energy left */)
 			class="warning"
 		to_chat(user, "<span class=\"[class]\">This [name] has [energy]MJ left in its capacitor ([max_energy]MJ capacity).</span>")
+		
+		to_chat(user,"<span class='info'>\The [src]'s battery reserves are at [floor(100*secondary_energy/secondary_energy_max)]%</span>")
 	if(recharge_rate && recharge_ticks)
 		to_chat(user, "<span class=\"info\">A small label on a thermocouple notes that it recharges at a rate of [recharge_rate]MJ for every [recharge_ticks<=1?"":"[recharge_ticks] "]oscillator tick[recharge_ticks>1?"s":""].</span>")
+	
+
 
 //don't perform emag_act() stuff in this method
 /obj/item/weapon/card/emag/attack()
@@ -175,9 +207,7 @@
 
 //perform individual emag_act() stuff on children overriding the method here
 /obj/item/weapon/card/emag/afterattack(var/atom/target, mob/user, proximity)
-	if(!proximity || !canUse(user,target))
-		return
-	if (ishuman(target))
+	if (proximity && ishuman(target) && canUse(user,target))
 		var/mob/living/carbon/target_living = target
 		//get target zone with 0% chance of missing
 		var/zone = ran_zone(user.zone_sel.selecting, 100)
