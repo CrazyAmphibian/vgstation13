@@ -90,8 +90,8 @@
 	 */
 	var/recharge_rate = 1
 	//emags use a two-phase energy system. the secondary bank generates the energy, then the primary takes it. the primary can take much faster than the secondary can produce, but the secondary stores more charge. this makes it so that emags are still useful for quick in-and out operations or emergency escapes, but become less effective for immediate mass sabotage.
-	var/secondary_energy = 4
-	var/secondary_energy_max = 4
+	var/secondary_energy = 3
+	var/secondary_energy_max = 3
 	var/secondary_recharge_rate = 1
 	var/secondary_recharge_ticks = 5
 	

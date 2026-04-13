@@ -176,7 +176,7 @@
 	var/emag_starts_charged = 1
 	var/emag_recharge_rate = 1
 	var/emag_recharge_ticks = 1
-	var/emag_second_energy = 4
+	var/emag_second_energy = 3
 	var/emag_second_recharge_rate = 1
 	var/emag_second_recharge_ticks = 5
 
