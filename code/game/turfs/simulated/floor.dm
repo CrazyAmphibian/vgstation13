@@ -366,6 +366,8 @@ var/global/list/turf/simulated/floor/phazontiles = list()
 			return //diamond doesn't break
 		if(material=="plastic")
 			return //you can't break legos
+		if(material=="lead")
+			return
 		if(material=="phazon") //Phazon shatters
 			spawn(rand(2,10))
 				playsound(src, "shatter", 70, 1)
