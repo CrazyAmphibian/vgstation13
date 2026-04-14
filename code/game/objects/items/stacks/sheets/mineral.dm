@@ -617,6 +617,8 @@ var/list/datum/stack_recipe/gingerbread_recipes = list ( \
 	origin_tech = Tc_MATERIALS + "=2"
 
 var/list/datum/stack_recipe/lead_recipes = list (
+	new/datum/stack_recipe("exosuit radiation shielding kit", /obj/item/device/modkit/suitradshielding, 5, 1, time=5 SECONDS),
+	
 	
 	)
 
