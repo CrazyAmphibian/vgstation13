@@ -10,6 +10,7 @@ Mineral Sheets
 		- Silver
 		- Clown
 		- Plastic
+		- Lead
 	Others:
 		- Adamantine
 		- Mythril
@@ -604,4 +605,21 @@ var/list/datum/stack_recipe/gingerbread_recipes = list ( \
 
 /obj/item/stack/sheet/mineral/gingerbread/New(var/loc, var/amount=null)
 	recipes = gingerbread_recipes
+	..()
+
+
+/obj/item/stack/sheet/mineral/lead
+	name = "Lead"
+	desc = "Damn, that's some heavy metal."
+	icon_state = "sheet-lead"
+	throwforce = 10
+	throw_range = 2
+	origin_tech = Tc_MATERIALS + "=2"
+
+var/list/datum/stack_recipe/lead_recipes = list (
+	
+	)
+
+/obj/item/stack/sheet/mineral/lead/New(var/loc, var/amount=null)
+	recipes = lead_recipes
 	..()
