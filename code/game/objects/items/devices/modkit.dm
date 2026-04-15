@@ -245,5 +245,5 @@
 	var/obj/item/clothing/C=O
 	C.slowdown+=0.4
 	C.armor["rad"]+=25
-	C.armor_absorb["rad"]+=0.5
+	C.armor_absorb["rad"]+=4.0
 	

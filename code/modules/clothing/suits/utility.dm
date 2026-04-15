@@ -73,7 +73,7 @@
 	origin_tech = Tc_MATERIALS + "=2;" + Tc_ENGINEERING + "=2"
 	slowdown = HARDSUIT_SLOWDOWN_HIGH
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 33)
-	armor_absorb = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0.5)
+	armor_absorb = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 4.0)
 	
 
 /*
