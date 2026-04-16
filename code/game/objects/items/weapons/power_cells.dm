@@ -345,3 +345,31 @@
 /obj/item/weapon/cell/rad/large/empty/New()
 	..()
 	charge = 0
+
+
+/obj/item/weapon/cell/leadacid
+	name = "lead-acid battery"
+	desc = "A primitive but robust battery that has very poor energy density."
+	maxcharge = 500
+	rating = 1
+	icon_state = "lacell"
+	item_state = "cell"
+	origin_tech = Tc_POWERSTORAGE + "=1"
+
+/obj/item/weapon/cell/leadacid/New(var/loc,var/quality=1)
+	maxcharge*=quality
+	rating*=quality
+	..()
+
+/obj/item/weapon/cell/examine(mob/user)
+	..()
+	to_chat(user, "These were once used to charge electric eels.")
+
+/obj/item/weapon/cell/leadacid/emp_act(severity) //too stupid to get messed up by an EMP
+	return
+
+/obj/item/weapon/cell/leadacid/corrupt()
+	return
+
+/obj/item/weapon/cell/leadacid/updateicon()
+	icon_state = "lacell"
