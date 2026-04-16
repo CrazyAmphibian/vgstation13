@@ -351,7 +351,7 @@
 	name = "lead-acid battery"
 	desc = "A primitive but robust battery that has very poor energy density."
 	maxcharge = 7000
-	rating = 1
+	rating = 3
 	icon_state = "lacell"
 	item_state = "cell"
 	origin_tech = Tc_POWERSTORAGE + "=1"
