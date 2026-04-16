@@ -219,7 +219,7 @@
 
 /obj/item/device/modkit/suitradshielding
 	name = "Exosuit radiation shielding kit"
-	desc = "A set of precut plates, faseners, and joints that can be applied to an exosuit to enhance radiation shielding."
+	desc = "A set of pre-cut plates, fasteners and joints that can be applied to an exosuit for increased radiation shielding at the cost of reduced movement."
 
 /obj/item/device/modkit/suitradshielding/New()
 	..()
