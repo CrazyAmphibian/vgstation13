@@ -350,7 +350,7 @@
 /obj/item/weapon/cell/leadacid
 	name = "lead-acid battery"
 	desc = "A primitive but robust battery that has very poor energy density."
-	maxcharge = 500
+	maxcharge = 750
 	rating = 1
 	icon_state = "lacell"
 	item_state = "cell"
