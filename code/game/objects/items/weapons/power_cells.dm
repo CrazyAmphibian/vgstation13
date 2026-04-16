@@ -361,7 +361,7 @@
 	rating*=quality
 	..()
 
-/obj/item/weapon/cell/examine(mob/user)
+/obj/item/weapon/cell/leadacid/examine(mob/user)
 	..()
 	to_chat(user, "These were once used to charge electric eels.")
 
