@@ -360,6 +360,10 @@
 	maxcharge*=quality
 	rating*=quality
 	..()
+	if(quality < 1)
+		name = "improvised " + name
+	else if(quality > 1.5)
+		name = "premium " + name
 
 /obj/item/weapon/cell/leadacid/examine(mob/user)
 	..()
