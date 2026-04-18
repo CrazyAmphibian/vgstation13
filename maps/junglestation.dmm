@@ -3769,6 +3769,7 @@
 	pixel_y = 3
 	},
 /obj/structure/closet/secure_closet/quartermaster,
+/obj/item/weapon/reagent_containers/glass/goldpan/plastic,
 /turf/simulated/floor{
 	dir = 10;
 	icon_state = "brown"
@@ -37397,6 +37398,7 @@
 	pixel_x = -2;
 	pixel_y = 4
 	},
+/obj/item/weapon/reagent_containers/glass/goldpan/plastic,
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "brown";
@@ -41714,6 +41716,7 @@
 /obj/item/device/radio/off,
 /obj/item/device/gps,
 /obj/item/device/gps,
+/obj/item/weapon/reagent_containers/glass/goldpan/plastic,
 /turf/simulated/floor,
 /area/research_outpost/hallway)
 "pvc" = (
