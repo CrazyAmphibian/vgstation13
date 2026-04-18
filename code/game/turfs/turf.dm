@@ -462,6 +462,49 @@
 /turf/proc/add_dust()
 	return
 
+/// Lightweight turf change for procedural planet generation (space -> unsimulated only).
+/// Skips connections, zones, SSair, universe notifications, holomap, and edge processing.
+/// Falls back to full ChangeTurf if source is not /turf/space.
+/turf/proc/ChangeTurfPlanetGen(var/turf/N)
+	if(!N)
+		return
+	if(!istype(src, /turf/space)) // Safety: fall back for non-space turfs (e.g. ruin turfs)
+		return ChangeTurf(N, defer_edges = TRUE)
+
+	// Remove from old area's turf tracking to prevent stale references
+	var/area/A = loc
+	if(A)
+		A.area_turfs -= src
+
+	var/old_opacity = opacity
+	var/old_dynamic_lighting = dynamic_lighting
+	var/old_affecting_lights = affecting_lights
+	var/old_lighting_overlay = lighting_overlay
+	var/old_corners = corners
+
+	turf_flags |= DEFER_EDGING
+	var/turf/W = new N(src)
+	W.turf_flags |= DEFER_EDGING
+	// Skip initialize() — DEFER_EDGING is set, no movables on fresh space turfs, area tracking done here
+	// Skip levelupdate() — fresh turfs from space have no level-1 objects to hide
+	var/area/WA = W.loc
+	if(WA)
+		WA.area_turfs += W
+
+	has_opaque_atom = opacity
+	if(SSlighting && SSlighting.initialized)
+		lighting_overlay = old_lighting_overlay
+		affecting_lights = old_affecting_lights
+		corners = old_corners
+		if((old_opacity != opacity) || (dynamic_lighting != old_dynamic_lighting))
+			reconsider_lights()
+		if(dynamic_lighting != old_dynamic_lighting)
+			if(dynamic_lighting)
+				lighting_build_overlay()
+			else
+				lighting_clear_overlay()
+	return W
+
 //Creates a new turf
 /turf/proc/ChangeTurf(var/turf/N, var/tell_universe=1, var/force_lighting_update = 0, var/allow = 1,var/defer_edges = FALSE)
 	var/area/original_area=loc
@@ -483,6 +526,7 @@
 	var/old_density = density
 	var/old_holomap_draw_override = holomap_draw_override
 	var/old_registered_events = registered_events
+	var/datum/virtual_z/old_v = v
 
 	var/old_holomap = holomap_data
 //	to_chat(world, "Replacing [src.type] with [N]")
@@ -542,6 +586,7 @@
 		//		zone.SetStatus(ZONE_ACTIVE)
 
 		var/turf/simulated/W = new N(src)
+		W.v = old_v
 		if(defer_edges)
 			W.turf_flags |= DEFER_EDGING
 		if(world.has_round_started())
@@ -569,6 +614,7 @@
 		//		zone.SetStatus(ZONE_ACTIVE)
 
 		var/turf/W = new N(src)
+		W.v = old_v
 		if(defer_edges)
 			W.turf_flags |= DEFER_EDGING
 		if(world.has_round_started())
@@ -990,6 +1036,8 @@
 		return v
 	else
 		for(var/datum/virtual_z/check_vz in map.getAllVLevels())
+			if(check_vz.parent_z?.z != z)
+				continue
 			if(check_vz.x_min <= x && check_vz.x_max >= x && check_vz.y_min <= y && check_vz.y_max >= y)
 				return check_vz
 	return null
