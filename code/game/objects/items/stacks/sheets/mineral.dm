@@ -258,6 +258,7 @@ var/list/datum/stack_recipe/gold_recipes = list ( \
 	new/datum/stack_recipe("collection plate", /obj/item/weapon/storage/fancy/collection_plate, 2, 1, 1),
 	null,
 	blacksmithing_recipes,
+	new/datum/stack_recipe("gold pan", /obj/item/weapon/reagent_containers/glass/goldpan/gold, 5, time = 3 SECONDS, one_per_turf = 0, on_floor = 0),
 	)
 
 /obj/item/stack/sheet/mineral/gold/New(var/loc, var/amount=null)
