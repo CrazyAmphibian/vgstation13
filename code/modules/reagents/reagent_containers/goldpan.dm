@@ -5,9 +5,10 @@
 	name = "gold pan"
 	desc = "separates valuable minerals from fine rock using water."
 	w_class = W_CLASS_SMALL
-	volume = 25
+	volume = 20
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "goldpan"
+	item_state = "goldpan"
 	health=null
 	breakable_flags=0
 	var/pantime=4.0 SECONDS
@@ -82,16 +83,20 @@
 
 /obj/item/weapon/reagent_containers/glass/goldpan/wood
 	name = "wooden gold pan"
-	color= "#777700"
+	icon_state = "goldpan_w"
 	w_type=RECYK_WOOD
 
 /obj/item/weapon/reagent_containers/glass/goldpan/metal
 	name = "metal gold pan"
-	color= "#777777"
+	icon_state = "goldpan_m"
 	w_type=RECYK_METAL
 
 /obj/item/weapon/reagent_containers/glass/goldpan/plastic
 	name = "plastic gold pan"
-	color= "#777777"
 	w_type=RECYK_PLASTIC
 
+/obj/item/weapon/reagent_containers/glass/goldpan/gold
+	name = "golden gold pan"
+	desc = "For when you don't have enough gold already."
+	icon_state = "goldpan_g"
+	w_type=RECYK_PLASTIC
