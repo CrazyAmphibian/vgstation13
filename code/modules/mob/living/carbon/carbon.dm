@@ -800,7 +800,7 @@
 			src.visible_message("<span class='notice'>[src] [pick("stumbles to the ground","falls over")]!</span>","<span class='warning'>You [pick("feel too weak to stand","fall to the ground")]!</span>")
 		if(suffocation_fraction>0.33 && prob(10) )
 			brainloss+=1
-		if(suffocation_fraction>0.2)
-			eye_blurry+=suffocation_fraction*2
-		if(suffocation_fraction>0.4)
+		if(suffocation_fraction>0.15)
+			eye_blurry+=suffocation_fraction
+		if(suffocation_fraction>0.33)
 			eye_blind+=suffocation_fraction
