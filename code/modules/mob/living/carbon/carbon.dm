@@ -793,7 +793,7 @@
 		var/suffocation_fraction=oxyloss/maxHealth
 		if(suffocation_fraction>0.1 && prob(suffocation_fraction*25))
 			to_chat(src,"<span class='notice'>[pick("You feel light-headed.","You feel dizzy.","Your head hurts.")]</span>")
-		if(suffocation_fraction>0.5 && prob(suffocation_fraction*150) && !knockdown )
+		if(suffocation_fraction>0.4 && prob(suffocation_fraction*150) && !knockdown )
 			var/t=rand(1,4)
 			Knockdown(t)
 			Stun(rand(0,t))
@@ -802,5 +802,5 @@
 			brainloss+=1
 		if(suffocation_fraction>0.2)
 			eye_blurry+=suffocation_fraction*2
-		if(suffocation_fraction>0.5)
-			eye_blind+=suffocation_fraction*1
+		if(suffocation_fraction>0.4)
+			eye_blind+=suffocation_fraction
