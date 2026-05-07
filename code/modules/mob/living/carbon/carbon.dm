@@ -791,13 +791,13 @@
 	..()
 	if(stat!=DEAD && health>0) //no special effects in crit or if dead.
 		var/suffocation_fraction=oxyloss/maxHealth
-		if(suffocation_fraction>0.1 && prob(suffocation_fraction*25))
-			to_chat(src,"<span class='notice'>[pick("You feel light-headed.","You feel dizzy.","Your head hurts.")]</span>")
 		if(suffocation_fraction>0.33 && prob(suffocation_fraction*150) && !knockdown )
 			var/t=rand(1,4)
 			Knockdown(t)
 			Stun(rand(0,t))
 			src.visible_message("<span class='notice'>[src] [pick("stumbles to the ground","falls over")]!</span>","<span class='warning'>You [pick("feel too weak to stand","fall to the ground")]!</span>")
+		else if(suffocation_fraction>0.1 && prob(suffocation_fraction*25))
+			to_chat(src,"<span class='notice'>[pick("You feel light-headed.","You feel dizzy.","Your head hurts.")]</span>")
 		if(suffocation_fraction>0.33 && prob(10) )
 			brainloss+=1
 		if(suffocation_fraction>0.15)
