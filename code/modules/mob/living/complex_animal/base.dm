@@ -81,6 +81,7 @@
 	territory=null
 	cache_objects_in_view=null
 	cache_objects_in_extended_area=null
+	target=null
 	for(var/mob/living/simple_animal/complex/C in family) //we will be referenced by our family, so clear us from that.
 		C.family -=src
 	family=null
