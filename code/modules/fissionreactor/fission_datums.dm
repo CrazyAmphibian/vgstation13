@@ -132,7 +132,7 @@ datums for the fission reactor, which includes the fuel and reactor
 
 	if(exterior_elements<expected_exterior) //missing any at all? (for deconstruction)
 		notlookinggood_points++
-	if(exterior_elements/expected_exterior < 0.5) //half the case remaining?
+	if(expected_exterior==0 || exterior_elements/expected_exterior < 0.5) //half the case remaining?
 		notlookinggood_points++
 	if(!fuel_rods.len) //no fuel rods?
 		notlookinggood_points++
