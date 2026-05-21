@@ -30529,6 +30529,15 @@
 /obj/structure/grille/window_spawner/reinforced/full,
 /turf/simulated/floor/plating,
 /area/bridge)
+"ltC" = (
+/obj/structure/dispenser,
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "ltH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
@@ -461171,7 +461180,7 @@ mqQ
 mqQ
 mqQ
 mqQ
-mqQ
+ltC
 epp
 ugv
 ugv
