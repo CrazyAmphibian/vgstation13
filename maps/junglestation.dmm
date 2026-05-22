@@ -7131,8 +7131,12 @@
 	},
 /area/centcom/test)
 "cEk" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "warning";
+	tag = "icon-warning"
+	},
 /turf/simulated/floor{
-	icon_state = "whitepurple"
+	icon_state = "whitered"
 	},
 /area/research_outpost/dorm2{
 	icon_state = "toxlab";
@@ -10328,6 +10332,13 @@
 	},
 /turf/unsimulated/floor/planetary/concrete/jungle,
 /area/shuttle/research/station)
+"dML" = (
+/obj/structure/closet/bombcloset,
+/turf/simulated/floor,
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "dMN" = (
 /turf/simulated/wall/r_wall,
 /area/science/rd)
@@ -12816,6 +12827,20 @@
 /obj/effect/decal/cleanable/blood/gibs/body,
 /turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle)
+"eFq" = (
+/obj/effect/decal/warning_stripes{
+	dir = 1;
+	icon_state = "warning";
+	tag = "icon-warning (NORTH)"
+	},
+/turf/simulated/floor{
+	dir = 1;
+	icon_state = "whitered"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "eFF" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -13019,9 +13044,14 @@
 /turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/surface/jungle/fenced)
 "eKp" = (
-/turf/simulated/floor{
+/obj/effect/decal/warning_stripes{
 	dir = 9;
-	icon_state = "whitepurple"
+	icon_state = "warning";
+	tag = "icon-warning (NORTHEAST)"
+	},
+/turf/simulated/floor{
+	icon_state = "whitered";
+	dir = 9
 	},
 /area/research_outpost/dorm2{
 	icon_state = "toxlab";
@@ -18471,6 +18501,19 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/wood,
 /area/library)
+"gPc" = (
+/obj/structure/table,
+/obj/item/weapon/reagent_containers/food/drinks/coffee{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "gPg" = (
 /obj/structure/sign/securearea{
 	name = "DANGER: SPIDERS";
@@ -19806,9 +19849,14 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/decal/warning_stripes{
+	dir = 1;
+	icon_state = "warning";
+	tag = "icon-warning (NORTH)"
+	},
 /turf/simulated/floor{
 	dir = 1;
-	icon_state = "whitepurple"
+	icon_state = "whitered"
 	},
 /area/research_outpost/dorm2{
 	icon_state = "toxlab";
@@ -28853,9 +28901,14 @@
 	},
 /area/shuttle/administration/centcom)
 "kJP" = (
-/turf/simulated/floor{
+/obj/effect/decal/warning_stripes{
 	dir = 5;
-	icon_state = "whitepurple"
+	icon_state = "warning";
+	tag = "icon-warning (NORTHEAST)"
+	},
+/turf/simulated/floor{
+	icon_state = "whitered";
+	dir = 5
 	},
 /area/research_outpost/dorm2{
 	icon_state = "toxlab";
@@ -29416,6 +29469,17 @@
 /obj/machinery/cooking/deepfryer,
 /turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/crew_quarters/kitchen)
+"kXc" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "kXk" = (
 /obj/structure/table,
 /obj/item/weapon/storage/firstaid/internalbleed{
@@ -33877,9 +33941,14 @@
 /turf/simulated/floor/shuttle,
 /area/centcom/evac)
 "mCa" = (
-/turf/simulated/floor{
+/obj/effect/decal/warning_stripes{
 	dir = 10;
-	icon_state = "whitepurple"
+	icon_state = "warning";
+	tag = "icon-warning (SOUTHWEST)"
+	},
+/turf/simulated/floor{
+	icon_state = "whitered";
+	dir = 10
 	},
 /area/research_outpost/dorm2{
 	icon_state = "toxlab";
@@ -38413,6 +38482,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/portable_atmospherics/pump,
 /turf/simulated/floor,
 /area/research_outpost/maintstore1{
 	icon_state = "toxstorage";
@@ -40692,9 +40762,15 @@
 	},
 /area/security/armory)
 "pgA" = (
-/turf/simulated/floor{
+/obj/structure/closet/firecloset,
+/obj/effect/decal/warning_stripes{
 	dir = 6;
-	icon_state = "whitepurple"
+	icon_state = "warning";
+	tag = "icon-warning (SOUTHEAST)"
+	},
+/turf/simulated/floor{
+	icon_state = "whitered";
+	dir = 6
 	},
 /area/research_outpost/dorm2{
 	icon_state = "toxlab";
@@ -49435,9 +49511,14 @@
 	},
 /area/medical/virology)
 "snb" = (
+/obj/effect/decal/warning_stripes{
+	dir = 8;
+	icon_state = "warning";
+	tag = "icon-warning (EAST)"
+	},
 /turf/simulated/floor{
 	dir = 8;
-	icon_state = "whitepurple"
+	icon_state = "whitered"
 	},
 /area/research_outpost/dorm2{
 	icon_state = "toxlab";
@@ -52183,6 +52264,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/device/radio/intercom{
+	name = "Station Intercom (General)";
+	pixel_x = 27
+	},
 /turf/simulated/floor,
 /area/research_outpost/dorm2{
 	icon_state = "toxlab";
@@ -53206,6 +53291,17 @@
 "tFd" = (
 /turf/unsimulated/floor/planetary/path/jungle,
 /area/surface/jungle/mining)
+"tFh" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "tFZ" = (
 /obj/structure/closet/emcloset/vox,
 /turf/unsimulated/floor/planetary/grass/jungle/no_flora,
@@ -55220,6 +55316,20 @@
 	icon_state = "floor4"
 	},
 /area/syndicate_mothership/elite_squad)
+"uuK" = (
+/obj/effect/decal/warning_stripes{
+	dir = 4;
+	icon_state = "warning";
+	tag = "icon-warning (EAST)"
+	},
+/turf/simulated/floor{
+	dir = 4;
+	icon_state = "whitered"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "uuL" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -59544,6 +59654,7 @@
 /obj/machinery/light_switch{
 	pixel_x = 28
 	},
+/obj/machinery/portable_atmospherics/scrubber,
 /turf/simulated/floor,
 /area/research_outpost/maintstore1{
 	icon_state = "toxstorage";
@@ -63152,6 +63263,9 @@
 "xpr" = (
 /obj/structure/table,
 /obj/item/device/pipe_painter,
+/obj/item/tool/screwdriver{
+	pixel_y = 18
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -460473,7 +460587,7 @@ cTx
 akL
 gNo
 cTx
-cTx
+dML
 epp
 ugv
 ugv
@@ -461520,8 +461634,8 @@ rIh
 rIh
 tFd
 epp
-pQF
-mqQ
+eFq
+kXc
 cEk
 rEb
 gTF
@@ -461873,7 +461987,7 @@ tFd
 tFd
 epp
 hpp
-mqQ
+gPc
 cEk
 mqQ
 pEH
@@ -462224,8 +462338,8 @@ rIh
 tFd
 tFd
 epp
-pQF
-mqQ
+eFq
+tFh
 cEk
 xpr
 gTF
@@ -462577,7 +462691,7 @@ tFd
 tFd
 epp
 kJP
-oom
+uuK
 pgA
 epp
 epp
