@@ -36280,13 +36280,6 @@
 	icon_state = "hydrofloor"
 	},
 /area/crew_quarters/courtroom)
-"nxJ" = (
-/obj/structure/bed/chair/wood/normal{
-	dir = 4
-	},
-/mob/living/simple_animal/complex/gorilla,
-/turf/unsimulated/floor/planetary/dirt/jungle,
-/area/surface/jungle/vault)
 "nxM" = (
 /obj/structure/table/plastic,
 /obj/item/clothing/under/shorts/red,
@@ -46996,15 +46989,6 @@
 	icon_state = "dark-markings"
 	},
 /area/security/armory)
-"rsT" = (
-/obj/effect/decal/warning_stripes{
-	dir = 8;
-	icon_state = "warning";
-	tag = "icon-warning (WEST)"
-	},
-/mob/living/simple_animal/complex/bear,
-/turf/unsimulated/floor/planetary/concrete/jungle,
-/area/surface/jungle/vault)
 "rsW" = (
 /obj/machinery/door/airlock/glass_command{
 	name = "Bridge";
@@ -68948,7 +68932,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
@@ -69888,7 +69872,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
@@ -79174,7 +79158,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
@@ -80752,7 +80736,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
@@ -88195,7 +88179,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
@@ -89763,7 +89747,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
@@ -90335,7 +90319,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
@@ -92736,7 +92720,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
@@ -93900,7 +93884,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
@@ -100018,7 +100002,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
@@ -112683,7 +112667,7 @@ lIK
 lIK
 lIK
 lIK
-cnU
+lIK
 lIK
 lIK
 lIK
@@ -114342,7 +114326,7 @@ gJc
 gJc
 gJc
 gJc
-oli
+gJc
 gJc
 gJc
 gJc
@@ -115478,7 +115462,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+lIK
 lIK
 lIK
 lIK
@@ -115818,7 +115802,7 @@ lIK
 lIK
 lIK
 lIK
-cnU
+lIK
 lIK
 lIK
 lIK
@@ -117564,7 +117548,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+lIK
 lIK
 lIK
 lIK
@@ -117982,7 +117966,7 @@ lIK
 lIK
 lIK
 lIK
-cnU
+lIK
 lIK
 lIK
 lIK
@@ -121778,7 +121762,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+lIK
 lIK
 lIK
 lIK
@@ -125018,7 +125002,7 @@ lIK
 lIK
 lIK
 lIK
-cnU
+lIK
 lIK
 lIK
 lIK
@@ -126047,7 +126031,7 @@ rnF
 rnF
 rnF
 rnF
-scy
+rnF
 rnF
 rnF
 rnF
@@ -126332,7 +126316,7 @@ gJc
 gJc
 gJc
 gJc
-oli
+gJc
 gJc
 gJc
 gJc
@@ -129874,7 +129858,7 @@ lIK
 lIK
 lIK
 lIK
-mCs
+lIK
 lIK
 lIK
 lIK
@@ -131677,7 +131661,7 @@ bRe
 bRe
 bRe
 bRe
-vfF
+bRe
 xiS
 dFK
 rnF
@@ -133428,7 +133412,7 @@ rnF
 dFK
 bRe
 bRe
-rsT
+rCj
 bRe
 bRe
 rCj
@@ -135863,7 +135847,7 @@ lIK
 lIK
 lIK
 lIK
-cnU
+lIK
 lIK
 lIK
 lIK
@@ -143546,7 +143530,7 @@ gJc
 gJc
 gJc
 gJc
-oli
+gJc
 gJc
 gJc
 gJc
@@ -143636,7 +143620,7 @@ lIK
 lIK
 lIK
 lIK
-cnU
+lIK
 lIK
 lIK
 lIK
@@ -153884,7 +153868,7 @@ gJc
 gJc
 gJc
 gJc
-oli
+gJc
 gJc
 gJc
 gJc
@@ -162519,7 +162503,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
@@ -165288,7 +165272,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
@@ -169632,7 +169616,7 @@ unv
 unv
 unv
 unv
-luW
+unv
 unv
 rnF
 rnF
@@ -172004,7 +171988,7 @@ gJc
 gJc
 gJc
 gJc
-oli
+gJc
 gJc
 gJc
 gJc
@@ -177476,7 +177460,7 @@ gJc
 gJc
 gJc
 gJc
-oli
+gJc
 gJc
 gJc
 gJc
@@ -177592,7 +177576,7 @@ oQA
 oQA
 oQA
 oQA
-nxJ
+mNM
 mNM
 mNM
 oQA
@@ -178294,7 +178278,7 @@ oQA
 oQA
 oQA
 oQA
-fRP
+oQA
 oQA
 icG
 icG
@@ -179001,7 +178985,7 @@ oQA
 oQA
 oQA
 oQA
-fRP
+oQA
 oQA
 oQA
 oQA
@@ -179351,7 +179335,7 @@ oQA
 oQA
 oQA
 oQA
-fRP
+oQA
 cvW
 oQA
 oQA
@@ -179709,7 +179693,7 @@ mNM
 mNM
 oQA
 oQA
-fRP
+oQA
 oQA
 oQA
 oQA
@@ -180060,7 +180044,7 @@ icG
 icG
 icG
 oQA
-fRP
+oQA
 oQA
 oQA
 oQA
@@ -180764,7 +180748,7 @@ lWc
 lWc
 nBI
 oQA
-fRP
+oQA
 oQA
 oQA
 oQA
@@ -183359,7 +183343,7 @@ unv
 unv
 unv
 unv
-luW
+unv
 unv
 unv
 rnF
@@ -184311,7 +184295,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
@@ -188039,7 +188023,7 @@ lIK
 lIK
 lIK
 lIK
-xtL
+lIK
 lIK
 lIK
 lIK
