@@ -490,6 +490,18 @@
 	icon_state = "floorgrime"
 	},
 /area/security/processing)
+"akt" = (
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
+/turf/simulated/floor{
+	dir = 1;
+	icon_state = "whitepurple"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "akL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -9791,6 +9803,10 @@
 	default_scrubbed_gases = list("plasma");
 	dir = 1
 	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -22
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -11967,6 +11983,10 @@
 	},
 /area/security/warden)
 "enM" = (
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/simulated/floor{
 	dir = 4;
 	icon_state = "whitepurple"
@@ -16175,6 +16195,9 @@
 /obj/item/weapon/pickaxe,
 /obj/item/weapon/storage/belt/utility,
 /obj/structure/table,
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
 /turf/simulated/floor,
 /area/mine/eva)
 "fUf" = (
@@ -18969,6 +18992,10 @@
 /area/medical/surgery)
 "gWW" = (
 /obj/machinery/smartfridge,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/simulated/floor{
 	dir = 4;
 	icon_state = "whitegreen"
@@ -33173,6 +33200,10 @@
 	network = list("RD","SS13");
 	dir = 8
 	},
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/simulated/floor,
 /area/research_outpost/hallway)
 "mnj" = (
@@ -35120,6 +35151,14 @@
 	icon_state = "red"
 	},
 /area/security/lobby)
+"mYR" = (
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
+/turf/simulated/floor{
+	icon_state = "dark vault full"
+	},
+/area/research_outpost/harvesting)
 "mYY" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -35765,6 +35804,9 @@
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/machinery/alarm{
+	pixel_y = 23
 	},
 /turf/simulated/floor/plating,
 /area/research_outpost/atmos)
@@ -43456,6 +43498,12 @@
 /area/server{
 	name = "AI Integrity Restoration Room"
 	})
+"qgQ" = (
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
+/turf/simulated/floor,
+/area/research_outpost/gearstore)
 "qgR" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -44037,6 +44085,9 @@
 	name = "Research Outpost Hallway Starboard";
 	network = list("RD","SS13");
 	pixel_x = 24
+	},
+/obj/machinery/alarm{
+	pixel_y = 23
 	},
 /turf/simulated/floor,
 /area/research_outpost/entry)
@@ -49677,6 +49728,10 @@
 	dir = 8;
 	icon_state = "warning_corner"
 	},
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/simulated/floor,
 /area/research_outpost/maintstore1{
 	icon_state = "toxstorage";
@@ -49922,6 +49977,9 @@
 	},
 /obj/machinery/light_switch{
 	pixel_x = -27
+	},
+/obj/machinery/alarm{
+	pixel_y = 23
 	},
 /turf/simulated/floor{
 	dir = 8;
@@ -56486,6 +56544,10 @@
 	network = list("RD","SS13")
 	},
 /obj/structure/closet,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/simulated/floor,
 /area/research_outpost/dorm1)
 "uUD" = (
@@ -61785,6 +61847,10 @@
 	},
 /obj/machinery/light/small{
 	dir = 8
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/simulated/floor,
 /area/mine/production)
@@ -462679,7 +462745,7 @@ uuK
 pgA
 epp
 epp
-pQF
+akt
 gci
 cMw
 ueY
@@ -466545,7 +466611,7 @@ rIh
 rIh
 rIh
 dqd
-wfW
+mYR
 wfW
 tOj
 kSn
@@ -472887,7 +472953,7 @@ nsl
 nsl
 vEE
 wIo
-toi
+qgQ
 xIP
 ycD
 aBR
