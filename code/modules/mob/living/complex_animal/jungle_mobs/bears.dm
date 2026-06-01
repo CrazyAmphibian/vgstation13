@@ -16,7 +16,6 @@
 	behavior_flags = ANIMAL_BEHAVIOR_PREDATORY | ANIMAL_BEHAVIOR_RETALIATE | ANIMAL_BEHAVIOR_PACK_DYNAMICS | ANIMAL_BEHAVIOR_DESTRUCTIVE | ANIMAL_BEHAVIOR_AVOID_CAPTURE
 	movespeed=5
 	kin_check_type_path=/mob/living/simple_animal/complex/bear
-	max_local_population=5
 	var/sea_bear=TRUE
 
 /mob/living/simple_animal/complex/bear/get_idle_sounds()
@@ -60,7 +59,6 @@
 	maxHealth=250
 	armor=list(melee=10,bullet=30,laser=40,energy=0,bomb=0,bio=0,rad=0)
 	max_food=200
-	mob_max_age=9999999
 	healthregen=0.02
 	food_per_tick = 0.0005
 	melee_damage_upper=40
@@ -140,7 +138,6 @@
 	animal_flags = ANIMAL_FLAG_IMMORTAL
 	movespeed=4
 	health=100
-	mob_max_age=9999999
 	melee_damage_upper=50
 	melee_damage_lower=20
 	maxHealth=100

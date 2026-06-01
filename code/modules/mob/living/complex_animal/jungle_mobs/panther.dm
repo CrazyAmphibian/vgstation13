@@ -18,6 +18,9 @@
 	matingcooldown=30
 	var/list/mob/affinity_list=list() // stores people we like.
 
+/mob/living/simple_animal/complex/panther/Destroy()
+	affinity_list=null
+	..()
 
 /mob/living/simple_animal/complex/panther/get_idle_sounds()
 	if(prob(20))
