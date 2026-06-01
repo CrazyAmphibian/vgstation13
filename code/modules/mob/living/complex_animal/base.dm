@@ -262,14 +262,20 @@
 	return TRUE
 
 /mob/living/simple_animal/complex/proc/tick_state_hunting()
-	if(nutrition>max_food*0.75)
+	if(nutrition>max_food*0.60)
 		abort_target()
 		return FALSE
-	if(!verify_target(target,20,TRUE) || (ticks_this_state>9 && prob(25)) )
+	if(!verify_target(target,16,TRUE) || (ticks_this_state>9 && prob(25)) )
 		abort_target(FALSE)
 		var/list/possible=rank_foodsources(get_food())
 		var/list/pickfrom=list()
 		var/highestprio=-999999
+		
+		if(nutrition>max_food*0.2) //avoid disliked targets, unless we are really desperate for food.
+			highestprio = 0
+		else if(nutrition>max_food*0.05) //I NEEEEEEEED IIIIIIIIT
+			highestprio= -4
+		
 		for(var/atom/A in possible) //get the highest ranked objects
 			var/rank=possible[A]
 			if(rank>highestprio)
@@ -279,10 +285,6 @@
 				pickfrom+=A
 		if(pickfrom.len)
 			target=pick(pickfrom)
-		if(highestprio<0 && nutrition>max_food*0.2) //avoid disliked targets, unless we are really desperate for food.
-			target=null
-		if(highestprio<-4 && nutrition>max_food*0.05) //I NEEEEEEEED IIIIIIIIT
-			target=null
 		if(!target) //if we can't find a suitable target, move around randomly
 			walk_to(src,locate(x+rand(-15,15),y+rand(-15,15),z),0,movespeed)
 		else
@@ -405,40 +407,28 @@
 //return a list of valid salad
 /mob/living/simple_animal/complex/proc/get_food()
 	var/list/foodsources=list()
-	for(var/atom/A in cache_objects_in_view)
-		if(A==src) //do not eat ourselves
-			continue
-		if(food_flags & ANIMAL_HERBIVORE)
-			if(istype(A,/obj/structure/flora) && !istype(A,/obj/structure/flora/tree) && !istype(A,/obj/structure/flora/rock))
+	if(food_flags & ANIMAL_HERBIVORE)
+		for(var/obj/structure/flora/A in cache_objects_in_view)
+			if(!istype(A,/obj/structure/flora/tree) && !istype(A,/obj/structure/flora/rock))
 				foodsources+=A
-				continue
-		if(food_flags & ANIMAL_FRUGIVORE)
-			if(istype(A,/obj/structure/flora/jungle_berries))
-				var/obj/structure/flora/jungle_berries/bush=A
-				if(bush.hasberries)
-					foodsources+=A
-					continue
-		if(food_flags & ANIMAL_CARNIVORE)
-			if(istype(A,/mob/living))
-				var/mob/living/M=A
-				if(M.stat!=DEAD)
-					if(!is_pacified() && behavior_flags & ANIMAL_BEHAVIOR_PREDATORY)
-						foodsources+=M
-						continue
-				else
-					foodsources+=M
-					continue
-			else if(istype(A,/obj/item/organ) && !istype(A,/obj/item/organ/external/head) && !istype(A,/obj/item/organ/internal/brain)) //we don't want to round remove people
+	
+	else if(food_flags & ANIMAL_FRUGIVORE)
+		for(var/obj/structure/flora/jungle_berries/A in cache_objects_in_view)
+			if(A.hasberries)
 				foodsources+=A
-				continue
-
-		//no easy way to check if it's meat. oh well.
-		if(istype(A,/obj/item/weapon/reagent_containers/food/snacks))
-			foodsources+=A
-			continue
-	for(var/atom/A in foodsources)
-		if(!verify_target(A,-1,TRUE))
-			foodsources-=A
+	
+	if(food_flags & ANIMAL_CARNIVORE)
+		for(var/obj/item/organ/A in cache_objects_in_view)
+			if(!istype(A,/obj/item/organ/external/head) && !istype(A,/obj/item/organ/internal/brain)) //we don't want to round remove people
+				foodsources+=A 
+		if((behavior_flags & ANIMAL_BEHAVIOR_PREDATORY) && !is_pacified())
+			for(var/mob/living/A in cache_objects_in_view)
+				if(A.stat!=DEAD && A!=src)
+					foodsources+=A 
+	
+	for(var/obj/item/weapon/reagent_containers/food/snacks/A in cache_objects_in_view) //no easy way to check if it's meat. oh well.
+		foodsources+=A
+	
 	return foodsources
 
 //take the list from get_food, and create an associated list ranking our affinity for them
@@ -469,6 +459,7 @@
 		if(istype(A,/obj/structure/flora))
 			p+=ANIMAL_FOODPRIORITY_PLANTS
 		out[A]=p
+	
 	return out
 
 

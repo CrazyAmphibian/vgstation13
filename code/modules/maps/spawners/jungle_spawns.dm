@@ -25,17 +25,15 @@ var/list/junglemobs_passive_rare=list(
 /obj/abstract/map/spawner/jungle_any/New()
 	var/rng=rand()
 	if(rng < 0.65) //65% chance of friendly mobs
-		amount=rand(3,6)
+		amount=rand(3,5)
 		if(prob(20)) //20% chance for rare (13% overall)
 			amount = rand(1,2)
 			to_spawn = pick(junglemobs_passive_rare)
 		else
 			to_spawn = pick(junglemobs_passive)
 	else
-		amount=rand(2,5)
+		amount=rand(3,5)
 		to_spawn = pick(junglemobs_hostile)
-		if(to_spawn==/mob/living/simple_animal/complex/panther) //being carnivores only, they need a bit of help to get the population ball rolling. also they spread out a lot.
-			amount+=2
 	..()
 
 
@@ -44,7 +42,7 @@ var/list/junglemobs_passive_rare=list(
 	icon_state="jungle_mob_fren"
 	
 /obj/abstract/map/spawner/jungle_fren/New()
-	amount=rand(3,6)
+	amount=rand(3,5)
 	if(prob(20))
 		to_spawn = pick(junglemobs_passive_rare)
 		amount = rand(1,2)
@@ -58,6 +56,6 @@ var/list/junglemobs_passive_rare=list(
 	icon_state="jungle_mob_hostile"
 	
 /obj/abstract/map/spawner/jungle_hostile/New()
-	amount=rand(3,6)
+	amount=rand(3,5)
 	to_spawn = pick(junglemobs_hostile)
 	..()
