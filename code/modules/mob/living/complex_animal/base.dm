@@ -21,7 +21,6 @@
 #define ANIMAL_FOODPRIORITY_CORPSES 3	//no need to beat a dead horse. we should be eating it instead.
 #define ANIMAL_FOODPRIORITY_SIZEDIFF_LARGER -4	//bigger=more dangerous, right?
 #define ANIMAL_FOODPRIORITY_SIZEDIFF_SMALLER -2	//prefer bigger meals
-#define ANIMAL_FOODPRIORITY_FAMILY -5	//hi ma :)
 #define ANIMAL_FOODPRIORITY_UNDESIRABLE -5	//poison... poison... tasty fish!
 
 #define ANIMAL_STATE_IDLE 0	//hanging around.
@@ -49,7 +48,6 @@
 	var/ticks_this_state=0
 	var/atom/target = null
 	var/turf/territory=null //turf location
-	var/list/family = list() //list of mobs. avoid attacking them and whatnot. also can be used for taming.
 	environment_smash_flags = 0xFFFFFF
 	var/movespeed=5 //lower=faster.
 	var/kin_check_type_path=null //for mobs with many subtypes. set to the parent mob type. leave null if not needed
@@ -79,9 +77,6 @@
 	cache_objects_in_view=null
 	cache_objects_in_extended_area=null
 	target=null
-	for(var/mob/living/simple_animal/complex/C in family) //we will be referenced by our family, so clear us from that.
-		C.family -=src
-	family=null
 	..()
 
 
@@ -230,10 +225,16 @@
 /mob/living/simple_animal/complex/proc/tick_state_idle()
 	abort_target()
 
-	//attempt reproduction only while full
-	if(lastmate<=0 && nutrition >= (max_food- get_offspring_cost()*2) && prob(50))
-		behavior_state=ANIMAL_STATE_MATING
-		return FALSE
+	if(lastmate<=0)
+		var/localcount=0
+		for(var/mob/living/simple_animal/complex/A in cache_objects_in_extended_area)
+			if(A.type==src.type && A.stat!=DEAD)
+				localcount++
+		if(localcount<max_local_population && nutrition >= (max_food- get_offspring_cost()*2) && prob(50))
+			behavior_state=ANIMAL_STATE_MATING
+			return FALSE
+		else
+			lastmate=2 //stop processing this for a few ticks to save some CPU
 
 	get_idle_sounds()
 
@@ -392,8 +393,6 @@
 		behavior_state=ANIMAL_STATE_IDLE
 
 /mob/living/simple_animal/complex/proc/is_kin(var/mob/target)
-	if(target in family)
-		return TRUE
 	if(target.faction == src.faction && src.faction!="neutral")
 		return TRUE
 	if(kin_check_type_path)
@@ -457,8 +456,6 @@
 				p+=ANIMAL_FOODPRIORITY_SIZEDIFF_LARGER
 			if(M.size < src.size-2) //smaller things ain't worth our time
 				p+=ANIMAL_FOODPRIORITY_SIZEDIFF_SMALLER
-			if(M in family)
-				p+=ANIMAL_FOODPRIORITY_FAMILY
 			if(istype(A,/mob/living/simple_animal))
 				var/mob/living/simple_animal/SA=A
 				if(SA.is_poisonous)
@@ -488,13 +485,13 @@
 		get_aggro_msg(victim)
 	target=victim
 	behavior_state=state
-	if( !(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) && !family.len)
+	if( !(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS))
 		return
 	if(istype(target,/mob/living))
 		var/mob/living/T=target
 		if(T.stat!=DEAD)
 			for(var/mob/living/simple_animal/complex/M in cache_objects_in_view)
-				if( (behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) || (M in family))
+				if( (behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS))
 					if(is_kin(M) && !M.is_kin(target)) //rally the pack to us, if the target is not kin
 						if(M.behavior_state!=state) //if the pack member is not engaged in similar activity
 							M.aggro_drawn(victim,state) //do this recursively for each. don't kick the bee hive.
@@ -670,12 +667,6 @@
 		return FALSE
 	if(mate.type!=src.type)
 		return FALSE
-	var/localcount=0
-	for(var/mob/living/simple_animal/complex/A in cache_objects_in_extended_area)
-		if(A.type==src.type && A.stat!=DEAD)
-			localcount++
-	if(localcount>max_local_population)
-		return FALSE
 	if(lastmate>0)
 		return FALSE
 	if((src.gender=="male" && mate.gender=="female") || (mate.gender=="male" && src.gender=="female"))
@@ -689,10 +680,6 @@
 		return FALSE
 	child.faction=faction
 	child.nutrition=child.max_food*0.5
-	family+=child
-	father.family+=child
-	child.family+=src
-	child.family+=father
 	return child
 	
 

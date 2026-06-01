@@ -83,14 +83,14 @@
 	target=victim
 	behavior_state=state
 	get_aggro_msg(victim)
-	if( !(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) && !family.len)
+	if( !(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) )
 		return
 	if(istype(target,/mob/living))
 		var/mob/living/T=target
 		if(T.stat!=DEAD)
 			var/list/nearby_objects=range(15,src) //increased range, and ignores visibility. have fun!
 			for(var/mob/living/simple_animal/complex/M in nearby_objects)
-				if( (behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) || (M in family))
+				if( (behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) )
 					if(is_kin(M) && !M.is_kin(target))
 						if(M.behavior_state!=state)
 							M.aggro_drawn(victim,state)
