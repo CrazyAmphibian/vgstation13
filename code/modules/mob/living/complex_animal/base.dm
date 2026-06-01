@@ -230,7 +230,7 @@
 		for(var/mob/living/simple_animal/complex/A in cache_objects_in_extended_area)
 			if(A.type==src.type && A.stat!=DEAD)
 				localcount++
-		if(localcount<max_local_population && nutrition >= (max_food- get_offspring_cost()*2) && prob(50))
+		if(localcount<max_local_population && localcount>1 && nutrition >= (max_food- (size*7.5)*2) && prob(50))
 			behavior_state=ANIMAL_STATE_MATING
 			return FALSE
 		else
@@ -358,10 +358,10 @@
 		else
 			if(gender=="female")
 				if(generate_offspring(M))
-					M.nutrition-=M.get_offspring_cost()
+					M.nutrition-=(M.size*7.5)
 					M.abort_target()
 
-					nutrition-=get_offspring_cost()
+					nutrition-=(size*7.5)
 					abort_target()
 
 					M.lastmate=M.matingcooldown
@@ -607,9 +607,7 @@
 
 //only fired when the mob is seen by us, and we have the AVOID_PRED flag
 /mob/living/simple_animal/complex/proc/determine_isthreat(var/mob/individual)
-	if(!verify_target(individual))
-		return FALSE
-	if(is_pacified())
+	if(!individual || individual.stat==DEAD)
 		return FALSE
 	if(is_kin(individual))
 		return FALSE
@@ -648,9 +646,6 @@
 	if(prob(10))
 		emote("me",MESSAGE_HEAR, "vocalizes.")
 
-
-/mob/living/simple_animal/complex/proc/get_offspring_cost()
-	return size*7.5
 
 // if you don't want offspring, then return FALSE here.
 /mob/living/simple_animal/complex/proc/can_offspring(var/mob/living/simple_animal/complex/mate)

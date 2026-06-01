@@ -70,9 +70,9 @@
 	armor=list(melee=35,bullet=15,laser=20,energy=0,bomb=10,bio=0,rad=0)
 	petable=TRUE
 	is_pet=TRUE
+	max_local_population=0
 
-/mob/living/simple_animal/complex/crocodile/schnapps/get_offspring_cost()
-	return 0 //no infinite schnapps.	
+
 /mob/living/simple_animal/complex/crocodile/schnapps/can_offspring()
 	return FALSE
 

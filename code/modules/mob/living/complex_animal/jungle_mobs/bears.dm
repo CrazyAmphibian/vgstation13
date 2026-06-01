@@ -67,6 +67,7 @@
 	animal_flags = ANIMAL_FLAG_IMMORTAL | ANIMAL_FLAG_NEVER_ROT
 	movespeed=4
 	sea_bear=FALSE
+	max_local_population=0
 
 /mob/living/simple_animal/complex/bear/spare/can_offspring(var/mob/living/simple_animal/complex/mate)
 	return FALSE
@@ -107,9 +108,9 @@
 	
 
 /mob/living/simple_animal/complex/bear/panda/can_offspring(var/mob/living/simple_animal/complex/mate)
-	.=..()
 	if(prob(75))
 		return FALSE
+	.=..()
 
 /mob/living/simple_animal/complex/bear/panda/get_butchering_products()
 	return list(/datum/butchering_product/skin/bear/panda, /datum/butchering_product/teeth/lots)
@@ -144,6 +145,7 @@
 	food_per_tick=0.0
 	healthregen=0.015
 	sea_bear=FALSE
+	max_local_population=0
 
 /mob/living/simple_animal/complex/bear/polar/chef/can_offspring(var/mob/living/simple_animal/complex/mate)
 	return FALSE	
