@@ -135,20 +135,18 @@
 		return 0
 	ticks_dead=0
 
+	cache_objects_in_extended_area = range(src,16)
+	cache_objects_in_view = view(src,7) //refresh it every life tick.
+
 	if(last_state!=behavior_state)
 		ticks_this_state=0
 		last_state=behavior_state
 	else
-		ticks_this_state++
-
-	cache_objects_in_view = view(src,7) //refresh it every life tick.
-	cache_objects_in_extended_area = range(src,16)
+		ticks_this_state++		
 
 	reagents?.metabolize(src)
 
 	nutrition-=max_food*food_per_tick
-
-	lastmate--
 
 	if(lasthealth<=health && health<maxHealth)
 		health=min(maxHealth,health+maxHealth*healthregen)
@@ -168,6 +166,11 @@
 	interrupt_territory() //next, prioritize defending our home
 	interrupt_fear() //then, prioritize saving our own ass.
 
+
+	if (behavior_state==ANIMAL_STATE_IDLE==last_state && (ticks_this_state % 3!=1) ) //throttle idle ticking
+		walk(src,0)
+		return 1
+
 	switch(behavior_state)
 		if(ANIMAL_STATE_IDLE)
 			tick_state_idle()
@@ -179,8 +182,6 @@
 			tick_state_attacking()
 		if(ANIMAL_STATE_FLEEING)
 			tick_state_fleeing()
-		if(ANIMAL_STATE_MATING)
-			tick_state_mating()
 		if(ANIMAL_STATE_SPECIAL)
 			tick_state_special()
 	return 1
@@ -223,28 +224,18 @@
 
 //state functions return TRUE if the behavior_state is unchanged, and FALSE if not. basically just do if(..())
 /mob/living/simple_animal/complex/proc/tick_state_idle()
-	abort_target()
-
-	if(lastmate<=0)
-		var/localcount=0
-		for(var/mob/living/simple_animal/complex/A in cache_objects_in_extended_area)
-			if(A.type==src.type && A.stat!=DEAD)
-				localcount++
-		if(localcount<max_local_population && localcount>1 && nutrition >= (max_food- (size*7.5)*2) && prob(50))
-			behavior_state=ANIMAL_STATE_MATING
-			return FALSE
-		else
-			lastmate=2 //stop processing this for a few ticks to save some CPU
+	if(target)
+		abort_target()
 
 	get_idle_sounds()
 
-	if(prob(25))//move around randomly sometimes
-		if(behavior_flags & ANIMAL_BEHAVIOR_TERRITORIAL && territory)
-			walk_to(src,locate(territory.x+rand(-3,3),territory.y+rand(-3,3),territory.z),0,movespeed)
-		else
-			walk_to(src,locate(x+rand(-3,3),y+rand(-3,3),z),0,movespeed)
+	//move around randomly sometimes
+	if(behavior_flags & ANIMAL_BEHAVIOR_TERRITORIAL && territory)
+		walk_to(src,locate(territory.x+rand(-3,3),territory.y+rand(-3,3),territory.z),0,movespeed)
+	else
+		walk_to(src,locate(x+rand(-3,3),y+rand(-3,3),z),0,movespeed)
 
-	if(territory && prob(25)) //randomly move the territory
+	if(territory) //randomly move the territory
 		if(behavior_flags & ANIMAL_BEHAVIOR_PACK_DYNAMICS) //move our territory closer to pack members
 			var/list/mob/living/simple_animal/complex/members=list()
 			for(var/mob/living/simple_animal/complex/M in cache_objects_in_view)
