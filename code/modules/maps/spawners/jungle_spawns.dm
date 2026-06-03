@@ -64,8 +64,10 @@ var/alist/spawn_targets=alist(
 		current_mob_counts[M.type]=(current_mob_counts[M.type] || 0) +1
 	for(var/path,target in spawn_targets) //check if they're under our target
 		if (current_mob_counts[path]<target)
-			//world.log <<"[path] ([current_mob_counts[path]]) was under [target], spawning 1 more."
-			new path(src.loc)
+			var/tospawn=target - current_mob_counts[path] //how many behind the target we are
+			tospawn = max(3,min(5,floor(tospawn/2) )) //do some scaling to try to spawn them with a group with an acceptable size. this will result in some over and undershoots, but that's ok.
+			while(tospawn--)
+				new path(src.loc)
 			return
 		
 //random peaceful wildlife. :)
