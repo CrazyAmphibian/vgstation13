@@ -20,9 +20,9 @@ var/list/junglemobs_passive_rare=list(
 
 //how many mobs we want to exist on junga
 var/alist/spawn_targets=alist(
-	/mob/living/simple_animal/complex/dinosaur=30,
-	/mob/living/simple_animal/complex/panther=30,
-	/mob/living/simple_animal/complex/bear=30,
+	/mob/living/simple_animal/complex/dinosaur=35,
+	/mob/living/simple_animal/complex/panther=35,
+	/mob/living/simple_animal/complex/bear=40,
 	/mob/living/simple_animal/complex/crocodile=15,
 	/mob/living/simple_animal/complex/frog=10,
 	/mob/living/simple_animal/complex/frog/poison=10,
