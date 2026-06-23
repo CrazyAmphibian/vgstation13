@@ -12051,6 +12051,9 @@
 	dir = 4
 	},
 /obj/structure/flora/pottedplant/random,
+/obj/item/device/radio/intercom/medbay{
+	pixel_y = -29
+	},
 /turf/simulated/floor{
 	icon_state = "whitegreen"
 	},
@@ -24976,12 +24979,6 @@
 	icon_state = "whitepurple"
 	},
 /area/science/xenobiology)
-"iSj" = (
-/obj/item/device/radio/intercom/medbay/broadcast_nospeaker{
-	pixel_y = 3
-	},
-/turf/simulated/wall/r_wall,
-/area/medical/cmo)
 "iSm" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /turf/simulated/floor/vox{
@@ -46195,7 +46192,8 @@
 	name = "Genetics Exit Button";
 	normaldoorcontrol = 1;
 	pixel_y = 26;
-	range = 3
+	range = 3;
+	pixel_x = -3
 	},
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -46204,6 +46202,10 @@
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/machinery/light_switch{
+	pixel_y = 27;
+	pixel_x = 8
 	},
 /turf/simulated/floor{
 	icon_state = "white"
@@ -48633,9 +48635,6 @@
 	},
 /area/medical/genetics)
 "roC" = (
-/obj/machinery/light_switch{
-	pixel_y = 28
-	},
 /obj/structure/table,
 /obj/item/weapon/storage/box/gloves{
 	pixel_x = 4;
@@ -48644,6 +48643,9 @@
 /obj/item/weapon/storage/box/masks{
 	pixel_x = -2;
 	pixel_y = -1
+	},
+/obj/item/device/radio/intercom/medbay/broadcast_nospeaker{
+	pixel_y = 23
 	},
 /turf/simulated/floor{
 	icon_state = "white"
@@ -129615,7 +129617,7 @@ urr
 aMi
 kOh
 ejA
-iSj
+vkY
 bzp
 jyu
 vkY
