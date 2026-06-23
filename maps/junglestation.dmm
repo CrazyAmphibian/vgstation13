@@ -2549,7 +2549,8 @@
 	},
 /area/medical/medbay)
 "aUl" = (
-/turf/simulated/floor/engine/vacuum,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers,
+/turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
 "aUE" = (
 /obj/structure/fence,
@@ -5089,11 +5090,24 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep)
 "bOz" = (
-/obj/machinery/camera{
-	dir = 6
+/obj/machinery/atmospherics/unary/vent_pump{
+	canSpawnMice = 0;
+	dir = 8;
+	external_pressure_bound = 0;
+	frequency = 1443;
+	icon_state = "in";
+	id_tag = "mix_out";
+	initialize_directions = 1;
+	internal_pressure_bound = 4000;
+	on = 1;
+	pressure_checks = 2;
+	pump_direction = 0
 	},
-/turf/unsimulated/floor/planetary/concrete/jungle,
-/area/surface/jungle/zoned/sme_outside)
+/obj/effect/decal/warning_stripes{
+	icon_state = "bot"
+	},
+/turf/simulated/floor/engine/vacuum,
+/area/surface/jungle/zoned/atmos_outside)
 "bOE" = (
 /obj/machinery/computer/fluff/factory,
 /turf/unsimulated/floor{
@@ -5787,7 +5801,9 @@
 /obj/effect/decal/warning_stripes/siding{
 	dir = 10
 	},
-/turf/simulated/floor/greengrid,
+/turf/simulated/floor{
+	icon_state = "gcircuit"
+	},
 /area/construction/mommi_nest)
 "cct" = (
 /obj/structure/cable/yellow{
@@ -8204,7 +8220,9 @@
 /obj/effect/decal/warning_stripes/siding{
 	dir = 8
 	},
-/turf/simulated/floor/greengrid,
+/turf/simulated/floor{
+	icon_state = "gcircuit"
+	},
 /area/construction/mommi_nest)
 "cSz" = (
 /obj/machinery/detector{
@@ -8342,6 +8360,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/research_outpost/atmos)
+"cVz" = (
+/obj/machinery/camera,
+/turf/simulated/floor{
+	dir = 1;
+	icon_state = "whitepurple"
+	},
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "cVC" = (
 /obj/abstract/map/spawner/mobs/monkeys,
 /obj/effect/decal/cleanable/dirt,
@@ -8731,11 +8759,14 @@
 	},
 /area/shuttle/nuclearops)
 "ddu" = (
-/obj/machinery/camera{
-	dir = 5
+/obj/effect/decal/warning_stripes{
+	icon_state = "unloading"
 	},
-/turf/unsimulated/floor/planetary/concrete/jungle,
-/area/surface/jungle/zoned/sme_outside)
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/engine/vacuum,
+/area/surface/jungle/zoned/atmos_outside)
 "ddX" = (
 /obj/docking_port/shuttle{
 	dir = 4
@@ -8788,6 +8819,16 @@
 "deH" = (
 /turf/unsimulated/floor/planetary/mud/jungle,
 /area/surface/jungle)
+"deN" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "warning";
+	tag = "icon-warning"
+	},
+/obj/machinery/camera{
+	dir = 6
+	},
+/turf/unsimulated/floor/planetary/concrete/jungle,
+/area/surface/jungle/zoned/roid_prep)
 "deR" = (
 /obj/machinery/door/window{
 	name = "Containment Pen";
@@ -10138,12 +10179,8 @@
 /turf/simulated/floor,
 /area/science/chargebay)
 "dBT" = (
-/obj/machinery/atmospherics/binary/volume_pump{
-	name = "Air Supply Purge";
-	dir = 8
-	},
-/turf/unsimulated/floor/planetary/concrete/jungle,
-/area/surface/jungle/zoned/atmos_outside)
+/turf/simulated/wall/r_wall,
+/area/surface/jungle/zoned/reactor_outside)
 "dCb" = (
 /obj/docking_port/destination/pod2/transit{
 	dir = 2
@@ -11574,13 +11611,6 @@
 	icon_state = "toxlab";
 	name = "Toxins"
 	})
-"ebF" = (
-/obj/machinery/air_sensor{
-	frequency = 1443;
-	id_tag = "mix_sensor"
-	},
-/turf/simulated/floor/engine/vacuum,
-/area/surface/jungle/zoned/atmos_outside)
 "ebM" = (
 /obj/machinery/door/mineral/wood{
 	name = "Quack Doctor "
@@ -12038,7 +12068,9 @@
 "ejX" = (
 /obj/item/clothing/head/mailman,
 /obj/effect/decal/warning_stripes/siding,
-/turf/simulated/floor/greengrid,
+/turf/simulated/floor{
+	icon_state = "gcircuit"
+	},
 /area/construction/mommi_nest)
 "ekm" = (
 /obj/structure/bed/chair{
@@ -17149,11 +17181,19 @@
 /turf/simulated/floor,
 /area/research_outpost/entry)
 "gaW" = (
-/obj/machinery/camera{
-	dir = 9
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 8;
+	frequency = 1443;
+	icon_state = "on";
+	id_tag = "n2o_in";
+	on = 1;
+	pixel_y = 1
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
-/area/surface/jungle/zoned/bombrange)
+/obj/effect/decal/warning_stripes{
+	icon_state = "bot"
+	},
+/turf/simulated/floor/engine/n20,
+/area/surface/jungle/zoned/atmos_outside)
 "gba" = (
 /obj/machinery/light{
 	dir = 8
@@ -17432,14 +17472,6 @@
 	icon_state = "whitegreencorner"
 	},
 /area/medical/virology)
-"ggi" = (
-/obj/machinery/camera{
-	dir = 6;
-	name = "Research Outpost Dorms";
-	network = list("RD","SS13")
-	},
-/turf/simulated/floor,
-/area/research_outpost/dorm1)
 "ggp" = (
 /obj/machinery/portable_atmospherics/canister/sleeping_agent,
 /obj/effect/decal/warning_stripes{
@@ -17797,6 +17829,9 @@
 	icon_state = "floor"
 	},
 /area/centcom/control)
+"gmf" = (
+/turf/simulated/floor/engine/vacuum,
+/area/surface/jungle/zoned/atmos_outside)
 "gmk" = (
 /obj/machinery/hologram/holopad,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -17976,23 +18011,18 @@
 /turf/simulated/floor,
 /area/science/chargebay)
 "gqv" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	canSpawnMice = 0;
+/obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 8;
-	external_pressure_bound = 0;
 	frequency = 1443;
-	icon_state = "in";
-	id_tag = "n2o_out";
-	initialize_directions = 1;
-	internal_pressure_bound = 4000;
+	icon_state = "on";
+	id_tag = "mix_in";
 	on = 1;
-	pressure_checks = 2;
-	pump_direction = 0
+	pixel_y = 1
 	},
 /obj/effect/decal/warning_stripes{
 	icon_state = "bot"
 	},
-/turf/simulated/floor/engine/n20,
+/turf/simulated/floor/engine/vacuum,
 /area/surface/jungle/zoned/atmos_outside)
 "gqx" = (
 /obj/machinery/flasher{
@@ -22812,15 +22842,6 @@
 	},
 /turf/simulated/floor/engine,
 /area/surface/jungle/mining)
-"ibS" = (
-/obj/machinery/camera{
-	dir = 9
-	},
-/turf/simulated/floor,
-/area/research_outpost/dorm2{
-	icon_state = "toxlab";
-	name = "Toxins"
-	})
 "icc" = (
 /obj/structure/disposalpipe/segment,
 /turf/unsimulated/floor{
@@ -25650,10 +25671,6 @@
 	},
 /turf/simulated/floor/shuttle,
 /area/shuttle/arrival/station)
-"jdy" = (
-/obj/machinery/atmospherics/pipe/manifold4w/scrubbers,
-/turf/unsimulated/floor/planetary/concrete/jungle,
-/area/surface/jungle/zoned/atmos_outside)
 "jdz" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1;
@@ -26351,6 +26368,12 @@
 	},
 /turf/simulated/floor/shuttle,
 /area/shuttle/escape/centcom)
+"jpK" = (
+/obj/machinery/camera{
+	dir = 5
+	},
+/turf/unsimulated/floor/planetary/concrete/jungle,
+/area/surface/jungle/zoned/sme_outside)
 "jqc" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/wood,
@@ -26973,18 +26996,10 @@
 /turf/simulated/floor/plating,
 /area/supply/office)
 "jEj" = (
-/obj/machinery/atmospherics/unary/outlet_injector{
-	dir = 8;
-	frequency = 1443;
-	icon_state = "on";
-	id_tag = "n2o_in";
-	on = 1;
-	pixel_y = 1
-	},
 /obj/effect/decal/warning_stripes{
-	icon_state = "bot"
+	icon_state = "mix"
 	},
-/turf/simulated/floor/engine/n20,
+/turf/simulated/floor/engine/vacuum,
 /area/surface/jungle/zoned/atmos_outside)
 "jEt" = (
 /obj/structure/table/reinforced,
@@ -28604,14 +28619,11 @@
 	},
 /area/maintenance/disposal)
 "kiK" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "unloading"
+/obj/machinery/camera{
+	dir = 9
 	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/simulated/floor/engine/vacuum,
-/area/surface/jungle/zoned/atmos_outside)
+/turf/unsimulated/floor/planetary/path/jungle,
+/area/surface/jungle/zoned/bombrange)
 "kjd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor,
@@ -29376,9 +29388,6 @@
 /obj/structure/grille/window_spawner/reinforced,
 /turf/simulated/floor/plating,
 /area/surface/jungle/zoned/storage_shed)
-"kzt" = (
-/turf/simulated/wall/r_wall,
-/area/surface/jungle/zoned/reactor_outside)
 "kzu" = (
 /obj/structure/painting/random{
 	pixel_x = 32
@@ -29549,7 +29558,9 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/greengrid,
+/turf/simulated/floor{
+	icon_state = "gcircuit"
+	},
 /area/construction/mommi_nest)
 "kBZ" = (
 /obj/structure/table/reinforced,
@@ -29920,15 +29931,12 @@
 	},
 /area/medical/patient_room1)
 "kIn" = (
-/obj/machinery/camera,
-/turf/simulated/floor{
-	dir = 1;
-	icon_state = "whitepurple"
+/obj/machinery/air_sensor{
+	frequency = 1443;
+	id_tag = "n2o_sensor"
 	},
-/area/research_outpost/dorm2{
-	icon_state = "toxlab";
-	name = "Toxins"
-	})
+/turf/simulated/floor/engine/n20,
+/area/surface/jungle/zoned/atmos_outside)
 "kIA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -30665,13 +30673,6 @@
 	},
 /turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/surface/jungle/zoned/cargolobby)
-"kYr" = (
-/obj/machinery/door/airlock/external{
-	name = "Mixing chamber Access";
-	req_access_txt = "24"
-	},
-/turf/simulated/floor/engine/n20,
-/area/surface/jungle/zoned/atmos_outside)
 "kYu" = (
 /obj/machinery/light,
 /turf/simulated/floor{
@@ -31466,6 +31467,12 @@
 	icon_state = "red"
 	},
 /area/tdome)
+"lox" = (
+/obj/machinery/camera{
+	dir = 10
+	},
+/turf/unsimulated/floor/planetary/concrete/jungle,
+/area/surface/jungle/zoned/atmos_outside)
 "loR" = (
 /obj/machinery/door_control/mapped/box_armoury{
 	id_tag = "IDTagJungleArmoury";
@@ -32052,7 +32059,9 @@
 /obj/effect/decal/warning_stripes/siding{
 	dir = 5
 	},
-/turf/simulated/floor/greengrid,
+/turf/simulated/floor{
+	icon_state = "gcircuit"
+	},
 /area/construction/mommi_nest)
 "lzr" = (
 /obj/structure/grille,
@@ -32520,14 +32529,14 @@
 /turf/simulated/floor,
 /area/research_outpost/entry)
 "lHB" = (
-/obj/machinery/atmospherics/pipe/manifold/cyan/visible{
-	dir = 8
+/obj/machinery/door_control{
+	id_tag = "entergatelockext";
+	name = "gate lockdown";
+	pixel_y = 10;
+	pixel_x = -8
 	},
-/obj/machinery/meter{
-	name = "Air"
-	},
-/turf/unsimulated/floor/planetary/concrete/jungle,
-/area/surface/jungle/zoned/atmos_outside)
+/turf/simulated/wall/r_wall,
+/area/security/checkpoint2)
 "lHP" = (
 /obj/structure/fence/door,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -32537,11 +32546,24 @@
 /turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/surface/jungle)
 "lIc" = (
-/obj/machinery/camera{
-	pixel_y = -3
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 8;
+	frequency = 1443;
+	icon_state = "on";
+	id_tag = "tox_in";
+	on = 1;
+	pixel_y = 1
 	},
-/turf/unsimulated/floor/planetary/grass/jungle,
-/area/surface/jungle/fenced)
+/obj/effect/decal/warning_stripes{
+	icon_state = "bot"
+	},
+/turf/simulated/floor/engine{
+	name = "plasma floor";
+	nitrogen = 0;
+	oxygen = 0;
+	toxins = 70000
+	},
+/area/surface/jungle/zoned/atmos_outside)
 "lIh" = (
 /obj/machinery/station_map{
 	dir = 8
@@ -35175,30 +35197,6 @@
 /obj/machinery/computer/secure_data,
 /turf/simulated/floor/shuttle,
 /area/centcom/evac)
-"mBC" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	canSpawnMice = 0;
-	dir = 8;
-	external_pressure_bound = 0;
-	frequency = 1443;
-	icon_state = "in";
-	id_tag = "tox_out";
-	initialize_directions = 1;
-	internal_pressure_bound = 4000;
-	on = 1;
-	pressure_checks = 2;
-	pump_direction = 0
-	},
-/obj/effect/decal/warning_stripes{
-	icon_state = "bot"
-	},
-/turf/simulated/floor/engine{
-	name = "plasma floor";
-	nitrogen = 0;
-	oxygen = 0;
-	toxins = 70000
-	},
-/area/surface/jungle/zoned/atmos_outside)
 "mBD" = (
 /obj/structure/table/woodentable,
 /obj/item/device/flashlight/lamp{
@@ -35497,28 +35495,9 @@
 /turf/simulated/floor/plating,
 /area/research_outpost/hallway)
 "mGY" = (
-/obj/machinery/power/solar/panel,
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2";
-	pixel_y = 1
-	},
-/obj/machinery/camera{
-	dir = 6
-	},
-/turf/unsimulated/floor/planetary/path/jungle_plated,
-/area/surface/jungle/zoned/roid_prep)
-"mHk" = (
-/obj/machinery/atmospherics/unary/outlet_injector{
-	dir = 8;
+/obj/machinery/air_sensor{
 	frequency = 1443;
-	icon_state = "on";
-	id_tag = "tox_in";
-	on = 1;
-	pixel_y = 1
-	},
-/obj/effect/decal/warning_stripes{
-	icon_state = "bot"
+	id_tag = "tox_sensor"
 	},
 /turf/simulated/floor/engine{
 	name = "plasma floor";
@@ -35527,6 +35506,13 @@
 	toxins = 70000
 	},
 /area/surface/jungle/zoned/atmos_outside)
+"mHk" = (
+/obj/machinery/camera{
+	dir = 9;
+	pixel_y = -1
+	},
+/turf/unsimulated/floor/planetary/path/jungle,
+/area/surface/jungle/zoned/roid_prep)
 "mHo" = (
 /obj/machinery/light{
 	dir = 4
@@ -35739,14 +35725,11 @@
 /turf/simulated/floor/vox,
 /area/vox_trading_post/vault)
 "mLg" = (
-/obj/machinery/door_control{
-	id_tag = "entergatelockext";
-	name = "gate lockdown";
-	pixel_y = 10;
-	pixel_x = -8
+/obj/machinery/camera{
+	dir = 6
 	},
-/turf/simulated/wall/r_wall,
-/area/security/checkpoint2)
+/turf/unsimulated/floor/planetary/concrete/jungle,
+/area/surface/jungle/zoned/sme_outside)
 "mLk" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -37276,25 +37259,6 @@
 	},
 /turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
-"nmG" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	canSpawnMice = 0;
-	dir = 8;
-	external_pressure_bound = 0;
-	frequency = 1443;
-	icon_state = "in";
-	id_tag = "mix_out";
-	initialize_directions = 1;
-	internal_pressure_bound = 4000;
-	on = 1;
-	pressure_checks = 2;
-	pump_direction = 0
-	},
-/obj/effect/decal/warning_stripes{
-	icon_state = "bot"
-	},
-/turf/simulated/floor/engine/vacuum,
-/area/surface/jungle/zoned/atmos_outside)
 "nmH" = (
 /obj/machinery/door/airlock/external,
 /turf/unsimulated/floor{
@@ -37326,12 +37290,12 @@
 	},
 /area/crew_quarters/hop)
 "noe" = (
-/obj/machinery/camera{
-	dir = 9;
-	pixel_y = -1
+/obj/machinery/atmospherics/binary/volume_pump{
+	name = "Air Supply Purge";
+	dir = 8
 	},
-/turf/unsimulated/floor/planetary/path/jungle,
-/area/surface/jungle/zoned/roid_prep)
+/turf/unsimulated/floor/planetary/concrete/jungle,
+/area/surface/jungle/zoned/atmos_outside)
 "noi" = (
 /obj/structure/bed/chair/comfy/couch/turn/inward/red{
 	dir = 1
@@ -38432,6 +38396,18 @@
 	},
 /turf/simulated/floor,
 /area/supply/storage)
+"nKs" = (
+/obj/machinery/power/solar/panel,
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 1
+	},
+/obj/machinery/camera{
+	dir = 6
+	},
+/turf/unsimulated/floor/planetary/path/jungle_plated,
+/area/surface/jungle/zoned/roid_prep)
 "nKD" = (
 /turf/simulated/floor{
 	icon_state = "yellow";
@@ -38966,6 +38942,12 @@
 	icon_state = "whitepurple"
 	},
 /area/science/lab)
+"nSD" = (
+/obj/machinery/camera{
+	pixel_y = -3
+	},
+/turf/unsimulated/floor/planetary/grass/jungle,
+/area/surface/jungle/fenced)
 "nSM" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
@@ -39367,12 +39349,15 @@
 /turf/simulated/floor/plating,
 /area/security/range)
 "nYZ" = (
-/obj/structure/bed/chair/wood/normal,
-/obj/machinery/light{
-	dir = 1
+/obj/effect/decal/warning_stripes{
+	dir = 1;
+	icon_state = "warning"
 	},
-/turf/simulated/floor,
-/area/research_outpost/dorm1)
+/obj/machinery/camera{
+	dir = 10
+	},
+/turf/unsimulated/floor/planetary/concrete/jungle,
+/area/surface/jungle/landing)
 "nZc" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor,
@@ -39888,9 +39873,9 @@
 "ohD" = (
 /obj/machinery/air_sensor{
 	frequency = 1443;
-	id_tag = "n2o_sensor"
+	id_tag = "mix_sensor"
 	},
-/turf/simulated/floor/engine/n20,
+/turf/simulated/floor/engine/vacuum,
 /area/surface/jungle/zoned/atmos_outside)
 "ohO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -40593,16 +40578,6 @@
 	icon_state = "whitegreen"
 	},
 /area/medical/virology)
-"ovu" = (
-/obj/effect/decal/warning_stripes{
-	dir = 1;
-	icon_state = "warning"
-	},
-/obj/machinery/camera{
-	dir = 10
-	},
-/turf/unsimulated/floor/planetary/concrete/jungle,
-/area/surface/jungle/landing)
 "ovx" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -41507,13 +41482,6 @@
 	icon_state = "red"
 	},
 /area/security/prison)
-"oLS" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/obj/machinery/camera{
-	dir = 4
-	},
-/turf/unsimulated/floor/planetary/concrete/jungle,
-/area/surface/jungle/zoned/atmos_outside)
 "oLV" = (
 /obj/structure/table,
 /obj/item/clothing/glasses/scanner/night{
@@ -41749,7 +41717,9 @@
 /obj/effect/decal/warning_stripes/siding{
 	dir = 6
 	},
-/turf/simulated/floor/greengrid,
+/turf/simulated/floor{
+	icon_state = "gcircuit"
+	},
 /area/construction/mommi_nest)
 "oSp" = (
 /obj/structure/bed/chair/wood/wings,
@@ -44309,12 +44279,12 @@
 /turf/unsimulated/floor/planetary/grass/jungle,
 /area/surface/jungle/fenced)
 "pPM" = (
-/obj/machinery/camera,
-/turf/simulated/floor{
-	icon_state = "yellow";
-	dir = 8
+/obj/machinery/door/airlock/external{
+	name = "Mixing chamber Access";
+	req_access_txt = "24"
 	},
-/area/engineering/atmos)
+/turf/simulated/floor/engine/n20,
+/area/surface/jungle/zoned/atmos_outside)
 "pPP" = (
 /obj/structure/sign/pox{
 	icon_state = "voxtrade";
@@ -46057,6 +46027,15 @@
 	icon_state = "whitepurple"
 	},
 /area/science/xenobiology)
+"qsw" = (
+/obj/machinery/atmospherics/pipe/manifold/cyan/visible{
+	dir = 8
+	},
+/obj/machinery/meter{
+	name = "Air"
+	},
+/turf/unsimulated/floor/planetary/concrete/jungle,
+/area/surface/jungle/zoned/atmos_outside)
 "qsM" = (
 /obj/structure/painting/random,
 /turf/unsimulated/wall,
@@ -46388,6 +46367,14 @@
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/hop)
+"qwZ" = (
+/obj/machinery/camera{
+	dir = 6;
+	name = "Research Outpost Dorms";
+	network = list("RD","SS13")
+	},
+/turf/simulated/floor,
+/area/research_outpost/dorm1)
 "qxm" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -49288,10 +49275,10 @@
 /area/medical/sleeper)
 "ryg" = (
 /obj/machinery/camera{
-	dir = 9
+	dir = 1
 	},
-/turf/unsimulated/floor/planetary/dirt/jungle,
-/area/surface/jungle/zoned/bombrange)
+/turf/unsimulated/floor/planetary/grass/jungle,
+/area/surface/jungle/fenced)
 "ryn" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil{
 	pixel_y = 14
@@ -53031,7 +53018,9 @@
 /obj/effect/decal/warning_stripes/siding{
 	dir = 4
 	},
-/turf/simulated/floor/greengrid,
+/turf/simulated/floor{
+	icon_state = "gcircuit"
+	},
 /area/construction/mommi_nest)
 "sRu" = (
 /turf/simulated/wall/shuttle,
@@ -55303,8 +55292,9 @@
 	},
 /area/bridge/meeting_room)
 "tDR" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
 /obj/machinery/camera{
-	dir = 10
+	dir = 4
 	},
 /turf/unsimulated/floor/planetary/concrete/jungle,
 /area/surface/jungle/zoned/atmos_outside)
@@ -57361,6 +57351,25 @@
 	icon_state = "dark"
 	},
 /area/construction/mommi_nest)
+"urM" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	canSpawnMice = 0;
+	dir = 8;
+	external_pressure_bound = 0;
+	frequency = 1443;
+	icon_state = "in";
+	id_tag = "n2o_out";
+	initialize_directions = 1;
+	internal_pressure_bound = 4000;
+	on = 1;
+	pressure_checks = 2;
+	pump_direction = 0
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "bot"
+	},
+/turf/simulated/floor/engine/n20,
+/area/surface/jungle/zoned/atmos_outside)
 "urP" = (
 /turf/simulated/floor{
 	icon_state = "yellow"
@@ -57686,7 +57695,9 @@
 /obj/effect/decal/warning_stripes/siding{
 	dir = 9
 	},
-/turf/simulated/floor/greengrid,
+/turf/simulated/floor{
+	icon_state = "gcircuit"
+	},
 /area/construction/mommi_nest)
 "uyH" = (
 /obj/structure/table/woodentable/poker,
@@ -60296,15 +60307,12 @@
 	},
 /area/security/warden)
 "vut" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "warning";
-	tag = "icon-warning"
+/obj/structure/bed/chair/wood/normal,
+/obj/machinery/light{
+	dir = 1
 	},
-/obj/machinery/camera{
-	dir = 6
-	},
-/turf/unsimulated/floor/planetary/concrete/jungle,
-/area/surface/jungle/zoned/roid_prep)
+/turf/simulated/floor,
+/area/research_outpost/dorm1)
 "vuA" = (
 /obj/machinery/door/poddoor{
 	density = 0;
@@ -61059,7 +61067,9 @@
 /obj/effect/decal/warning_stripes/siding{
 	dir = 1
 	},
-/turf/simulated/floor/greengrid,
+/turf/simulated/floor{
+	icon_state = "gcircuit"
+	},
 /area/construction/mommi_nest)
 "vHH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -62118,6 +62128,30 @@
 	icon_state = "floor4"
 	},
 /area/shuttle/striketeam/centcom)
+"waY" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	canSpawnMice = 0;
+	dir = 8;
+	external_pressure_bound = 0;
+	frequency = 1443;
+	icon_state = "in";
+	id_tag = "tox_out";
+	initialize_directions = 1;
+	internal_pressure_bound = 4000;
+	on = 1;
+	pressure_checks = 2;
+	pump_direction = 0
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "bot"
+	},
+/turf/simulated/floor/engine{
+	name = "plasma floor";
+	nitrogen = 0;
+	oxygen = 0;
+	toxins = 70000
+	},
+/area/surface/jungle/zoned/atmos_outside)
 "wbq" = (
 /turf/unsimulated/wall,
 /area/centcom/test)
@@ -63308,12 +63342,6 @@
 	icon_state = "freezerfloor"
 	},
 /area/science/hallway)
-"wyW" = (
-/obj/machinery/camera{
-	dir = 1
-	},
-/turf/unsimulated/floor/planetary/grass/jungle,
-/area/surface/jungle/fenced)
 "wza" = (
 /obj/machinery/computer/atmos_alert,
 /turf/unsimulated/floor{
@@ -65054,11 +65082,11 @@
 	},
 /area/security/range)
 "xcN" = (
-/obj/effect/decal/warning_stripes{
-	icon_state = "mix"
+/obj/machinery/camera{
+	dir = 9
 	},
-/turf/simulated/floor/engine/vacuum,
-/area/surface/jungle/zoned/atmos_outside)
+/turf/unsimulated/floor/planetary/dirt/jungle,
+/area/surface/jungle/zoned/bombrange)
 "xcO" = (
 /obj/machinery/optable,
 /obj/effect/landmark/corpse/russian,
@@ -66352,17 +66380,14 @@
 /turf/unsimulated/floor/planetary/path/jungle,
 /area/surface/jungle/fenced/trader/solars)
 "xyL" = (
-/obj/machinery/air_sensor{
-	frequency = 1443;
-	id_tag = "tox_sensor"
+/obj/machinery/camera{
+	dir = 9
 	},
-/turf/simulated/floor/engine{
-	name = "plasma floor";
-	nitrogen = 0;
-	oxygen = 0;
-	toxins = 70000
-	},
-/area/surface/jungle/zoned/atmos_outside)
+/turf/simulated/floor,
+/area/research_outpost/dorm2{
+	icon_state = "toxlab";
+	name = "Toxins"
+	})
 "xyQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/effect/landmark/start{
@@ -67074,19 +67099,12 @@
 	},
 /area/medical/sleeper)
 "xOf" = (
-/obj/machinery/atmospherics/unary/outlet_injector{
-	dir = 8;
-	frequency = 1443;
-	icon_state = "on";
-	id_tag = "mix_in";
-	on = 1;
-	pixel_y = 1
+/obj/machinery/camera,
+/turf/simulated/floor{
+	icon_state = "yellow";
+	dir = 8
 	},
-/obj/effect/decal/warning_stripes{
-	icon_state = "bot"
-	},
-/turf/simulated/floor/engine/vacuum,
-/area/surface/jungle/zoned/atmos_outside)
+/area/engineering/atmos)
 "xOl" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2";
@@ -108440,7 +108458,7 @@ qEK
 knp
 lHP
 knp
-mLg
+lHB
 bhu
 bhu
 bhu
@@ -138048,7 +138066,7 @@ iXV
 iXV
 iXV
 iXV
-lIc
+nSD
 wld
 wld
 wld
@@ -144354,7 +144372,7 @@ khE
 nre
 bIY
 wld
-wyW
+ryg
 vnA
 aSI
 nkZ
@@ -147876,7 +147894,7 @@ qCg
 lIK
 lIK
 uUI
-pPM
+xOf
 fus
 fus
 fWA
@@ -147918,7 +147936,7 @@ hkB
 hbi
 hbi
 hbi
-kzt
+dBT
 hbi
 lIK
 lIK
@@ -148601,7 +148619,7 @@ auf
 auf
 auf
 rvr
-jdy
+aUl
 nir
 shJ
 dfy
@@ -148953,7 +148971,7 @@ auf
 auf
 auf
 rvr
-jdy
+aUl
 nir
 shJ
 iqV
@@ -150354,7 +150372,7 @@ xfk
 gHY
 xfk
 xfk
-oLS
+tDR
 xfk
 xPQ
 xfk
@@ -150695,7 +150713,7 @@ jyd
 jyd
 auf
 auf
-dBT
+noe
 rwX
 auf
 auf
@@ -151046,7 +151064,7 @@ lIK
 jyd
 jyd
 faf
-lHB
+qsw
 ido
 gMI
 dzd
@@ -151066,7 +151084,7 @@ auf
 auf
 auf
 auf
-tDR
+lox
 sSo
 hkB
 jJB
@@ -151355,7 +151373,7 @@ acg
 acg
 acg
 vQx
-ovu
+nYZ
 pxG
 omL
 wYJ
@@ -151430,7 +151448,7 @@ hML
 hML
 oTY
 hML
-ddu
+jpK
 wbS
 wbS
 lIK
@@ -153168,7 +153186,7 @@ jyd
 jyd
 jsN
 hXG
-kYr
+pPM
 qLW
 jsN
 hXG
@@ -153180,7 +153198,7 @@ tcI
 qLW
 jsN
 sSo
-bOz
+mLg
 hML
 hML
 hML
@@ -153519,17 +153537,17 @@ jyd
 jyd
 jyd
 jsN
-nmG
-xcN
-xOf
-jsN
-gqv
-dQO
+bOz
 jEj
+gqv
 jsN
-mBC
+urM
+dQO
+gaW
+jsN
+waY
 nuy
-mHk
+lIc
 jsN
 sSo
 hML
@@ -153871,17 +153889,17 @@ lIK
 lIK
 lIK
 jsN
-aUl
-kiK
-ebF
+gmf
+ddu
+ohD
 jsN
 tRU
 ifp
-ohD
+kIn
 jsN
 hFZ
 lgL
-xyL
+mGY
 jsN
 sSo
 wbS
@@ -461494,14 +461512,14 @@ wEH
 wEH
 wEH
 wEH
-ryg
+xcN
 vCv
 vCv
 vCv
 vCv
 kxT
 kxT
-gaW
+kiK
 aXz
 aXz
 aXz
@@ -463259,7 +463277,7 @@ tnt
 cTx
 akL
 gNo
-ibS
+xyL
 dML
 epp
 ugv
@@ -467829,7 +467847,7 @@ tFd
 tFd
 tFd
 epp
-kIn
+cVz
 mqQ
 mqQ
 mqQ
@@ -474865,7 +474883,7 @@ tFd
 tFd
 tFd
 kzN
-ggi
+qwZ
 jeC
 nsl
 nsl
@@ -475217,7 +475235,7 @@ tFd
 tFd
 tFd
 kzN
-nYZ
+vut
 lQA
 qCl
 nsl
@@ -478405,7 +478423,7 @@ vyT
 wRX
 kYd
 dKu
-mGY
+nKs
 bXO
 sFU
 oIE
@@ -481554,7 +481572,7 @@ iYl
 iYl
 iYl
 iYl
-vut
+deN
 qaA
 aIq
 sYv
@@ -483681,7 +483699,7 @@ rIh
 rIh
 rIh
 rIh
-noe
+mHk
 ffk
 ffk
 ffk
