@@ -450,6 +450,7 @@
 	icon_state = "vox-civ-engineer"
 	item_state = "vox-pressure-engineer"
 	armor = list(melee = 5, bullet = 5, laser = 5, energy = 5, bomb = 0, bio = 100, rad = 50)
+	armor_absorb = list(melee = 0,bullet = 0,laser = 0,energy = 0,bomb = 0, bio = 0, rad = 8)
 	allowed = list(/obj/item/device/flashlight, /obj/item/weapon/tank, /obj/item/device/t_scanner, /obj/item/device/rcd, /obj/item/tool/wrench/socket)
 	max_heat_protection_temperature = SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	pressure_resistance = 200 * ONE_ATMOSPHERE
@@ -460,6 +461,7 @@
 	item_state = "vox-pressure-engineer"
 	desc = "A very alien-looking helmet for vox crewmembers. This one comes with more radiation protection."
 	armor = list(melee = 5, bullet = 5, laser = 5, energy = 5, bomb = 0, bio = 100, rad = 50)
+	armor_absorb = list(melee = 0,bullet = 0,laser = 0,energy = 0,bomb = 0, bio = 0, rad = 2)
 	max_heat_protection_temperature = SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	pressure_resistance = 200 * ONE_ATMOSPHERE
 	eyeprot = 3
