@@ -487,6 +487,7 @@
 	desc = "A cheap and oddly-shaped pressure suit made for vox crewmembers. Has some heat protection."
 	icon_state = "vox-civ-atmos"
 	armor = list(melee = 5, bullet = 5, laser = 5, energy = 5, bomb = 0, bio = 100, rad = 10)
+	armor_absorb = list(melee = 0,bullet = 0,laser = 0,energy = 0,bomb = 0, bio = 0, rad = 0)
 	clothing_flags = PLASMAGUARD
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	pressure_resistance = 400 * ONE_ATMOSPHERE
@@ -496,6 +497,7 @@
 	icon_state = "vox-civ0_atmos"
 	desc = "A very alien-looking helmet for vox crewmembers. Has some heat protection."
 	armor = list(melee = 5, bullet = 5, laser = 5, energy = 5, bomb = 0, bio = 100, rad = 10)
+	armor_absorb = list(melee = 0,bullet = 0,laser = 0,energy = 0,bomb = 0, bio = 0, rad = 0)
 	clothing_flags = PLASMAGUARD
 	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
 	pressure_resistance = 400 * ONE_ATMOSPHERE
